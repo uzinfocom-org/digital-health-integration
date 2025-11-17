@@ -5,7 +5,7 @@ Description: "Defines the consent state codes in Uzbek and Russian"
 * ^url = "https://terminology.dhp.uz/fhir/core/ValueSet/loinc-vs"
 * ^experimental = true
 * ^extension[0].url = $valueset-supplement
-* ^extension[=].valueCanonical = Canonical($loinc)
+* ^extension[=].valueCanonical = $loinc
 
 * include $loinc#9272-6
 * include $loinc#9274-2
