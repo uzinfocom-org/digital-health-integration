@@ -21,15 +21,3 @@ Description: "Extension to indicate the education level of the related person."
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://terminology.dhp.uz/fhir/core/ValueSet/education-vs (required)
 * valueCodeableConcept ^short = "Education level of the related person"
-
-Extension: DeathPlaceType
-Id: death-placeType
-Title: "Place of Death Type"
-Description: "Extension to indicate the type of place where the death occurred (e.g. home, hospital, other)."
-* ^status = #active
-* ^context.type = #element
-* ^context.expression = "Encounter"
-
-* value[x] only CodeableConcept
-* valueCodeableConcept from https://terminology.dhp.uz/fhir/core/ValueSet/death-place-type-vs (required)
-* valueCodeableConcept ^short = "Type which is that death place type (home, street, hospital etc)"
