@@ -3,7 +3,7 @@ Parent: UZCoreEncounter
 Id: encounter-death
 Title: "Encounter of Death"
 Description: "An Encounter resource that represents a patient's encounter that resulted in death."
-* ^url = "https://dhp.uz/fhir/core/StructureDefinition/encounter-death"
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/encounter-death"
 * ^experimental = true
 * ^status = #draft
 * ^publisher = "UZINFOCOM"

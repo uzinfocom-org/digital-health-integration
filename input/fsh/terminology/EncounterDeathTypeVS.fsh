@@ -2,7 +2,7 @@ ValueSet: EncounterDeathTypeVS
 Id: encounter-death-type-vs
 Title: "Encounter Death Type VS"
 Description: "Collection of information on the types of encounters resulting in death"
-* ^url = "https://terminology.dhp.uz/fhir/core/ValueSet/encounter-death-type-vs"
+* ^url = "https://terminology.dhp.uz/ValueSet/encounter-death-type-vs"
 * ^experimental = true
 * ^language = #uz
 

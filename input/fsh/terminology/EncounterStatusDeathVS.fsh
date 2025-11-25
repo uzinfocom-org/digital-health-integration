@@ -2,7 +2,7 @@ ValueSet: EncounterStatusVS
 Id: encounter-status-vs
 Title: "Encounter Status VS"
 Description: "Collection of information on the status of encounters"
-* ^url = "https://terminology.dhp.uz/fhir/core/ValueSet/encounter-status-vs"
+* ^url = "https://terminology.dhp.uz/ValueSet/encounter-status-vs"
 * ^experimental = true
 * ^language = #uz
 * include codes from system encounter-status-cs
