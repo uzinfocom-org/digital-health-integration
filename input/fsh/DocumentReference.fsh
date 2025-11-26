@@ -3,7 +3,10 @@ Parent: DocumentReference
 Id: document-reference-birth
 Title: "Document Reference Birth"
 Description: "Document reference for Birth profile"
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/document-reference-birth"
+* ^experimental = true
 * ^status = #draft
+* ^publisher = "UZINFOCOM"
 
 * identifier MS
 

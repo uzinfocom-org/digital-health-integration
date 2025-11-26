@@ -3,7 +3,7 @@ Parent: Condition
 Id: condition-death
 Title: "Condition of Death"
 Description: "A Condition resource that represents a patient's death information."
-* ^url = "https://dhp.uz/fhir/core/StructureDefinition/condition-death"
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/condition-death"
 * ^experimental = true
 * ^status = #draft
 * ^publisher = "UZINFOCOM"

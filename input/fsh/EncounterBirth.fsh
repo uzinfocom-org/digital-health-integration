@@ -3,7 +3,10 @@ Parent: UZCoreEncounter
 Id: encounter-birth
 Title: "Encounter of Birth"
 Description: "Uzbekistan Birth Encounter profile, used to represent patients administrative information"
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/encounter-birth"
+* ^experimental = true
 * ^status = #draft
+* ^publisher = "UZINFOCOM"
 
 * serviceType MS
 * serviceType ^short = "Конкретный тип услуги"

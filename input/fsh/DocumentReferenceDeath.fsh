@@ -3,7 +3,7 @@ Parent: DocumentReference
 Id: document-reference-death
 Title: "Document Reference Death"
 Description: "Document reference for Death profile"
-* ^url = "https://dhp.uz/fhir/core/StructureDefinition/document-reference-death"
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/document-reference-death"
 * ^experimental = true
 * ^status = #draft
 * ^publisher = "UZINFOCOM"

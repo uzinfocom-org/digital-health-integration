@@ -3,9 +3,10 @@ Parent: Composition
 Id: composition-birth
 Title: "Bith Composition"
 Description: "Composition foor Birth profile"
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/composition-birth"
 * ^experimental = true
 * ^status = #draft
-* ^publisher = "Uzinfocom"
+* ^publisher = "UZINFOCOM"
 
 * identifier MS
 * identifier ^short = "Уникальный идентификатор документа"

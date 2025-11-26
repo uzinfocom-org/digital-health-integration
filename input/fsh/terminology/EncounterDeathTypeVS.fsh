@@ -6,5 +6,5 @@ Description: "Collection of information on the types of encounters resulting in 
 * ^experimental = true
 * ^language = #uz
 
-* include codes from system https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-type-cs
 * include codes from system https://terminology.dhp.uz/CodeSystem/encounter-death-type-cs
+* include codes from system https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-type-cs

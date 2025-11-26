@@ -3,7 +3,10 @@ Parent: UZCoreObservation
 Id: observation-apgar
 Title: "Observation APGAR of Birth"
 Description: "Assessment of the newborn's condition"
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/observation-apgar"
+* ^experimental = true
 * ^status = #draft
+* ^publisher = "UZINFOCOM"
 
 * identifier MS
 * identifier ^short = "Оценка состояния новорожденного"

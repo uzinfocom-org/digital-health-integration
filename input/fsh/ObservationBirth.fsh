@@ -3,7 +3,10 @@ Parent: UZCoreObservation
 Id: observation-birth
 Title: "Observation of Birth"
 Description: "Assessment of the newborn's condition"
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/observation-birth"
+* ^experimental = true
 * ^status = #draft
+* ^publisher = "UZINFOCOM"
 
 * identifier MS
 * identifier ^short = "Идентификатор для наблюдения"
