@@ -4,5 +4,5 @@ Title: "Observation UCUM unit ValueSet"
 Description: "Units of measurement used to measure the length and weight of a baby at birth"
 * ^url = "https://terminology.dhp.uz/ValueSet/observation-ucum-vs"
 * ^experimental = true
-* ^language = #uz
+* ^language = #en
 * include codes from system observation-ucum-cs

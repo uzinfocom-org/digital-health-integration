@@ -4,5 +4,5 @@ Title: "Birth place ValueSet"
 Description: "Collection of information on the place of birth of citizens born in the territory of the Republic of Uzbekistan"
 * ^url = "https://terminology.dhp.uz/ValueSet/birth-place-vs"
 * ^experimental = true
-* ^language = #uz
+* ^language = #en
 * include codes from system birth-place-cs

@@ -9,38 +9,38 @@ Description: "Collection of information on the types of evidence for conditions 
 * ^hierarchyMeaning = #is-a
 * ^language = #uz
 
-* #death0002.00001 "Maishiy"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "Household"
-  * ^designation[+].language = #ru
+* #death0002.00001 "Household"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Бытовая"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Maishiy"
 
-* #death0002.00002 "Ko'chada(Avtotransportdan tashqari)"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "On the street (except autotranssort)"
-  * ^designation[+].language = #ru
+* #death0002.00002 "On the street (except autotransport)"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "На улице (кроме автотранспорта)"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Ko'chada(Avtotransportdan tashqari)"
 
-* #death0002.00003 "Avtotransportdan"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "From autotransport"
-  * ^designation[+].language = #ru
+* #death0002.00003 "From autotransport"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "От автотранспорта"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Avtotransportdan"
 
-* #death0002.00004 "Maktabda"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "At school"
-  * ^designation[+].language = #ru
+* #death0002.00004 "At school"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "В школе"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Maktabda"
 
-* #death0002.00005 "Sportdan"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "From sports"
-  * ^designation[+].language = #ru
+* #death0002.00005 "From sports"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "От спорта"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Sportdan"
 
-* #death0002.00006 "Boshqalar"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "Others"
-  * ^designation[+].language = #ru
+* #death0002.00006 "Others"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Другое"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Boshqalar"

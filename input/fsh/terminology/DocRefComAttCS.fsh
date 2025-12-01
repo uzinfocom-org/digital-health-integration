@@ -5,25 +5,25 @@ Description: "This field is a mandatory attribute of the FHIR DocumentReference 
 * insert SupplementCodeSystemDraft(doc-ref-com-att-cs, $drca, 5.0.0)
 
 * #personal
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Shaxsiy"
-  * ^designation[+].language = #ru
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Личный"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Shaxsiy"
 
 * #professional
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Professional"
-  * ^designation[+].language = #ru
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Профессиональный"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Professional"
 
 * #legal
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Huquqiy"
-  * ^designation[+].language = #ru
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Юридический"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Huquqiy"
 
 * #official
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Rasmiy"
-  * ^designation[+].language = #ru
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Официальный"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Rasmiy"

@@ -4,5 +4,5 @@ Title: "Encounter Status VS"
 Description: "Collection of information on the status of encounters"
 * ^url = "https://terminology.dhp.uz/ValueSet/encounter-status-vs"
 * ^experimental = true
-* ^language = #uz
+* ^language = #en
 * include codes from system encounter-status-cs

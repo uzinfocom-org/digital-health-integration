@@ -1,6 +1,6 @@
 ValueSet: DocRefComStatusVS
 Id: doc-ref-com-status-vs
-Title: "Document Reference Status ValueSet"
+Title: "Document Reference Composition Status ValueSet"
 Description: "Defines the consent state codes in Uzbek and Russian"
 * ^url = "https://terminology.dhp.uz/ValueSet/doc-ref-com-status-vs"
 * ^experimental = true

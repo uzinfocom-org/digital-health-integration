@@ -7,28 +7,28 @@ Description: "Collection of information on the place of birth of citizens born i
 * ^status = #active
 * ^caseSensitive = true
 * ^hierarchyMeaning = #is-a
-* ^language = #uz
+* ^language = #en
 
-* #birth0004.00001 "Uyda"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "Home"
-  * ^designation[+].language = #ru
+* #birth0004.00001 "Home"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Дома"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Uyda"
 
-* #birth0004.00002 "Yo'lda"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "On the Road"
-  * ^designation[+].language = #ru
+* #birth0004.00002 "On the road"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "В дороге"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Yo'lda"
 
-* #birth0004.00003 "Shifoxona"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "Hospital"
-  * ^designation[+].language = #ru
+* #birth0004.00003 "Hospital"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Больница"
-  
-* #birth0004.00004 "Boshqa"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "Other"
-  * ^designation[+].language = #ru
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Shifoxona"
+
+* #birth0004.00004 "Other"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Другое"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Boshqa"

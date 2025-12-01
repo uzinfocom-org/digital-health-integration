@@ -13,15 +13,15 @@ Description: "Assessment of the newborn's condition"
 
 * status MS
 * status ^short = "«окончательный» (потому что результаты по шкале Апгар уже закончились)"
-* status from DocRefComStatusVS (required)
+* status from https://terminology.dhp.uz/fhir/core/ValueSet/observation-status-vs (required)
 
 * category MS
 * category ^short = "Категория: обследование или показатели жизнедеятельности"
-* category from https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs  (required)
+* category from https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs (required)
 
 * code MS
 * code ^short = "Тип наблюдения (код/тип)"
-* code from http://loinc.org (required) //need have to add LOINC codes here(in link)
+* code from LOINCVS (required) //need have to add LOINC codes here(in link)
 
 * subject MS
 * subject ^short = "о пациенте (ребенок)"

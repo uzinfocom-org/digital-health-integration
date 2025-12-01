@@ -7,28 +7,28 @@ Description: "Collection of information on the place of death of citizens in the
 * ^status = #active
 * ^caseSensitive = true
 * ^hierarchyMeaning = #is-a
-* ^language = #uz
+* ^language = #en
 
-* #death0003.00001 "Shifoxona"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "Hospital"
-  * ^designation[+].language = #ru
+* #death0003.00001 "Hospital"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Больница"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Shifoxona"
 
-* #death0003.0002 "Uyda"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "Home"
-  * ^designation[+].language = #ru
+* #death0003.00002 "Home"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Дома"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Uyda"
 
-* #death0003.00003 "Yo'lda"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "On the road"
-  * ^designation[+].language = #ru
-  * ^designation[=].value = "В путы"
+* #death0003.00003 "On the road"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "В пути"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Yo'lda"
 
-* #death0003.00004 "Boshqa"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "Other"
-  * ^designation[+].language = #ru
+* #death0003.00004 "Other"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Другое"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Boshqa"

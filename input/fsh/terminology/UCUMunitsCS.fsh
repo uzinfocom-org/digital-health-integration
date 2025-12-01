@@ -7,28 +7,28 @@ Description: "Units of measurement used to measure the length and weight of a ba
 * ^status = #active
 * ^caseSensitive = true
 * ^hierarchyMeaning = #is-a
-* ^language = #uz
+* ^language = #en
 
-* #birth002.0001 "Tana vazni"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "Weight"
-  * ^designation[+].language = #ru
+* #birth002.0001 "Weight"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Масса тела"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Tana vazni"
 
-* #birth002.0002 "Bo'y"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "Length / Height"
-  * ^designation[+].language = #ru
+* #birth002.0002 "Length / Height"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Рост"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Bo'y"
 
-* #birth002.0003 "Homiladorlik yoshi"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "Gestational Age"
-  * ^designation[+].language = #ru
+* #birth002.0003 "Gestational Age"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Гестационный возраст"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Homiladorlik yoshi"
 
-* #birth002.0004 "Apgar shkalasi"
-  * ^designation[0].language = #en
+* #birth002.0004 "Apgar Score"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Apgar Score"
-  * ^designation[+].language = #ru
-  * ^designation[=].value = "Apgar Score"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Apgar shkalasi"

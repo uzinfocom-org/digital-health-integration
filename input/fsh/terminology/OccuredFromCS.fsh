@@ -9,38 +9,38 @@ Description: "Collection of information on the causes of death of citizens decea
 * ^hierarchyMeaning = #is-a
 * ^language = #en
 
-* #death0001.00001 "Kassalikdan"
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "From illness"
-  * ^designation[+].language = #ru
+* #death0001.00001 "From illness"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "От болезни"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Kassalikdan"
 
-* #death0001.00002 "Ishdan tashqari baxtsiz hodisadan"
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "From an accident outside work"
-  * ^designation[+].language = #ru
+* #death0001.00002 "From an accident outside work"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "От несчастного случая вне работы"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Ishdan tashqari baxtsiz hodisadan"
 
-* #death0001.00003 "Qotillik"
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Murder"
-  * ^designation[+].language = #ru
+* #death0001.00003 "Murder"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Убийство"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Qotillik"
 
-* #death0001.00004 "O'z o'zini o'ldirish"
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Suicide"
-  * ^designation[+].language = #ru
+* #death0001.00004 "Suicide"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Самоубийство"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "O'z o'zini o'ldirish"
 
-* #death0001.00005 "O'lim sababi aniqlanmadi"
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Cause of death not determined"
-  * ^designation[+].language = #ru
+* #death0001.00005 "Cause of death not determined"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Причина смерти не установлена"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "O'lim sababi aniqlanmadi"
 
-* #death0001.00006 "Ish faoliyati tufayli baxtsiz hodisan"
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Work-related accident"
-  * ^designation[+].language = #ru
+* #death0001.00006 "Work-related accident"
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Несчастный случай на производстве"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Ish faoliyati tufayli baxtsiz hodisan"

@@ -4,5 +4,5 @@ Title: "APGAR score ValueSet"
 Description: "APGAR score ValueSet in Uzbekistan"
 * ^url = "https://terminology.dhp.uz/ValueSet/apgar-score-vs"
 * ^experimental = true
-* ^language = #uz
+* ^language = #en
 * include codes from system apgar-score-cs
