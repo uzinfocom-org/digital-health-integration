@@ -7,7 +7,7 @@ Description: "Collection of information on the types of evidence for conditions 
 * ^status = #active
 * ^caseSensitive = true
 * ^hierarchyMeaning = #is-a
-* ^language = #uz
+* ^language = #en
 
 * #death0002.00001 "Household"
   * ^designation[0].language = #ru

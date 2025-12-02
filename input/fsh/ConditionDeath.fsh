@@ -12,7 +12,7 @@ Description: "A Condition resource that represents a patient's death information
 
 * code MS
 * code ^short = "ICD-10 coded disease or condition"
-* code from https://hl7.org/fhir/ValueSet/icd-10 (required)
+* code from MyICD10VS (required)
 
 * onset[x] MS
 * onset[x] ^short = "Onset of the condition"
@@ -26,4 +26,4 @@ Description: "A Condition resource that represents a patient's death information
 
 * evidence MS
 * evidence ^short = "In non-work related accidents, the  type of injury"
-* evidence from https://terminology.dhp.uz/fhir/core/ValueSet/condition-evidence-vs (required)
+* evidence from ConditionEvidenceVS (required)
