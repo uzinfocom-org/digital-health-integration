@@ -44,6 +44,7 @@ Id: death-placeType
 Title: "Place of Death Type"
 Description: "Extension to indicate the type of place where the death occurred (e.g. home, hospital, other)."
 * ^status = #active
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "Encounter"
 

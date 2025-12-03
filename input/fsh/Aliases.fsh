@@ -101,3 +101,5 @@ Alias: $valueset-supplement = http://hl7.org/fhir/StructureDefinition/valueset-s
 Alias: $drs = http://hl7.org/fhir/document-reference-status
 Alias: $drcs = 	http://hl7.org/fhir/composition-status
 Alias: $drca = http://hl7.org/fhir/composition-attestation-mode
+Alias: $my-icd10 = https://terminology.dhp.uz/CodeSystem/my-icd10
+Alias: $condition-evidence-cs = https://terminology.dhp.uz/CodeSystem/condition-evidence-cs
