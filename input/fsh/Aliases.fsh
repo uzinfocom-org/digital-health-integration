@@ -101,3 +101,7 @@ Alias: $valueset-supplement = http://hl7.org/fhir/StructureDefinition/valueset-s
 Alias: $drs = http://hl7.org/fhir/document-reference-status
 Alias: $drcs = 	http://hl7.org/fhir/composition-status
 Alias: $drca = http://hl7.org/fhir/composition-attestation-mode
+Alias: $goal-achievement = http://terminology.hl7.org/CodeSystem/goal-achievement
+Alias: $goal-category = http://terminology.hl7.org/CodeSystem/goal-category
+Alias: $goal-status = http://hl7.org/fhir/goal-status
+Alias: $goal-Priority = http://terminology.hl7.org/CodeSystem/goal-priority

@@ -2,7 +2,7 @@ CodeSystem: ObservationUCUMCS
 Id: observation-ucum-cs
 Title: "Observation UCUM units"
 Description: "Units of measurement used to measure the length and weight of a baby at birth"
-* ^url = "https://terminology.dhp.uz/CodeSystem/observation-ucum-cs"
+* ^url = "https://dhp.uz/fhir/integrations/CodeSystem/observation-ucum-cs"
 * ^experimental = true
 * ^status = #active
 * ^caseSensitive = true

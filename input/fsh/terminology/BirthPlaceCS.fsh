@@ -2,7 +2,7 @@ CodeSystem: BirthPlaceCS
 Id: birth-place-cs
 Title: "Birth place CodeSystem"
 Description: "Collection of information on the place of birth of citizens born in the territory of the Republic of Uzbekistan"
-* ^url = "https://terminology.dhp.uz/CodeSystem/birth-place-cs"
+* ^url = "https://dhp.uz/fhir/integrations/CodeSystem/birth-place-cs"
 * ^experimental = true
 * ^status = #active
 * ^caseSensitive = true

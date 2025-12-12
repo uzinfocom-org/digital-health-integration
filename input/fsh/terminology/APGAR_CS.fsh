@@ -2,7 +2,7 @@ CodeSystem: APGARscoreCS
 Id: apgar-score-cs
 Title: "APGAR (Score) CodeSystem"
 Description: "A rapid system used to assess the general condition of a newborn baby"
-* ^url = "https://terminology.dhp.uz/CodeSystem/apgar-score-cs"
+* ^url = "https://dhp.uz/fhir/integrations/CodeSystem/apgar-score-cs"
 * ^experimental = true
 * ^status = #active
 * ^caseSensitive = true

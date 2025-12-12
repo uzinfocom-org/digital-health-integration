@@ -2,6 +2,7 @@ CodeSystem: DocRefStatusCS
 Id: doc-ref-status-cs
 Title: "Document Reference Status CodeSystem"
 Description: "This field is a mandatory attribute of the FHIR DocumentReference resource and indicates the current state of the document in the system."
+* ^url = "https://dhp.uz/fhir/integrations/CodeSystem/doc-ref-status-cs"
 * insert SupplementCodeSystemDraft(doc-ref-status-cs, $drs, 5.0.0)
 
 * #current

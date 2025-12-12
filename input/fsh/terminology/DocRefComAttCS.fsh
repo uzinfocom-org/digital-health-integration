@@ -2,6 +2,7 @@ CodeSystem: DocRefComAttCS
 Id: doc-ref-com-att-cs
 Title: "DocumentReference Status CodeSystem"
 Description: "This field is a mandatory attribute of the FHIR DocumentReference resource and indicates the current state of the document in the system."
+* ^url = "https://dhp.uz/fhir/integrations/CodeSystem/doc-ref-com-att-cs"
 * insert SupplementCodeSystemDraft(doc-ref-com-att-cs, $drca, 5.0.0)
 
 * #personal
