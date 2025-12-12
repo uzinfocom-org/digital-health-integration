@@ -31,4 +31,4 @@ Description: "An Observation resource that represents a patient's death informat
 * component MS
 * component ^short = "Conditions leading to immediate cause."
 * component.code MS
-* component.code from OccuredFromVS (required)
+* component.code from OccuredFromVS 

@@ -17,11 +17,11 @@ Description: "Assessment of the newborn's condition"
 
 * category MS
 * category ^short = "Классификация видов наблюдения"
-* category from https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs (required)
+* category from https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs (required) // import from ObservationCategoryVS in UZCore
 
 * code MS
 * code ^short = "Тип наблюдения (код/тип)"
-* code from LOINCVS (required)
+* code from LOINCVS
 
 * subject MS
 * subject ^short = "о пациенте (ребенок)"

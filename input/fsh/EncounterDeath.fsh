@@ -10,7 +10,7 @@ Description: "An Encounter resource that represents a patient's encounter that r
 
 * status MS
 * status ^short = "Начальное или конечное состояние смерти. Например, начальная или Окончательное"
-* status from https://dhp.uz.terminology.uz/ValuSet/death_status (required)
+* status from EncounterStatusVS (required)
 
 * class MS
 * class ^short = "Encounter type (e.g., emergency, inpatient)"
