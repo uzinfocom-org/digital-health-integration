@@ -4,21 +4,22 @@ Id: observation-apgar
 Title: "Observation APGAR of Birth"
 Description: "Assessment of the newborn's condition"
 * ^status = #draft
+* ^experimental = true
 
 * identifier MS
 * identifier ^short = "Оценка состояния новорожденного"
 
 * status MS
 * status ^short = "«окончательный» (потому что результаты по шкале Апгар уже закончились)"
-* status from DocRefComStatusVS (required)
+* status from https://terminology.dhp.uz/fhir/core/ValueSet/observation-status-vs (required)
 
 * category MS
 * category ^short = "Категория: обследование или показатели жизнедеятельности"
-* category from https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs  (required)
+* category from https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs (required)
 
 * code MS
 * code ^short = "Тип наблюдения (код/тип)"
-* code from http://loinc.org (required) //need have to add LOINC codes here(in link)
+* code from https://terminology.dhp.uz/ValueSet/loinc-codes-vs (required) //need have to add LOINC codes here(in link)
 
 * subject MS
 * subject ^short = "о пациенте (ребенок)"
@@ -35,7 +36,6 @@ Description: "Assessment of the newborn's condition"
 * valueQuantity ^short = "Рост, вес ребенка при рождении"
 
 * valueQuantity.value and valueQuantity.unit and valueQuantity.system and valueQuantity.code MS
-
 
 * valueQuantity.value ^short = "Числовое значение (с неявной точностью)"
 * valueQuantity.unit ^short = "Представление единицы"

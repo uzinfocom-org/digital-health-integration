@@ -4,10 +4,11 @@ Title: "Place of Birth Type"
 Description: "Extension to indicate the type of place where the patient was born (e.g. home, hospital, other)."
 * ^status = #active
 * ^context.type = #element
+* ^experimental = true
 * ^context.expression = "Patient"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from https://terminology.dhp.uz/fhir/core/ValueSet/birth-place-vs (required)
+* valueCodeableConcept from https://terminology.dhp.uz/ValueSet/birth-place-vs (required)
 * valueCodeableConcept ^short = "Type of the place where the patient was born"
 
 Extension: RelatedPersonEducation
@@ -16,6 +17,7 @@ Title: "Related Person Education"
 Description: "Extension to indicate the education level of the related person."
 * ^status = #active
 * ^context.type = #element
+* ^experimental = true
 * ^context.expression = "RelatedPerson"
 
 * value[x] only CodeableConcept

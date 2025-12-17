@@ -4,6 +4,7 @@ Id: encounter-birth
 Title: "Encounter of Birth"
 Description: "Uzbekistan Birth Encounter profile, used to represent patients administrative information"
 * ^status = #draft
+* ^experimental = true
 
 * serviceType MS
 * serviceType ^short = "Конкретный тип услуги"

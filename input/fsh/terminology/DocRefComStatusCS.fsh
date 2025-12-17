@@ -5,67 +5,67 @@ Description: "This field is a mandatory attribute of the FHIR DocumentReference 
 * insert SupplementCodeSystemDraft(doc-ref-com-status-cs, $drcs, 5.0.0)
 
 * #registered
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Roʻyxatdan oʻtgan"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Зарегистрировано"
+  * ^designation[0].language = #uz
+  * ^designation[=].value = "Roʻyxatdan oʻtgan"
 
 * #partial
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Qisman"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Частично"
+  * ^designation[0].language = #uz
+  * ^designation[=].value = "Qisman"
 
 * #preliminary
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Dastlabki"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Предварительно"
+  * ^designation[0].language = #uz
+  * ^designation[=].value = "Dastlabki"
 
 * #final
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Ohirigi"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Окончательно"
+  * ^designation[0].language = #uz
+  * ^designation[=].value = "Ohirigi"
 
 * #amended
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Oʻzgartirilgan"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Изменено"
+  * ^designation[0].language = #uz
+  * ^designation[=].value = "Oʻzgartirilgan"
 
 * #corrected
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Oʻzgartirilgan"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Изменено"
+  * ^designation[0].language = #uz
+  * ^designation[=].value = "Oʻzgartirilgan"
 
 * #appended
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Qo'shimcha kiritilgan"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Добавлено"
+  * ^designation[0].language = #uz
+  * ^designation[=].value = "Qo'shimcha kiritilgan"
 
 * #cancelled
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Bekor qilingan"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Отменено"
+  * ^designation[0].language = #uz
+  * ^designation[=].value = "Bekor qilingan"
 
 * #entered-in-error
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Xatolik bilan kiritilgan"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Введено по ошибке"
+  * ^designation[0].language = #uz
+  * ^designation[=].value = "Xatolik bilan kiritilgan"
 
 * #deprecated
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Eskirgan"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Устаревшее"
+  * ^designation[0].language = #uz
+  * ^designation[=].value = "Eskirgan"
 
 * #unknown
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Noma'lum"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Неизвестно"
+  * ^designation[0].language = #uz
+  * ^designation[=].value = "Noma'lum"

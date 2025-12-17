@@ -1,16 +1,12 @@
-ValueSet: LOINCVS
-Id: loinc-vs
-Title: "LOINC's ValueSet"
-Description: "Defines the consent state codes in Uzbek and Russian"
-* ^url = "https://terminology.dhp.uz/fhir/core/ValueSet/loinc-vs"
+Alias: $loinc_code = http://loinc.org
+
+ValueSet: LOINC_CodesVS
+Id: loinc-codes-vs
+Title: "LOINC ValueSet"
+Description: "Subset of LOINC codes"
+* ^url = "https://terminology.dhp.uz/ValueSet/loinc-codes-vs"
 * ^experimental = true
 * ^extension[0].url = $valueset-supplement
-* ^extension[=].valueCanonical = Canonical($loinc)
+* ^extension[=].valueCanonical = Canonical(LOINC_CodesCS)
 
-* include $loinc#9272-6
-* include $loinc#9274-2
-* include $loinc#8339-4
-* include $loinc#8302-2
-* include $loinc#76516-4
-* include $loinc#8287-5
-* include $loinc#80616-6
+* include codes from system $loinc_code
