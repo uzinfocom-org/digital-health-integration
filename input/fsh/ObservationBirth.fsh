@@ -7,43 +7,42 @@ Description: "Assessment of the newborn's condition"
 * ^experimental = true
 
 * identifier MS
-* identifier ^short = "Идентификатор для наблюдения"
+* identifier ^short = "ID to monitor"
 
 * status MS
-* status ^short = "зарегистрированный | образец в процессе обработки | предварительный | окончательный | измененный | исправленный | добавленный | аннулированный | введенный по ошибке | неизвестный | не может быть получен"
+* status ^short = "registered | sample in the process of processing | preliminary | final | modified | corrected | added | cancelled | entered by mistake | unknown | cannot be received"
 * status from https://terminology.dhp.uz/fhir/core/ValueSet/observation-status-vs (required)
 
 * category MS
-* category ^short = "Классификация видов наблюдения"
+* category ^short = "Classification of types of surveillance"
 * category from https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs (required)
 
 * code MS
-* code ^short = "Тип наблюдения (код/тип)"
+* code ^short = "Type of surveillance (code/type)"
 * code from https://terminology.dhp.uz/ValueSet/loinc-codes-vs (required)
 
 * subject MS
-* subject ^short = "о пациенте (ребенок)"
+* subject ^short = "About the patient (child)"
 * subject only Reference(PatientBirth)
 
 * effective[x] MS
-* effective[x] ^short = "Клинически значимое время/период наблюдения"
+* effective[x] ^short = "Clinically significant time/follow-up period"
 
 * performer MS
-* performer ^short = "Врач или специалист, измеривший результат"
+* performer ^short = "The doctor or specialist who measured the result"
 * performer only Reference(UZCorePractitioner)
 
 * value[x] MS
-* value[x] ^short = "Фактический результат"
+* value[x] ^short = "The actual result"
 
 * valueQuantity MS
-* valueQuantity ^short = "Рост, вес ребенка при рождении"
+* valueQuantity ^short = "Height and weight of the child at birth"
 
 * valueQuantity.value and valueQuantity.unit and valueQuantity.system and valueQuantity.code MS
 
 
-* valueQuantity.value ^short = "Числовое значение (с неявной точностью)"
-* valueQuantity.unit ^short = "Представление единицы"
-* valueQuantity.system ^short = "Система, определяющая форму кодированной единицы"
+* valueQuantity.value ^short = "Numeric value (with implicit precision)"
+* valueQuantity.unit ^short = "Unit Representation"
+* valueQuantity.system ^short = "A system that defines the shape of a coded unit"
 
-// * valueQuantity.value from CodeableReference(APGARsocreVS) (required)  // Vadim Could you see that part
 * valueQuantity.code from ObservationUCUMVS (required)

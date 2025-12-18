@@ -7,39 +7,38 @@ Description: "Assessment of the newborn's condition"
 * ^experimental = true
 
 * identifier MS
-* identifier ^short = "Оценка состояния новорожденного"
+* identifier ^short = "Assessment of the newborn's condition"
 
 * status MS
-* status ^short = "«окончательный» (потому что результаты по шкале Апгар уже закончились)"
+* status ^short = "«final» (because the results on the Apgar scale have already ended)"
 * status from https://terminology.dhp.uz/fhir/core/ValueSet/observation-status-vs (required)
 
 * category MS
-* category ^short = "Категория: обследование или показатели жизнедеятельности"
+* category ^short = "Category: examination or vital signs"
 * category from https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs (required)
 
 * code MS
-* code ^short = "Тип наблюдения (код/тип)"
-* code from https://terminology.dhp.uz/ValueSet/loinc-codes-vs (required) //need have to add LOINC codes here(in link)
+* code ^short = "Type of surveillance (code/type)"
+* code from https://terminology.dhp.uz/ValueSet/loinc-codes-vs (required)
 
 * subject MS
-* subject ^short = "о пациенте (ребенок)"
+* subject ^short = "about the patient (child)"
 * subject only Reference(PatientBirth)
 
 * performer MS
-* performer ^short = "Специалист, который проверял по шкале Апгар"
+* performer ^short = "The specialist who checked on the Apgar scale"
 * performer only Reference(UZCorePractitioner)
 
 * value[x] MS
-* value[x] ^short = "Оценка по шкале Апгар: 1 - 10 результат"
+* value[x] ^short = "Apgar score: 1-10 result"
 
 * valueQuantity MS
-* valueQuantity ^short = "Рост, вес ребенка при рождении"
+* valueQuantity ^short = "Height and weight of the child at birth"
 
 * valueQuantity.value and valueQuantity.unit and valueQuantity.system and valueQuantity.code MS
 
-* valueQuantity.value ^short = "Числовое значение (с неявной точностью)"
-* valueQuantity.unit ^short = "Представление единицы"
-* valueQuantity.system ^short = "Система, определяющая форму кодированной единицы"
+* valueQuantity.value ^short = "Numeric value (with implicit precision)"
+* valueQuantity.unit ^short = "Unit Representation"
+* valueQuantity.system ^short = "A system that defines the shape of a coded unit"
 
-// * valueQuantity.value from CodeableReference(APGARsocreVS) (required)  // Vadim Could you see that part
 * valueQuantity.code from ObservationUCUMVS (required)

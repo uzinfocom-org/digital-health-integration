@@ -7,43 +7,43 @@ Description: "Uzbekistan Birth Encounter profile, used to represent patients adm
 * ^experimental = true
 
 * serviceType MS
-* serviceType ^short = "Конкретный тип услуги"
+* serviceType ^short = "Specific type of service"
 
 * subject MS
 * subject only Reference(PatientBirth) //(Patient - Child Vital Records)
-* subject ^short = "Младенец, связанный с этой встречей"
+* subject ^short = "The baby associated with this meeting"
 
 * partOf MS
-* partOf ^short = "Ссылка на мать(Encounter)"
+* partOf ^short = "Link to Mother(Encounter)"
 
 * serviceProvider MS
-* serviceProvider ^short = "Организация (учреждение), ответственная за этот Encounter"
+* serviceProvider ^short = "The organization (institution) responsible for this Encounter"
 
 * participant MS
-* participant ^short = "Врач (фельдшер или акушер), выдавший медицинское свидетельство о рождении"
+* participant ^short = "The doctor (paramedic or obstetrician) who issued the medical birth certificate"
 * participant.actor MS
-* participant.actor ^short = "Личность, участвующая во встрече"
+* participant.actor ^short = "The person participating in the meeting"
 * participant.period MS
-* participant.period ^short = "Период времени во время встречи, в котором участвовал участник"
+* participant.period ^short = "The time period during the meeting in which the participant participated"
 * participant
   * type MS
-  * ^short = "Роль участника встречи"
+  * ^short = "The role of the meeting participant"
 
 * actualPeriod MS
-* actualPeriod ^short = "Фактическое время начала и окончания встречи"
+* actualPeriod ^short = "The actual start and end time of the meeting"
 
 * plannedStartDate MS
-* plannedStartDate ^short = "Планируемая дата/время начала (или дата поступления) встречи"
+* plannedStartDate ^short = "The planned date/time of the start (or arrival date) of the meeting"
 
 * plannedEndDate MS
-* plannedEndDate ^short = "Планируемая дата/время окончания (или дата выписки) встречи"
+* plannedEndDate ^short = "Planned date/time of the end (or date of discharge) of the meeting"
 
 * diagnosis MS
 * diagnosis.condition MS
-* diagnosis.condition ^short = "Наблюдаемые врожденные проблемы (например, желтуха, врожденные аномалии)
-Диагностические состояния при рождении (например, низкий вес при рождении, респираторный дистресс)
-Клинические оценки, связанные с рождением (например, признаки инфекции, аномальные результаты по шкале Апгар)"
+* diagnosis.condition ^short = "Observed congenital problems (e.g. jaundice, congenital abnormalities)
+Diagnostic conditions at birth (e.g. low birth weight, respiratory distress)
+Clinical assessments related to birth (e.g. signs of infection, abnormal Apgar scores)"
 
 * location MS
 * location.location 1..1 MS
-* location.location ^short = "Место, где родился младенец"
+* location.location ^short = "The place where the baby was born"

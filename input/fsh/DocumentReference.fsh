@@ -9,61 +9,61 @@ Description: "Document reference for Birth profile"
 * identifier MS
 
 * status MS
-* status ^short = "текущий | замененный | введенный по ошибке"
+* status ^short = "current | replaced | entered by mistake"
 * status from DocRefStatusVS (required)
 
 * docStatus MS
-* docStatus ^short = "зарегистрирован | частичный | предварительный | окончательный | измененный | исправленный | добавленный | отмененный | введенный с ошибкой | устаревший | неизвестный"
+* docStatus ^short = "registered | partial | preliminary | final | modified | corrected | added | cancelled | entered with error | outdated | unknown"
 * docStatus from DocRefComStatusVS (required)
 
 * subject MS
-* subject ^short = "Новорожденный ребенок"
+* subject ^short = "A newborn baby"
 * subject only Reference(PatientBirth)
 
 * context MS
-* context ^short = "При encounter с новорожденным ребенком"
+* context ^short = "When encountering a newborn baby"
 * context only Reference(EncounterBirth)
 
 * practiceSetting MS
-* practiceSetting ^short = "Дополнительные сведения о месте создания контента (например, клиническая специализация)"
+* practiceSetting ^short = "Additional information about the content creation location (for example, clinical specialization)"
 // * practiceSetting from UZCorePractitionerRole
 
 * period MS
-* period ^short = "Время обслуживания, которое документируется"
+* period ^short = "Maintenance time, which is documented"
 
 * date MS
-* date ^short = "Когда была создана эта ссылка на документ"
+* date ^short = "When was this document link created?"
 
 * author MS
-* author ^short = "Кто и/или что является автором документа"
+* author ^short = "Who and/or what is the author of the document"
 * author only Reference(UZCorePractitioner or UZCoreOrganization)
 
 * attester MS
-* attester ^short = "Подтверждает точность документа."
+* attester ^short = "Confirms the accuracy of the document."
 * attester.mode MS
-* attester.mode ^short = "личный | профессиональный | юридический | официальный"
+* attester.mode ^short = "personal | professional | legal | official"
 * attester.mode from DocRefComAttVS
 * attester.time MS
-* attester.time ^short = "Когда документ был заверен"
+* attester.time ^short = "When the document was certified"
 * attester.party MS
-* attester.party ^short = "Кто заверил документ?"
+* attester.party ^short = "Who certified the document?"
 * attester.party only Reference(UZCoreOrganization)
 
 * custodian MS
-* custodian ^short = "Организация, которая ведет документ"
+* custodian ^short = "The organization that maintains the document"
 * custodian only Reference(UZCoreOrganization)
 
 * relatesTo MS
-* relatesTo ^short = "Справка из роддома прилагается."
+* relatesTo ^short = "A certificate from the hospital is attached."
 
 * relatesTo.target MS
-* relatesTo.target ^short = "Цель отношений"
+* relatesTo.target ^short = "The purpose of the relationship"
 
 * description MS
-* description ^short = "Описание, понятное человеку"
+* description ^short = "A human-readable description"
 
 * content.profile MS
-* content.profile ^short = "Правила профиля содержимого документа"
+* content.profile ^short = "Document Content Profile Rules"
 * content.profile.value[x] MS
-* content.profile.value[x] ^short = "Код|uri|канонический"
+* content.profile.value[x] ^short = "Code|uri|canonical"
 * content.profile.value[x] from http://terminology.hl7.org/ValueSet/v3-HL7FormatCodes (required)
