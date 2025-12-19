@@ -1,5 +1,5 @@
 Profile: ObservationBirth
-Parent: UZCoreObservation
+Parent: Observation
 Id: observation-birth
 Title: "Observation of Birth"
 Description: "Assessment of the newborn's condition"
@@ -32,17 +32,23 @@ Description: "Assessment of the newborn's condition"
 * performer ^short = "The doctor or specialist who measured the result"
 * performer only Reference(UZCorePractitioner)
 
-* value[x] MS
-* value[x] ^short = "The actual result"
+* component.code MS
+* component.code ^short = "Type of measurement (code/type)"
+* component.code from https://www.hl7.org/fhir/valueset-observation-codes (required)
 
-* valueQuantity MS
-* valueQuantity ^short = "Height and weight of the child at birth"
+* component.value[x] MS
+* component.value[x] ^short = "The actual result"
 
-* valueQuantity.value and valueQuantity.unit and valueQuantity.system and valueQuantity.code MS
+* component.valueQuantity MS
+* component.valueQuantity ^short = "Height and weight of the child at birth"
 
+* component.valueQuantity.value and component.valueQuantity.unit and component.valueQuantity.system and component.valueQuantity.code MS
 
-* valueQuantity.value ^short = "Numeric value (with implicit precision)"
-* valueQuantity.unit ^short = "Unit Representation"
-* valueQuantity.system ^short = "A system that defines the shape of a coded unit"
+* component.valueQuantity.value ^short = "Numeric value (with implicit precision)"
+* component.valueQuantity.unit ^short = "Unit Representation"
+* component.valueQuantity.system ^short = "A system that defines the shape of a coded unit"
+* component.valueQuantity.code from ObservationUCUMVS (required)
 
-* valueQuantity.code from ObservationUCUMVS (required)
+* component.code MS
+* component.code ^short = "Breathing CodesystemObservation -lifecrit"
+* component.code from LifeCritVS (required)

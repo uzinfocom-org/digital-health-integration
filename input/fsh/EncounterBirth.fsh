@@ -1,5 +1,5 @@
 Profile: EncounterBirth
-Parent: UZCoreEncounter
+Parent: Encounter
 Id: encounter-birth
 Title: "Encounter of Birth"
 Description: "Uzbekistan Birth Encounter profile, used to represent patients administrative information"
@@ -10,7 +10,7 @@ Description: "Uzbekistan Birth Encounter profile, used to represent patients adm
 * serviceType ^short = "Specific type of service"
 
 * subject MS
-* subject only Reference(PatientBirth) //(Patient - Child Vital Records)
+* subject only Reference(PatientBirth)
 * subject ^short = "The baby associated with this meeting"
 
 * partOf MS
@@ -47,3 +47,7 @@ Clinical assessments related to birth (e.g. signs of infection, abnormal Apgar s
 * location MS
 * location.location 1..1 MS
 * location.location ^short = "The place where the baby was born"
+
+* location.form MS
+* location.form ^short = "The physical form of the location"
+* location.form from BirthPlaceVS (required)

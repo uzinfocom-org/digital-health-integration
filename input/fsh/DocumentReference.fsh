@@ -9,11 +9,11 @@ Description: "Document reference for Birth profile"
 * identifier MS
 
 * status MS
-* status ^short = "current | replaced | entered by mistake"
+* status ^short = "current | superseded | entered-in-error"
 * status from DocRefStatusVS (required)
 
 * docStatus MS
-* docStatus ^short = "registered | partial | preliminary | final | modified | corrected | added | cancelled | entered with error | outdated | unknown"
+* docStatus ^short = "registered | partial | preliminary | final | amended | corrected | appended | cancelled | entered-in-error | deprecated | unknown"
 * docStatus from DocRefComStatusVS (required)
 
 * subject MS
@@ -26,7 +26,6 @@ Description: "Document reference for Birth profile"
 
 * practiceSetting MS
 * practiceSetting ^short = "Additional information about the content creation location (for example, clinical specialization)"
-// * practiceSetting from UZCorePractitionerRole
 
 * period MS
 * period ^short = "Maintenance time, which is documented"

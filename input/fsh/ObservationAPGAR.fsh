@@ -1,5 +1,5 @@
 Profile: ObservationAPGAR
-Parent: UZCoreObservation
+Parent: Observation
 Id: observation-apgar
 Title: "Observation APGAR of Birth"
 Description: "Assessment of the newborn's condition"
@@ -29,16 +29,19 @@ Description: "Assessment of the newborn's condition"
 * performer ^short = "The specialist who checked on the Apgar scale"
 * performer only Reference(UZCorePractitioner)
 
-* value[x] MS
-* value[x] ^short = "Apgar score: 1-10 result"
+* component.code MS
+* component.code ^short = "Apgar CodesystemObservation -apgar"
 
-* valueQuantity MS
-* valueQuantity ^short = "Height and weight of the child at birth"
+* component.value[x] MS
+* component.value[x] ^short = "Apgar score: 1-10 result"
 
-* valueQuantity.value and valueQuantity.unit and valueQuantity.system and valueQuantity.code MS
+* component.valueQuantity MS
+* component.valueQuantity ^short = "Height and weight of the child at birth"
 
-* valueQuantity.value ^short = "Numeric value (with implicit precision)"
-* valueQuantity.unit ^short = "Unit Representation"
-* valueQuantity.system ^short = "A system that defines the shape of a coded unit"
+* component.valueQuantity.value and component.valueQuantity.unit and component.valueQuantity.system and component.valueQuantity.code MS
 
-* valueQuantity.code from ObservationUCUMVS (required)
+* component.valueQuantity.value ^short = "Numeric value (with implicit precision)"
+* component.valueQuantity.unit ^short = "Unit Representation"
+* component.valueQuantity.system ^short = "A system that defines the shape of a coded unit"
+
+* component.valueQuantity.code from ObservationUCUMVS (required)
