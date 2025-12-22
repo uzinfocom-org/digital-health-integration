@@ -29,7 +29,7 @@ Id: gender-other
 Title: "Differentiation of the administrative gender 'other'"
 Description: "Extension for more precise differentiation of the administrative gender 'other', aligned with German base profiles representation of the same concept."
 Context: Patient.gender, RelatedPerson.gender, Person.gender, Practitioner.gender, Patient.contact.gender
-* ^url = "https://dhp.uz/fhir/core/StructureDefinition/gender-other"
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/gender-other"
 * ^experimental = true
 * ^date = "2025-03-12"
 * value[x] 1..
@@ -45,7 +45,7 @@ Description: "The differentiation of the gender indication 'other' may only be f
 Invariant: uzcore-gender-other-2
 Description: "gender 'other' implies differentiation of the gender indication 'other' (for use in a profile)"
 * severity = #error
-* expression = "gender.exists() and gender = 'other' implies gender.extension('https://dhp.uz/fhir/core/StructureDefinition/gender-other').exists()"
+* expression = "gender.exists() and gender = 'other' implies gender.extension('https://dhp.uz/fhir/integrations/StructureDefinition/gender-other').exists()"
 
 Extension: ManagingOrganizationAttachment
 Id: managing-organization-attachment
@@ -57,5 +57,3 @@ Context: Patient
 * ^experimental = true
 * value[x] 1..
 * value[x] only date
-
-

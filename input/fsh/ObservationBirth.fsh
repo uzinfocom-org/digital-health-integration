@@ -32,23 +32,31 @@ Description: "Assessment of the newborn's condition"
 * performer ^short = "The doctor or specialist who measured the result"
 * performer only Reference(UZCorePractitioner)
 
-* component.code MS
-* component.code ^short = "Type of measurement (code/type)"
-* component.code from https://www.hl7.org/fhir/valueset-observation-codes (required)
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
 
-* component.value[x] MS
-* component.value[x] ^short = "The actual result"
+* component contains birthMeasure 0..* MS
 
-* component.valueQuantity MS
-* component.valueQuantity ^short = "Height and weight of the child at birth"
+* component[birthMeasure].code 1..1 MS
+* component[birthMeasure].code from http://hl7.org/fhir/ValueSet/observation-codes (required)
+* component[birthMeasure].code ^short = "Type of component"
 
-* component.valueQuantity.value and component.valueQuantity.unit and component.valueQuantity.system and component.valueQuantity.code MS
+* component[birthMeasure].valueQuantity 0..1 MS
+* component[birthMeasure].valueQuantity ^short = "Рост, вес ребенка при рождении"
 
-* component.valueQuantity.value ^short = "Numeric value (with implicit precision)"
-* component.valueQuantity.unit ^short = "Unit Representation"
-* component.valueQuantity.system ^short = "A system that defines the shape of a coded unit"
-* component.valueQuantity.code from ObservationUCUMVS (required)
+* component[birthMeasure].valueQuantity.value 0..1 MS
+* component[birthMeasure].valueQuantity.value ^short = "Числовое значение (с неявной точностью)"
 
-* component.code MS
-* component.code ^short = "Breathing CodesystemObservation -lifecrit"
-* component.code from LifeCritVS (required)
+* component[birthMeasure].valueQuantity.unit 0..1 MS
+* component[birthMeasure].valueQuantity.system 0..1 MS
+* component[birthMeasure].valueQuantity.code 0..1 MS
+* component[birthMeasure].valueQuantity.code from LOINC_CodesVS (required)
+
+* component contains lifeCrit 0..1 MS
+
+* component[lifeCrit].code 1..1 MS
+* component[lifeCrit].code from LifeCritVS (required)
+
+* component[lifeCrit].valueBoolean 0..1 MS
+* component[lifeCrit].valueBoolean ^short = "Тип жизненные критерии"

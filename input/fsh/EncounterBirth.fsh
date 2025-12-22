@@ -19,15 +19,18 @@ Description: "Uzbekistan Birth Encounter profile, used to represent patients adm
 * serviceProvider MS
 * serviceProvider ^short = "The organization (institution) responsible for this Encounter"
 
-* participant MS
-* participant ^short = "The doctor (paramedic or obstetrician) who issued the medical birth certificate"
-* participant.actor MS
-* participant.actor ^short = "The person participating in the meeting"
-* participant.period MS
-* participant.period ^short = "The time period during the meeting in which the participant participated"
-* participant
-  * type MS
-  * ^short = "The role of the meeting participant"
+// * participant 0..* 
+//   * type MS
+//     * coding.system = "http://loinc.org"
+//     * coding.code = "87286-1" "Birth attendant"
+//   * actor 1..1 Reference(UZCorePractitioner)
+  
+// * participant 0..* 
+//   * type MS
+//     * coding.system = "http://loinc.org"
+//     * coding.code = "87287-9" "Birth certifier"
+//   * period.start 0..1 dateTime
+//   * actor 1..1 Reference(UZCorePractitioner)
 
 * actualPeriod MS
 * actualPeriod ^short = "The actual start and end time of the meeting"
