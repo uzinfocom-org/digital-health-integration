@@ -20,9 +20,11 @@ Description: "Uzbekistan Birth Patient profile, used to represent patients admin
 * managingOrganization ^short = "Places of birth"
 * managingOrganization only Reference(UZCoreOrganization)
 
-* multipleBirth[x] MS
-* multipleBirth[x] ^short = "Indicates whether the patient was part of a multiple birth"
-* multipleBirth[x] only boolean or integer
+* extension contains MultipleBirthFlag named multipleBirth 0..1
+* extension contains NewbornBirthTime named newbornBirthTime 0..*
+
+* extension[multipleBirth] MS
+* extension[newbornBirthTime] MS
 
 * contact MS
 * contact ^short = "The patient's contact party (e.g., guardian, partner, friend)"
