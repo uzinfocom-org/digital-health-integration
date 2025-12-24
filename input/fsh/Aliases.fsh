@@ -73,6 +73,7 @@ Alias: $provenance-entity-role = http://hl7.org/fhir/provenance-entity-role
 Alias: $provenance-participant-type = http://terminology.hl7.org/CodeSystem/provenance-participant-type
 Alias: $qualification-codes = http://terminology.hl7.org/CodeSystem/v2-0360
 Alias: $reference-meaning = http://terminology.hl7.org/CodeSystem/referencerange-meaning
+Alias: $request-status = http://hl7.org/fhir/request-status
 Alias: $sample-security-structural-codes = http://hl7.org/fhir/sample-security-structural-roles
 Alias: $sct = http://snomed.info/sct
 Alias: $sct-vs = http://snomed.info/sct?fhir_vs
