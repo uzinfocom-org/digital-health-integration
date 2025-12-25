@@ -92,7 +92,7 @@ Id: care-for-relatedperson-gender
 Title: "Related Person Gender"
 
 * valueCode
-* valueCode from https://terminology.medcore.uz/ValueSet/gender (required)
+* valueCode from http://hl7.org/fhir/ValueSet/administrative-gender (required)
 
 Extension: RelatedPersonBirthDateExtension
 Id: care-for-relatedperson-birthdate
