@@ -57,3 +57,45 @@ Context: Patient
 * ^experimental = true
 * value[x] 1..
 * value[x] only date
+
+Extension: CarePlanStatusHistory
+Id: careplan-status-history
+Title: "CarePlan Status History"
+
+* extension contains
+    status 1..1 and
+    period 1..1
+
+* extension[status].valueCode
+* extension[status].valueCode from CarePlanStatusVS (required)
+
+* extension[period].valuePeriod
+
+Extension: CarePlanCustodian
+Id: careplan-custodian
+Title: "CarePlan Custodian (FHIR R5 replacement)"
+
+* valueReference
+* valueReference only Reference(
+    Practitioner or PractitionerRole or Organization or CareTeam
+)
+
+Extension: DiagnosisUseExtension
+Id: care-for-diagnosis-use
+Title: "Diagnosis Use Type"
+
+* valueCode
+* valueCode from https://terminology.dhp.uz/fhir/core/ValueSet/diagnosis-type-vs (required)
+
+Extension: RelatedPersonGenderExtension
+Id: care-for-relatedperson-gender
+Title: "Related Person Gender"
+
+* valueCode
+* valueCode from https://terminology.medcore.uz/ValueSet/gender (required)
+
+Extension: RelatedPersonBirthDateExtension
+Id: care-for-relatedperson-birthdate
+Title: "Related Person Birth Date"
+
+* valueDate
