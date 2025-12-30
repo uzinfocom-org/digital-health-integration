@@ -19,19 +19,6 @@ Description: "Uzbekistan Birth Encounter profile, used to represent patients adm
 * serviceProvider MS
 * serviceProvider ^short = "The organization (institution) responsible for this Encounter"
 
-// * participant 0..* 
-//   * type MS
-//     * coding.system = "http://loinc.org"
-//     * coding.code = "87286-1" "Birth attendant"
-//   * actor 1..1 Reference(UZCorePractitioner)
-  
-// * participant 0..* 
-//   * type MS
-//     * coding.system = "http://loinc.org"
-//     * coding.code = "87287-9" "Birth certifier"
-//   * period.start 0..1 dateTime
-//   * actor 1..1 Reference(UZCorePractitioner)
-
 * actualPeriod MS
 * actualPeriod ^short = "The actual start and end time of the meeting"
 

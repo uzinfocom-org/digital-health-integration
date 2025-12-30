@@ -1,50 +1,71 @@
-Profile: CarePlanSickLeave
+Profile: SickLeaveCarePlan
 Parent: CarePlan
-Id: careplan-sickleave
-Title: "CarePlan – Sick Leave (FHIR R5)"
-Description: "Electronic Sick Leave master resource"
+Id: sick-leave-careplan
+Title: "Sick Leave CarePlan"
+Description: "CarePlan profile for managing sick leave (bolnichny list) lifecycle"
+* ^experimental = true
 
-* identifier 1..*
-* identifier ^slicing.discriminator.type = #pattern
-* identifier ^slicing.discriminator.path = "system"
-* identifier ^slicing.rules = #open
-* identifier contains series 1..1
+* category 1..1 MS
+* category ^short = "The Careplan category"
 
-* identifier[series].system = "http://dhp.uz/NamingSystem/sickleave"
-* identifier[series].value 1..1
-
-* category 1..1
-* category from SickLeaveCategoryVS (required)
-
-* subject 1..1
+* subject 1..1 MS
 * subject only Reference(Patient or Group)
+* subject ^short = "For whom the sick leave is open"
 
-* status 1..1
-* status from CarePlanStatusVS (required)
+* created 1..1 MS
+* created ^short = "Date when the sick leave was created"
 
-* extension contains CarePlanStatusHistory named statusHistory 0..*
-* extension contains CarePlanCustodian named custodian 0..1
+* period 1..1 MS
+* period ^short = "The period of validity of the sick leave"
 
-* addresses 1..*
+* status 1..1 MS
+* status ^short = "Sick leave status"
+* status from CarePlanStatusVS
+
+* extension contains SickLeaveStatusHistory named statusHistory 0..1 MS
+
+* addresses 1..1 MS
 * addresses ^slicing.discriminator.type = #pattern
 * addresses ^slicing.discriminator.path = "concept"
 * addresses ^slicing.rules = #open
 
+* addresses contains
+    reason 0..1 MS and
+    diagnosis 0..1 MS
 
-* addresses contains reason 1..1
-* addresses contains diagnosis 1..*
-
-* addresses[reason] only CodeableReference
+* addresses[reason] MS
 * addresses[reason] from CarePlanReasonVS (required)
+* addresses[reason] ^short = "Причина открытия больничного листа"
 
-* addresses[diagnosis] only CodeableReference
+* addresses[diagnosis] 1..1 MS
+* addresses[diagnosis] ^short = "Diagnosis according to ICD-10"
 * addresses[diagnosis] from ICD10VS (required)
 
-* addresses[diagnosis].extension contains
-    DiagnosisUseExtension named diagnosisUse 0..1
+* addresses[diagnosis].extension contains DiagnosisUse named diagnosisUse 0..1 MS
 
-* created 1..1
-* period 0..1
+* identifier 1..1 MS
+* identifier ^short = "Business ID of the sick leave"
 
-* contributor 1..*
-* contributor only Reference(Practitioner or PractitionerRole or Organization or CareTeam)
+* identifier.system = "http://dhp.uz/NamingSystem/sickleave"
+* identifier.value 1..1 MS
+
+* contributor 1..1 MS
+* contributor ^short = "The person who issued the sick leave"
+
+* contributor only Reference(
+    Practitioner or
+    PractitionerRole or
+    Organization or
+    CareTeam
+)
+
+* custodian 1..1 MS
+* custodian ^short = "The designated person in charge of the sick leave"
+
+* custodian only Reference(
+    Practitioner or
+    PractitionerRole or
+    Device or
+    Organization or
+    CareTeam
+)

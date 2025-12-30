@@ -31,7 +31,6 @@ Description: "Extension for more precise differentiation of the administrative g
 Context: Patient.gender, RelatedPerson.gender, Person.gender, Practitioner.gender, Patient.contact.gender
 * ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/gender-other"
 * ^experimental = true
-* ^date = "2025-03-12"
 * value[x] 1..
 * value[x] only Coding
 * value[x] from gender-other-vs (required)
@@ -58,44 +57,57 @@ Context: Patient
 * value[x] 1..
 * value[x] only date
 
-Extension: CarePlanStatusHistory
-Id: careplan-status-history
-Title: "CarePlan Status History"
+Extension: SickLeaveStatusHistory
+Id: sickleave-status-history
+Title: "Sick Leave Status History"
+Description: "Список кодов прошлых статусов больничного листа"
+* ^experimental = true
+* ^context.type = #element
+* ^context.expression = "CarePlan"
 
 * extension contains
-    status 1..1 and
-    period 1..1
+    status 1..1 MS and
+    period 1..1 MS
 
-* extension[status].valueCode
+* extension[status].value[x] only code
 * extension[status].valueCode from CarePlanStatusVS (required)
 
-* extension[period].valuePeriod
+* extension[period].value[x] only Period
 
-Extension: CarePlanCustodian
-Id: careplan-custodian
-Title: "CarePlan Custodian (FHIR R5 replacement)"
+Extension: DiagnosisUse
+Id: diagnosis-use
+Title: "Diagnosis Use"
+Description: "Тип использования диагноза"
+* ^experimental = true
+* ^context.type = #element
+* ^context.expression = "CarePlan.addresses"
 
-* valueReference
-* valueReference only Reference(
-    Practitioner or PractitionerRole or Organization or CareTeam
-)
+* value[x] only CodeableConcept
+* valueCodeableConcept from https://terminology.dhp.uz/fhir/core/ValueSet/diagnosis-type-vs (required)
 
-Extension: DiagnosisUseExtension
-Id: care-for-diagnosis-use
-Title: "Diagnosis Use Type"
+Extension: RelatedPersonGender
+Id: relatedperson-gender
+Title: "Gender of Related Person"
+Description: "Administrative gender of the related person"
+* ^experimental = true
 
-* valueCode
-* valueCode from https://terminology.dhp.uz/fhir/core/ValueSet/diagnosis-type-vs (required)
+* value[x] only CodeableConcept
+* valueCodeableConcept from https://terminology.medcore.uz/ValueSet/gender (required)
 
-Extension: RelatedPersonGenderExtension
-Id: care-for-relatedperson-gender
-Title: "Related Person Gender"
+Extension: RelatedPersonGenderOther
+Id: relatedperson-gender-other
+Title: "Other Gender of Related Person"
+Description: "Differentiation of administrative gender if changed"
+* ^experimental = true
 
-* valueCode
-* valueCode from http://hl7.org/fhir/ValueSet/administrative-gender (required)
+* value[x] only Coding
+* valueCoding from https://terminology.medcore.uz/ValueSet/gender-other-vs (required)
 
-Extension: RelatedPersonBirthDateExtension
-Id: care-for-relatedperson-birthdate
-Title: "Related Person Birth Date"
+Extension: RelatedPersonBirthdate
+Id: relatedperson-birthdate
+Title: "Birthdate of Related Person"
+Description: "Date of birth of the related person"
+* ^experimental = true
 
-* valueDate
+* value[x] 1..1 MS
+* value[x] only date

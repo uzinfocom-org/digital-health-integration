@@ -1,11 +1,12 @@
 Profile: DHPSickLeaveObservation
 Parent: Observation
 Id: dhp-sick-leave-observation
-Title: "Sick Leave Observation Profile"
+Title: "Sick Leave Observation"
 Description: "Profile for sick leave observations with structured components"
+* ^experimental = true
 
 * basedOn 1..* MS
-* basedOn only Reference(CarePlanSickLeave)
+* basedOn only Reference(SickLeaveCarePlan)
 * basedOn ^short = "Reference to the associated CarePlan"
 
 * status MS
@@ -22,18 +23,6 @@ Description: "Profile for sick leave observations with structured components"
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slicing for different sick leave components"
-
-// * component contains
-//     cityAffiliation 0..1 MS and
-//     placeOfIncident 0..1 MS and
-//     issuanceOtherCity 0..1 MS and
-//     infectiousContact 0..1 MS and
-//     kinshipDegree 0..1 MS and
-//     regime 0..1 MS and
-//     regimeViolation 0..1 MS and
-//     jobTransfer 0..1 MS and
-//     conclusions 0..1 MS and
-//     verificationDate 0..1 MS
 
 * component contains cityAffiliation 0..1 MS
 * component contains placeOfIncident 0..1 MS
