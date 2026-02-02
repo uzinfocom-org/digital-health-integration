@@ -111,3 +111,28 @@ Description: "Date of birth of the related person"
 
 * value[x] 1..1 MS
 * value[x] only date
+
+Extension: MultipleBirthFlag
+Id: multiple-birth-flag
+Title: "Multiple Birth Flag"
+Description: "Indicates whether more than one newborn was delivered."
+
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/multiple-birth-flag"
+* ^experimental = true
+
+* value[x] 1..1 MS
+* value[x] only boolean
+* valueBoolean ^short = "True if multiple babies were born"
+
+
+Extension: NewbornBirthTime
+Id: newborn-birth-time
+Title: "Newborn Birth Time"
+Description: "Birth time of each newborn in a multiple birth."
+
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/newborn-birth-time"
+* ^experimental = true
+
+* value[x] 1..1 MS
+* value[x] only dateTime
+* valueDateTime ^short = "Exact birth time of the newborn"
