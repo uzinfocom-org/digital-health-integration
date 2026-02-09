@@ -1,5 +1,6 @@
-Profile: DHPSickLeaveObservation
+Profile: SickLeaveObservation
 Parent: Observation
+<<<<<<< HEAD
 Id: dhp-sick-leave-observation
 Title: "Sick Leave Observation"
 Description: "Profile for sick leave observations with structured components"
@@ -12,10 +13,22 @@ Description: "Profile for sick leave observations with structured components"
 * status MS
 * status = #unknown
 * status ^short = "Sick leave status is tracked in the original CarePlan"
+=======
+Id: sick-leave-observation
+Title: "Sick Leave Observation"
+Description: "Observation containing additional Sick Leave attributes"
+* ^experimental = true
+* ^status = #draft
+* ^publisher = "UZINFOCOM"
+
+* basedOn 1..1 MS
+* basedOn only Reference(SickLeaveCarePlan)
+>>>>>>> 37883d3 (last changes added bu Sickleave)
 
 * code 1..1 MS
-* code = $sct#224459001 "On sick leave from work"
+* code = http://snomed.info/sct#224459001 "On sick leave from work"
 
+<<<<<<< HEAD
 * subject 1..1 MS
 * subject only Reference(Patient or Group)
 
@@ -84,4 +97,10 @@ Description: "Profile for sick leave observations with structured components"
 * component[verificationDate].code = $SickLeaveComponentCS#emdoc-0009-0010
 * component[verificationDate].value[x] only dateTime
 * component[verificationDate].value[x] 1..1
+=======
+* component 0..* MS
+* component.code 1..1 MS
+* component.value[x] 1..1 MS
+>>>>>>> 37883d3 (last changes added bu Sickleave)
 
+* component.code from SickLeaveComponentVS (required)
