@@ -57,14 +57,34 @@ Context: Patient
 * value[x] 1..
 * value[x] only date
 
-<<<<<<< HEAD
 Extension: SickLeaveStatusHistory
 Id: sickleave-status-history
 Title: "Sick Leave Status History"
 Description: "Список кодов прошлых статусов больничного листа"
 * ^experimental = true
 * ^context.type = #element
-=======
+* ^context.expression = "CarePlan"
+
+* extension contains
+    status 1..1 MS and
+    period 1..1 MS
+
+* extension[status].value[x] only code
+* extension[status].valueCode from CarePlanStatusLocalVS (required)
+
+* extension[period].value[x] only Period
+
+Extension: DiagnosisUse
+Id: care-for-diagnosis-use
+Title: "Diagnosis Use Type"
+Description: "Type of diagnosis usage for sick leave"
+* ^context.type = #element
+* ^experimental = true
+* ^context.expression = "CarePlan.addresses"
+
+* value[x] only code
+* valueCode from https://terminology.dhp.uz/fhir/core/ValueSet/diagnosis-type-vs (required)
+
 Extension: RelatedPersonGender
 Id: relatedperson-gender
 Title: "Gender of Related Person"
@@ -96,7 +116,6 @@ Extension: MultipleBirthFlag
 Id: multiple-birth-flag
 Title: "Multiple Birth Flag"
 Description: "Indicates whether more than one newborn was delivered."
-
 * ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/multiple-birth-flag"
 * ^experimental = true
 
@@ -104,12 +123,10 @@ Description: "Indicates whether more than one newborn was delivered."
 * value[x] only boolean
 * valueBoolean ^short = "True if multiple babies were born"
 
-
 Extension: NewbornBirthTime
 Id: newborn-birth-time
 Title: "Newborn Birth Time"
 Description: "Birth time of each newborn in a multiple birth."
-
 * ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/newborn-birth-time"
 * ^experimental = true
 
@@ -134,95 +151,6 @@ Title: "Sick Leave Status History"
 Description: "History of workflow statuses with active period"
 * ^context.type = #element
 * ^experimental = true
->>>>>>> 37883d3 (last changes added bu Sickleave)
-* ^context.expression = "CarePlan"
-
-* extension contains
-    status 1..1 MS and
-    period 1..1 MS
-
-* extension[status].value[x] only code
-<<<<<<< HEAD
-* extension[status].valueCode from CarePlanStatusVS (required)
-=======
-* extension[status].valueCode from CarePlanStatusLocalVS (required)
->>>>>>> 37883d3 (last changes added bu Sickleave)
-
-* extension[period].value[x] only Period
-
-Extension: DiagnosisUse
-<<<<<<< HEAD
-Id: diagnosis-use
-Title: "Diagnosis Use"
-Description: "Тип использования диагноза"
-* ^experimental = true
-* ^context.type = #element
-* ^context.expression = "CarePlan.addresses"
-
-* value[x] only CodeableConcept
-* valueCodeableConcept from https://terminology.dhp.uz/fhir/core/ValueSet/diagnosis-type-vs (required)
-
-Extension: RelatedPersonGender
-Id: relatedperson-gender
-Title: "Gender of Related Person"
-Description: "Administrative gender of the related person"
-* ^experimental = true
-
-* value[x] only CodeableConcept
-* valueCodeableConcept from https://terminology.medcore.uz/ValueSet/gender (required)
-
-Extension: RelatedPersonGenderOther
-Id: relatedperson-gender-other
-Title: "Other Gender of Related Person"
-Description: "Differentiation of administrative gender if changed"
-* ^experimental = true
-
-* value[x] only Coding
-* valueCoding from https://terminology.medcore.uz/ValueSet/gender-other-vs (required)
-
-Extension: RelatedPersonBirthdate
-Id: relatedperson-birthdate
-Title: "Birthdate of Related Person"
-Description: "Date of birth of the related person"
-* ^experimental = true
-
-* value[x] 1..1 MS
-* value[x] only date
-
-Extension: MultipleBirthFlag
-Id: multiple-birth-flag
-Title: "Multiple Birth Flag"
-Description: "Indicates whether more than one newborn was delivered."
-
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/multiple-birth-flag"
-* ^experimental = true
-
-* value[x] 1..1 MS
-* value[x] only boolean
-* valueBoolean ^short = "True if multiple babies were born"
-
-
-Extension: NewbornBirthTime
-Id: newborn-birth-time
-Title: "Newborn Birth Time"
-Description: "Birth time of each newborn in a multiple birth."
-
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/newborn-birth-time"
-* ^experimental = true
-
-* value[x] 1..1 MS
-* value[x] only dateTime
-* valueDateTime ^short = "Exact birth time of the newborn"
-=======
-Id: care-for-diagnosis-use
-Title: "Diagnosis Use Type"
-Description: "Type of diagnosis usage for sick leave"
-* ^context.type = #element
-* ^experimental = true
-* ^context.expression = "CarePlan.addresses"
-
-* value[x] only code
-* valueCode from https://terminology.dhp.uz/fhir/core/ValueSet/diagnosis-type-vs (required)
 
 Extension: RelatedPersonLink
 Id: care-for-related-person
@@ -233,4 +161,3 @@ Description: "Related person when sick leave reason is family care"
 * ^context.expression = "CarePlan"
 
 * value[x] only Reference(RelatedPerson)
->>>>>>> 37883d3 (last changes added bu Sickleave)
