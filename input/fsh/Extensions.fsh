@@ -70,7 +70,7 @@ Description: "Список кодов прошлых статусов больн
     period 1..1 MS
 
 * extension[status].value[x] only code
-* extension[status].valueCode from CarePlanStatusLocalVS (required)
+* extension[status].valueCode from CarePlanStatusVS (required)
 
 * extension[period].value[x] only Period
 
@@ -143,7 +143,7 @@ Description: "Extended lifecycle status of Sick Leave"
 * ^context.expression = "CarePlan"
 
 * value[x] only code
-* valueCode from CarePlanStatusLocalVS (required)
+* valueCode from CarePlanStatusVS (required)
 
 Extension: StatusHistory
 Id: care-for-status-history
@@ -151,6 +151,16 @@ Title: "Sick Leave Status History"
 Description: "History of workflow statuses with active period"
 * ^context.type = #element
 * ^experimental = true
+* ^context.expression = "CarePlan"
+
+* extension contains
+    status 1..1 MS and
+    period 1..1 MS
+
+* extension[status].value[x] only code
+* extension[status].valueCode from CarePlanStatusVS (required)
+
+* extension[period].value[x] only Period
 
 Extension: RelatedPersonLink
 Id: care-for-related-person
