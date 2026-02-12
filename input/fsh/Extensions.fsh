@@ -82,3 +82,44 @@ Description: "Birth time of each newborn in a multiple birth."
 * value[x] 1..1 MS
 * value[x] only dateTime
 * valueDateTime ^short = "Exact birth time of the newborn"
+
+// Cancer Extensions:
+
+Extension: RadiotherapyZone
+Id: radiotherapy-zone
+Title: "Radiotherapy Impact Zone"
+Description: "Defines the code of the radiation impact zone."
+* value[x] only CodeableConcept
+* valueCodeableConcept from https://terminology.medcore.uz/ValueSet/ImpactZone (required)
+
+Extension: RadiotherapyModifiers
+Id: radiotherapy-modifiers
+Title: "Radiotherapy Modifiers"
+Description: "Defines the radiation therapy modifier code."
+* value[x] only CodeableConcept
+* valueCodeableConcept from https://terminology.medcore.uz/ValueSet/Modifiers (required)
+
+Extension: RadiotherapyRadiopharmDrug
+Id: radiotherapy-radiopharmdrug
+Title: "Radiopharmaceutical Drug"
+Description: "Defines the radiopharmaceutical drug code."
+* value[x] only CodeableConcept
+* valueCodeableConcept from https://terminology.medcore.uz/ValueSet/RadiopharmDrug (required)
+
+Extension: RadiotherapySingleDose
+Id: radiotherapy-singleDose
+Title: "Radiotherapy Single Dose"
+Description: "Numeric value of a single radiation dose."
+* value[x] only Quantity
+
+Extension: RadiotherapyTotalDose
+Id: radiotherapy-totalDose
+Title: "Radiotherapy Total Dose"
+Description: "Numeric value of the total radiation dose."
+* value[x] only Quantity
+
+Extension: RadiotherapyEquivalentDose
+Id: radiotherapy-equivalentDose
+Title: "Radiotherapy Equivalent Dose"
+Description: "Numeric value of the equivalent radiation dose."
+* value[x] only Quantity
