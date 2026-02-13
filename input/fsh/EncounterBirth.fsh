@@ -19,25 +19,6 @@ Description: "Uzbekistan Birth Encounter profile, used to represent patients adm
 * serviceProvider MS
 * serviceProvider ^short = "The organization (institution) responsible for this Encounter"
 
-* participant ^slicing.discriminator.type = #pattern
-* participant ^slicing.discriminator.path = "type"
-* participant ^slicing.rules = #open
-
-* participant contains participantAttendant 0..*
-* participant[participantAttendant].type 1..1 MS
-* participant[participantAttendant].type.coding 1..*
-* participant[participantAttendant].type.coding.system = "http://loinc.org"
-* participant[participantAttendant].type.coding.code = #87286-1
-* participant[participantAttendant].actor 1..1 MS
-
-* participant contains participantCertifier 0..*
-* participant[participantCertifier].type 1..1 MS
-* participant[participantCertifier].type.coding 1..*
-* participant[participantCertifier].type.coding.system = "http://loinc.org"
-* participant[participantCertifier].type.coding.code = #87287-9
-* participant[participantCertifier].actor 1..1 MS
-* participant[participantCertifier].period.start 0..1
-
 * actualPeriod MS
 * actualPeriod ^short = "The actual start and end time of the meeting"
 

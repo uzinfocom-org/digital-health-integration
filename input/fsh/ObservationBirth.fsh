@@ -5,6 +5,7 @@ Title: "Observation of Birth"
 Description: "Assessment of the newborn's condition"
 * ^status = #draft
 * ^experimental = true
+* ^publisher = "UZINFOCOM"
 
 * identifier MS
 * identifier ^short = "ID to monitor"
@@ -32,7 +33,7 @@ Description: "Assessment of the newborn's condition"
 * performer ^short = "The doctor or specialist who measured the result"
 * performer only Reference(UZCorePractitioner)
 
-* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.type = #type
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 
