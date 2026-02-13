@@ -3,8 +3,9 @@ Parent: Observation
 Id: observation-mgr
 Title: "Observation MGR"
 Description: "Molecular genetic testing to identify variants of genetic disorders"
+* ^status = #draft
 * ^experimental = true
-* ^status = #draf
+* ^publisher = "UZINFOCOM"
 
 * identifier MS
 * identifier ^short = "Business identifier (MGR)"

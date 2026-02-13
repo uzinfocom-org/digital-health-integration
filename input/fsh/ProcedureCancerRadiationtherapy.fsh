@@ -3,11 +3,12 @@ Parent: Procedure
 Id: procedure-cancer-radiationtherapy
 Title: "Procedure – Cancer Radiation Therapy"
 Description: "FHIR Procedure profile describing radiation therapy performed for cancer treatment."
+* ^status = #draft
 * ^experimental = true
-* ^status = #draf
+* ^publisher = "UZINFOCOM"
 
 * identifier MS
-* identifier ^short = "Business identifier"
+* identifier ^short = "Business identifier (ProcedureCancerRadiationtherapy)"
 
 * category MS
 * category from https://terminology.medcore.uz/ValueSet/CharacterRadiationtherapy (required)

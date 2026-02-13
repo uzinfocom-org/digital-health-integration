@@ -3,8 +3,9 @@ Parent: Observation
 Id: observation-ihc-nonspecific
 Title: "Observation IHC nonspecific"
 Description: "A non-specific immunohistochemistry (IHC) study of antibodies to detect the presence/absence of a tumor process"
+* ^status = #draft
 * ^experimental = true
-* ^status = #draf
+* ^publisher = "UZINFOCOM"
 
 * identifier MS
 * identifier ^short = "Business identufier (IHCnonspecific)"

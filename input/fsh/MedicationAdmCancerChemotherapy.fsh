@@ -3,8 +3,9 @@ Parent: MedicationAdministration
 Id: medication-adm-cancer-chemotherapy
 Title: "Medication Administration – Cancer Chemotherapy"
 Description: "Chemotherapy medication administration for cancer treatment."
-* ^experimental = true
 * ^status = #draft
+* ^experimental = true
+* ^publisher = "UZINFOCOM"
 
 * identifier MS
 * identifier ^short = "Business identifier"
@@ -17,11 +18,10 @@ Description: "Chemotherapy medication administration for cancer treatment."
 * medication from https://terminology.medcore.uz/ValueSet/NameDrug (required)
 * medication ^short = "Determines the code of the injected drug"
 
-// * occurrence[x] 1..1 MS
-// * occurrence[x] only dateTime
+* occurence[x] 1..1 MS
 
-// * occurrenceDateTime MS
-// * occurrenceDateTime ^short = "Date of drug administration"
+* occurenceDateTime 1..1 MS
+* occurenceDateTime ^short = "Date of drug administration"
 
 * dosage MS
 * dosage ^short = "Dosage information"

@@ -3,8 +3,9 @@ Parent: Observation
 Id: observation-ihc-specific
 Title: "Observation IHC specific"
 Description: "A specific study of hormones by immunohistochemistry (IHC) to detect the presence/absence of a tumor process"
+* ^status = #draft
 * ^experimental = true
-* ^status = #draf
+* ^publisher = "UZINFOCOM"
 
 * identifier MS
 * identifier ^short = "Business identufier (IHC specific)"

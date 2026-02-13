@@ -3,8 +3,9 @@ Parent: Observation
 Id: observation-tnm
 Title: "Observation TNM"
 Description: "An examination to determine the classification of the patient's tumor and the extent of the lesion"
+* ^status = #draft
 * ^experimental = true
-* ^status = #draf
+* ^publisher = "UZINFOCOM"
 
 * identifier MS
 * identifier ^short = "Business identufier (TNMclassification)"

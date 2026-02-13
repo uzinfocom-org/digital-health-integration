@@ -3,8 +3,9 @@ Parent: DiagnosticReport
 Id: diagnostic-report-operation-cancer
 Title: "Diagnostic Report – Cancer Operation"
 Description: "FHIR DiagnosticReport profile describing the course of a cancer-related surgical operation."
+* ^status = #draft
 * ^experimental = true
-* ^status = #draf
+* ^publisher = "UZINFOCOM"
 
 * identifier MS
 * identifier ^short = "Business identifier (DiagnosticReportOperationCancer)"
@@ -20,9 +21,8 @@ Description: "FHIR DiagnosticReport profile describing the course of a cancer-re
 * performer only Reference(Organization)
 * performer ^short = "Defines the organization where the operation was performed"
 
-// * report MS
-// * report only Reference(DiagnosticReport)
-// * report ^short = "Operation report"
+* note MS
+* note ^short = "Description of the operation"
 
 * supportingInfo MS
 * supportingInfo ^short = "Supporting information"
