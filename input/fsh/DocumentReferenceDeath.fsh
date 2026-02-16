@@ -48,10 +48,6 @@ Description: "Document reference for Death profile"
 * description ^short = "Short description, e.g.Medical Death Certificate"
 
 * context MS
-// * context.period MS
-// * context.period ^short = "Time period the document covers (e.g., date of death)"
-// * context.encouner MS
-// * context.encouner ^short = "Related clinical encounter (if any)"
 
 * description MS
 * description = "Short description, e.g. 'Medical Death Certificate'"
