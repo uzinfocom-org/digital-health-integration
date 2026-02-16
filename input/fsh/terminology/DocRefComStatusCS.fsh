@@ -8,7 +8,7 @@ Description: "This field is a mandatory attribute of the FHIR DocumentReference 
   * ^designation[+].language = #ru
   * ^designation[=].value = "Зарегистрировано"
   * ^designation[0].language = #uz
-  * ^designation[=].value = "Roʻyxatdan oʻtgan"
+  * ^designation[=].value = "Ro'yxatdan o'tgan"
 
 * #partial
   * ^designation[+].language = #ru
@@ -32,13 +32,13 @@ Description: "This field is a mandatory attribute of the FHIR DocumentReference 
   * ^designation[+].language = #ru
   * ^designation[=].value = "Изменено"
   * ^designation[0].language = #uz
-  * ^designation[=].value = "Oʻzgartirilgan"
+  * ^designation[=].value = "O'zgartirilgan"
 
 * #corrected
   * ^designation[+].language = #ru
   * ^designation[=].value = "Изменено"
   * ^designation[0].language = #uz
-  * ^designation[=].value = "Oʻzgartirilgan"
+  * ^designation[=].value = "O'zgartirilgan"
 
 * #appended
   * ^designation[+].language = #ru

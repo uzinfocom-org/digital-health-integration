@@ -16,7 +16,7 @@ Description: "Collection of information on the place of incident for healthcare 
   * ^designation[+].language = #en
   * ^designation[=].value = "in everyday life"
 
-* #emdoc-0004-0003 "ishga borayotgan yo‘lda"
+* #emdoc-0004-0003 "ishga borayotgan yo'lda"
   * ^designation[0].language = #ru
   * ^designation[=].value = "по дороге на работу"
   * ^designation[+].language = #en

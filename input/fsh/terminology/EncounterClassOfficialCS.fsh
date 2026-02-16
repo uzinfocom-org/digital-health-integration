@@ -8,10 +8,10 @@ Description: "CodeSystem for official encounter classes in Uzbekistan healthcare
   * ^designation[0].language = #ru
   * ^designation[=].value = "амбулаторный"
   * ^designation[+].language = #uz
-  * ^designation[=].value = "ambulatory"
+  * ^designation[=].value = "Ambulatory"
 
 * #IMP "statsionar"
   * ^designation[0].language = #ru
   * ^designation[=].value = "стационарный"
   * ^designation[+].language = #uz
-  * ^designation[=].value = "inpatient"
+  * ^designation[=].value = "Inpatient"

@@ -16,7 +16,7 @@ Description: "CodeSystem for local care plan statuses in Uzbekistan healthcare s
   * ^designation[+].language = #en
   * ^designation[=].value = "Sent to MSEC"
 
-* #emdoc-0002-0003 "TMEK ma’lumotlari bilan to‘ldirilgan"
+* #emdoc-0002-0003 "TMEK ma'lumotlari bilan to'ldirilgan"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Дополнен данными ВТЭК"
   * ^designation[+].language = #en

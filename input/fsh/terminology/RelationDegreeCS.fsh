@@ -4,37 +4,37 @@ Title: "Relation Degree CodeSystem"
 Description: "Code system for relation degrees in Uzbekistan healthcare system"
 * insert OriginalCodeSystemDraft(relation-degree-cs)
 
-* #emdoc-0005-0001 "ona"
+* #emdoc-0005-0001 "Ona"
   * ^designation[0].language = #ru
   * ^designation[=].value = "мать"
   * ^designation[+].language = #en
   * ^designation[=].value = "mother"
 
-* #emdoc-0005-0002 "ota"
+* #emdoc-0005-0002 "Ota"
   * ^designation[0].language = #ru
   * ^designation[=].value = "отец"
   * ^designation[+].language = #en
   * ^designation[=].value = "father"
 
-* #emdoc-0005-0003 "vasiy"
+* #emdoc-0005-0003 "Vasiy"
   * ^designation[0].language = #ru
   * ^designation[=].value = "опекун"
   * ^designation[+].language = #en
   * ^designation[=].value = "guardian"
 
-* #emdoc-0005-0004 "aka/uka"
+* #emdoc-0005-0004 "Aka/uka"
   * ^designation[0].language = #ru
   * ^designation[=].value = "брат"
   * ^designation[+].language = #en
   * ^designation[=].value = "brother"
 
-* #emdoc-0005-0005 "opa/singil"
+* #emdoc-0005-0005 "Opa/singil"
   * ^designation[0].language = #ru
   * ^designation[=].value = "сестра"
   * ^designation[+].language = #en
   * ^designation[=].value = "sister"
 
-* #emdoc-0005-0006 "boshqa qarindosh"
+* #emdoc-0005-0006 "Boshqa qarindosh"
   * ^designation[0].language = #ru
   * ^designation[=].value = "другой родственник"
   * ^designation[+].language = #en

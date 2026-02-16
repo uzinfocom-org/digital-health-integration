@@ -4,13 +4,13 @@ Title: "Encounter Class Local CodeSystem"
 Description: "CodeSystem for local encounter classes in Uzbekistan healthcare system"
 * insert OriginalCodeSystemDraft(encounter-class-local-cs)
 
-* #emdoc-0006-0001 "sanatoriy"
+* #emdoc-0006-0001 "Sanatoriy"
   * ^designation[0].language = #ru
   * ^designation[=].value = "санаторный"
   * ^designation[+].language = #en
   * ^designation[=].value = "sanatorium"
 
-* #emdoc-0006-0002 "boshqa"
+* #emdoc-0006-0002 "Boshqa"
   * ^designation[0].language = #ru
   * ^designation[=].value = "другой"
   * ^designation[+].language = #en
