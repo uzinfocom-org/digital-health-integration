@@ -85,15 +85,6 @@ Description: "Type of diagnosis usage for sick leave"
 * value[x] only code
 * valueCode from https://terminology.dhp.uz/fhir/core/ValueSet/diagnosis-type-vs (required)
 
-Extension: RelatedPersonGender
-Id: relatedperson-gender
-Title: "Gender of Related Person"
-Description: "Administrative gender of the related person"
-* ^experimental = true
-
-* value[x] only CodeableConcept
-* valueCodeableConcept from https://terminology.medcore.uz/ValueSet/gender (required)
-
 Extension: RelatedPersonGenderOther
 Id: relatedperson-gender-other
 Title: "Other Gender of Related Person"
@@ -101,7 +92,7 @@ Description: "Differentiation of administrative gender if changed"
 * ^experimental = true
 
 * value[x] only Coding
-* valueCoding from https://terminology.medcore.uz/ValueSet/gender-other-vs (required)
+* valueCoding from https://terminology.dhp.uz/fhir/core/ValueSet/gender-other-vs (required)
 
 Extension: RelatedPersonBirthdate
 Id: relatedperson-birthdate
