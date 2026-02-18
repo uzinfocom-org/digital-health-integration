@@ -27,22 +27,19 @@ Description: "FHIR R5 CarePlan profile representing a Sick Leave case (LN lifecy
 * custodian 0..1 MS
 * custodian only Reference(Practitioner or PractitionerRole or Organization or CareTeam)
 
-* addresses 1..* MS
-* addresses ^slicing.discriminator.type = #type
+* addresses ^slicing.discriminator.type = #value
 * addresses ^slicing.discriminator.path = "concept"
 * addresses ^slicing.rules = #open
 
 * addresses contains
     reason 0..1 MS and
-    diagnosis 0..1 MS
+    diagnosis 1..1 MS
 
-* addresses[reason] MS
-* addresses[reason] from CarePlanReasonVS (required)
-* addresses[reason] ^short = "Причина открытия больничного листа"
+* addresses[reason].concept 1..1 MS
+* addresses[reason].concept ^patternCodeableConcept = CarePlanReasonCS#emdoc-0001-0001
 
-* addresses[diagnosis] 1..1 MS
-* addresses[diagnosis] ^short = "Diagnosis according to ICD-10"
-* addresses[diagnosis] from ICD10VS (required)
+* addresses[diagnosis].concept 1..1 MS
+* addresses[diagnosis].concept ^patternCodeableConcept = http://hl7.org/fhir/sid/icd-10#J11.0
 
 * extension contains
     WorkflowStatus named workflowStatus 1..1 MS and
