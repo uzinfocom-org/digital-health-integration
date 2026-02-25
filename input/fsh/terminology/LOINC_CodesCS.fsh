@@ -1,47 +1,68 @@
-CodeSystem: LOINC_CodesCS
-Id: loinc-codes-cs
-Title: "Birth Loinc CodeSystem"
-Description: "Subset of LOINC codes"
-* insert SupplementCodeSystemDraft(loinc-codes-cs, $loinc_code, 5.0.0)
+CodeSystem: LOINC_Birth_Supplement
+Id: loinc-birth-supplement
+Title: "LOINC Birth Supplement (UZ/RU)"
+Description: "Uzbek and Russian designations for selected LOINC birth-related codes"
+* ^status = #draft
+* ^experimental = true
+* ^content = #supplement
+* ^supplements = "http://loinc.org"
 
-* #9272-6 "Apgar score at 1 minute"
-  * ^designation[+].language = #ru
+* #9272-6
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Оценка по шкале Апгар на 1-й минуте"
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "1-daqiqadagi Apgar shkalasi bahosi"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "1-daqiqadagi Apgar shkalasi bahosi"  
 
-* #9274-2 "Apgar score at 5 minutes"
-  * ^designation[+].language = #ru
+* #9274-2
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Оценка по шкале Апгар на 5-й минуте жизни"
-  * ^designation[0].language = #uz
+  * ^designation[+].language = #uz
   * ^designation[=].value = "5-daqiqadagi Apgar shkalasi bahosi"
 
-* #8339-4 "Birth weight"
-  * ^designation[+].language = #ru
+* #8339-4
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Масса тела при рождении"
-  * ^designation[0].language = #uz
+  * ^designation[+].language = #uz
   * ^designation[=].value = "Tug'ruqdagi tana vazni"
 
-* #8302-2 "Birth length (height)"
-  * ^designation[+].language = #ru
+* #89269-5
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Рост при рождении"
-  * ^designation[0].language = #uz
+  * ^designation[+].language = #uz
   * ^designation[=].value = "Tug'ruqdagi tana uzunligi"
 
-* #76516-4 "Gestational age at birth (weeks)"
-  * ^designation[+].language = #ru
+* #76516-4
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Гестационный возраст при рождении (в неделях)"
-  * ^designation[0].language = #uz
+  * ^designation[+].language = #uz
   * ^designation[=].value = "Tug'ruq vaqtidagi homiladorlik yoshi (haftalarda)"
 
-* #8287-5 "Head circumference at birth"
-  * ^designation[+].language = #ru
+* #8290-9
+  * ^designation[0].language = #ru
   * ^designation[=].value = "Окружность головы при рождении"
-  * ^designation[0].language = #uz
+  * ^designation[+].language = #uz
   * ^designation[=].value = "Tug'ruqdagi bosh aylanasining o'lchami"
-  
-* #80616-6 "Time of birth"
-  * ^designation[+].language = #ru
-  * ^designation[=].value = "Время рождения"
-  * ^designation[0].language = #uz
-  * ^designation[=].value = "Tug'ilgan vaqti"
+
+* #81956-5
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "время перинатальной смерти"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Perenatal o'lim vaqti"
+
+* #11996-6
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Какая беременность по счету"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Bu nechta homiladorlik"
+
+* #11640-0
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Который ребенок у матери по счету"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Onaning qaysi farzandi"
+
+* #49051-6
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Число полных недель беременности"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Homiladorlikning tugallangan haftalari soni"

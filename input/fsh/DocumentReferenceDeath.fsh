@@ -11,13 +11,15 @@ Description: "Document reference for Death profile"
 * identifier MS
 * identifier ^short = "Certificate Registration Number"
 
-* status MS
-* status ^short = "Status of the document (e.g., current, entered-in-error)"
-* status from DocRefStatusVS (required)
+// these 2 sections commented for some reasons. 
 
-* docStatus MS
-* docStatus ^short = "registered | partial | preliminary | final | changed | corrected | added | canceled | entered in error | obsolete | unknown"
-* docStatus from DocRefComStatusVS (required)
+// * status MS
+// * status ^short = "Status of the document (e.g., current, entered-in-error)"
+// * status from DocRefStatusVS (required)
+
+// * docStatus MS
+// * docStatus ^short = "registered | partial | preliminary | final | changed | corrected | added | canceled | entered in error | obsolete | unknown"
+// * docStatus from DocRefComStatusVS (required)
 
 * type MS
 * type ^short = "Kind of document (LOINC if possible)"

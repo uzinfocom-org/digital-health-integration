@@ -30,7 +30,7 @@ Description: "Assessment of the newborn's condition"
 * performer only Reference(UZCorePractitioner)
 
 * component.code MS
-* component.code ^short = "Apgar CodesystemObservation -apgar"
+* component.code ^short = "Apgar Codesystem Observation -apgar"
 
 * component.value[x] MS
 * component.value[x] ^short = "Apgar score: 1-10 result"
@@ -44,4 +44,4 @@ Description: "Assessment of the newborn's condition"
 * component.valueQuantity.unit ^short = "Unit Representation"
 * component.valueQuantity.system ^short = "A system that defines the shape of a coded unit"
 
-* component.valueQuantity.code from ObservationUCUMVS (required)
+* component.valueQuantity.code from UnitOfMeasurementVS (required)

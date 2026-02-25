@@ -19,7 +19,7 @@ Description: "Assessment of the newborn's condition"
 
 * code MS
 * code ^short = "Type of surveillance (code/type)"
-* code from https://terminology.dhp.uz/ValueSet/loinc-codes-vs (required)
+* code from https://terminology.dhp.uz/ValueSet/loinc-birth-vs (required)
 
 * subject MS
 * subject ^short = "About the patient (child)"
@@ -32,31 +32,12 @@ Description: "Assessment of the newborn's condition"
 * performer ^short = "The doctor or specialist who measured the result"
 * performer only Reference(UZCorePractitioner)
 
-* component ^slicing.discriminator.type = #pattern
-* component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
-
-* component contains birthMeasure 0..* MS
-
-* component[birthMeasure].code 1..1 MS
-* component[birthMeasure].code from http://hl7.org/fhir/ValueSet/observation-codes (required)
-* component[birthMeasure].code ^short = "Type of component"
-
-* component[birthMeasure].valueQuantity 0..1 MS
-* component[birthMeasure].valueQuantity ^short = "Рост, вес ребенка при рождении"
-
-* component[birthMeasure].valueQuantity.value 0..1 MS
-* component[birthMeasure].valueQuantity.value ^short = "Числовое значение (с неявной точностью)"
-
-* component[birthMeasure].valueQuantity.unit 0..1 MS
-* component[birthMeasure].valueQuantity.system 0..1 MS
-* component[birthMeasure].valueQuantity.code 0..1 MS
-* component[birthMeasure].valueQuantity.code from LOINC_CodesVS (required)
-
-* component contains lifeCrit 0..1 MS
-
-* component[lifeCrit].code 1..1 MS
-* component[lifeCrit].code from LifeCritVS (required)
-
-* component[lifeCrit].valueBoolean 0..1 MS
-* component[lifeCrit].valueBoolean ^short = "Тип жизненные критерии"
+* value[x] 0..1
+* value[x] ^short = "Observed measurement of newborn"
+* value[x] only Quantity
+* valueQuantity.system 1..1
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code 1..1
+* valueQuantity.unit 1..1
+* valueQuantity.unit from UnitOfMeasurementVS (required)
+* valueQuantity.value 1..1

@@ -2,7 +2,7 @@ Profile: RelatedPersonBirth
 Parent: RelatedPerson
 Id: related-person-birth
 Title: "RelatedPerson of Birth"
-Description: "Uzbekistan Birth RelatedPerson profile for new born patient"
+Description: "This refers to the person who is associated with the newborn and is responsible for its care."
 * ^status = #draft
 * ^experimental = true
 
@@ -24,7 +24,7 @@ Description: "Uzbekistan Birth RelatedPerson profile for new born patient"
   * value 1..1 MS
 
 * patient 1..1 MS
-* patient only Reference(UZCorePatient)
+* patient only Reference(PatientBirth)
 * relationship 0..* MS
 * relationship from RelationshipTypeVS (required)
 * telecom 0..* MS
