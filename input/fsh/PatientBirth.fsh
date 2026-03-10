@@ -1,30 +1,26 @@
-Profile: PatientBirth
+Profile: PatientOfBirth
 Parent: UZCorePatient
-Id: patient-birth
+Id: patient-of-birth
 Title: "Patient of Birth"
 Description: "Uzbekistan Birth Patient profile, used to represent patients administrative information"
 * ^status = #draft
 * ^experimental = true
+* ^publisher = "Uzinfocom"
 
 * birthDate MS
 
 * extension contains patient-placeOfBirthType named placeOfBirthType 1..1 MS
 
+* extension[multipleBirth]
+* extension[newbornBirthTime]
+
+* extension contains MultipleBirthFlag named multipleBirth 0..1 MS
+* extension contains NewbornBirthTime named newbornBirthTime 0..* MS
+
 // parts of not in UZCorePatient but needed for birth profile
 
-* generalPractitioner MS
-* generalPractitioner ^short = "The doctor (paramedic or obstetrician) who issued the medical birth certificate"
-* generalPractitioner only Reference(UZCorePractitioner)
-
-* managingOrganization MS
-* managingOrganization ^short = "Places of birth"
-* managingOrganization only Reference(UZCoreOrganization)
-
-* extension contains MultipleBirthFlag named multipleBirth 0..1
-* extension contains NewbornBirthTime named newbornBirthTime 0..*
-
-* extension[multipleBirth] MS
-* extension[newbornBirthTime] MS
+* deceased[x] MS
+* deceased[x] only dateTime
 
 * contact MS
 * contact ^short = "The patient's contact party (e.g., guardian, partner, friend)"
@@ -39,3 +35,15 @@ Description: "Uzbekistan Birth Patient profile, used to represent patients admin
 
 * contact.organization only Reference(UZCoreOrganization)
 * contact.organization ^short = "The organization that the contact person represents"
+
+* generalPractitioner MS
+* generalPractitioner ^short = "The doctor (paramedic or obstetrician) who issued the medical birth certificate"
+* generalPractitioner only Reference(UZCorePractitioner)
+
+* managingOrganization MS
+* managingOrganization ^short = "Places of birth"
+* managingOrganization only Reference(UZCoreOrganization)
+
+* link MS
+* link ^short = "Reference to a Patient or RelatedPerson resource that relates to the same specific person"
+

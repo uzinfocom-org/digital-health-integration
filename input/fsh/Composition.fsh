@@ -1,8 +1,8 @@
-Profile: CompositionBirth
+Profile: CompositionOfBirth
 Parent: Composition
-Id: composition-birth
-Title: "Bith Composition"
-Description: "Composition foor Birth profile"
+Id: composition-of-birth
+Title: "Composition of Birth"
+Description: "Composition for Birth profile"
 * ^experimental = true
 * ^status = #draft
 * ^publisher = "Uzinfocom"
@@ -42,5 +42,5 @@ Description: "Composition foor Birth profile"
 * section.title MS
 * section.title ^short = "Label for the section"
 
-* section.entry
+* section.entry MS
 * section.entry ^short = "Link to the data confirming this section"

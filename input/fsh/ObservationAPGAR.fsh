@@ -1,16 +1,17 @@
-Profile: ObservationAPGAR
+Profile: ObservationOfAPGAR
 Parent: Observation
-Id: observation-apgar
+Id: observation-of-apgar
 Title: "Observation APGAR of Birth"
 Description: "Assessment of the newborn's condition"
 * ^status = #draft
 * ^experimental = true
+* ^publisher = "Uzinfocom"
 
 * identifier MS
-* identifier ^short = "Assessment of the newborn's condition"
+* identifier ^short = "Identifier for observation"
 
 * status MS
-* status ^short = "«final» (because the results on the Apgar scale have already ended)"
+* status ^short = "“final” (because the Apgar score results are already complete)"
 * status from https://terminology.dhp.uz/fhir/core/ValueSet/observation-status-vs (required)
 
 * category MS
@@ -18,30 +19,39 @@ Description: "Assessment of the newborn's condition"
 * category from https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs (required)
 
 * code MS
-* code ^short = "Type of surveillance (code/type)"
-* code from https://terminology.dhp.uz/ValueSet/loinc-codes-vs (required)
+* code ^short = "Observation type (code/type)"
+* code from https://terminology.dhp.uz/ValueSet/loinc-birth-vs (extensible)
 
 * subject MS
-* subject ^short = "about the patient (child)"
-* subject only Reference(PatientBirth)
+* subject ^short = "About the patient (child)"
+* subject only Reference(PatientOfBirth)
 
 * performer MS
-* performer ^short = "The specialist who checked on the Apgar scale"
+* performer ^short = "The specialist who checked the Apgar score"
 * performer only Reference(UZCorePractitioner)
 
-* component.code MS
-* component.code ^short = "Apgar CodesystemObservation -apgar"
+* value[x] MS
+* value[x] only Quantity
+* value[x] ^short = "Apgar score: 1-10 result"
 
-* component.value[x] MS
-* component.value[x] ^short = "Apgar score: 1-10 result"
+* valueQuantity MS
+* valueQuantity ^short = "Numeric value (with implicit precision) and unit of measure (score)"
 
-* component.valueQuantity MS
-* component.valueQuantity ^short = "Height and weight of the child at birth"
+* valueQuantity.value MS
+* valueQuantity.value ^short = "Numeric value (with implicit precision)"
+* valueQuantity.value obeys apgar-range
 
-* component.valueQuantity.value and component.valueQuantity.unit and component.valueQuantity.system and component.valueQuantity.code MS
+* valueQuantity.unit MS
+* valueQuantity.unit ^short = "Representation of units"
 
-* component.valueQuantity.value ^short = "Numeric value (with implicit precision)"
-* component.valueQuantity.unit ^short = "Unit Representation"
-* component.valueQuantity.system ^short = "A system that defines the shape of a coded unit"
+* valueQuantity.system MS
+* valueQuantity.system ^short = "System that determines the form of the coded unit"
+* valueQuantity.system = "http://unitsofmeasure.org"
 
-* component.valueQuantity.code from ObservationUCUMVS (required)
+* valueQuantity.code MS
+* valueQuantity.code = #score
+
+Invariant: apgar-range
+Description: "Apgar score must be between 1 and 10"
+Expression: "value >= 1 and value <= 10"
+Severity: #error
