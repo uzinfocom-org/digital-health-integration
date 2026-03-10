@@ -1,7 +1,8 @@
 CodeSystem: BirthPlaceCS
 Id: birth-place-cs
-Title: "Birth place CodeSystem"
+Title: "Birth Place CodeSystem"
 Description: "Collection of information on the place of birth of citizens born in the territory of the Republic of Uzbekistan"
+
 * insert OriginalCodeSystemDraft(birth-place-cs)
 
 * #birth0004.00001 "Uyda"

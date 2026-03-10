@@ -31,10 +31,10 @@ Description: "Extension for more precise differentiation of the administrative g
 Context: Patient.gender, RelatedPerson.gender, Person.gender, Practitioner.gender, Patient.contact.gender
 * ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/gender-other"
 * ^experimental = true
-* ^date = "2025-03-12"
+* ^date = "2026-02-12"
 * value[x] 1..
 * value[x] only Coding
-* value[x] from gender-other-vs (required)
+* value[x] from https://terminology.dhp.uz/fhir/core/ValueSet/gender-other-vs (required)
   * obeys uzcore-gender-other-1
 
   Invariant: uzcore-gender-other-1

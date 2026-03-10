@@ -1,10 +1,11 @@
-Profile: RelatedPersonBirth
+Profile: RelatedPersonOfBirth
 Parent: RelatedPerson
-Id: related-person-birth
+Id: related-person-of-birth
 Title: "RelatedPerson of Birth"
-Description: "Uzbekistan Birth RelatedPerson profile for new born patient"
+Description: "This refers to the person who is associated with the newborn and is responsible for its care."
 * ^status = #draft
 * ^experimental = true
+* ^publisher = "Uzinfocom"
 
 * identifier 0..1 MS
 * identifier ^slicing.discriminator.type = #value
@@ -24,14 +25,14 @@ Description: "Uzbekistan Birth RelatedPerson profile for new born patient"
   * value 1..1 MS
 
 * patient 1..1 MS
-* patient only Reference(UZCorePatient)
+* patient only Reference(PatientOfBirth)
 * relationship 0..* MS
-* relationship from RelationshipTypeVS (required)
+* relationship from https://terminology.dhp.uz/fhir/core/ValueSet/relationship-type-vs (required)
 * telecom 0..* MS
   * system 0..1 MS 
-  * system from ContactPointSystemVS (required)
-  * use 0..1 MS 
-  * use from TelecomUseVS (required)
+  * system from https://terminology.dhp.uz/fhir/core/ValueSet/contact-point-system-vs (required)
+  * use 0..1 MS
+  * use from https://terminology.dhp.uz/fhir/core/ValueSet/telecom-use-vs (required)
   * value 1..1 MS
   * value ^short = "Contact details of the related person"
   * rank 0..1 MS

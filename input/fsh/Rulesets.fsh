@@ -9,12 +9,12 @@ RuleSet: IntAndUzAddressRules
 * address[uzAddress]
   * ^short = "An Uzbekistan address"
   * type and use and text and line and city and district and state and country and period MS
-  * type from AddressTypeVS (required)
-  * use from AddressUseVS (required)
+  * type from https://terminology.dhp.uz/fhir/core/ValueSet/address-type-vs (required)
+  * use from https://terminology.dhp.uz/fhir/core/ValueSet/address-use-vs (required)
   * use ^short = "Type of address, home | temp"
-  * district from RegionsVS (required)
-  * state from StateVS (required)
-  * city from MahallaVS (required)
+  * district from https://terminology.dhp.uz/fhir/core/ValueSet/regions-vs (required)
+  * state from https://terminology.dhp.uz/fhir/core/ValueSet/state-vs (required)
+  * city from https://terminology.dhp.uz/fhir/core/ValueSet/mahalla-vs (required)
   * text ^short = "Text part of the address provided by DPM. Mahalla name, street, house number, apartment number"
   * line ^short = "Text street name provided by DPM"
   * district ^short = "District or city code"
@@ -28,8 +28,8 @@ RuleSet: IntAndUzAddressRules
 * address[i18nAddress]
   * ^short = "An international, non-Uzbekistan address"
   * type and use and text and line and city and district and state and country and period MS
-  * type from AddressTypeVS (required)
-  * use from AddressUseVS (required)
+  * type from https://terminology.dhp.uz/fhir/core/ValueSet/address-type-vs (required)
+  * use from https://terminology.dhp.uz/fhir/core/ValueSet/address-use-vs (required)
   * use ^short = "Type of address, home | temp"
   * country from https://terminology.dhp.uz/fhir/core/ValueSet/iso-3166-2-vs-sans-uz (required)
   * country 1..
@@ -44,13 +44,13 @@ RuleSet: IntAndUzAddressRules
 RuleSet: UzAddressRules
 * address MS
   * type and use and text and line and city and district and state and country and period MS
-  * type from AddressTypeVS (required)
-  * use from AddressUseVS (required)
+  * type from https://terminology.dhp.uz/fhir/core/ValueSet/address-type-vs (required)
+  * use from https://terminology.dhp.uz/fhir/core/ValueSet/address-use-vs (required)
   * use ^short = "Type of address, home | temp"
-  * country from ISO3166_2 (required)
-  * district from RegionsVS (required)
-  * state from StateVS (required)
-  * city from MahallaVS (required)
+  * country from https://terminology.dhp.uz/fhir/core/ValueSet/iso-3166-2-vs (required)
+  * district from https://terminology.dhp.uz/fhir/core/ValueSet/regions-vs (required)
+  * state from https://terminology.dhp.uz/fhir/core/ValueSet/state-vs (required)
+  * city from https://terminology.dhp.uz/fhir/core/ValueSet/mahalla-vs (required)
 
   * country ^short = "Country code"
   * text ^short = "Text part of the address"
@@ -102,7 +102,7 @@ RuleSet: SupplementCodeSystemDraft(id, supplements, version)
 * ^url = "https://terminology.dhp.uz/CodeSystem/{id}"
 * ^status = #draft
 * ^content = #supplement
-* ^supplements = {supplements}
+* ^supplements = "{supplements}"
 * ^version = "{version}"
 * ^language = #en
 * ^experimental = true
@@ -111,7 +111,7 @@ RuleSet: SupplementCodeSystem(id, supplements, version)
 * ^url = "https://terminology.dhp.uz/CodeSystem/{id}"
 * ^status = #active
 * ^content = #supplement
-* ^supplements = {supplements}
+* ^supplements = "{supplements}"
 * ^version = "{version}"
 * ^language = #en
 * ^experimental = false

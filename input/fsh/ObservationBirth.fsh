@@ -1,62 +1,75 @@
-Profile: ObservationBirth
+Profile: ObservationOfBirth
 Parent: Observation
-Id: observation-birth
+Id: observation-of-birth
 Title: "Observation of Birth"
 Description: "Assessment of the newborn's condition"
 * ^status = #draft
 * ^experimental = true
+* ^publisher = "Uzinfocom"
 
 * identifier MS
-* identifier ^short = "ID to monitor"
+* identifier ^short = "Identifier for observation"
 
 * status MS
-* status ^short = "registered | sample in the process of processing | preliminary | final | modified | corrected | added | cancelled | entered by mistake | unknown | cannot be received"
-* status from https://terminology.dhp.uz/fhir/core/ValueSet/observation-status-vs (required)
+* status ^short = "Registered | Sample being processed | Preliminary | Final | Modified | Corrected | Added | Cancelled | Entered in error | Unknown | Cannot be obtained"
+* status from http://hl7.org/fhir/ValueSet/observation-status (required)
 
 * category MS
 * category ^short = "Classification of types of surveillance"
-* category from https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs (required)
+* category from http://terminology.hl7.org/ValueSet/observation-category (required)
 
 * code MS
-* code ^short = "Type of surveillance (code/type)"
-* code from https://terminology.dhp.uz/ValueSet/loinc-codes-vs (required)
+* code ^short = "Type of observation (code/type)"
+* code from LOINCBirthVS (required)
 
 * subject MS
-* subject ^short = "About the patient (child)"
-* subject only Reference(PatientBirth)
+* subject ^short = "Newborn patient"
+* subject only Reference(PatientOfBirth)
 
 * effective[x] MS
-* effective[x] ^short = "Clinically significant time/follow-up period"
+* effective[x] ^short = "Clinically significant time/observation period"
 
 * performer MS
 * performer ^short = "The doctor or specialist who measured the result"
 * performer only Reference(UZCorePractitioner)
 
-* component ^slicing.discriminator.type = #pattern
-* component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
+* value[x] MS
+* value[x] ^short = "The baby's weight and height should be added to this section."
 
-* component contains birthMeasure 0..* MS
+* valueQuantity MS
 
-* component[birthMeasure].code 1..1 MS
-* component[birthMeasure].code from http://hl7.org/fhir/ValueSet/observation-codes (required)
-* component[birthMeasure].code ^short = "Type of component"
+* valueQuantity.value MS
+* valueQuantity.value ^short = "Numerical value (with implicit precision)"
 
-* component[birthMeasure].valueQuantity 0..1 MS
-* component[birthMeasure].valueQuantity ^short = "Рост, вес ребенка при рождении"
+* valueQuantity.unit MS
+* valueQuantity.unit ^short = "Representation of units"
 
-* component[birthMeasure].valueQuantity.value 0..1 MS
-* component[birthMeasure].valueQuantity.value ^short = "Числовое значение (с неявной точностью)"
+* valueQuantity.system MS
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.system ^short = "System that determines the form of the coded unit"
 
-* component[birthMeasure].valueQuantity.unit 0..1 MS
-* component[birthMeasure].valueQuantity.system 0..1 MS
-* component[birthMeasure].valueQuantity.code 0..1 MS
-* component[birthMeasure].valueQuantity.code from LOINC_CodesVS (required)
+* valueQuantity.code MS
+* valueQuantity.code from http://hl7.org/fhir/ValueSet/ucum-bodylength (required)
+* valueQuantity.code ^short = "http://unitsofmeasure.org
 
-* component contains lifeCrit 0..1 MS
+Coded responses from UCUM common units for a set of vital signs.
 
-* component[lifeCrit].code 1..1 MS
-* component[lifeCrit].code from LifeCritVS (required)
+Binding: body length units (required): cm | [in_i]
+"
 
-* component[lifeCrit].valueBoolean 0..1 MS
-* component[lifeCrit].valueBoolean ^short = "Тип жизненные критерии"
+* valueInteger MS
+* valueInteger ^short = "Number of full weeks of pregnancy:
+How many pregnancies has the mother had:
+Which child is this for the mother:"
+
+* component MS
+* component ^short = "This section should be the criteria for life."
+
+* component.code MS
+* component.code ^short = "Breathing CodesystemObservation -lifecrit"
+* component.code from ObservationLifeCriteriaVS (required)
+
+* component.value[x] only boolean
+* component.value[x] ^short = "Actual result by component"
+* component.valueBoolean MS
+* component.valueBoolean ^short = "Type  life criteria - true or false"
