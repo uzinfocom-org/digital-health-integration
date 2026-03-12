@@ -1,8 +1,13 @@
 CodeSystem: CarePlanStatusOfficialCS
 Id: care-plan-status-official-cs
 Title: "Care Plan Status Official CodeSystem"
-Description: "CodeSystem for official care plan statuses in Uzbekistan healthcare system"
-* insert SupplementCodeSystemDraft(care-plan-status-official-cs, $request-status, 5.0.0)
+Description: "Uzbek and Russian designations for CarePlan status"
+
+* insert SupplementCodeSystemDraft(
+    care-plan-status-official-cs,
+    http://hl7.org/fhir/request-status,
+    5.0.0
+)
 
 * #draft
   * ^designation[0].language = #ru
