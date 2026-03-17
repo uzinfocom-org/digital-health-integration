@@ -82,3 +82,17 @@ Description: "Birth time of each newborn in a multiple birth."
 * value[x] 1..1 MS
 * value[x] only dateTime
 * valueDateTime ^short = "Exact birth time of the newborn"
+
+Extension: EncounterDeathPlaceType
+Id: encounter-deathPlaceType
+Title: "Encounter Death Place Type"
+Description: "Type which is that death place type (home, street, hospital etc)"
+* ^url = "http://termenology.dhp.uz/StructureDefinition/encounter-deathPlaceType"
+* ^status = #active
+* ^context.type = #element
+* ^context.expression = "Encounter"
+
+* value[x] only CodeableConcept
+* valueCodeableConcept 1..1
+
+* valueCodeableConcept from http://termenology.dhp.uz/ValueSet/DeathPlace-type (required)
