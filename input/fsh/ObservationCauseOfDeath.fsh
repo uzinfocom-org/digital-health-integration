@@ -7,59 +7,95 @@ Description: "Observation profile representing the cause of death information."
 * ^experimental = true
 * ^publisher = "Uzinfocom"
 
-* code 1..1
+* code 1..1 MS
 * code = http://loinc.org#79378-6
 * code ^short = "Type of observation (LOINC 79378-6 Cause of death)"
 
-* status 1..1
+* status 1..1 MS
 * status ^short = "registered | preliminary | final | amended"
 * status from http://hl7.org/fhir/ValueSet/observation-status (required)
 
-* subject 1..1
+* subject 1..1 MS
 * subject only Reference(UZCorePatient)
 * subject ^short = "Deceased person"
 
-* performer 0..1
+* performer 0..1 MS
 * performer only Reference(UZCorePractitionerRole)
 * performer ^short = "Physician issuing the certificate"
 
-* effectiveDateTime 0..1
-* effectiveDateTime ^short = "Date and time of death"
+* effective[x] only dateTime
+* effective[x] 0..1 MS
+* effective[x] ^short = "Date and time of death"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from SNOMEDCauseOfDeathVS
-* valueCodeableConcept ^short = "Death occurred due to"
+* value[x] 0..1 MS
+* value[x] ^short = "Actual result"
+* value[x] from SNOMEDCauseOfDeathVS (required)
 
-* component 0..*
-* component ^short = "Conditions leading to the immediate cause of death"
+* valueCodeableConcept 1..1 MS
+* valueCodeableConcept ^short = "Occurred due to"
+* valueCodeableConcept from SNOMEDCauseOfDeathVS (required)
+
 
 * component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 
 * component contains
-    clinicalCause 0..* and
-    accidentDetails 0..*
+    conditionsLeadingToDeath 0..* MS and
+    causeOfDeath             0..* MS and
+    accidentOrPoisoning      0..*
 
-* component[clinicalCause].code 1..1
-* component[clinicalCause].code from CauseOfDeathVS
-* component[clinicalCause].code ^short = "Clinical cause of death"
+* component[conditionsLeadingToDeath] ^short = "Circumstances leading to the immediate cause of death"
+* component[conditionsLeadingToDeath] MS
 
-* component[clinicalCause].value[x] only CodeableConcept
-* component[clinicalCause].valueCodeableConcept from http://hl7.org/fhir/ValueSet/icd-10
-* component[clinicalCause].valueCodeableConcept ^short = "ICD-10 coded disease"
+* component[conditionsLeadingToDeath].code 1..1 MS
+* component[conditionsLeadingToDeath].code ^short = "The circumstances of the death"
+* component[conditionsLeadingToDeath].code from SNOMEDCauseOfDeathVS (required)
 
-* component[accidentDetails].code 1..1
-* component[accidentDetails].code from EventOfAccidentVS
-* component[accidentDetails].code ^short = "Type of accident or injury event"
 
-* component[accidentDetails].value[x] only dateTime or CodeableConcept or string
+* component[causeOfDeath] ^short = "Clinical cause of death"
+* component[causeOfDeath] MS
 
-* component[accidentDetails].valueDateTime
-* component[accidentDetails].valueDateTime ^short = "Date of injury or poisoning"
+* component[causeOfDeath].code 1..1 MS
+* component[causeOfDeath].code ^short = "Cause of death"
+* component[causeOfDeath].code from SNOMEDCauseOfDeathVS (required)
 
-* component[accidentDetails].valueCodeableConcept from EvidenceTypeVS
-* component[accidentDetails].valueCodeableConcept ^short = "Type of injury"
+* component[causeOfDeath].value[x] only CodeableConcept
+* component[causeOfDeath].value[x] 0..1 MS
+* component[causeOfDeath].value[x] ^short = "ICD-10 coded disease"
+* component[causeOfDeath].valueCodeableConcept from http://hl7.org/fhir/ValueSet/icd-10 (required)
 
-* component[accidentDetails].valueString
-* component[accidentDetails].valueString ^short = "Place and circumstances of the accident"
+
+* component[accidentOrPoisoning].code 1..1 MS
+* component[accidentOrPoisoning].code ^short = "In the case of non-work-related accidents, the nature of the injury"
+* component[accidentOrPoisoning].code from EventOfAccidentVS (required)
+
+
+* component[accidentOrPoisoning].value[x] only dateTime or CodeableConcept or string
+* component[accidentOrPoisoning].value[x] 0..1
+
+* component[accidentOrPoisoning].valueDateTime ^short = "Date of injury (poisoning)"
+
+* component[accidentOrPoisoning].valueCodeableConcept ^short = "Type of injury"
+* component[accidentOrPoisoning].valueCodeableConcept from EvidenceTypeVS (required)
+
+* component[accidentOrPoisoning].valueString ^short = "Place and circumstances"
+
+Instance: example-observation-cause-of-death
+InstanceOf: ObservationCauseOfDeath
+Title: "Example Observation Cause Of Death"
+Description: "Example instance of Observation Cause Of Death profile"
+Usage: #example
+
+* status = #final
+* code = http://loinc.org#79378-6
+* subject = Reference(PatientDeath/patient-death-example)
+
+* effectiveDateTime = "2024-01-01T12:00:00Z"
+* valueCodeableConcept = SNOMEDCauseOfDeathSupplementCS#44169009 "Myocardial infarction (disorder)"
+
+* effectiveDateTime = "2024-01-01T12:00:00Z"
+* valueCodeableConcept = SNOMEDCauseOfDeathSupplementCS#44169009 "Myocardial infarction (disorder)"
+
+* component[conditionsLeadingToDeath].code = CauseOfDeathCS#death0003.00001

@@ -1,112 +1,44 @@
-// Profile: ProfileDeath
-// Parent: Patient
-// Id: profile-death
-// Title: "Patient - Death"
-// Description: "Minimal patient profile used for death registration in Uzbekistan"
+Profile: PatientDeath
+Parent: UZCorePatient
+Id: patient-death
+Title: "Patient Death"
+Description: "Profile representing the death information of a patient, including the date and time of death, cause of death, and other relevant details."
+* ^status = #draft
+* ^experimental = true
+* ^publisher = "Uzinfocom"
 
-// * ^status = #active
-// * ^experimental = false
-// * ^publisher = "Uzinfocom"
+* identifier 1..* MS
 
-// ////////////////////////////////////////////////////////
-// //// IDENTIFIER
-// ////////////////////////////////////////////////////////
+* managingOrganization 0..1 MS
+* managingOrganization ^short = "Organization managing the record (e.g., hospital or clinic)"
+* managingOrganization only Reference(UZCoreOrganization)
 
-// * identifier 0..* MS
-// * identifier ^short = "Patient identifiers"
+Instance: patient-death-example
+InstanceOf: PatientDeath
+Title: "Example Patient Death"
+Description: "Example instance of Patient Death profile"
+Usage: #example
 
-// * identifier.use from https://terminology.dhp.uz/ValueSet/identifier-use-vs
-// * identifier.type from https://terminology.dhp.uz/ValueSet/identifier-type-vs
-
-// * identifier ^slicing.discriminator.type = #value
-// * identifier ^slicing.discriminator.path = "type"
-// * identifier ^slicing.rules = #open
-
-// * identifier contains nationalId 0..1 MS
-
-// ////////////////////////////////////////////////////////
-// //// NATIONAL ID SLICE
-// ////////////////////////////////////////////////////////
-
-// * identifier[nationalId]
-// * identifier[nationalId].use 0..1
-// * identifier[nationalId].type 1..1 MS
-// * identifier[nationalId].system 1..1 MS
-// * identifier[nationalId].value 1..1 MS
-
-// * identifier[nationalId].type = $identifier-type#NI "National unique individual identifier"
-
-// * identifier[nationalId].type.coding.system = "https://terminology.hl7.org/CodeSystem/v2-0203"
-// * identifier[nationalId].type.coding.code = #NI
-// * identifier[nationalId].type.coding.display = "National unique individual identifier"
-
-// * identifier[nationalId].system ^patternUri = "https://dpm.uz/"
-
-// ////////////////////////////////////////////////////////
-// //// ACTIVE
-// ////////////////////////////////////////////////////////
-
-// * active 0..1 MS
-
-// ////////////////////////////////////////////////////////
-// //// NAME
-// ////////////////////////////////////////////////////////
-
-// * name 0..* MS
-
-// * name.use 0..1
-// * name.text 0..1 MS
-// * name.family 0..1 MS
-// * name.given 0..* MS
-// * name.suffix 0..* MS
-// * name.period 0..1
-
-// ////////////////////////////////////////////////////////
-// //// GENDER
-// ////////////////////////////////////////////////////////
-
-// * gender 0..1
-
-// * gender from http://hl7.org/fhir/ValueSet/administrative-gender
-
-// * gender.extension contains
-//     http://medcore.uz/StructureDefinition/gender-other named gender-other 0..1
-
-// ////////////////////////////////////////////////////////
-// //// BIRTH DATE
-// ////////////////////////////////////////////////////////
-
-// * birthDate 0..1 MS
-
-// ////////////////////////////////////////////////////////
-// //// DECEASED
-// ////////////////////////////////////////////////////////
-
-// * deceased[x] only dateTime
-// * deceasedDateTime 0..1 MS
-// * deceasedDateTime ^short = "Date and time of death"
-
-// ////////////////////////////////////////////////////////
-// //// ADDRESS
-// ////////////////////////////////////////////////////////
-
-// * address 0..* MS
-
-// * address.use 0..1
-// * address.use from https://terminology.dhp.uz/ValueSet/address-use-vs
-
-// * address.type 0..1
-// * address.type from https://terminology.dhp.uz/ValueSet/address-type-vs
-
-// * address.line 0..* MS
-// * address.city 0..1 MS
-// * address.district 0..1 MS
-// * address.country 0..1 MS
-// * address.period 0..1
-
-// ////////////////////////////////////////////////////////
-// //// MANAGING ORGANIZATION
-// ////////////////////////////////////////////////////////
-
-// * managingOrganization 0..1
-// * managingOrganization only Reference(Organization)
+* identifier[nationalId].value = "30211975910033"
+* active = true
+* name
+  * use = #usual
+  * text = "Усманов Салим Салиевич"
+  * family = "Усманов"
+  * given = "Салим"
+  * suffix = "Салиевич"
+* telecom
+  * system = #phone
+  * use = #mobile
+  * rank = 1
+  * period.start = "2021-05-13"
+* birthDate = "1994-01-27"
+* address
+  * use = #home
+  * type = #postal
+  * line = "ул.Муминова 4"
+  * country = "182"
+  * district = "1703202"
+  * city = "22070013"
+  * period.start = "1999-04-06"
+* gender = #male

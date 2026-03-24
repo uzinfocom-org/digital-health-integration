@@ -28,7 +28,7 @@ dependencies:
   uz.dhp.core:
     id: dhpcore
     uri: http://dhp.uz/ImplementationGuide/uz.dhp.core
-    version: 0.3.0
+    version: 0.4.0
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can

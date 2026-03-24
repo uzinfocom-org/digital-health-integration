@@ -40,4 +40,12 @@ Description: "Encounter profile representing a death encounter, used to capture 
 * serviceProvider ^short = "Health facility issuing certificate"
 * serviceProvider only Reference(UZCoreOrganization)
 
-* extension contains EncounterDeathPlaceType named deathPlaceType 0..1
+* location 0..*
+* location ^short = "Location of the encounter"
+* location.location only Reference(UZCoreLocation)
+
+* extension contains
+    DeathPlaceType named deathPlaceType 0..1 MS
+
+* extension[deathPlaceType] ^short = "Death place type"
+* extension[deathPlaceType] ^isModifier = false
