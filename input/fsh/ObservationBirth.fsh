@@ -1,48 +1,75 @@
-Profile: ObservationBirth
-Parent: UZCoreObservation
-Id: observation-birth
+Profile: ObservationOfBirth
+Parent: Observation
+Id: observation-of-birth
 Title: "Observation of Birth"
 Description: "Assessment of the newborn's condition"
 * ^status = #draft
+* ^experimental = true
+* ^publisher = "Uzinfocom"
 
 * identifier MS
-* identifier ^short = "Идентификатор для наблюдения"
+* identifier ^short = "Identifier for observation"
 
 * status MS
-* status ^short = "зарегистрированный | образец в процессе обработки | предварительный | окончательный | измененный | исправленный | добавленный | аннулированный | введенный по ошибке | неизвестный | не может быть получен"
-* status from DocRefComStatusVS (required)
+* status ^short = "Registered | Sample being processed | Preliminary | Final | Modified | Corrected | Added | Cancelled | Entered in error | Unknown | Cannot be obtained"
+* status from http://hl7.org/fhir/ValueSet/observation-status (required)
 
 * category MS
-* category ^short = "Классификация видов наблюдения"
-* category from https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs  (required)
+* category ^short = "Classification of types of surveillance"
+* category from http://terminology.hl7.org/ValueSet/observation-category (required)
 
 * code MS
-* code ^short = "Тип наблюдения (код/тип)"
-* code from http://loinc.org (required)
+* code ^short = "Type of observation (code/type)"
+* code from LOINCBirthVS (required)
 
 * subject MS
-* subject ^short = "о пациенте (ребенок)"
-* subject only Reference(PatientBirth)
+* subject ^short = "Newborn patient"
+* subject only Reference(PatientOfBirth)
 
 * effective[x] MS
-* effective[x] ^short = "Клинически значимое время/период наблюдения"
+* effective[x] ^short = "Clinically significant time/observation period"
 
 * performer MS
-* performer ^short = "Врач или специалист, измеривший результат"
+* performer ^short = "The doctor or specialist who measured the result"
 * performer only Reference(UZCorePractitioner)
 
 * value[x] MS
-* value[x] ^short = "Фактический результат"
+* value[x] ^short = "The baby's weight and height should be added to this section."
 
 * valueQuantity MS
-* valueQuantity ^short = "Рост, вес ребенка при рождении"
 
-* valueQuantity.value and valueQuantity.unit and valueQuantity.system and valueQuantity.code MS
+* valueQuantity.value MS
+* valueQuantity.value ^short = "Numerical value (with implicit precision)"
 
+* valueQuantity.unit MS
+* valueQuantity.unit ^short = "Representation of units"
 
-* valueQuantity.value ^short = "Числовое значение (с неявной точностью)"
-* valueQuantity.unit ^short = "Представление единицы"
-* valueQuantity.system ^short = "Система, определяющая форму кодированной единицы"
+* valueQuantity.system MS
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.system ^short = "System that determines the form of the coded unit"
 
-// * valueQuantity.value from CodeableReference(APGARsocreVS) (required)  // Vadim Could you see that part
-* valueQuantity.code from ObservationUCUMVS (required)
+* valueQuantity.code MS
+* valueQuantity.code from http://hl7.org/fhir/ValueSet/ucum-bodylength (required)
+* valueQuantity.code ^short = "http://unitsofmeasure.org
+
+Coded responses from UCUM common units for a set of vital signs.
+
+Binding: body length units (required): cm | [in_i]
+"
+
+* valueInteger MS
+* valueInteger ^short = "Number of full weeks of pregnancy:
+How many pregnancies has the mother had:
+Which child is this for the mother:"
+
+* component MS
+* component ^short = "This section should be the criteria for life."
+
+* component.code MS
+* component.code ^short = "Breathing CodesystemObservation -lifecrit"
+* component.code from ObservationLifeCriteriaVS (required)
+
+* component.value[x] only boolean
+* component.value[x] ^short = "Actual result by component"
+* component.valueBoolean MS
+* component.valueBoolean ^short = "Type  life criteria - true or false"

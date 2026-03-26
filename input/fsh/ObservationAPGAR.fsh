@@ -1,45 +1,57 @@
-Profile: ObservationAPGAR
-Parent: UZCoreObservation
-Id: observation-apgar
+Profile: ObservationOfAPGAR
+Parent: Observation
+Id: observation-of-apgar
 Title: "Observation APGAR of Birth"
 Description: "Assessment of the newborn's condition"
 * ^status = #draft
+* ^experimental = true
+* ^publisher = "Uzinfocom"
 
 * identifier MS
-* identifier ^short = "Оценка состояния новорожденного"
+* identifier ^short = "Identifier for observation"
 
 * status MS
-* status ^short = "«окончательный» (потому что результаты по шкале Апгар уже закончились)"
-* status from DocRefComStatusVS (required)
+* status ^short = "“final” (because the Apgar score results are already complete)"
+* status from https://terminology.dhp.uz/fhir/core/ValueSet/observation-status-vs (required)
 
 * category MS
-* category ^short = "Категория: обследование или показатели жизнедеятельности"
-* category from https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs  (required)
+* category ^short = "Category: examination or vital signs"
+* category from https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs (required)
 
 * code MS
-* code ^short = "Тип наблюдения (код/тип)"
-* code from http://loinc.org (required) //need have to add LOINC codes here(in link)
+* code ^short = "Observation type (code/type)"
+* code from https://terminology.dhp.uz/ValueSet/loinc-birth-vs (extensible)
 
 * subject MS
-* subject ^short = "о пациенте (ребенок)"
-* subject only Reference(PatientBirth)
+* subject ^short = "About the patient (child)"
+* subject only Reference(PatientOfBirth)
 
 * performer MS
-* performer ^short = "Специалист, который проверял по шкале Апгар"
+* performer ^short = "The specialist who checked the Apgar score"
 * performer only Reference(UZCorePractitioner)
 
 * value[x] MS
-* value[x] ^short = "Оценка по шкале Апгар: 1 - 10 результат"
+* value[x] only Quantity
+* value[x] ^short = "Apgar score: 1-10 result"
 
 * valueQuantity MS
-* valueQuantity ^short = "Рост, вес ребенка при рождении"
+* valueQuantity ^short = "Numeric value (with implicit precision) and unit of measure (score)"
 
-* valueQuantity.value and valueQuantity.unit and valueQuantity.system and valueQuantity.code MS
+* valueQuantity.value MS
+* valueQuantity.value ^short = "Numeric value (with implicit precision)"
+* valueQuantity.value obeys apgar-range
 
+* valueQuantity.unit MS
+* valueQuantity.unit ^short = "Representation of units"
 
-* valueQuantity.value ^short = "Числовое значение (с неявной точностью)"
-* valueQuantity.unit ^short = "Представление единицы"
-* valueQuantity.system ^short = "Система, определяющая форму кодированной единицы"
+* valueQuantity.system MS
+* valueQuantity.system ^short = "System that determines the form of the coded unit"
+* valueQuantity.system = "http://unitsofmeasure.org"
 
-// * valueQuantity.value from CodeableReference(APGARsocreVS) (required)  // Vadim Could you see that part
-* valueQuantity.code from ObservationUCUMVS (required)
+* valueQuantity.code MS
+* valueQuantity.code = #score
+
+Invariant: apgar-range
+Description: "Apgar score must be between 1 and 10"
+Expression: "value >= 1 and value <= 10"
+Severity: #error
