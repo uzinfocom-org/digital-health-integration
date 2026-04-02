@@ -82,8 +82,8 @@ Integrations with DHP support two complementary methods for exchanging healthcar
 graph LR
     External["3rd-Party Systems"]
 
-    subgraph Approach1["Atomic FHIR Resources"]
-        Resources["Individual Resources:<br/>Observation<br/>Condition<br/>Procedure<br/>MedicationRequest<br/>etc."]
+    subgraph Approach1["Request Resources"]
+        Resources["Workflow Resources:<br/>ServiceRequest<br/>MedicationRequest<br/>Appointment<br/>CarePlan<br/>etc."]
     end
 
     subgraph Approach2["Clinical Documents"]
@@ -107,46 +107,48 @@ graph LR
     style DHP fill:#4A90E2,stroke:#2E5C8A,stroke-width:3px,color:#fff
 ```
 
-### Atomic FHIR resources
+### Request resources
 
-External systems can interact with individual FHIR resources directly using standard FHIR RESTful operations. This approach involves creating, reading, updating, and deleting discrete FHIR resources such as:
+For operational workflows requiring status tracking, DHP prefers [request resources](https://hl7.org/fhir/R5/workflow.html). Common examples include [ServiceRequest](https://hl7.org/fhir/R5/servicerequest.html), [MedicationRequest](https://hl7.org/fhir/R5/medicationrequest.html), [Appointment](https://hl7.org/fhir/R5/appointment.html), [CarePlan](https://hl7.org/fhir/R5/careplan.html), and [Claim](https://hl7.org/fhir/R5/claim.html). These resources support workflow state tracking (requested → accepted → in-progress → completed), making them ideal for real-time coordination.
 
-- **Observation** - lab results, vital signs, clinical measurements
-- **Condition** - diagnoses, problems, health concerns
-- **Procedure** - medical procedures and interventions
-- **MedicationRequest** - prescriptions and medication orders
-- **Encounter** - patient visits and care episodes
+### Clinical Documents
 
-This method is suitable for real-time data exchange where individual clinical facts need to be transmitted independently and processed atomically.
+For data requiring legal authentication and long-term persistence (e.g., Form 003 for inpatient stays, Form 096 for births), DHP uses **Clinical Documents** - a Bundle containing a Composition header with metadata and attestation, plus referenced clinical resources (Patient, Observation, Condition, etc.).
 
-### Clinical forms as Clinical Documents
+When a signature is required, 3rd party systems will display an iframe from the DHP platform where practitioners will log in to authenticate themselves using oneID. This will generate a cryptographic signature (either as JWS Digital Signature or based on the W3C Verifiable Credentials Data Model, to be decided) that will be returned to the 3rd party system to be attached as a [Provenance.signature](https://hl7.org/fhir/R5/provenance-definitions.html#Provenance.signature). Additionally, DHP also pre-adopts [R6 signing rules](https://build.fhir.org/signatures.html#Bundles) as they significantly differ from R5 and that is the future direction where FHIR is going.
 
-Healthcare providers often work with standardized clinical forms that capture comprehensive information for specific care scenarios. Examples include:
+#### Choosing the right approach
 
-- **Form 003** - inpatient stay documentation
-- **Form 096** - birth registration and documentation
-- Other regulatory and clinical forms required by healthcare authorities
+```mermaid
+flowchart TD
+    Start["Healthcare Data"]
 
-In FHIR, such forms can be represented as either Questionnaire resources or Clinical Documents. DHP uses **Clinical Documents** for this purpose. A Clinical Document is structured as a Bundle resource containing:
+    Q1{"Needs workflow<br/>status tracking?"}
+    Q2{"Needs legal<br/>authentication &<br/>persistence?"}
+    Q3{"Needs<br/>signature?"}
 
-- **Composition** - document header with metadata, sections, and attestation
-- **Referenced resources** - the actual clinical data (Patient, Observation, Condition, etc.)
+    Request["Request Resource<br/>(ServiceRequest, MedicationRequest,<br/>Appointment, etc.)"]
+    Document["Clinical Document<br/>(Bundle + Composition)"]
+    Iframe["DHP iframe<br/>(oneID authentication)"]
+    Provenance["Provenance.signature"]
 
-#### Why Clinical Documents
+    Start --> Q1
+    Q1 -->|"Yes"| Request
+    Q1 -->|"No"| Q2
+    Q2 -->|"Yes"| Document
+    Q2 -->|"No"| Request
 
-Clinical Documents provide essential characteristics that make them the preferred approach for healthcare forms:
+    Document --> Q3
+    Q3 -->|"Yes"| Iframe
+    Q3 -->|"No"| Done1["Done"]
+    Iframe --> Provenance
+    Provenance -->|"target = Bundle"| Document
 
-- **Persistence** - documents remain unaltered for regulatory periods (5, 10, or more years as required by law), surviving beyond their original servers and formats
-- **Profile re-use** - Clinical Documents leverage standard FHIR resources, enabling re-use of UZ Core profiles wherever they are a fit, promoting consistency across the healthcare ecosystem
-- **Secondary use and interoperability** - Clinical Documents (as FHIR Bundles) can be easily split into individual standard FHIR resources for analytics, reporting, and data exchange, whereas Questionnaire responses have custom data models that vary by questionnaire, making them more challenging to process
-- **Stewardship** - healthcare organizations maintain clear responsibility for document care and integrity
-- **Authentication** - documents are designed as complete assemblages intended for legal authentication and attestation by healthcare providers
-- **Context establishment** - documents provide default context for all contained information, ensuring proper interpretation
-- **Human readability** - mandatory narrative requirements ensure that authenticated content is clearly presented and reproducible across different systems, essential for both clinical use and legal validity
-
-In contrast, Questionnaire resources are designed primarily for data capture workflows rather than long-term authenticated storage. Clinical Documents better align with regulatory requirements for healthcare documentation, including mandatory retention periods and the need for legally attestable records.
-
-Note that Clinical Documents and FHIR Questionnaires can be converted between each other when needed using standardized mechanisms: [form population](https://hl7.org/fhir/uv/sdc/populate.html) can convert Clinical Documents to Questionnaires, and [form data extraction](https://hl7.org/fhir/uv/sdc/extraction.html) can convert Questionnaire responses to standard FHIR resources. This interoperability means that if there is a need to develop Questionnaires in the future, that option remains available.
+    style Request fill:#E8F4F8,stroke:#4A90E2,stroke-width:2px
+    style Document fill:#FFF4E6,stroke:#F5A623,stroke-width:2px
+    style Provenance fill:#F0E6FF,stroke:#9B59B6,stroke-width:2px
+    style Iframe fill:#FCE4EC,stroke:#E91E63,stroke-width:2px
+```
 
 ---
 

@@ -4,14 +4,14 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    types: [opened, synchronize] # This will trigger the workflow only when a PR is opened or updated with new commits (in line(48-49) 1/0; and  )
+    types: [opened, synchronize] # This will trigger the workflow only when a PR is opened or updated with new commits
 
 jobs:
   sushi:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install Sushi
         run: sudo npm install -g fsh-sushi
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install Jekyll
         run: sudo gem install jekyll
@@ -48,17 +48,14 @@ jobs:
           MAX_ALLOWED_ERRORS=1
           MAX_ALLOWED_WARNINGS=0
 
-        
-          
           if [ ! -f "output/qa.json" ]; then
             echo "❌ QA file not found: output/qa.json"
             exit 1
           fi
-          
+
           # Extract errors and warnings from qa.json
           ERRORS=$(jq -r '.errs // 0' output/qa.json)
-          # WARNINGS=$(jq -r '.warnings // 0' output/qa.json)
-          WARNINGS=0
+          WARNINGS=$(jq -r '.warnings // 0' output/qa.json)
 
           echo "  QA Results:"
           echo "   Errors: $ERRORS"
@@ -80,7 +77,7 @@ jobs:
 
       - name: Upload output folder
         if: always() && hashFiles('output/**/*') != ''
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: ig-output-${{ github.run_number }}
           path: output/

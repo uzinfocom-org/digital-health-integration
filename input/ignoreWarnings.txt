@@ -3,3 +3,17 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+
+# Faulty error in IG publisher, this link does work
+The link 'https://dhp.uz/fhir/core/%' cannot be resolved
+
+# Warning that can be ignored for our use since our instances use Uzbek/Russian but generated narrative in English
+Resource has a language (uz), and the XHTML has a lang (en), but they differ
+Resource has a language (ru), and the XHTML has a lang (en), but they differ
+"The narrative includes custom content for the default language (en), but does not include translated content for the ru language, so the default language has been used
+"The narrative includes custom content for the default language (en), but does not include translated content for the uz language, so the default language has been used
+
+# Organization-scoped identifiers in this example follow dynamic pattern https://dhp.uz/fhir/core/sid/pid/uz/prn/{soliq-id}/{type}
+# per identifiers.md in the main DHP IG (uz.dhp.core)
+No definition could be found for URL value 'https://dhp.uz/fhir/core/sid/pid/uz/prn/200935935/%
+

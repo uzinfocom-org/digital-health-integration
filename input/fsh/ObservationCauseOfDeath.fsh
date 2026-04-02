@@ -7,59 +7,81 @@ Description: "Observation profile representing the cause of death information."
 * ^experimental = true
 * ^publisher = "Uzinfocom"
 
-* code 1..1
+* code MS
 * code = http://loinc.org#79378-6
 * code ^short = "Type of observation (LOINC 79378-6 Cause of death)"
 
-* status 1..1
-* status ^short = "registered | preliminary | final | amended"
+* status MS
 * status from http://hl7.org/fhir/ValueSet/observation-status (required)
 
-* subject 1..1
+* subject MS
 * subject only Reference(UZCorePatient)
-* subject ^short = "Deceased person"
 
-* performer 0..1
+* performer MS
 * performer only Reference(UZCorePractitionerRole)
-* performer ^short = "Physician issuing the certificate"
 
-* effectiveDateTime 0..1
-* effectiveDateTime ^short = "Date and time of death"
+* effectiveDateTime MS
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from SNOMEDCauseOfDeathVS
-* valueCodeableConcept ^short = "Death occurred due to"
+* valueCodeableConcept from DeathOccuredFromVS
 
 * component 0..*
-* component ^short = "Conditions leading to the immediate cause of death"
-
 * component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 
 * component contains
+    directCause 0..* and
     clinicalCause 0..* and
-    accidentDetails 0..*
+    accidentDate 0..1 and
+    accidentType 0..1 and
+    accidentPlace 0..1
 
-* component[clinicalCause].code 1..1
-* component[clinicalCause].code from CauseOfDeathVS
-* component[clinicalCause].code ^short = "Clinical cause of death"
+* component[directCause].code 1..1 MS
+* component[directCause].code = https://dhp.uz/fhir/integrations/CodeSystem/cause-of-death-cs#38605008
+* component[directCause].value[x] 0..1
 
-* component[clinicalCause].value[x] only CodeableConcept
-* component[clinicalCause].valueCodeableConcept from http://hl7.org/fhir/ValueSet/icd-10
-* component[clinicalCause].valueCodeableConcept ^short = "ICD-10 coded disease"
+* component[clinicalCause].code 1..1 MS
+* component[clinicalCause].code = https://terminology.dhp.uz/CodeSystem/cause-of-death-cs#death0003.00001
+* component[clinicalCause].valueCodeableConcept from http://hl7.org/fhir/ValueSet/icd-10 (required)
 
-* component[accidentDetails].code 1..1
-* component[accidentDetails].code from EventOfAccidentVS
-* component[accidentDetails].code ^short = "Type of accident or injury event"
+* component[accidentDate].code 1..1 MS
+* component[accidentDate].code = https://terminology.dhp.uz/CodeSystem/death-event-of-accident-cs#death0004.00001
+* component[accidentDate].valueDateTime 1..1
 
-* component[accidentDetails].value[x] only dateTime or CodeableConcept or string
+* component[accidentType].code 1..1 MS
+* component[accidentType].code = https://terminology.dhp.uz/CodeSystem/death-event-of-accident-cs#death0004.00002
+* component[accidentType].valueCodeableConcept 1..1
+* component[accidentType].valueCodeableConcept from DeathEvidenceTypeVS (required)
 
-* component[accidentDetails].valueDateTime
-* component[accidentDetails].valueDateTime ^short = "Date of injury or poisoning"
+* component[accidentPlace].code 1..1 MS
+* component[accidentPlace].code = https://terminology.dhp.uz/CodeSystem/death-event-of-accident-cs#death0004.00003
+* component[accidentPlace].valueString 1..1
 
-* component[accidentDetails].valueCodeableConcept from EvidenceTypeVS
-* component[accidentDetails].valueCodeableConcept ^short = "Type of injury"
+Instance: ObservationCauseOfDeathExample
+InstanceOf: ObservationCauseOfDeath
+Title: "Observation Cause of Death Example"
+Description: "Example instance of ObservationCauseOfDeath profile"
+Usage: #example
 
-* component[accidentDetails].valueString
-* component[accidentDetails].valueString ^short = "Place and circumstances of the accident"
+* status = #final
+* code = http://loinc.org#79378-6
+* subject = Reference(patient-death-example)
+* effectiveDateTime = "2024-03-15T08:30:00Z"
+* valueCodeableConcept = http://snomed.info/sct#38605008
+
+* component[directCause].code = https://dhp.uz/fhir/integrations/CodeSystem/cause-of-death-cs#38605008
+* component[directCause].valueString = "Yurak to'xtashi"
+
+* component[clinicalCause].code = https://terminology.dhp.uz/CodeSystem/cause-of-death-cs#death0003.00001
+* component[clinicalCause].valueCodeableConcept = http://hl7.org/fhir/sid/icd-10#I21.0
+
+* component[accidentDate].code = https://terminology.dhp.uz/CodeSystem/death-event-of-accident-cs#death0004.00001
+* component[accidentDate].valueDateTime = "2024-03-14T22:00:00Z"
+
+* component[accidentType].code = https://terminology.dhp.uz/CodeSystem/death-event-of-accident-cs#death0004.00002
+* component[accidentType].valueCodeableConcept =
+  https://terminology.dhp.uz/CodeSystem/death-evidence-type-cs#death0002.00001
+
+* component[accidentPlace].code = https://terminology.dhp.uz/CodeSystem/death-event-of-accident-cs#death0004.00003
+* component[accidentPlace].valueString = "Toshkent shahar, Chilonzor tumani"

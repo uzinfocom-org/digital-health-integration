@@ -25,10 +25,7 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  uz.dhp.core:
-    id: dhpcore
-    uri: http://dhp.uz/ImplementationGuide/uz.dhp.core
-    version: 0.3.0
+  uz.dhp.core: 0.4.0
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -91,6 +88,10 @@ parameters:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
+  Documents:
+    Categories: document-categories.html
+    Lifecycle: document-statuses.html
+    Form 011 Mapping: form-011-mapping.html
   Artifacts: artifacts.html
   Changelog: changelog.html
 
