@@ -1,0 +1,117 @@
+[33mcommit 2bc6d46d6bb5fb4fe1afb476b1a16eacd6bf6df8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mDeathProject[m[33m, [m[1;32mSAFE-STATE[m[33m)[m
+Merge: 5fe14ca e8583da
+Author: Sarvar Kubayev <sarvar.kubayev@example.com>
+Date:   Thu Apr 2 12:04:31 2026 +0500
+
+    refactor: restructure death and document modules
+    
+    - removed obsolete birth-related resources
+    - replaced death-related profiles and terminology
+    - added new document category code systems and value sets
+    - added examples for Form011 and SickLeaveCarePlan
+    - updated translations and documentation pages
+    - cleaned up terminology structure
+
+[33mcommit e8583da459e393dbe8fcf96919672b6653d2db08[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: b2f6e36 5d13199
+Author: Vadim Peretokin <vperetokin@hey.com>
+Date:   Thu Mar 26 09:43:04 2026 +0100
+
+    Merge pull request #5 from uzinfocom-org/sync-from-dhp-temp
+    
+    Sync updates from DHP-integrations-temp
+
+[33mcommit 5d131992202536d5838042e1e8bfc77de7600efc[m
+Author: Vadim Peretokin <vperetokin@hey.com>
+Date:   Thu Mar 26 07:50:11 2026 +0100
+
+    sync updates from DHP-integrations-temp
+
+[33mcommit b2f6e3638be8441b088e738c97f606b8c3f5a708[m
+Author: Vadim Peretokin <vperetokin@hey.com>
+Date:   Thu Mar 26 09:37:16 2026 +0100
+
+    remove files not in upstream baseline
+
+[33mcommit a16bd1fc27f08532477b98ce3c63e84b22c687fa[m
+Author: Vadim Peretokin <vperetokin@hey.com>
+Date:   Thu Mar 26 09:36:39 2026 +0100
+
+    align main with DHP-integrations-temp baseline
+
+[33mcommit e02ef1a2947be7eb5f357d3822a2214138cf830a[m
+Author: Vadim Peretokin <vperetokin@hey.com>
+Date:   Thu Mar 26 08:43:40 2026 +0100
+
+    revert Sarvar's direct pushes to main for PR-based workflow
+
+[33mcommit 5fe14ca01f72b0b61153a7c2a3f1aa52e7e75cf4[m
+Author: KubayevSarvarbek <82996349+KubayevSarvarbek@users.noreply.github.com>
+Date:   Tue Mar 17 09:39:34 2026 +0500
+
+    Temporary changes were being added to Git.
+
+[33mcommit 02ea7ca74b040755759e8d852917ad2bd775960c[m
+Merge: 8e8f09e 318f665
+Author: Vadim Peretokin <vperetokin@hey.com>
+Date:   Mon Mar 16 08:13:36 2026 +0100
+
+    Merge pull request #4 from uzinfocom-org/dependabot/github_actions/actions/upload-artifact-7
+    
+    Bump actions/upload-artifact from 5 to 7
+
+[33mcommit ade4b82886d73fa2ada841bee86f0fe5fe5c3f21[m
+Author: Sarvar Kubayev <sarvar.kubayev@example.com>
+Date:   Thu Mar 12 17:40:16 2026 +0500
+
+    all CodeSystem added successfilly without Doctypeof Composition because Composition DocTypr must be imported from dhpuz/core
+
+[33mcommit 8e8f09ee748d064ffa0229e0a98a41f56926d908[m
+Author: Sarvar Kubayev <sarvar.kubayev@example.com>
+Date:   Tue Mar 10 10:48:06 2026 +0500
+
+    The following deleted (DocumentReference, DocumentReferenceDeath) belonged to another project, (Patient,RelatedPerson) – these files have been renamed, and the remaining files have been updated to reflect the new changes in Excel; for now, there are no instances in the profiles because the integration bindings within the profiles have not yet been fully connected to the core component.
+
+[33mcommit 318f6659e9e207e6681d5956cffbafd27397a8b4[m[33m ([m[1;31morigin/dependabot/github_actions/actions/upload-artifact-7[m[33m)[m
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Mon Mar 2 18:29:59 2026 +0000
+
+    Bump actions/upload-artifact from 5 to 7
+    
+    Bumps [actions/upload-artifact](https://github.com/actions/upload-artifact) from 5 to 7.
+    - [Release notes](https://github.com/actions/upload-artifact/releases)
+    - [Commits](https://github.com/actions/upload-artifact/compare/v5...v7)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: actions/upload-artifact
+      dependency-version: '7'
+      dependency-type: direct:production
+      update-type: version-update:semver-major
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+[33mcommit 79ad5ab12d4d94c94fd213e87e5ae90fe014b30a[m
+Author: Sarvar Kubayev <sarvar.kubayev@example.com>
+Date:   Wed Feb 25 18:01:08 2026 +0500
+
+    This commit was made to preserve temporary data, the deleted CS and VS were removed because they were still in the Loinc system, and the committed ones were committed because they were not yet added to the implementation.
+
+[33mcommit a944984e2f73beee7b05db123fa735355facb9fc[m
+Author: Sarvar Kubayev <sarvar.kubayev@example.com>
+Date:   Mon Feb 16 14:20:32 2026 +0500
+
+    minor grammatical and spelling errors were corrected in both files
+
+[33mcommit 650d00a14a408c8364a849d4fe2f959107bd564d[m
+Author: Sarvar Kubayev <sarvar.kubayev@example.com>
+Date:   Fri Feb 13 14:33:52 2026 +0500
+
+     validate docs (errors and warnings count changed)
+
+[33mcommit f02c684f2fe8f6efbf289c8228ea562bd8d98261[m
+Author: Sarvar Kubayev <sarvar.kubayev@example.com>
+Date:   Tue Feb 10 09:59:18 2026 +0500
+
+    The limit for temporary errors and warnings has been extended.

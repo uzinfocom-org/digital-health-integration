@@ -83,16 +83,17 @@ Description: "Birth time of each newborn in a multiple birth."
 * value[x] only dateTime
 * valueDateTime ^short = "Exact birth time of the newborn"
 
-Extension: EncounterDeathPlaceType
-Id: encounter-deathPlaceType
-Title: "Encounter Death Place Type"
-Description: "Type which is that death place type (home, street, hospital etc)"
-* ^url = "http://termenology.dhp.uz/StructureDefinition/encounter-deathPlaceType"
+Extension: DeathPlaceType
+Id: death-place-type
+Title: "Death Place Type"
+Description: "Type which indicates the death place type (home, street, hospital, etc.)"
+
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/death-place-type"
+* ^version = "1.0.0"
 * ^status = #active
-* ^context.type = #element
-* ^context.expression = "Encounter"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept 1..1
-
-* valueCodeableConcept from http://termenology.dhp.uz/ValueSet/DeathPlace-type (required)
+* value[x] 1..1
+* value[x] from SNOMEDDeathPlaceVS (extensible)
+* value[x] ^short = "Death place type"
+* value[x] ^definition = "Type which is that death place type (home, street, hospital etc)"
