@@ -49,26 +49,3 @@ Description: "Encounter profile representing a death encounter, used to capture 
 
 * extension[deathPlaceType] ^short = "Death place type"
 * extension[deathPlaceType] ^isModifier = false
-
-Extension: DeathPlaceType
-Id: death-place-type
-Title: "Death Place Type"
-Description: "Where patient died (e.g., hospital, home, public place, etc.)"
-* ^context[0].type = #element
-* ^context[0].expression = "Encounter"
-* value[x] only CodeableConcept
-* valueCodeableConcept from https://terminology.dhp.uz/ValueSet/death-place-type-vs
-
-Instance: EncounterOfDeathExample
-InstanceOf: EncounterOfDeath
-Title: "Encounter of Death Example"
-Description: "Example instance of EncounterOfDeath profile"
-Usage: #example
-
-* status = #planned
-* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP
-* serviceType = DeathEncounterTypeCS#mserv.0001.00002
-* subject = Reference(patient-death-example)
-* participant[0].type = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#ATND
-* participant[0].period.start = "2024-03-15T08:00:00Z"
-* participant[0].period.end = "2024-03-15T10:00:00Z"

@@ -94,6 +94,6 @@ Description: "Type which indicates the death place type (home, street, hospital,
 
 * value[x] only CodeableConcept
 * value[x] 1..1
-* value[x] from SNOMEDDeathPlaceVS (extensible)
+* value[x] from  DeathPlaceTypeVS (extensible)
 * value[x] ^short = "Death place type"
 * value[x] ^definition = "Type which is that death place type (home, street, hospital etc)"
