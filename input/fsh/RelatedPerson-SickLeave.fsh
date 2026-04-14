@@ -14,4 +14,4 @@ Description: "Related person for family care sick leave"
 
 * extension contains
     RelatedPersonGenderOther named otherGender 0..1 MS and
-    RelatedPersonBirthdate named birthdate 1..1 MS
+    RelatedPersonBirthdate named birthdate 0..1 MS

@@ -2,7 +2,8 @@ Instance: SickLeaveCarePlanExample
 InstanceOf: SickLeaveCarePlan
 Title: "Sick Leave CarePlan Example"
 
-* identifier.value = "01ТШ 005591125"
+* identifier[series].system = "https://dhp.uz/fhir/core/sid/doc/uz/sickleave"
+* identifier[series].value = "01ТШ 005591125"
 
 * status = #completed
 * intent = #plan
@@ -82,10 +83,10 @@ Usage: #example
 * code = http://snomed.info/sct#224459001 "On sick leave from work"
 
 * component[0].code = SickLeaveComponentCS#emdoc-0009-0001
-* component[0].valueCodeableConcept = https://terminology.dhp.uz/CodeSystem/city-affiliation#emdoc-0003-0001
+* component[0].valueCodeableConcept = CarePlanBelongingCS#emdoc-0003-0001
 
 * component[1].code = SickLeaveComponentCS#emdoc-0009-0002
-* component[1].valueCodeableConcept = https://terminology.dhp.uz/CodeSystem/place-of-incident#emdoc-0004-0002
+* component[1].valueCodeableConcept = PlaceOfIncidentCS#emdoc-0004-0002
 
 * component[2].code = SickLeaveComponentCS#emdoc-0009-0003
 * component[2].valueBoolean = false
@@ -94,7 +95,19 @@ Usage: #example
 * component[3].valueBoolean = false
 
 * component[4].code = SickLeaveComponentCS#emdoc-0009-0006
-* component[4].valueString = "AMB"
+* component[4].valueCodeableConcept = $v3-ActCode#AMB "ambulatory"
 
-* component[5].code = SickLeaveComponentCS#emdoc-0009-0007
-* component[5].valueCodeableConcept = https://terminology.dhp.uz/CodeSystem/regime-violation#emdoc-0007-0005
+* component[5].code = SickLeaveComponentCS#emdoc-0009-0005
+* component[5].valueCodeableConcept = RelationDegreeCS#emdoc-0005-0001
+
+* component[6].code = SickLeaveComponentCS#emdoc-0009-0007
+* component[6].valueCodeableConcept = RegimenViolationCS#emdoc-0007-0005
+
+* component[7].code = SickLeaveComponentCS#emdoc-0009-0008
+* component[7].valueDateTime = "2025-08-25"
+
+* component[8].code = SickLeaveComponentCS#emdoc-0009-0009
+* component[8].valueCodeableConcept = ConclusionsCS#emdoc-0008-0001
+
+* component[9].code = SickLeaveComponentCS#emdoc-0009-0010
+* component[9].valueDateTime = "2025-08-22"

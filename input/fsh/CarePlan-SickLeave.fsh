@@ -7,15 +7,20 @@ Description: "FHIR R5 CarePlan profile representing a Sick Leave case (LN lifecy
 * ^status = #draft
 * ^publisher = "UZINFOCOM"
 
-* identifier 0..1 MS
-* identifier.system = "http://dhp.uz/NamingSystem/sickleave" (exactly)
-* identifier.value 1..1
+* intent = #plan
+
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "system"
+* identifier ^slicing.rules = #open
+* identifier contains series 0..1 MS
+* identifier[series].system = "https://dhp.uz/fhir/core/sid/doc/uz/sickleave" (exactly)
+* identifier[series].value 1..1
 
 * category 1..1 MS
 * category from SickLeaveCategoryVS (required)
 
 * subject 1..1 MS
-* subject only Reference(Patient or Group)
+* subject only Reference(UZCorePatient)
 * subject ^short = "For whom the sick leave is open"
 
 * created 0..1 MS
@@ -28,18 +33,15 @@ Description: "FHIR R5 CarePlan profile representing a Sick Leave case (LN lifecy
 * custodian only Reference(Practitioner or PractitionerRole or Organization or CareTeam)
 
 * addresses ^slicing.discriminator.type = #value
-* addresses ^slicing.discriminator.path = "concept"
+* addresses ^slicing.discriminator.path = "concept.coding.system"
 * addresses ^slicing.rules = #open
-
 * addresses contains
     reason 0..1 MS and
-    diagnosis 1..1 MS
-
-* addresses[reason].concept 1..1 MS
-* addresses[reason].concept ^patternCodeableConcept = CarePlanReasonCS#emdoc-0001-0001
-
-* addresses[diagnosis].concept 1..1 MS
-* addresses[diagnosis].concept ^patternCodeableConcept = http://hl7.org/fhir/sid/icd-10#J11.0
+    diagnosis 0..1 MS
+* addresses[reason].concept.coding.system = "https://terminology.dhp.uz/CodeSystem/care-plan-reason-cs"
+* addresses[reason] from CarePlanReasonVS (required)
+* addresses[diagnosis].concept.coding.system = "http://hl7.org/fhir/sid/icd-10"
+* addresses[diagnosis] from ICD10VS (required)
 
 * extension contains
     WorkflowStatus named workflowStatus 1..1 MS and
