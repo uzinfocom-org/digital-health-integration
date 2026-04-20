@@ -103,6 +103,18 @@ Description: "Categories for clinical documents and other knowledge resources in
   * ^designation[+].language = #ru
   * ^designation[=].value = "Запись сеанса гемодиализа"
 
+* #form-066 "Statsionar tibbiy kartasi"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Inpatient medical record"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Медицинская карта стационарного больного"
+
+* #form-066-1 "Psixo-nevrologik (narkologik) muassasa statsionar tibbiy kartasi"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Psychoneurological (narcological) inpatient medical record"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Медицинская карта стационарного больного психоневрологического (наркологического) учреждения"
+
 * #form-096 "Tug'ruq tibbiy kartasi"
   * ^designation[0].language = #en
   * ^designation[=].value = "Birth medical record"

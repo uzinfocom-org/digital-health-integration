@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk -F',' 'NR>1 && $1!=\"\" && $2!=\"\" {print $1\" => \"$2}' /home/sarvar/Downloads/DMED_066_066-1_v02.csv)"
+    ]
+  }
+}
