@@ -113,3 +113,4 @@ Alias: $social-status-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/socia
 Alias: $benefits-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/benefits-cs
 Alias: $education-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/education-cs
 Alias: $encounter-reason-use-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-reason-use-cs
+Alias: $encounter-priority-home-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-priority-home-cs

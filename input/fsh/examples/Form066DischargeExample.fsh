@@ -70,6 +70,12 @@ Description: "Example of a psychiatric / narcological inpatient discharge statis
 * entry[=].resource = form-066-obs-reg-date-example
 * entry[+].fullUrl = "urn:uuid:c066001b-0000-0000-0000-00000000001b"
 * entry[=].resource = form-066-servicerequest-example
+* entry[+].fullUrl = "urn:uuid:c066001c-0000-0000-0000-00000000001c"
+* entry[=].resource = form-066-cond-competing-example
+* entry[+].fullUrl = "urn:uuid:c066001d-0000-0000-0000-00000000001d"
+* entry[=].resource = form-066-cond-background-example
+* entry[+].fullUrl = "urn:uuid:c066001e-0000-0000-0000-00000000001e"
+* entry[=].resource = form-066-cond-complication-example
 
 // ── Composition ───────────────────────────────────────────────────────────────
 
@@ -83,7 +89,7 @@ Usage: #inline
 * identifier[=].value = "066-1"
 * status = #final
 * type = $loinc#18842-5 "Discharge summary"
-* category = $document-category-cs#form-066-1 "Psixiatriya (narkologiya) statsionar bemorining chiqib ketish statistik talonchasi"
+* category = $document-category-cs#form-066-1 "Psixo-nevrologik (narkologik) muassasa statsionar tibbiy kartasi"
 * subject = Reference(urn:uuid:c0660002-0000-0000-0000-000000000002)
 * encounter = Reference(urn:uuid:c0660003-0000-0000-0000-000000000003)
 * date = "2026-03-22T14:00:00+05:00"
@@ -123,6 +129,9 @@ Usage: #inline
 * section[finalDiagnosis].code = $loinc#29548-5 "Diagnosis Narrative"
 * section[finalDiagnosis].entry[0] = Reference(urn:uuid:c066000d-0000-0000-0000-00000000000d)
 * section[finalDiagnosis].entry[+] = Reference(urn:uuid:c066000e-0000-0000-0000-00000000000e)
+* section[finalDiagnosis].entry[+] = Reference(urn:uuid:c066001c-0000-0000-0000-00000000001c)
+* section[finalDiagnosis].entry[+] = Reference(urn:uuid:c066001d-0000-0000-0000-00000000001d)
+* section[finalDiagnosis].entry[+] = Reference(urn:uuid:c066001e-0000-0000-0000-00000000001e)
 // ── Section: Tahlil natijasi ──
 * section[labResults].title = "Tahlil natijasi"
 * section[labResults].code = $loinc#30954-2 "Relevant diagnostic tests/laboratory data note"
@@ -190,10 +199,11 @@ Usage: #inline
 * actualPeriod.start = "2026-03-01T08:30:00+05:00"
 * actualPeriod.end = "2026-03-22T12:00:00+05:00"
 * subject = Reference(urn:uuid:c0660002-0000-0000-0000-000000000002)
-// Yotqizish ustuvorligi: Rejali (Routine)
-// TODO: Replace $v3ActPriority#R with UZCore EncounterPriorityVS code
-//       Check: input/fsh/terminology/ in digital-health-ig — EncounterPriorityCS
-* priority = $v3ActPriority#R "routine"
+// Yotqizish ustuvorligi: Rejali (Past/Low urgency)
+// EncounterPriorityVS codes available: EM (Favqulodda), P (Operatsiyadan oldingi), PRN (Zaruratga qarab)
+//   + encounter-priority-home-cs: gencl-0002-00001 (Yuqori), gencl-0002-00002 (O'rtacha), gencl-0002-00003 (Past)
+// "Rejali" (Planned) = low urgency → gencl-0002-00003 used; adjust if UZCore adds a dedicated Rejali code
+* priority = $encounter-priority-home-cs#gencl-0002-00003 "Past"
 // Kim tomonidan yo'llangan [066-1]: Psixiatriya dispanseri
 // TODO: Replace with UZCore EncounterAdmitSourceCS code from encounter-admit-source-vs
 //       Check: input/fsh/terminology/ in digital-health-ig — EncounterAdmitSourceCS
@@ -399,6 +409,48 @@ Usage: #inline
 * code.text = "Ijobiy o'zgarish bilan (With positive change)"
 // Chiqarilishdagi ruhiy nogironlik [066-1 only]: II guruh nogironi
 * severity = https://dhp.uz/fhir/core/CodeSystem/psychiatric-disability#group-ii "II guruh nogironi"
+* subject = Reference(urn:uuid:c0660002-0000-0000-0000-000000000002)
+* encounter = Reference(urn:uuid:c0660003-0000-0000-0000-000000000003)
+* recordedDate = "2026-03-22"
+
+// Competing diagnosis / Raqobat tashxisi (disease_codes.type == 'competing')
+Instance: form-066-cond-competing-example
+InstanceOf: Condition
+Usage: #inline
+* language = #uz
+* clinicalStatus = $condition-clinical#active "Active"
+* verificationStatus = $condition-ver-status#confirmed "Confirmed"
+* category[0] = https://dhp.uz/fhir/core/CodeSystem/diagnosis-role#competing "Raqobat tashxis"
+* code = $icd-10#F25.1 "Schizoaffective disorder, depressive type"
+* code.text = "Shizzoaffektiv buzilish, depressiv tur"
+* subject = Reference(urn:uuid:c0660002-0000-0000-0000-000000000002)
+* encounter = Reference(urn:uuid:c0660003-0000-0000-0000-000000000003)
+* recordedDate = "2026-03-22"
+
+// Background diagnosis / Fon tashxisi (disease_codes.type == 'background')
+Instance: form-066-cond-background-example
+InstanceOf: Condition
+Usage: #inline
+* language = #uz
+* clinicalStatus = $condition-clinical#active "Active"
+* verificationStatus = $condition-ver-status#confirmed "Confirmed"
+* category[0] = https://dhp.uz/fhir/core/CodeSystem/diagnosis-role#background "Fon tashxis"
+* code = $icd-10#E11.9 "Type 2 diabetes mellitus : Without complications"
+* code.text = "2-toifa qandli diabet, ashoratsiz"
+* subject = Reference(urn:uuid:c0660002-0000-0000-0000-000000000002)
+* encounter = Reference(urn:uuid:c0660003-0000-0000-0000-000000000003)
+* recordedDate = "2026-03-22"
+
+// Complication / Asorat (disease_codes.type == 'critical')
+Instance: form-066-cond-complication-example
+InstanceOf: Condition
+Usage: #inline
+* language = #uz
+* clinicalStatus = $condition-clinical#active "Active"
+* verificationStatus = $condition-ver-status#confirmed "Confirmed"
+* category[0] = https://dhp.uz/fhir/core/CodeSystem/diagnosis-role#complication "Asorat"
+* code = $icd-10#G21.1 "Other drug-induced secondary Parkinsonism"
+* code.text = "Antipsixotiklar bilan chaqirilgan ikkilamchi parkinsonizm"
 * subject = Reference(urn:uuid:c0660002-0000-0000-0000-000000000002)
 * encounter = Reference(urn:uuid:c0660003-0000-0000-0000-000000000003)
 * recordedDate = "2026-03-22"

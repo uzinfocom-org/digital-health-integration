@@ -194,14 +194,3 @@ Description: "Categories for clinical documents and other knowledge resources in
   * ^designation[+].language = #ru
   * ^designation[=].value = "Лист нетрудоспособности"
 
-* #form-066 "Statsionar bemorining chiqib ketish statistik talonchasi"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "Inpatient discharge statistics card"
-  * ^designation[+].language = #ru
-  * ^designation[=].value = "Статистический талон выбывшего из стационара"
-
-* #form-066-1 "Psixiatriya (narkologiya) statsionar bemorining chiqib ketish statistik talonchasi"
-  * ^designation[0].language = #en
-  * ^designation[=].value = "Psychiatric/narcological inpatient discharge statistics card"
-  * ^designation[+].language = #ru
-  * ^designation[=].value = "Статистический талон выбывшего из психиатрического (наркологического) стационара"
