@@ -1,5 +1,6 @@
 Alias: $data-absent-reason = http://terminology.hl7.org/CodeSystem/data-absent-reason
 Alias: $document-category-cs = https://dhp.uz/fhir/integrations/CodeSystem/document-category-cs
+Alias: $travel-clearance-cs = https://dhp.uz/fhir/integrations/CodeSystem/travel-clearance-cs
 Alias: $gender = http://hl7.org/fhir/administrative-gender
 Alias: $observation-status = http://hl7.org/fhir/observation-status
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
