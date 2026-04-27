@@ -24,6 +24,7 @@ Description: "Composition profile for Form 044 (Medical certificate for persons 
     travelClearance 1..1
 
 * section[infectiousHistory].title 1..1
+* section[infectiousHistory].title ^short = "История инфекционных заболеваний / Kechirgan yuqumli kasalliklar"
 * section[infectiousHistory].code 1..1
 * section[infectiousHistory].code = $loinc#11348-0 "History of Past illness note"
 * section[infectiousHistory].entry 0..*
