@@ -1488,7 +1488,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * category = $observation-category#exam "Exam"
-* code = $loinc#10198-0 "Physical findings of Genitalia and Rectum Narrative"
+* code = $loinc#10198-0 "Physical findings of Genitourinary tract Narrative"
 * bodySite.coding[0] = $sct#15497006 "Ovarian structure (body structure)"
 * bodySite.coding[+] = $sct#31435000 "Fallopian tube structure (body structure)"
 * subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
@@ -1545,7 +1545,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * category = $observation-category#exam "Exam"
-* code = $loinc#10194-9 "Physical findings of Dental and Oral Narrative"
+* code = $loinc#10201-2 "Physical findings of Mouth and Throat and Teeth Narrative"
 * subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
 * encounter = Reference(urn:uuid:11100001-0000-0000-0000-000000000004)
 * effectiveDateTime = "2025-04-10T11:30:00+05:00"
