@@ -29,7 +29,3 @@ Unknown code '11432-2' in the CodeSystem 'http://loinc.org'
 Unknown code '32487-1' in the CodeSystem 'http://loinc.org'
 None of the codings provided are in the value set 'LOINC Codes' (http://hl7.org/fhir/ValueSet/observation-codes
 
-# Form 111: SNOMED CT 372483008 "Staphylococcal toxoid" is a valid substance code per snomed.info/sct
-# but is not present in the International Edition snapshot loaded by tx.fhir.org/r5 (Feb 2025 release).
-Unknown code '372483008' in the CodeSystem 'http://snomed.info/sct'
-

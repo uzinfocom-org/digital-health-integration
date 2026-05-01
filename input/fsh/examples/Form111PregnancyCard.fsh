@@ -1009,7 +1009,6 @@ InstanceOf: Immunization
 Usage: #inline
 * language = #en
 * status = #completed
-* vaccineCode.coding = $sct#372483008 "Staphylococcal toxoid (substance)"
 * vaccineCode.text = "Staphylococcal anatoxin"
 * patient = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
 * encounter = Reference(urn:uuid:11100001-0000-0000-0000-000000000004)
