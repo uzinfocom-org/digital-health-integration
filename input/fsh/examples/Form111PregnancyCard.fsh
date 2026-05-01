@@ -1564,7 +1564,7 @@ Instance: form111-encounter-hospitalization
 InstanceOf: Encounter
 Usage: #inline
 * language = #en
-* status = #finished
+* status = #completed
 * class = $v3-ActCode#IMP "inpatient encounter"
 * subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
 * participant[0].type = $v3-ParticipationType#PPRF "primary performer"
