@@ -1450,7 +1450,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * category = $observation-category#exam "Exam"
-* code = $loinc#8352-7 "Body build"
+* code = $loinc#10210-3 "Physical findings of General status Narrative"
 * subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
 * encounter = Reference(urn:uuid:11100001-0000-0000-0000-000000000004)
 * effectiveDateTime = "2025-01-15T09:00:00+05:00"
@@ -1488,7 +1488,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * category = $observation-category#exam "Exam"
-* code = $loinc#10161-8 "Physical findings of Genitourinary system Narrative"
+* code = $loinc#10198-0 "Physical findings of Genitalia and Rectum Narrative"
 * bodySite.coding[0] = $sct#15497006 "Ovarian structure (body structure)"
 * bodySite.coding[+] = $sct#31435000 "Fallopian tube structure (body structure)"
 * subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
@@ -1509,7 +1509,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * category = $observation-category#social-history "Social History"
-* code = $loinc#10163-4 "History of pregnancies Narrative"
+* code = $loinc#10163-4 "History of pregnancies"
 * subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
 * encounter = Reference(urn:uuid:11100001-0000-0000-0000-000000000004)
 * effectiveDateTime = "2025-01-15T09:00:00+05:00"
@@ -1527,7 +1527,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * category = $observation-category#exam "Exam"
-* code = $loinc#10191-5 "Physical findings of Chest Narrative"
+* code = $loinc#10191-5 "Physical findings of Abdomen Narrative"
 * subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
 * encounter = Reference(urn:uuid:11100001-0000-0000-0000-000000000004)
 * effectiveDateTime = "2025-04-10T11:00:00+05:00"
@@ -1545,7 +1545,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * category = $observation-category#exam "Exam"
-* code = $loinc#29547-7 "Physical findings of Mouth and Throat and Teeth Narrative"
+* code = $loinc#10194-9 "Physical findings of Dental and Oral Narrative"
 * subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
 * encounter = Reference(urn:uuid:11100001-0000-0000-0000-000000000004)
 * effectiveDateTime = "2025-04-10T11:30:00+05:00"
@@ -1571,4 +1571,4 @@ Usage: #inline
 * participant[=].actor = Reference(urn:uuid:11100001-0000-0000-0000-000000000005)
 * actualPeriod.start = "2025-04-10T14:00:00+05:00"
 * actualPeriod.end = "2025-04-17T10:00:00+05:00"
-* reason[0].use = $v3-ActCode#TREAT "Treatment"
+* serviceType.concept.text = "Inpatient obstetric observation"
