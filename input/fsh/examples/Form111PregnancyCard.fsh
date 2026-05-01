@@ -222,6 +222,27 @@ Description: "Example of an individual pregnancy card (Form 111) for a pregnant 
 // Visit 1: per-visit diagnosis
 * entry[+].fullUrl = "urn:uuid:11100001-0000-0000-0000-000000000046"
 * entry[=].resource = form111-condition-visit1-diag
+// Initial exam: body build (телосложение)
+* entry[+].fullUrl = "urn:uuid:11100001-0000-0000-0000-000000000047"
+* entry[=].resource = form111-obs-body-build
+// Initial exam: cardiovascular system (сердечно-сосудистая система)
+* entry[+].fullUrl = "urn:uuid:11100001-0000-0000-0000-000000000048"
+* entry[=].resource = form111-obs-cardiovascular
+// Initial exam: ovaries and fallopian tubes (яичники, маточные трубы)
+* entry[+].fullUrl = "urn:uuid:11100001-0000-0000-0000-000000000049"
+* entry[=].resource = form111-obs-ovaries-tubes
+// Obstetric history: features of previous pregnancies (особенности предыдущих беременностей)
+* entry[+].fullUrl = "urn:uuid:11100001-0000-0000-0000-00000000004a"
+* entry[=].resource = form111-obs-prev-pregnancy-features
+// Visit 1: therapist examination (осмотр терапевта)
+* entry[+].fullUrl = "urn:uuid:11100001-0000-0000-0000-00000000004b"
+* entry[=].resource = form111-obs-therapist-exam
+// Visit 1: dentist examination (осмотр стоматолога)
+* entry[+].fullUrl = "urn:uuid:11100001-0000-0000-0000-00000000004c"
+* entry[=].resource = form111-obs-dentist-exam
+// Hospitalization encounter (госпитализация — Encounter.class=IMP, not in section per profile constraint)
+* entry[+].fullUrl = "urn:uuid:11100001-0000-0000-0000-00000000004d"
+* entry[=].resource = form111-encounter-hospitalization
 
 // ============================================================
 // COMPOSITION
@@ -281,6 +302,7 @@ Usage: #inline
 * section[=].entry[+] = Reference(urn:uuid:11100001-0000-0000-0000-000000000031)
 * section[=].entry[+] = Reference(urn:uuid:11100001-0000-0000-0000-00000000003e)
 * section[=].entry[+] = Reference(urn:uuid:11100001-0000-0000-0000-00000000003f)
+* section[=].entry[+] = Reference(urn:uuid:11100001-0000-0000-0000-00000000004a)
 // Menstrual history section
 * section[menstrualHistory].title = "Менструальный цикл и репродуктивный анамнез"
 * section[=].code = $loinc#49033-4 "Menstrual History - Reported"
@@ -305,6 +327,9 @@ Usage: #inline
 * section[=].entry[+] = Reference(urn:uuid:11100001-0000-0000-0000-000000000035)
 * section[=].entry[+] = Reference(urn:uuid:11100001-0000-0000-0000-000000000042)
 * section[=].entry[+] = Reference(urn:uuid:11100001-0000-0000-0000-000000000043)
+* section[=].entry[+] = Reference(urn:uuid:11100001-0000-0000-0000-000000000047)
+* section[=].entry[+] = Reference(urn:uuid:11100001-0000-0000-0000-000000000048)
+* section[=].entry[+] = Reference(urn:uuid:11100001-0000-0000-0000-000000000049)
 // Visit record section (one prenatal visit at 28 weeks)
 * section[visitRecord].title = "Visit 2025-04-10 (28 weeks)"
 * section[=].code = $loinc#57073-9 "Prenatal records"
@@ -321,6 +346,8 @@ Usage: #inline
 * section[=].entry[+] = Reference(urn:uuid:11100001-0000-0000-0000-000000000044)
 * section[=].entry[+] = Reference(urn:uuid:11100001-0000-0000-0000-000000000045)
 * section[=].entry[+] = Reference(urn:uuid:11100001-0000-0000-0000-000000000046)
+* section[=].entry[+] = Reference(urn:uuid:11100001-0000-0000-0000-00000000004b)
+* section[=].entry[+] = Reference(urn:uuid:11100001-0000-0000-0000-00000000004c)
 // Diagnosis section
 * section[diagnosis].title = "Диагноз"
 * section[=].code = $loinc#29308-4 "Diagnosis"
@@ -982,6 +1009,7 @@ InstanceOf: Immunization
 Usage: #inline
 * language = #en
 * status = #completed
+* vaccineCode.coding = $sct#372483008 "Staphylococcal toxoid (substance)"
 * vaccineCode.text = "Staphylococcal anatoxin"
 * patient = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
 * encounter = Reference(urn:uuid:11100001-0000-0000-0000-000000000004)
@@ -1410,4 +1438,137 @@ Usage: #inline
 * subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
 * encounter = Reference(urn:uuid:11100001-0000-0000-0000-000000000004)
 * onsetDateTime = "2025-04-10"
-* note.text = "28 weeks gestation; pregnancy progressing normally"
+
+// ============================================================
+// INITIAL EXAM: BODY BUILD (телосложение)
+// CSV: Особенности телосложения → Observation.code LOINC 8352-7
+// ============================================================
+
+Instance: form111-obs-body-build
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* category = $observation-category#exam "Exam"
+* code = $loinc#8352-7 "Body build"
+* subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
+* encounter = Reference(urn:uuid:11100001-0000-0000-0000-000000000004)
+* effectiveDateTime = "2025-01-15T09:00:00+05:00"
+* performer = Reference(urn:uuid:11100001-0000-0000-0000-000000000005)
+* valueString = "Normosthenic body build, proportional"
+
+// ============================================================
+// INITIAL EXAM: CARDIOVASCULAR SYSTEM (сердечно-сосудистая система)
+// CSV: Сердечно-сосудистая система → Observation.code LOINC LP7473-4 (part code)
+// Actual observation code: LOINC 10200-4 "Physical findings of Heart Narrative"
+// ============================================================
+
+Instance: form111-obs-cardiovascular
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* category = $observation-category#exam "Exam"
+* code = $loinc#10200-4 "Physical findings of Heart Narrative"
+* subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
+* encounter = Reference(urn:uuid:11100001-0000-0000-0000-000000000004)
+* effectiveDateTime = "2025-01-15T09:00:00+05:00"
+* performer = Reference(urn:uuid:11100001-0000-0000-0000-000000000005)
+* valueString = "Heart sounds clear, rhythmic. No murmurs. Peripheral pulses present bilaterally."
+
+// ============================================================
+// INITIAL EXAM: OVARIES AND FALLOPIAN TUBES (яичники, маточные трубы)
+// CSV: Яичники, маточные трубы → Observation.code (not specified in CSV)
+// Using LOINC 10161-8 + SNOMED body site for ovaries and tubes
+// ============================================================
+
+Instance: form111-obs-ovaries-tubes
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* category = $observation-category#exam "Exam"
+* code = $loinc#10161-8 "Physical findings of Genitourinary system Narrative"
+* bodySite.coding[0] = $sct#15497006 "Ovarian structure (body structure)"
+* bodySite.coding[+] = $sct#31435000 "Fallopian tube structure (body structure)"
+* subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
+* encounter = Reference(urn:uuid:11100001-0000-0000-0000-000000000004)
+* effectiveDateTime = "2025-01-15T09:00:00+05:00"
+* performer = Reference(urn:uuid:11100001-0000-0000-0000-000000000005)
+* valueString = "Ovaries and fallopian tubes not palpable, no tenderness on examination."
+
+// ============================================================
+// OBSTETRIC HISTORY: FEATURES OF PREVIOUS PREGNANCIES (особенности предыдущих беременностей)
+// CSV: Особенности предыдущих беременностей → UZCoreQuestionnaireResponse (complex)
+// Simplified as Observation with free-text valueString
+// ============================================================
+
+Instance: form111-obs-prev-pregnancy-features
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* category = $observation-category#social-history "Social History"
+* code = $loinc#10163-4 "History of pregnancies Narrative"
+* subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
+* encounter = Reference(urn:uuid:11100001-0000-0000-0000-000000000004)
+* effectiveDateTime = "2025-01-15T09:00:00+05:00"
+* performer = Reference(urn:uuid:11100001-0000-0000-0000-000000000005)
+* valueString = "First pregnancy (2022): term vaginal delivery, live birth, birth weight 3200 g, height 51 cm. Postpartum period uneventful."
+
+// ============================================================
+// VISIT 1: THERAPIST EXAMINATION (осмотр терапевта)
+// CSV: Осмотр терапевта → Observation.note or CarePlan.activity.detail.description
+// ============================================================
+
+Instance: form111-obs-therapist-exam
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* category = $observation-category#exam "Exam"
+* code = $loinc#10191-5 "Physical findings of Chest Narrative"
+* subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
+* encounter = Reference(urn:uuid:11100001-0000-0000-0000-000000000004)
+* effectiveDateTime = "2025-04-10T11:00:00+05:00"
+* performer = Reference(urn:uuid:11100001-0000-0000-0000-000000000005)
+* valueString = "Examined by internist. Lungs clear bilaterally. Heart sounds normal. Abdomen soft. No oedema. No contraindications to continued pregnancy."
+
+// ============================================================
+// VISIT 1: DENTIST EXAMINATION (осмотр стоматолога)
+// CSV: Осмотр стоматолога → Observation.note or CarePlan.activity.detail.description
+// ============================================================
+
+Instance: form111-obs-dentist-exam
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* category = $observation-category#exam "Exam"
+* code = $loinc#29547-7 "Physical findings of Mouth and Throat and Teeth Narrative"
+* subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
+* encounter = Reference(urn:uuid:11100001-0000-0000-0000-000000000004)
+* effectiveDateTime = "2025-04-10T11:30:00+05:00"
+* performer = Reference(urn:uuid:11100001-0000-0000-0000-000000000005)
+* valueString = "Oral cavity examined. Teeth in satisfactory condition. One cavity filled during visit. Gums healthy. No active dental infection."
+
+// ============================================================
+// HOSPITALIZATION ENCOUNTER (госпитализирована)
+// CSV: Госпитализирована → Encounter.class = IMP
+// Not referenced from any Composition section (profile restricts visitRecord
+// entries to UZCoreObservation | Condition | Appointment | Immunization).
+// Present in Bundle as supporting resource.
+// ============================================================
+
+Instance: form111-encounter-hospitalization
+InstanceOf: Encounter
+Usage: #inline
+* language = #en
+* status = #finished
+* class = $v3-ActCode#IMP "inpatient encounter"
+* subject = Reference(urn:uuid:11100001-0000-0000-0000-000000000002)
+* participant[0].type = $v3-ParticipationType#PPRF "primary performer"
+* participant[=].actor = Reference(urn:uuid:11100001-0000-0000-0000-000000000005)
+* actualPeriod.start = "2025-04-10T14:00:00+05:00"
+* actualPeriod.end = "2025-04-17T10:00:00+05:00"
+* reason[0].use = $v3-ActCode#TREAT "Treatment"
