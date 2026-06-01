@@ -4,8 +4,9 @@
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
-# Faulty error in IG publisher, this link does work
+# Faulty error in IG publisher, these links do work (cached on first successful build)
 The link 'https://dhp.uz/fhir/core/%' cannot be resolved
+https://dhp.uz/fhir/core/en/
 
 # Warning that can be ignored for our use since our instances use Uzbek/Russian but generated narrative in English
 Resource has a language (uz), and the XHTML has a lang (en), but they differ
@@ -16,4 +17,10 @@ Resource has a language (ru), and the XHTML has a lang (en), but they differ
 # Organization-scoped identifiers in this example follow dynamic pattern https://dhp.uz/fhir/core/sid/pid/uz/prn/{soliq-id}/{type}
 # per identifiers.md in the main DHP IG (uz.dhp.core)
 No definition could be found for URL value 'https://dhp.uz/fhir/core/sid/pid/uz/prn/200935935/%
+# Facility code identifier system defined in uz.dhp.core identifiers but not yet published as a NamingSystem artifact
+No definition could be found for URL value 'https://dhp.uz/fhir/core/sid/org/uz/facility-code'
+
+# EpisodeOfCare type VS (uz.dhp.core) has no expansion; tx.fhir.org cannot resolve terminology.dhp.uz CS remotely.
+# Code mserv-0001-00001 exists in the local CS package and is included in the VS via system reference.
+None of the codings provided are in the value set 'EpisodeOfCare type value set'
 

@@ -103,6 +103,12 @@ Description: "Categories for clinical documents and other knowledge resources in
   * ^designation[+].language = #ru
   * ^designation[=].value = "Запись сеанса гемодиализа"
 
+* #form-027 "Ambulatoriyadagi bemor taloni"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Outpatient patient visit record"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Талон амбулаторного пациента"
+
 * #form-096 "Tug'ruq tibbiy kartasi"
   * ^designation[0].language = #en
   * ^designation[=].value = "Birth medical record"
