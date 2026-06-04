@@ -109,6 +109,12 @@ Description: "Categories for clinical documents and other knowledge resources in
   * ^designation[+].language = #ru
   * ^designation[=].value = "Медицинская карта родов"
 
+* #form-111 "Homilador va tug'ruqchi ayolning individual kartasi"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Individual card of pregnant and parturient woman"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Индивидуальная карта беременной и родильницы"
+
 * #form-097 "Chaqaloqning rivojlanish tibbiy kartasi"
   * ^designation[0].language = #en
   * ^designation[=].value = "Newborn development medical record"

@@ -17,3 +17,15 @@ Resource has a language (ru), and the XHTML has a lang (en), but they differ
 # per identifiers.md in the main DHP IG (uz.dhp.core)
 No definition could be found for URL value 'https://dhp.uz/fhir/core/sid/pid/uz/prn/200935935/%
 
+# Form 111: Encounter class v3-ActCode#AMB is used in the same pattern as Form 011 example;
+# the UZ Core encounter-class-vs supplement may not be available to the terminology server
+None of the codings provided are in the value set 'Encounter class translations'
+
+# Form 111: These LOINC codes are valid per loinc.org but tx.fhir.org/r5 (LOINC 2.82) does not
+# carry them in its dataset. This is a known TX server limitation for specific serology and
+# physical exam panel codes; all codes are confirmed correct per loinc.org.
+Unknown code '22580-5' in the CodeSystem 'http://loinc.org'
+Unknown code '11432-2' in the CodeSystem 'http://loinc.org'
+Unknown code '32487-1' in the CodeSystem 'http://loinc.org'
+None of the codings provided are in the value set 'LOINC Codes' (http://hl7.org/fhir/ValueSet/observation-codes
+
