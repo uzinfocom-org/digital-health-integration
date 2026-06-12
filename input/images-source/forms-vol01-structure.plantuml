@@ -15,8 +15,8 @@ class "001 Admission/refusal\njournal" as F001 <<register>>
 class "003 Inpatient\nmedical card" as F003 <<card>>
 class "007 Bed-movement\nledger" as F007 <<register>>
 
-class "004 Anesthesia\nregister" as F004 <<register>>
-class "005 Anesthesia\nsheet" as F005 <<report>>
+class "004 Anaesthesia\nregister" as F004 <<register>>
+class "005 Anaesthesia\nsheet" as F005 <<report>>
 class "008 Surgical\nprocedure record" as F008 <<report>>
 class "006 ICU dynamic\nobservation" as F006 <<report>>
 class "009 Transfusion\nrecord" as F009 <<report>>

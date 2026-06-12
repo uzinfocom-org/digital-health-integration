@@ -27,7 +27,7 @@ class "064 Immunisation\nregister" as F064 <<register>>
 
 class "086 Medical\ncertificate" as F086 <<certificate>>
 class "086-1..086-4\ncertificate variants" as F086x <<certificate>>
-class "043 / 044\ntravel certificates" as F043 <<certificate>>
+class "043 foreign /\n044 travel certificate" as F043 <<certificate>>
 
 class "089 TB/STI\nnotification" as F089 <<notify>>
 class "090 cancer\nnotification" as F090 <<notify>>

@@ -64,7 +64,7 @@ For implementers, this is the volume with the widest variety of [document archet
 | 030-1..030-4 | Dispensary variants (psychiatric, oncology, psychoneuro, TB) | Card |
 | 035, 035-1 | Medical advisory commission (VKK) disability conclusions | Conclusion |
 | 037, 037-1 | Prenatal screening referral / exchange sheet | Referral |
-| 043, 044 | Medical certificates (general, foreign travel) | Certificate |
+| 043, 044 | Medical certificates (foreign nationals; travel abroad) | Certificate |
 | 051 | Family nurse daily activity log | Register |
 | 053 | Military conscript treatment card | Card |
 | 056 | Determination of legal insanity | Conclusion |

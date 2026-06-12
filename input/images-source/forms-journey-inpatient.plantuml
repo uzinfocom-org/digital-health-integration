@@ -13,7 +13,7 @@ ADM -> ADM : 001 admission/refusal journal
 ADM -> WARD : 003 inpatient medical card opened
 WARD -> DX : orders tests and imaging
 DX -> WARD : 040-130 lab results, 015 ultrasound, 017 X-ray, 020 ECG
-WARD -> WARD : 008 surgical procedure record\n004 anesthesia register + 005 anesthesia sheet
+WARD -> WARD : 008 surgical procedure record\n004 anaesthesia register + 005 anaesthesia sheet
 
 alt transfusion required
   WARD -> BB : 213 requisition for blood products

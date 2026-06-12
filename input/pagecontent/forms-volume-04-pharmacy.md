@@ -45,5 +45,5 @@ For implementers: these forms carry no per-patient clinical content, so most are
 | 137 | Drug stock accounting sheet |
 | 138 | Turnover statement by financing source |
 | 139 | Daily quantitative expense document |
-| 140 | Turnover table column notes |
+| 140 | Turnover statement by financing source (2) |
 | 141 | Drug balance (per period) |

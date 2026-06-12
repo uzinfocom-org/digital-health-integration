@@ -42,7 +42,7 @@ For implementers: note the two distinctive resources here - `Consent` for the in
 | Biochemical screening | 156, 157 | `DiagnosticReport` + interpretive `Observation` |
 | Consent and refusal | 152, 153, 155 | `Consent` |
 | Invasive diagnosis | 166 | `Procedure` |
-| Cytogenetic / molecular results | 154, 167-171 | `DiagnosticReport` + genetics `Observation` |
+| Cytogenetic, molecular and neonatal results | 154, 167-171 | `DiagnosticReport` + genetics `Observation` |
 | Conclusions and consilium | 165, 172, 173 | `Composition` |
 | Specialist consults | 160, 161 | `Encounter` + `Observation` |
 | Pre-surgery epicrisis | 174 | `Composition` |
