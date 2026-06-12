@@ -1,8 +1,29 @@
-Volume 10 is forensic medical examination (sud-tibbiy ekspertiza) - examination of bodies and living persons for legal proceedings, supported by forensic biology, histology, chemistry and criminalistics laboratories. It is a distinct legal domain that happens to use medical methods.
+Volume 10 is forensic medicine (sud-tibbiy ekspertiza) - medical examinations carried out for the courts and police rather than for treating a patient. It uses medical methods to answer legal questions, and it is a distinct domain that sits at the edge of healthcare.
 
-This is [out of scope](forms-overview.html#scope-for-integration) for the core clinical integration. It is documented here for completeness and because its laboratory steps share the familiar result pattern.
+### What forensic medicine does
+
+When a death is violent, sudden or unexplained, or when an injury or a person's state has legal consequences, the law requires an independent medical examination. Forensic specialists:
+
+- Examine bodies to establish how and when a person died, often when a crime may be involved.
+- Examine living people - for injuries, or to assess intoxication or fitness.
+- Use laboratories of their own - biology, chemistry, histology, criminalistics - to analyse evidence such as blood, tissue and other materials.
+- Produce an expert conclusion, a formal document that can be used in court.
+
+The purpose is legal proof, not care, which is why this volume usually stands apart from the clinical record.
+
+### How the forms relate
+
+A case is referred in (by police or a court) and registered as either a body in the thanatology department (233) or a living person in the outpatient register (234). The examination is performed and written up (229), and samples are sent to the forensic laboratories (231, 232), which return results (236-245). Everything comes together in the expert conclusion (230) that goes back to the authority that asked. So the forms form a chain from referral, through examination and laboratory work, to a signed conclusion.
+
+### A sample case
+
+Imagine a body found in circumstances the police cannot explain. It is referred to the forensic bureau and registered (233). A forensic doctor examines it and records findings (229), then sends samples to the chemistry and histology labs to check for poisons and to date the death (231, 241, 232). When the results come back, the expert writes a formal conclusion stating the cause and manner of death (230), which becomes evidence in the investigation.
+
+<div>{% include forms-vol10-flow.svg %}</div><br clear="all"/>
 
 ### How this volume maps to FHIR
+
+For implementers: because the purpose is legal rather than care delivery, integration into a clinical record is the exception, not the rule. The laboratory mechanics nonetheless mirror clinical labs.
 
 | Form group | Forms | FHIR target |
 |------------|-------|-------------|
@@ -11,12 +32,6 @@ This is [out of scope](forms-overview.html#scope-for-integration) for the core c
 | Lab referrals | 231, 232 | `ServiceRequest` |
 | Forensic laboratories | 236-245 | `DiagnosticReport` + `Observation` + `Specimen` |
 | Living-person assessment | 242 | `Observation` (narcological examination) |
-
-Because the purpose is legal rather than care delivery, integration into a clinical record is the exception, not the rule. The laboratory mechanics nonetheless mirror clinical labs.
-
-### Sample flow
-
-<div>{% include forms-vol10-flow.svg %}</div><br clear="all"/>
 
 ### Forms in this volume
 

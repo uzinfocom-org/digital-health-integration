@@ -1,39 +1,53 @@
-Volume 3 is the largest volume - 93 forms covering every diagnostic and laboratory service: imaging, functional diagnostics, and the full clinical-laboratory catalogue. For a [LIS or PACS](index.html) integration this is the centre of gravity. It is also the volume where the [archetype patterns](forms-overview.html#document-archetypes) pay off most, because almost every form here is one of two shapes: a `tahlili` (lab analysis) or a `bayoni`/`protokoli` (examination report).
+Volume 3 is the biggest volume - 93 forms - and it covers all the ways a patient is tested and examined: blood and urine tests, ultrasound and X-ray, ECG, endoscopy, and so on. These services do not decide on their own to test someone; they act on a request from a doctor and send back a result. Understanding that request-and-result rhythm is the key to the whole volume.
 
-This is a [core clinical](forms-overview.html#scope-for-integration) volume. The [hemodialysis record (011)](form-011-mapping.html) is the form modelled here so far.
+### What diagnostics and the laboratory do
+
+A doctor who is unsure what is wrong with a patient orders a test or a scan. The volume's services fall into a few plain-language groups:
+
+- Looking inside the body without cutting. Ultrasound, X-ray, CT and MRI produce images of organs. The 015 family alone covers ultrasound of nearly every organ, from the thyroid to the kidneys.
+- Measuring how the body works. ECG records the heart's rhythm, spirometry measures the lungs, EEG measures brain activity.
+- Looking inside through a camera. Endoscopy passes a camera into the stomach or bowel.
+- Analysing samples. The laboratory examines blood, urine, and other samples - counting cells, measuring chemicals and hormones, looking for infections and parasites. This is the largest group by far.
+- Performing treatments and procedures. A few forms here record treatments done in the diagnostic setting, such as dialysis or physiotherapy.
+
+Every one of these starts the same way: a request comes in, the test or scan is done, and a result goes back to the doctor who asked. The forms are mostly the results.
+
+### How the forms relate
+
+Most forms in this volume are siblings rather than a chain: each is one type of result, and they relate to each other by sharing the same request-and-result shape rather than by leading into one another. The relationship worth understanding is the request that ties a result back to the doctor who ordered it, and the family structure within a test type.
+
+The clearest example of family structure is ultrasound. Form 015 is the parent (the ultrasound register), and forms 015-1 through 015-26 are its children - one per organ, from the parotid gland to the brachiocephalic arteries. They are not 27 unrelated forms; they are one kind of examination repeated for different body parts. The same is true of the clinical-laboratory immunoassay series (105 to 118). Recognising these families means you understand the volume as a few dozen patterns, not a hundred separate things.
+
+The diagram shows the common request-result pattern that nearly every form here follows:
+
+<div>{% include forms-vol03-fhir.svg %}</div><br clear="all"/>
+
+### A sample test
+
+Imagine a woman whose doctor suspects gallstones. The doctor sends a request to the laboratory and the ultrasound room. A nurse draws blood, which the lab analyses and returns as a blood-test result (one of the 040-130 forms); the radiologist scans her abdomen and returns an ultrasound report of the liver and gallbladder (015-16). Both results are linked back to the doctor's original request, so when the doctor opens the patient's record they see the answer next to the question they asked. If imaging is involved and the hospital has a picture archive (PACS), the actual images are stored there and the report just points to them.
+
+The sequence below shows that order-to-result round trip, which is the backbone of laboratory and imaging integration:
+
+<div>{% include forms-vol03-flow.svg %}</div><br clear="all"/>
 
 ### How this volume maps to FHIR
 
-You do not need 93 distinct mappings. Almost everything reduces to the order-result pattern: a `ServiceRequest` produces a `Specimen` and `Observation`s, grouped into a `DiagnosticReport`, with an `ImagingStudy` for imaging.
-
-<div>{% include forms-vol03-fhir.svg %}</div><br clear="all"/>
+For implementers: you do not need 93 distinct mappings. Almost everything reduces to the order-result pattern - a `ServiceRequest` produces a `Specimen` and `Observation`s, grouped into a `DiagnosticReport`, with an `ImagingStudy` for imaging. This is the same scenario the UZ Core [laboratory workflow](https://dhp.uz/fhir/core/en/workflow-lab.html) specifies in detail; the forms here are the source documents it produces.
 
 | Form group | Forms | FHIR target |
 |------------|-------|-------------|
 | Laboratory analyses | 040, 041, 042, 046-050, 052, 054, 055, 057, 065, 067-088, 092-095, 105-120, 130 | `DiagnosticReport` + `Observation` per result + `Specimen` |
 | Imaging | 015, 015-1..015-26, 017, 019 | `DiagnosticReport` + `ImagingStudy`; PACS holds the images |
-| Functional diagnostics | 013, 016, 018, 020, 021, 022, 023-25 series | `DiagnosticReport` + `Observation` |
+| Functional diagnostics | 013, 016, 018, 020, 021, 022 | `DiagnosticReport` + `Observation` |
 | Endoscopy | 012, 012-1, 026 | `Procedure` + `DiagnosticReport` |
 | Treatment procedures | 011, 014, 029, 031, 031-1, 069 | `Procedure` (+ time-series `Observation`) |
 | Parasitology / surveillance labs | 121-126 | `DiagnosticReport`; the journals are queries, and notifiable results feed [volume 11](forms-volume-11-sanitary-epidemiology.html) |
 | Lab and procedure registers | 034, 039, 059, 059-1, 059-2 | Query/`List`, not documents |
 | Statistical and notification artifacts | 027, 028, 066, 066-1, 114 | `Composition` (discharge cards); 028/114 are notifications |
 
-### Form relationships
-
-The defining structure here is the 015 ultrasound family - a single parent form (015, the ultrasound register) with 26 organ-specific children (015-1 through 015-26, from parotid gland to brachiocephalic doppler). They all share the same `DiagnosticReport` shape and differ only in the body site and the observations recorded. Treat them as one mapping parameterised by organ, not 27 separate ones. The same logic applies to the clinical-diagnostic-laboratory IXLA/ELISA series (105-118).
-
-### Sample flow
-
-The order-to-result round trip, the spine of LIS and PACS integration:
-
-<div>{% include forms-vol03-flow.svg %}</div><br clear="all"/>
-
-This is the same scenario specified in detail by the UZ Core [laboratory workflow](https://dhp.uz/fhir/core/en/workflow-lab.html); the forms here are the source documents that workflow produces.
-
 ### Forms in this volume
 
-Because of its size, the volume is summarised by cluster rather than listed form by form. The boundaries of the volume are forms 011-130 (excluding those the Order assigns elsewhere).
+Because of its size, the volume is summarised by cluster rather than listed form by form. Its boundaries are forms 011-130 (excluding those the Order assigns elsewhere).
 
 | Cluster | Representative forms |
 |---------|----------------------|

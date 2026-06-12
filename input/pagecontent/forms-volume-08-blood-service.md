@@ -1,8 +1,39 @@
-Volume 8 is the blood service - donor registration, screening, collection, component production and the issue of finished products to facilities. It is the production and supply side of transfusion; the bedside, recipient side is the 009 family in [volume 1](forms-volume-01-inpatient.html). Together they form one donor-to-recipient chain.
+Volume 8 is the blood service: how donated blood is collected, checked, processed and supplied to hospitals. It is the supply side of transfusion. The other side - actually giving blood to a patient at the bedside - is the 009 family in [volume 1](forms-volume-01-inpatient.html). Together the two volumes form one chain from donor to recipient.
 
-This is a [core clinical](forms-overview.html#scope-for-integration) volume for two of its parts - donor screening (a laboratory pattern) and product issue (a supply pattern) - while the internal production accounting is more operational.
+### What the blood service does
+
+Blood cannot be manufactured; it has to be donated, and it carries real risk if it is mishandled or carries infection. So the service is built around a careful, traceable chain:
+
+- A donor volunteers and is registered.
+- Their blood is screened. Before anything is used, the donor's blood is tested for its group (A, B, O, Rh) and for infections such as HIV, hepatitis and syphilis. A donor who fails screening is set aside.
+- The blood is collected, either as whole blood or by a machine that takes only the part needed (apheresis).
+- It is processed into components. Whole blood is separated into red cells, plasma and other components, because different patients need different parts.
+- It is quality-checked and stored, then issued to hospitals when they ask for it.
+- Finally it is transfused into a patient, recorded back in volume 1.
+
+The recurring theme is traceability: every unit must be followed from the arm it came from to the patient it goes into, and anything unsafe must be removed and recorded.
+
+### How the forms relate
+
+This volume is a genuine production line, so its forms form a chain rather than a set of siblings. Registration (195, 196, 199) comes first. Screening (203, 204, 217-220) is the gate: a clear result lets the donor proceed; a positive result diverts them to the deferral register (216) and the unit is destroyed (206). A cleared donor is bled (198, 201), and the unit is processed into components (207-210), quality-checked for sterility (205), and held in stock. When a hospital sends a requisition (213), the matching product is issued (211) and travels to the bedside, where it becomes a transfusion in volume 1.
+
+The diagram shows that production line and the screening gate that controls it:
+
+<div>{% include forms-vol08-structure.svg %}</div><br clear="all"/>
+
+The two ends of the chain are where it connects to clinical care: the screening tests are ordinary laboratory results, and the requisition-and-issue step is the hand-off into a patient's transfusion record.
+
+### A sample journey for one unit of blood
+
+Imagine a volunteer who comes to donate. The centre registers her (195, 196) and takes a sample to screen her blood; the lab confirms her group and that she is free of infection (203, 218). She is bled (201), and her donation is separated into red cells and plasma (207, 209), each checked for sterility (205) and placed in the store. Days later, a hospital treating a patient who has lost blood in surgery sends a requisition (213); the matching red-cell unit is issued (211) and delivered to the ward, where it is transfused into the patient and recorded on form 009 in volume 1. The single donation has been traceable at every step from her arm to the patient.
+
+The sequence below follows that journey from donor to recipient:
+
+<div>{% include forms-vol08-flow.svg %}</div><br clear="all"/>
 
 ### How this volume maps to FHIR
+
+For implementers: the two ends of the chain carry the integration value. Donor screening reuses the laboratory mapping wholesale, and the requisition/issue pair (213 to 211) is the hand-off into the clinical transfusion record. The production registers in between are inventory accounting and largely out of initial clinical scope.
 
 | Form group | Forms | FHIR target |
 |------------|-------|-------------|
@@ -14,20 +45,6 @@ This is a [core clinical](forms-overview.html#scope-for-integration) volume for 
 | Quality and disposal | 205, 206 | `Observation` (sterility) and disposal register |
 | Requisition and issue | 211, 212, 213, 214, 215 | `SupplyRequest` (213) and `SupplyDelivery` (211) |
 | Bedside transfusion | 009 family (volume 1) | `Procedure` + `Observation` |
-
-The two ends of the chain are where integration matters: donor screening reuses the laboratory mapping wholesale, and the requisition/issue pair (213 to 211) is the hand-off into the clinical transfusion record. The production registers in between are inventory accounting and largely out of initial clinical scope.
-
-### Form relationships
-
-A donor is registered, screened, and - if cleared - bled; the unit is processed into components, quality-checked, and issued against a requisition into a bedside transfusion. A positive screen diverts the donor to the deferral register.
-
-<div>{% include forms-vol08-structure.svg %}</div><br clear="all"/>
-
-### Sample flow
-
-The full donor-to-recipient sequence, ending in the volume 1 transfusion record:
-
-<div>{% include forms-vol08-flow.svg %}</div><br clear="all"/>
 
 ### Forms in this volume
 

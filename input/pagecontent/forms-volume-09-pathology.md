@@ -1,20 +1,33 @@
-Volume 9 is pathological anatomy - clinical autopsy of deceased patients and the histological examination of surgical and biopsy specimens. It is small (six forms) and converges, like the forensic volume, on a laboratory step.
+Volume 9 is pathological anatomy - examining bodies after death to establish why someone died, and examining tissue removed during surgery to see what is wrong with it. It is small (six forms) and, like the forensic volume, ends in a laboratory step.
 
-This is a [specialised clinical](forms-overview.html#scope-for-integration) volume. Its histology results follow the [volume 3](forms-volume-03-diagnostics-laboratory.html) laboratory pattern.
+### What pathology does
+
+Pathology answers the question "what was actually wrong?" by looking at the body and its tissues directly. It does this in two settings:
+
+- After death. When a patient dies in hospital, a pathologist may perform an autopsy to confirm the cause of death and check that the diagnosis and treatment were correct. The body is registered, the autopsy is recorded, and tissue samples are taken for closer examination under a microscope.
+- After surgery. When a surgeon removes tissue - a lump, an organ, a biopsy - it is sent to the same laboratory to be examined and diagnosed. This is the more common, everyday work.
+
+Both settings converge on the same place: a microscope and a histology report.
+
+### How the forms relate
+
+The forms split by where the tissue comes from but meet at histology. The autopsy path registers the body (223, 228), records the autopsy itself (224), and sends material for microscopic study (225, 226). The surgical path sends biopsy and operative material straight to the same study (227). Either way, the histology examination produces the diagnosis. The autopsy reached after a hospital death is one branch of the [death journey](forms-overview.html#journeys-that-cross-volumes); the other branch is forensic ([volume 10](forms-volume-10-forensic.html)).
+
+### A sample case
+
+Imagine a surgeon who removes a suspicious lump from a patient. Rather than guess, they send it to pathology. The lab receives the specimen (227), examines it under the microscope, and reports back whether it is benign or cancerous. Separately, when an elderly patient dies unexpectedly on a ward, the body is sent for autopsy (223, 224); tissue is taken (225) and examined to establish the cause of death, which informs the death certificate issued back in volume 1.
+
+<div>{% include forms-vol09-flow.svg %}</div><br clear="all"/>
 
 ### How this volume maps to FHIR
+
+For implementers: the histology results follow the [volume 3](forms-volume-03-diagnostics-laboratory.html) laboratory pattern.
 
 | Form group | Forms | FHIR target |
 |------------|-------|-------------|
 | Autopsy | 223, 224, 228 | `Procedure` (autopsy) + `Composition` (protocol); the register is a query |
 | Histology referral and material | 225, 226, 227 | `ServiceRequest` + `Specimen` |
 | Histology result | (result of 225/227) | `DiagnosticReport` + `Observation` |
-
-The autopsy reached from a death in [volume 1](forms-volume-01-inpatient.html) is one branch of the [death journey](forms-overview.html#journeys-that-cross-volumes); the other is forensic ([volume 10](forms-volume-10-forensic.html)). Surgical and biopsy specimens (227) arrive directly from clinical wards and are the more common, routine input.
-
-### Sample flow
-
-<div>{% include forms-vol09-flow.svg %}</div><br clear="all"/>
 
 ### Forms in this volume
 

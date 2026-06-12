@@ -1,8 +1,41 @@
-Volume 2 is the outpatient counterpart of [volume 1](forms-volume-01-inpatient.html). It covers the polyclinic and family-clinic record - day-to-day visits, the dispensary observation of chronic patients, immunisation, the many medical certificates the state requires, and the mandatory notifications that feed disease registries. It is broad rather than deep: lots of distinct document types, most of them short.
+Volume 2 covers everyday care that does not involve staying overnight in hospital - the polyclinic and family clinic. This is where most people meet the health system: routine visits, check-ups, vaccinations, the long-term follow-up of chronic illness, and the many official certificates the state asks doctors to issue. It is the outpatient counterpart of [volume 1](forms-volume-01-inpatient.html): broad rather than deep, with lots of short, distinct document types.
 
-This is a [core clinical](forms-overview.html#scope-for-integration) volume, and the one with the widest variety of archetypes, so it is the best place to see the [document patterns](forms-overview.html#document-archetypes) at work.
+### What outpatient care involves
+
+A polyclinic does several different jobs, and the forms group around them:
+
+- Seeing patients. People come in (or are visited at home) and are seen by a doctor, who keeps a card for each patient that builds up over years.
+- Watching chronic patients. Someone with a long-term illness - diabetes, a psychiatric condition, cancer, tuberculosis - is put under "dispensary observation", which means regular scheduled check-ups recorded over time.
+- Vaccinating. Children and adults receive scheduled vaccines, tracked on a card and in a register.
+- Issuing certificates. A great deal of outpatient work is producing official papers: fitness to drive, fitness for a job or study, sick leave, fitness to travel abroad. These are signed documents with legal weight.
+- Reporting certain diagnoses. When a doctor first diagnoses something the state tracks - tuberculosis, cancer, a sexually transmitted infection, drug addiction - they must send a notification so it reaches the relevant registry.
+
+So the volume is best read as a set of small workflows that all start from an outpatient visit.
+
+### How the forms relate
+
+The visit registration (024, and the daily reception logs 024-1 to 024-4) is the entry point - a running list of who was seen. For each patient an ambulatory card (025) is kept, and it is the thread that ties their visits together. From that card, the volume's recurring "families" branch off depending on what the patient needs:
+
+- The dispensary family: the control card (030) has specialised versions for psychiatric, oncology, psychoneurological and tuberculosis patients (030-1 to 030-4). One parent form, four disease-specific children.
+- The certificate family: the general medical certificate (086) has variants for specific purposes (086-1 to 086-4), alongside the travel, driving and sanatorium certificates.
+- The notification family: the first-time-diagnosis notices for tuberculosis/STI (089), cancer (090) and drug addiction (091).
+- The pregnancy thread: the prenatal referral (037) and the pregnant-woman card (111), which hand the patient over to the screening centre in [volume 6](forms-volume-06-genetics-screening.html).
+
+The diagram shows how the visit opens the card and the card branches into these families. The two "variant" families (030 and 086) are the structure worth noticing: a base form with specialised offshoots.
+
+<div>{% include forms-vol02-structure.svg %}</div><br clear="all"/>
+
+### A sample visit
+
+Imagine a man who comes to his family polyclinic feeling unwell. The receptionist logs the visit (024) and pulls up his ambulatory card (025). The doctor examines him, orders blood and urine tests from [the laboratory](forms-volume-03-diagnostics-laboratory.html), and the results come back showing diabetes. Because this is a chronic condition, the doctor places him under dispensary observation and opens a dispensary card (030), so he will be called back for regular check-ups. The man also asks for a certificate confirming he is fit to keep his driving licence, which the doctor issues (083). On the way out he is due a vaccination, recorded on his immunisation card (063). A single visit has touched four different form families.
+
+The sequence below shows those branches from one visit:
+
+<div>{% include forms-vol02-flow.svg %}</div><br clear="all"/>
 
 ### How this volume maps to FHIR
+
+For implementers, this is the volume with the widest variety of [document archetypes](forms-overview.html#document-archetypes), so it is the best place to see the patterns at work.
 
 | Form group | Forms | FHIR target |
 |------------|-------|-------------|
@@ -17,18 +50,6 @@ This is a [core clinical](forms-overview.html#scope-for-integration) volume, and
 | Ambulatory operations | 069 | `Procedure` |
 | Pregnancy | 111 | Longitudinal record threading into volumes 6 and 1 |
 | Purpose-specific cards | 051, 053, 061 | Longitudinal `Composition` / `CarePlan` |
-
-### Form relationships
-
-The visit registration opens the ambulatory card, which then branches into the volume's recurring families: the dispensary card and its disease-specific variants, the certificate family, the notification family, and the pregnancy referral. The variant families (030 and 086) are the non-obvious structure worth seeing - one parent form with specialised children.
-
-<div>{% include forms-vol02-structure.svg %}</div><br clear="all"/>
-
-### Sample flow
-
-A single outpatient visit can trigger several of these forms at once:
-
-<div>{% include forms-vol02-flow.svg %}</div><br clear="all"/>
 
 ### Forms in this volume
 
