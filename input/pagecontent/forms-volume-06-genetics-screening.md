@@ -11,7 +11,7 @@ The important idea for a non-expert is that screening is a funnel: many people a
 
 ### How the forms relate
 
-The prenatal track is a decision chain. The exam card (159) opens the file. The trimester ultrasound (162-164) and biochemical screening (156-157) produce a risk estimate. A high risk leads to a counselling step where the mother either consents (152, 153) or refuses (155). Consent unlocks the invasive procedure (166), which produces a cytogenetic result (154), which feeds the genetic conclusion (165, 172) and, in difficult cases, a panel discussion called a perinatal consilium (173). Each step gates the next, so the forms are genuinely sequential.
+The prenatal track is a decision chain. The exam card (159) opens the file. The trimester ultrasound (162-164) and biochemical screening (156-157) produce a risk estimate. A high risk leads to a counselling step where the mother either consents (152, 153) or refuses (155). Consent unlocks the invasive procedure (166), which produces a cytogenetic result (154), which feeds the genetic conclusion (165, 172) and, in difficult cases, a panel discussion called a prenatal consilium (173). Each step gates the next, so the forms are genuinely sequential.
 
 The neonatal track is a shorter chain: the heel-prick screen (167) leads, only if abnormal, to confirmatory tests (168, 170) and a retest (171).
 
@@ -67,5 +67,5 @@ For implementers: note the two distinctive resources here - `Consent` for the in
 | 170 | Sweat test | Report |
 | 171 | Neonatal retest screening | Report |
 | 172 | Post-invasive-diagnosis conclusion | Conclusion |
-| 173 | Perinatal consilium | Conclusion |
+| 173 | Prenatal consilium | Conclusion |
 | 174 | Pre-surgery epicrisis for a pregnant woman | Epicrisis |

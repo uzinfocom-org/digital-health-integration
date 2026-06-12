@@ -20,7 +20,7 @@ package "Prenatal (mother)" {
   class "166 Invasive\ndiagnosis procedure" as F166 <<report>>
   class "154 Cytogenetic /\nmolecular result" as F154 <<report>>
   class "165/172 Genetic\nconclusion" as F165 <<conclusion>>
-  class "173 Perinatal\nconsilium" as F173 <<conclusion>>
+  class "173 Prenatal\nconsilium" as F173 <<conclusion>>
 }
 
 package "Neonatal (baby)" {

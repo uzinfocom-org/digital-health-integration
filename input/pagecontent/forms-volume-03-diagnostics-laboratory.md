@@ -36,11 +36,11 @@ For implementers: you do not need 93 distinct mappings. Almost everything reduce
 
 | Form group | Forms | FHIR target |
 |------------|-------|-------------|
-| Laboratory analyses | 040, 041, 042, 046-050, 052, 054, 055, 057, 065, 067-088, 092-095, 105-120, 130 | `DiagnosticReport` + `Observation` per result + `Specimen` |
+| Laboratory analyses | 040 CBC, 042 clotting, 048 biochemistry, 049 hormones, 070 hepatitis, 071 urine, 079/098/099 TORCH, 092 immunoglobulin, 105-118 immunoassay series, 130 (the bulk of forms 040-130) | `DiagnosticReport` + `Observation` per result + `Specimen` |
 | Imaging | 015, 015-1..015-26, 017, 019 | `DiagnosticReport` + `ImagingStudy`; PACS holds the images |
 | Functional diagnostics | 013, 016, 018, 020, 021, 022 | `DiagnosticReport` + `Observation` |
 | Endoscopy | 012, 012-1, 026 | `Procedure` + `DiagnosticReport` |
-| Treatment procedures | 011, 014, 029, 031, 031-1, 069 | `Procedure` (+ time-series `Observation`) |
+| Treatment procedures | 011, 014, 029, 031, 031-1 | `Procedure` (+ time-series `Observation`) |
 | Parasitology / surveillance labs | 121-126 | `DiagnosticReport`; the journals are queries, and notifiable results feed [volume 11](forms-volume-11-sanitary-epidemiology.html) |
 | Lab and procedure registers | 034, 039, 059, 059-1, 059-2 | Query/`List`, not documents |
 | Statistical and notification artifacts | 027, 028, 066, 066-1, 114 | `Composition` (discharge cards); 028/114 are notifications |
@@ -55,7 +55,7 @@ Because of its size, the volume is summarised by cluster rather than listed form
 | Cardiac and neuro functional | 018 EXO/EEG, 020 ECG, 021 veloergometry, 015-12/13 phono/echocardiography, 015-23..26 EEG/REG/doppler |
 | Endoscopy | 012 colonoscopy, 026 EGDS |
 | Other diagnostics | 013 spirometry, 016 ophthalmoscopy, 022 audio/otoscopy |
-| Treatment procedures | 011 hemodialysis, 014 radiotherapy, 031 physiotherapy, 069 ambulatory operations |
+| Treatment procedures | 011 hemodialysis, 014 radiotherapy, 029 treatment-room blood sampling, 031 physiotherapy |
 | Haematology | 040 CBC, 041 Rh/group, 042 clotting, 046 CBC-5, 047 coagulogram, 085 bone marrow, 120 myelogram |
 | Biochemistry and hormones | 048 biochemistry, 049 hormones, 050 lipoproteins, 067 vitamin D, 087 glucose |
 | Urine and fluids | 071, 073-077 urine panel, 081 duodenal, 082 CSF, 078 prostate secretion |

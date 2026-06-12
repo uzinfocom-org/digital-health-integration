@@ -16,7 +16,7 @@ alt screening shows increased risk
   alt woman consents
     W -> SC : 152 / 153 informed consent
     SC -> SC : 166 invasive prenatal diagnosis procedure\n154 cytogenetic / molecular result
-    SC -> SC : 165 genetic conclusion, 172 post-procedure conclusion\n173 perinatal consilium
+    SC -> SC : 165 genetic conclusion, 172 post-procedure conclusion\n173 prenatal consilium
   else woman declines
     W -> SC : 155 refusal of invasive diagnosis
   end
