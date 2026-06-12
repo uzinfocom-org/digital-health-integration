@@ -1,0 +1,55 @@
+@startuml forms-vol06-structure
+hide circle
+hide empty members
+skinparam linetype ortho
+title Volume 6 - prenatal and neonatal tracks, coloured by FHIR shape
+
+skinparam class {
+  BackgroundColor<<card>> #E8F0FE
+  BackgroundColor<<report>> #E6F4EA
+  BackgroundColor<<consent>> #FEF7E0
+  BackgroundColor<<conclusion>> #F3E8FD
+}
+
+package "Prenatal (mother)" {
+  class "159 Prenatal\nexam card" as F159 <<card>>
+  class "162-164 Trimester\nultrasound protocols" as F162 <<report>>
+  class "156-157 Biochemical\nscreening conclusions" as F156 <<conclusion>>
+  class "152/153 Informed\nconsent" as F152 <<consent>>
+  class "155 Refusal of\ninvasive diagnosis" as F155 <<consent>>
+  class "166 Invasive\ndiagnosis procedure" as F166 <<report>>
+  class "154 Cytogenetic /\nmolecular result" as F154 <<report>>
+  class "165/172 Genetic\nconclusion" as F165 <<conclusion>>
+  class "173 Perinatal\nconsilium" as F173 <<conclusion>>
+}
+
+package "Neonatal (baby)" {
+  class "167 Neonatal\nscreening" as F167 <<report>>
+  class "168/170 Tandem MS /\nsweat test" as F168 <<report>>
+  class "171 Retest" as F171 <<report>>
+}
+
+package "Hereditary-disease registry" {
+  class "158 Genetic-patient\nambulatory card" as F158 <<card>>
+  class "160/161 Specialist\nconsults" as F160 <<report>>
+}
+
+F159 --> F162
+F159 --> F156
+F156 ..> F152 : if risk
+F152 --> F166
+F155 ..> F166 : blocks
+F166 --> F154
+F154 --> F165
+F165 --> F173
+F167 --> F168
+F167 --> F171
+F158 --> F160
+
+legend right
+  Blue = longitudinal card
+  Green = report (DiagnosticReport / Procedure)
+  Yellow = consent (Consent)
+  Purple = conclusion (Composition)
+endlegend
+@enduml

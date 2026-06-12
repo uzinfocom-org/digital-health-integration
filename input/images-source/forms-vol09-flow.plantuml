@@ -1,0 +1,22 @@
+@startuml forms-vol09-flow
+title Sample flow - pathological anatomy (volume 9)
+autonumber
+
+participant "Hospital\n(vol 1)" as H
+participant "Pathology\ndept (vol 9)" as PA
+participant "Histology\nlab" as HIST
+
+alt deceased patient
+  H -> PA : body referred after death
+  PA -> PA : 223 register of autopsied bodies\n224 autopsy protocol\n228 body registration
+  PA -> HIST : 225 referral for histology\n226 sectional material
+else surgical / biopsy specimen
+  H -> PA : 227 biopsy & operational material
+  PA -> HIST : tissue for histology
+end
+HIST -> PA : histology result
+note over HIST
+  Tissue results map to DiagnosticReport + Observation,
+  the same pattern as clinical labs in volume 3.
+end note
+@enduml

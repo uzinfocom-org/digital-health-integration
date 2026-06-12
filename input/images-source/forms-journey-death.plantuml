@@ -1,0 +1,29 @@
+@startuml forms-journey-death
+title Sample journey - death, autopsy and forensic branches (volumes 1, 9, 10)
+autonumber
+
+actor Deceased as D
+participant "Hospital / registry\n(vol 1)" as H
+participant "Pathology dept\n(vol 9)" as PA
+participant "Forensic bureau\n(vol 10)" as FB
+
+D -> H : death occurs
+H -> H : 106 death certificate registration\n(106-2 if perinatal)
+
+alt natural death, clinical autopsy
+  H -> PA : body referred for autopsy
+  PA -> PA : 223 register of autopsied bodies\n224 autopsy protocol
+  PA -> PA : 225 referral for histology\n226 sectional / 227 biopsy material
+else violent / unexplained death
+  H -> FB : body referred to forensic bureau
+  FB -> FB : 233 thanatology registration\n229 forensic examination report\n230 expert conclusion
+  FB -> FB : 231 referral to forensic lab\n232 forensic histology, 241 chemistry
+end
+
+note over PA, FB
+  Both branches end in a laboratory step
+  (histology, chemistry). Tissue and toxicology
+  results map to DiagnosticReport + Observation,
+  the same pattern as clinical labs in volume 3.
+end note
+@enduml

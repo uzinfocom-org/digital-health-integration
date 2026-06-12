@@ -1,0 +1,29 @@
+@startuml forms-vol11-clusters
+hide empty members
+skinparam linetype ortho
+title Volume 11 - the eight sub-domains of sanitary-epidemiological surveillance
+
+rectangle "Sanitary supervision of objects\n& construction\n246-252, 304-305, 343-344, 361" as A #F3E8FD
+rectangle "Environmental sampling & testing\nwater 254/317/327-331, air 332-336,\nsoil 318/337-339, food 255/345-352,\nphysical 310/340-342, radiation 278-280/353-360" as B #F3E8FD
+rectangle "Infectious-disease &\noutbreak control\n258-264, 060, 398" as C #FCE8E6
+rectangle "Parasitology, zoonoses &\ndangerous pathogens\n265-300, 306-308, 320, 325, 379-388, 399" as D #FCE8E6
+rectangle "Microbiology laboratories\n321-324, 350, 365-378" as E #E6F4EA
+rectangle "Pathogen biological agents\n& strain handling\n281-298" as F #E6F4EA
+rectangle "Administrative enforcement\n311-316, 352" as G #ECEFF1
+rectangle "Disinfection & disinsection\noperations\n309, 389-397" as H #ECEFF1
+
+C --> D : zoonotic / parasitic foci
+C --> H : focus disinfection
+B --> E : samples to lab
+D --> F : strains to repository
+C --> G : violations / penalties
+
+note as N
+  Purple = environmental/sanitary control.
+  Red = communicable-disease epidemiology.
+  Green = laboratory.
+  Grey = enforcement and field operations.
+  Mostly aggregate registers and inspection acts -
+  reporting artifacts, not per-patient documents.
+end note
+@enduml

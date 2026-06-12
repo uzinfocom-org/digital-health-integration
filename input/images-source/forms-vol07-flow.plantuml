@@ -1,0 +1,24 @@
+@startuml forms-vol07-flow
+title Sample flow - HIV testing and follow-up (volume 7)
+autonumber
+
+actor Client as C
+participant "Anonymous /\nclinic office" as OFF
+participant "HIV lab\n(vol 7)" as LAB
+participant "Dispensary\n(vol 7)" as DISP
+
+C -> OFF : presents for testing
+OFF -> OFF : 176-179 testing registration\n(anonymous or identified)
+OFF -> LAB : sample
+LAB -> LAB : 186 PCR DNA, 187 CD4 immunology,\n188-193 sample registers
+alt positive
+  LAB -> DISP : 182 referral
+  DISP -> DISP : 175 dispensary control card\n181 opportunistic-infection record
+end
+
+note over OFF, DISP
+  Confidentiality is central: testing can be anonymous, and
+  access is governed by Consent. Labs follow the volume 3
+  DiagnosticReport pattern; the dispensary card is a CarePlan.
+end note
+@enduml

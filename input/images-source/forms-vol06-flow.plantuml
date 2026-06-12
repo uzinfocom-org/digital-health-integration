@@ -1,0 +1,31 @@
+@startuml forms-vol06-flow
+title Sample flow - prenatal screening and the invasive-diagnosis decision
+autonumber
+
+actor "Pregnant\nwoman" as W
+participant "Polyclinic\n(vol 2)" as PC
+participant "Screening centre\n(vol 6)" as SC
+participant "Newborn\n(vol 6)" as NB
+
+PC -> SC : 037 prenatal referral
+SC -> SC : 159 prenatal exam card
+SC -> SC : 162-164 trimester ultrasound protocols\n156-157 biochemical screening conclusions
+
+alt screening shows increased risk
+  SC -> W : counselling
+  alt woman consents
+    W -> SC : 152 / 153 informed consent
+    SC -> SC : 166 invasive prenatal diagnosis procedure\n154 cytogenetic / molecular result
+    SC -> SC : 165 genetic conclusion, 172 post-procedure conclusion\n173 perinatal consilium
+  else woman declines
+    W -> SC : 155 refusal of invasive diagnosis
+  end
+end
+
+== after birth ==
+NB -> SC : heel-prick sample
+SC -> SC : 167 neonatal screening (IRT, PKU, CH)
+alt abnormal
+  SC -> SC : 168 tandem mass-spec / 170 sweat test / 171 retest
+end
+@enduml

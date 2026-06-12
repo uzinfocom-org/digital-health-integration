@@ -1,0 +1,61 @@
+@startuml forms-vol02-structure
+hide circle
+hide empty members
+skinparam linetype ortho
+title Volume 2 - outpatient form families, coloured by FHIR shape
+
+skinparam class {
+  BackgroundColor<<register>> #ECEFF1
+  BackgroundColor<<card>> #E8F0FE
+  BackgroundColor<<certificate>> #FEF7E0
+  BackgroundColor<<notify>> #FCE8E6
+  BackgroundColor<<order>> #E6F4EA
+}
+
+class "024 Outpatient\nvisit registration" as F024 <<register>>
+class "024-1..024-4\ndaily reception logs" as F024x <<register>>
+class "025 Ambulatory\nmedical card" as F025 <<card>>
+
+class "030 Dispensary\nobservation card" as F030 <<card>>
+class "030-1 psychiatric" as F030a <<card>>
+class "030-2 oncology" as F030b <<card>>
+class "030-3 psychoneuro" as F030c <<card>>
+class "030-4 tuberculosis" as F030d <<card>>
+
+class "063 Immunisation\ncard" as F063 <<card>>
+class "064 Immunisation\nregister" as F064 <<register>>
+
+class "086 Medical\ncertificate" as F086 <<certificate>>
+class "086-1..086-4\ncertificate variants" as F086x <<certificate>>
+class "043 / 044\ntravel certificates" as F043 <<certificate>>
+
+class "089 TB/STI\nnotification" as F089 <<notify>>
+class "090 cancer\nnotification" as F090 <<notify>>
+class "091 narcology\nnotification" as F091 <<notify>>
+
+class "037 Prenatal\nreferral" as F037 <<order>>
+class "111 Pregnant-woman\nindividual card" as F111 <<card>>
+
+F024 --> F024x
+F024 --> F025 : opens record
+F025 ..> F030 : chronic disease -> dispensary
+F030 --> F030a
+F030 --> F030b
+F030 --> F030c
+F030 --> F030d
+F025 ..> F086 : issues certificate
+F086 --> F086x
+F025 ..> F089 : first-time diagnosis
+F025 ..> F090
+F025 ..> F091
+F025 ..> F037 : pregnancy
+F037 --> F111
+
+legend right
+  Grey = register/log (query, not a document)
+  Blue = longitudinal card (Composition / CarePlan)
+  Yellow = certificate (signed Composition)
+  Red = notification (Communication, links to vol 11)
+  Green = referral (ServiceRequest, links to vol 6)
+endlegend
+@enduml

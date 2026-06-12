@@ -1,0 +1,19 @@
+@startuml forms-vol03-flow
+title Sample flow - ordering a test and returning the result
+autonumber
+
+actor "Ordering\nclinician" as DR
+participant "DHP\nFHIR server" as DHP
+participant "LIS / imaging\n(external)" as LIS
+
+DR -> DHP : POST ServiceRequest (the order)
+DHP -> LIS : order routed to lab / modality
+LIS -> LIS : collect Specimen, run analysis\n(form 029 sampling, 034 lab register)
+LIS -> DHP : POST Observation per result row\n+ DiagnosticReport (form 040-130 tahlili,\nor 015-x / 017 / 019 / 020 bayoni)
+DHP -> DR : result available, linked back to the order
+
+note over LIS, DHP
+  Imaging (015 ultrasound, 017 X-ray, 019 CT/MRI)
+  adds an ImagingStudy and, with PACS, a DICOM reference.
+end note
+@enduml
