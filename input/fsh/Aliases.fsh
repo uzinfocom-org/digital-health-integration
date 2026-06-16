@@ -107,3 +107,4 @@ Alias: $valueset-supplement = http://hl7.org/fhir/StructureDefinition/valueset-s
 Alias: $drs = http://hl7.org/fhir/document-reference-status
 Alias: $drcs = 	http://hl7.org/fhir/composition-status
 Alias: $drca = http://hl7.org/fhir/composition-attestation-mode
+Alias: $smif-contract-id-system = https://dhp.uz/fhir/integrations/sid/smif/contract

@@ -9,3 +9,5 @@ Thumbs.db
 /translations/*
 
 .claude/settings.local.json
+
+Requirements-*.json
