@@ -11,7 +11,7 @@ Both settings converge on the same place: a microscope and a histology report.
 
 ### How the forms relate
 
-The forms split by where the tissue comes from but meet at histology. The autopsy path registers the body (223, 228), records the autopsy itself (224), and sends material for microscopic study (225, 226). The surgical path sends biopsy and operative material straight to the same study (227). Either way, the histology examination produces the diagnosis. The autopsy reached after a hospital death is one branch of the [death journey](forms-overview.html#journeys-that-cross-volumes); the other branch is forensic ([volume 10](forms-volume-10-forensic.html)).
+The forms split by where the tissue comes from but meet at histology. The autopsy path registers the body (223, 228), records the autopsy itself (224), and sends material for microscopic study (225, 226). The surgical path sends biopsy and operative material straight to the same study (227). Either way, the histology examination produces the diagnosis. The autopsy reached after a hospital death is one branch of the death journey; the other branch is forensic ([volume 10](forms-volume-10-forensic.html)).
 
 ### A sample case
 

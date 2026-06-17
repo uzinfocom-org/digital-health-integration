@@ -22,39 +22,23 @@ The forms organise along two axes. The Ministry groups them by service line into
 
 ### Document types
 
-Uzbek form names are systematic: the suffix tells you what kind of document it is. Learn these once and you can classify most of the catalogue by recognising the word at the end of the title. The same type recurs in every volume, so what you learn from one `tahlili` (lab analysis) form applies to the dozens of others scattered across volumes 3, 6, 7, 8 and 11.
+Order 399 form names follow a consistent convention in both Uzbek and Russian: a keyword in the title names the document type. The same types recur across every volume - a `tahlili` / анализ (lab analysis), for example, appears in volumes 3, 6, 7, 8 and 11.
 
-| Suffix in the form name | Document kind |
-|-------------------------|---------------|
-| `...jurnali`, `...hisobga olish`, `...ro'yxatga olish` | Registration journal / ledger |
-| `...karta`, `...kartasi` | Longitudinal card |
-| `...bayoni`, `...bayonnomasi`, `...protokoli` | Procedure / examination report |
-| `...tahlili`, `...taxlili` | Laboratory analysis result |
-| `...ma'lumotnoma`, `...ma'lumotnomasi` | Issued certificate |
-| `...yo'llanma`, `...almashish varaqasi` | Referral / exchange sheet |
-| `...xulosa`, `...xulosasi` | Expert conclusion |
-| `...varaqasi`, `...varog'i` | Single-event sheet |
-| `...bildirishnoma`, `...xabarnoma` | Mandatory notification |
-| `...dalolatnoma` | Inspection / sampling act |
-| `...epikriz` | Episode summary |
+| Uzbek keyword | Russian keyword | Document type |
+|---------------|-----------------|---------------|
+| `...jurnali`, `...hisobga olish`, `...ro'yxatga olish` | журнал (регистрации / учёта) | Registration journal / ledger |
+| `...karta`, `...kartasi` | карта | Longitudinal card |
+| `...bayoni`, `...bayonnomasi`, `...protokoli` | протокол | Procedure / examination report |
+| `...tahlili`, `...taxlili` | анализ | Laboratory analysis result |
+| `...ma'lumotnoma`, `...ma'lumotnomasi` | справка | Issued certificate |
+| `...yo'llanma`, `...almashish varaqasi` | направление, обменная карта | Referral / exchange sheet |
+| `...xulosa`, `...xulosasi` | заключение | Expert conclusion |
+| `...varaqasi`, `...varog'i` | листок, лист | Single-event sheet |
+| `...bildirishnoma`, `...xabarnoma` | извещение, уведомление | Mandatory notification |
+| `...dalolatnoma` | акт | Inspection / sampling act |
+| `...epikriz` | эпикриз | Episode summary |
 
 The practical rule: a `jurnal` is something you query, a `karta` is something you keep, a `bayoni` or `tahlili` is a result you report, a `ma'lumotnoma` is a document you sign, and a `yo'llanma` is an order you place.
-
-### Journeys that cross volumes
-
-The volumes are administrative silos, but real episodes move between them. Looking at a form in isolation misses the references that tie an episode together. These are the main threads (each volume page expands its own part).
-
-Pregnancy, birth and the newborn span the polyclinic (2), the screening centre (6) and the maternity hospital (1):
-
-<div>{% include forms-journey-maternity.svg %}</div><br clear="all"/>
-
-An inpatient surgical episode stays mostly in volume 1 but pulls in diagnostics (3) and the blood bank (8):
-
-<div>{% include forms-journey-inpatient.svg %}</div><br clear="all"/>
-
-A death branches into either clinical pathology (9) or the forensic bureau (10), both ending in a laboratory step:
-
-<div>{% include forms-journey-death.svg %}</div><br clear="all"/>
 
 ### How this relates to the rest of the IG
 

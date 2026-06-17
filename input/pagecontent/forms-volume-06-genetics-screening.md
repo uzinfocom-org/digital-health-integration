@@ -29,7 +29,7 @@ The sequence below traces that pathway, including the point where a mother might
 
 <div>{% include forms-vol06-flow.svg %}</div><br clear="all"/>
 
-This is the screening portion of the wider [maternity journey](forms-overview.html#journeys-that-cross-volumes) that also spans volumes 2 and 1.
+This is the screening portion of the wider maternity journey that also spans volumes 2 and 1.
 
 ### Forms in this volume
 
