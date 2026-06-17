@@ -33,7 +33,7 @@ The sequence below follows that journey from donor to recipient:
 
 ### Forms in this volume
 
-| Form | Title | Archetype |
+| Form | Title | Type |
 |------|-------|-----------|
 | 194 | Certificate issued to a blood donor | Certificate |
 | 195 | Gratuitous donor application | Card |

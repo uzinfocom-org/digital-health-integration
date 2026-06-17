@@ -35,7 +35,7 @@ The sequence below shows those branches from one visit:
 
 ### Forms in this volume
 
-| Form | Title | Archetype |
+| Form | Title | Type |
 |------|-------|-----------|
 | 023 | House-call registration | Register |
 | 024 | Outpatient visit registration | Register |

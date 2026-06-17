@@ -23,7 +23,7 @@ Imagine a man who collapses at home. A relative calls the ambulance; the dispatc
 
 ### Forms in this volume
 
-| Form | Title | Archetype |
+| Form | Title | Type |
 |------|-------|-----------|
 | 059-3 | Emergency-medicine scientific-centre EMS record | Report |
 | 142 | Call registration | Register |

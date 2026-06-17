@@ -37,7 +37,7 @@ The sequence below traces that same stay, including the branches:
 
 ### Forms in this volume
 
-| Form | Title | Archetype |
+| Form | Title | Type |
 |------|-------|-----------|
 | 001 | Registration of patients admitted or refused | Register |
 | 002 | Newborn department (room) journal | Register |

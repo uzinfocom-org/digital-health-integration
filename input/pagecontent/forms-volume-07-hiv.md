@@ -22,7 +22,7 @@ Imagine a person who is worried after a possible exposure and goes to an anonymo
 
 ### Forms in this volume
 
-| Form | Title | Archetype |
+| Form | Title | Type |
 |------|-------|-----------|
 | 175 | HIV patient dispensary control card | Card |
 | 176-179 | Anonymous / identified office HIV-testing registers | Register |

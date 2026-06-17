@@ -33,7 +33,7 @@ This is the screening portion of the wider [maternity journey](forms-overview.ht
 
 ### Forms in this volume
 
-| Form | Title | Archetype |
+| Form | Title | Type |
 |------|-------|-----------|
 | 152, 153 | Informed consent for invasive prenatal diagnosis | Consent |
 | 154 | Cytogenetic / molecular-cytogenetic result | Report |

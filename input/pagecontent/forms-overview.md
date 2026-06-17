@@ -1,6 +1,6 @@
 The Ministry of Health standardises Uzbekistan's primary medical documentation through Order No. 399 and its annexes - 399 numbered forms (with sub-forms such as 009-1 or 015-1..015-26, around 480 documents in total). This page is the map of those forms: what exists, how it groups, and the recurring document patterns that let you recognise many forms by a few shapes.
 
-The forms organise along two axes. The Ministry groups them by service line into 11 volumes - that tells you *where a form lives*. Cutting across the volumes are a handful of document archetypes and patient journeys - those tell you *what kind of document a form is*. The volumes are the index; the archetypes are the leverage.
+The forms organise along two axes. The Ministry groups them by service line into 11 volumes - that tells you *where a form lives*. Cutting across the volumes are a handful of document types and patient journeys - those tell you *what kind of document a form is*.
 
 ### The 11 volumes
 
@@ -20,9 +20,9 @@ The forms organise along two axes. The Ministry groups them by service line into
 | [10.0 Forensic medicine](forms-volume-10-forensic.html) | Forensic examination and laboratories | 229-245 | 17 |
 | [11.0 Sanitary-epidemiology](forms-volume-11-sanitary-epidemiology.html) | Public-health surveillance, environmental and microbiology labs | 246-399 (+045-x, 060) | 156 |
 
-### Document archetypes
+### Document types
 
-Uzbek form names are systematic: the suffix tells you what kind of document it is. Learn these once and you can classify most of the catalogue by recognising the word at the end of the title. The same archetype recurs in every volume, so what you learn from one `tahlili` (lab analysis) form applies to the dozens of others scattered across volumes 3, 6, 7, 8 and 11.
+Uzbek form names are systematic: the suffix tells you what kind of document it is. Learn these once and you can classify most of the catalogue by recognising the word at the end of the title. The same type recurs in every volume, so what you learn from one `tahlili` (lab analysis) form applies to the dozens of others scattered across volumes 3, 6, 7, 8 and 11.
 
 | Suffix in the form name | Document kind |
 |-------------------------|---------------|

@@ -21,7 +21,7 @@ Imagine a surgeon who removes a suspicious lump from a patient. Rather than gues
 
 ### Forms in this volume
 
-| Form | Title | Archetype |
+| Form | Title | Type |
 |------|-------|-----------|
 | 223 | Register of bodies referred for autopsy | Register |
 | 224 | Pathological-anatomical autopsy protocol | Report |
