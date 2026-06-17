@@ -21,17 +21,6 @@ Imagine a man who collapses at home. A relative calls the ambulance; the dispatc
 
 <div>{% include forms-vol05-flow.svg %}</div><br clear="all"/>
 
-### How this volume maps to FHIR
-
-For implementers: the integration value is the hand-off. An emergency case that results in transport becomes a [volume 1](forms-volume-01-inpatient.html) admission, so the call card and observation sheet should carry forward into the inpatient `Encounter`.
-
-| Form group | Forms | FHIR target |
-|------------|-------|-------------|
-| Call registration | 142, 143 | `Encounter` (emergency) + `Communication` |
-| On-scene care | 144 | `Observation` / `Procedure` under the Encounter |
-| Station and substation workload | 145, 147, 151 | Query/`List` |
-| Disaster and air ambulance | 146, 148, 149, 150, 059-3 | `Encounter` / `Composition` (consultant sheet) |
-
 ### Forms in this volume
 
 | Form | Title | Archetype |

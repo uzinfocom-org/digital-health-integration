@@ -31,21 +31,6 @@ The sequence below follows that journey from donor to recipient:
 
 <div>{% include forms-vol08-flow.svg %}</div><br clear="all"/>
 
-### How this volume maps to FHIR
-
-For implementers: the two ends of the chain carry the integration value. Donor screening reuses the laboratory mapping wholesale, and the requisition/issue pair (213 to 211) is the hand-off into the clinical transfusion record. The production registers in between are inventory accounting and largely out of initial clinical scope.
-
-| Form group | Forms | FHIR target |
-|------------|-------|-------------|
-| Donor registration | 194, 195, 196, 199 | `Patient` / `RelatedPerson` (the donor) + donor `Composition`/card |
-| Donor screening labs | 200, 203, 204, 217, 218, 219, 220 | `DiagnosticReport` + `Observation` - the same pattern as [volume 3](forms-volume-03-diagnostics-laboratory.html) |
-| Positive-donor registers | 216 | Query/`List`; deferral feeds back to registration |
-| Collection | 198, 201 | `Procedure` (collection) producing a product |
-| Component production | 197, 202, 207, 208, 209, 210, 222 | `BiologicallyDerivedProduct` (+ inventory) |
-| Quality and disposal | 205, 206 | `Observation` (sterility) and disposal register |
-| Requisition and issue | 211, 212, 213, 214, 215 | `SupplyRequest` (213) and `SupplyDelivery` (211) |
-| Bedside transfusion | 009 family (volume 1) | `Procedure` + `Observation` |
-
 ### Forms in this volume
 
 | Form | Title | Archetype |

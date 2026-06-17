@@ -35,23 +35,6 @@ The sequence below traces that same stay, including the branches:
 
 <div>{% include forms-journey-inpatient.svg %}</div><br clear="all"/>
 
-### How this volume maps to FHIR
-
-For implementers: an inpatient stay is one `Encounter` (often grouped under an `EpisodeOfCare`), with the discrete clinical facts hung off it and a finalised document assembled at discharge.
-
-| Form group | Forms | FHIR target |
-|------------|-------|-------------|
-| Admission and bed movement | 001, 007 | `Encounter` (admission); the journals are a query/`List`, not documents |
-| Inpatient record | 003, 003-1 | A longitudinal record: `Encounter` + `Condition` + `Observation`, summarised in a `Composition` |
-| Anaesthesia and surgery | 004, 005, 008 | `Procedure` (+ anaesthesia `Procedure`/`Observation`) referencing the `Encounter` |
-| Intensive care | 006 | Time-series `Observation` under the `Encounter` |
-| Transfusion at the bedside | 009, 009-1..009-4 | `Procedure` (transfusion) + `Observation`; products come from [volume 8](forms-volume-08-blood-service.html) |
-| Obstetrics and newborn | 010, 096, 097 | `Encounter` for the birth; newborn is its own `Patient`; Apgar and birth details as `Observation` |
-| Discharge (forms filed under volume 3) | 027, 066 | Discharge-summary `Composition`; 066 is the statistical card |
-| Registration of vital events | 103, 106, 106-2 | Birth / death as signed `Composition`; the journals are registries |
-
-The discrete-resources-versus-document rule applies throughout: keep ongoing facts (diagnoses, results, procedures) as discrete resources, and assemble a `Composition` only for the finalised, signable artifacts - the discharge summary and the birth and death certificates.
-
 ### Forms in this volume
 
 | Form | Title | Archetype |

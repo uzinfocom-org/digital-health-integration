@@ -33,24 +33,6 @@ The sequence below shows those branches from one visit:
 
 <div>{% include forms-vol02-flow.svg %}</div><br clear="all"/>
 
-### How this volume maps to FHIR
-
-For implementers, this is the volume with the widest variety of [document archetypes](forms-overview.html#document-archetypes), so it is the best place to see the patterns at work.
-
-| Form group | Forms | FHIR target |
-|------------|-------|-------------|
-| Visit logs | 023, 024, 024-1..024-4 | `Encounter`; the daily logs are a query/`List`, not documents |
-| Outpatient record | 025, 025-1 | Longitudinal record: `Encounter` + `Condition` + `Observation`, summarised in a `Composition` |
-| Dispensary observation | 030, 030-1..030-4 | `CarePlan` for chronic-disease follow-up, by disease group |
-| Disability / VKK | 035, 035-1 | Commission `Composition` / `Observation` |
-| Immunisation | 063, 064 | `Immunization` (the card is the record, the journal a query) |
-| Certificates | 043, 044, 086, 086-1..086-4, 072-1, 083 | Signed `Composition` |
-| Notifications | 089, 090, 091 | `Communication` or notifiable-disease `Composition`, feeding [volume 11](forms-volume-11-sanitary-epidemiology.html) registries |
-| Referrals | 037, 037-1 | `ServiceRequest`, linking to [volume 6](forms-volume-06-genetics-screening.html) screening |
-| Ambulatory operations | 069 | `Procedure` |
-| Pregnancy | 111 | Longitudinal record threading into volumes 6 and 1 |
-| Purpose-specific cards | 051, 053, 061 | Longitudinal `Composition` / `CarePlan` |
-
 ### Forms in this volume
 
 | Form | Title | Archetype |

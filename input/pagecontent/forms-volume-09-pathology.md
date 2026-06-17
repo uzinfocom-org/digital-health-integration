@@ -19,16 +19,6 @@ Imagine a surgeon who removes a suspicious lump from a patient. Rather than gues
 
 <div>{% include forms-vol09-flow.svg %}</div><br clear="all"/>
 
-### How this volume maps to FHIR
-
-For implementers: the histology results follow the [volume 3](forms-volume-03-diagnostics-laboratory.html) laboratory pattern.
-
-| Form group | Forms | FHIR target |
-|------------|-------|-------------|
-| Autopsy | 223, 224, 228 | `Procedure` (autopsy) + `Composition` (protocol); the register is a query |
-| Histology referral and material | 225, 226, 227 | `ServiceRequest` + `Specimen` |
-| Histology result | (result of 225/227) | `DiagnosticReport` + `Observation` |
-
 ### Forms in this volume
 
 | Form | Title | Archetype |

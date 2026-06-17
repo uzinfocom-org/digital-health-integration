@@ -27,18 +27,6 @@ Imagine several people in a town falling ill after eating at the same canteen. A
 
 <div>{% include forms-vol11-flow.svg %}</div><br clear="all"/>
 
-### How this volume maps to FHIR
-
-For implementers: this volume is [mostly out of scope](forms-overview.html#scope-for-integration) for the core clinical integration. Most of it is aggregate registers, inspection acts and environmental measurements - reporting artifacts rather than per-patient clinical documents - and it most likely belongs to a separate public-health profile set. The parts that do touch the clinical record are the notifiable-disease links back to [volume 2](forms-volume-02-ambulatory.html) and the laboratory results, which follow the [volume 3](forms-volume-03-diagnostics-laboratory.html) pattern.
-
-| In-scope part | Forms | FHIR target |
-|---------------|-------|-------------|
-| Notifiable-disease reporting | 060, 264 | `Communication` / notifiable-disease `Composition`, from [volume 2](forms-volume-02-ambulatory.html) notifications |
-| Epidemiological investigation | 262, 275 | `Composition` (investigation card) |
-| Microbiology and environmental labs | 350, 365-378, 327-339 | `DiagnosticReport` + `Observation` + `Specimen` |
-
-Everything else - inspection acts, measurement logs, biosafety and enforcement registers - is aggregate public-health reporting, best represented as `List`/measure-style resources if and when a public-health IG addresses them.
-
 ### The eight sub-domains
 
 | Sub-domain | Forms | Nature |

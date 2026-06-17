@@ -20,17 +20,6 @@ Imagine a person who is worried after a possible exposure and goes to an anonymo
 
 <div>{% include forms-vol07-flow.svg %}</div><br clear="all"/>
 
-### How this volume maps to FHIR
-
-For implementers: confidentiality is the distinctive requirement. Testing may be anonymous (so the `Patient` may be pseudonymised), and all access is governed by [Consent](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-consent.html). Otherwise the resources are the familiar lab and dispensary patterns.
-
-| Form group | Forms | FHIR target |
-|------------|-------|-------------|
-| Testing registration | 176, 177, 178, 179, 180 | Query/`List`; anonymous testing constrains the `Patient` |
-| HIV laboratory | 183, 184, 185, 186, 187, 188-193 | `DiagnosticReport` + `Observation` + `Specimen` |
-| Referral | 182 | `ServiceRequest` |
-| Dispensary follow-up | 175, 181 | `CarePlan` + `Condition` |
-
 ### Forms in this volume
 
 | Form | Title | Archetype |

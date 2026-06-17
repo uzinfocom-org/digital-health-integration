@@ -30,21 +30,6 @@ The sequence below shows that order-to-result round trip, which is the backbone 
 
 <div>{% include forms-vol03-flow.svg %}</div><br clear="all"/>
 
-### How this volume maps to FHIR
-
-For implementers: you do not need 93 distinct mappings. Almost everything reduces to the order-result pattern - a `ServiceRequest` produces a `Specimen` and `Observation`s, grouped into a `DiagnosticReport`, with an `ImagingStudy` for imaging. This is the same scenario the UZ Core [laboratory workflow](https://dhp.uz/fhir/core/en/workflow-lab.html) specifies in detail; the forms here are the source documents it produces.
-
-| Form group | Forms | FHIR target |
-|------------|-------|-------------|
-| Laboratory analyses | 040 CBC, 042 clotting, 048 biochemistry, 049 hormones, 070 hepatitis, 071 urine, 079/098/099 TORCH, 092 immunoglobulin, 105-118 immunoassay series, 130 (the bulk of forms 040-130) | `DiagnosticReport` + `Observation` per result + `Specimen` |
-| Imaging | 015, 015-1..015-26, 017, 019 | `DiagnosticReport` + `ImagingStudy`; PACS holds the images |
-| Functional diagnostics | 013, 016, 018, 020, 021, 022 | `DiagnosticReport` + `Observation` |
-| Endoscopy | 012, 012-1, 026 | `Procedure` + `DiagnosticReport` |
-| Treatment procedures | 011, 014, 029, 031, 031-1 | `Procedure` (+ time-series `Observation`) |
-| Parasitology / surveillance labs | 121-126 | `DiagnosticReport`; the journals are queries, and notifiable results feed [volume 11](forms-volume-11-sanitary-epidemiology.html) |
-| Lab and procedure registers | 034, 039, 059, 059-1, 059-2 | Query/`List`, not documents |
-| Statistical and notification artifacts | 027, 028, 066, 066-1, 114 | `Composition` (discharge cards); 028/114 are notifications |
-
 ### Forms in this volume
 
 Because of its size, the volume is summarised by cluster rather than listed form by form. Its boundaries are forms 011-130 (excluding those the Order assigns elsewhere).

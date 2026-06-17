@@ -21,17 +21,6 @@ Each month the pharmacy estimates its needs from bed numbers and the conditions 
 
 <div>{% include forms-vol04-flow.svg %}</div><br clear="all"/>
 
-### How this volume maps to FHIR
-
-For implementers: these forms carry no per-patient clinical content, so most are out of clinical-integration scope. Where a medicine actually reaches a patient, the clinical record is a `MedicationRequest` / `MedicationDispense` in the prescribing workflow, not these stock forms.
-
-| Form group | Forms | FHIR target |
-|------------|-------|-------------|
-| Need calculation | 131 | Out of clinical scope (planning) |
-| Requisition and receipt | 132, 133, 134, 137 | `SupplyRequest`, R5 inventory resources |
-| Issue to departments | 135, 136, 139 | `SupplyDelivery` |
-| Financial turnover and balance | 138, 140, 141 | Out of clinical scope (accounting) |
-
 ### Forms in this volume
 
 | Form | Title |

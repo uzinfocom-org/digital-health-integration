@@ -21,18 +21,6 @@ Imagine a body found in circumstances the police cannot explain. It is referred 
 
 <div>{% include forms-vol10-flow.svg %}</div><br clear="all"/>
 
-### How this volume maps to FHIR
-
-For implementers: because the purpose is legal rather than care delivery, integration into a clinical record is the exception, not the rule. The laboratory mechanics nonetheless mirror clinical labs.
-
-| Form group | Forms | FHIR target |
-|------------|-------|-------------|
-| Examination and conclusion | 229, 230, 235 | `Composition` (report, expert conclusion) |
-| Registration | 233, 234 | Query/`List` |
-| Lab referrals | 231, 232 | `ServiceRequest` |
-| Forensic laboratories | 236-245 | `DiagnosticReport` + `Observation` + `Specimen` |
-| Living-person assessment | 242 | `Observation` (narcological examination) |
-
 ### Forms in this volume
 
 | Form | Title |
