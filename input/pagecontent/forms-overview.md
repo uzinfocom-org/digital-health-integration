@@ -6,7 +6,7 @@ The forms organise along two axes. The Ministry groups them by service line into
 
 <div>{% include forms-volumes-map.svg %}</div><br clear="all"/>
 
-| Volume | Domain | Form range | Forms |
+| Volume | Domain | Form range | Count |
 |--------|--------|-----------|------:|
 | [1.0 Inpatient hospital](forms-volume-01-inpatient.html) | Stationary episode-of-care records, surgery, obstetrics, deaths | 001-010, 096-097, 103, 106 | 14 |
 | [2.0 Ambulatory-polyclinic](forms-volume-02-ambulatory.html) | Outpatient visits, dispensary observation, certificates, notifications, immunisation | 023-111 | 23 |
