@@ -35,10 +35,8 @@ V2 --> V11 : notifiable disease (089-091, 060)
 V5 --> V1 : emergency admission
 
 note as N
-  Blue = core clinical, highest integration value.
+  Blue = core clinical.
   Yellow = operational/workflow support.
   Purple = public-health and specialized services.
-  Arrows are the main cross-volume patient journeys;
-  click a box to open that volume.
 end note
 @enduml

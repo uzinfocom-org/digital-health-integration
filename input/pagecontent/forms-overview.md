@@ -2,25 +2,23 @@ The Ministry of Health standardises Uzbekistan's primary medical documentation t
 
 The forms organise along two axes. The Ministry groups them by service line into 11 volumes - that tells you *where a form lives*. Cutting across the volumes are a handful of document archetypes and patient journeys - those tell you *what kind of document a form is*. The volumes are the index; the archetypes are the leverage.
 
-You do not need to engage all 399 forms equally. Most clinical value sits in five volumes (1, 2, 3, 6, 8). Start there, lean on the archetype patterns, and treat the public-health and accounting volumes as lower priority.
-
 ### The 11 volumes
 
 <div>{% include forms-volumes-map.svg %}</div><br clear="all"/>
 
-| Volume | Domain | Form range | Forms | Integration value |
-|--------|--------|-----------|------:|-------------------|
-| [1.0 Inpatient hospital](forms-volume-01-inpatient.html) | Stationary episode-of-care records, surgery, obstetrics, deaths | 001-010, 096-097, 103, 106 | 14 | Core |
-| [2.0 Ambulatory-polyclinic](forms-volume-02-ambulatory.html) | Outpatient visits, dispensary observation, certificates, notifications, immunisation | 023-111 | 23 | Core |
-| [3.0 Diagnostics & laboratory](forms-volume-03-diagnostics-laboratory.html) | Imaging, functional diagnostics, the full laboratory catalogue | 011-130 | 93 | Core |
-| [4.0 Pharmacy & supply](forms-volume-04-pharmacy.html) | Medicine stock, requisitions, accounting | 131-141 | 11 | Operational |
-| [5.0 Emergency & air ambulance](forms-volume-05-emergency.html) | EMS calls, observation, air ambulance | 142-151 (+059-3) | 11 | Operational |
-| [6.0 Genetics & screening](forms-volume-06-genetics-screening.html) | Prenatal diagnosis, trimester screening, neonatal screening | 152-174 | 23 | Core |
-| [7.0 HIV/AIDS service](forms-volume-07-hiv.html) | Anonymous testing, HIV labs, dispensary follow-up | 175-193 | 19 | Specialised clinical |
-| [8.0 Blood service](forms-volume-08-blood-service.html) | Donors, component production, product issue | 194-222 | 29 | Core |
-| [9.0 Pathological anatomy](forms-volume-09-pathology.html) | Autopsy, surgical pathology, histology | 223-228 | 6 | Specialised clinical |
-| [10.0 Forensic medicine](forms-volume-10-forensic.html) | Forensic examination and laboratories | 229-245 | 17 | Out of scope (legal domain) |
-| [11.0 Sanitary-epidemiology](forms-volume-11-sanitary-epidemiology.html) | Public-health surveillance, environmental and microbiology labs | 246-399 (+045-x, 060) | 156 | Mostly out of scope |
+| Volume | Domain | Form range | Forms |
+|--------|--------|-----------|------:|
+| [1.0 Inpatient hospital](forms-volume-01-inpatient.html) | Stationary episode-of-care records, surgery, obstetrics, deaths | 001-010, 096-097, 103, 106 | 14 |
+| [2.0 Ambulatory-polyclinic](forms-volume-02-ambulatory.html) | Outpatient visits, dispensary observation, certificates, notifications, immunisation | 023-111 | 23 |
+| [3.0 Diagnostics & laboratory](forms-volume-03-diagnostics-laboratory.html) | Imaging, functional diagnostics, the full laboratory catalogue | 011-130 | 93 |
+| [4.0 Pharmacy & supply](forms-volume-04-pharmacy.html) | Medicine stock, requisitions, accounting | 131-141 | 11 |
+| [5.0 Emergency & air ambulance](forms-volume-05-emergency.html) | EMS calls, observation, air ambulance | 142-151 (+059-3) | 11 |
+| [6.0 Genetics & screening](forms-volume-06-genetics-screening.html) | Prenatal diagnosis, trimester screening, neonatal screening | 152-174 | 23 |
+| [7.0 HIV/AIDS service](forms-volume-07-hiv.html) | Anonymous testing, HIV labs, dispensary follow-up | 175-193 | 19 |
+| [8.0 Blood service](forms-volume-08-blood-service.html) | Donors, component production, product issue | 194-222 | 29 |
+| [9.0 Pathological anatomy](forms-volume-09-pathology.html) | Autopsy, surgical pathology, histology | 223-228 | 6 |
+| [10.0 Forensic medicine](forms-volume-10-forensic.html) | Forensic examination and laboratories | 229-245 | 17 |
+| [11.0 Sanitary-epidemiology](forms-volume-11-sanitary-epidemiology.html) | Public-health surveillance, environmental and microbiology labs | 246-399 (+045-x, 060) | 156 |
 
 ### Document archetypes
 
