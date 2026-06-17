@@ -1,6 +1,9 @@
 @startuml forms-volumes-map
 hide empty members
-skinparam linetype ortho
+left to right direction
+skinparam defaultFontSize 9
+skinparam ranksep 24
+skinparam nodesep 22
 skinparam rectangle {
   BackgroundColor<<core>> #E8F0FE
   BackgroundColor<<ops>> #FEF7E0
@@ -26,7 +29,7 @@ V2 --> V3 : orders tests
 V2 --> V6 : prenatal referral (037)
 V6 --> V1 : birth
 V1 --> V6 : neonatal screening
-V8 --> V1 : blood products for transfusion (009)
+V8 --> V1 : blood products for\ntransfusion (009)
 V1 --> V3 : discharge statistics (066)
 V2 --> V7 : HIV dispensary (175)
 V1 --> V9 : death -> autopsy
