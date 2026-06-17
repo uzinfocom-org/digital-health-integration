@@ -18,10 +18,6 @@ Most forms in this volume are siblings rather than a chain: each is one type of 
 
 The clearest example of family structure is ultrasound. Form 015 is the parent (the ultrasound register), and forms 015-1 through 015-26 are its children - one per organ, from the parotid gland to the brachiocephalic arteries. They are not 27 unrelated forms; they are one kind of examination repeated for different body parts. The same is true of the clinical-laboratory immunoassay series (105 to 118). Recognising these families means you understand the volume as a few dozen patterns, not a hundred separate things.
 
-The diagram shows the common request-result pattern that nearly every form here follows:
-
-<div>{% include forms-vol03-fhir.svg %}</div><br clear="all"/>
-
 ### A sample test
 
 Imagine a woman whose doctor suspects gallstones. The doctor sends a request to the laboratory and the ultrasound room. A nurse draws blood, which the lab analyses and returns as a blood-test result (one of the 040-130 forms); the radiologist scans her abdomen and returns an ultrasound report of the liver and gallbladder (015-16). Both results are linked back to the doctor's original request, so when the doctor opens the patient's record they see the answer next to the question they asked. If imaging is involved and the hospital has a picture archive (PACS), the actual images are stored there and the report just points to them.

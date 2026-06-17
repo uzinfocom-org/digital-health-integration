@@ -19,7 +19,7 @@ alt air ambulance / disaster
 end
 
 note over DISP, CREW
-  Call card (143) and observation sheet (144) are clinical
-  (Encounter + Observation). The dispatch logs are queries.
+  Call card (143) and observation sheet (144) are the clinical
+  record of the call; the dispatch logs are registers you query.
 end note
 @enduml

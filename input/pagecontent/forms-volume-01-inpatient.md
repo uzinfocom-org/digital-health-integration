@@ -21,7 +21,7 @@ The admission journal (001) is the front door: a simple running list of who came
 
 The obstetric forms are a parallel spine. The maternity card (096) plays the same role for a birth that the inpatient card plays for an ordinary stay: the birth register (010), the newborn's development card (097) and the birth certificate (103) all branch off it, with the early-termination card (003-1) and perinatal-death certificate (106-2) as the unhappy alternatives.
 
-The diagram below shows these two spines. An arrow means "leads to" or "is opened from"; the colours are a hint about the FHIR shape each form takes (explained in the mapping section).
+The diagram below shows these two spines. An arrow means "leads to" or "is opened from"; the colours group forms by document type.
 
 <div>{% include forms-vol01-structure.svg %}</div><br clear="all"/>
 

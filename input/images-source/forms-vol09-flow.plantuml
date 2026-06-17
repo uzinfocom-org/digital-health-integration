@@ -16,7 +16,7 @@ else surgical / biopsy specimen
 end
 HIST -> PA : histology result
 note over HIST
-  Tissue results map to DiagnosticReport + Observation,
-  the same pattern as clinical labs in volume 3.
+  Tissue results are analysis reports, the same
+  pattern as the clinical labs in volume 3.
 end note
 @enduml

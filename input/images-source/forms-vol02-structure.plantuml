@@ -2,7 +2,7 @@
 hide circle
 hide empty members
 skinparam linetype ortho
-title Volume 2 - outpatient form families, coloured by FHIR shape
+title Volume 2 - outpatient form families, coloured by document type
 
 skinparam class {
   BackgroundColor<<register>> #ECEFF1
@@ -53,9 +53,9 @@ F037 --> F111
 
 legend right
   Grey = register/log (query, not a document)
-  Blue = longitudinal card (Composition / CarePlan)
-  Yellow = certificate (signed Composition)
-  Red = notification (Communication, links to vol 11)
-  Green = referral (ServiceRequest, links to vol 6)
+  Blue = longitudinal card
+  Yellow = certificate
+  Red = notification (links to vol 11)
+  Green = referral (links to vol 6)
 endlegend
 @enduml

@@ -18,8 +18,8 @@ LAB -> FB : results
 FB -> LE : 230 expert conclusion
 
 note over FB, LAB
-  A distinct legal domain. Lab steps share the
-  DiagnosticReport pattern, but the volume as a
-  whole is out of clinical-integration scope.
+  A distinct legal domain. The lab steps are analysis
+  reports like volume 3, but the volume as a whole is
+  out of clinical-integration scope.
 end note
 @enduml

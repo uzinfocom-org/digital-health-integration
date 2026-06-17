@@ -2,7 +2,7 @@
 hide circle
 hide empty members
 skinparam linetype ortho
-title Volume 8 - the donation-to-product chain, coloured by FHIR shape
+title Volume 8 - the donation-to-product chain, coloured by document type
 
 skinparam class {
   BackgroundColor<<card>> #E8F0FE
@@ -32,10 +32,10 @@ F213 ..> F211 : pulls
 F211 ..> F009 : delivered to bedside
 
 legend right
-  Blue = donor card (Patient/RelatedPerson)
-  Green = lab report (DiagnosticReport)
-  Purple = blood product (BiologicallyDerivedProduct)
-  Yellow = supply (SupplyRequest / SupplyDelivery)
+  Blue = donor card
+  Green = lab report
+  Purple = blood product
+  Yellow = supply
   Grey = register (query)
 endlegend
 @enduml

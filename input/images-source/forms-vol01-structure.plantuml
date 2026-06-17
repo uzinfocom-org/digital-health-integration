@@ -2,7 +2,7 @@
 hide circle
 hide empty members
 skinparam linetype ortho
-title Volume 1 - inpatient record structure, coloured by FHIR shape
+title Volume 1 - inpatient record structure, coloured by document type
 
 skinparam class {
   BackgroundColor<<register>> #ECEFF1
@@ -50,8 +50,8 @@ F096 ..> F106b : perinatal death
 
 legend right
   Grey = register/ledger (query, not a document)
-  Blue = longitudinal card (Composition / CarePlan)
-  Green = report/sheet (Observation / Procedure)
-  Yellow = certificate (signed Composition)
+  Blue = longitudinal card
+  Green = report/sheet
+  Yellow = certificate
 endlegend
 @enduml

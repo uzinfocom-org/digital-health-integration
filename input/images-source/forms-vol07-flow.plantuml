@@ -18,7 +18,8 @@ end
 
 note over OFF, DISP
   Confidentiality is central: testing can be anonymous, and
-  access is governed by Consent. Labs follow the volume 3
-  DiagnosticReport pattern; the dispensary card is a CarePlan.
+  access is restricted by patient consent. The labs follow the
+  same analysis-report pattern as volume 3; the dispensary card
+  is a longitudinal record.
 end note
 @enduml

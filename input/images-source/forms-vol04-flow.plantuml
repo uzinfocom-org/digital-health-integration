@@ -15,8 +15,7 @@ PH -> W : 136 drugs issued to departments
 PH -> PH : 135/139 daily expense, 138/140 turnover by funding,\n141 balance
 
 note over PH
-  Inventory and accounting, not patient-level clinical data.
-  Maps to SupplyRequest / SupplyDelivery and R5 inventory
-  resources; largely out of initial clinical-integration scope.
+  Inventory and accounting, not patient-level clinical data;
+  largely out of initial clinical-integration scope.
 end note
 @enduml

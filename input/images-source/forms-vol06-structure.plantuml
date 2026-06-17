@@ -2,7 +2,7 @@
 hide circle
 hide empty members
 skinparam linetype ortho
-title Volume 6 - prenatal and neonatal tracks, coloured by FHIR shape
+title Volume 6 - prenatal and neonatal tracks, coloured by document type
 
 skinparam class {
   BackgroundColor<<card>> #E8F0FE
@@ -48,8 +48,8 @@ F158 --> F160
 
 legend right
   Blue = longitudinal card
-  Green = report (DiagnosticReport / Procedure)
-  Yellow = consent (Consent)
-  Purple = conclusion (Composition)
+  Green = report
+  Yellow = consent
+  Purple = conclusion
 endlegend
 @enduml
