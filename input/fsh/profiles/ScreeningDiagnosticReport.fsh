@@ -44,7 +44,7 @@ Description: "Mammography report (summary and findings)"
 * identifier[=].use = #usual
 * basedOn[0] = Reference(ServiceRequest/ServiceRequest-mammography)
 * status = #final
-* code = screening-diagnostic-procedure-cs#scr-diag-4 "Mammography"
+* code = $sct#71651007 "Mammography"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-radiology)
@@ -87,7 +87,7 @@ Description: "Diagnostic report: Colposcopy"
 * identifier[=].use = #usual
 * basedOn[0] = Reference(ServiceRequest/ServiceRequest-colposcopy)
 * status = #final
-* code = screening-diagnostic-procedure-cs#scr-diag-6 "Colposcopy"
+* code = $sct#392003006 "Colposcopy"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-diagnostics)

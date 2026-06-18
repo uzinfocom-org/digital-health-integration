@@ -93,7 +93,7 @@ Description: "Colposcopy conclusion including transformation zone assessment."
 * identifier[=].use = #usual
 * basedOn = Reference(ServiceRequest/ServiceRequest-colposcopy)
 * status = #final
-* code = screening-diagnostic-procedure-cs#scr-diag-6
+* code = $sct#392003006 "Colposcopy"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-diagnostics)
@@ -113,18 +113,18 @@ Description: "Mammography summary including BI-RADS category, breast density, an
 * identifier[=].use = #usual
 * basedOn = Reference(ServiceRequest/ServiceRequest-mammography)
 * status = #final
-* code = screening-diagnostic-procedure-cs#scr-diag-4 "Mammography"
+* code = $sct#71651007 "Mammography"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-radiology)
 * issued = "2015-02-07T13:28:17.239+02:00"
 * effectiveDateTime = "2015-02-07T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-radiologist)
-* component[0].code = screening-observation-type-cs#scr-obser-1
+* component[0].code = $sct#1348266008 "Breast Imaging and Reporting and Data System"
 * component[=].valueCodeableConcept = screening-birads-cs#src-birads-2 "2"
-* component[+].code = screening-observation-type-cs#scr-obser-2
+* component[+].code = $sct#129793001 "Mammographic breast density"
 * component[=].valueCodeableConcept = screening-breast-form-cs#src-breast-density-4 "Type D"
-* component[+].code = screening-observation-type-cs#scr-obser-3
+* component[+].code = $sct#246646005 "Quality of visual image"
 * component[=].valueCodeableConcept = screening-image-quality-cs#src-img-quality-3 "Moderate"
 
 Instance: mammography-right-breast-finding
@@ -136,7 +136,7 @@ Description: "Finding (mole) detected in the right breast during mammography."
 * identifier[=].use = #usual
 * basedOn = Reference(ServiceRequest/ServiceRequest-mammography)
 * status = #final
-* code = screening-diagnostic-procedure-cs#scr-diag-4 "Mammography"
+* code = $sct#71651007 "Mammography"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-radiology)
@@ -145,7 +145,7 @@ Description: "Finding (mole) detected in the right breast during mammography."
 * performer = Reference(PractitionerRole/practitioner-role-radiologist)
 * bodySite = $sct#80248007
 * bodySite.extension[quadrant].valueCodeableConcept = screening-breast-quadrant-cs#src-breast-quadrant-2
-* component[0].code = screening-breast-finding-cs#src-find-9
+* component[0].code = $sct#30285000 "Verruca"
 * component[0].valueBoolean = true
 
 Instance: mammography-left-breast-finding
@@ -157,7 +157,7 @@ Description: "Finding (skin thickening) detected in the left breast during mammo
 * identifier[=].use = #usual
 * basedOn = Reference(ServiceRequest/ServiceRequest-mammography)
 * status = #final
-* code = screening-diagnostic-procedure-cs#scr-diag-4 "Mammography"
+* code = $sct#71651007 "Mammography"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-radiology)
@@ -166,7 +166,7 @@ Description: "Finding (skin thickening) detected in the left breast during mammo
 * performer = Reference(PractitionerRole/practitioner-role-radiologist)
 * bodySite = $sct#73056007
 * bodySite.extension[quadrant].valueCodeableConcept = screening-breast-quadrant-cs#src-breast-quadrant-1
-* component[0].code = screening-breast-finding-cs#src-find-1
+* component[0].code = $sct#129797000 "Mammographic skin thickening of breast"
 * component[0].valueBoolean = true
 
 Instance: gynecological-physical-exam
@@ -185,11 +185,11 @@ Description: "Anthropometric measurements (height, weight, BMI) and medical hist
 * effectiveDateTime = "2015-02-07T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-gynecologist)
 * note[0].text = "Menarche at age 13, 2 pregnancies, 2 deliveries."
-* component[0].code = screening-observation-type-cs#scr-obser-4 
+* component[0].code = $loinc#8302-2 "Body height"
 * component[=].valueQuantity = 160 'cm'
-* component[+].code = screening-observation-type-cs#scr-obser-5 
+* component[+].code = $loinc#29463-7 "Body weight"
 * component[=].valueQuantity = 52 'kg'
-* component[+].code = screening-observation-type-cs#scr-obser-6 
+* component[+].code = $loinc#39156-5 "Body mass index (BMI) [Ratio]"
 * component[=].valueQuantity = 20.3 'kg/m2'
 
 Instance: gynecological-complaints
@@ -243,16 +243,16 @@ Description: "Patient anthropometric measurements performed before mammography."
 * identifier[=].value = "339"
 * identifier[=].use = #usual
 * status = #final
-* code = screening-diagnostic-procedure-cs#scr-diag-4 "Mammography"
+* code = $sct#71651007 "Mammography"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-radiology)
 * issued = "2015-02-07T13:28:17.239+02:00"
 * effectiveDateTime = "2015-02-07T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-radiologist)
-* component[0].code = screening-observation-type-cs#scr-obser-4
+* component[0].code = $loinc#8302-2 "Body height"
 * component[0].valueQuantity = 160 'cm'
-* component[1].code = screening-observation-type-cs#scr-obser-5
+* component[1].code = $loinc#29463-7 "Body weight"
 * component[1].valueQuantity = 52 'kg'
-* component[2].code = screening-observation-type-cs#scr-obser-6
+* component[2].code = $loinc#39156-5 "Body mass index (BMI) [Ratio]"
 * component[2].valueQuantity = 20.3 'kg/m2'

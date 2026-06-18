@@ -73,7 +73,7 @@ Description: "Referral for colposcopy"
 * identifier[=].use = #usual
 * status = #completed
 * intent = #order
-* code = screening-diagnostic-procedure-cs#scr-diag-6
+* code = $sct#392003006 "Colposcopy"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
@@ -93,7 +93,7 @@ Description: "Referral for mammography"
 * identifier[=].use = #usual
 * status = #completed
 * intent = #order
-* code = screening-diagnostic-procedure-cs#scr-diag-4
+* code = $sct#71651007 "Mammography"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
