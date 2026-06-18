@@ -1,47 +1,47 @@
 CodeSystem: ScrDiagCS
 Id: scr-diag-cs
 Title: "Diagnostic Procedures CodeSystem"
-Description: "Локальный справочник диагностических процедур (УЗИ, биопсия, маммография, кольпоскопия)"
-* insert OriginalCodeSystem(scr-diag-cs)
+Description: "Local terminology for diagnostic procedures (ultrasound, biopsy, mammography, colposcopy)"
+* insert OriginalCodeSystemDraft(scr-diag-cs)
 
-* #scr-diag-1 "Breast Ultrasound"
+* #scr-diag-1 "Sut bezi uchun UZI"
   * ^designation[0].language = #ru
   * ^designation[=].value = "УЗИ молочной железы"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Sut bezi uchun UZI"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Breast Ultrasound"
 
-* #scr-diag-2 "Breast Biopsy"
+* #scr-diag-2 "Sut bezi biopsiyasi"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Биопсия молочной железы"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Sut bezi biopsiyasi"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Breast Biopsy"
 
-* #scr-diag-3 "Excision"
+* #scr-diag-3 "Eksizatsiya"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Эксцизия"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Eksizatsiya"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Excision"
 
-* #scr-diag-4 "Mammography"
+* #scr-diag-4 "Sut bezlari mammografiyasi"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Маммография молочных желез"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Sut bezlari mammografiyasi"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Mammography"
 
-* #scr-diag-5 "Conization"
+* #scr-diag-5 "Konizatsiya"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Конизация шейки матки"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Konizatsiya"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Conization"
 
-* #scr-diag-6 "Colposcopy"
+* #scr-diag-6 "Kolposkopiya"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Кольпоскопия"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Kolposkopiya"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Colposcopy"
 
-* #scr-diag-7 "Cervical Biopsy"
+* #scr-diag-7 "Bachadon bo‘yni biopsiyasi"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Биопсия шейки матки"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Bachadon bo‘yni biopsiyasi"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Cervical Biopsy"

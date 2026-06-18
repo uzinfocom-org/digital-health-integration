@@ -1,41 +1,41 @@
 CodeSystem: ScrObserCS
 Id: scr-obser-cs
 Title: "Observation Types CodeSystem"
-Description: "Локальный справочник типов клинических наблюдений (BI-RADS, Рост, Вес и т.д.)"
-* insert OriginalCodeSystem(scr-obser-cs)
+Description: "Local terminology for clinical observation types (BI-RADS, Height, Weight, etc.)"
+* insert OriginalCodeSystemDraft(scr-obser-cs)
 
-* #scr-obser-1 "Breast Imaging and Reporting and Data System"
+* #scr-obser-1 "BI-RADS"
   * ^designation[0].language = #ru
   * ^designation[=].value = "BI-RADS"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "BI-RADS"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Breast Imaging and Reporting and Data System"
 
-* #scr-obser-2 "Mammographic breast density"
+* #scr-obser-2 "Ko'krak tuzilishi"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Структура груди"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Ko'krak tuzilishi"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Mammographic breast density"
 
-* #scr-obser-3 "Quality of visual image"
+* #scr-obser-3 "Tasvir sifati"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Качество снимка"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Tasvir sifati"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Quality of visual image"
 
-* #scr-obser-4 "Body height"
+* #scr-obser-4 "Bo'y"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Рост"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Bo'y"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Body height"
 
-* #scr-obser-5 "Body weight"
+* #scr-obser-5 "Vazn"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Вес"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Vazn"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Body weight"
 
-* #scr-obser-6 "Body mass index"
+* #scr-obser-6 "TMI"
   * ^designation[0].language = #ru
   * ^designation[=].value = "ИМТ"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "TMI"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Body mass index"

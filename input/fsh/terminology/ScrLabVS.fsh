@@ -1,8 +1,9 @@
 ValueSet: ScrLabVS
-Id: scr-lab
+Id: scr-lab-vs
 Title: "Laboratory Tests ValueSet"
-Description: "Набор кодов для лабораторных направлений и результатов"
-* ^url = "https://terminology.dhp.uz/ValueSet/scr-lab"
+Description: "Value set of codes for laboratory referrals and results"
+* ^url = "https://dhp.uz/fhir/integrations/ValueSet/scr-lab-vs"
 * ^experimental = true
 
-* include codes from system scr-lab-cs
+* include $loinc#18500-9 "Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep"  
+* include $loinc#82675-0 "HPV I/H Risk 4 DNA Cvx Ql NAA+probeg" 

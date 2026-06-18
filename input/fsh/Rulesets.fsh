@@ -1,5 +1,5 @@
 RuleSet: OriginalCodeSystemDraft(id)
-* ^url = "https://terminology.dhp.uz/CodeSystem/{id}"
+* ^url = "https://dhp.uz/fhir/integrations/CodeSystem/{id}"
 * ^status = #draft
 * ^content = #complete
 * ^caseSensitive = true
@@ -8,7 +8,7 @@ RuleSet: OriginalCodeSystemDraft(id)
 * ^experimental = true
 
 RuleSet: OriginalCodeSystem(id)
-* ^url = "https://terminology.dhp.uz/CodeSystem/{id}"
+* ^url = "https://dhp.uz/fhir/integrations/CodeSystem/{id}"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = true
@@ -17,16 +17,17 @@ RuleSet: OriginalCodeSystem(id)
 * ^experimental = false 
 
 RuleSet: SupplementCodeSystemDraft(id, supplements, version)
-* ^url = "https://terminology.dhp.uz/CodeSystem/{id}"
+* ^url = "https://dhp.uz/fhir/integrations/CodeSystem/{id}"
 * ^status = #draft
 * ^content = #supplement
-* ^supplements = "{supplements}"
+// * ^supplements = "{supplements}"
+* ^supplements = {supplements}
 * ^version = "{version}"
 * ^language = #en
 * ^experimental = true
 
 RuleSet: SupplementCodeSystem(id, supplements, version)
-* ^url = "https://terminology.dhp.uz/CodeSystem/{id}"
+* ^url = "https://dhp.uz/fhir/integrations/CodeSystem/{id}"
 * ^status = #active
 * ^content = #supplement
 * ^supplements = "{supplements}"

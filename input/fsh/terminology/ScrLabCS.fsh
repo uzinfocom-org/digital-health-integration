@@ -1,17 +1,17 @@
 CodeSystem: ScrLabCS
 Id: scr-lab-cs
 Title: "Laboratory Tests CodeSystem"
-Description: "Справочник лабораторных исследований для скрининга (LOINC)"
+Description: "Terminology for laboratory tests used in screening programs (LOINC)"
 
-* insert OriginalCodeSystem(scr-lab-cs)
+* insert SupplementCodeSystemDraft(scr-lab-cs, $loinc, 2.82)
 
-* #18500-9 "Liquid-based cytology"
+* #18500-9 "Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Взятие мазка на жидкостную цитологию"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Suyuq sitologiya uchun surtma olish"
 
-* #82675-0 "HPV DNA testing"
+* #82675-0 "HPV I/H Risk 4 DNA Cvx Ql NAA+probe"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Взятие мазка на ВПЧ"
   * ^designation[+].language = #uz

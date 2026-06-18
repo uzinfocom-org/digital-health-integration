@@ -1,23 +1,23 @@
 CodeSystem: ScrTzCS
 Id: scr-tz-cs
 Title: "Transformation Zone CodeSystem"
-Description: "Локальный справочник типов зоны трансформации шейки матки"
-* insert OriginalCodeSystem(scr-tz-cs)
+Description: "Local terminology for cervical transformation zone types"
+* insert OriginalCodeSystemDraft(scr-tz-cs)
 
-* #scr-tz-1 "TZ1"
+* #scr-tz-1 "TZ1 (To'liq ko'rinadi)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Тип 1 (полностью видна)"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "TZ1 (To'liq ko'rinadi)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Type 1 (fully visible)"
 
-* #scr-tz-2 "TZ2"
+* #scr-tz-2 "TZ2 (Qisman kanalda)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Тип 2 (частично в канале)"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "TZ2 (Qisman kanalda)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Type 2 (partially in canal)"
 
-* #scr-tz-3 "TZ3"
+* #scr-tz-3 "TZ3 (Ko'rinmaydi / chuqur)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Тип 3 (не видна / глубоко)"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "TZ3 (Ko'rinmaydi / chuqur)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Type 3 (not visible / deep)"

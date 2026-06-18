@@ -1,8 +1,8 @@
 ValueSet: SrcBiradsVS
-Id: src-birads
+Id: src-birads-vs
 Title: "BI-RADS ValueSet"
-Description: "Набор значений категорий BI-RADS (Breast Imaging-Reporting and Data System) для стандартизированной классификации результатов маммографического обследования."
-* ^url = "https://terminology.dhp.uz/ValueSet/src-birads"
+Description: "Value set of BI-RADS (Breast Imaging Reporting and Data System) categories for standardized classification of mammography examination results."
+* ^url = "https://dhp.uz/fhir/integrations/ValueSet/src-birads-vs"
 * ^experimental = true
 
 * include codes from system src-birads-cs

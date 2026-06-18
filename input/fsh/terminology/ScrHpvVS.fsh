@@ -1,8 +1,9 @@
 ValueSet: ScrHpvVS
-Id: scr-hpv
+Id: scr-hpv-vs
 Title: "HPV Results ValueSet"
-Description: "Набор кодов для результатов анализа на ВПЧ"
-* ^url = "https://terminology.dhp.uz/ValueSet/scr-hpv"
+Description: "Value set of codes for HPV test results."
+* ^url = "https://dhp.uz/fhir/integrations/ValueSet/scr-hpv-vs"
 * ^experimental = true
+
 
 * include codes from system scr-hpv-cs

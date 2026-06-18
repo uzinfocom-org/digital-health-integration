@@ -2,22 +2,22 @@ Profile: ScreeningPractitioner
 Parent: UZCorePractitioner
 Id: screening-practitioner
 Title: "Screening Practitioner"
-Description: "Профиль врача для системы скрининга, наследующий UZCorePractitioner."
+Description: "Practitioner profile for the screening system, inheriting UZCorePractitioner."
 * ^status = #active
 * ^experimental = true
 * ^publisher = "DHP Integration"
 
 * identifier contains screeningId 0..1 MS
-* identifier[screeningId].system = "https://dhp.uz/fhir/core/sid/uz/screening" (exactly)
+* identifier[screeningId].system = "https://dhp.uz/fhir/core/sid/uz/screening" 
 
 * telecom MS
 
 
-// ==================== ПРАВИЛЬНЫЙ ПРИМЕР 1 ====================
+// ==================== CORRECT EXAMPLE 1 ====================
 Instance: mika-adamova
 InstanceOf: ScreeningPractitioner
 Usage: #example
-Description: "Мика Адамова Чоршанбиевна"
+Description: "Mika Adamova Chorshanbievna"
 
 * identifier[nationalId].value = "515050500501"
 * identifier[nationalId].use = #official
@@ -26,10 +26,10 @@ Description: "Мика Адамова Чоршанбиевна"
 * identifier[screeningId].use = #usual
 
 * active = true
-* name.text = "Мика Адамова Чоршанбиевна"
-* name.family = "Адамова"
-* name.given[0] = "Мика"
-* name.given[1] = "Чоршанбиевна"
+* name.text = "Mika Adamova Chorshanbievna"
+* name.family = "Adamova"
+* name.given[0] = "Mika"
+* name.given[1] = "Chorshanbievna"
 * gender = #female
 * birthDate = "1995-03-18"
 
@@ -38,11 +38,11 @@ Description: "Мика Адамова Чоршанбиевна"
 * telecom[=].use = #mobile
 
 
-// ==================== ПРИМЕР 2 ====================
+// ==================== EXAMPLE 2 ====================
 Instance: lyuba-dadaeva
 InstanceOf: ScreeningPractitioner
 Usage: #example
-Description: "Люба Дадаева Юлдашевна"
+Description: "Lyuba Dadaeva Yuldashevna"
 
 * identifier[nationalId].value = "515050500502"
 * identifier[nationalId].use = #official
@@ -51,10 +51,10 @@ Description: "Люба Дадаева Юлдашевна"
 * identifier[screeningId].use = #usual
 
 * active = true
-* name.text = "Люба Дадаева Юлдашевна"
-* name.family = "Дадаева"
-* name.given[0] = "Люба"
-* name.given[1] = "Юлдашевна"
+* name.text = "Lyuba Dadaeva Yuldashevna"
+* name.family = "Dadaeva"
+* name.given[0] = "Lyuba"
+* name.given[1] = "Yuldashevna"
 * gender = #female
 * birthDate = "1995-03-18"
 
@@ -63,11 +63,11 @@ Description: "Люба Дадаева Юлдашевна"
 * telecom[=].use = #mobile
 
 
-// ==================== ПРИМЕР 3 ====================
+// ==================== EXAMPLE 3 ====================
 Instance: nina-tipsina
 InstanceOf: ScreeningPractitioner
 Usage: #example
-Description: "Нина Типсина Тумановна"
+Description: "Nina Tipsina Tumanovna"
 
 * identifier[nationalId].value = "515050500503"
 * identifier[nationalId].use = #official
@@ -76,10 +76,10 @@ Description: "Нина Типсина Тумановна"
 * identifier[screeningId].use = #usual
 
 * active = true
-* name.text = "Нина Типсина Тумановна"
-* name.family = "Типсина"
-* name.given[0] = "Нина"
-* name.given[1] = "Тумановна"
+* name.text = "Nina Tipsina Tumanovna"
+* name.family = "Tipsina"
+* name.given[0] = "Nina"
+* name.given[1] = "Tumanovna"
 * gender = #female
 * birthDate = "1995-03-18"
 

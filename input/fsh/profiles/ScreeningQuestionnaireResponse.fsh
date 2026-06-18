@@ -2,7 +2,7 @@ Profile: ScreeningQuestionnaireResponse
 Parent: UZCoreQuestionnaireResponse
 Id: screening-questionnaire-response
 Title: "Screening Questionnaire Response"
-Description: "Профиль заполненной анкеты скрининга, наследующий структуру UZCore."
+Description: "Completed screening questionnaire profile inheriting the UZCore structure."
 
 * ^status = #active
 * ^experimental = true
@@ -10,15 +10,16 @@ Description: "Профиль заполненной анкеты скринин�
 
 
 Instance: screening-intake
-InstanceOf: ScreeningQuestionnaireResponse // Ссылка на ваш наследник
+InstanceOf: ScreeningQuestionnaireResponse
 Usage: #example
-Description: "Заполненная анкета скрининга (Жалобы и анамнез)"
+Description: "Completed screening questionnaire (Complaints and Medical History)"
+
 
 * identifier.system = $screening-local-id
 * identifier.value = "1233"
 * identifier.use = #usual
 
-* questionnaire = "https://terminology.dhp.uz/Questionnaire-screening-intake-template"
+* questionnaire = "https://terminology.dhp.uz/screening-intake-template"
 * status = #completed
 
 * subject = Reference(Patient/lola-oripova)
@@ -26,7 +27,7 @@ Description: "Заполненная анкета скрининга (Жалоб
 * authored = "2026-03-13T10:00:00Z"
 * author = Reference(PractitionerRole/practitioner-role-gynecologist)
 
-// --- Группа 1: Цервикальный скрининг ---
+// --- Group 1: Cervical Screening ---
 * item[0].linkId = "cervical-group"
 * item[0].item[0].linkId = "1.1"
 * item[0].item[0].answer.valueBoolean = false
@@ -43,9 +44,9 @@ Description: "Заполненная анкета скрининга (Жалоб
 * item[0].item[6].linkId = "1.7"
 * item[0].item[6].answer.valueBoolean = true
 * item[0].item[7].linkId = "1.8"
-* item[0].item[7].answer.valueString = "До 3-х месяцев"
+* item[0].item[7].answer.valueString = "Up to 3 months ago"
 
-// --- Группа 2: Маммография (Breast Group) ---
+// --- Group 2: Mammography (Breast Group) ---
 * item[1].linkId = "breast-group"
 * item[1].item[0].linkId = "2.1"
 * item[1].item[0].answer.valueBoolean = true
@@ -64,4 +65,6 @@ Description: "Заполненная анкета скрининга (Жалоб
 * item[1].item[7].linkId = "2.8"
 * item[1].item[7].answer.valueBoolean = true
 * item[1].item[8].linkId = "2.9"
-* item[1].item[8].answer.valueString = "До 3-х месяцев"
+* item[1].item[8].answer.valueString = "Up to 3 months ago"
+
+

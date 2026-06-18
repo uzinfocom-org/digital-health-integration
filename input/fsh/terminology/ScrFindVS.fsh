@@ -1,8 +1,8 @@
 ValueSet: SrcFindVS
-Id: src-find
+Id: src-find-vs
 Title: "Breast Mammography Findings ValueSet"
-Description: "Набор кодов для регистрации находок в молочной железе"
-* ^url = "https://terminology.dhp.uz/ValueSet/src-find"
+Description: "Value set of codes for recording breast findings."
+* ^url = "https://dhp.uz/fhir/integrations/ValueSet/src-find-vs"
 * ^experimental = true
 
 * include codes from system src-find-cs

@@ -1,65 +1,65 @@
 CodeSystem: ScrCytCS
 Id: scr-cyt-cs
 Title: "Cytology Results CodeSystem"
-Description: "Локальный справочник результатов жидкостной цитологии (Bethesda System)"
-* insert OriginalCodeSystem(scr-cyt-cs)
+Description: "Local terminology for liquid-based cytology results (Bethesda System)"
+* insert OriginalCodeSystemDraft(scr-cyt-cs)
 
-* #scr-cyt-1 "NILM"
+* #scr-cyt-1 "Norma (NILM)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Норма (NILM)"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Norma (NILM)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "NILM"
 
 * #scr-cyt-2 "ASC-US"
   * ^designation[0].language = #ru
   * ^designation[=].value = "ASC-US"
-  * ^designation[+].language = #uz
+  * ^designation[+].language = #en
   * ^designation[=].value = "ASC-US"
 
 * #scr-cyt-3 "LSIL"
   * ^designation[0].language = #ru
   * ^designation[=].value = "LSIL"
-  * ^designation[+].language = #uz
+  * ^designation[+].language = #en
   * ^designation[=].value = "LSIL"
 
 * #scr-cyt-4 "ASC-H"
   * ^designation[0].language = #ru
   * ^designation[=].value = "ASC-H"
-  * ^designation[+].language = #uz
+  * ^designation[+].language = #en
   * ^designation[=].value = "ASC-H"
 
 * #scr-cyt-5 "HSIL"
   * ^designation[0].language = #ru
   * ^designation[=].value = "HSIL"
-  * ^designation[+].language = #uz
+  * ^designation[+].language = #en
   * ^designation[=].value = "HSIL"
 
 * #scr-cyt-6 "SCC"
   * ^designation[0].language = #ru
   * ^designation[=].value = "SCC"
-  * ^designation[+].language = #uz
+  * ^designation[+].language = #en
   * ^designation[=].value = "SCC"
 
 * #scr-cyt-7 "AGC"
   * ^designation[0].language = #ru
   * ^designation[=].value = "AGC"
-  * ^designation[+].language = #uz
+  * ^designation[+].language = #en
   * ^designation[=].value = "AGC"
 
 * #scr-cyt-8 "AIS"
   * ^designation[0].language = #ru
   * ^designation[=].value = "AIS"
-  * ^designation[+].language = #uz
+  * ^designation[+].language = #en
   * ^designation[=].value = "AIS"
 
 * #scr-cyt-9 "AC"
   * ^designation[0].language = #ru
   * ^designation[=].value = "AC"
-  * ^designation[+].language = #uz
+  * ^designation[+].language = #en
   * ^designation[=].value = "AC"
 
-* #scr-cyt-10 "Other"
+* #scr-cyt-10 "Boshqa"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Другой"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Boshqa"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Other"

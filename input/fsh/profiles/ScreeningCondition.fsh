@@ -2,7 +2,7 @@ Profile: ScreeningCondition
 Parent: UZCoreCondition
 Id: screening-condition
 Title: "Screening Condition"
-Description: "Профиль для фиксации установленного диагноза в рамках скрининга."
+Description: "Profile for documenting a confirmed diagnosis identified during screening."
 * ^experimental = true
 * ^status = #active
 * ^publisher = "DHP Integration"
@@ -20,16 +20,16 @@ Description: "Профиль для фиксации установленног�
 Instance: final-diagnosis
 InstanceOf: ScreeningCondition
 Usage: #example
-Description: "Окончательный диагноз пациентки"
+Description: "Final diagnosis of the patient."
 
 * identifier[0].system = $screening-local-id
 * identifier[0].value = "33"
 * identifier[0].use = #usual
 * clinicalStatus = $condition-clinical#active
-* category[0].text = "Основной"
+* category[0].text = "Primary diagnosis"
 * code.coding[0] = $icd-10#C00.0 "External upper lip"
 * subject = Reference(Patient/lola-oripova)
 * encounter = Reference(Encounter/Encounter-general)
 * recordedDate = "2025-12-17T11:50:00Z"
 * participant[0].actor = Reference(PractitionerRole/practitioner-role-gynecologist)
-* note.text = "Восполение требует лечения"
+* note.text = "Inflammation requiring treatment."

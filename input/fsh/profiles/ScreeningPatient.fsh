@@ -2,13 +2,13 @@ Profile: ScreeningPatient
 Parent: UZCorePatient
 Id: screening-patient
 Title: "Screening Patient"
-Description: "Профиль пациента для системы скрининга, наследующий структуру UZCorePatient."
+Description: "Patient profile for the screening system, inheriting the structure of UZCorePatient."
 * ^status = #active
 * ^experimental = true
 * ^publisher = "DHP Integration"
 
 * identifier contains screeningId 0..1 MS
-* identifier[screeningId].system = "https://dhp.uz/fhir/core/sid/uz/screening" (exactly)
+* identifier[screeningId].system = "https://dhp.uz/fhir/core/sid/uz/screening" 
 
 * extension contains 
     WorkPlaceExtension named workPlace 0..1 MS
@@ -20,7 +20,7 @@ Description: "Профиль пациента для системы скрини
 Instance: lola-oripova
 InstanceOf: ScreeningPatient
 Usage: #example
-Description: "Пример пациентки Лолы Ориповой для модуля скрининга"
+Description: "Example patient Lola Oripova for the screening module"
 
 * identifier[nationalId].value = "515050500505"
 * identifier[nationalId].use = #official
@@ -30,10 +30,10 @@ Description: "Пример пациентки Лолы Ориповой для �
 * identifier[screeningId].value = "45"
 * identifier[screeningId].use = #usual
 
-* name[0].text = "Лола Орипова Шахзодовна"
-* name[=].family = "Орипова"
-* name[=].given[0] = "Лола"
-* name[=].given[+] = "Шахзодовна"
+* name[0].text = "Lola Oripova Shakhzodovna"
+* name[=].family = "Oripova"
+* name[=].given[0] = "Lola"
+* name[=].given[+] = "Shakhzodovna"
 
 * gender = #female
 * birthDate = "1995-03-18"
@@ -44,11 +44,11 @@ Description: "Пример пациентки Лолы Ориповой для �
 
 * address[0].use = #temp
 * address[0].type = #physical
-* address[0].text = "Iltifot MFY, 58-Harbiy shaharcha mavzesi, 53 Uy, 104 Kvartira"
-* address[0].city = "Буюк ипак йули МФЙ"
-* address[0].district = "Мирзо Улугбекский район"
-* address[0].state = "Город Ташкент"
+* address[0].text = "Iltifot MFY, 58 Harbiy Shaharcha Area, House 53, Apartment 104"
+* address[0].city = "Buyuk Ipak Yuli MFY"
+* address[0].district = "Mirzo Ulugbek District"
+* address[0].state = "Tashkent City"
 
-// ==================== Расширения ====================
+// ==================== Extensions ====================
 * extension[nationality].extension[code].valueCodeableConcept = $nationality-cs#161
-* extension[workPlace].valueString = "Профессор в Национальном университете"
+* extension[workPlace].valueString = "Professor at the National University"

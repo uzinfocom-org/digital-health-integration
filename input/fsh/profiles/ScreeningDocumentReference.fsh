@@ -2,10 +2,12 @@ Profile: ScreeningDocumentReference
 Parent: DocumentReference
 Id: screening-document-reference
 Title: "Screening Document Reference"
-Description: "Профиль для ссылок на документы (согласия, протоколы) в системе скрининга."
+Description: "Profile for references to documents (consent forms, protocols) used within the screening system."
 * ^experimental = true
 * ^status = #active
 * ^publisher = "DHP Integration"
+
+* modality 0..0
 
 * status MS
 * type MS
@@ -17,18 +19,19 @@ Description: "Профиль для ссылок на документы (сог
 * subject only Reference(Patient)
 * context only Reference(Appointment or Encounter or EpisodeOfCare)
 
-* status from http://hl7.org/fhir/ValueSet/document-reference-status (required)
-* type from http://loinc.org (required) // Можно сузить до конкретных кодов Consent, если нужно
-* content.attachment.contentType from http://hl7.org/fhir/ValueSet/mimetypes (required)
+* status from $drs-vs (required)
+//changed from  http://loinc.org to $doc-typecodes
+* type from $doc-typecodes (required) // Можно сузить до конкретных кодов Consent, если нужно
+* content.attachment.contentType from $mimetypes (required)
 
 // Уточняем, что вложения должны быть PDF
 * content.attachment.contentType = #application/pdf
 
 
 Instance: mammography-consent
-InstanceOf: DocumentReference
+InstanceOf: ScreeningDocumentReference
 Usage: #example
-Description: "Информированное согласие пациентки на проведение маммографии"
+Description: "Patient informed consent for mammography screening"
 
 * status = #current
 
@@ -41,5 +44,5 @@ Description: "Информированное согласие пациентки
 // Содержимое документа
 * content[0].attachment.contentType = #application/pdf
 * content[0].attachment.url = "https://storage.ssv.uz/docs/consent-lola-oripova.pdf"
-* content[0].attachment.title = "Информированное согласие на проведение маммографии"
+* content[0].attachment.title = "Informed Consent for Mammography Screening"
 * content[0].attachment.creation = "2026-03-13T10:00:00Z"

@@ -11,7 +11,7 @@ Description: "Example of a medical association translated from Hepatitis JSON, t
 Instance: xonobod-medical-association
 InstanceOf: ScreeningOrganization
 Usage: #example
-Description: "Хонободское городское медицинское объединение"
+Description: "Xonobod City Medical Association"
 
 * identifier[taxId].use = #official
 * identifier[taxId].type.coding[0].system = $identifier-type
@@ -20,7 +20,7 @@ Description: "Хонободское городское медицинское �
 * identifier[taxId].value = "200248215"
 
 * active = true
-* name = "Xonobod shahar tibbiyot birlashmasi"
+* name = "Xonobod City Medical Association"
 
 * type.coding[subordinationGroup] = $organizational-subordination-group-cs#I_3
 * type.coding[organizationalStructure] = $organizational-structure-cs#148
@@ -32,7 +32,7 @@ Description: "Хонободское городское медицинское �
   * telecom[=].value = "1341353613"
   * telecom[+].system = #email
   * telecom[=].value = "health@example.uz"
-  * address.line = "A.Fitrat ko'chasi, 1"
+  * address.line = "1 A. Fitrat Street"
   * address.state = "1703"
   * address.district = "1703408"
   * address.country = "UZ"

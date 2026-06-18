@@ -1,60 +1,60 @@
 CodeSystem: SrcFindCS
 Id: src-find-cs
 Title: "Breast Mammography Findings CodeSystem"
-Description: "Локальный справочник находок (патологий) при маммографическом обследовании"
-* ^url = "https://dhp.uz/fhir/integrations/CodeSystem/src-find-cs"
-* ^caseSensitive = true
+Description: "Local terminology for mammography findings (pathologies) detected during mammographic examination."
 
-* #src-find-1 "Skin thickening"
+* insert OriginalCodeSystemDraft(src-find-cs)
+
+* #src-find-1 "Teri qalinlashishi"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Утолщение кожи"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Teri qalinlashishi"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Skin thickening"
 
-* #src-find-2 "Architectural distortion"
+* #src-find-2 "Arxitektonikaning buzilishi"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Нарушение архитектоники"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Arxitektonikaning buzilishi"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Architectural distortion"
 
-* #src-find-3 "Macrocalcifications"
+* #src-find-3 "Makrokalsinatlar"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Макрокальцинаты"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Makrokalsinatlar"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Macrocalcifications"
 
-* #src-find-4 "Focal lesion / Okpo"
+* #src-find-4 "O'choqli ta'lim (Okpo)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Очаговое образование (Okpo)"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "O'choqli ta'lim (Okpo)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Focal lesion / Okpo"
 
-* #src-find-5 "Mass / Lesion"
+* #src-find-5 "Ta'lim (O'sma)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Образование"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Ta'lim (O'sma)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Mass / Lesion"
 
-* #src-find-6 "Asymmetric density"
+* #src-find-6 "Assimetrik zichlik"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Ассиметричная плотность"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Assimetrik zichlik"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Asymmetric density"
 
-* #src-find-7 "Lymph nodes"
+* #src-find-7 "Limfa tugunlari"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Лимфоузлы"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Limfa tugunlari"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Lymph nodes"
 
-* #src-find-8 "Scar"
+* #src-find-8 "Chandiq"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Шрам"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Chandiq"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Scar"
 
-* #src-find-9 "Mole / Wart"
+* #src-find-9 "Xol / So'gal"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Родинка/бородавка"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Xol / So'gal"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Mole / Wart"

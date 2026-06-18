@@ -1,29 +1,29 @@
 CodeSystem: ScrColpoCS
 Id: scr-colpo-cs
 Title: "Colposcopy Results CodeSystem"
-Description: "Локальный справочник результатов кольпоскопического исследования"
-* insert OriginalCodeSystem(scr-colpo-cs)
+Description: "Local terminology for colposcopy examination results"
+* insert OriginalCodeSystemDraft(scr-colpo-cs)
 
-* #scr-colpo-1 "NILM (Normal)"
+* #scr-colpo-1 "Norma (NILM)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Норма (NILM)"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Norma (NILM)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "NILM (Normal)"
 
 * #scr-colpo-2 "LSIL"
   * ^designation[0].language = #ru
   * ^designation[=].value = "LSIL"
-  * ^designation[+].language = #uz
+  * ^designation[+].language = #en
   * ^designation[=].value = "LSIL"
 
 * #scr-colpo-3 "HSIL"
   * ^designation[0].language = #ru
   * ^designation[=].value = "HSIL"
-  * ^designation[+].language = #uz
+  * ^designation[+].language = #en
   * ^designation[=].value = "HSIL"
 
-* #scr-colpo-4 "Atypical"
+* #scr-colpo-4 "Atipik o'zgarish"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Атипичное изменение"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Atipik o'zgarish"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Atypical"

@@ -1,12 +1,13 @@
 ValueSet: ScreeningObservationCodesVS
 Id: screening-observation-codes-vs
 Title: "Screening Observation Codes Composite ValueSet"
-Description: "Объединенный справочник кодов для поля Observation.code (Лаборатория, Диагностика, Наблюдения, Находки)"
-* ^url = "https://terminology.dhp.uz/ValueSet/screening-observation-codes-vs"
+Description: "Combined value set of codes for the Observation.code field (Laboratory, Diagnostics, Observations, Findings)."
+* ^url = "https://dhp.uz/fhir/integrations/ValueSet/screening-observation-codes-vs"
 * ^experimental = true
 
 // Объединяем ваши четыре valueset
-* include codes from valueset scr-lab
-* include codes from valueset scr-diag
-* include codes from valueset scr-obser
-* include codes from valueset src-find
+* include $loinc#18500-9 "Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep"  
+* include $loinc#82675-0 "HPV I/H Risk 4 DNA Cvx Ql NAA+probe" 
+* include codes from system scr-diag-cs
+* include codes from system scr-obser-cs
+* include codes from system src-find-cs

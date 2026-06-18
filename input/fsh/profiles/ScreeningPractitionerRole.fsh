@@ -2,60 +2,60 @@ Profile: ScreeningPractitionerRole
 Parent: UZCorePractitionerRole
 Id: screening-practitioner-role
 Title: "Screening Practitioner Role"
-Description: "Профиль роли специалиста для системы скрининга, наследующий структуру UZCore."
+Description: "Practitioner role profile for the screening system, inheriting the UZCore structure."
 * ^status = #active
 * ^experimental = true
 * ^publisher = "DHP Integration"
 
-// Если вы хотите сделать поле обязательным (Must Support), даже если его не было в UZCore:
-* code MS 
+// If you want to make a field Must Support, even if it was not defined as such in UZCore:
+* code MS
 * practitioner MS
 
 
 Instance: practitioner-role-laborant
-InstanceOf: ScreeningPractitionerRole 
+InstanceOf: ScreeningPractitionerRole
 Usage: #example
-Description: "Роль лаборанта Мики Адамовой в Хонободском ГМО"
+Description: "Laboratory technician role of Mika Adamova at the Xonobod City Medical Association"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "456"
 * identifier[=].use = #usual
 * active = true
 * practitioner = Reference(Practitioner/mika-adamova)
 * organization = Reference(Organization/xonobod-medical-association)
-* code = src-roles-cs#his_laboratory_laborant 
+* code = src-roles-cs#his_laboratory_laborant
 
 Instance: practitioner-role-gynecologist
-InstanceOf: ScreeningPractitionerRole 
+InstanceOf: ScreeningPractitionerRole
 Usage: #example
-Description: "Роль акушера-гинеколога Любы Дадаевой в Хонободском ГМО"
+Description: "Obstetrician-gynecologist role of Lyuba Dadaeva at the Xonobod City Medical Association"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "457"
 * identifier[=].use = #usual
 * active = true
 * practitioner = Reference(Practitioner/lyuba-dadaeva)
 * organization = Reference(Organization/xonobod-medical-association)
-* code = src-roles-cs#his_centre_obstetrics_gynecology_obstetrician_gynecologist 
+* code = src-roles-cs#his_centre_obstetrics_gynecology_obstetrician_gynecologist
 
 Instance: practitioner-role-radiologist
-InstanceOf: ScreeningPractitionerRole 
+InstanceOf: ScreeningPractitionerRole
 Usage: #example
-Description: "Роль заведующего радиолога Нины Типсиной в Хонободском ГМО"
+Description: "Head radiologist role of Nina Tipsina at the Xonobod City Medical Association"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "458"
 * identifier[=].use = #usual
 * active = true
 * practitioner = Reference(Practitioner/nina-tipsina)
 * organization = Reference(Organization/xonobod-medical-association)
-* code = src-roles-cs#his_ris_ragiologist_head 
+* code = src-roles-cs#his_ris_ragiologist_head
 
 Instance: practitioner-role-nurse
-InstanceOf: ScreeningPractitionerRole 
+InstanceOf: ScreeningPractitionerRole
 Usage: #example
-Description: "Роль патронажной сестры Любы Дадаевой в системе онконадзора"
+Description: "Patronage nurse role of Lyuba Dadaeva in the oncology follow-up system"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "459"
 * identifier[=].use = #usual
 * active = true
-* practitioner = Reference(Practitioner/lyuba-dadaeva) // Люба Дадаева работает и как гинеколог, и как медсестра
+* practitioner = Reference(Practitioner/lyuba-dadaeva) // Lyuba Dadaeva works both as a gynecologist and as a nurse
 * organization = Reference(Organization/xonobod-medical-association)
-* code = src-roles-cs#his_poliklinika_patronage_nurse 
+* code = src-roles-cs#his_poliklinika_patronage_nurse

@@ -1,8 +1,8 @@
 ValueSet: ScrObserVS
-Id: scr-obser
+Id: scr-obser-vs
 Title: "Observation Types ValueSet"
-Description: "Набор кодов для типов клинических наблюдений"
-* ^url = "https://terminology.dhp.uz/ValueSet/scr-obser"
+Description: "Value set of codes for clinical observation types."
+* ^url = "https://dhp.uz/fhir/integrations/ValueSet/scr-obser-vs"
 * ^experimental = true
 
 * include codes from system scr-obser-cs

@@ -115,3 +115,10 @@ Alias: $valueset-supplement = http://hl7.org/fhir/StructureDefinition/valueset-s
 Alias: $drs = http://hl7.org/fhir/document-reference-status
 Alias: $drcs = 	http://hl7.org/fhir/composition-status
 Alias: $drca = http://hl7.org/fhir/composition-attestation-mode
+
+
+Alias: $doc-typecodes = http://hl7.org/fhir/ValueSet/doc-typecodes
+Alias: $mimetypes = http://hl7.org/fhir/ValueSet/mimetypes
+Alias: $drs-vs = http://hl7.org/fhir/ValueSet/document-reference-status
+Alias: $position-and-profession-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs
+Alias: $diagnostic-report-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/diagnostic-report-status-vs

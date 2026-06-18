@@ -2,10 +2,11 @@ Profile: ScreeningServiceRequest
 Parent: ServiceRequest
 Id: screening-service-request
 Title: "Screening Service Request"
-Description: "Профиль для создания направлений на лабораторные и диагностические исследования в рамках скрининга."
+Description: "Profile for creating referrals for laboratory and diagnostic investigations within the screening program."
 * ^experimental = true
 * ^status = #active
 * ^publisher = "DHP Integration"
+
 * identifier MS
 * status 1..1 MS
 * intent 1..1 MS
@@ -23,7 +24,7 @@ Description: "Профиль для создания направлений на
 Instance: ServiceRequest-cytology
 InstanceOf: ScreeningServiceRequest
 Usage: #example
-Description: "Направление на жидкостную цитологию"
+Description: "Referral for liquid-based cytology"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "233"
 * identifier[=].use = #usual
@@ -32,72 +33,72 @@ Description: "Направление на жидкостную цитологи�
 * identifier[=].use = #usual
 * status = #completed
 * intent = #order
-* code = scr-lab-cs#18500-9 
+* code = $loinc#18500-9 "Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep" 
 * subject = Reference(Patient/lola-oripova)
-* subject.display = "Лола Орипова Шахзодовна"
+* subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
 * authoredOn = "2015-02-07T13:28:17-05:00"
 * requester = Reference(PractitionerRole/practitioner-role-gynecologist)
-* requester.display = "Люба Дадаева Юлдашевна"
+* requester.display = "Lyuba Dadaeva Yuldashevna"
 * performer[0] = Reference(Organization/xonobod-medical-association)
-* performer[=].display = "Хонободское городское медицинское объединение"
+* performer[=].display = "Xonobod City Medical Association"
 
 
 Instance: ServiceRequest-hpv
 InstanceOf: ScreeningServiceRequest
 Usage: #example
-Description: "Направление на тестирование ВПЧ"
+Description: "Referral for HPV testing"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "236"
 * identifier[=].use = #usual
 * status = #completed
 * intent = #order
-* code = scr-lab-cs#82675-0 
+* code =  $loinc#82675-0 "HPV I/H Risk 4 DNA Cvx Ql NAA+probe" 
 * subject = Reference(Patient/lola-oripova)
-* subject.display = "Лола Орипова Шахзодовна"
+* subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
 * authoredOn = "2015-02-07T13:28:17-05:00"
 * requester = Reference(PractitionerRole/practitioner-role-gynecologist)
-* requester.display = "Люба Дадаева Юлдашевна"
+* requester.display = "Lyuba Dadaeva Yuldashevna"
 * performer[0] = Reference(Organization/xonobod-medical-association)
-* performer[=].display = "Хонободское городское медицинское объединение"
+* performer[=].display = "Xonobod City Medical Association"
 
 
 Instance: ServiceRequest-colposcopy
 InstanceOf: ScreeningServiceRequest
 Usage: #example
-Description: "Направление на кольпоскопию"
+Description: "Referral for colposcopy"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "234"
 * identifier[=].use = #usual
 * status = #completed
 * intent = #order
-* code = scr-diag-cs#scr-diag-6 
+* code = scr-diag-cs#scr-diag-6
 * subject = Reference(Patient/lola-oripova)
-* subject.display = "Лола Орипова Шахзодовна"
+* subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
 * authoredOn = "2015-02-07T13:28:17-05:00"
 * requester = Reference(PractitionerRole/practitioner-role-gynecologist)
-* requester.display = "Люба Дадаева Юлдашевна"
+* requester.display = "Lyuba Dadaeva Yuldashevna"
 * performer[0] = Reference(Organization/xonobod-medical-association)
-* performer[=].display = "Хонободское городское медицинское объединение"
+* performer[=].display = "Xonobod City Medical Association"
 
 
 Instance: ServiceRequest-mammography
 InstanceOf: ScreeningServiceRequest
 Usage: #example
-Description: "Направление на маммографию"
+Description: "Referral for mammography"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "235"
 * identifier[=].use = #usual
 * status = #completed
 * intent = #order
-* code = scr-diag-cs#scr-diag-4 
+* code = scr-diag-cs#scr-diag-4
 * subject = Reference(Patient/lola-oripova)
-* subject.display = "Лола Орипова Шахзодовна"
+* subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
 * authoredOn = "2015-02-07T13:28:17-05:00"
 * requester = Reference(PractitionerRole/practitioner-role-gynecologist)
-* requester.display = "Люба Дадаева Юлдашевна"
+* requester.display = "Lyuba Dadaeva Yuldashevna"
 * performer[0] = Reference(Organization/xonobod-medical-association)
-* performer[=].display = "Хонободское городское медицинское объединение"
+* performer[=].display = "Xonobod City Medical Association"

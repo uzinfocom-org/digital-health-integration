@@ -1,8 +1,8 @@
 ValueSet: ScrTzVS
-Id: scr-tz
+Id: scr-tz-vs
 Title: "Transformation Zone ValueSet"
-Description: "Набор кодов для оценки зоны трансформации при кольпоскопии"
-* ^url = "https://terminology.dhp.uz/ValueSet/scr-tz"
+Description: "Value set of codes for assessment of the transformation zone during colposcopy."
+* ^url = "https://dhp.uz/fhir/integrations/ValueSet/scr-tz-vs"
 * ^experimental = true
 
 * include codes from system scr-tz-cs

@@ -1,24 +1,24 @@
 CodeSystem: ScrHpvCS
 Id: scr-hpv-cs
 Title: "HPV Results CodeSystem"
-Description: "Локальный справочник результатов тестирования на вирус папилломы человека (ВПЧ)"
-* ^url = "https://dhp.uz/fhir/integrations/CodeSystem/scr-hpv-cs"
-* ^caseSensitive = true
+Description: "Local terminology for Human Papillomavirus (HPV) test results"
 
-* #scr-hpv-1 "Invalid"
+* insert OriginalCodeSystemDraft(scr-hpv-cs)
+
+* #scr-hpv-1 "Yaroqsiz"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Недействительный"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Yaroqsiz"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Invalid"
 
-* #scr-hpv-2 "Negative"
+* #scr-hpv-2 "Manfiy"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Отрицательный"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Manfiy"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Negative"
 
-* #scr-hpv-3 "Positive"
+* #scr-hpv-3 "Musbat"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Положительный"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Musbat"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Positive"
