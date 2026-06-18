@@ -19,14 +19,14 @@ Description: "Maps local UZ screening mammography finding codes to SNOMED CT."
 * group.element[=].display = "Skin thickening"
 * group.element[=].target[+].code = #129797000
 * group.element[=].target[=].display = "Mammographic skin thickening of breast"
-* group.element[=].target[=].relationship = #source-is-narrower-than-target
+* group.element[=].target[=].relationship = #equivalent
 
 // 2. Architectural distortion
 * group.element[+].code = #src-find-2
 * group.element[=].display = "Architectural distortion"
 * group.element[=].target[+].code = #129792006
-* group.element[=].target[=].display = "Mammographic architectural distortion of breast"
-* group.element[=].target[=].relationship = #source-is-narrower-than-target
+* group.element[=].target[=].display = "Architectural distortion of breast"
+* group.element[=].target[=].relationship = #equivalent
 
 // 3. Macrocalcifications
 * group.element[+].code = #src-find-3
@@ -40,14 +40,14 @@ Description: "Maps local UZ screening mammography finding codes to SNOMED CT."
 * group.element[=].display = "Focal lesion / Okpo"
 * group.element[=].target[+].code = #129788004
 * group.element[=].target[=].display = "Mammographic breast mass"
-* group.element[=].target[=].relationship = #source-is-narrower-than-target
+* group.element[=].target[=].relationship = #equivalent
 
 // 5. Mass / Lesion
 * group.element[+].code = #src-find-5
 * group.element[=].display = "Mass / Lesion"
 * group.element[=].target[+].code = #89164003
 * group.element[=].target[=].display = "Breast mass"
-* group.element[=].target[=].relationship = #source-is-narrower-than-target
+* group.element[=].target[=].relationship = #equivalent
 
 // 6. Asymmetric density
 * group.element[+].code = #src-find-6

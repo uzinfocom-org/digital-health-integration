@@ -27,14 +27,14 @@ Description: "Maps local UZ screening observation type codes to SNOMED CT. The v
 * group[0].element[=].display = "Структура груди"
 * group[0].element[=].target[+].code = #129793001
 * group[0].element[=].target[=].display = "Mammographic breast density"
-* group[0].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[0].element[=].target[=].relationship = #equivalent
 
 // 3. Качество снимка
 * group[0].element[+].code = #scr-obser-3
 * group[0].element[=].display = "Качество снимка"
 * group[0].element[=].target[+].code = #246646005
 * group[0].element[=].target[=].display = "Quality of visual image"
-* group[0].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[0].element[=].target[=].relationship = #equivalent
 
 // ---- LOINC targets (FHIR vital signs profiles) ----
 * group[1].source = Canonical(ScreeningObservationTypeCS)

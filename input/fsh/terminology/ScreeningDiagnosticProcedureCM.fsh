@@ -47,7 +47,7 @@ Description: "Maps local UZ screening diagnostic procedure codes to SNOMED CT."
 * group.element[=].display = "Conization"
 * group.element[=].target[+].code = #54535009
 * group.element[=].target[=].display = "Cone biopsy of cervix"
-* group.element[=].target[=].relationship = #source-is-narrower-than-target
+* group.element[=].target[=].relationship = #equivalent
 
 // 6. Кольпоскопия
 * group.element[+].code = #scr-diag-6
