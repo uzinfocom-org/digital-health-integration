@@ -1,3 +1,15 @@
+<style>
+/* Per-form mapping-table column widths (011: short UZ/RU labels, long multi-code
+   Code cells - so Code gets the room UZ/RU don't need). */
+.col-12 table { table-layout: fixed; width: 100%; }
+.col-12 th, .col-12 td { overflow-wrap: anywhere; word-break: break-word; vertical-align: top; }
+.col-12 th:nth-child(1), .col-12 td:nth-child(1) { width: 11%; }
+.col-12 th:nth-child(2), .col-12 td:nth-child(2) { width: 18%; }
+.col-12 th:nth-child(3), .col-12 td:nth-child(3) { width: 21%; }
+.col-12 th:nth-child(4), .col-12 td:nth-child(4) { width: 35%; }
+.col-12 th:nth-child(5), .col-12 td:nth-child(5) { width: 15%; }
+</style>
+
 ### Form 011 - Hemodialysis session protocol
 
 This page documents the mapping between Form 011 (Hemodialysis Session Protocol) fields and FHIR resources.
@@ -5,6 +17,8 @@ This page documents the mapping between Form 011 (Hemodialysis Session Protocol)
 ### Overview
 
 Form 011 captures clinical data from hemodialysis sessions. The form data maps to multiple FHIR resources bundled together as a FHIR Document, conforming to the [Form 011 Hemodialysis Composition](StructureDefinition-form-011-hemodialysis-composition.html) profile. Where available, resources conform to [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profiles.
+
+For a complete reference instance, see the [Form 011 hemodialysis example](Bundle-example-form-011-hemodialysis.html).
 
 ### Field Mapping
 
@@ -15,7 +29,7 @@ Form 011 captures clinical data from hemodialysis sessions. The form data maps t
 | Bemor | Пациент | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html).name | - | Aziz John |
 | Sana | Дата | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).period.start | - | 2026-06-01 |
 | Amb № | Амбулаторный № | Patient.identifier | - | 1245 |
-| Seans № | № сеанса | Procedure.identifier | - | 128 |
+| Seans № | № сеанса | [Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html).identifier | - | 128 |
 | Dializ turi | Тип диализа | Procedure.code | SNOMED CT `302497006` "Hemodialysis (procedure)" | Hemodialysis |
 | Dializ boshlanishi | Начало диализа | Procedure.occurrencePeriod.start | - | 2026-06-01T09:00:00 |
 | Dializ tugashi | Окончание диализа | Procedure.occurrencePeriod.end | - | 2026-06-01T13:00:00 |

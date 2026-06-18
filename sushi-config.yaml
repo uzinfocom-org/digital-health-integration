@@ -67,6 +67,8 @@ parameters:
   apply-version: false # don't override the version in the knowledge resources
   default-version: true
 
+  show-inherited-invariants: false # hide invariants inherited from the base resource in profile tables
+
   # multi-lingual support
   i18n-default-lang: en
   i18n-lang:
@@ -92,6 +94,8 @@ menu:
     Categories: document-categories.html
     Lifecycle: document-statuses.html
     Form 011 Mapping: form-011-mapping.html
+    Form 066 Mapping: form-066-mapping.html
+    Form 066-1 Mapping: form-066-1-mapping.html
   Terminology Map: terminology-mapping.html
   Artifacts: artifacts.html
   Changelog: changelog.html
