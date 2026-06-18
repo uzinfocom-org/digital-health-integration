@@ -2,7 +2,7 @@ Profile: ScreeningObservation
 Parent: UZCoreObservation
 Id: screening-observation
 Title: "Screening Observation"
-Description: "Profile for storing screening results (laboratory tests, findings, and biometric measurements)."
+Description: "Profile for storing cervical and breast cancer screening results (laboratory tests, findings, and biometric measurements)."
 * ^experimental = true
 * ^status = #active
 * ^publisher = "DHP Integration"
@@ -25,10 +25,10 @@ Description: "Profile for storing screening results (laboratory tests, findings,
 // Привязка справочников (Терминология)
 * code from ScreeningObservationCodesVS (preferred)
 * valueCodeableConcept from ScreeningObservationValuesVS (preferred)
-* bodySite from ScrBodySiteVS (required)
+* bodySite from ScreeningBodySiteVS (required)
 
 * bodySite.extension contains BreastQuadrantExtension named quadrant 0..* MS
-* bodySite.extension[quadrant].valueCodeableConcept from SrcBreastQuadrantVS (required)
+* bodySite.extension[quadrant].valueCodeableConcept from ScreeningBreastQuadrantVS (required)
 
 
 Instance: cytology-result
@@ -47,7 +47,7 @@ Description: "Result of cytological smear examination: LSIL."
 * effectiveDateTime = "2015-02-07T13:28:17+02:00"
 * issued = "2015-02-07T13:28:17.239+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-laborant)
-* valueCodeableConcept = scr-cyt-cs#scr-cyt-3 "LSIL"
+* valueCodeableConcept = screening-cervical-cytology-cs#scr-cyt-3 "LSIL"
 
 Instance: cytology-ai-analysis
 InstanceOf: ScreeningObservation
@@ -82,7 +82,7 @@ Description: "High-risk HPV DNA test result."
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-laboratory)
 * performer = Reference(PractitionerRole/practitioner-role-laborant)
-* valueCodeableConcept = scr-hpv-cs#scr-hpv-2 "Negative"
+* valueCodeableConcept = screening-hpv-cs#scr-hpv-2 "Negative"
 
 Instance: colposcopy-result
 InstanceOf: ScreeningObservation
@@ -93,16 +93,16 @@ Description: "Colposcopy conclusion including transformation zone assessment."
 * identifier[=].use = #usual
 * basedOn = Reference(ServiceRequest/ServiceRequest-colposcopy)
 * status = #final
-* code = scr-diag-cs#scr-diag-6
+* code = screening-diagnostic-procedure-cs#scr-diag-6
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-diagnostics)
 * issued = "2015-02-07T13:28:17.239+02:00"
 * effectiveDateTime = "2015-02-07T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-gynecologist)
-* valueCodeableConcept = scr-colpo-cs#scr-colpo-2 "LSIL"
+* valueCodeableConcept = screening-colposcopy-cs#scr-colpo-2 "LSIL"
 * component[0].code.text = "Transformation Zone Type"
-* component[=].valueCodeableConcept = scr-tz-cs#scr-tz-2 "Type 2 (partially in canal)"
+* component[=].valueCodeableConcept = screening-transformation-zone-cs#scr-tz-2 "Type 2 (partially in canal)"
 
 Instance: mammography-summary
 InstanceOf: ScreeningObservation
@@ -113,19 +113,19 @@ Description: "Mammography summary including BI-RADS category, breast density, an
 * identifier[=].use = #usual
 * basedOn = Reference(ServiceRequest/ServiceRequest-mammography)
 * status = #final
-* code = scr-diag-cs#scr-diag-4 "Mammography"
+* code = screening-diagnostic-procedure-cs#scr-diag-4 "Mammography"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-radiology)
 * issued = "2015-02-07T13:28:17.239+02:00"
 * effectiveDateTime = "2015-02-07T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-radiologist)
-* component[0].code = scr-obser-cs#scr-obser-1
-* component[=].valueCodeableConcept = src-birads-cs#src-birads-2 "2"
-* component[+].code = scr-obser-cs#scr-obser-2
-* component[=].valueCodeableConcept = src-breast-form-cs#src-breast-density-4 "Type D"
-* component[+].code = scr-obser-cs#scr-obser-3
-* component[=].valueCodeableConcept = src-img-quality-cs#src-img-quality-3 "Moderate"
+* component[0].code = screening-observation-type-cs#scr-obser-1
+* component[=].valueCodeableConcept = screening-birads-cs#src-birads-2 "2"
+* component[+].code = screening-observation-type-cs#scr-obser-2
+* component[=].valueCodeableConcept = screening-breast-form-cs#src-breast-density-4 "Type D"
+* component[+].code = screening-observation-type-cs#scr-obser-3
+* component[=].valueCodeableConcept = screening-image-quality-cs#src-img-quality-3 "Moderate"
 
 Instance: mammography-right-breast-finding
 InstanceOf: ScreeningObservation
@@ -136,7 +136,7 @@ Description: "Finding (mole) detected in the right breast during mammography."
 * identifier[=].use = #usual
 * basedOn = Reference(ServiceRequest/ServiceRequest-mammography)
 * status = #final
-* code = scr-diag-cs#scr-diag-4 "Mammography"
+* code = screening-diagnostic-procedure-cs#scr-diag-4 "Mammography"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-radiology)
@@ -144,8 +144,8 @@ Description: "Finding (mole) detected in the right breast during mammography."
 * effectiveDateTime = "2015-02-07T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-radiologist)
 * bodySite = $sct#80248007
-* bodySite.extension[quadrant].valueCodeableConcept = src-breast-quadrant-cs#src-breast-quadrant-2
-* component[0].code = src-find-cs#src-find-9
+* bodySite.extension[quadrant].valueCodeableConcept = screening-breast-quadrant-cs#src-breast-quadrant-2
+* component[0].code = screening-breast-finding-cs#src-find-9
 * component[0].valueBoolean = true
 
 Instance: mammography-left-breast-finding
@@ -157,7 +157,7 @@ Description: "Finding (skin thickening) detected in the left breast during mammo
 * identifier[=].use = #usual
 * basedOn = Reference(ServiceRequest/ServiceRequest-mammography)
 * status = #final
-* code = scr-diag-cs#scr-diag-4 "Mammography"
+* code = screening-diagnostic-procedure-cs#scr-diag-4 "Mammography"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-radiology)
@@ -165,8 +165,8 @@ Description: "Finding (skin thickening) detected in the left breast during mammo
 * effectiveDateTime = "2015-02-07T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-radiologist)
 * bodySite = $sct#73056007
-* bodySite.extension[quadrant].valueCodeableConcept = src-breast-quadrant-cs#src-breast-quadrant-1
-* component[0].code = src-find-cs#src-find-1
+* bodySite.extension[quadrant].valueCodeableConcept = screening-breast-quadrant-cs#src-breast-quadrant-1
+* component[0].code = screening-breast-finding-cs#src-find-1
 * component[0].valueBoolean = true
 
 Instance: gynecological-physical-exam
@@ -185,11 +185,11 @@ Description: "Anthropometric measurements (height, weight, BMI) and medical hist
 * effectiveDateTime = "2015-02-07T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-gynecologist)
 * note[0].text = "Menarche at age 13, 2 pregnancies, 2 deliveries."
-* component[0].code = scr-obser-cs#scr-obser-4 
+* component[0].code = screening-observation-type-cs#scr-obser-4 
 * component[=].valueQuantity = 160 'cm'
-* component[+].code = scr-obser-cs#scr-obser-5 
+* component[+].code = screening-observation-type-cs#scr-obser-5 
 * component[=].valueQuantity = 52 'kg'
-* component[+].code = scr-obser-cs#scr-obser-6 
+* component[+].code = screening-observation-type-cs#scr-obser-6 
 * component[=].valueQuantity = 20.3 'kg/m2'
 
 Instance: gynecological-complaints
@@ -243,16 +243,16 @@ Description: "Patient anthropometric measurements performed before mammography."
 * identifier[=].value = "339"
 * identifier[=].use = #usual
 * status = #final
-* code = scr-diag-cs#scr-diag-4 "Mammography"
+* code = screening-diagnostic-procedure-cs#scr-diag-4 "Mammography"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-radiology)
 * issued = "2015-02-07T13:28:17.239+02:00"
 * effectiveDateTime = "2015-02-07T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-radiologist)
-* component[0].code = scr-obser-cs#scr-obser-4
+* component[0].code = screening-observation-type-cs#scr-obser-4
 * component[0].valueQuantity = 160 'cm'
-* component[1].code = scr-obser-cs#scr-obser-5
+* component[1].code = screening-observation-type-cs#scr-obser-5
 * component[1].valueQuantity = 52 'kg'
-* component[2].code = scr-obser-cs#scr-obser-6
+* component[2].code = screening-observation-type-cs#scr-obser-6
 * component[2].valueQuantity = 20.3 'kg/m2'

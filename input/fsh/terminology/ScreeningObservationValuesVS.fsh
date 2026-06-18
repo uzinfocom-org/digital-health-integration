@@ -6,9 +6,9 @@ Description: "Combined value set of screening result codes for Observation.value
 * ^experimental = true
 
 // Объединяем все справочники результатов
-* include codes from system scr-cyt-cs
-* include codes from system scr-hpv-cs
-* include codes from system scr-colpo-cs
-* include codes from system scr-tz-cs
-* include codes from system src-birads-cs
-* include codes from system src-img-quality-cs
+* include codes from system screening-cervical-cytology-cs
+* include codes from system screening-hpv-cs
+* include codes from system screening-colposcopy-cs
+* include codes from system screening-transformation-zone-cs
+* include codes from system screening-birads-cs
+* include codes from system screening-image-quality-cs

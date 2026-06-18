@@ -2,7 +2,7 @@ Profile: ScreeningDiagnosticReport
 Parent: DiagnosticReport
 Id: screening-diagnostic-report
 Title: "Screening Diagnostic Report"
-Description: "Profile for storing final medical reports resulting from screening procedures (Mammography, Cytology, Colposcopy)."
+Description: "Profile for storing final medical reports resulting from cervical and breast cancer screening procedures (Mammography, Cytology, Colposcopy)."
 * ^experimental = true
 * ^status = #active
 * ^publisher = "DHP Integration"
@@ -44,7 +44,7 @@ Description: "Mammography report (summary and findings)"
 * identifier[=].use = #usual
 * basedOn[0] = Reference(ServiceRequest/ServiceRequest-mammography)
 * status = #final
-* code = scr-diag-cs#scr-diag-4 "Mammography"
+* code = screening-diagnostic-procedure-cs#scr-diag-4 "Mammography"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-radiology)
@@ -55,7 +55,7 @@ Description: "Mammography report (summary and findings)"
 * result[+] = Reference(Observation/mammography-right-breast-finding)
 * result[+] = Reference(Observation/mammography-left-breast-finding)
 * conclusion = "RECOMMENDATIONS! ........"
-* conclusionCode[0] = src-birads-cs#src-birads-2 "2"
+* conclusionCode[0] = screening-birads-cs#src-birads-2 "2"
 
 Instance: DiagnosticReport-cytology
 InstanceOf: ScreeningDiagnosticReport
@@ -87,7 +87,7 @@ Description: "Diagnostic report: Colposcopy"
 * identifier[=].use = #usual
 * basedOn[0] = Reference(ServiceRequest/ServiceRequest-colposcopy)
 * status = #final
-* code = scr-diag-cs#scr-diag-6 "Colposcopy"
+* code = screening-diagnostic-procedure-cs#scr-diag-6 "Colposcopy"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-diagnostics)

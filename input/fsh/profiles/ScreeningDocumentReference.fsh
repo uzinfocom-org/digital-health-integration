@@ -2,7 +2,7 @@ Profile: ScreeningDocumentReference
 Parent: DocumentReference
 Id: screening-document-reference
 Title: "Screening Document Reference"
-Description: "Profile for references to documents (consent forms, protocols) used within the screening system."
+Description: "Profile for references to documents (consent forms, protocols) used within the cervical and breast cancer screening system."
 * ^experimental = true
 * ^status = #active
 * ^publisher = "DHP Integration"

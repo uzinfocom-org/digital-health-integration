@@ -132,7 +132,7 @@ Description: "Breast quadrant used to localize findings."
 * ^context.type = #element
 * ^context.expression = "Observation.bodySite"
 * value[x] only CodeableConcept
-* valueCodeableConcept from SrcBreastQuadrantVS (required)
+* valueCodeableConcept from ScreeningBreastQuadrantVS (required)
 
 
 Extension: WorkPlaceExtension

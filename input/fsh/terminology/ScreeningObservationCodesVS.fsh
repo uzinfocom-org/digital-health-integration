@@ -8,6 +8,6 @@ Description: "Combined value set of codes for the Observation.code field (Labora
 // Объединяем ваши четыре valueset
 * include $loinc#18500-9 "Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep"  
 * include $loinc#82675-0 "HPV I/H Risk 4 DNA Cvx Ql NAA+probe" 
-* include codes from system scr-diag-cs
-* include codes from system scr-obser-cs
-* include codes from system src-find-cs
+* include codes from system screening-diagnostic-procedure-cs
+* include codes from system screening-observation-type-cs
+* include codes from system screening-breast-finding-cs

@@ -24,5 +24,5 @@ The <script> containing the javascript '//%
 Binding http://hl7.org/fhir/ValueSet/mimetypes|5.0.0 could not be expanded
 
 # Screening: body-site is too large for the publisher to verify subset membership
-Unable to check if https://dhp.uz/fhir/integrations/ValueSet/scr-body-site-vs is a proper subset of http://hl7.org/fhir/ValueSet/body-site|5.0.0 - value set is too large to check
+Unable to check if https://dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs is a proper subset of http://hl7.org/fhir/ValueSet/body-site|5.0.0 - value set is too large to check
 

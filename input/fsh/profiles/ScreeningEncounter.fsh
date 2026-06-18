@@ -2,7 +2,7 @@ Profile: ScreeningEncounter
 Parent: UZCoreEncounter
 Id: screening-encounter
 Title: "Screening Encounter"
-Description: "Profile for documenting patient encounters within the screening workflow (outpatient visit, laboratory, radiology, and diagnostic services)."
+Description: "Profile for documenting patient encounters within the cervical and breast cancer screening workflow (outpatient visit, laboratory, radiology, and diagnostic services)."
 * ^status = #active
 * ^publisher = "DHP Integration"
 * ^experimental = true

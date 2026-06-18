@@ -2,7 +2,7 @@ Profile: ScreeningPatient
 Parent: UZCorePatient
 Id: screening-patient
 Title: "Screening Patient"
-Description: "Patient profile for the screening system, inheriting the structure of UZCorePatient."
+Description: "Patient profile for the cervical and breast cancer screening system, inheriting the structure of UZCorePatient."
 * ^status = #active
 * ^experimental = true
 * ^publisher = "DHP Integration"
@@ -20,7 +20,7 @@ Description: "Patient profile for the screening system, inheriting the structure
 Instance: lola-oripova
 InstanceOf: ScreeningPatient
 Usage: #example
-Description: "Example patient Lola Oripova for the screening module"
+Description: "Example patient Lola Oripova for the cervical and breast cancer screening module"
 
 * identifier[nationalId].value = "515050500505"
 * identifier[nationalId].use = #official

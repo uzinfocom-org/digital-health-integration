@@ -2,7 +2,7 @@ Profile: ScreeningServiceRequest
 Parent: ServiceRequest
 Id: screening-service-request
 Title: "Screening Service Request"
-Description: "Profile for creating referrals for laboratory and diagnostic investigations within the screening program."
+Description: "Profile for creating referrals for laboratory and diagnostic investigations within the cervical and breast cancer screening program."
 * ^experimental = true
 * ^status = #active
 * ^publisher = "DHP Integration"
@@ -73,7 +73,7 @@ Description: "Referral for colposcopy"
 * identifier[=].use = #usual
 * status = #completed
 * intent = #order
-* code = scr-diag-cs#scr-diag-6
+* code = screening-diagnostic-procedure-cs#scr-diag-6
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
@@ -93,7 +93,7 @@ Description: "Referral for mammography"
 * identifier[=].use = #usual
 * status = #completed
 * intent = #order
-* code = scr-diag-cs#scr-diag-4
+* code = screening-diagnostic-procedure-cs#scr-diag-4
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)

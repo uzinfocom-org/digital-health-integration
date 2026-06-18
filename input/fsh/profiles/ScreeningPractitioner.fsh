@@ -2,7 +2,7 @@ Profile: ScreeningPractitioner
 Parent: UZCorePractitioner
 Id: screening-practitioner
 Title: "Screening Practitioner"
-Description: "Practitioner profile for the screening system, inheriting UZCorePractitioner."
+Description: "Practitioner profile for the cervical and breast cancer screening system, inheriting UZCorePractitioner."
 * ^status = #active
 * ^experimental = true
 * ^publisher = "DHP Integration"

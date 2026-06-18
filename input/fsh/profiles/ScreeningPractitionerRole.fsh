@@ -2,7 +2,7 @@ Profile: ScreeningPractitionerRole
 Parent: UZCorePractitionerRole
 Id: screening-practitioner-role
 Title: "Screening Practitioner Role"
-Description: "Practitioner role profile for the screening system, inheriting the UZCore structure."
+Description: "Practitioner role profile for the cervical and breast cancer screening system, inheriting the UZCore structure."
 * ^status = #active
 * ^experimental = true
 * ^publisher = "DHP Integration"
@@ -22,7 +22,7 @@ Description: "Laboratory technician role of Mika Adamova at the Xonobod City Med
 * active = true
 * practitioner = Reference(Practitioner/mika-adamova)
 * organization = Reference(Organization/xonobod-medical-association)
-* code = src-roles-cs#his_laboratory_laborant
+* code = screening-roles-cs#his_laboratory_laborant
 
 Instance: practitioner-role-gynecologist
 InstanceOf: ScreeningPractitionerRole
@@ -34,7 +34,7 @@ Description: "Obstetrician-gynecologist role of Lyuba Dadaeva at the Xonobod Cit
 * active = true
 * practitioner = Reference(Practitioner/lyuba-dadaeva)
 * organization = Reference(Organization/xonobod-medical-association)
-* code = src-roles-cs#his_centre_obstetrics_gynecology_obstetrician_gynecologist
+* code = screening-roles-cs#his_centre_obstetrics_gynecology_obstetrician_gynecologist
 
 Instance: practitioner-role-radiologist
 InstanceOf: ScreeningPractitionerRole
@@ -46,7 +46,7 @@ Description: "Head radiologist role of Nina Tipsina at the Xonobod City Medical 
 * active = true
 * practitioner = Reference(Practitioner/nina-tipsina)
 * organization = Reference(Organization/xonobod-medical-association)
-* code = src-roles-cs#his_ris_ragiologist_head
+* code = screening-roles-cs#his_ris_ragiologist_head
 
 Instance: practitioner-role-nurse
 InstanceOf: ScreeningPractitionerRole
@@ -58,4 +58,4 @@ Description: "Patronage nurse role of Lyuba Dadaeva in the oncology follow-up sy
 * active = true
 * practitioner = Reference(Practitioner/lyuba-dadaeva) // Lyuba Dadaeva works both as a gynecologist and as a nurse
 * organization = Reference(Organization/xonobod-medical-association)
-* code = src-roles-cs#his_poliklinika_patronage_nurse
+* code = screening-roles-cs#his_poliklinika_patronage_nurse

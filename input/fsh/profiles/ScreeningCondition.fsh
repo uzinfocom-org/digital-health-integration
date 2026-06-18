@@ -2,7 +2,7 @@ Profile: ScreeningCondition
 Parent: UZCoreCondition
 Id: screening-condition
 Title: "Screening Condition"
-Description: "Profile for documenting a confirmed diagnosis identified during screening."
+Description: "Profile for documenting a confirmed diagnosis identified during cervical and breast cancer screening."
 * ^experimental = true
 * ^status = #active
 * ^publisher = "DHP Integration"
