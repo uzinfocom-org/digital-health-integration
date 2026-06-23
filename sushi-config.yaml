@@ -82,7 +82,6 @@ parameters:
     - init
     - progress
     - context
-    - html
     - tx
 
 #   validation: [allow-any-extensions, no-broken-links]
