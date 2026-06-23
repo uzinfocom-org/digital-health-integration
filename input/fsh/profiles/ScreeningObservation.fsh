@@ -177,7 +177,7 @@ Description: "Anthropometric measurements (height, weight, BMI) and medical hist
 * identifier[=].value = "336"
 * identifier[=].use = #usual
 * status = #final
-* code.text = "Patient Examination"
+* code = $sct#5880005 "Physical examination"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
@@ -200,7 +200,7 @@ Description: "Patient-reported symptoms and complaints during gynecological cons
 * identifier[=].value = "337"
 * identifier[=].use = #usual
 * status = #final
-* code.text = "Patient Complaints"
+* code = $sct#394917001 "Presenting complaint"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
@@ -220,7 +220,7 @@ Description: "Data from examination in the oncology follow-up office (complaints
 * identifier[=].value = "338"
 * identifier[=].use = #usual
 * status = #final
-* code.text = "Oncology Follow-up Office"
+* code = $sct#281036007 "Follow-up consultation"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)

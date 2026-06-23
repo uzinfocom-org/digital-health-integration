@@ -24,6 +24,8 @@ Description: "Patient visit to the radiology department (X-ray/mammography unit)
 * identifier[=].value = "33"
 * identifier[=].use = #usual
 * status = #completed
+* class = $v3-ActCode#AMB "ambulatory"
+* type = $encounter-type-cs#mserv-0001-00002 // Diagnostic (imaging)
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * basedOn[0] = Reference(ServiceRequest/ServiceRequest-mammography)
@@ -45,6 +47,8 @@ Description: "Laboratory visit for specimen collection and registration"
 * identifier[=].value = "34"
 * identifier[=].use = #usual
 * status = #completed
+* class = $v3-ActCode#AMB "ambulatory"
+* type = $encounter-type-cs#mserv-0001-00002 // Diagnostic (laboratory)
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 // ВАЖНО: Изменено на cytology (как мы договорились ранее)
@@ -60,6 +64,8 @@ Description: "Patient visit to the diagnostic examination unit"
 * identifier[=].value = "35"
 * identifier[=].use = #usual
 * status = #completed
+* class = $v3-ActCode#AMB "ambulatory"
+* type = $encounter-type-cs#mserv-0001-00002 // Diagnostic (colposcopy)
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * basedOn[0] = Reference(ServiceRequest/ServiceRequest-colposcopy)
@@ -74,6 +80,8 @@ Description: "Outpatient visit to an obstetrician-gynecologist or oncology scree
 * identifier[=].value = "36"
 * identifier[=].use = #usual
 * status = #completed
+* class = $v3-ActCode#AMB "ambulatory"
+* type = $encounter-type-cs#mserv-0001-00003 // Consultative (gynecology visit)
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 // basedOn здесь нет, так как это первичный визит!
