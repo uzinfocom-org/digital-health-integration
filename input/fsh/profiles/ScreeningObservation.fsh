@@ -76,7 +76,7 @@ Description: "High-risk HPV DNA test result."
 * identifier[=].use = #usual
 * basedOn = Reference(ServiceRequest/ServiceRequest-hpv)
 * status = #final
-* code = $loinc#18500-9 "Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep"  
+* code = $loinc#82675-0 "HPV I/H Risk 4 DNA Cvx Ql NAA+probe"
 * effectiveDateTime = "2015-02-07T13:28:17+02:00"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
