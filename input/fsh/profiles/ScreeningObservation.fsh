@@ -101,7 +101,7 @@ Description: "Colposcopy conclusion including transformation zone assessment."
 * effectiveDateTime = "2015-02-07T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-gynecologist)
 * valueCodeableConcept = screening-colposcopy-cs#scr-colpo-2 "LSIL"
-* component[0].code.text = "Transformation Zone Type"
+* component[0].code = $sct#1285652007 "Structure of transition zone of cervix uteri"
 * component[=].valueCodeableConcept = screening-transformation-zone-cs#scr-tz-2 "Type 2 (partially in canal)"
 
 Instance: mammography-summary
@@ -227,9 +227,9 @@ Description: "Data from examination in the oncology follow-up office (complaints
 * issued = "2015-02-07T13:28:17.239+02:00"
 * effectiveDateTime = "2015-02-07T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-nurse)
-* component[0].code.text = "Complaints"
+* component[0].code = $sct#394917001 "Presenting complaint"
 * component[=].valueString = "stomach pain"
-* component[+].code.text = "Contraindications"
+* component[+].code = $sct#103306004 "Contraindication to"
 * component[=].valueString = "painkillers should not be taken"
 * component[+].code.text = "Comment"
 * component[=].valueString = "better to send to the laboratory"
