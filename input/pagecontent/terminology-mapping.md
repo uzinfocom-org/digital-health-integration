@@ -1,34 +1,142 @@
-### Terminology Bindings Map
+This page is organised around the information a cervical and breast cancer screening system needs to record. For each item it tells you which value set to pick from (for building dropdown lists), gives an example code, links to a concrete example resource, and shows where the value is stored in the FHIR resource.
 
-This table specifies which local value sets (ValueSets) and international standards (SNOMED/LOINC) should be used when building the various resources in the cervical and breast cancer screening system.
+Each section links the **profile** that governs the resource - follow it for the normative guidance - and concrete **example** resources that confirm the guidance in practice.
 
-User interface (UI) developers are encouraged to use the specified value sets to build dropdown lists.
+Items marked **(required)** must be coded from the named value set; the others list the recommended value set. Height, weight and BMI are standard [FHIR vital signs](https://hl7.org/fhir/observation-vitalsigns.html), not screening-specific.
 
-### Detailed Terminology Bindings to Examples (Instances)
+### Ordering a test or procedure (ServiceRequest)
 
-| Category | Example (Instance ID) | Field (FHIR Path) | Value Set / Code System Used (VS / CS) | Expected code in the example |
-| :--- | :--- | :--- | :--- | :--- |
-| **Referrals (ServiceRequest)** | `ServiceRequest-cytology` | `code` | [ScreeningLaboratoryVS](ValueSet-screening-laboratory-vs.html) | `screening-laboratory-cs#18500-9` |
-| **Referrals (ServiceRequest)** | `ServiceRequest-hpv` | `code` | [ScreeningLaboratoryVS](ValueSet-screening-laboratory-vs.html) | `screening-laboratory-cs#82675-0` |
-| **Referrals (ServiceRequest)** | `ServiceRequest-colposcopy` | `code` | [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html) | `$sct#392003006` |
-| **Referrals (ServiceRequest)** | `ServiceRequest-mammography` | `code` | [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html) | `$sct#71651007` |
+Set `ServiceRequest.code` to the test or procedure being ordered.
 
-| **Reports (DiagnosticReport)** | `DiagnosticReport-cytology` | `code` | [ScreeningLaboratoryVS](ValueSet-screening-laboratory-vs.html) | `screening-laboratory-cs#18500-9` |
-| **Reports (DiagnosticReport)** | `DiagnosticReport-colposcopy` | `code` | [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html) | `$sct#392003006` |
-| **Reports (DiagnosticReport)** | `DiagnosticReport-mammography` | `code`<br>`conclusionCode` | [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html)<br>[ScreeningBiradsVS](ValueSet-screening-birads-vs.html) | `$sct#71651007`<br>`screening-birads-cs#src-birads-2` |
+**Profile:** [ScreeningServiceRequest](StructureDefinition-screening-service-request.html)
 
-| **Results (Observation)** | `cytology-result` | `code`<br>`valueCodeableConcept` | [ScreeningLaboratoryVS](ValueSet-screening-laboratory-vs.html)<br>[ScreeningCervicalCytologyVS](ValueSet-screening-cervical-cytology-vs.html) | `screening-laboratory-cs#18500-9`<br>`screening-cervical-cytology-cs#scr-cyt-3` (LSIL) |
-| **Results (Observation)** | `cytology-ai-analysis` | `code` | [ScreeningLaboratoryVS](ValueSet-screening-laboratory-vs.html) | `screening-laboratory-cs#18500-9` *(value is a string)* |
-| **Results (Observation)** | `hpv-result` | `code`<br>`valueCodeableConcept` | [ScreeningLaboratoryVS](ValueSet-screening-laboratory-vs.html)<br>[ScreeningHPVVS](ValueSet-screening-hpv-vs.html) | `screening-laboratory-cs#82675-0`<br>`screening-hpv-cs#scr-hpv-2` (Negative) |
-| **Results (Observation)** | `colposcopy-result` | `code`<br>`valueCodeableConcept`<br>`component[0].value` | [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html)<br>[ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html)<br>[ScreeningTransformationZoneVS](ValueSet-screening-transformation-zone-vs.html) | `$sct#392003006`<br>`screening-colposcopy-cs#scr-colpo-2`<br>`screening-transformation-zone-cs#scr-tz-2` (TZ2) |
-| **Results (Observation)** | `mammography-summary` | `code`<br>`component[0].value` (BI-RADS)<br>`component[1].value` (Structure)<br>`component[2].value` (Quality) | [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html)<br>[ScreeningBiradsVS](ValueSet-screening-birads-vs.html)<br>[ScreeningBreastFormVS](ValueSet-screening-breast-form-vs.html)<br>[ScreeningImageQualityVS](ValueSet-screening-image-quality-vs.html) | `$sct#71651007`<br>`screening-birads-cs#src-birads-2`<br>`screening-breast-form-cs#src-breast-density-4`<br>`screening-image-quality-cs#src-img-quality-3` |
-| **Results (Observation)** | `mammography-right-breast-finding` | `code`<br>`bodySite`<br>`bodySite.extension` | [ScreeningBreastFindingVS](ValueSet-screening-breast-finding-vs.html)<br>**SNOMED CT**<br>[ScreeningBreastQuadrantVS](ValueSet-screening-breast-quadrant-vs.html) | `$sct#30285000` (Verruca)<br>`$sct#73056007` (Right)<br>`screening-breast-quadrant-cs#src-breast-quadrant-2` (UE) |
-| **Results (Observation)** | `mammography-left-breast-finding` | `code`<br>`bodySite`<br>`bodySite.extension` | [ScreeningBreastFindingVS](ValueSet-screening-breast-finding-vs.html)<br>**SNOMED CT**<br>[ScreeningBreastQuadrantVS](ValueSet-screening-breast-quadrant-vs.html) | `$sct#129797000`<br>`$sct#80248007` (Left)<br>`screening-breast-quadrant-cs#src-breast-quadrant-1` (UI) |
-| **Results (Observation)** | `gynecological-physical-exam` | `component[0..2].code` | [ScreeningObservationTypeVS](ValueSet-screening-observation-type-vs.html) | `$loinc#8302-2` (Height)<br>`$loinc#29463-7` (Weight)<br>`$loinc#39156-5` (BMI) |
-| **Results (Observation)** | `gynecological-complaints` | *Text notes* | *-* | *(Free text in `note`)* |
-| **Results (Observation)** | `oncogynecological-followup` | *Text components* | *-* | *(Free text in `component`)* |
+**Examples:** [ServiceRequest-cytology](ServiceRequest-ServiceRequest-cytology.html), [ServiceRequest-hpv](ServiceRequest-ServiceRequest-hpv.html), [ServiceRequest-colposcopy](ServiceRequest-ServiceRequest-colposcopy.html), [ServiceRequest-mammography](ServiceRequest-ServiceRequest-mammography.html)
 
-| **Roles (PractitionerRole)** | `practitioner-role-laborant` | `code` | [ScreeningRolesVS](ValueSet-screening-roles-vs.html) | `his_laboratory_laborant` |
-| **Roles (PractitionerRole)** | `practitioner-role-gynecologist` | `code` | [ScreeningRolesVS](ValueSet-screening-roles-vs.html) | `his_centre_obstetrics_gynecology_obstetrician_gynecologist` |
-| **Roles (PractitionerRole)** | `practitioner-role-radiologist` | `code` | [ScreeningRolesVS](ValueSet-screening-roles-vs.html) | `his_ris_ragiologist_head` |
-| **Roles (PractitionerRole)** | `practitioner-role-nurse` | `code` | [ScreeningRolesVS](ValueSet-screening-roles-vs.html) | `his_poliklinika_patronage_nurse` |
+| What is ordered | Value set | Example code |
+| :--- | :--- | :--- |
+| Cytology smear | [ScreeningLaboratoryVS](ValueSet-screening-laboratory-vs.html) | `LOINC#18500-9` |
+| HPV test | [ScreeningLaboratoryVS](ValueSet-screening-laboratory-vs.html) | `LOINC#82675-0` |
+| Colposcopy | [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html) | `SNOMED CT#392003006` |
+| Mammography | [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html) | `SNOMED CT#71651007` |
+
+### Issuing a report (DiagnosticReport)
+
+Set `DiagnosticReport.code` to the procedure (same codes as the referral). A mammography report may also carry an overall conclusion in `conclusionCode`.
+
+**Profile:** [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html)
+
+**Examples:** [DiagnosticReport-cytology](DiagnosticReport-DiagnosticReport-cytology.html), [DiagnosticReport-colposcopy](DiagnosticReport-DiagnosticReport-colposcopy.html), [DiagnosticReport-mammography](DiagnosticReport-DiagnosticReport-mammography.html)
+
+| Information to record | Value set | Example code |
+| :--- | :--- | :--- |
+| Report type | [ScreeningLaboratoryVS](ValueSet-screening-laboratory-vs.html) / [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html) | `LOINC#18500-9` (cytology)<br>`SNOMED CT#392003006` (colposcopy)<br>`SNOMED CT#71651007` (mammography) |
+| Overall BI-RADS conclusion (mammography) | [ScreeningBiradsVS](ValueSet-screening-birads-vs.html) | `screening-birads-cs#src-birads-2` (BI-RADS 2) |
+
+### Cytology result
+
+Records the grade of a cytological smear.
+
+**Profile:** [ScreeningObservation](StructureDefinition-screening-observation.html)
+
+**Example:** [cytology-result](Observation-cytology-result.html) (AI variant: [cytology-ai-analysis](Observation-cytology-ai-analysis.html), whose output is stored as free text in `Observation.value`)
+
+| Information to record | Value set | Example code | Stored in |
+| :--- | :--- | :--- | :--- |
+| Test code | [ScreeningLaboratoryVS](ValueSet-screening-laboratory-vs.html) | `LOINC#18500-9` (cytology smear) | `Observation.code` |
+| Cytology grade | [ScreeningCervicalCytologyVS](ValueSet-screening-cervical-cytology-vs.html) | `screening-cervical-cytology-cs#scr-cyt-3` (LSIL) | `Observation.value` |
+
+### HPV test result
+
+Records a high-risk HPV DNA result.
+
+**Profile:** [ScreeningObservation](StructureDefinition-screening-observation.html)
+
+**Example:** [hpv-result](Observation-hpv-result.html)
+
+| Information to record | Value set | Example code | Stored in |
+| :--- | :--- | :--- | :--- |
+| Test code | [ScreeningLaboratoryVS](ValueSet-screening-laboratory-vs.html) | `LOINC#82675-0` (HPV test) | `Observation.code` |
+| HPV result | [ScreeningHPVVS](ValueSet-screening-hpv-vs.html) | `screening-hpv-cs#scr-hpv-3` (Positive) | `Observation.value` |
+
+### Colposcopy result
+
+Records the colposcopy impression and the cervical transformation zone.
+
+**Profile:** [ScreeningObservation](StructureDefinition-screening-observation.html)
+
+**Example:** [colposcopy-result](Observation-colposcopy-result.html)
+
+| Information to record | Value set | Example code | Stored in |
+| :--- | :--- | :--- | :--- |
+| Procedure code | [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html) | `SNOMED CT#392003006` (colposcopy) | `Observation.code` |
+| Colposcopy impression | [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) | `screening-colposcopy-cs#scr-colpo-2` (LSIL) | `Observation.value` |
+| Transformation zone type **(required)** | [ScreeningTransformationZoneVS](ValueSet-screening-transformation-zone-vs.html) | `screening-transformation-zone-cs#scr-tz-2` (Type 2) | `component` (code `SNOMED CT#1285652007`) |
+
+### Mammography reading
+
+A structured mammography assessment. The procedure code `SNOMED CT#71651007` (Mammography) identifies the observation; each measurement below is recorded as a component.
+
+**Profile:** [ScreeningObservation](StructureDefinition-screening-observation.html)
+
+**Example:** [mammography-summary](Observation-mammography-summary.html)
+
+| Information to record | Value set | Example code | Stored in (component code) |
+| :--- | :--- | :--- | :--- |
+| BI-RADS category **(required)** | [ScreeningBiradsVS](ValueSet-screening-birads-vs.html) | `screening-birads-cs#src-birads-2` (BI-RADS 2) | `SNOMED CT#1348266008` |
+| Breast density **(required)** | [ScreeningBreastFormVS](ValueSet-screening-breast-form-vs.html) | `screening-breast-form-cs#src-breast-density-4` (Type D) | `SNOMED CT#129793001` |
+| Image quality **(required)** | [ScreeningImageQualityVS](ValueSet-screening-image-quality-vs.html) | `screening-image-quality-cs#src-img-quality-3` (moderate) | `SNOMED CT#246646005` |
+
+### Breast finding
+
+For each finding seen on mammography, record what it is, which breast and quadrant, and that it is present. The observation's `code` is `SNOMED CT#71651007` (Mammography).
+
+**Profile:** [ScreeningObservation](StructureDefinition-screening-observation.html)
+
+**Examples:** [mammography-right-breast-finding](Observation-mammography-right-breast-finding.html), [mammography-left-breast-finding](Observation-mammography-left-breast-finding.html)
+
+| Information to record | Value set | Example code | Stored in |
+| :--- | :--- | :--- | :--- |
+| The finding (present = `true`) | [ScreeningBreastFindingVS](ValueSet-screening-breast-finding-vs.html) | `SNOMED CT#109285009` (melanocytic nevus, right)<br>`SNOMED CT#129797000` (skin thickening, left) | `component.code` (value = boolean) |
+| Breast **(required)** | [ScreeningBodySiteVS](ValueSet-screening-body-site-vs.html) | `SNOMED CT#73056007` (Right)<br>`SNOMED CT#80248007` (Left) | `Observation.bodySite` |
+| Quadrant **(required)** | [ScreeningBreastQuadrantVS](ValueSet-screening-breast-quadrant-vs.html) | `screening-breast-quadrant-cs#src-breast-quadrant-2` (UE)<br>`screening-breast-quadrant-cs#src-breast-quadrant-1` (UI) | `bodySite` quadrant extension |
+
+### Vital signs (height, weight, BMI)
+
+Height, weight and BMI are standard [FHIR vital signs](https://hl7.org/fhir/observation-vitalsigns.html), each recorded as its own Observation - they are not screening-specific. Use the FHIR profile for each; the code is fixed by the profile.
+
+**Profiles:** [bodyheight](https://hl7.org/fhir/bodyheight.html), [bodyweight](https://hl7.org/fhir/bodyweight.html), [bmi](https://hl7.org/fhir/bmi.html)
+
+**Examples:** [body-height](Observation-body-height.html), [body-weight](Observation-body-weight.html), [body-mass-index](Observation-body-mass-index.html)
+
+| Measurement | FHIR profile | Code | Example value |
+| :--- | :--- | :--- | :--- |
+| Body height | `bodyheight` | `LOINC#8302-2` | 160 cm |
+| Body weight | `bodyweight` | `LOINC#29463-7` | 52 kg |
+| Body mass index | `bmi` | `LOINC#39156-5` | 20.3 kg/m2 |
+
+### Free-text clinical notes
+
+Some information is captured as free text rather than coded values. These observations are the examples themselves:
+
+**Profile:** [ScreeningObservation](StructureDefinition-screening-observation.html)
+
+| Observation | What it holds |
+| :--- | :--- |
+| [gynecological-physical-exam](Observation-gynecological-physical-exam.html) | Obstetric and gynecological history, in `note` |
+| [gynecological-complaints](Observation-gynecological-complaints.html) | Patient-reported complaints, in `note` |
+| [oncogynecological-followup](Observation-oncogynecological-followup.html) | Follow-up findings, as free text in `component` |
+
+### Care team roles (PractitionerRole)
+
+Set `PractitionerRole.code` from [ScreeningRolesVS](ValueSet-screening-roles-vs.html).
+
+**Profile:** [UZCorePractitionerRole](https://dhp.uz/fhir/core/StructureDefinition-uz-core-practitioner-role.html)
+
+**Examples:** [practitioner-role-laborant](PractitionerRole-practitioner-role-laborant.html), [practitioner-role-gynecologist](PractitionerRole-practitioner-role-gynecologist.html), [practitioner-role-radiologist](PractitionerRole-practitioner-role-radiologist.html), [practitioner-role-nurse](PractitionerRole-practitioner-role-nurse.html)
+
+| Role | Example code |
+| :--- | :--- |
+| Laboratory technician | `screening-roles-cs#his_laboratory_laborant` |
+| Obstetrician-gynecologist | `screening-roles-cs#his_centre_obstetrics_gynecology_obstetrician_gynecologist` |
+| Radiologist | `screening-roles-cs#his_ris_ragiologist_head` |
+| Patronage nurse | `screening-roles-cs#his_poliklinika_patronage_nurse` |
