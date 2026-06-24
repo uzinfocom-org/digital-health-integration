@@ -1,3 +1,9 @@
+<style>
+/* Even, full-width mapping tables (sections vary in column count). */
+.col-12 table { table-layout: fixed; width: 100%; }
+.col-12 th, .col-12 td { overflow-wrap: anywhere; word-break: break-word; vertical-align: top; }
+</style>
+
 Ushbu sahifa bachadon bo'yni va sut bezi saratoni skrining tizimi qayd etishi kerak bo'lgan ma'lumot atrofida tashkil etilgan. Har bir element uchun qiymatni qaysi ma'lumotnomadan tanlash kerakligi (ochiluvchi ro'yxatlarni qurish uchun), kod namunasi, aniq misol resursiga havola va qiymat FHIR resursida qayerda saqlanishi ko'rsatilgan.
 
 Har bir bo'limda resursni boshqaradigan **profil**ga havola - normativ ko'rsatmalar uchun unga amal qiling - hamda ushbu ko'rsatmalarni amalda tasdiqlovchi aniq **misol** resurslari keltirilgan.

@@ -1,3 +1,9 @@
+<style>
+/* Even, full-width mapping tables (sections vary in column count). */
+.col-12 table { table-layout: fixed; width: 100%; }
+.col-12 th, .col-12 td { overflow-wrap: anywhere; word-break: break-word; vertical-align: top; }
+</style>
+
 This page is organised around the information a cervical and breast cancer screening system needs to record. For each item it tells you which value set to pick from (for building dropdown lists), gives an example code, links to a concrete example resource, and shows where the value is stored in the FHIR resource.
 
 Each section links the **profile** that governs the resource - follow it for the normative guidance - and concrete **example** resources that confirm the guidance in practice.
