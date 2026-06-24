@@ -88,6 +88,26 @@ parameters:
 # │ input/includes. To use a provided input/includes/menu.xml file, delete the "menu"              │
 # │ property below.                                                                                │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+pages:
+  index.md:
+    title: Home
+  document-categories.md:
+    title: Document Categories
+  document-statuses.md:
+    title: Document Statuses
+  form-011-mapping.md:
+    title: Form 011 Mapping
+  form-066-mapping.md:
+    title: Form 066 Mapping
+  form-066-1-mapping.md:
+    title: Form 066 1 Mapping
+  cervical-breast-cancer-screening.md:
+    title: Cervical and Breast Cancer Screening
+  changelog.md:
+    title: Changelog
+  translationinfo.md:
+    title: Translationinfo
+
 menu:
   Home: index.html
   Documents:
@@ -96,7 +116,8 @@ menu:
     Form 011 Mapping: form-011-mapping.html
     Form 066 Mapping: form-066-mapping.html
     Form 066-1 Mapping: form-066-1-mapping.html
-  Terminology Map: terminology-mapping.html
+  Integrations:
+    Cervical and Breast Cancer Screening: cervical-breast-cancer-screening.html
   Artifacts: artifacts.html
   Changelog: changelog.html
 

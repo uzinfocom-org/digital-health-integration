@@ -4,19 +4,21 @@
 .col-12 th, .col-12 td { overflow-wrap: anywhere; word-break: break-word; vertical-align: top; }
 </style>
 
-Ushbu sahifa bachadon bo'yni va sut bezi saratoni skrining tizimi qayd etishi kerak bo'lgan ma'lumot atrofida tashkil etilgan. Har bir element uchun qiymatni qaysi ma'lumotnomadan tanlash kerakligi (ochiluvchi ro'yxatlarni qurish uchun), kod namunasi, aniq misol resursiga havola va qiymat FHIR resursida qayerda saqlanishi ko'rsatilgan.
+Ushbu sahifada bachadon bo'yni va sut bezi saratoni skriningi ma'lumotlari va FHIR resurslari o'rtasidagi moslik tavsiflangan.
 
-Har bir bo'limda resursni boshqaradigan **profil**ga havola - normativ ko'rsatmalar uchun unga amal qiling - hamda ushbu ko'rsatmalarni amalda tasdiqlovchi aniq **misol** resurslari keltirilgan.
+### Umumiy ma'lumot
 
-**(majburiy)** deb belgilangan elementlar ko'rsatilgan ma'lumotnomadan kodlanishi shart; qolganlari uchun tavsiya etilgan ma'lumotnoma keltirilgan. Bo'y, vazn va TVI skriningga taalluqli emas, ular standart [FHIR hayotiy ko'rsatkichlari](https://hl7.org/fhir/observation-vitalsigns.html) hisoblanadi.
+Bachadon bo'yni va sut bezi saratoni skriningi skrining dasturidan olingan laboratoriya natijalari, tasvirlash topilmalari va klinik kuzatuvlarni qamrab oladi. Ma'lumotlar Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System tizimidan keladi va DHP ga alohida, atomar FHIR resurslari sifatida qo'shiladi. Resurslar mavjud bo'lgan har bir bo'limda havola qilingan skrining profillariga, aks holda esa [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) yoki standart FHIR profillariga mos keladi.
+
+Har bir bo'limda foydalaniladigan ma'lumotnoma, kod namunasi, boshqaruvchi profil va aniq misol resursi keltirilgan. Bo'y, vazn va TVI standart [FHIR hayotiy ko'rsatkichlari](https://hl7.org/fhir/observation-vitalsigns.html) profillaridan foydalanadi.
 
 ### Test yoki muolajani buyurtirish (ServiceRequest)
 
 `ServiceRequest.code` ni buyurtirilayotgan test yoki muolajaga o'rnating.
 
-**Profil:** [ScreeningServiceRequest](StructureDefinition-screening-service-request.html)
+Profil: [ScreeningServiceRequest](StructureDefinition-screening-service-request.html)
 
-**Misollar:** [ServiceRequest-cytology](ServiceRequest-ServiceRequest-cytology.html), [ServiceRequest-hpv](ServiceRequest-ServiceRequest-hpv.html), [ServiceRequest-colposcopy](ServiceRequest-ServiceRequest-colposcopy.html), [ServiceRequest-mammography](ServiceRequest-ServiceRequest-mammography.html)
+Misollar: [ServiceRequest-cytology](ServiceRequest-ServiceRequest-cytology.html), [ServiceRequest-hpv](ServiceRequest-ServiceRequest-hpv.html), [ServiceRequest-colposcopy](ServiceRequest-ServiceRequest-colposcopy.html), [ServiceRequest-mammography](ServiceRequest-ServiceRequest-mammography.html)
 
 | Nima buyurtiriladi | Ma'lumotnoma | Misol kodi |
 | :--- | :--- | :--- |
@@ -29,9 +31,9 @@ Har bir bo'limda resursni boshqaradigan **profil**ga havola - normativ ko'rsatma
 
 `DiagnosticReport.code` ni muolajaga o'rnating (yo'llanmadagi kodlar bilan bir xil). Mammografiya hisoboti `conclusionCode` da umumiy xulosani ham o'z ichiga olishi mumkin.
 
-**Profil:** [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html)
+Profil: [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html)
 
-**Misollar:** [DiagnosticReport-cytology](DiagnosticReport-DiagnosticReport-cytology.html), [DiagnosticReport-colposcopy](DiagnosticReport-DiagnosticReport-colposcopy.html), [DiagnosticReport-mammography](DiagnosticReport-DiagnosticReport-mammography.html)
+Misollar: [DiagnosticReport-cytology](DiagnosticReport-DiagnosticReport-cytology.html), [DiagnosticReport-colposcopy](DiagnosticReport-DiagnosticReport-colposcopy.html), [DiagnosticReport-mammography](DiagnosticReport-DiagnosticReport-mammography.html)
 
 | Qayd etiladigan ma'lumot | Ma'lumotnoma | Misol kodi |
 | :--- | :--- | :--- |
@@ -42,9 +44,9 @@ Har bir bo'limda resursni boshqaradigan **profil**ga havola - normativ ko'rsatma
 
 Sitologik surtma darajasini qayd etadi.
 
-**Profil:** [ScreeningObservation](StructureDefinition-screening-observation.html)
+Profil: [ScreeningObservation](StructureDefinition-screening-observation.html)
 
-**Misol:** [cytology-result](Observation-cytology-result.html) (sun'iy intellekt varianti: [cytology-ai-analysis](Observation-cytology-ai-analysis.html), uning natijasi `Observation.value` da erkin matn sifatida saqlanadi)
+Misol: [cytology-result](Observation-cytology-result.html) (sun'iy intellekt varianti: [cytology-ai-analysis](Observation-cytology-ai-analysis.html), uning natijasi `Observation.value` da erkin matn sifatida saqlanadi)
 
 | Qayd etiladigan ma'lumot | Ma'lumotnoma | Misol kodi | Qayerda saqlanadi |
 | :--- | :--- | :--- | :--- |
@@ -55,9 +57,9 @@ Sitologik surtma darajasini qayd etadi.
 
 Yuqori xavfli OPV DNK natijasini qayd etadi.
 
-**Profil:** [ScreeningObservation](StructureDefinition-screening-observation.html)
+Profil: [ScreeningObservation](StructureDefinition-screening-observation.html)
 
-**Misol:** [hpv-result](Observation-hpv-result.html)
+Misol: [hpv-result](Observation-hpv-result.html)
 
 | Qayd etiladigan ma'lumot | Ma'lumotnoma | Misol kodi | Qayerda saqlanadi |
 | :--- | :--- | :--- | :--- |
@@ -68,51 +70,51 @@ Yuqori xavfli OPV DNK natijasini qayd etadi.
 
 Kolposkopiya xulosasi va bachadon bo'yni transformatsiya zonasini qayd etadi.
 
-**Profil:** [ScreeningObservation](StructureDefinition-screening-observation.html)
+Profil: [ScreeningObservation](StructureDefinition-screening-observation.html)
 
-**Misol:** [colposcopy-result](Observation-colposcopy-result.html)
+Misol: [colposcopy-result](Observation-colposcopy-result.html)
 
 | Qayd etiladigan ma'lumot | Ma'lumotnoma | Misol kodi | Qayerda saqlanadi |
 | :--- | :--- | :--- | :--- |
 | Muolaja kodi | [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html) | `SNOMED CT#392003006` (kolposkopiya) | `Observation.code` |
 | Kolposkopiya xulosasi | [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) | `screening-colposcopy-cs#scr-colpo-2` (LSIL) | `Observation.value` |
-| Transformatsiya zonasi turi **(majburiy)** | [ScreeningTransformationZoneVS](ValueSet-screening-transformation-zone-vs.html) | `screening-transformation-zone-cs#scr-tz-2` (Type 2) | `component` (kod `SNOMED CT#1285652007`) |
+| Transformatsiya zonasi turi | [ScreeningTransformationZoneVS](ValueSet-screening-transformation-zone-vs.html) | `screening-transformation-zone-cs#scr-tz-2` (Type 2) | `component` (kod `SNOMED CT#1285652007`) |
 
 ### Mammografiya tavsifi
 
 Tuzilmali mammografiya bahosi. `SNOMED CT#71651007` (Mammografiya) muolaja kodi kuzatuvni aniqlaydi; quyidagi har bir o'lchov komponent sifatida qayd etiladi.
 
-**Profil:** [ScreeningObservation](StructureDefinition-screening-observation.html)
+Profil: [ScreeningObservation](StructureDefinition-screening-observation.html)
 
-**Misol:** [mammography-summary](Observation-mammography-summary.html)
+Misol: [mammography-summary](Observation-mammography-summary.html)
 
 | Qayd etiladigan ma'lumot | Ma'lumotnoma | Misol kodi | Qayerda saqlanadi (komponent kodi) |
 | :--- | :--- | :--- | :--- |
-| BI-RADS toifasi **(majburiy)** | [ScreeningBiradsVS](ValueSet-screening-birads-vs.html) | `screening-birads-cs#src-birads-2` (BI-RADS 2) | `SNOMED CT#1348266008` |
-| Sut bezi zichligi **(majburiy)** | [ScreeningBreastFormVS](ValueSet-screening-breast-form-vs.html) | `screening-breast-form-cs#src-breast-density-4` (D turi) | `SNOMED CT#129793001` |
-| Tasvir sifati **(majburiy)** | [ScreeningImageQualityVS](ValueSet-screening-image-quality-vs.html) | `screening-image-quality-cs#src-img-quality-3` (o'rtacha) | `SNOMED CT#246646005` |
+| BI-RADS toifasi | [ScreeningBiradsVS](ValueSet-screening-birads-vs.html) | `screening-birads-cs#src-birads-2` (BI-RADS 2) | `SNOMED CT#1348266008` |
+| Sut bezi zichligi | [ScreeningBreastFormVS](ValueSet-screening-breast-form-vs.html) | `screening-breast-form-cs#src-breast-density-4` (D turi) | `SNOMED CT#129793001` |
+| Tasvir sifati | [ScreeningImageQualityVS](ValueSet-screening-image-quality-vs.html) | `screening-image-quality-cs#src-img-quality-3` (o'rtacha) | `SNOMED CT#246646005` |
 
 ### Sut bezidagi topilma
 
 Mammografiyada ko'rilgan har bir topilma uchun u nimaligi, qaysi sut bezi va kvadrant ekanligi hamda u mavjudligi qayd etiladi. Kuzatuvning `code` qiymati `SNOMED CT#71651007` (Mammografiya).
 
-**Profil:** [ScreeningObservation](StructureDefinition-screening-observation.html)
+Profil: [ScreeningObservation](StructureDefinition-screening-observation.html)
 
-**Misollar:** [mammography-right-breast-finding](Observation-mammography-right-breast-finding.html), [mammography-left-breast-finding](Observation-mammography-left-breast-finding.html)
+Misollar: [mammography-right-breast-finding](Observation-mammography-right-breast-finding.html), [mammography-left-breast-finding](Observation-mammography-left-breast-finding.html)
 
 | Qayd etiladigan ma'lumot | Ma'lumotnoma | Misol kodi | Qayerda saqlanadi |
 | :--- | :--- | :--- | :--- |
 | Topilma (mavjud = `true`) | [ScreeningBreastFindingVS](ValueSet-screening-breast-finding-vs.html) | `SNOMED CT#109285009` (melanocytic nevus, right)<br>`SNOMED CT#129797000` (skin thickening, left) | `component.code` (qiymat = boolean) |
-| Sut bezi **(majburiy)** | [ScreeningBodySiteVS](ValueSet-screening-body-site-vs.html) | `SNOMED CT#73056007` (Right)<br>`SNOMED CT#80248007` (Left) | `Observation.bodySite` |
-| Kvadrant **(majburiy)** | [ScreeningBreastQuadrantVS](ValueSet-screening-breast-quadrant-vs.html) | `screening-breast-quadrant-cs#src-breast-quadrant-2` (UE)<br>`screening-breast-quadrant-cs#src-breast-quadrant-1` (UI) | `bodySite` kvadrant kengaytmasi |
+| Sut bezi | [ScreeningBodySiteVS](ValueSet-screening-body-site-vs.html) | `SNOMED CT#73056007` (Right)<br>`SNOMED CT#80248007` (Left) | `Observation.bodySite` |
+| Kvadrant | [ScreeningBreastQuadrantVS](ValueSet-screening-breast-quadrant-vs.html) | `screening-breast-quadrant-cs#src-breast-quadrant-2` (UE)<br>`screening-breast-quadrant-cs#src-breast-quadrant-1` (UI) | `bodySite` kvadrant kengaytmasi |
 
 ### Hayotiy ko'rsatkichlar (bo'y, vazn, TVI)
 
 Bo'y, vazn va TVI standart [FHIR hayotiy ko'rsatkichlari](https://hl7.org/fhir/observation-vitalsigns.html) bo'lib, ularning har biri alohida Observation sifatida qayd etiladi - ular skriningga taalluqli emas. Har biri uchun FHIR profilidan foydalaning; kod profil tomonidan belgilanadi.
 
-**Profillar:** [bodyheight](https://hl7.org/fhir/bodyheight.html), [bodyweight](https://hl7.org/fhir/bodyweight.html), [bmi](https://hl7.org/fhir/bmi.html)
+Profillar: [bodyheight](https://hl7.org/fhir/bodyheight.html), [bodyweight](https://hl7.org/fhir/bodyweight.html), [bmi](https://hl7.org/fhir/bmi.html)
 
-**Misollar:** [body-height](Observation-body-height.html), [body-weight](Observation-body-weight.html), [body-mass-index](Observation-body-mass-index.html)
+Misollar: [body-height](Observation-body-height.html), [body-weight](Observation-body-weight.html), [body-mass-index](Observation-body-mass-index.html)
 
 | O'lchov | FHIR profili | Kod | Misol qiymati |
 | :--- | :--- | :--- | :--- |
@@ -122,23 +124,23 @@ Bo'y, vazn va TVI standart [FHIR hayotiy ko'rsatkichlari](https://hl7.org/fhir/o
 
 ### Erkin matnli klinik yozuvlar
 
-Ba'zi ma'lumotlar kodlangan qiymatlar emas, balki erkin matn sifatida qayd etiladi. Ushbu kuzatuvlarning o'zi misollar hisoblanadi:
+Bu kuzatuvlar kodlangan qiymatlar emas, balki erkin matn saqlaydi; `Observation.code` ni yozuv turiga o'rnating.
 
-**Profil:** [ScreeningObservation](StructureDefinition-screening-observation.html)
+Profil: [ScreeningObservation](StructureDefinition-screening-observation.html)
 
-| Observation | Nimani saqlaydi |
-| :--- | :--- |
-| [gynecological-physical-exam](Observation-gynecological-physical-exam.html) | Akusherlik va ginekologik anamnez, `note` da |
-| [gynecological-complaints](Observation-gynecological-complaints.html) | Bemor bildirgan shikoyatlar, `note` da |
-| [oncogynecological-followup](Observation-oncogynecological-followup.html) | Kuzatuv topilmalari, `component` da erkin matn sifatida |
+| Observation | Observation.code | Nimani saqlaydi |
+| :--- | :--- | :--- |
+| [gynecological-physical-exam](Observation-gynecological-physical-exam.html) | `SNOMED CT#5880005` (jismoniy ko'rik) | Akusherlik va ginekologik anamnez, `note` da |
+| [gynecological-complaints](Observation-gynecological-complaints.html) | `SNOMED CT#394917001` (shikoyat) | Bemor bildirgan shikoyatlar, `note` da |
+| [oncogynecological-followup](Observation-oncogynecological-followup.html) | `SNOMED CT#281036007` (nazorat konsultatsiyasi) | Kuzatuv topilmalari, `component` da |
 
 ### Jamoa rollari (PractitionerRole)
 
 `PractitionerRole.code` ni [ScreeningRolesVS](ValueSet-screening-roles-vs.html) dan o'rnating.
 
-**Profil:** [UZCorePractitionerRole](https://dhp.uz/fhir/core/StructureDefinition-uz-core-practitioner-role.html)
+Profil: [UZCorePractitionerRole](https://dhp.uz/fhir/core/StructureDefinition-uz-core-practitioner-role.html)
 
-**Misollar:** [practitioner-role-laborant](PractitionerRole-practitioner-role-laborant.html), [practitioner-role-gynecologist](PractitionerRole-practitioner-role-gynecologist.html), [practitioner-role-radiologist](PractitionerRole-practitioner-role-radiologist.html), [practitioner-role-nurse](PractitionerRole-practitioner-role-nurse.html)
+Misollar: [practitioner-role-laborant](PractitionerRole-practitioner-role-laborant.html), [practitioner-role-gynecologist](PractitionerRole-practitioner-role-gynecologist.html), [practitioner-role-radiologist](PractitionerRole-practitioner-role-radiologist.html), [practitioner-role-nurse](PractitionerRole-practitioner-role-nurse.html)
 
 | Rol | Misol kodi |
 | :--- | :--- |
