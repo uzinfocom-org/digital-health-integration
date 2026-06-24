@@ -1,19 +1,5 @@
-Profile: ScreeningPractitionerRole
-Parent: UZCorePractitionerRole
-Id: screening-practitioner-role
-Title: "Screening Practitioner Role"
-Description: "Practitioner role profile for the cervical and breast cancer screening system, inheriting the UZCore structure."
-* ^status = #active
-* ^experimental = true
-* ^publisher = "DHP Integration"
-
-// If you want to make a field Must Support, even if it was not defined as such in UZCore:
-* code MS
-* practitioner MS
-
-
 Instance: practitioner-role-laborant
-InstanceOf: ScreeningPractitionerRole
+InstanceOf: UZCorePractitionerRole
 Usage: #example
 Description: "Laboratory technician role of Mika Adamova at the Xonobod City Medical Association"
 * identifier[0].system = $screening-local-id
@@ -25,7 +11,7 @@ Description: "Laboratory technician role of Mika Adamova at the Xonobod City Med
 * code = screening-roles-cs#his_laboratory_laborant
 
 Instance: practitioner-role-gynecologist
-InstanceOf: ScreeningPractitionerRole
+InstanceOf: UZCorePractitionerRole
 Usage: #example
 Description: "Obstetrician-gynecologist role of Lyuba Dadaeva at the Xonobod City Medical Association"
 * identifier[0].system = $screening-local-id
@@ -37,7 +23,7 @@ Description: "Obstetrician-gynecologist role of Lyuba Dadaeva at the Xonobod Cit
 * code = screening-roles-cs#his_centre_obstetrics_gynecology_obstetrician_gynecologist
 
 Instance: practitioner-role-radiologist
-InstanceOf: ScreeningPractitionerRole
+InstanceOf: UZCorePractitionerRole
 Usage: #example
 Description: "Head radiologist role of Nina Tipsina at the Xonobod City Medical Association"
 * identifier[0].system = $screening-local-id
@@ -49,7 +35,7 @@ Description: "Head radiologist role of Nina Tipsina at the Xonobod City Medical 
 * code = screening-roles-cs#his_ris_ragiologist_head
 
 Instance: practitioner-role-nurse
-InstanceOf: ScreeningPractitionerRole
+InstanceOf: UZCorePractitionerRole
 Usage: #example
 Description: "Patronage nurse role of Lyuba Dadaeva in the oncology follow-up system"
 * identifier[0].system = $screening-local-id

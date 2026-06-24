@@ -1,15 +1,5 @@
-Profile: ScreeningOrganization
-Parent: UZCoreOrganization
-Id: screening-organization
-Title: "Screening Organization"
-Description: "Example of a medical association translated from Hepatitis JSON, taken from UZCoreOrganization"
-* ^status = #active
-* ^experimental = true
-* ^publisher = "DHP Integration"
-
-
 Instance: xonobod-medical-association
-InstanceOf: ScreeningOrganization
+InstanceOf: UZCoreOrganization
 Usage: #example
 Description: "Xonobod City Medical Association"
 

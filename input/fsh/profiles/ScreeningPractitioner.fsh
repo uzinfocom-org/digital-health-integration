@@ -8,9 +8,7 @@ Description: "Practitioner profile for the cervical and breast cancer screening 
 * ^publisher = "DHP Integration"
 
 * identifier contains screeningId 0..1 MS
-* identifier[screeningId].system = "https://dhp.uz/fhir/core/sid/uz/screening" 
-
-* telecom MS
+* identifier[screeningId].system = "https://dhp.uz/fhir/core/sid/uz/screening"
 
 
 // ==================== CORRECT EXAMPLE 1 ====================

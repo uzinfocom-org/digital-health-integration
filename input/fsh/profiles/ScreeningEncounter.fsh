@@ -7,13 +7,7 @@ Description: "Profile for documenting patient encounters within the cervical and
 * ^publisher = "DHP Integration"
 * ^experimental = true
 
-* identifier MS
-* status 1..1 MS
-* subject 1..1 MS
-* basedOn MS
-* serviceProvider MS
-* actualPeriod MS
-* length MS
+* subject 1..1
 
 
 Instance: Encounter-radiology

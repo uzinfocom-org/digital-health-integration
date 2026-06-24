@@ -8,10 +8,10 @@ Description: "Profile for creating referrals for laboratory and diagnostic inves
 * ^publisher = "DHP Integration"
 
 * identifier MS
-* status 1..1 MS
-* intent 1..1 MS
+* status MS
+* intent MS
 * code MS
-* subject 1..1 MS
+* subject MS
 * encounter MS
 * authoredOn MS
 * requester MS

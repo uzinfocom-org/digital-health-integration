@@ -22,14 +22,6 @@ Description: "Profile for storing final medical reports resulting from cervical 
 * conclusion MS
 * conclusionCode MS
 
-* basedOn only Reference(CarePlan or ImmunizationRecommendation or MedicationRequest or NutritionOrder or ServiceRequest)
-* subject only Reference(Patient or Group or Device or Location or Organization or Practitioner or Medication or Substance or BiologicallyDerivedProduct)
-* encounter only Reference(Encounter)
-* performer only Reference(Practitioner or PractitionerRole or Organization or CareTeam)
-* resultsInterpreter only Reference(Practitioner or PractitionerRole or Organization or CareTeam)
-* result only Reference(Observation)
-* study only Reference(GenomicStudy or ImagingStudy)
-
 // * status from $diagnostic-report-status-vs (required)
 * code from ScreeningServiceRequestCodesVS (preferred)
 * conclusionCode from ScreeningObservationValuesVS (preferred)

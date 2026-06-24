@@ -17,7 +17,6 @@ Description: "Profile for references to documents (consent forms, protocols) use
 * content.attachment MS
 
 * subject only Reference(Patient)
-* context only Reference(Appointment or Encounter or EpisodeOfCare)
 
 * status from $drs-vs (required)
 //changed from  http://loinc.org to $doc-typecodes

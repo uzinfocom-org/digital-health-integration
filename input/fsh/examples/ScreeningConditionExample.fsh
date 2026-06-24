@@ -1,24 +1,5 @@
-Profile: ScreeningCondition
-Parent: UZCoreCondition
-Id: screening-condition
-Title: "Screening Condition"
-Description: "Profile for documenting a confirmed diagnosis identified during cervical and breast cancer screening."
-* ^experimental = true
-* ^status = #active
-* ^publisher = "DHP Integration"
-
-* clinicalStatus MS
-* category MS
-* code MS
-* subject MS
-* encounter MS
-* recordedDate MS
-* participant MS
-* note MS
-
-
 Instance: final-diagnosis
-InstanceOf: ScreeningCondition
+InstanceOf: UZCoreCondition
 Usage: #example
 Description: "Final diagnosis of the patient."
 

@@ -1,16 +1,5 @@
-Profile: ScreeningQuestionnaire
-Parent: UZCoreQuestionnaire
-Id: screening-questionnaire
-Title: "Screening Questionnaire"
-Description: "Screening questionnaire template profile inheriting from UZCore."
-
-* ^status = #active
-* ^experimental = true
-* ^publisher = "DHP Integration"
-
-
 Instance: screening-intake-template
-InstanceOf: ScreeningQuestionnaire
+InstanceOf: UZCoreQuestionnaire
 Usage: #example
 Title: "Screening Questionnaire Template"
 Description: "Complaint questionnaire template for gynecologists"

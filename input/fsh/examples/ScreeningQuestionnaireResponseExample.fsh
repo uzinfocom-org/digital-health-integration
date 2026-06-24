@@ -1,16 +1,5 @@
-Profile: ScreeningQuestionnaireResponse
-Parent: UZCoreQuestionnaireResponse
-Id: screening-questionnaire-response
-Title: "Screening Questionnaire Response"
-Description: "Completed screening questionnaire profile inheriting the UZCore structure."
-
-* ^status = #active
-* ^experimental = true
-* ^publisher = "DHP Integration"
-
-
 Instance: screening-intake
-InstanceOf: ScreeningQuestionnaireResponse
+InstanceOf: UZCoreQuestionnaireResponse
 Usage: #example
 Description: "Completed screening questionnaire (Complaints and Medical History)"
 
