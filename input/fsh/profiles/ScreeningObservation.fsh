@@ -7,20 +7,7 @@ Description: "Profile for storing cervical and breast cancer screening results (
 * ^status = #active
 * ^publisher = "DHP Integration"
 
-* identifier MS
-* status MS
-* category MS
-* code MS
-* subject MS
-* encounter MS
-* effective[x] MS
-* issued MS
-* performer MS
-* value[x] MS
-* note MS
 * bodySite MS
-* component MS
-* derivedFrom MS
 
 // Привязка справочников (Терминология)
 * code from ScreeningObservationCodesVS (preferred)
