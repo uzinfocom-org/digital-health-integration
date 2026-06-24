@@ -8,9 +8,8 @@ Description: "Patient profile for the cervical and breast cancer screening syste
 * ^publisher = "DHP Integration"
 
 * identifier contains screeningId 0..1 MS
-* identifier[screeningId].system = "https://dhp.uz/fhir/core/sid/uz/screening"
+* identifier[screeningId].system = "https://dhp.uz/fhir/core/sid/pid/uz/screening"
 
-* gender = #female
 * telecom MS
 
 
@@ -23,7 +22,7 @@ Description: "Example patient Lola Oripova for the cervical and breast cancer sc
 * identifier[nationalId].use = #official
 * identifier[passportLocal].value = "AC1234567"
 * identifier[passportLocal].use = #official
-* identifier[screeningId].system = $screening-local-id
+* identifier[screeningId].system = $screening-patient-id
 * identifier[screeningId].value = "45"
 * identifier[screeningId].use = #usual
 

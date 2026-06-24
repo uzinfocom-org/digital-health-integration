@@ -122,8 +122,42 @@ Usage: #definition
 * date = "2026-06-03"
 * publisher = "Uzinfocom"
 * responsible = "Uzinfocom"
-* usage = "Identifier system used for records within the Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System."
+* usage = "Business-identifier system for clinical and administrative records within the Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System (e.g. Observation, Encounter, DiagnosticReport, ServiceRequest, Condition, QuestionnaireResponse, PractitionerRole). Person identities use the pid/pro systems instead."
 * jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://dhp.uz/fhir/core/sid/uz/screening"
+* uniqueId[0].preferred = true
+
+Instance: screening-patient-identifier-system
+InstanceOf: NamingSystem
+Description: "Patient identifier system for the Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System"
+Usage: #definition
+* url = "https://dhp.uz/fhir/integrations/NamingSystem/screening-patient-identifier-system"
+* name = "ScreeningPatientIdentifierSystem"
+* status = #active
+* kind = #identifier
+* date = "2026-06-24"
+* publisher = "Uzinfocom"
+* responsible = "Uzinfocom"
+* usage = "Identifier assigned to patients by the screening information system. Follows the dhp.uz patient identifier namespace (sid/pid)."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/pid/uz/screening"
+* uniqueId[0].preferred = true
+
+Instance: screening-practitioner-identifier-system
+InstanceOf: NamingSystem
+Description: "Practitioner identifier system for the Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System"
+Usage: #definition
+* url = "https://dhp.uz/fhir/integrations/NamingSystem/screening-practitioner-identifier-system"
+* name = "ScreeningPractitionerIdentifierSystem"
+* status = #active
+* kind = #identifier
+* date = "2026-06-24"
+* publisher = "Uzinfocom"
+* responsible = "Uzinfocom"
+* usage = "Identifier assigned to healthcare professionals by the screening information system. Follows the dhp.uz practitioner identifier namespace (sid/pro)."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/pro/uz/screening"
 * uniqueId[0].preferred = true

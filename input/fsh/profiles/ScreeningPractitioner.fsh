@@ -8,7 +8,7 @@ Description: "Practitioner profile for the cervical and breast cancer screening 
 * ^publisher = "DHP Integration"
 
 * identifier contains screeningId 0..1 MS
-* identifier[screeningId].system = "https://dhp.uz/fhir/core/sid/uz/screening"
+* identifier[screeningId].system = "https://dhp.uz/fhir/core/sid/pro/uz/screening"
 
 
 // ==================== CORRECT EXAMPLE 1 ====================
@@ -19,7 +19,7 @@ Description: "Mika Adamova Chorshanbievna"
 
 * identifier[nationalId].value = "515050500501"
 * identifier[nationalId].use = #official
-* identifier[screeningId].system = $screening-local-id
+* identifier[screeningId].system = $screening-practitioner-id
 * identifier[screeningId].value = "44"
 * identifier[screeningId].use = #usual
 
@@ -44,7 +44,7 @@ Description: "Lyuba Dadaeva Yuldashevna"
 
 * identifier[nationalId].value = "515050500502"
 * identifier[nationalId].use = #official
-* identifier[screeningId].system = $screening-local-id
+* identifier[screeningId].system = $screening-practitioner-id
 * identifier[screeningId].value = "45"
 * identifier[screeningId].use = #usual
 
@@ -69,7 +69,7 @@ Description: "Nina Tipsina Tumanovna"
 
 * identifier[nationalId].value = "515050500503"
 * identifier[nationalId].use = #official
-* identifier[screeningId].system = $screening-local-id
+* identifier[screeningId].system = $screening-practitioner-id
 * identifier[screeningId].value = "46"
 * identifier[screeningId].use = #usual
 
