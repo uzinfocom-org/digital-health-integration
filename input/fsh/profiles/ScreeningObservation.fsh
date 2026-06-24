@@ -18,6 +18,23 @@ Description: "Profile for storing cervical and breast cancer screening results (
 * bodySite.extension[quadrant].valueCodeableConcept from ScreeningBreastQuadrantVS (required)
 
 
+Instance: patient-workplace
+InstanceOf: ScreeningObservation
+Usage: #example
+Description: "Patient's place of work and employer, recorded as social history."
+* identifier[0].system = $screening-local-id
+* identifier[=].value = "340"
+* identifier[=].use = #usual
+* status = #final
+* code = $sct#224406003 "Details relating to place of work and employer"
+* subject = Reference(Patient/lola-oripova)
+* subject.display = "Lola Oripova Shakhzodovna"
+* encounter = Reference(Encounter/Encounter-general)
+* issued = "2025-11-17T13:28:17.239+02:00"
+* effectiveDateTime = "2025-11-17T13:28:17+02:00"
+* performer = Reference(PractitionerRole/practitioner-role-nurse)
+* valueString = "Professor at the National University"
+
 Instance: cytology-result
 InstanceOf: ScreeningObservation
 Usage: #example

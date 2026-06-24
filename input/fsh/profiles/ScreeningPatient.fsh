@@ -8,10 +8,7 @@ Description: "Patient profile for the cervical and breast cancer screening syste
 * ^publisher = "DHP Integration"
 
 * identifier contains screeningId 0..1 MS
-* identifier[screeningId].system = "https://dhp.uz/fhir/core/sid/uz/screening" 
-
-* extension contains 
-    WorkPlaceExtension named workPlace 0..1 MS
+* identifier[screeningId].system = "https://dhp.uz/fhir/core/sid/uz/screening"
 
 * gender = #female
 * telecom MS
@@ -51,4 +48,3 @@ Description: "Example patient Lola Oripova for the cervical and breast cancer sc
 
 // ==================== Extensions ====================
 * extension[nationality].extension[code].valueCodeableConcept = $nationality-cs#161
-* extension[workPlace].valueString = "Professor at the National University"

@@ -134,15 +134,3 @@ Description: "Breast quadrant used to localize findings."
 * value[x] only CodeableConcept
 * valueCodeableConcept from ScreeningBreastQuadrantVS (required)
 
-
-Extension: WorkPlaceExtension
-Id: workPlace
-Title: "WorkPlace Extension"
-Description: "Extension for recording the patient's place of employment."
-* ^status = #active
-* ^experimental = true
-* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/workPlace"
-* ^context.type = #element
-* ^context.expression = "Patient"
-* value[x] only string
-
