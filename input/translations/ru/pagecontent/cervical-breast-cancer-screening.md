@@ -131,7 +131,7 @@
 | Observation | Observation.code | Что содержит |
 | :--- | :--- | :--- |
 | [gynecological-physical-exam](Observation-gynecological-physical-exam.html) | `SNOMED CT#5880005` (физикальный осмотр) | Акушерский и гинекологический анамнез, в `note` |
-| [gynecological-complaints](Observation-gynecological-complaints.html) | `SNOMED CT#394917001` (жалоба) | Жалобы, сообщённые пациентом, в `note` |
+| [gynecological-complaints](Observation-gynecological-complaints.html) | `SNOMED CT#1269489004` (главная жалоба) | Жалобы, сообщённые пациентом, в `note` |
 | [oncogynecological-followup](Observation-oncogynecological-followup.html) | `SNOMED CT#281036007` (контрольная консультация) | Результаты наблюдения, в `component` |
 
 ### Роли участников (PractitionerRole)

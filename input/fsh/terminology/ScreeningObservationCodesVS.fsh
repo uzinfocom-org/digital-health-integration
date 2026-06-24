@@ -8,7 +8,7 @@ Description: "Combined value set of codes for the Observation.code field (Labora
 * include $loinc#18500-9 "Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep"
 * include $loinc#82675-0 "HPV I/H Risk 4 DNA Cvx Ql NAA+probe"
 * include $sct#5880005 "Physical examination"
-* include $sct#394917001 "Presenting complaint"
+* include $sct#1269489004 "Chief complaint"
 * include $sct#281036007 "Follow-up consultation"
 * include $sct#224406003 "Details relating to place of work and employer"
 * include codes from valueset ScreeningDiagnosticProcedureVS

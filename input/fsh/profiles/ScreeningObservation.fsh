@@ -228,7 +228,7 @@ Description: "Patient-reported symptoms and complaints during gynecological cons
 * identifier[=].value = "337"
 * identifier[=].use = #usual
 * status = #final
-* code = $sct#394917001 "Presenting complaint"
+* code = $sct#1269489004 "Chief complaint"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
@@ -254,7 +254,7 @@ Description: "Data from examination in the oncology follow-up office (complaints
 * issued = "2025-11-17T13:28:17.239+02:00"
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-nurse)
-* component[0].code = $sct#394917001 "Presenting complaint"
+* component[0].code = $sct#1269489004 "Chief complaint"
 * component[=].valueString = "stomach pain"
 * component[+].code = $sct#103306004 "Contraindication to"
 * component[=].valueString = "painkillers should not be taken"

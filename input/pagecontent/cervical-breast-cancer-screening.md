@@ -131,7 +131,7 @@ Profile: [ScreeningObservation](StructureDefinition-screening-observation.html)
 | Observation | Observation.code | What it holds |
 | :--- | :--- | :--- |
 | [gynecological-physical-exam](Observation-gynecological-physical-exam.html) | `SNOMED CT#5880005` (Physical examination) | Obstetric and gynecological history, in `note` |
-| [gynecological-complaints](Observation-gynecological-complaints.html) | `SNOMED CT#394917001` (Presenting complaint) | Patient-reported complaints, in `note` |
+| [gynecological-complaints](Observation-gynecological-complaints.html) | `SNOMED CT#1269489004` (Chief complaint) | Patient-reported complaints, in `note` |
 | [oncogynecological-followup](Observation-oncogynecological-followup.html) | `SNOMED CT#281036007` (Follow-up consultation) | Follow-up findings, in `component` |
 
 ### Care team roles (PractitionerRole)

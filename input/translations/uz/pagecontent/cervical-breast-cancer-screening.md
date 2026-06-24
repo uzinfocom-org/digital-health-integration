@@ -131,7 +131,7 @@ Profil: [ScreeningObservation](StructureDefinition-screening-observation.html)
 | Observation | Observation.code | Nimani saqlaydi |
 | :--- | :--- | :--- |
 | [gynecological-physical-exam](Observation-gynecological-physical-exam.html) | `SNOMED CT#5880005` (jismoniy ko'rik) | Akusherlik va ginekologik anamnez, `note` da |
-| [gynecological-complaints](Observation-gynecological-complaints.html) | `SNOMED CT#394917001` (shikoyat) | Bemor bildirgan shikoyatlar, `note` da |
+| [gynecological-complaints](Observation-gynecological-complaints.html) | `SNOMED CT#1269489004` (asosiy shikoyat) | Bemor bildirgan shikoyatlar, `note` da |
 | [oncogynecological-followup](Observation-oncogynecological-followup.html) | `SNOMED CT#281036007` (nazorat konsultatsiyasi) | Kuzatuv topilmalari, `component` da |
 
 ### Jamoa rollari (PractitionerRole)
