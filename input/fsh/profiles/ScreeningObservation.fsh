@@ -17,6 +17,51 @@ Description: "Profile for storing cervical and breast cancer screening results (
 * bodySite.extension contains BreastQuadrantExtension named quadrant 0..* MS
 * bodySite.extension[quadrant].valueCodeableConcept from ScreeningBreastQuadrantVS (required)
 
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component ^slicing.description = "Sliced by the code identifying each screening measurement."
+* component contains
+    transformationZone 0..1 MS and
+    birads 0..1 MS and
+    breastDensity 0..1 MS and
+    imageQuality 0..1 MS and
+    bodyHeight 0..1 MS and
+    bodyWeight 0..1 MS and
+    bmi 0..1 MS
+
+* component[transformationZone] ^short = "Cervical transformation zone type (colposcopy)"
+* component[transformationZone].code = $sct#1285652007
+* component[transformationZone].value[x] only CodeableConcept
+* component[transformationZone].value[x] from ScreeningTransformationZoneVS (required)
+
+* component[birads] ^short = "BI-RADS assessment category (mammography)"
+* component[birads].code = $sct#1348266008
+* component[birads].value[x] only CodeableConcept
+* component[birads].value[x] from ScreeningBiradsVS (required)
+
+* component[breastDensity] ^short = "Mammographic breast density (mammography)"
+* component[breastDensity].code = $sct#129793001
+* component[breastDensity].value[x] only CodeableConcept
+* component[breastDensity].value[x] from ScreeningBreastFormVS (required)
+
+* component[imageQuality] ^short = "Image quality (mammography)"
+* component[imageQuality].code = $sct#246646005
+* component[imageQuality].value[x] only CodeableConcept
+* component[imageQuality].value[x] from ScreeningImageQualityVS (required)
+
+* component[bodyHeight] ^short = "Body height (physical examination)"
+* component[bodyHeight].code = $loinc#8302-2
+* component[bodyHeight].value[x] only Quantity
+
+* component[bodyWeight] ^short = "Body weight (physical examination)"
+* component[bodyWeight].code = $loinc#29463-7
+* component[bodyWeight].value[x] only Quantity
+
+* component[bmi] ^short = "Body mass index (physical examination)"
+* component[bmi].code = $loinc#39156-5
+* component[bmi].value[x] only Quantity
+
 
 Instance: patient-workplace
 InstanceOf: ScreeningObservation
