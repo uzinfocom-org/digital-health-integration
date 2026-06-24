@@ -25,10 +25,7 @@ Description: "Profile for storing cervical and breast cancer screening results (
     transformationZone 0..1 MS and
     birads 0..1 MS and
     breastDensity 0..1 MS and
-    imageQuality 0..1 MS and
-    bodyHeight 0..1 MS and
-    bodyWeight 0..1 MS and
-    bmi 0..1 MS
+    imageQuality 0..1 MS
 
 * component[transformationZone] ^short = "Cervical transformation zone type (colposcopy)"
 * component[transformationZone].code = $sct#1285652007
@@ -49,18 +46,6 @@ Description: "Profile for storing cervical and breast cancer screening results (
 * component[imageQuality].code = $sct#246646005
 * component[imageQuality].value[x] only CodeableConcept
 * component[imageQuality].value[x] from ScreeningImageQualityVS (required)
-
-* component[bodyHeight] ^short = "Body height (physical examination)"
-* component[bodyHeight].code = $loinc#8302-2
-* component[bodyHeight].value[x] only Quantity
-
-* component[bodyWeight] ^short = "Body weight (physical examination)"
-* component[bodyWeight].code = $loinc#29463-7
-* component[bodyWeight].value[x] only Quantity
-
-* component[bmi] ^short = "Body mass index (physical examination)"
-* component[bmi].code = $loinc#39156-5
-* component[bmi].value[x] only Quantity
 
 
 Instance: patient-workplace
@@ -221,7 +206,7 @@ Description: "Finding (skin thickening) detected in the left breast during mammo
 Instance: gynecological-physical-exam
 InstanceOf: ScreeningObservation
 Usage: #example
-Description: "Anthropometric measurements (height, weight, BMI) and medical history obtained during gynecological examination."
+Description: "Medical history obtained during gynecological examination. Anthropometrics (height, weight, BMI) are recorded as separate vital-signs Observations."
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "336"
 * identifier[=].use = #usual
@@ -234,12 +219,6 @@ Description: "Anthropometric measurements (height, weight, BMI) and medical hist
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-gynecologist)
 * note[0].text = "Menarche at age 13, 2 pregnancies, 2 deliveries."
-* component[0].code = $loinc#8302-2 "Body height"
-* component[=].valueQuantity = 160 'cm'
-* component[+].code = $loinc#29463-7 "Body weight"
-* component[=].valueQuantity = 52 'kg'
-* component[+].code = $loinc#39156-5 "Body mass index (BMI) [Ratio]"
-* component[=].valueQuantity = 20.3 'kg/m2'
 
 Instance: gynecological-complaints
 InstanceOf: ScreeningObservation
@@ -283,24 +262,53 @@ Description: "Data from examination in the oncology follow-up office (complaints
 * component[=].valueString = "better to send to the laboratory"
 
 
-Instance: mammography-physical-exam
-InstanceOf: ScreeningObservation
+Instance: body-height
+InstanceOf: bodyheight
 Usage: #example
-Description: "Patient anthropometric measurements performed before mammography."
+Description: "Patient body height, recorded as a vital sign during the screening examination."
 * identifier[0].system = $screening-local-id
-* identifier[=].value = "339"
+* identifier[=].value = "341"
 * identifier[=].use = #usual
 * status = #final
-* code = $sct#5880005 "Physical examination"
+* category[VSCat] = $observation-category#vital-signs "Vital Signs"
+* code = $loinc#8302-2 "Body height"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
-* encounter = Reference(Encounter/Encounter-radiology)
-* issued = "2025-11-17T13:28:17.239+02:00"
+* encounter = Reference(Encounter/Encounter-general)
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
-* performer = Reference(PractitionerRole/practitioner-role-radiologist)
-* component[0].code = $loinc#8302-2 "Body height"
-* component[0].valueQuantity = 160 'cm'
-* component[1].code = $loinc#29463-7 "Body weight"
-* component[1].valueQuantity = 52 'kg'
-* component[2].code = $loinc#39156-5 "Body mass index (BMI) [Ratio]"
-* component[2].valueQuantity = 20.3 'kg/m2'
+* performer = Reference(PractitionerRole/practitioner-role-gynecologist)
+* valueQuantity = 160 'cm' "cm"
+
+Instance: body-weight
+InstanceOf: bodyweight
+Usage: #example
+Description: "Patient body weight, recorded as a vital sign during the screening examination."
+* identifier[0].system = $screening-local-id
+* identifier[=].value = "342"
+* identifier[=].use = #usual
+* status = #final
+* category[VSCat] = $observation-category#vital-signs "Vital Signs"
+* code = $loinc#29463-7 "Body weight"
+* subject = Reference(Patient/lola-oripova)
+* subject.display = "Lola Oripova Shakhzodovna"
+* encounter = Reference(Encounter/Encounter-general)
+* effectiveDateTime = "2025-11-17T13:28:17+02:00"
+* performer = Reference(PractitionerRole/practitioner-role-gynecologist)
+* valueQuantity = 52 'kg' "kg"
+
+Instance: body-mass-index
+InstanceOf: bmi
+Usage: #example
+Description: "Patient body mass index, recorded as a vital sign during the screening examination."
+* identifier[0].system = $screening-local-id
+* identifier[=].value = "343"
+* identifier[=].use = #usual
+* status = #final
+* category[VSCat] = $observation-category#vital-signs "Vital Signs"
+* code = $loinc#39156-5 "Body mass index (BMI) [Ratio]"
+* subject = Reference(Patient/lola-oripova)
+* subject.display = "Lola Oripova Shakhzodovna"
+* encounter = Reference(Encounter/Encounter-general)
+* effectiveDateTime = "2025-11-17T13:28:17+02:00"
+* performer = Reference(PractitionerRole/practitioner-role-gynecologist)
+* valueQuantity = 20.3 'kg/m2' "kg/m2"
