@@ -37,7 +37,7 @@ Description: "Referral for liquid-based cytology"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
-* authoredOn = "2015-02-07T13:28:17-05:00"
+* authoredOn = "2025-11-10T13:28:17-05:00"
 * requester = Reference(PractitionerRole/practitioner-role-gynecologist)
 * requester.display = "Lyuba Dadaeva Yuldashevna"
 * performer[0] = Reference(Organization/xonobod-medical-association)
@@ -57,7 +57,7 @@ Description: "Referral for HPV testing"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
-* authoredOn = "2015-02-07T13:28:17-05:00"
+* authoredOn = "2025-11-10T13:28:17-05:00"
 * requester = Reference(PractitionerRole/practitioner-role-gynecologist)
 * requester.display = "Lyuba Dadaeva Yuldashevna"
 * performer[0] = Reference(Organization/xonobod-medical-association)
@@ -77,7 +77,7 @@ Description: "Referral for colposcopy"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
-* authoredOn = "2015-02-07T13:28:17-05:00"
+* authoredOn = "2025-11-10T13:28:17-05:00"
 * requester = Reference(PractitionerRole/practitioner-role-gynecologist)
 * requester.display = "Lyuba Dadaeva Yuldashevna"
 * performer[0] = Reference(Organization/xonobod-medical-association)
@@ -97,7 +97,7 @@ Description: "Referral for mammography"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
-* authoredOn = "2015-02-07T13:28:17-05:00"
+* authoredOn = "2025-11-10T13:28:17-05:00"
 * requester = Reference(PractitionerRole/practitioner-role-gynecologist)
 * requester.display = "Lyuba Dadaeva Yuldashevna"
 * performer[0] = Reference(Organization/xonobod-medical-association)

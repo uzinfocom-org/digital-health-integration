@@ -44,4 +44,4 @@ Description: "Patient informed consent for mammography screening"
 * content[0].attachment.contentType = #application/pdf
 * content[0].attachment.url = "https://storage.ssv.uz/docs/consent-lola-oripova.pdf"
 * content[0].attachment.title = "Informed Consent for Mammography Screening"
-* content[0].attachment.creation = "2026-03-13T10:00:00Z"
+* content[0].attachment.creation = "2025-11-17T08:00:00Z"

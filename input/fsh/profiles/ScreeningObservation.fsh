@@ -31,8 +31,8 @@ Description: "Result of cytological smear examination: LSIL."
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-laboratory)
-* effectiveDateTime = "2015-02-07T13:28:17+02:00"
-* issued = "2015-02-07T13:28:17.239+02:00"
+* effectiveDateTime = "2025-11-17T13:28:17+02:00"
+* issued = "2025-11-17T13:28:17.239+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-laborant)
 * valueCodeableConcept = screening-cervical-cytology-cs#scr-cyt-3 "LSIL"
 
@@ -49,8 +49,8 @@ Description: "Cytological smear analysis performed by an AI system."
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-laboratory)
-* issued = "2015-02-07T13:28:17.239+02:00"
-* effectiveDateTime = "2015-02-07T13:28:17+02:00"
+* issued = "2025-11-17T13:28:17.239+02:00"
+* effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-laborant)
 * valueString = "ai result"
 
@@ -64,12 +64,12 @@ Description: "High-risk HPV DNA test result."
 * basedOn = Reference(ServiceRequest/ServiceRequest-hpv)
 * status = #final
 * code = $loinc#82675-0 "HPV I/H Risk 4 DNA Cvx Ql NAA+probe"
-* effectiveDateTime = "2015-02-07T13:28:17+02:00"
+* effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-laboratory)
 * performer = Reference(PractitionerRole/practitioner-role-laborant)
-* valueCodeableConcept = screening-hpv-cs#scr-hpv-2 "Negative"
+* valueCodeableConcept = screening-hpv-cs#scr-hpv-3 "Positive"
 
 Instance: colposcopy-result
 InstanceOf: ScreeningObservation
@@ -84,8 +84,8 @@ Description: "Colposcopy conclusion including transformation zone assessment."
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-diagnostics)
-* issued = "2015-02-07T13:28:17.239+02:00"
-* effectiveDateTime = "2015-02-07T13:28:17+02:00"
+* issued = "2025-11-17T13:28:17.239+02:00"
+* effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-gynecologist)
 * valueCodeableConcept = screening-colposcopy-cs#scr-colpo-2 "LSIL"
 * component[0].code = $sct#1285652007 "Structure of transition zone of cervix uteri"
@@ -104,8 +104,8 @@ Description: "Mammography summary including BI-RADS category, breast density, an
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-radiology)
-* issued = "2015-02-07T13:28:17.239+02:00"
-* effectiveDateTime = "2015-02-07T13:28:17+02:00"
+* issued = "2025-11-17T13:28:17.239+02:00"
+* effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-radiologist)
 * component[0].code = $sct#1348266008 "Breast Imaging and Reporting and Data System"
 * component[=].valueCodeableConcept = screening-birads-cs#src-birads-2 "2"
@@ -127,12 +127,12 @@ Description: "Finding (mole) detected in the right breast during mammography."
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-radiology)
-* issued = "2015-02-07T13:28:17.239+02:00"
-* effectiveDateTime = "2015-02-07T13:28:17+02:00"
+* issued = "2025-11-17T13:28:17.239+02:00"
+* effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-radiologist)
-* bodySite = $sct#80248007
+* bodySite = $sct#73056007 "Right breast structure"
 * bodySite.extension[quadrant].valueCodeableConcept = screening-breast-quadrant-cs#src-breast-quadrant-2
-* component[0].code = $sct#30285000 "Verruca"
+* component[0].code = $sct#109285009 "Melanocytic nevus of skin of breast"
 * component[0].valueBoolean = true
 
 Instance: mammography-left-breast-finding
@@ -148,10 +148,10 @@ Description: "Finding (skin thickening) detected in the left breast during mammo
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-radiology)
-* issued = "2015-02-07T13:28:17.239+02:00"
-* effectiveDateTime = "2015-02-07T13:28:17+02:00"
+* issued = "2025-11-17T13:28:17.239+02:00"
+* effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-radiologist)
-* bodySite = $sct#73056007
+* bodySite = $sct#80248007 "Left breast structure"
 * bodySite.extension[quadrant].valueCodeableConcept = screening-breast-quadrant-cs#src-breast-quadrant-1
 * component[0].code = $sct#129797000 "Mammographic skin thickening of breast"
 * component[0].valueBoolean = true
@@ -168,8 +168,8 @@ Description: "Anthropometric measurements (height, weight, BMI) and medical hist
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
-* issued = "2015-02-07T13:28:17.239+02:00"
-* effectiveDateTime = "2015-02-07T13:28:17+02:00"
+* issued = "2025-11-17T13:28:17.239+02:00"
+* effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-gynecologist)
 * note[0].text = "Menarche at age 13, 2 pregnancies, 2 deliveries."
 * component[0].code = $loinc#8302-2 "Body height"
@@ -191,12 +191,11 @@ Description: "Patient-reported symptoms and complaints during gynecological cons
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
-* issued = "2015-02-07T13:28:17.239+02:00"
-* effectiveDateTime = "2015-02-07T13:28:17+02:00"
+* issued = "2025-11-17T13:28:17.239+02:00"
+* effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-gynecologist)
-* note[0].text = "Bleeding after sexual intercourse"
+* note[0].text = "Menstrual dysfunction"
 * note[+].text = "Lower abdominal pain"
-* note[+].text = "Swelling of the lower extremities"
 
 Instance: oncogynecological-followup
 InstanceOf: ScreeningObservation
@@ -211,8 +210,8 @@ Description: "Data from examination in the oncology follow-up office (complaints
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-general)
-* issued = "2015-02-07T13:28:17.239+02:00"
-* effectiveDateTime = "2015-02-07T13:28:17+02:00"
+* issued = "2025-11-17T13:28:17.239+02:00"
+* effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-nurse)
 * component[0].code = $sct#394917001 "Presenting complaint"
 * component[=].valueString = "stomach pain"
@@ -230,12 +229,12 @@ Description: "Patient anthropometric measurements performed before mammography."
 * identifier[=].value = "339"
 * identifier[=].use = #usual
 * status = #final
-* code = $sct#71651007 "Mammography"
+* code = $sct#5880005 "Physical examination"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-radiology)
-* issued = "2015-02-07T13:28:17.239+02:00"
-* effectiveDateTime = "2015-02-07T13:28:17+02:00"
+* issued = "2025-11-17T13:28:17.239+02:00"
+* effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-radiologist)
 * component[0].code = $loinc#8302-2 "Body height"
 * component[0].valueQuantity = 160 'cm'

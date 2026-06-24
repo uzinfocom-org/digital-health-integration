@@ -40,7 +40,7 @@ Description: "Mammography report (summary and findings)"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-radiology)
-* issued = "2026-02-25T14:27:00Z"
+* issued = "2025-11-18T14:27:00Z"
 * performer[0] = Reference(PractitionerRole/practitioner-role-radiologist)
 * resultsInterpreter[0] = Reference(PractitionerRole/practitioner-role-radiologist)
 * result[0] = Reference(Observation/mammography-summary)
@@ -62,7 +62,7 @@ Description: "Laboratory report: Liquid-based cytology"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-laboratory)
-* issued = "2026-02-25T14:27:00Z"
+* issued = "2025-11-18T14:27:00Z"
 * performer[0] = Reference(Organization/xonobod-medical-association)
 * performer[=].display = "Khonobod City Medical Association"
 * resultsInterpreter[0] = Reference(PractitionerRole/practitioner-role-laborant)
@@ -83,7 +83,7 @@ Description: "Diagnostic report: Colposcopy"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
 * encounter = Reference(Encounter/Encounter-diagnostics)
-* issued = "2026-02-25T14:27:00Z"
+* issued = "2025-11-18T14:27:00Z"
 * performer[0] = Reference(Organization/xonobod-medical-association)
 * performer[=].display = "Khonobod City Medical Association"
 * resultsInterpreter[0] = Reference(PractitionerRole/practitioner-role-gynecologist)
