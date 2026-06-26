@@ -1,0 +1,18 @@
+Name		Flags		Card.	Type	Description & Constraints	Example 
+Encounter		D			DomainResource	Death Encounter	
+status		S	D	1..1	code	Начальное или конечное состояние смерти. Например, начальная или Окончательное Binding: https://dhp.uz.terminology.uz/core/fhirValuSet/death_status 	Intial
+class		SΣ	D	1..1	Coding	"Классификация встречи с пациентом
+https://terminology.dhp.uz/fhir/core/ValueSet/encounter-class-vs"	EMER
+serviceType		Σ	D	0..*	CodeableConcept	Binding: https://terminology.dhp.uz/ValueSet/type-of-service	Forensic medical examination
+subject		Σ	D	1..1	Reference(Patient)	Classification of patient encounters	John Smith
+participant		SΣ	D	0..*	BackboneElement	Death certifying physician	
+	type	SΣ	D	0..*	CodeableConcept	"Role of participant in encounter
+http://hl7.org/fhir/ValueSet/encounter-participant-type"	ATND
+	actor	SΣ	D	0..1	Reference ( Practitioner Role)	"The individual, or service participating in the encounter
+url: http://hl7.org/fhir/ValueSet/practitioner-role"	11935004
+	period		D	0..1	Period	Time period of encounter	2 hours
+Extention 		SΣ	D			Death place type 	
+	    type	SΣ	D	1..1	CodeableConcept	"Type which is that death place type (home, street, hospital etc)
+Binding: http://terminology.dhp.uz/ValueSet/DeathPlace-type"	
+location			D	"	0..*"	Reference(Location)	Place of death (hospital, home, etc.)	
+serviceProvider			D	0..1	Reference(Organization)	Health facility issuing certificate	

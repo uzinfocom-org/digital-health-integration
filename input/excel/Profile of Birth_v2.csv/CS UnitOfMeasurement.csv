@@ -1,0 +1,5 @@
+code	UCUM Unit	Observation Type	Тип наблюдения	Kuzatuv turi
+birth002.0001	g	Weight	Масса тела	Tana vazni
+birth002.0002	cm	Length / Height	Рост	Bo‘y
+birth002.0003	wk	Gestational Age	Гестационный возраст	Homiladorlik yoshi
+birth002.0004	{score}	Apgar Score	Шкала Апгар	Apgar shkalasi

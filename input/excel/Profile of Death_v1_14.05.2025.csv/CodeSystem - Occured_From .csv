@@ -1,0 +1,8 @@
+code	uz 	ru 	eng		
+38605008	Kassalikdan 	От болезни	From illness	Snomed	Tolibjon Wrong code for illness
+7878000	Ishdan tashqari baxtsiz hodisadan	От несчастного случая вне работы	From an accident outside work	Snomed	Tolibjon Wrong code
+27935005	Qotillik	Убийство	Murder	Snomed	
+44301001	O'z o'zini O'ldirish	Самоубийство	Suicide	Snomed	
+65037004	O'lim sababi aniqlanmadi	Причина смерти не установлена	Cause of death not determined	Snomed	
+371128008	Ish faoliyati tufayli baxtsiz hodisa	Несчастный случай на производстве	Work-related accident	Snomed	Tolibjon Wrong code
+	snomed				

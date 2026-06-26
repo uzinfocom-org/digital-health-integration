@@ -1,0 +1,15 @@
+Name	Flags		Card.	Type	Description & Constraints	Example
+Composition	Σ	D	0..1	DomainResource	Медицинское свидетельство о рождении	 
+identifier	Σ	D	0..*	identifier	Уникальный идентификатор	Birth form №103 
+status	?! Σ	D	1..1	code	"Статус документа
+Binding: http://hl7.org/fhir/ValueSet/composition-status"	preliminary
+type	SΣ	D	1..1	CodeableConcept	"Тип документа
+Binding: http://hl7.org/fhir/ValueSet/doc-typecodes"	"{""text"": ""Медицинское свидетельство о рождении""}"
+date	SΣ	D	1..1	dateTime	Дата составления документа	45820
+title	SΣ	D	1..1	string	Название документа	"""Медицинское свидетельство о рождении"""
+subject	SΣ	D	0..*	Reference (Patient)	Основной пациент (ребёнок)	Patient/patient-stillborn-001
+author	SΣ	D	1..*	Reference(PractitionerRole)	Кто оформил (фельдшер, врач)	фельдшер
+custodian	SΣ	D	0..1	 	Организация, ответственная за документ	 
+section	Σ	С	0..*	BackboneElement	Секции с вложенными данными	 
+title	 	 	0..1	string	Метка для раздела	 
+entry	 	C	0..*	Reference (any)	Ссылка на данные, подтверждающие этот раздел	

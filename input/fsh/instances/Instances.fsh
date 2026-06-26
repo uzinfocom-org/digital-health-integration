@@ -20,12 +20,12 @@ Description: "Example mother patient for the newborn birth profile"
 
 
 
-Instance: organization-birth-hospital-example
-InstanceOf: Organization
-Title: "Birth Hospital Example"
-Description: "Example birth hospital organization in Uzbekistan"
+Instance: organization1-example
+InstanceOf: UZCoreOrganization
+Title: "Birth and Death  Hospital Example"
+Description: "Example birth and death hospital organization in Uzbekistan"
 Usage: #example
-* name = "Tashkent Maternity Hospital №1"
+* name = "Republican Clinical Hospital"
 
 
 Instance: encounter-mother-delivery-example
@@ -61,7 +61,7 @@ Title: "Condition - Neonatal Jaundice"
 Description: "Example condition representing neonatal jaundice diagnosed in the newborn"
 * clinicalStatus = $condition-clinical#active
 * code.text = "Neonatal jaundice"
-* subject = Reference(patient-of-birth-example)
+* subject = Reference(newborn-patient-example)
 
 
 Instance: location-delivery-room-example
@@ -81,22 +81,8 @@ Title: "Practitioner Role Example"
 Description: "Role of practitioner for authoring the birth composition"
 
 * practitioner = Reference(practitioner-003)
-* organization = Reference(organization-birth-hospital-example)
-
-
-Instance: patient-gender-other-example
-InstanceOf: Patient
-Usage: #example
-Title: "Patient with Other Gender"
-Description: "Example patient using gender-other extension"
-
-* gender = #other
-* gender.extension[0].url = "https://dhp.uz/fhir/integrations/StructureDefinition/gender-other"
-* gender.extension[0].valueCoding.system = "https://terminology.dhp.uz/fhir/core/CodeSystem/gender-other-cs"
-* gender.extension[0].valueCoding.code = #regis0007.00004
-* gender.extension[0].valueCoding.display = "Changed gender to female"
-
-
+* organization = Reference(organization1-example)
+* code.text = "Paramedic"
 
 
 
@@ -114,28 +100,42 @@ Description: "Example demonstrating the ManagingOrganizationAttachment extension
 * extension.valueDate = "2026-04-01"
 
 
-Instance: patient-multiple-birth-example
-InstanceOf: Patient
+
+Instance: practitioner-death-example
+InstanceOf: UZCorePractitioner
+Title: "Practitioner Death Example"
+Description: "Example practitioner for death certificate"
 Usage: #example
-Title: "Multiple Birth Example"
-Description: "Example demonstrating the MultipleBirthFlag extension."
 
-* name.text = "Twin Baby A"
-* gender = #female
-* birthDate = "2026-04-01"
+* name.family = "Karimov"
+* name.given = "Akmal"
 
-* extension.url = "https://dhp.uz/fhir/integrations/StructureDefinition/multiple-birth-flag"
-* extension.valueBoolean = true
 
-Instance: patient-newborn-birth-time-example
-InstanceOf: Patient
+
+Instance: location-death-example
+InstanceOf: UZCoreLocation
+Title: "Location Death Example"
+Description: "Example location for death encounter"
 Usage: #example
-Title: "Newborn Birth Time Example"
-Description: "Example demonstrating the NewbornBirthTime extension."
 
-* name.text = "Baby Example"
-* gender = #male
-* birthDate = "2026-04-01"
+* name = "Republican Clinical Hospital"
 
-* extension.url = "https://dhp.uz/fhir/integrations/StructureDefinition/newborn-birth-time"
-* extension.valueDateTime = "2026-04-01T10:00:00+05:00"
+
+
+
+
+Instance: observation-mother-education-example
+InstanceOf: UZCoreSocioeconomicObservation
+Usage: #example
+Title: "Mother Education Observation Example"
+Description: "Example socioeconomic observation representing the education level of the newborn's mother"
+
+* status = #final
+* code = https://terminology.dhp.uz/fhir/core/CodeSystem/socioeconomic-observation-cs#education "Education"
+* subject = Reference(newborn-patient-example)
+* focus = Reference(related-person-of-birth-example)
+* effectiveDateTime = "2026-04-01T10:00:00+05:00"
+* performer = Reference(practitioner-003)
+
+* code.coding[socioeconomicType] = $sct#105421008 "Educational achievement"
+* valueCodeableConcept = education-cs#regis0005.00004 "Secondary"

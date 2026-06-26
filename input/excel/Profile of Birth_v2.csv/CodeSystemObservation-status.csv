@@ -1,0 +1,10 @@
+Level	Code	ENG	РУ	UZ	System
+1	 registered	Registered	Зарегистрировано	Ro‘yxatga olingan	https://build.fhir.org/ig/vadi2/DHP-temp/en/ValueSet-observation-status-vs.html
+1	specimen-in-process	Specimen-in-Process	Образец в процессе	Namuna jarayonda	https://build.fhir.org/ig/vadi2/DHP-temp/en/ValueSet-observation-status-vs.html
+1	preliminary	Preliminary	Предварительное	Dastlabki	https://build.fhir.org/ig/vadi2/DHP-temp/en/ValueSet-observation-status-vs.html
+1	final	Final	Финальное	Yakuniy	https://build.fhir.org/ig/vadi2/DHP-temp/en/ValueSet-observation-status-vs.html
+1	amended	Amended	Изменено	O‘zgartirilgan	https://build.fhir.org/ig/vadi2/DHP-temp/en/ValueSet-observation-status-vs.html
+2	corrected	Corrected	Исправлено	To‘g‘rilangan	https://build.fhir.org/ig/vadi2/DHP-temp/en/ValueSet-observation-status-vs.html
+1	cancelled	Cancelled	Отменено	Bekor qilingan	https://build.fhir.org/ig/vadi2/DHP-temp/en/ValueSet-observation-status-vs.html
+1	entered-in-error	Entered in Error	Введено с ошибкой	Xato kiritilgan	https://build.fhir.org/ig/vadi2/DHP-temp/en/ValueSet-observation-status-vs.html
+1	unknown	Unknown	Неизвестно	Noma'lum	https://build.fhir.org/ig/vadi2/DHP-temp/en/ValueSet-observation-status-vs.html

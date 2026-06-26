@@ -1,0 +1,69 @@
+Name		Flags		Cardinality	Type	Description & Constraints	Example		ValueSets					
+Patient	Newborn Baby	D			DomainResource	Информация о новорожденном			System	CodeSystem	Code	Display		
+Slices for identifier		S	D	6	Identifier	Идентификатор	 		https://terminology.medcore.uz/ValueSet/IdentifierType	CodeSystemIdentifierType	NI, PPN, BCT, DL, DP, HC, MI, PCN	Тип идентификатора, удостоверяющего личность		
+	 identifier:All Slices 					Содержание/правила для всех срезов			 https://terminology.medcore.uz/ValueSet/nationality	CodeSystemNationality	1--307	Код национальности пациента		
+	slice  for extension								https://terminology.medcore.uz/ValueSet/citizenship	CodeSystemCountries ISO3166_2	все имеющиеся коды	Код гражданства пациента		
+	extension:data-absent-reason								https://terminology.medcore.uz/ValueSet/education	CodeSystemeducation	regis0005.00001--regis0005.00010	Код образования пациента		
+	   use	" 	?!ΣS"	D	0..1	code	https://terminology.medcore.uz/ValueSet/identifier-use-vs			https://terminology.medcore.uz/ValueSet/education	CodeSystemPositionAndProfession	1111.1--9623.6	Код профессии пациента		
+	   type	" 	Σ"	D	1..*	CodeableConcept	https://terminology.medcore.uz/ValueSet/identifier-type-vs			https://terminology.medcore.uz/ValueSet/region_ district	CodeSystemСОАТО	все имеющиеся коды	Область/район		
+	identifier:national-id	ΣS		0..1	Identifier	PINFL новорожденного ребенка можно получить из ЗАГС			https://terminology.medcore.uz/ValueSet/city	CodeSystemСОАТО	все имеющиеся коды	Город		
+	use	S	D	0..1	code	"Определяет цель этого идентификатора
+Binding: https://terminology.medcore.uz/ValueSet/identifier-use-vs   "			https://terminology.medcore.uz/ValueSet/mahalla	CodeSystemMahalla	все имеющиеся коды	Махалля		
+	 type	S	D	1..*	CodeableConcept	"Код типа идентификатора, удостоверяющего личность
+Binding: https://terminology/medcore.uz/ValueSet/identifier-type-vs"	#BCT		https://terminology.medcore.uz/ValueSet/maritalStatus	CodeSystemmaritalStatus	M, W, D, U, T, UNK	Семейное положение		
+	coding		D	1..*	Coding	"Код, определенный терминологической системой
+Фиксированное значение: (комплексное)"			https://terminology.medcore.uz/ValueSet/UnitOfMeasurement					
+	system		D	1..1	uri	"URI for ID system, e.g.,
+Fixed Value: ""https://terminology.hl7.org/CodeSystem/v2-0203"""								
+	code	Σ	D	1..1	code 	При выдаче временного идентификатора новорожденному дате переноса истечения срока действия использованного идентификатора.	16 years (получить паспорт через 16 лет)							
+	display	Σ	D	1..1	Reference(Organization)	Организация, выдавшая удостоверение личности (может быть просто текст)	Marriage registry							
+extension: nationality			  D	0..1	Extension	"Nationality
+Код национальности пациента
+Binding: http://hl7.org/fhir/ValueSet/country"								
+	extension.code		  D	0..1	CodeableConcept	Nationality Code	UZB							
+	extension.period		  D	0..1	Period	Nationality Period								
+	url		  D	1..1	uri	http://hl7.org/fhir/StructureDefinition/patient-nationality								
+extension: citizenship 			  D	0..1	Extension	Код гражданства пациента	UZ (860)							
+	extension.code		  D	0..1	CodeableConcept	citizenship Code	UZB							
+	extension.period		  D	0..1	Period	citizenship Period								
+	url		  D	1..1	uri	 https://terminology.medcore.uz/ValueSet/citizenship (required)								
+name		S	  D		HumanName									
+	use	Σ	  D	0..1	code	"Определяет вид имени пациента
+Binding: http://hl7.org/fhir/name-use (required)"	usual							
+	text	ΣS	  D	0..1	string	Текстовое представление полного имени ребенка	Jhon Duran							
+	family	ΣS	  D	0..1	string	Фамилия	Duran							
+Extension		?!		0..1	Extension	Время рождения								
+	 url			1..1	url	"""http://hl7.org/fhir/StructureDefinition/patient-birthTime"""								
+	value[x]	S		1..1	dateTime	Value of extension	18:00							
+multipleBirth[x]				0..1		Является ли пациент частью многоплодной беременности								
+	multipleBirthBoolean				boolean		false							
+deceased[x]		Σ	  D											
+	deceasedDateTime		  D		dateTime	Указывает дату и время смерти								
+address		Σ	  D	0..*	Address									
+	use	?!SΣ	  D		code	"Type of address, home | temp
+Binding: https://terminology.medcore.uz/ValueSet/address-use-vs   "		 						
+	type	Σ	  D	0..1	code	"Определяет тип адреса
+Binding: https://terminology.medcore.uz/ValueSet/address-type-vs"								
+	line	ΣS	  D	0..1	string	Текстовая часть адреса, предоставляемая ГЦП. Название махалли, улицы,  номер дома, номер квартиры								
+	country	ΣS	  D	0..1	string	"Код страны, 
+https://terminology.medcore.uz/ValueSet/iso-3166-2-uz-vs"	Uzbekistan							
+	district	ΣS	  D	0..1	string	"Код области/района, 
+для кодов использовать https://terminology.medcore.uz/ValueSet/regions-vs"	Mirzo Ulugbek							
+	city	ΣS	  D	0..1	string	"Код города, 
+для кодов использовать https://terminology.medcore.uz/ValueSet/regions-vsl "	Tashkent							
+	state	ΣS	  D	0..1	string	Махалля указана в текстовом формате.	Beruniy Street							
+	period	Σ	  D	0..1	Period	Период времени, когда адрес использовался/используется								
+contact		С	  D	0..*	"BackboneElement	"	"	Контактная сторона (например, опекун, партнер, друг) пациента"								
+	relationship		  D	0..*	CodeableConcept	"Тип отношений (кем приходится контактное лицо)
+http://terminology.hl7.org/CodeSystem/v2-0131"								
+	name		  D	0..1	HumanName	ФИО контактного лица	Ulugbek Soataliev							
+	telecom		  D	0..*	ContactPoint	Контактные данные	99896525452							
+	address		  D	0..1	Address	Адрес контактного лица	Mirzo Ulugbek, Tashkent							
+	gender		  D	0..1	code	Пол контактного лица	Male							
+	organization		  D	0..1	Reference(Organization)	Организация, которую представляет контактное лицо	Uzinfocom							
+generalPractitioner			  D	0..*	Reference(PractitionerRole)	Врач (фельдшер или акушер), выдавший медицинское свидетельство о рождении								
+managingOrganization		Σ	  D	0..1	Reference(Organization)	Места рождения								
+link		Σ	  D	0..*	BackboneElement	Ссылка на ресурс Patient или RelatedPerson, который касается того же конкретного человека								
+	other	Σ	  D	1..1	Reference(Patient) 	Другой ресурс пациента или связанного с ним лица, на который ссылается ссылка								
+	type	Σ	  D	1..1	code	"Тип использования ресурса пациента
+Binding: http://hl7.org/fhir/link-type"								

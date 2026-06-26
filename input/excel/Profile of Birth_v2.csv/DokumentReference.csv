@@ -1,0 +1,29 @@
+Name		Flags		Card.	Type	Description & Constraints	Example	
+DocumentReference		D			DomainResource	Свидетельство о рождении Документ		
+identifier		Σ	D	0..*	Identifier	Идентификатор		
+ status		?!ΣS	D	1..1	code	текущий | замененный | введенный по ошибке	  current	
+						Binding: https://terminology.medcore.uz/ValueSet/document-reference-status		
+ docStatus		?!ΣS	D	0..1	code	зарегистрирован | частичный | предварительный | окончательный | измененный | исправленный | добавленный | отмененный | введенный с ошибкой | устаревший | неизвестный	final	
+						Binding: https://terminology.medcore.uz/ValueSet/composition-status		
+ subject		Σ	D	0..1	Reference(Patient)	Новорожденный ребенок	Jhon Smith	
+ context		ΣC	D	0..*	Reference(Encounter)	При encounter с новорожденным ребенком		
+ related			D	0..*	Reference(EncounterMother)	"Ссылки на Справка (ЛПУ ""форма 64"") о рождении"		???
+ practiceSetting		C	D	0..1	CodeableReference(PractitionerRole)	Дополнительные сведения о месте создания контента (например, клиническая специализация)	Акушер	
+ period		ΣS	D	0..1	Period	Время обслуживания, которое документируется	72 ч (Сформировано в течение 72 часов)	
+ date		ΣS	D	0..1	dateTime	Когда была создана эта ссылка на документ	 2/03/2025 18:00:26	
+ author		ΣS	D	0..*	Reference(Practitioner | Organization)	Кто и/или что является автором документа	ЗАГС	
+ attester			D	0..*	BackboneElement	Подтверждает точность документа.		
+	 mode		D	1..1	CodeableConcept	личный | профессиональный | юридический | официальный	personal	
+			D			Binding: https://terminology.medcore.uz/ValueSet/composition-attestation-mode		
+	 time		D	0..1	dateTime	Когда документ был заверен	 2/03/2025 18:00:26	
+	 party		D	0..1	Reference( Organization)	Кто заверил документ?	ЗАГС	
+custodian			D	0..1	Reference(Organization)	Организация, которая ведет документ	ЗАГС	
+ relatesTo		ΣS	D	0..*	BackboneElement	Справка из роддома прилагается.		
+	target	ΣS	D	1..1	Reference(DocumentReference)	Цель отношений	Свидетельство о рождении	
+description		SS	D	0..1	markdown	Описание, понятное человеку		
+profile		ΣS	D	0..*	BackboneElement	Правила профиля содержимого документа		
+	 value[x]	Σ	D	1..1		Код|uri|канонический		
+			D			Binding: https://terminology.hl7.org/5.1.0/ValueSet-v3-HL7FormatCodes.html		
+	 valueCoding		D		Coding		birth001.0001	
+	 valueUri		D		uri			
+	 valueCanonical		D		canonical()			

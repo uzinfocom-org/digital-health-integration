@@ -1,0 +1,8 @@
+code	UZ	RU	ENG
+death0003.00001	O'limga bevosita olib kelgan kasallik yoki holat	Болезнь или состояние, непосредственно приведшее к смерти	"Disease or condition that directly led to death
+"
+death0003.00002	Ko'rsatilgan sababga olib kelgan patologik holatlar	Патологические состояния, которые привели к возникновению указанной причины	"Pathological conditions that led to the specified cause
+"
+death0003.00003	O'limning asosiy sababi	Основная причина смерти	"Underlying cause of death
+"
+death0003.00004	O'limga olib kelgan, ammo unga olib kelgan kasallik yoki patologik holat bilan bog'liq bo'lmagan boshqa muhim holatlar	Прочие важные состояния, способствовавшие смерти, но не связанные с болезнью или патологическим состояние, приведшим к ней	Other important conditions that contributed to death but were not related to the disease or pathological condition that led to it

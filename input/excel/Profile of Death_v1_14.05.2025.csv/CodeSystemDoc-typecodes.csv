@@ -1,0 +1,8 @@
+code	uz 	eng 	ru	system 
+docty001	PDF-Dokument	PDF-Document	PDF-документ	https://terminology.medcore.uz/CodeSystem/doc-typecodes
+docty002	JPG 	JPG 	JPG-формат	https://terminology.medcore.uz/CodeSystem/doc-typecodes
+docty003	DOCX	DOCX	ДОКСХ	https://terminology.medcore.uz/CodeSystem/doc-typecodes
+docty004	XMLS	XMLS	XML-документы	https://terminology.medcore.uz/CodeSystem/doc-typecodes
+docty005	PNG	PNG	png	https://terminology.medcore.uz/CodeSystem/doc-typecodes
+docty006	HTML	HTML	HTTP	https://terminology.medcore.uz/CodeSystem/doc-typecodes
+docty007	BASE 64	BASE 64	БАЗА 64	https://terminology.medcore.uz/CodeSystem/doc-typecodes

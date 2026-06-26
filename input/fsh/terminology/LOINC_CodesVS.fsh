@@ -7,7 +7,9 @@ Description: "ValueSet for birth-related observations"
 * ^extension.url = $valueset-supplement
 * ^extension.valueCanonical = Canonical(LOINC_Birth_Supplement)
 
-* include codes from system $loinc
+* include $loinc#9272-6
+* include $loinc#9274-2
+* include $loinc#8339-4 
 
 
 

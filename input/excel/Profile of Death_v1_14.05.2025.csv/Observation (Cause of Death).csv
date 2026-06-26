@@ -1,0 +1,34 @@
+Name			Flags		Card.	Type	Description & Constraints		Example 	
+Observation (Cause of Death)			D		0..*	Observation	Измерения и простые утверждения			
+code			"	SΣC"		1..1	CodeableConcept	"Тип наблюдения (код / тип)
+Fixed: LOINC (79378-6 )"		79378-6	
+ status			S?!Σ	D	1..1	code	зарегистрированный | предварительный | окончательный | исправленный		final	
+							Binding: https://hl7.org/fhir/ValueSet/observation-status			
+ subject			SΣ	D	1..1	Reference(Patient)	Умерший		John Smith	
+ performer			SΣ	D	0..1	Reference (PractitionerRole)	Врач, выдающий справку			
+"effectiveDateTime	"			SΣC	D	0..1		Дата/время смерти			
+	valueDateTime		S	D		dateTime	 Когда причина была зарегистрирована		2015-02-07T13:28:17	
+"value[x]	"			"	SΣC"		0..1		"	Фактический результат"			
+	" valueCodeableConcept	"		S		1..1	CodeableConcept	"Произошло по причине
+Binding: https://terminology.medcore.uz/ValueSet/death-occurred-from-vs
+"	value[x]	death0003.00002	Occured Fromda boshqa kod berilganku , bu yerda Coause of death link turishi kerak !
+component			"	SΣC"	D	"	0..*"	BackboneElement	"Условия, приводящие к непосредственной причине. 
+"			
+	code		SΣC	D	1..1	CodeableConcept	"The circumstances of the death
+Binding: https://terminology.dhp.uz/ValueSet/death-occurred-from-vs"		44301001	
+component			"
+SΣC"		0..*	BlackboneElement	Зависит от смерти по клинической причине			
+	 code		"	SΣC	"		1..1	CodeableConcept	"Причина смерти
+htpps://terminlogy.dhp.uz/ValueSet/causeOfDeath
+"		Болезнь или состояние, непосредственно приведшее к смерти	
+	 value[x]		SΣ		0..1					
+		valueCodeableConcept				CodeableConcept	"ICD-10 coded disease
+Binding: https://hl7.org/fhir/ValueSet/icd-10"			
+component						BlackboneElement	В случае от несчастного случая, отравления или травмы   			
+	 code					CodeableConcept	"При несчастных случаях, не связанных с проихводством, вид травмы  
+Binding: https://terminology.dhp.uz/ValueSet/eventOfAccident"			
+	value[x]		SΣ		0..1					
+		valueDateTime				dateTime	Дата травмы (отравления)		42042	
+		valueCodeableConcept				CodeableConcept	"Вид травмы
+Binding: https://terminology.dhp.uz/ValueSet/evidience_type"		Школа	
+		valueString				string	Место и обстоятельства		Травма правой руки	

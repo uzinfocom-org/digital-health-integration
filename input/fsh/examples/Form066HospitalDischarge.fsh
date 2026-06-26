@@ -810,7 +810,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-01-07T10:00:00+05:00"
 * performer = Reference(urn:uuid:06600008-1111-2222-3333-444444444444)
-* valueCodeableConcept = https://terminology.dhp.uz/CodeSystem/tb-drug-sensitivity#Tub-004-001 "Drug-sensitive"
+* valueCodeableConcept = https://dhp.uz/fhir/integrations/CodeSystem/tb-drug-sensitivity-cs#Tub-004-001 "Drug-sensitive"
 
 
 

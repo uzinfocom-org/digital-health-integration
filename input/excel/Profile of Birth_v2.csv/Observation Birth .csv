@@ -1,0 +1,31 @@
+Name			Flags		Card.	Type	Description & Constraints	Example	
+Observation			D			DomainResource	Оценка состояния новорожденного 		
+identifier			Σ	D	0..*	Identifier	Идентификатор для наблюдения		
+status			?!Σ	D	1..1	code	зарегистрированный | образец в процессе обработки | предварительный | окончательный | измененный | исправленный | добавленный | аннулированный | введенный по ошибке | неизвестный | не может быть получен	final	
+							Fixed: final		
+category				D	0..*	CodeableConcept	Классификация видов наблюдения	exam	
+							Binding: https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs		
+code			ΣC	D	1..1	CodeableConcept	Тип наблюдения (код/тип)	8302-2	
+							Binding: http://loinc.org  (CodeSystemLoinc)		
+subject			Σ	D	0..1	Reference(Patient )	о пациенте (ребенок)	Jhon Smith	
+effective[x]			Σ	D	0..1		Клинически значимое время/период наблюдения		
+	 effectiveDateTime			D		dateTime		28/02/20025 18:00:25	
+performer				D	0..*	"Reference(Practitioner)	"	Врач или специалист, измеривший результат	Rashidhodjaeva Luiza Dzhasurovna	
+value[x]							В этот раздел следует добавить вес и рост младенца.		
+	valueQuantity				0..1	Quantity		Рост	
+		value			1..1	decimal	Числовое значение (с неявной точностью)	49	
+		unit 			1..1	string	Представление единиц	см	
+		system			1..1	uri	Система, определяющая форму кодированной единицы		
+		code			1..1	code	"Фиксированное значение: http://unitsofmeasure.org 
+
+Кодированные ответы из общих единиц UCUM для набора знач
+ений жизненно важных показателей.
+Связывание: единицы длины тела (обязательно): см | [in_i]"	{sm}	
+	valueInteger				0..1	integer	"Число полных недель беременности:
+Какая беременность по счету:
+Который ребенок у матери по счету:"	40	
+component 			ΣC	D	0..*		Этот раздел должен быть критериями жизни.		
+	code 		ΣC	D	1..1	CodableConcept	"
+Binding: https://terminology.dhp.uz/ValueSet/Observation-lifecrit"		
+	value [x]		ΣS		0..1		Фактический результат по компонентам		
+	valueBoolean 				0..1		Тип  жизненные критерии 	Да/Нет	

@@ -196,5 +196,3 @@ Description: "Composition profile for Form 066-1."
 * section[responsiblePersons].entry 1..*
 * section[responsiblePersons].entry only Reference(UZCorePractitioner or PractitionerRole)
 * section[responsiblePersons].entry ^short = "9.1–9.3 Responsible healthcare professionals"
-
-

@@ -1,0 +1,26 @@
+Name	Flags		Card.	Type	Example 	Description & Constraints	
+DocumentReference	D			DomainResource		Death certificate certified by the marriage registry	
+"identifier	"			0..*	"Identifier	"	№70	Certificate Registration Number	
+status	"S	?!Σ	"	D	"1..1	"	"	code"	current	"Status of the document (e.g., current, entered-in-error)
+Binding: http://hl7.org/fhir/ValueSet/document-reference-status"	
+"docStatus	"	"?!ΣS
+"		0..1	"code	"	final	"зарегистрирован | частичный | предварительный | окончательный | измененный | исправленный | добавленный | отмененный | введенный с ошибкой | устаревший | неизвестный
+Binding: https://terminology.medcore.uz/ValueSet/composition-status"	
+type	SΣ	D		CodeableConcept	mserv.0001.00008	"Kind of document (LOINC if possible)
+Binding:  https://terminology.medcore.uz/ValueSet/type-of-service || LOICN code 64297-5 ""Death certificate"""	
+"category	"	S		0..*	CodeableConcept	docty001.0001 (PDF)	"Category: administrative / legal document
+Binding: https://terminology.medcore.uz/CodeSystem/doc-typecodes"	
+date	SΣ	D		datetime 	2015-02-07T13:28:17	Date 	
+title	SΣ	D	1..1	string	NOTICE OF REGISTRATION OF DEATH ACCOUNT	"""Medical Death Certificate"""	
+subject	SΣ	D	1..1	Reference(Patient)	John Smith 	Deceased individual	
+author	SΣ	D	1..*	Reference(PractitionerRole)	11935004	"The individual, or service participating in the encounter
+url: http://hl7.org/fhir/ValueSet/practitioner-role"	
+custodian	S		"0..1	"	"Reference(Organization)	"	The marriage registry	"Responsible organization
+Fixed: The marriage registry"	
+"content.attachment	"			1..1	Attachment		PDF file of the certificate, encoded (URL or base64)	
+content.type	S		"0..1	"	"Coding	"	docty001.0001 (PDF)	"Format (e.g., PDF/A standard)
+Binding: https://terminology.medcore.uz/CodeSystem/doc-typecodes"	
+"context.encounter	"	S		"0..1	"	Reference(Encounter)		Related clinical encounter (if any)	
+"context.period	"	S		0..1	Period		Time period the document covers (e.g., date of death)	
+"description	"			0..1	String		"Short description, e.g. ""Medical Death Certificate""
+"	

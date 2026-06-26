@@ -1,0 +1,18 @@
+Name			Flags	Card.	Type	Description & Constraints	Example
+ Observation APGAR			D		DomainResource	Оценка состояния новорожденного 	
+ identifier			Σ	0..*	Identifier	Идентификатор для наблюдения	
+ status			?!Σ	1..1	code	"«окончательный» (потому что результаты по шкале Апгар уже закончились)
+Binding: https://terminology.dhp.uz/fhir/core/ValueSet/observation-status-vs
+Fixed: preliminary and final"	final
+category			S	1..*	CodeableConcept	"Категория: обследование или показатели жизнедеятельности
+Binding: https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs"	vital-signs
+ code			SΣC	1..1	CodeableConcept	Тип наблюдения (код/тип)	9270-0
+						Binding: http://loinc.org  (CodeSystemLoinc (Fixed: 9272-6 and 9274-2))	
+ subject			SΣ	0..1	Reference(Patient )	о пациенте (ребенок)	Jhon Smith
+performer			SΣ	"0..*	"	Reference(Practitioner)	Специалист, который проверял по шкале Апгар	Rashidhodjaeva Luiza Dzhasurovna
+value[x]			SΣC	0..1		Оценка по шкале Апгар: 1 - 10результат	
+	valueQuantity		ΣS	0..1	Quantity		
+		value	Σ	0..1	decimal	Числовое значение (с неявной точностью)	3
+		unit 	ΣT	0..1	string	Представление единиц	score
+		system	ΣC	0..1	uri	Система, определяющая форму кодированной единицы	http://unitsofmeasure.org
+		code	ΣC	0..1	code	http://unitsofmeasure.org	{score}

@@ -160,4 +160,19 @@ Usage: #definition
 * jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://dhp.uz/fhir/core/sid/pro/uz/screening"
+//my naming systems
+Instance: newborn-id-system
+InstanceOf: NamingSystem
+Title: "Newborn ID System"
+Description: "NamingSystem for newborn identifiers in Uzbekistan"
+Usage: #definition
+* name = "NewbornIdSystem"
+* status = #active
+* kind = #identifier
+* date = "2026-04-07"
+* publisher = "Uzinfocom"
+* description = "Identifier system for newborn IDs in Uzbekistan"
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://dhp.uz/fhir/sid/newborn-id"
 * uniqueId[0].preferred = true

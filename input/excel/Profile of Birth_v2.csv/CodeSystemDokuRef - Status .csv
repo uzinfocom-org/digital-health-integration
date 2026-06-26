@@ -1,0 +1,4 @@
+Code	ENG	РУ	UZ	System	
+  current	Current	Текущий	Hozirgi	https://terminology.medcore.uz/CodeSystem/document-reference-status	https://www.hl7.org/fhir/R5/valueset-document-reference-status.html
+  superseded	Superseded	Заменен	O'zgartirildi	https://terminology.medcore.uz/CodeSystem/document-reference-status	
+  entered-in-error	Entered in Error	Введено по ошибке	Xato kiritilgan	https://terminology.medcore.uz/CodeSystem/document-reference-status	

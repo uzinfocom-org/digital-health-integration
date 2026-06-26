@@ -1,0 +1,12 @@
+Level	Code	ENG	РУ	UZ	System	
+1	registered	Registered	Зарегистрировано	Roʻyxatdan oʻtgan	https://terminology.dhp.uz/CodeSystem/composition-status	http://hl7.org/fhir/composition-status
+1	partial	Partial	Частично	Qisman	https://terminology.dhp.uz/CodeSystem/composition-status	http://hl7.org/fhir/ValueSet/composition-status
+2	preliminary	Preliminary	Предварительно	Dastlabki	https://terminology.dhp.uz/CodeSystem/composition-status	
+1	final	Final	Окончательно	Ohirigi	https://terminology.dhp.uz/CodeSystem/composition-status	
+1	amended	Amended	Изменено	Oʻzgartirilgan	https://terminology.dhp.uz/CodeSystem/composition-status	
+2	corrected	Corrected	Исправлено	Tuzatilgan	https://terminology.dhp.uz/CodeSystem/composition-status	
+2	appended	Appended	Добавлено	Qo''shimcha kiritilgan	https://terminology.dhp.uz/CodeSystem/composition-status	
+1	cancelled	Cancelled	Отменено	Bekor qilingan	https://terminology.dhp.uz/CodeSystem/composition-status	
+1	entered-in-error	Entered in Error	Введено по ошибке	Xatolik bilan kiritilgan	https://terminology.dhp.uz/CodeSystem/composition-status	
+1	deprecated	Deprecated	Устаревшее	Eskirgan	https://terminology.dhp.uz/CodeSystem/composition-status	
+1	unknown	Unknown	Неизвестно	Noma'lum	https://terminology.dhp.uz/CodeSystem/composition-status	

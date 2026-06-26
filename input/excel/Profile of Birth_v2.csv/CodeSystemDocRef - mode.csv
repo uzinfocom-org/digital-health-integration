@@ -1,0 +1,5 @@
+Code	Display			System	
+personal	Personal	Личный	Shaxsiy	https://terminology.medcore.uz/CodeSystem/composition-attestation-mode	http://hl7.org/fhir/composition-attestation-mode 
+professional	Professional	Профессиональный	Professional	https://terminology.medcore.uz/CodeSystem/composition-attestation-mode	http://hl7.org/fhir/ValueSet/composition-attestation-mode
+legal	Legal	Юридический	Huquqiy	https://terminology.medcore.uz/CodeSystem/composition-attestation-mode	
+official	Official	Официальный	Rasmiy	https://terminology.medcore.uz/CodeSystem/composition-attestation-mode	

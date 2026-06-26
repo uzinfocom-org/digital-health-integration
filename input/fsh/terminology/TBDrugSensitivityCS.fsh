@@ -1,8 +1,8 @@
 CodeSystem: TBDrugSensitivityCS
-Id: tb-drug-sensitivity
+Id: tb-drug-sensitivity-cs
 Title: "Tuberculosis Drug Susceptibility Code System"
 Description: "A code system representing drug susceptibility and resistance categories in tuberculosis (uz/ru/en)"
-* insert OriginalCodeSystemDraft(tb-drug-sensitivity)
+* insert OriginalCodeSystemDraft(tb-drug-sensitivity-cs)
 
 * #Tub-004-001 "Sezgir"
   * ^designation[0].language = #ru

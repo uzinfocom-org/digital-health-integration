@@ -1,0 +1,3 @@
+Code	Display	Отображаемое название	Ko‘rsatiladigan matn	Definition	
+vital-signs	Vital Signs	Жизненно важные показатели	Hayotiy belgilar	Clinical observations measure the body's basic functions such as blood pressure, heart rate, respiratory rate, height, weight, body mass index, head circumference, pulse oximetry, temperature, and body surface area.	https://terminology.medcore.uz/CodeSystem/observation-category
+survey	Survey	Анкетирование	So‘rovnoma	Assessment tool/survey instrument observations (e.g., Apgar Scores, Montreal Cognitive Assessment (MoCA)).	https://terminology.medcore.uz/CodeSystem/observation-category

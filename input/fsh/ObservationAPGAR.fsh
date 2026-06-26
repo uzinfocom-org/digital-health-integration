@@ -1,5 +1,5 @@
 Profile: ObservationOfAPGAR
-Parent: Observation
+Parent: UZCoreObservation
 Id: observation-of-apgar
 Title: "Observation APGAR of Birth"
 Description: "Assessment of the newborn's condition"
@@ -11,20 +11,20 @@ Description: "Assessment of the newborn's condition"
 * identifier ^short = "Identifier for observation"
 
 * status MS
-* status ^short = "“final” (because the Apgar score results are already complete)"
-* status from https://terminology.dhp.uz/fhir/core/ValueSet/observation-status-vs (required)
+* status = #final
+* status ^short = "Final APGAR assessment result"
 
 * category MS
 * category ^short = "Category: examination or vital signs"
-* category from https://terminology.dhp.uz/fhir/core/ValueSet/observation-category-vs (required)
+
 
 * code MS
 * code ^short = "Observation type (code/type)"
 * code from LOINCBirthVS (extensible)
 
 * subject MS
-* subject ^short = "About the patient (child)"
-* subject only Reference(PatientOfBirth)
+* subject ^short = "The child/patient the Observation is about"
+* subject only Reference(NewbornPatient)
 
 * performer MS
 * performer ^short = "The specialist who checked the Apgar score"
@@ -53,6 +53,28 @@ Description: "Assessment of the newborn's condition"
 
 Invariant: apgar-range
 Description: "Apgar score must be between 1 and 10"
-//changed from value to $this
-Expression: "$this >= 1 and $this <= 10"
+Expression: "$this >= 0 and $this <= 10"
 Severity: #error
+
+
+
+Instance: observation-of-apgar-example
+InstanceOf: ObservationOfAPGAR
+Usage: #example
+Title: "Observation APGAR Example"
+Description: "Example APGAR observation for a newborn"
+
+* status = #final
+
+* category = $observation-category#vital-signs "Vital Signs"
+
+* code = http://loinc.org#9274-2 "5 minute Apgar Score"
+
+* subject = Reference(newborn-patient-example)
+* effectiveDateTime = "2026-04-01T10:08:00+05:00"
+
+* performer[0] = Reference(practitioner-003)
+
+* valueQuantity.value = 8
+* valueQuantity.unit = "score"
+* valueQuantity.system = "http://unitsofmeasure.org"

@@ -1,0 +1,30 @@
+Name				Flags		Card.	Type	Description & Constraints	Example
+ Encounter - Birth 				D			DomainResource	Взаимодействие, в ходе которого младенцу предоставляются услуги	
+ subject				ΣS	D	0..1	Reference(Patient - Child Vital Records)	Младенец, связанный с этой встречей	
+serviceProvider					D	0..1	Reference(Organization)	Организация (учреждение), ответственная за этот Encounter	
+part of					D	0..1	Reference(Encounter - Maternity)	Ссылка на мать(Encounter)	
+participant				ΣC	D	0..*	BackboneElement		
+	participatant:attendant				D	0..*	BackboneElement		
+		slices for type 			D	0..*	CodeableConcept		
+			type: requiredType		D	1..1	CodeableConcept	Роль участника в столкновении	
+			coding 		D	1..*	Coding	Период времени во время столкновения, в котором участник участвовал	
+			system 		D	1..1	uri	"Идентичность терминологической системы
+Fixed Value: http://loinc.org"	
+			code		D	1..1	code	"Символ в синтаксисе, определенном системой
+Fixed Value: 87286-1 (Birth attendant)"	
+	actor 				D	1..1	Reference( Practitioner -Birth attendant)	Врач (фельдшер или акушер), выдавший медицинское свидетельство о рождении	
+	participatant:certifier				D	0..*	BackboneElement		
+	slices for type 				D	1..*	CodeableConcept		
+		type: requiredType			D	1..1	CodeableConcept	Роль заверителя	
+		coding 			D	1..*	Coding	Период времени во время столкновения, в котором участник участвовал	
+			system 		D	1..1	uri	"Идентичность терминологической системы
+Fixed Value: http://loinc.org"	
+			code		D	1..1	code	"Символ в синтаксисе, определенном системой
+Fixed Value: 87287-9 (Birth certifier)"	
+	period				D				
+		start			D	0..1	dateTime	Дата и время подтверждения	
+	actor 				D	1..1	Reference( Practitioner -Birth Certifier)	Заверитель (глав. Врач)	
+diagnosis	condition			Σ	D	0..*	CodeableReference(Condition)	"Наблюдаемые врожденные проблемы (например, желтуха, врожденные аномалии)
+Диагностические состояния при рождении (например, низкий вес при рождении, респираторный дистресс)
+Клинические оценки, связанные с рождением (например, признаки инфекции, аномальные результаты по шкале Апгар)"	
+ location					D	0..*	Reference(Location) || Codeable concept 	Физическая форма местоположения	

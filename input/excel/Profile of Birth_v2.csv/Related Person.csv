@@ -1,0 +1,71 @@
+Name		Flags		Card.	Type	Description & Constraints	Example									
+ RelatedPerson		D			DomainResource	Это относится к человеку, который связан с новорожденным и несет ответственность за его уход.										
+ identifier: passportInternational		Σ	D	0..*	Identifier	Человеческий идентификатор для этого человека										
+	use	S	D	0..1	Code	"usual | official | temp | secondary | old (If known)
+Binding: https://terminology.dhp.uz/fhir/core/ValueSet/identifier-use-vs"										
+	 type	SΣ	D	1..*	CodeableConcept	"Код типа идентификатора, удостоверяющего личность
+Binding: https://terminology.medcore.uz/ValueSet/IdentifierType (required)"	BCT									
+	id			0..1	string	Уникальный идентификатор для межэлементных ссылок										
+	extension			0..*	Extension	"Дополнительный контент, определяемый реализациями
+"										
+	coding 			1..*	Coding 	"Code defined by a terminology system
+Фиксированное значение: (комплексный)"										
+	id 			0..1	string	Unique id for inter-element referencing										
+	extension			0..*	Extension	Additional content defined by implementations										
+	system			1..1	uri 	"Identity of the terminology system
+Фиксированное значение: http://terminology.hl7.org/CodeSystem/v2-0203"										
+	version			0..1	string	Version of the system - if relevant										
+	code			1..1	code 	"Symbol in syntax defined by the system
+Фиксированное значение: NI"										
+	display			1..1	string	"Representation defined by the system
+Фиксированное значение: National unique individual identifier"										
+	userSelected			0..1	boolean 	"If this coding was chosen directly by the user
+"										
+	text			0..1	string	"Представление концепции в виде простого текста
+"										
+	system	SΣ			uri 	"The namespace for the identifier value
+Требуемый шаблон: https://dpm.uz/identifier/national-unique-id"										
+	value	SΣ			string	"Уникальная ценность
+Пример General: 1234567891011"										
+		?!Σ	D	0..1	boolean	Используется ли активно запись этого связанного лица	true									
+ patient		Σ	D	1..1	Reference(Patient)	Ребенок, с которым этот человек связан	Jhon Duran									
+ relationship		Σ	D	0..*	CodeableConcept	"Личные отношения родственного лица с пациентом.
+
+Binding: https://dhp.uz/fhir/core/ru/ValueSet-relationship-type-vs.html "	"ближайший родственник	
+"									
+ name		Σ	D	0..*	HumanName											
+	use	Σ	D	0..1	code	"Определяет вид имени пациента
+Binding: http://hl7.org/fhir/name-use (required)"										
+	text	ΣS	D	0..1	string	Текстовое представление полных имен матери или отца	Sophia Lills									
+	family	ΣS	D	0..1	string	Фамилия	Lills									
+	given	ΣS	D	0..1	string	Имя	Sophia									
+	suffix	ΣS	D	0..1	string	Отчество										
+ telecom		Σ	D	0..*	ContactPoint	Контактные данные человека										
+	system	Σ	D	0..1	code	"Определяет способ связи (телефон, факс, смс…)
+Binding: http://hl7.org/fhir/contact-point-system (required)"	phone									
+	value	ΣC	D	0..1	string		998935874534									
+	use	ΣS	D	0..1	code	"Определяет вид связи (домашний, рабочий, мобильный…)
+Binding: http://hl7.org/fhir/contact-point-use (required)"	mobile									
+	rank	ΣS	D	0..1	positiveInt	Предпочтительный порядок использования	1									
+	period	ΣS	D	0..1	Period	Период использования										
+ gender		Σ	D	0..1	code	male | female | other | unknown	male									
+			D			"Binding: AdministrativeGender (Required) 
+(https://hl7.org/fhir/R5/valueset-administrative-gender.html )"										
+ birthDate		Σ	D	0..1	date	Дата рождения лица, связанного с ребенком	08-25-87									
+ address		Σ	D	0..*	Address	Адрес, по которому можно связаться с лицом, ответственным за ребенка, или посетить его										
+	type	Σ	D	0..1	code	"Определяет тип адреса
+Binding: https://terminology.medcore.uz/ValueSet/AddressType (required)"	 physical									
+	line	Σ	D	0..1	string	Текстовая часть адреса, предоставляемая ГЦП. Название махалли, улицы,  номер дома, номер квартиры	36									
+	country	Σ	D	0..1	string	"Код страны, 
+для кодов использовать https://terminology.medcore.uz/ValueSet/countries"	Uzbekistan									
+	district	Σ	D	0..1	string	"Код области/района, 
+для кодов использовать https://terminology.medcore.uz/ValueSet/region_ district"	Chust									
+	city	Σ	D	0..1	string	"Код города, 
+для кодов использовать https://terminology.medcore.uz/ValueSet/city"	Chust city									
+	state	Σ	D	0..1	string	"Код махалли, 
+для кодов использовать https://terminology.medcore.uz/ValueSet/mahalla"	Chust street									
+	period	Σ	D	0..1	Period	Период времени, когда адрес использовался/используется										
+education(extension)				0..*		Образование пациента										
+	url		D	0..1		Binding: https://terminology.dhp.uz/fhir/core/ValueSet/education-vs										
+	value[x]	ΣS	D	0..*	CodeableConcept	"Код образования пациента
+Binding: https://terminology.dhp.uz/fhir/core/ValueSet/education-vs "	regis0005.00004									

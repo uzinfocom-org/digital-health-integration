@@ -1,0 +1,54 @@
+Name			Flags		Card.	Type 	Description & Constraints	Example 
+Patient - Death 			D					
+Identifier			SΣ	D	0..*	Identifier 	An identifier for this patient	
+identifier: All slices 							Conten/Rules  for all slices 	
+	→ use			D	0..1	code	"usual | official | temp | secondary
+Binding: https://terminology.dhp.uz/ValueSet/identifier-use-vs     "	usial 
+	→ type			D	0..1	CodeableConcept	"Types of possible identifiers
+Binding: https://terminology.dhp.uz/ValueSet/identifier-type-vs"	
+identifier: national-id 			SΣ	D			This is a Personal Identification number of the person in Uzbekistan 	
+use			?!Σ	D	0..1	code	"usual | official | temp | secondary
+Binding: https://terminology.dhp.uz/ValueSet/identifier-use-vs     "	official
+type			SΣ	D	1..1	CodeableConcept	"Types of possible identifiers 
+Binding:https://terminology.dhp.uz/fhir/core/ValueSet/identifier-type-vs(required)"	NI
+	coding 			D	1..*	Coding	"Code defined by a terminology system
+Fixed Value: (complex)"	
+		→ system		D	1..1	uri	"URI for ID system, e.g.,
+Fixed Value: ""https://terminology.hl7.org/CodeSystem/v2-0203"""	
+		→ code		D	1..1	code	"Symbol in syntax defined by the system
+Fixed Value: NI "	NI
+		→ display		D	1..1	Reference (organization)	"Representation defined by the system
+Fixed Value: National unique individual identifier"	Personalization Agency under the Ministry of Justice of the Republic of Uzbekistan
+	system		SΣ	D	1..1	uri	Required Pattern: https://dpm.uz/ (ГЦП)	https://dpm.uz/
+	value		SΣ	D	1..1	String		30211975915088
+active			?!SΣ	D	0..1	Boolean	Indicates if the patient record is active (true) or inactive (false)	false
+name			SΣ	D	0..*	HumanName	Full legal name (can include multiple scripts if needed)	
+	→ use 		?!SΣ	D	0..1	Code	"usual | official | temp | secondary
+Binding: https://terminology.dhp.uz/ValueSet/identifier-use-vs     "	official
+	→ text		SΣ	D	0..1	String	Text representation of the full name	John Smith
+	→ family		SΣ	D	0..1	String	Family name (Surname)	Smith 
+	→ given		SΣ	D	0..*	String	First name	John
+	→ suffix		SΣ	D	0..*	String	Parts that come after the same	
+	→ period		SΣ	D	0..1	Period	Time period when name is /was in use	
+gender				D	0..1	Code	"male | female | other | unknown
+Binding: https://hl7.org/fhir/ValueSet/administrative-gender"	other
+	extension: gender-other		S	D	0..1	Coding 	"Differentiation of the administrative gender ""other""
+URL: http://medcore.uz/StructureDefinition/gender-other 
+Binding: https://terminology.dhp.uz/ValueSet/gender-other-vs"	 regis0007.00005
+birthDate			S	D	0..1	date	Date of birth	08-23-05
+	Slices for deceased [x]							
+		deceased [x]:deceasedDateTime	SΣ	D	0..1	dateTime	Date and time of death	2015-02-07T13:28:17
+address			SΣ	D	0..*	Address	Place of residence before death	
+	→ use 		?!SΣ	D	0..1	code	"Type of address, home | temp
+Binding: https://terminology.dhp.uz/ValueSet/address-use-vs"	temp
+	→ type		*	D	0..1	code	"postal | physical | both
+Binding: https://terminology.dhp.uz/ValueSet/address-type-vs"	physical
+	 → line		SΣ	D	0..*	String	Street name, number or direction	2 квартал 13 дом 12 квартира
+	→ city		SΣ	D	0..1	String 	"Name of city, town
+Binding: https://terminology.dhp.uz/ValueSet/regions-vs"	860
+	→ district		SΣ	D	0..1	String 	"Name of district
+Binding: https://terminology.dhp.uz/ValueSet/regions-vs"	1726280
+	→ country		SΣ	D	0..1	String	"Country
+Binding: https://terminology.dhp.uz/Valueset/iso-3166-2-uz-vs"	1726
+	→ period		SΣ	D	0..1	Period	Time period when address was/is in use	10-16-21
+managingOrganization				D	0..1	Reference(Organization)	Organization managing the record (e.g., hospital or clinic)	

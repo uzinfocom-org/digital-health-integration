@@ -1,0 +1,18 @@
+Name		Flags		Card.	Type	Description & Constraints	Example
+Encounter - Maternity		D			DomainResource	Взаимодействие, при котором услуги предоставляются матери младенца	
+identifier		Σ	D	0..*	Identifier	Идентификатор(ы), по которым известна эта encounter	
+serviceType		ΣS		0..*	CodeableReference(HealthcareService)	Конкретный тип услуги	263
+						"Привязка: 
+http://terminology.hl7.org/CodeSystem/service-type Code: 263,257"	
+class			D	1..1	Coding	"стационар, неотложная помощь и т. д.
+http://terminology.hl7.org/ValueSet/encounter-class"	EMER
+subject		ΣS	D	0..1	Reference(Patient )	Мать ребенка, связанная с этой встречей	Emily Smith
+serviceProvider			D	0..1	Reference(Organization)	Организация (учреждение), ответственная за этот Encounter	Городской родильный комплекс №3 - Ташкент
+participant		ΣC	D	0..*	BackboneElement	Врач (фельдшер или акушер), выдавший медицинское свидетельство о рождении	
+	 type	ΣC	D	0..*	CodeableReference (PractitionerRole)	Роль участника в столкновении	Акушер
+	 period		D	0..1	Period	Период времени во время столкновения, в котором участник участвовал	
+	 actor	ΣC	D	0..1	Reference( Practitioner)	Личность, участвующая во встрече	Рашидходжаева Луиза Джасуровна
+actualPeriod			D	0..1	Period	Фактическое время начала и окончания встречи	12ч
+plannedStartDate			D	0..1	dateTime	Планируемая дата/время начала (или дата поступления) встречи	08:00
+plannedEndDate			D	0..1	dateTime	Планируемая дата/время окончания (или дата выписки) встречи	20:00
+class			D	0..*	Reference(Location)	Место, куда мать была доставлена ​​для родов	Россия г. Томск родильный дом №2 

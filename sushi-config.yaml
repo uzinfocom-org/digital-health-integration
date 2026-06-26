@@ -103,6 +103,8 @@ pages:
     title: Form 066 1 Mapping
   cervical-breast-cancer-screening.md:
     title: Cervical and Breast Cancer Screening
+  birth-death-resource-mapping.md:
+    title: Birth and Death Registration
   changelog.md:
     title: Changelog
   translationinfo.md:

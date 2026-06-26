@@ -4,15 +4,7 @@ Title: "LOINC Birth Supplement (UZ/RU)"
 Description: "Uzbek and Russian designations for selected LOINC birth-related codes"
 
 * insert SupplementCodeSystemDraft(loinc-birth-supplement, http://loinc.org, 2.77)
-
-
-
-
-* #9272-6 "1 minute Apgar Score"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Оценка по шкале Апгар на 1-й минуте"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "1-daqiqadagi Apgar shkalasi bahosi"  
+ 
 
 * #9274-2 "5 minute Apgar Score"
   * ^designation[0].language = #ru
