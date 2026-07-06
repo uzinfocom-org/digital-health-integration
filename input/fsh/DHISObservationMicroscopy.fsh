@@ -25,7 +25,6 @@ Description: "Profile for recording sputum smear microscopy results, including a
 * method = $sct#278289002 "Microscopy technique (qualifier value)"
 
 * specimen 0..1 MS
-* specimen only Reference(DHISSpecimen)
 * specimen ^short = "Specimen used for this observation + Rule: If Observation.specimen is a reference to Group, the group can only have specimens"
 
 * component 0..* MS
