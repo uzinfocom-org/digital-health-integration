@@ -313,6 +313,7 @@ Usage: #inline
 * status = #completed
 * identifier[0].value = "REG-066-2026-0001"
 * class = $v3-ActCode#IMP "inpatient encounter"
+* type = $encounter-type-cs#mserv-0001-00004 // Treatment
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * actualPeriod.start = "2026-01-05T10:00:00+05:00"
 * actualPeriod.end = "2026-01-15T14:00:00+05:00"

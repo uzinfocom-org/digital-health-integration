@@ -1,5 +1,5 @@
 Profile: DHISSpecimen
-Parent: Specimen
+Parent: UZCoreSpecimen
 Id: dhis-specimen
 Title: "DHIS Specimen Profile"
 Description: "Profile for a biological specimen collected for tuberculosis laboratory testing in the DHIS information system."
@@ -21,7 +21,7 @@ Description: "Profile for a biological specimen collected for tuberculosis labor
 * receivedTime only dateTime
 
 * parent 0..* MS
-* parent only Reference(Specimen)
+* parent only Reference(DHISSpecimen)
 
 * feature 0..1 MS
 * feature.type from SpecimenFeatureTypeVS (required)

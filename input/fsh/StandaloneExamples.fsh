@@ -68,6 +68,7 @@ Description: "Example encounter representing a tuberculosis patient's inpatient 
 * status = #completed
 
 * class = $v3-ActCode#IMP "inpatient encounter"
+* type = $encounter-type-cs#mserv-0001-00004 // Treatment
 
 * subject = Reference(example-patient-john)
 
