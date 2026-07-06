@@ -281,7 +281,7 @@ Usage: #inline
 * name.given[0] = "Alisher"
 * name.given[+] = "Valiyevich"
 * birthDate = "1990-04-12"
-* extension[nationality].extension[code].valueCodeableConcept = https://terminology.dhp.uz/fhir/core/CodeSystem/nationality-cs#23 "Azerbaijanis"
+* extension[nationality].extension[code].valueCodeableConcept = https://terminology.dhp.uz/fhir/core/CodeSystem/nationality-cs#704 "AZERBAIJANIAN"
 * gender = #male
 * telecom[0].system = #phone
 * telecom[0].value = "+998901234567"

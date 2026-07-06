@@ -46,4 +46,4 @@ Description: "Example patient Lola Oripova for the cervical and breast cancer sc
 * address[0].state = "Tashkent City"
 
 // ==================== Extensions ====================
-* extension[nationality].extension[code].valueCodeableConcept = $nationality-cs#161
+* extension[nationality].extension[code].valueCodeableConcept = $nationality-cs#44

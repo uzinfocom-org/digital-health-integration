@@ -312,7 +312,7 @@ Usage: #inline
 * admission.dischargeDisposition = $discharge-disposition-home-cs#mserv-0004-00001 "Hospitalized"
 * subjectStatus = $encounter-local-subject-status-cs#loc-cs-001 "Recovered"
 * length = 10 'd' "days"
-* location[0].form = $location-form#101 "Therapy"
+* location[0].form = $location-form#101.0 "Therapy"
 * location[0].period.start = "2026-01-05T10:00:00+05:00"
 * location[0].period.end = "2026-01-15T14:00:00+05:00"
 * location[0].location = Reference(urn:uuid:06600023-1111-2222-3333-444444444444)
