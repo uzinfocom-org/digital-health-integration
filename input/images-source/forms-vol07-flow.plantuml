@@ -8,7 +8,7 @@ participant "HIV lab\n(vol 7)" as LAB
 participant "Dispensary\n(vol 7)" as DISP
 
 C -> OFF : presents for testing
-OFF -> OFF : 176-179 testing registration\n(anonymous or identified)
+OFF -> OFF : 176-178 testing registration (anonymous\nor identified), 179 negative-status certificate
 OFF -> LAB : sample
 LAB -> LAB : 186 PCR DNA, 187 CD4 immunology,\n188-193 sample registers
 alt positive

@@ -25,7 +25,7 @@ alt needs intensive care
   WARD -> WARD : 006 ICU dynamic observation
 end
 
-WARD -> WARD : 007 bed-movement ledger updated
+WARD -> WARD : 007 bed-movement sheet updated
 alt discharged
   WARD -> WARD : 027 medical-record extract\n066 discharge statistical card
 else died

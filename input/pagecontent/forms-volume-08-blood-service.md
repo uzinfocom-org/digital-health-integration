@@ -57,6 +57,8 @@ The sequence below follows that journey from donor to recipient:
 | 214 | Products handed to expedition | Supply |
 | 215 | Plasma receipts to the products department | Supply |
 | 216 | HIV-seropositive donor register | Register |
-| 218 | Syphilis, HCV, HBsAg and HIV testing | Report |
+| 218 | Syphilis, NSU (HCV), HBsAg and HIV testing | Report |
 | 219 | Donor clinical and biochemical analyses | Report |
 | 221 | Register of blood group/Rh for patients referred from other facilities | Register |
+
+The Type column groups forms by what they track along the production chain. In the source, nearly all of these are registration journals (*qayd etish* / *jurnali*); Product, Supply and Report describe the subject of the register, not a different kind of document.

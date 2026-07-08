@@ -10,10 +10,10 @@ LE -> FB : case referred (body or living person)
 alt deceased
   FB -> FB : 233 thanatology registration\n229 examination report
 else living person
-  FB -> FB : 234 outpatient registration\n242 narcological examination
+  FB -> FB : 234 outpatient registration\n229 examination report
 end
-FB -> LAB : 231 referral to forensic lab
-LAB -> LAB : 232 histology, 236/237 biology,\n241 chemistry, 245 criminalistics
+FB -> LAB : 231 lab referral, 232 histology referral
+LAB -> LAB : 238 histology, 236/237 biology,\n241/242 chemistry, 245 criminalistics
 LAB -> FB : results
 FB -> LE : 230 expert conclusion
 

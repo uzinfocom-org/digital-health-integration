@@ -34,7 +34,7 @@ V1 --> V3 : discharge statistics (066)
 V2 --> V7 : HIV dispensary (175)
 V1 --> V9 : death -> autopsy
 V1 --> V10 : death -> forensic
-V2 --> V11 : notifiable disease (089-091)
+V2 --> V11 : rapid notification (058, vol 3)
 V5 --> V1 : emergency admission
 
 note as N

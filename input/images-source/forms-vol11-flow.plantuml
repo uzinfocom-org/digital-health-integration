@@ -6,7 +6,7 @@ participant "Clinician\n(vol 2)" as DR
 participant "SES centre\n(vol 11)" as SES
 participant "Microbiology\nlab (vol 11)" as LAB
 
-DR -> SES : 089/090/091 notifiable diagnosis (vol 2)\n060 infectious-disease register, 264 emergency notification
+DR -> SES : 058 rapid notification (vol 3)\n060 infectious-disease register, 264 emergency notification
 SES -> SES : 262 epidemiological focus investigation card
 SES -> LAB : samples from cases & environment
 LAB -> SES : 350/365-378 microbiology results
@@ -18,8 +18,8 @@ alt sanitary violation found
 end
 
 note over SES, LAB
-  Cross-links to volume 2 (notifications) and the
-  laboratory pattern of volume 3. The registers
-  themselves are queries, not clinical documents.
+  The rapid-notification form (058) is filed under volume 3;
+  the labs follow the analysis pattern of volume 3. The
+  registers themselves are queries, not clinical documents.
 end note
 @enduml

@@ -23,7 +23,7 @@ The diagram shows the two tracks and the consent gate between screening and the 
 
 ### A sample pathway
 
-Imagine a woman early in pregnancy, referred from her polyclinic (037) to the screening centre, where an exam card is opened (159). Her first-trimester ultrasound (162) and blood screen (156) come back showing an increased chance of a chromosomal condition. A counsellor explains the options, and she decides to go ahead with the definitive test, signing a consent form (152). The procedure is done (166) and the laboratory examines the baby's chromosomes (154). The result is discussed by a panel (173) and a genetic conclusion is issued (165). Months later, after a healthy birth, the newborn has the routine heel-prick screen (167), which is normal, and no further action is needed.
+Imagine a woman early in pregnancy, referred from her polyclinic (037-1) to the screening centre, where an exam card is opened (159). Her first-trimester ultrasound (162) and blood screen (156) come back showing an increased chance of a chromosomal condition. A counsellor explains the options, and she decides to go ahead with the definitive test, signing a consent form (152). The procedure is done (166) and the laboratory examines the baby's chromosomes (154). The result is discussed by a panel (173) and a genetic conclusion is issued (165). Months later, after a healthy birth, the newborn has the routine heel-prick screen (167), which is normal, and no further action is needed.
 
 The sequence below traces that pathway, including the point where a mother might decline:
 
@@ -37,7 +37,7 @@ This is the screening portion of the wider maternity journey that also spans vol
 |------|-------|-----------|
 | 152, 153 | Informed consent for invasive prenatal diagnosis | Consent |
 | 154 | Cytogenetic / molecular-cytogenetic result | Report |
-| 155 | Refusal of invasive prenatal diagnosis | Consent |
+| 155 | Refusal of invasive prenatal diagnosis | Statement |
 | 156, 157 | First / second trimester biochemical screening conclusion | Conclusion |
 | 158 | Hereditary-genetic patient ambulatory card | Card |
 | 159 | Pregnant woman prenatal examination card | Card |
@@ -45,11 +45,11 @@ This is the screening portion of the wider maternity journey that also spans vol
 | 162, 163, 164 | First / second / third trimester ultrasound screening protocol | Report |
 | 165 | Medical genetic conclusion | Conclusion |
 | 166 | Invasive prenatal diagnosis procedure protocol | Report |
-| 167 | Neonatal screening (IRT, PKU, congenital hypothyroidism) | Report |
-| 168 | Tandem mass-spectrometry analysis | Report |
-| 169 | Additional clinical-diagnostic IXLA analysis | Report |
-| 170 | Sweat test | Report |
-| 171 | Neonatal retest screening | Report |
+| 167 | Neonatal screening (IRT, PKU, congenital hypothyroidism) | Analysis |
+| 168 | Tandem mass-spectrometry analysis | Analysis |
+| 169 | Additional clinical-diagnostic IXLA analysis | Analysis |
+| 170 | Sweat test | Analysis |
+| 171 | Neonatal retest screening | Analysis |
 | 172 | Post-invasive-diagnosis conclusion | Conclusion |
 | 173 | Perinatal consilium | Conclusion |
 | 174 | Pre-surgery epicrisis for a pregnant woman | Epicrisis |

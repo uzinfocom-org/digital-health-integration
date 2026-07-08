@@ -17,7 +17,7 @@ So the volume is not a random pile of forms - it is the sequence of events of a 
 
 ### How the forms relate
 
-The admission journal (001) is the front door: a simple running list of who came in. For anyone actually admitted, a medical card (003) is opened, and this card is the spine of the stay. The anaesthesia (004, 005), surgery (008), intensive-care (006) and transfusion (009) records are only created if those events occur, and each one refers back to the card. The bed-movement ledger (007) is a separate housekeeping list that tracks how many beds are occupied. The stay closes with either a discharge - written up on the extract and statistical card (027, 066), which Order 399 files under [volume 3](forms-volume-03-diagnostics-laboratory.html) - or a death, logged in the death-certificate register (106).
+The admission journal (001) is the front door: a simple running list of who came in. For anyone actually admitted, a medical card (003) is opened, and this card is the spine of the stay. The anaesthesia (004, 005), surgery (008), intensive-care (006) and transfusion (009) records are only created if those events occur, and each one refers back to the card. The bed-movement sheet (007) is a separate housekeeping record that tracks how many beds are occupied. The stay closes with either a discharge - written up on the extract and statistical card (027, 066), which Order 399 files under [volume 3](forms-volume-03-diagnostics-laboratory.html) - or a death, logged in the death-certificate register (106).
 
 The obstetric forms are a parallel spine. The maternity card (096) plays the same role for a birth that the inpatient card plays for an ordinary stay: the birth register (010), the newborn's development card (097) and the birth-certificate register (103) all branch off it, with the early-termination card (003-1) and perinatal-death-certificate register (106-2) as the unhappy alternatives.
 
@@ -46,7 +46,7 @@ The sequence below traces that same stay, including the branches:
 | 004 | Anaesthesia registration | Register |
 | 005 | Anaesthesia record sheet | Sheet |
 | 006 | Dynamic observation in ICU | Card |
-| 007 | Patient movement and bed-capacity ledger | Register |
+| 007 | Patient movement and bed-capacity tracking sheet | Sheet |
 | 008 | Hospital surgical procedures record | Register |
 | 009 | Blood components and products transfusion registration | Register |
 | 009-1 | Blood transfusion commission conclusion | Conclusion |

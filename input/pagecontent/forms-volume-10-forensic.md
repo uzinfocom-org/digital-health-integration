@@ -13,7 +13,7 @@ The purpose is legal proof, not care, which is why this volume usually stands ap
 
 ### How the forms relate
 
-A case is referred in (by police or a court) and registered as either a body in the thanatology department (233) or a living person in the outpatient register (234). The examination is performed and written up (229), and samples are sent to the forensic laboratories (231, 232), whose departments register and analyse the evidence (236-242, 245), alongside administrative and identification registers (243, 244). Everything comes together in the expert conclusion (230) that goes back to the authority that asked. So the forms form a chain from referral, through examination and laboratory work, to a signed conclusion.
+A case is referred in (by police or a court) and registered as either a body in the thanatology department (233) or a living person in the outpatient register (234). The examination is performed and written up (229), and samples are sent to the forensic laboratories (231, 232), whose departments register and analyse the evidence (236-239, 241, 242, 245); the morgue separately logs each body's clothing, valuables and documents (240), and administrative registers track citizen appeals and identifications (243, 244). Everything comes together in the expert conclusion (230) that goes back to the authority that asked. So the forms form a chain from referral, through examination and laboratory work, to a signed conclusion.
 
 ### A sample case
 

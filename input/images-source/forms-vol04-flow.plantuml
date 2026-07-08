@@ -6,11 +6,11 @@ participant "Ward / dept" as W
 participant "Facility\npharmacy" as PH
 participant "Supplier" as SUP
 
-PH -> PH : 131 monthly need by bed-count & nosology
-PH -> SUP : 134 requisition / waybill
+PH -> PH : 131 monthly need by treatment standards & bed-count\n(standing commission)
+PH -> SUP : procurement order
 SUP -> PH : delivery
 PH -> PH : 132 quantitative receipt, 137 stock accounting
-W -> PH : department request
+W -> PH : 134 requisition (waybill)
 PH -> W : 136 drugs issued to departments
 PH -> PH : 135/139 daily expense, 138/140 turnover by funding,\n141 balance
 

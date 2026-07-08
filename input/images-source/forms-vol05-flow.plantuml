@@ -9,14 +9,17 @@ participant "Hospital\n(vol 1)" as H
 
 C -> DISP : emergency call
 DISP -> DISP : 142 call registration, 143 call card
-DISP -> CREW : crew dispatched (145 substation work log)
+DISP -> CREW : crew dispatched
 CREW -> CREW : 143 call card (on-scene assessment & treatment)
 alt transport to hospital
   CREW -> H : 144 accompanying sheet -> handover, 001 admission (vol 1)
 end
 alt air ambulance / disaster
-  DISP -> DISP : 146 emergency situations, 149 air-ambulance calls,\n150 consultant physician sheet
+  DISP -> DISP : 146 emergency situations, 149 air-ambulance calls
+  CREW -> CREW : 150 consultant physician sheet
 end
+
+DISP -> DISP : 145 daily substation workload summary
 
 note over DISP, CREW
   The call card (143) is the on-scene clinical record; the observation
