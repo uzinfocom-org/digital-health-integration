@@ -34,7 +34,7 @@ Imagine several people in a town falling ill after eating at the same canteen. A
 | Sanitary supervision of objects and construction | 246-252, 304-305, 343-344, 361 | Registers and conclusions |
 | Environmental sampling and testing (water, air, soil, food, physical factors, radiation) | 254-257, 302-303, 310, 317-360 | Sampling acts and lab results |
 | Infectious-disease and outbreak control | 258-264, 060, 398 | Investigation cards, notifications |
-| Parasitology, zoonoses and dangerous pathogens | 265-300, 306-308, 320, 325, 379-388, 399, 045-x | Surveillance registers and labs |
+| Parasitology, zoonoses and dangerous pathogens | 265-280, 299-300, 306-308, 320, 325, 379-388, 399, 045-x | Surveillance registers and labs |
 | Microbiology laboratories | 321-324, 350, 365-378 | Lab results |
 | Pathogen biological agents and strain handling | 281-298 | Biosafety registers |
 | Administrative enforcement | 311-316, 352 | Protocols and penalties |

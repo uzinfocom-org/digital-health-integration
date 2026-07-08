@@ -13,11 +13,11 @@ A second part of the volume covers the air ambulance, which flies doctors and co
 
 ### How the forms relate
 
-The forms follow the call from start to finish: the call is registered (142) and a call card opened (143); the crew is dispatched and its work logged (145); on scene the crew fills in the observation sheet (144); and if the patient is transported, the record hands over to a hospital admission in [volume 1](forms-volume-01-inpatient.html). The air-ambulance and disaster forms (146, 148-150) are a parallel set for those special situations.
+The forms follow the call from start to finish: the call is registered (142) and a call card opened (143); the crew is dispatched, and the substation's daily workload is logged (145); on scene the crew fills in the observation sheet (144); and if the patient is transported, the record hands over to a hospital admission in [volume 1](forms-volume-01-inpatient.html). The air-ambulance and disaster forms (146, 148-150) are a parallel set for those special situations.
 
 ### A sample call
 
-Imagine a man who collapses at home. A relative calls the ambulance; the dispatcher records the call and opens a call card (142, 143). The nearest crew is sent (145). On arrival they assess him, give first treatment, and write it all on the observation sheet (144). Deciding he needs hospital care, they drive him in and hand him over, where he is admitted and the hospital opens its own record (001 in volume 1). The ambulance's notes travel with him so the hospital knows what happened before he arrived.
+Imagine a man who collapses at home. A relative calls the ambulance; the dispatcher records the call and opens a call card (142, 143). The nearest crew is sent, and the substation's daily workload is logged (145). On arrival they assess him, give first treatment, and write it all on the observation sheet (144). Deciding he needs hospital care, they drive him in and hand him over, where he is admitted - logged in the admissions journal (001 in volume 1) - and the hospital opens its own record. The ambulance's notes travel with him so the hospital knows what happened before he arrived.
 
 <div>{% include forms-vol05-flow.svg %}</div><br clear="all"/>
 
@@ -25,14 +25,14 @@ Imagine a man who collapses at home. A relative calls the ambulance; the dispatc
 
 | Form | Title | Type |
 |------|-------|-----------|
-| 059-3 | Emergency-medicine scientific-centre EMS record | Report |
+| 059-3 | Emergency-medicine scientific-centre drug income/expenditure ledger | Register |
 | 142 | Call registration | Register |
 | 143 | Emergency call card | Card |
 | 144 | Observation sheet (talon) | Sheet |
 | 145 | Daily substation work | Register |
 | 146 | Emergency / disaster situations record | Register |
-| 147 | Emergency medical station | Register |
+| 147 | Emergency medical station notification sheet | Sheet |
 | 148 | Air ambulance vehicle activity register | Register |
 | 149 | Air ambulance call register | Register |
-| 150 | Air ambulance consultant physician sheet | Report |
+| 150 | Air ambulance consultant physician sheet | Sheet |
 | 151 | Driver medical-examination record | Register |

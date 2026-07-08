@@ -33,7 +33,7 @@ class "089 TB/STI\nnotification" as F089 <<notify>>
 class "090 cancer\nnotification" as F090 <<notify>>
 class "091 narcology\nnotification" as F091 <<notify>>
 
-class "037 Prenatal\nreferral" as F037 <<order>>
+class "037-1 Prenatal\nreferral" as F037 <<order>>
 class "111 Pregnant-woman\nindividual card" as F111 <<card>>
 
 F024 --> F024x

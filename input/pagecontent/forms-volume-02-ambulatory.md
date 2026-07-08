@@ -19,7 +19,7 @@ The visit registration (024, and the daily reception logs 024-1 to 024-4) is the
 - The dispensary family: the control card (030) has specialised versions for psychiatric, oncology, psychoneurological and tuberculosis patients (030-1 to 030-4). One parent form, four disease-specific children.
 - The certificate family: the general medical certificate (086) has variants for specific purposes (086-1 to 086-4), alongside the travel, driving and sanatorium certificates.
 - The notification family: the first-time-diagnosis notices for tuberculosis/STI (089), cancer (090) and drug addiction (091).
-- The pregnancy thread: the prenatal referral (037) and the pregnant-woman card (111), which hand the patient over to the screening centre in [volume 6](forms-volume-06-genetics-screening.html).
+- The pregnancy thread: the prenatal screening referral (037-1) and the pregnant-woman card (111), which hand the patient over to the screening centre in [volume 6](forms-volume-06-genetics-screening.html).
 
 The diagram shows how the visit opens the card and the card branches into these families. The two "variant" families (030 and 086) are the structure worth noticing: a base form with specialised offshoots.
 
@@ -44,8 +44,8 @@ The sequence below shows those branches from one visit:
 | 025-1 | Orthopaedic/orthodontic dental card | Card |
 | 030 | Dispensary observation control card | Card |
 | 030-1..030-4 | Dispensary variants (psychiatric, oncology, psychoneuro, TB) | Card |
-| 035, 035-1 | Medical advisory commission (VKK) disability conclusions | Conclusion |
-| 037, 037-1 | Prenatal screening referral / exchange sheet | Referral |
+| 035, 035-1 | Medical advisory commission (VKK) conclusion registers | Register |
+| 037, 037-1 | General referral/exchange sheet (037); prenatal screening referral (037-1) | Referral |
 | 043, 044 | Medical certificates (foreign nationals; travel abroad) | Certificate |
 | 051 | Family nurse daily activity log | Register |
 | 053 | Military conscript treatment card | Card |
@@ -54,7 +54,7 @@ The sequence below shows those branches from one visit:
 | 063 | Prophylactic immunisation card | Card |
 | 064 | Immunisation register | Register |
 | 069 | Ambulatory operations register | Register |
-| 072, 072-1 | Sanatorium-resort card and referral | Card / Certificate |
+| 072, 072-1 | Sanatorium-resort card (072) and certificate (072-1) | Card / Certificate |
 | 080 | Medical exemptions (med. otvod) register | Register |
 | 083, 083-1 | Driver medical-fitness certificate | Certificate |
 | 086, 086-1..086-4 | Medical certificate and its variants | Certificate |

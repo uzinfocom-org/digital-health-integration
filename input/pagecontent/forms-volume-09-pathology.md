@@ -23,9 +23,9 @@ Imagine a surgeon who removes a suspicious lump from a patient. Rather than gues
 
 | Form | Title | Type |
 |------|-------|-----------|
-| 223 | Register of bodies referred for autopsy | Register |
+| 223 | Register of bodies opened for autopsy | Register |
 | 224 | Pathological-anatomical autopsy protocol | Report |
 | 225 | Referral for pathological-histological study | Referral |
-| 226 | Sectional material | Report |
-| 227 | Biopsy and operational material | Report |
+| 226 | Sectional material examination register | Register |
+| 227 | Biopsy and operational material examination register | Register |
 | 228 | Body registration | Register |

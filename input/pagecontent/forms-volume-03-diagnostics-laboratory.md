@@ -1,4 +1,4 @@
-Volume 3 is the biggest volume - 93 forms - and it covers all the ways a patient is tested and examined: blood and urine tests, ultrasound and X-ray, ECG, endoscopy, and so on. These services do not decide on their own to test someone; they act on a request from a doctor and send back a result. Understanding that request-and-result rhythm is the key to the whole volume.
+Volume 3 is one of the biggest volumes - 127 forms once the ultrasound and other sub-forms are counted - and it covers all the ways a patient is tested and examined: blood and urine tests, ultrasound and X-ray, ECG, endoscopy, and so on. These services do not decide on their own to test someone; they act on a request from a doctor and send back a result. Understanding that request-and-result rhythm is the key to the whole volume.
 
 ### What diagnostics and the laboratory do
 
@@ -16,7 +16,7 @@ Every one of these starts the same way: a request comes in, the test or scan is 
 
 Most forms in this volume are siblings rather than a chain: each is one type of result, and they relate to each other by sharing the same request-and-result shape rather than by leading into one another. The relationship worth understanding is the request that ties a result back to the doctor who ordered it, and the family structure within a test type.
 
-The clearest example of family structure is ultrasound. Form 015 is the parent (the ultrasound register), and forms 015-1 through 015-26 are its children - one per organ, from the parotid gland to the brachiocephalic arteries. They are not 27 unrelated forms; they are one kind of examination repeated for different body parts. The same is true of the clinical-laboratory immunoassay series (105 to 118). Recognising these families means you understand the volume as a few dozen patterns, not a hundred separate things.
+The clearest example of family structure is ultrasound. Form 015 is the parent (the ultrasound register), and forms 015-1 through 015-26 are its children - one per organ or functional study, from the parotid gland to the brachiocephalic-artery doppler. They are not 27 unrelated forms; they are one kind of examination repeated for different body parts. The same is true of the clinical-laboratory immunoassay (IXLA) forms (105, 107-110, 112, 115). Recognising these families means you understand the volume as a few dozen patterns, not a hundred separate things.
 
 ### A sample test
 
@@ -40,7 +40,7 @@ Because of its size, the volume is summarised by cluster rather than listed form
 | Haematology | 040 CBC, 041 Rh/group, 042 clotting, 046 CBC-5, 047 coagulogram, 085 bone marrow, 120 myelogram |
 | Biochemistry and hormones | 048 biochemistry, 049 hormones, 050 lipoproteins, 067 vitamin D, 087 glucose |
 | Urine and fluids | 071, 073-077 urine panel, 081 duodenal, 082 CSF, 078 prostate secretion |
-| Serology and immunoassay | 065 Wasserman, 068 ASO/CRP, 070 hepatitis, 079/098/099 TORCH, 088 Vidal/Wright, 092-094, 105-118 IXLA |
+| Serology and immunoassay | 065 Wasserman, 068 ASO/CRP, 070 hepatitis, 079/098/099 TORCH, 088 Vidal/Wright, 092-094, 105-115 IXLA, 117/118 PCR |
 | Microbiology | 055, 057 TB, 084 sensitivity, 119 culture sensitivity |
 | Parasitology surveillance | 121-126 (helminths, malaria, leishmaniasis) |
 | Statistical / notifications | 027 extract, 028 cancer, 066 / 066-1 discharge cards, 114 congenital anomaly |

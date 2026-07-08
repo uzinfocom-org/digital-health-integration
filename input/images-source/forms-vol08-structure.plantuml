@@ -19,7 +19,7 @@ class "198/201\nCollection" as F201 <<product>>
 class "207/208/209/210\nComponent production" as F207 <<product>>
 class "205 Sterility /\n206 disposal" as F205 <<report>>
 class "213 Requisition" as F213 <<supply>>
-class "211/212/214 Product\nissue" as F211 <<supply>>
+class "211/214 Product issue,\n212 component receipt" as F211 <<supply>>
 class "009 Transfusion\n(volume 1)" as F009 <<report>>
 
 F195 --> F203 : screen

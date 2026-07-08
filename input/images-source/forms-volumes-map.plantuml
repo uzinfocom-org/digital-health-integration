@@ -16,17 +16,17 @@ rectangle "2.0 Ambulatory-polyclinic\n(023-111)" as V2 <<core>> [[forms-volume-0
 rectangle "3.0 Diagnostics & laboratory\n(011-130)" as V3 <<core>> [[forms-volume-03-diagnostics-laboratory.html]]
 rectangle "6.0 Genetics & screening\n(152-174)" as V6 <<core>> [[forms-volume-06-genetics-screening.html]]
 rectangle "8.0 Blood service\n(194-222)" as V8 <<core>> [[forms-volume-08-blood-service.html]]
-rectangle "7.0 HIV/AIDS service\n(175-193)" as V7 <<public>> [[forms-volume-07-hiv.html]]
+rectangle "7.0 HIV/AIDS service\n(175-192)" as V7 <<public>> [[forms-volume-07-hiv.html]]
 
 rectangle "4.0 Pharmacy & supply\n(131-141)" as V4 <<ops>> [[forms-volume-04-pharmacy.html]]
-rectangle "5.0 Emergency & air ambulance\n(142-151)" as V5 <<ops>> [[forms-volume-05-emergency.html]]
+rectangle "5.0 Emergency & air ambulance\n(059-3, 142-151)" as V5 <<ops>> [[forms-volume-05-emergency.html]]
 
 rectangle "9.0 Pathological anatomy\n(223-228)" as V9 <<public>> [[forms-volume-09-pathology.html]]
 rectangle "10.0 Forensic medicine\n(229-245)" as V10 <<public>> [[forms-volume-10-forensic.html]]
-rectangle "11.0 Sanitary-epidemiology\n(246-399)" as V11 <<public>> [[forms-volume-11-sanitary-epidemiology.html]]
+rectangle "11.0 Sanitary-epidemiology\n(246-399, +045-x, 060)" as V11 <<public>> [[forms-volume-11-sanitary-epidemiology.html]]
 
 V2 --> V3 : orders tests
-V2 --> V6 : prenatal referral (037)
+V2 --> V6 : prenatal referral (037-1)
 V6 --> V1 : birth
 V1 --> V6 : neonatal screening
 V8 --> V1 : blood products for\ntransfusion (009)
@@ -34,7 +34,7 @@ V1 --> V3 : discharge statistics (066)
 V2 --> V7 : HIV dispensary (175)
 V1 --> V9 : death -> autopsy
 V1 --> V10 : death -> forensic
-V2 --> V11 : notifiable disease (089-091, 060)
+V2 --> V11 : notifiable disease (089-091)
 V5 --> V1 : emergency admission
 
 note as N

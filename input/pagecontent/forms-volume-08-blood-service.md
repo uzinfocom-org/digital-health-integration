@@ -25,7 +25,7 @@ The two ends of the chain are where it connects to clinical care: the screening 
 
 ### A sample journey for one unit of blood
 
-Imagine a volunteer who comes to donate. The centre registers her (195, 196) and takes a sample to screen her blood; the lab confirms her group and that she is free of infection (203, 218). She is bled (201), and her donation is separated into red cells and plasma (207, 209), each checked for sterility (205) and placed in the store. Days later, a hospital treating a patient who has lost blood in surgery sends a requisition (213); the matching red-cell unit is issued (211) and delivered to the ward, where it is transfused into the patient and recorded on form 009 in volume 1. The single donation has been traceable at every step from her arm to the patient.
+Imagine a volunteer who comes to donate. The centre registers her (195, 196) and takes a sample to screen her blood; the lab confirms her group and that she is free of infection (203, 218). She is bled (201), and her donation is separated into plasma and its other components (209, 207), each checked for sterility (205) and placed in the store. Days later, a hospital treating a patient who has lost blood in surgery sends a requisition (213); the matching red-cell unit is issued (211) and delivered to the ward, where it is transfused into the patient and recorded on form 009 in volume 1. The single donation has been traceable at every step from her arm to the patient.
 
 The sequence below follows that journey from donor to recipient:
 
@@ -35,8 +35,8 @@ The sequence below follows that journey from donor to recipient:
 
 | Form | Title | Type |
 |------|-------|-----------|
-| 194 | Certificate issued to a blood donor | Certificate |
-| 195 | Gratuitous donor application | Card |
+| 194 | Register of certificates issued to blood donors | Register |
+| 195 | Gratuitous donor application register | Register |
 | 196 | Donor registration card | Card |
 | 197, 202, 222 | Standard and anti-Rh sera preparation / register | Product / Register |
 | 198 | Plasmapheresis / cytapheresis collection | Report |
@@ -59,4 +59,4 @@ The sequence below follows that journey from donor to recipient:
 | 216 | HIV-seropositive donor register | Register |
 | 218 | Syphilis, NSU, HBsAg and HIV testing | Report |
 | 219 | Donor clinical and biochemical analyses | Report |
-| 221 | Blood-products department journal cover | Register |
+| 221 | Register of blood group/Rh for patients referred from other facilities | Register |

@@ -48,7 +48,7 @@ The sequence below traces that same stay, including the branches:
 | 006 | Dynamic observation in ICU | Sheet |
 | 007 | Patient movement and bed-capacity ledger | Register |
 | 008 | Hospital surgical procedures record | Report |
-| 009 | Blood components and products transfusion registration | Report |
+| 009 | Blood components and products transfusion registration | Register |
 | 009-1 | Blood transfusion commission conclusion | Conclusion |
 | 009-2 | Haemo (plasma) transfusion protocol | Report |
 | 009-3 | Disposal of remaining blood and components | Register |
