@@ -17,8 +17,8 @@ class "007 Bed-movement\nledger" as F007 <<register>>
 
 class "004 Anaesthesia\nregister" as F004 <<register>>
 class "005 Anaesthesia\nsheet" as F005 <<report>>
-class "008 Surgical\nprocedure record" as F008 <<report>>
-class "006 ICU dynamic\nobservation" as F006 <<report>>
+class "008 Surgical\nprocedure record" as F008 <<register>>
+class "006 ICU dynamic\nobservation" as F006 <<card>>
 class "009 Transfusion\nrecord" as F009 <<report>>
 class "009-1..009-4\ntransfusion sub-forms" as F009x <<report>>
 
@@ -29,9 +29,9 @@ class "003-1 Early\ntermination card" as F003a <<card>>
 
 class "027 Medical-record\nextract" as F027 <<report>>
 class "066 Discharge\nstatistical card" as F066 <<card>>
-class "103 Birth-certificate\nregistration" as F103 <<certificate>>
-class "106 Death-certificate\nregistration" as F106 <<certificate>>
-class "106-2 Perinatal-death\nregistration" as F106b <<certificate>>
+class "103 Birth-certificate\nregistration" as F103 <<register>>
+class "106 Death-certificate\nregistration" as F106 <<register>>
+class "106-2 Perinatal-death\nregistration" as F106b <<register>>
 
 F001 --> F003 : admission opens card
 F003 --> F004
@@ -52,6 +52,5 @@ legend right
   Grey = register/ledger (query, not a document)
   Blue = longitudinal card
   Green = report/sheet
-  Yellow = certificate
 endlegend
 @enduml

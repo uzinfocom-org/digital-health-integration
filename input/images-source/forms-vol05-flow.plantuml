@@ -10,16 +10,17 @@ participant "Hospital\n(vol 1)" as H
 C -> DISP : emergency call
 DISP -> DISP : 142 call registration, 143 call card
 DISP -> CREW : crew dispatched (145 substation work log)
-CREW -> CREW : 144 observation sheet (on-scene care)
+CREW -> CREW : 143 call card (on-scene assessment & treatment)
 alt transport to hospital
-  CREW -> H : handover -> 001 admission (vol 1)
+  CREW -> H : 144 accompanying sheet -> handover, 001 admission (vol 1)
 end
 alt air ambulance / disaster
   DISP -> DISP : 146 emergency situations, 149 air-ambulance calls,\n150 consultant physician sheet
 end
 
 note over DISP, CREW
-  Call card (143) and observation sheet (144) are the clinical
-  record of the call; the dispatch logs are registers you query.
+  The call card (143) is the on-scene clinical record; the observation
+  sheet (144) accompanies the patient to hospital. The dispatch logs
+  are registers you query.
 end note
 @enduml

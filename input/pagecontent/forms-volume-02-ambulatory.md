@@ -16,7 +16,7 @@ So the volume is best read as a set of small workflows that all start from an ou
 
 The visit registration (024, and the daily reception logs 024-1 to 024-4) is the entry point - a running list of who was seen. For each patient an ambulatory card (025) is kept, and it is the thread that ties their visits together. From that card, the volume's recurring "families" branch off depending on what the patient needs:
 
-- The dispensary family: the control card (030) has specialised versions for psychiatric, oncology, psychoneurological and tuberculosis patients (030-1 to 030-4). One parent form, four disease-specific children.
+- The dispensary family: the control card (030) has specialised observation-card versions for psychiatric, oncology and tuberculosis patients (030-1, 030-2, 030-4), while 030-3 is a statistical talon recording a patient's removal from the psychoneurological dispensary register.
 - The certificate family: the general medical certificate (086) has variants for specific purposes (086-1 to 086-4), alongside the travel, driving and sanatorium certificates.
 - The notification family: the first-time-diagnosis notices for tuberculosis/STI (089), cancer (090) and drug addiction (091).
 - The pregnancy thread: the prenatal screening referral (037-1) and the pregnant-woman card (111), which hand the patient over to the screening centre in [volume 6](forms-volume-06-genetics-screening.html).
@@ -43,8 +43,9 @@ The sequence below shows those branches from one visit:
 | 025 | Ambulatory medical card | Card |
 | 025-1 | Orthopaedic/orthodontic dental card | Card |
 | 030 | Dispensary observation control card | Card |
-| 030-1..030-4 | Dispensary variants (psychiatric, oncology, psychoneuro, TB) | Card |
-| 035, 035-1 | Medical advisory commission (VKK) conclusion registers | Register |
+| 030-1, 030-2, 030-4 | Dispensary observation variants (psychiatric, oncology, TB) | Card |
+| 030-3 | Statistical talon: patient removed from psychoneurological dispensary register | Sheet |
+| 035, 035-1 | VKK conclusion register (035); sick-leave (incapacity) extension register (035-1) | Register |
 | 037, 037-1 | General referral/exchange sheet (037); prenatal screening referral (037-1) | Referral |
 | 043, 044 | Medical certificates (foreign nationals; travel abroad) | Certificate |
 | 051 | Family nurse daily activity log | Register |
@@ -56,7 +57,8 @@ The sequence below shows those branches from one visit:
 | 069 | Ambulatory operations register | Register |
 | 072, 072-1 | Sanatorium-resort card (072) and certificate (072-1) | Card / Certificate |
 | 080 | Medical exemptions (med. otvod) register | Register |
-| 083, 083-1 | Driver medical-fitness certificate | Certificate |
+| 083 | Driver medical-fitness certificate | Certificate |
+| 083-1 | Driver fitness medical-commission examination register | Register |
 | 086, 086-1..086-4 | Medical certificate and its variants | Certificate |
 | 089 | First-time TB / STI / other notifiable diagnosis notification | Notification |
 | 090 | First-time cancer notification | Notification |

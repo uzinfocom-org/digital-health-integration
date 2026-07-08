@@ -12,7 +12,7 @@ The reason anonymity matters so much is that fear of being named stops people ge
 
 ### How the forms relate
 
-The forms follow the testing pathway. A visit is registered, anonymously or by name (176-179). A sample goes to the lab, which runs the PCR and CD4 tests and keeps its own sample registers (186, 187, 188-192). A positive result leads into dispensary follow-up, where a control card (175) is opened and antiretroviral and anti-opportunistic-infection medicines are dispensed and recorded (181). The lab forms are the same kind of result documents as in volume 3; the dispensary card is the same kind of long-term record as in volume 2. The new ingredient is confidentiality wrapped around all of it.
+The forms follow the testing pathway. A visit is registered, anonymously or by name (176-179). A sample goes to the lab, which runs the PCR and CD4 tests and keeps its own sample registers (186, 187, 188-193). A positive result leads into dispensary follow-up, where a control card (175) is opened and antiretroviral and anti-opportunistic-infection medicines are dispensed and recorded (181). The lab forms are the same kind of result documents as in volume 3; the dispensary card is the same kind of long-term record as in volume 2. The new ingredient is confidentiality wrapped around all of it.
 
 ### A sample pathway
 
@@ -29,7 +29,7 @@ Imagine a person who is worried after a possible exposure and goes to an anonymo
 | 180 | JAYBYUK (STI) client registration | Register |
 | 181 | ARV / anti-opportunistic-infection drug dispensing record | Register |
 | 182 | Referral for commission blood submission | Referral |
-| 183, 184, 185 | Commission HIV blood-sampling registers and conclusion | Register |
+| 183, 184, 185 | Commission HIV blood-sampling referral, register and conclusion | Register |
 | 186 | HIV PCR DNA testing | Register |
 | 187 | Immunological CD4 testing | Register |
-| 188-192 | Sample registers (blood, biomaterials, positive, PCR, CD4) | Register |
+| 188-193 | Sample registers (blood, biomaterials, positive, PCR, CD4, rejected/invalid) | Register |

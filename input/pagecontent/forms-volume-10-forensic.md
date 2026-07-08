@@ -13,7 +13,7 @@ The purpose is legal proof, not care, which is why this volume usually stands ap
 
 ### How the forms relate
 
-A case is referred in (by police or a court) and registered as either a body in the thanatology department (233) or a living person in the outpatient register (234). The examination is performed and written up (229), and samples are sent to the forensic laboratories (231, 232), whose departments register and analyse the evidence (236-245). Everything comes together in the expert conclusion (230) that goes back to the authority that asked. So the forms form a chain from referral, through examination and laboratory work, to a signed conclusion.
+A case is referred in (by police or a court) and registered as either a body in the thanatology department (233) or a living person in the outpatient register (234). The examination is performed and written up (229), and samples are sent to the forensic laboratories (231, 232), whose departments register and analyse the evidence (236-242, 245), alongside administrative and identification registers (243, 244). Everything comes together in the expert conclusion (230) that goes back to the authority that asked. So the forms form a chain from referral, through examination and laboratory work, to a signed conclusion.
 
 ### A sample case
 
@@ -31,8 +31,8 @@ Imagine a body found in circumstances the police cannot explain. It is referred 
 | 232 | Referral for forensic histology |
 | 233 | Body registration in the thanatology department |
 | 234 | Registration of persons in forensic outpatient |
-| 235 | Repeat, commission, complex examinations |
-| 236, 237 | Forensic biology material evidence / corpse blood |
+| 235 | Repeat, commission, complex and complicated examinations |
+| 236, 237 | Forensic biology material evidence / corpse blood, smears and swabs |
 | 238 | Forensic histology material and documents |
 | 239 | Microdonor blood |
 | 240 | Clothing, valuables, documents and material evidence |

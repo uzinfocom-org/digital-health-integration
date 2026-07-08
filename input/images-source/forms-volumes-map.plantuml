@@ -16,7 +16,7 @@ rectangle "2.0 Ambulatory-polyclinic\n(023-111)" as V2 <<core>> [[forms-volume-0
 rectangle "3.0 Diagnostics & laboratory\n(011-130)" as V3 <<core>> [[forms-volume-03-diagnostics-laboratory.html]]
 rectangle "6.0 Genetics & screening\n(152-174)" as V6 <<core>> [[forms-volume-06-genetics-screening.html]]
 rectangle "8.0 Blood service\n(194-222)" as V8 <<core>> [[forms-volume-08-blood-service.html]]
-rectangle "7.0 HIV/AIDS service\n(175-192)" as V7 <<public>> [[forms-volume-07-hiv.html]]
+rectangle "7.0 HIV/AIDS service\n(175-193)" as V7 <<public>> [[forms-volume-07-hiv.html]]
 
 rectangle "4.0 Pharmacy & supply\n(131-141)" as V4 <<ops>> [[forms-volume-04-pharmacy.html]]
 rectangle "5.0 Emergency & air ambulance\n(059-3, 142-151)" as V5 <<ops>> [[forms-volume-05-emergency.html]]

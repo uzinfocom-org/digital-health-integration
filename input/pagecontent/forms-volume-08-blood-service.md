@@ -39,10 +39,10 @@ The sequence below follows that journey from donor to recipient:
 | 195 | Gratuitous donor application register | Register |
 | 196 | Donor registration card | Card |
 | 197, 202, 222 | Standard and anti-Rh sera preparation / register | Product / Register |
-| 198 | Plasmapheresis / cytapheresis collection | Report |
+| 198 | Plasmapheresis / cytapheresis collection | Product |
 | 199 | Gratuitous donor card | Card |
 | 200 | Commission HIV blood-sampling register | Register |
-| 201 | Whole-blood preparation | Report |
+| 201 | Whole-blood preparation | Product |
 | 203, 217, 220 | Donor blood group and Rh results / register | Report / Register |
 | 204 | Brucellosis serology | Report |
 | 205 | Sterility testing of preserved blood | Report |
@@ -57,6 +57,6 @@ The sequence below follows that journey from donor to recipient:
 | 214 | Products handed to expedition | Supply |
 | 215 | Plasma receipts to the products department | Supply |
 | 216 | HIV-seropositive donor register | Register |
-| 218 | Syphilis, NSU, HBsAg and HIV testing | Report |
+| 218 | Syphilis, HCV, HBsAg and HIV testing | Report |
 | 219 | Donor clinical and biochemical analyses | Report |
 | 221 | Register of blood group/Rh for patients referred from other facilities | Register |

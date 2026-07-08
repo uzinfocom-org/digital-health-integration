@@ -10,7 +10,7 @@ participant "Dispensary\n(vol 7)" as DISP
 C -> OFF : presents for testing
 OFF -> OFF : 176-179 testing registration\n(anonymous or identified)
 OFF -> LAB : sample
-LAB -> LAB : 186 PCR DNA, 187 CD4 immunology,\n188-192 sample registers
+LAB -> LAB : 186 PCR DNA, 187 CD4 immunology,\n188-193 sample registers
 alt positive
   LAB -> DISP : referral to dispensary care
   DISP -> DISP : 175 dispensary control card\n181 ARV / anti-infection drug dispensing

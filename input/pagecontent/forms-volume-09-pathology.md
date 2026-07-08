@@ -28,4 +28,4 @@ Imagine a surgeon who removes a suspicious lump from a patient. Rather than gues
 | 225 | Referral for pathological-histological study | Referral |
 | 226 | Sectional material examination register | Register |
 | 227 | Biopsy and operational material examination register | Register |
-| 228 | Body registration | Register |
+| 228 | Register of body reception and dispatch | Register |

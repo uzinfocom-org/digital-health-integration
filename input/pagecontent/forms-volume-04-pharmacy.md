@@ -17,7 +17,7 @@ The forms follow the supply cycle in order: a need estimate (131) justifies a re
 
 ### A sample cycle
 
-Each month the pharmacy estimates its needs from bed numbers and the conditions it treats (131) and sends a requisition to its supplier (134). When the delivery arrives it is counted and booked into stock (132). Through the month, wards request medicines and the pharmacy issues them, recording each handover (136). At month end the daily expenses are totalled and the remaining balance is reconciled against the books (139, 141).
+Each month the pharmacy estimates its needs from bed numbers and the conditions it treats (131) and sends a requisition to its supplier (134). When the delivery arrives it is counted and booked into stock (132). Through the month, wards request medicines and the pharmacy issues them, recording each handover (136). At month end the daily expenses are totalled and the remaining balance is reconciled against the books (135, 141).
 
 <div>{% include forms-vol04-flow.svg %}</div><br clear="all"/>
 

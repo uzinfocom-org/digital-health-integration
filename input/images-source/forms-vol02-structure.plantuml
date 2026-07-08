@@ -19,7 +19,7 @@ class "025 Ambulatory\nmedical card" as F025 <<card>>
 class "030 Dispensary\nobservation card" as F030 <<card>>
 class "030-1 psychiatric" as F030a <<card>>
 class "030-2 oncology" as F030b <<card>>
-class "030-3 psychoneuro" as F030c <<card>>
+class "030-3 psychoneuro\nderegistration talon" as F030c <<register>>
 class "030-4 tuberculosis" as F030d <<card>>
 
 class "063 Immunisation\ncard" as F063 <<card>>
