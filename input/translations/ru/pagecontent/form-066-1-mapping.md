@@ -103,8 +103,8 @@
 | Reanimatsiyada yotgan kunlar | Дни в реанимации | Observation.valueQuantity | LOINC `LP76050-1` "Intensive care unit" | 0 days |
 | O'rin kunlari | Койко-дни | Encounter.length | UCUM | 10 days |
 | Chiqarilgan bo'lim | Отделение выписки | Organization.name | Local code | Narcology department |
-| Shifoxonadan chiqarish holati | Исход госпитализации | Encounter.subjectStatus | Local code | Recovered |
-| Bemor holati | Состояние пациента | Encounter.admission.dischargeDisposition | Local code | Hospitalized |
+| Shifoxonadan chiqarish holati | Исход госпитализации | Encounter.admission.dischargeDisposition | Local code | Discharged |
+| Bemor holati | Состояние пациента | Encounter.subjectStatus | Local code | Recovered |
 | Nogironlik | Инвалидность | Observation.valueCodeableConcept | Local code | Group II |
 | Shifoxona ichidagi ta'til kunlari soni | Дни отпуска внутри стационара | Observation.valueQuantity | LOINC `LA17962-4` "Medical leave of absence" | 0 days |
 

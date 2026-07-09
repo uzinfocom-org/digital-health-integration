@@ -325,7 +325,7 @@ Usage: #inline
 * reason.value.concept = $encounter-purpose-cs#enc-001 "Diagnostics"
 * priority = $encounter-local-priority-cs#transferred "Transferred from another facility"
 * admission.admitSource = $admit-source-local-cs#mserv-0006-00002 "Dispensary"
-* admission.dischargeDisposition = $discharge-disposition-home-cs#mserv-0004-00001 "Hospitalized"
+* admission.dischargeDisposition = $discharge-disposition-home-cs#mserv-0004-00004 "Discharged"
 * subjectStatus = $encounter-local-subject-status-cs#loc-cs-001 "Recovered"
 * location[0].form = $location-form#161.0 "Narcological"
 * length = 10 'd' "days"

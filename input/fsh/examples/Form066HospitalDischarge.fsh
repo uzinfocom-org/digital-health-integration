@@ -309,8 +309,7 @@ Usage: #inline
 * serviceProvider = Reference(urn:uuid:06600004-1111-2222-3333-444444444444)
 * admission.reAdmission = $re-admission-local-cs#first-time "First time"
 * admission.admitSource = $admit-source-local-cs#mserv-0006-00001 "Without referral / Self-referred"
-* admission.dischargeDisposition = $discharge-disposition-home-cs#mserv-0004-00001 "Hospitalized"
-* subjectStatus = $encounter-local-subject-status-cs#loc-cs-001 "Recovered"
+* admission.dischargeDisposition = $discharge-disposition-home-cs#mserv-0004-00004 "Discharged"
 * length = 10 'd' "days"
 * location[0].form = $location-form#101.0 "Therapy"
 * location[0].period.start = "2026-01-05T10:00:00+05:00"

@@ -94,8 +94,8 @@ To'liq namunaviy nusxa uchun [066-shakl statsionardan chiqarish misoli](Bundle-e
 | Jami o'rin kunlar | Койко-дни | Observation.valueQuantity / Encounter.length | LOINC `78033-8` "Hospital stay duration" | 10 days |
 | Shundan, reanimatsiyada | Из них, в реанимации | Observation.valueQuantity | LOINC `LP76050-1` "Intensive care unit" | 0 days |
 | Chiqarilgan bo'lim | Отделение выписки | Organization.name | Local code | Therapeutic department |
-| Shifoxonadan chiqarish holati | Исход госпитализации | Encounter.subjectStatus | Local code | Recovered |
-| Bemor holati | Состояние пациента | Encounter.admission.dischargeDisposition | Local code | Hospitalized |
+| Shifoxonadan chiqarish holati | Исход госпитализации | Encounter.admission.dischargeDisposition | Local code | Discharged |
+| Bemor holati | Состояние пациента | Encounter.subjectStatus | Local code | Recovered |
 
 ---
 
