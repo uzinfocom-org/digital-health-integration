@@ -42,6 +42,6 @@ The practical rule: a `jurnal` is something you query, a `karta` is something yo
 
 ### How this relates to the rest of the IG
 
-Each form is identified by a category code and, where it has an official number, an external identifier - see [Document categories and identifiers](document-categories.html). Category codes come from [DocumentCategoryCS](CodeSystem-document-category-cs.html), whose codes follow the `form-NNN` pattern of Order 399.
+Each form is identified by a category code and, where it has an official number, an external identifier - see [Document categories and identifiers](document-categories.html). Category codes come from [DocumentCategoryCS](CodeSystem-document-category-cs.html), most of whose codes follow the `form-NNN` pattern of Order 399.
 
 The volume pages linked above place every form in context. As forms are modelled in full they will gain mapping pages (for example [Form 011](form-011-mapping.html)), linked from here as they are produced.

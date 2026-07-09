@@ -49,6 +49,7 @@ F096 --> F097 : newborn
 F002 --> F097 : newborn logged
 F096 ..> F103 : birth certificate
 F096 ..> F106b : perinatal death
+F096 ..> F003a : early termination
 
 legend right
   Grey = register/ledger (query, not a document)
