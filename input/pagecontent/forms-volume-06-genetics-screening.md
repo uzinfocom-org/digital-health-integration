@@ -47,7 +47,7 @@ This is the screening portion of the wider maternity journey that also spans vol
 | 166 | Invasive prenatal diagnosis procedure protocol | Report |
 | 167 | Neonatal screening (IRT, PKU, congenital hypothyroidism) | Analysis |
 | 168 | Tandem mass-spectrometry analysis | Analysis |
-| 169 | Additional clinical-diagnostic IXLA analysis | Analysis |
+| 169 | Clinical-diagnostic laboratory IXLA analysis | Analysis |
 | 170 | Sweat test | Analysis |
 | 171 | Neonatal retest screening | Analysis |
 | 172 | Post-invasive-diagnosis conclusion | Conclusion |

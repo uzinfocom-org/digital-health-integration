@@ -40,7 +40,7 @@ Because of its size, the volume is summarised by cluster rather than listed form
 | Haematology | 040 CBC, 041 Rh/group, 042 clotting, 046 CBC-5, 047 coagulogram, 085 bone marrow, 120 myelogram |
 | Biochemistry and hormones | 048 biochemistry, 049 hormones, 050 lipoproteins, 067 vitamin D, 087 glucose |
 | Urine and fluids | 071, 073-077 urine panel, 081 duodenal, 082 CSF, 078 prostate secretion |
-| Serology and immunoassay | 065 Wasserman, 068 ASO/CRP, 070 hepatitis, 079/098/099 TORCH, 088 Vidal/Wright, 092-094, 105-115 IXLA, 117/118 PCR |
-| Microbiology | 055, 057 TB, 084 sensitivity, 119 culture sensitivity |
+| Serology and immunoassay | 065 Wasserman, 068 ASO/CRP, 070 hepatitis, 079/098/099 TORCH, 088 Vidal/Wright, 092-094, 105/107-110/112/115 IXLA, 117/118 PCR |
+| Microbiology | 055 microbiology result, 057 TB, 084 sensitivity, 119 culture sensitivity |
 | Parasitology surveillance | 121-126 (helminths, malaria, leishmaniasis) |
 | Statistical / notifications | 027 extract, 028 cancer, 066 / 066-1 discharge cards, 114 congenital anomaly |

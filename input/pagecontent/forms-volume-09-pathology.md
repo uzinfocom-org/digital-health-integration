@@ -11,11 +11,11 @@ Both settings converge on the same place: a microscope and a histology report.
 
 ### How the forms relate
 
-The forms split by where the tissue comes from but meet at histology. The autopsy path registers the body (223, 228), records the autopsy itself (224), and sends material for microscopic study (225, 226). The surgical path sends biopsy and operative material straight to the same study (227). Either way, the histology examination produces the diagnosis. The autopsy reached after a hospital death is one branch of the death journey; the other branch is forensic ([volume 10](forms-volume-10-forensic.html)).
+The forms split by where the tissue comes from but meet at histology. The autopsy path registers the body (223, 228), records the autopsy itself (224), and sends sectional material for microscopic study (226). The surgical path sends biopsy and operative material to the same study under a referral (225), logged in its own register (227). Either way, the histology examination produces the diagnosis. The autopsy reached after a hospital death is one branch of the death journey; the other branch is forensic ([volume 10](forms-volume-10-forensic.html)).
 
 ### A sample case
 
-Imagine a surgeon who removes a suspicious lump from a patient. Rather than guess, they send it to pathology. The lab receives the specimen (227), examines it under the microscope, and reports back whether it is benign or cancerous. Separately, when an elderly patient dies unexpectedly on a ward, the body is sent for autopsy (223, 224); tissue is taken (225) and examined to establish the cause of death, which informs the death certificate issued back in volume 1.
+Imagine a surgeon who removes a suspicious lump from a patient. Rather than guess, they send it to pathology under a referral (225). The lab logs the specimen (227), examines it under the microscope, and reports back whether it is benign or cancerous. Separately, when an elderly patient dies unexpectedly on a ward, the body is sent for autopsy (223, 224); sectional tissue is taken and examined (226) to establish the cause of death, which informs the death certificate issued back in volume 1.
 
 <div>{% include forms-vol09-flow.svg %}</div><br clear="all"/>
 
