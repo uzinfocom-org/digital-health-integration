@@ -15,7 +15,7 @@ The recurring theme is traceability: every unit must be followed from the arm it
 
 ### How the forms relate
 
-This volume is a genuine production line, so its forms form a chain rather than a set of siblings. Registration (195, 196, 199) comes first. Screening (203, 204, 217-220) is the gate: a clear result lets the donor proceed; a positive result diverts them to the deferral register (216) and the unit is destroyed (206). A cleared donor is bled (198, 201), and the unit is processed into components (207-210), quality-checked for sterility (205), and held in stock. When a hospital sends a requisition (213), the matching product is issued (211) and travels to the bedside, where it becomes a transfusion in volume 1.
+This volume is a genuine production line, so its forms form a chain rather than a set of siblings. Registration (195, 196, 199) comes first. Screening (203, 204, 217-220) is the gate: a clear result lets the donor proceed; a positive result records the donor in the HIV-seropositive-donor register (216) and the unit is destroyed (206). A cleared donor is bled (198, 201), and the unit is processed into components (207-210), quality-checked for sterility (205), and held in stock. When a hospital sends a requisition (213), the matching product is issued (211) and travels to the bedside, where it becomes a transfusion in volume 1.
 
 The diagram shows that production line and the screening gate that controls it:
 

@@ -19,7 +19,7 @@ The visit registration (024, and the daily reception logs 024-1 to 024-4) is the
 - The dispensary family: the control card (030) has specialised observation-card versions for psychiatric, oncology and tuberculosis patients (030-1, 030-2, 030-4), while 030-3 is a statistical talon recording a patient's removal from the psychoneurological dispensary register.
 - The certificate family: the general medical certificate (086) has variants for specific purposes (086-1 to 086-4), alongside the travel, driving and sanatorium certificates.
 - The notification family: the first-time-diagnosis notices for tuberculosis/STI (089), cancer (090) and drug addiction (091).
-- The pregnancy thread: the prenatal screening referral (037-1) and the pregnant-woman card (111), which hand the patient over to the screening centre in [volume 6](forms-volume-06-genetics-screening.html).
+- The pregnancy thread: the pregnant-woman card (111) is opened and kept at the polyclinic, and the prenatal screening referral (037-1) issued from it hands the patient over to the screening centre in [volume 6](forms-volume-06-genetics-screening.html).
 
 The diagram shows how the visit opens the card and the card branches into these families. The two "variant" families (030 and 086) are the structure worth noticing: a base form with specialised offshoots.
 

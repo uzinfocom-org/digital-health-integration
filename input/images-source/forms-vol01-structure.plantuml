@@ -22,6 +22,7 @@ class "006 ICU dynamic\nobservation" as F006 <<card>>
 class "009 Transfusion\nrecord" as F009 <<register>>
 class "009-1..009-4\ntransfusion sub-forms" as F009x <<report>>
 
+class "002 Newborn dept\njournal" as F002 <<register>>
 class "010 Birth\nregister" as F010 <<register>>
 class "096 Maternity\ncard" as F096 <<card>>
 class "097 Newborn\ndevelopment card" as F097 <<card>>
@@ -45,6 +46,7 @@ F003 ..> F106 : on death
 
 F096 --> F010 : delivery
 F096 --> F097 : newborn
+F002 --> F097 : newborn logged
 F096 ..> F103 : birth certificate
 F096 ..> F106b : perinatal death
 

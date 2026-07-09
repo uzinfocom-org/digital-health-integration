@@ -49,8 +49,8 @@ F086 --> F086x
 F025 ..> F089 : first-time diagnosis
 F025 ..> F090
 F025 ..> F091
-F025 ..> F037 : pregnancy
-F037 --> F111
+F025 ..> F111 : pregnancy
+F111 ..> F037 : screening referral
 
 legend right
   Grey = register/log (query, not a document)

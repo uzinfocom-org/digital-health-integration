@@ -10,7 +10,7 @@ The forms organise along two axes. The Ministry groups them by service line into
 |--------|--------|-----------|------:|
 | [1.0 Inpatient hospital](forms-volume-01-inpatient.html) | Stationary episode-of-care records, surgery, obstetrics, deaths | 001-010, 096-097, 103, 106 | 20 |
 | [2.0 Ambulatory-polyclinic](forms-volume-02-ambulatory.html) | Outpatient visits, dispensary observation, certificates, notifications, immunisation | 023-111 | 40 |
-| [3.0 Diagnostics & laboratory](forms-volume-03-diagnostics-laboratory.html) | Imaging, functional diagnostics, the full laboratory catalogue | 011-130 | 131 |
+| [3.0 Diagnostics & laboratory](forms-volume-03-diagnostics-laboratory.html) | Imaging, functional diagnostics, the full laboratory catalogue, plus shared hospital/clinic records (extracts, discharge cards, sick-leave, notifications) | 011-130 | 131 |
 | [4.0 Pharmacy & supply](forms-volume-04-pharmacy.html) | Medicine stock, requisitions, accounting | 131-141 | 11 |
 | [5.0 Emergency & air ambulance](forms-volume-05-emergency.html) | EMS calls, observation, air ambulance | 142-151 (+059-3) | 11 |
 | [6.0 Genetics & screening](forms-volume-06-genetics-screening.html) | Prenatal diagnosis, trimester screening, neonatal screening | 152-174 | 23 |
@@ -26,7 +26,7 @@ Order 399 form names follow a consistent convention in both Uzbek and Russian: a
 
 | Uzbek keyword | Russian keyword | Document type |
 |---------------|-----------------|---------------|
-| `...jurnali`, `...hisobga olish`, `...ro'yxatga olish` | журнал (регистрации / учёта) | Registration journal / ledger |
+| `...qayd etish`, `...jurnali`, `...hisobga olish`, `...ro'yxatga olish` | журнал (регистрации / учёта) | Registration journal / ledger |
 | `...karta`, `...kartasi` | карта | Longitudinal card |
 | `...bayoni`, `...bayonnomasi`, `...protokoli` | протокол | Procedure / examination report |
 | `...tahlili`, `...taxlili` | анализ | Laboratory analysis result |

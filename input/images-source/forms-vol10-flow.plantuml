@@ -8,9 +8,9 @@ participant "Forensic\nlabs" as LAB
 
 LE -> FB : case referred (body or living person)
 alt deceased
-  FB -> FB : 233 thanatology registration\n229 examination report
+  FB -> FB : 233 thanatology registration\n229 examination act
 else living person
-  FB -> FB : 234 outpatient registration\n229 examination report
+  FB -> FB : 234 outpatient registration\n229 examination act
 end
 FB -> LAB : 231 lab referral, 232 histology referral
 LAB -> LAB : 238 histology, 236/237 biology,\n241/242 chemistry, 245 criminalistics
@@ -18,8 +18,8 @@ LAB -> FB : results
 FB -> LE : 230 expert conclusion
 
 note over FB, LAB
-  A distinct legal domain. The lab steps are analysis
-  reports like volume 3, but the volume as a whole is
-  out of clinical-integration scope.
+  A distinct legal domain. The lab steps register and
+  analyse evidence in the bureau's own departments, and
+  the volume as a whole is out of clinical-integration scope.
 end note
 @enduml
