@@ -5,7 +5,7 @@ Title: "Form 066-1 - Psychiatric/Narcological discharge statistical card"
 Description: "Example of a psychiatric/narcological hospital discharge statistical card"
 * language = #en
 * identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:uuid:760e8400-e29b-41d4-a716-446655440066"
+* identifier.value = "urn:uuid:9c2b7f14-3d5a-4e88-b1c6-2f0a7d4e6611"
 * type = #document
 * timestamp = "2026-01-15T14:30:00+05:00"
 
@@ -156,7 +156,7 @@ InstanceOf: Form066_1_PsychiatricDischargeComposition
 Usage: #inline
 * language = #en
 * identifier[0].system = "urn:ietf:rfc:3986"
-* identifier[=].value = "urn:uuid:861f9511-f30c-52e5-b827-557766550666"
+* identifier[=].value = "urn:uuid:4a1e8d20-6b93-4c57-9f8e-3d5c1b7a0661"
 * identifier[+].system = "https://dhp.uz/fhir/core/sid/doc/uz/form-number"
 * identifier[=].value = "066-1"
 * status = #final
@@ -311,7 +311,8 @@ InstanceOf: UZCoreEncounter066
 Usage: #inline
 * language = #en
 * status = #completed
-* identifier[0].value = "REG-066-2026-0001"
+* identifier[0].system = "https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number"
+* identifier[=].value = "MRN-066-1-2026-0001"
 * class = $v3-ActCode#IMP "inpatient encounter"
 * type = $encounter-type-cs#mserv-0001-00004 // Treatment
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)

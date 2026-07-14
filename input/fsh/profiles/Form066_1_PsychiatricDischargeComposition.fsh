@@ -5,7 +5,7 @@ Title: "Form 066-1 - Psychiatric/Narcological Discharge Statistical Card Composi
 Description: "Composition profile for Form 066-1."
 
 * identifier 1..*
-* identifier ^short = "0.2 Bemorning ro'yxatdan o'tish raqami; 0.3 Shifoxona bemorining tibbiy bayonnomasi raqami"
+* identifier ^short = "Hujjat instansiyasi UUID va shakl raqami; 0.2 bemorning ro'yxatdan o'tish raqami"
 
 * status = #final
 * status ^short = "Hujjat holati (chiqarilgan yakuniy hujjat)"
