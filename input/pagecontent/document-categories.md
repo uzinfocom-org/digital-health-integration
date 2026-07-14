@@ -137,13 +137,6 @@ GET [base]/Bundle?identifier=urn:ietf:rfc:3986|urn:uuid:760e8400-e29b-41d4-a716-
 GET [base]/Bundle?type=document&composition.identifier=urn:ietf:rfc:3986|urn:uuid:861f9511-f30c-52e5-b827-557766550666
 ```
 
-Servers are not required to index the contents of document bundles, and support for the `composition` chain varies. Where the Composition is also stored as an individual resource, search that endpoint directly and assemble the document on demand with [$document](https://hl7.org/fhir/composition-operation-document.html):
-
-```
-GET [base]/Composition?category=https://terminology.dhp.uz/fhir/integrations/CodeSystem/document-category-cs|form-066&subject=Patient/123
-GET [base]/Composition/{id}/$document
-```
-
 ### Summary
 
 | Element | Purpose | Example |
