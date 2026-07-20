@@ -11,7 +11,7 @@ Description: "Related person for family care sick leave"
 * name ^short = "Full name of the related person"
 
 * gender MS
+* gender.extension contains $gender-other named otherGender 0..1 MS
 
 * extension contains
-    RelatedPersonGenderOther named otherGender 0..1 MS and
     RelatedPersonBirthdate named birthdate 0..1 MS

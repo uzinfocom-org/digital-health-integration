@@ -1,6 +1,7 @@
 Alias: $data-absent-reason = http://terminology.hl7.org/CodeSystem/data-absent-reason
 Alias: $document-category-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/document-category-cs
 Alias: $gender = http://hl7.org/fhir/administrative-gender
+Alias: $gender-other = https://dhp.uz/fhir/core/StructureDefinition/gender-other
 Alias: $observation-status = http://hl7.org/fhir/observation-status
 Alias: $address-type = http://hl7.org/fhir/address-type
 Alias: $address-use = http://hl7.org/fhir/address-use

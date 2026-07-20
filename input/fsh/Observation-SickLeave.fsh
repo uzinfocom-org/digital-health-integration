@@ -7,7 +7,7 @@ Description: "Observation containing additional Sick Leave attributes"
 * ^status = #draft
 * ^publisher = "UZINFOCOM"
 
-* status = #final (exactly)
+* status = #final
 
 * basedOn 1..1 MS
 * basedOn only Reference(SickLeaveCarePlan)

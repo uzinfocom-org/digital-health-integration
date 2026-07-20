@@ -13,7 +13,7 @@ Description: "FHIR R5 CarePlan profile representing a Sick Leave case (LN lifecy
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 * identifier contains series 0..1 MS
-* identifier[series].system = "https://dhp.uz/fhir/core/sid/doc/uz/sickleave" (exactly)
+* identifier[series].system = "https://dhp.uz/fhir/core/sid/doc/uz/sickleave"
 * identifier[series].value 1..1
 
 * category 1..1 MS

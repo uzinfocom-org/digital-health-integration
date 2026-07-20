@@ -116,22 +116,3 @@ Description: "Date of birth of the related person"
 * value[x] 1..1 MS
 
 * value[x] only date
-
-Extension: RelatedPersonGenderOther
-Id: relatedperson-gender-other
-Title: "Other Gender of Related Person"
-Description: "Differentiation of administrative gender if 'other'"
-
-* ^status = #draft
-
-* ^experimental = true
-
-* ^context.type = #element
-
-* ^context.expression = "RelatedPerson"
-
-* value[x] 0..1
-
-* value[x] only Coding
-
-* valueCoding from https://terminology.dhp.uz/fhir/core/ValueSet/gender-other-vs (required)
