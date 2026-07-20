@@ -4,14 +4,14 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    types: [opened, synchronize] # This will trigger the workflow only when a PR is opened or updated with new commits (in line(48-49) 1/0; and  )
+    types: [opened, synchronize, reopened, ready_for_review] # rebuild on open, new commits, reopen, and ready-for-review
 
 jobs:
   sushi:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - name: Install Sushi
         run: sudo npm install -g fsh-sushi
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - name: Install Jekyll
         run: sudo gem install jekyll
@@ -33,13 +33,24 @@ jobs:
 
       - name: Install IG publisher
         run: |
-          chmod +x ./_updatePublisher.sh
-          ./_updatePublisher.sh -y
+          # Download the IG Publisher directly rather than via _updatePublisher.sh.
+          # That script gates on `curl -sSf tx.fhir.org`, but tx.fhir.org's http
+          # root now returns 404 (the https /r4 API is fine), so the gate aborts
+          # the whole build. Fetching the jar directly avoids the broken check.
+          mkdir -p input-cache
+          curl -fL --retry 4 --retry-delay 10 -o input-cache/publisher.jar \
+            https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar
+          file input-cache/publisher.jar | grep -q "Java archive" || { echo "::error::publisher.jar download invalid"; exit 1; }
 
       - name: Check that the IG builds successfully
+        env:
+          JAVA_TOOL_OPTIONS: "-Xmx6g -Dfile.encoding=UTF-8"
         run: |
-          chmod +x ./_genonce.sh
-          ./_genonce.sh
+          # Run the publisher directly against the working https terminology server.
+          # _genonce.sh uses the same broken `curl -sSf tx.fhir.org` check and falls
+          # back to `-tx n/a`, which disables terminology validation and floods QA
+          # with spurious errors/warnings.
+          java -jar input-cache/publisher.jar -ig . -tx https://tx.fhir.org
           echo "✅ IG built successfully"
 
       - name: Check QA report
@@ -48,17 +59,14 @@ jobs:
           MAX_ALLOWED_ERRORS=1
           MAX_ALLOWED_WARNINGS=0
 
-        
-          
           if [ ! -f "output/qa.json" ]; then
             echo "❌ QA file not found: output/qa.json"
             exit 1
           fi
-          
+
           # Extract errors and warnings from qa.json
           ERRORS=$(jq -r '.errs // 0' output/qa.json)
-          # WARNINGS=$(jq -r '.warnings // 0' output/qa.json)
-          WARNINGS=0
+          WARNINGS=$(jq -r '.warnings // 0' output/qa.json)
 
           echo "  QA Results:"
           echo "   Errors: $ERRORS"
@@ -80,7 +88,7 @@ jobs:
 
       - name: Upload output folder
         if: always() && hashFiles('output/**/*') != ''
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: ig-output-${{ github.run_number }}
           path: output/

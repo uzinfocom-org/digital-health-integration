@@ -38,7 +38,7 @@ Description: "FHIR R5 CarePlan profile representing a Sick Leave case (LN lifecy
 * addresses contains
     reason 0..1 MS and
     diagnosis 0..1 MS
-* addresses[reason].concept.coding.system = "https://terminology.dhp.uz/CodeSystem/care-plan-reason-cs"
+* addresses[reason].concept.coding.system = "https://terminology.dhp.uz/fhir/integrations/CodeSystem/care-plan-reason-cs"
 * addresses[reason] from CarePlanReasonVS (required)
 * addresses[diagnosis].concept.coding.system = "http://hl7.org/fhir/sid/icd-10"
 * addresses[diagnosis] from ICD10VS (required)

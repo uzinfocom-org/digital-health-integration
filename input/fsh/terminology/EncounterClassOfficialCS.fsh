@@ -5,7 +5,7 @@ Description: "Uzbek and Russian designations for encounter class codes"
 
 * insert SupplementCodeSystemDraft(
     encounter-class-official-cs,
-    http://terminology.hl7.org/CodeSystem/v3-ActCode,
+    $v3-ActCode,
     3.0.0
 )
 

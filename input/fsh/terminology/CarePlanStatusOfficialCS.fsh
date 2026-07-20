@@ -5,7 +5,7 @@ Description: "Uzbek and Russian designations for CarePlan status"
 
 * insert SupplementCodeSystemDraft(
     care-plan-status-official-cs,
-    http://hl7.org/fhir/request-status,
+    $request-status,
     5.0.0
 )
 
