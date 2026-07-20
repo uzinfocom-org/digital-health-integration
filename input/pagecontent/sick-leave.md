@@ -38,7 +38,34 @@ Example: [SickLeaveCarePlanExample](CarePlan-SickLeaveCarePlanExample.html)
 | Patient | - | reference to [Patient](#supporting-resources) | `subject` |
 | Person cared for | - | reference to [RelatedPerson](#family-care-the-person-cared-for-relatedperson) | `extension[relatedPerson]` |
 
-The reason and diagnosis are distinguished by the code system they draw from: reasons come from `care-plan-reason-cs`, diagnoses from ICD-10. The lifecycle status uses HL7 `request-status` where a standard code fits (draft, active, revoked, completed, entered-in-error) and adds local codes for statuses the standard does not cover; `extension[statusHistory]` keeps the dated trail of every status the case has passed through. `extension[relatedPerson]` and `extension[diagnosisUse]` are only populated when relevant (family care, and diagnosis typing respectively).
+The reason and diagnosis are distinguished by the code system they draw from: reasons come from `care-plan-reason-cs`, diagnoses from ICD-10. `extension[relatedPerson]` and `extension[diagnosisUse]` are only populated when relevant (family care, and diagnosis typing respectively). How the case's lifecycle status is recorded is described next.
+
+#### Recording the lifecycle status
+
+A sick leave case moves through several stages between being opened and closed. FHIR's `CarePlan.status` only carries the coarse request lifecycle - `draft`, `active`, `revoked`, `completed`, `entered-in-error` - so the finer Uzbek workflow steps (sent for approval, returned, extended, sent to the medical-social expert commission - MSEC / ВТЭК) have no standard equivalent and are carried in `extension[workflowStatus]` instead. Both draw their codes from [CarePlanStatusVS](ValueSet-care-plan-status-vs.html), which combines the standard `request-status` codes with the local [care-plan-status-local-cs](CodeSystem-care-plan-status-local-cs.html) steps.
+
+A typical chain, from opening to closing:
+
+| Stage | `status` (coarse, standard) | `workflowStatus` (detailed) |
+| :--- | :--- | :--- |
+| Being filled in | `draft` | `request-status#draft` |
+| Opened / in force | `active` | `request-status#active` |
+| Sent for approval | `active` | `care-plan-status-local-cs#emdoc-0002-0004` (Sent for approval) |
+| Returned for correction | `active` | `care-plan-status-local-cs#emdoc-0002-0005` (Returned) |
+| Extended | `active` | `care-plan-status-local-cs#emdoc-0002-0001` (Extended) |
+| Sent to MSEC | `active` | `care-plan-status-local-cs#emdoc-0002-0002` (Sent to MSEC) |
+| Supplemented with MSEC data | `active` | `care-plan-status-local-cs#emdoc-0002-0003` (Supplemented with MSEC data) |
+| Approved / closed | `completed` | `request-status#completed` |
+| Cancelled | `revoked` | `request-status#revoked` |
+| Entered in error | `entered-in-error` | `request-status#entered-in-error` |
+
+While the case is open, `status` stays `active` and only `workflowStatus` changes; `status` moves to a terminal value (`completed`, `revoked`, `entered-in-error`) only when the case itself reaches that state. Where a workflow step maps onto a standard code (opening, closing, cancelling) the two mirror each other; the intermediate approval, return, extension and MSEC steps live only in `workflowStatus`.
+
+There are three ways to record this, in increasing richness - pick the one that matches what consumers of the data need:
+
+1. **Standard status only.** Populate just `CarePlan.status` with the [request-status](https://hl7.org/fhir/R5/valueset-request-status.html) code. Simplest and fully interoperable, but the Uzbek workflow steps collapse into `active` and are lost. Use when a consumer only needs open / closed / cancelled.
+2. **Standard status + current workflow status (recommended).** Keep `status` as the coarse standard state (FHIR requires it) and put the precise current step in `extension[workflowStatus]`. Systems that understand the extension get the exact stage; everyone else still reads a valid standard status. This is the platform default.
+3. **Full dated history.** As option 2, plus one `extension[statusHistory]` entry per transition, each carrying the step's `status` code and the `period` it was active. This reconstructs the whole timeline (opened → sent for approval → returned → active → extended → completed) and is the right choice when the audit trail matters. The [example](CarePlan-SickLeaveCarePlanExample.html) uses this option.
 
 ### Recording additional attributes (Observation)
 
