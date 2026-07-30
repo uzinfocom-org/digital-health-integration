@@ -15,7 +15,7 @@ Description: "Maps the local UZ macrocalcification finding code to SNOMED CT. Al
 * targetScopeCanonical = $sct-vs
 
 // 3. Macrocalcifications (no equivalent SNOMED concept; maps to the broader calcification finding)
-* group.element[+].code = #src-find-3
+* group.element[+].code = #scrn-0028-00002
 * group.element[=].display = "Macrocalcifications"
 * group.element[=].target[+].code = #697944008
 * group.element[=].target[=].display = "Mammographic calcification of breast"
