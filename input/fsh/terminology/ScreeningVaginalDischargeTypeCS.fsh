@@ -51,3 +51,9 @@ Description: "CodeSystem for Screening Vaginal Discharge Type"
   * ^designation[=].value = "Гнойные"
   * ^designation[+].language = #en
   * ^designation[=].value = "Purulent"
+
+* #scrn-0019-00009 "Boshqa"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Другое"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Other"
