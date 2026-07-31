@@ -16,3 +16,9 @@ Description: "Local translations for observed body part codes"
   * ^designation[=].value = "Правая грудь"
   * ^designation[+].language = #uz
   * ^designation[=].value = "O'ng ko'krak"
+
+* #24142002 "Nipple structure"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Сосок молочной железы"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Ko‘krak bezi so‘rg‘ichi"

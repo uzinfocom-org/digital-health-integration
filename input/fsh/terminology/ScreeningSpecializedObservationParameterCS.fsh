@@ -22,6 +22,18 @@ Description: "Local codes for component parameters that are not represented in t
   * ^designation[+].language = #en
   * ^designation[=].value = "Histologic type"
 
+* #material-class "Material sinfi"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Класс материала"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Material class"
+
+* #dcis-present "DCIS mavjudligi"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Наличие DCIS"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "DCIS present"
+
 * #dcis-grade "DCIS yomon sifat darajasi"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Степень злокачественности DCIS"
