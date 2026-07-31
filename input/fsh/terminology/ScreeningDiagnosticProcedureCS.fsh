@@ -50,3 +50,11 @@ Description: "SNOMED CT supplement containing Uzbek and Russian designations for
   * ^designation[=].value = "Биопсия шейки матки"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Bachadon bo'yni biopsiyasi"
+
+* #714797009 "Histologic test"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Гистологическое исследование"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Gistologik tekshirish"
+
+    
