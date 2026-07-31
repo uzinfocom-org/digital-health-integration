@@ -2,7 +2,7 @@ CodeSystem: ScreeningBreastMaterialClassCS
 Id: screening-breast-material-class-cs
 Title: "Screening Material Class CodeSystem"
 Description: "Types of material obtained for histological and cytological examination."
-* ^url = "https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-material-class-cs"
+* ^url = "https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-breast-material-class-cs"
 * ^status = #active
 * ^experimental = true
 * ^content = #complete
