@@ -2,7 +2,7 @@ Profile: ScreeningSpecimen
 Parent: Specimen
 Id: screening-specimen
 Title: "Screening Specimen"
-Description: "Specimen collected during cervical cancer screening."
+Description: "Breast or cervical specimen collected during screening."
 * ^status = #active
 * ^experimental = true
 * ^publisher = "DHP Integration"
@@ -10,7 +10,6 @@ Description: "Specimen collected during cervical cancer screening."
 * identifier MS
 * status MS
 * type 1..1 MS
-* type from ScreeningCervicalMaterialTypeVS (required)
+* type from ScreeningPathologySpecimenTypeVS (required)
 * subject 1..1 MS
 * collection MS
-

@@ -65,6 +65,11 @@ Usage: #example
 * item[10].linkId = "126"
 * item[10].text = "Принимали ли вы гормональные препараты  (противозачаточные, гормональные таблетки во время климакса)"
 * item[10].answer[0].valueBoolean = false
+* item[11].linkId = "statusRisk"
+* item[11].text = "Рассчитанный риск рака молочной железы"
+* item[11].answer[0].valueCoding.system = "https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-risk-level-cs"
+* item[11].answer[0].valueCoding.code = #scrn-0081-00001
+* item[11].answer[0].valueCoding.display = "Низкий риск"
 
 // Source: QuestionnaireResponse-cervical-risk-example.json
 Instance: ScreeningCervicalRiskResponseExample
@@ -164,6 +169,11 @@ Usage: #example
 * item[17].linkId = "116"
 * item[17].text = "Были ли у вас контактные кровотечения?"
 * item[17].answer[0].valueBoolean = true
+* item[18].linkId = "statusRisk"
+* item[18].text = "Рассчитанный риск рака шейки матки"
+* item[18].answer[0].valueCoding.system = "https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-risk-level-cs"
+* item[18].answer[0].valueCoding.code = #scrn-0081-00001
+* item[18].answer[0].valueCoding.display = "Низкий риск"
 
 // Source: QuestionnaireResponse-woman-exam-128.json
 Instance: ScreeningWomanExamResponse128

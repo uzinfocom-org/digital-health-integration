@@ -219,3 +219,21 @@ Description: "CodeSystem for Screening Ultrasound Parameter"
   * ^designation[=].value = "Васкуляризация очага"
   * ^designation[+].language = #en
   * ^designation[=].value = "Lesion vascularization"
+
+* #scrn-0052-00038 "Aksillyar limfa tugunining maksimal o‘lchami"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Максимальный размер аксиллярного лимфатического узла"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Maximum axillary lymph node size"
+
+* #scrn-0052-00039 "Aksillyar limfa tuguni kortikal qavatining qalinligi"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Толщина коркового слоя аксиллярного лимфатического узла"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Axillary lymph node cortical thickness"
+
+* #scrn-0052-00040 "Boshqa regional limfa tugunlari bo‘yicha izoh"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Комментарий по другим регионарным лимфатическим узлам"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Other regional lymph node note"

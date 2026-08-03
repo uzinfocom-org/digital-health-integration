@@ -301,6 +301,18 @@ Usage: #definition
 * item[10].text.extension[0].url = "http://hl7.org/fhir/StructureDefinition/translation"
 * item[10].type = #boolean
 * item[10].repeats = false
+* item[11].linkId = "statusRisk"
+* item[11].text = "Hisoblangan ko‘krak bezi saratoni xavfi"
+* item[11].text.extension[0].extension[0].url = "lang"
+* item[11].text.extension[0].extension[0].valueCode = #ru
+* item[11].text.extension[0].extension[1].url = "content"
+* item[11].text.extension[0].extension[1].valueString = "Рассчитанный риск рака молочной железы"
+* item[11].text.extension[0].url = "http://hl7.org/fhir/StructureDefinition/translation"
+* item[11].type = #coding
+* item[11].repeats = false
+* item[11].readOnly = true
+* item[11].answerConstraint = #optionsOnly
+* item[11].answerValueSet = "https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-risk-level-vs"
 
 // Source: Questionnaire-cervical-risk.json
 Instance: ScreeningCervicalRiskQuestionnaire
@@ -833,6 +845,18 @@ Usage: #definition
 * item[17].text.extension[0].url = "http://hl7.org/fhir/StructureDefinition/translation"
 * item[17].type = #boolean
 * item[17].repeats = false
+* item[18].linkId = "statusRisk"
+* item[18].text = "Hisoblangan bachadon bo‘yni saratoni xavfi"
+* item[18].text.extension[0].extension[0].url = "lang"
+* item[18].text.extension[0].extension[0].valueCode = #ru
+* item[18].text.extension[0].extension[1].url = "content"
+* item[18].text.extension[0].extension[1].valueString = "Рассчитанный риск рака шейки матки"
+* item[18].text.extension[0].url = "http://hl7.org/fhir/StructureDefinition/translation"
+* item[18].type = #coding
+* item[18].repeats = false
+* item[18].readOnly = true
+* item[18].answerConstraint = #optionsOnly
+* item[18].answerValueSet = "https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-risk-level-vs"
 
 // Source: Questionnaire-woman-exam.json
 Instance: ScreeningWomanExamQuestionnaire

@@ -8,6 +8,8 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * ^publisher = "DHP Integration"
 
 * code = $sct#47079000 "Ultrasound of breast"
+* value[x] 0..0
+* hasMember MS
 * component[transformationZone] 0..0
 * component[breastDensity] 0..0
 * component[imageQuality] 0..0
@@ -34,10 +36,30 @@ Description: "Specialized screening Observation for breast ultrasound parameters
     lesionContour 0..1 MS and
     lesionEchogenicity 0..1 MS and
     lesionAcousticEffect 0..1 MS and
-    lesionVascularization 0..1 MS
+    lesionVascularization 0..1 MS and
+    menstrualCycleDuration 0..1 MS and
+    anamnesis 0..1 MS and
+    fibroglandularThickness 0..1 MS and
+    maximumDuctDiameter 0..1 MS and
+    elastographyStiffness 0..1 MS and
+    axillaryMaximumNodeSize 0..1 MS and
+    axillaryCorticalThickness 0..1 MS and
+    regionalNodeNote 0..1 MS and
+    additionalChanges 0..1 MS and
+    focalLesionPresent 0..1 MS and
+    clockFacePosition 0..1 MS and
+    distanceFromNipple 0..1 MS and
+    lesionLength 0..1 MS and
+    lesionWidth 0..1 MS and
+    lesionThickness 0..1 MS and
+    internalStructureHomogeneous 0..1 MS and
+    internalStructureHeterogeneous 0..1 MS and
+    internalStructureCysticInclusions 0..1 MS and
+    internalStructureMicrocalcifications 0..1 MS and
+    internalStructureMacrocalcifications 0..1 MS
 
 * component[breastFinding] ^short = "Breast ultrasound finding"
-* component[breastFinding].code = screening-specialized-observation-parameter-cs#breast-finding
+* component[breastFinding].code = screening-specialized-observation-parameter-cs#scrn-0073-00004
 * component[breastFinding].value[x] only CodeableConcept
 * component[breastFinding].value[x] from ScreeningBreastFindingVS (required)
 
@@ -97,7 +119,7 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * component[axillaryNodeStatus].value[x] from ScreeningUltrasoundAxillaryNodeStatusVS (required)
 
 * component[axillaryNodeDifferentiation] ^short = "Axillary lymph node differentiation"
-* component[axillaryNodeDifferentiation].code = screening-specialized-observation-parameter-cs#axillary-node-differentiation
+* component[axillaryNodeDifferentiation].code = screening-specialized-observation-parameter-cs#scrn-0073-00016
 * component[axillaryNodeDifferentiation].value[x] only CodeableConcept
 * component[axillaryNodeDifferentiation].value[x] from ScreeningUltrasoundAxillaryNodeDifferentiationVS (required)
 
@@ -112,12 +134,12 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * component[dynamics].value[x] from ScreeningUltrasoundDynamicsVS (required)
 
 * component[breastSide] ^short = "Breast side"
-* component[breastSide].code = screening-specialized-observation-parameter-cs#breast-side
+* component[breastSide].code = screening-specialized-observation-parameter-cs#scrn-0073-00014
 * component[breastSide].value[x] only CodeableConcept
 * component[breastSide].value[x] from ScreeningUltrasoundBreastSideVS (required)
 
 * component[breastQuadrant] ^short = "Breast quadrant"
-* component[breastQuadrant].code = screening-specialized-observation-parameter-cs#breast-quadrant
+* component[breastQuadrant].code = screening-specialized-observation-parameter-cs#scrn-0073-00015
 * component[breastQuadrant].value[x] only CodeableConcept
 * component[breastQuadrant].value[x] from ScreeningUltrasoundBreastQuadrantVS (required)
 
@@ -151,3 +173,150 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * component[lesionVascularization].value[x] only CodeableConcept
 * component[lesionVascularization].value[x] from ScreeningUltrasoundLesionVascularizationVS (required)
 
+* component[menstrualCycleDuration] ^short = "Menstrual cycle duration"
+* component[menstrualCycleDuration].code = screening-ultrasound-parameter-cs#scrn-0052-00001
+* component[menstrualCycleDuration].value[x] 1..1
+* component[menstrualCycleDuration].value[x] only Quantity
+* component[menstrualCycleDuration].valueQuantity.value 1..1
+* component[menstrualCycleDuration].valueQuantity.value ^minValueDecimal = 0
+* component[menstrualCycleDuration].valueQuantity.unit = "d" (exactly)
+* component[menstrualCycleDuration].valueQuantity.system = $ucum (exactly)
+* component[menstrualCycleDuration].valueQuantity.code = #d (exactly)
+
+* component[anamnesis] ^short = "Ultrasound anamnesis"
+* component[anamnesis].code = screening-ultrasound-parameter-cs#scrn-0052-00003
+* component[anamnesis].value[x] 1..1
+* component[anamnesis].value[x] only string
+
+* component[fibroglandularThickness] ^short = "Fibroglandular complex thickness"
+* component[fibroglandularThickness].code = screening-ultrasound-parameter-cs#scrn-0052-00009
+* component[fibroglandularThickness].value[x] 1..1
+* component[fibroglandularThickness].value[x] only Quantity
+* component[fibroglandularThickness].valueQuantity.value 1..1
+* component[fibroglandularThickness].valueQuantity.value ^minValueDecimal = 0
+* component[fibroglandularThickness].valueQuantity.unit = "mm" (exactly)
+* component[fibroglandularThickness].valueQuantity.system = $ucum (exactly)
+* component[fibroglandularThickness].valueQuantity.code = #mm (exactly)
+
+* component[maximumDuctDiameter] ^short = "Maximum duct diameter"
+* component[maximumDuctDiameter].code = screening-ultrasound-parameter-cs#scrn-0052-00011
+* component[maximumDuctDiameter].value[x] 1..1
+* component[maximumDuctDiameter].value[x] only Quantity
+* component[maximumDuctDiameter].valueQuantity.value 1..1
+* component[maximumDuctDiameter].valueQuantity.value ^minValueDecimal = 0
+* component[maximumDuctDiameter].valueQuantity.unit = "mm" (exactly)
+* component[maximumDuctDiameter].valueQuantity.system = $ucum (exactly)
+* component[maximumDuctDiameter].valueQuantity.code = #mm (exactly)
+
+* component[elastographyStiffness] ^short = "Elastography stiffness; unit is supplied by Screening"
+* component[elastographyStiffness].code = screening-ultrasound-parameter-cs#scrn-0052-00014
+* component[elastographyStiffness].value[x] 1..1
+* component[elastographyStiffness].value[x] only Quantity
+* component[elastographyStiffness].valueQuantity.value 1..1
+* component[elastographyStiffness].valueQuantity.value ^minValueDecimal = 0
+* component[elastographyStiffness].valueQuantity.unit 1..1
+* component[elastographyStiffness].valueQuantity.system 1..1
+* component[elastographyStiffness].valueQuantity.system = $ucum (exactly)
+* component[elastographyStiffness].valueQuantity.code 1..1
+
+* component[axillaryMaximumNodeSize] ^short = "Maximum axillary lymph node size"
+* component[axillaryMaximumNodeSize].code = screening-ultrasound-parameter-cs#scrn-0052-00038
+* component[axillaryMaximumNodeSize].value[x] 1..1
+* component[axillaryMaximumNodeSize].value[x] only Quantity
+* component[axillaryMaximumNodeSize].valueQuantity.value 1..1
+* component[axillaryMaximumNodeSize].valueQuantity.value ^minValueDecimal = 0
+* component[axillaryMaximumNodeSize].valueQuantity.unit = "mm" (exactly)
+* component[axillaryMaximumNodeSize].valueQuantity.system = $ucum (exactly)
+* component[axillaryMaximumNodeSize].valueQuantity.code = #mm (exactly)
+
+* component[axillaryCorticalThickness] ^short = "Axillary lymph node cortical thickness"
+* component[axillaryCorticalThickness].code = screening-ultrasound-parameter-cs#scrn-0052-00039
+* component[axillaryCorticalThickness].value[x] 1..1
+* component[axillaryCorticalThickness].value[x] only Quantity
+* component[axillaryCorticalThickness].valueQuantity.value 1..1
+* component[axillaryCorticalThickness].valueQuantity.value ^minValueDecimal = 0
+* component[axillaryCorticalThickness].valueQuantity.unit = "mm" (exactly)
+* component[axillaryCorticalThickness].valueQuantity.system = $ucum (exactly)
+* component[axillaryCorticalThickness].valueQuantity.code = #mm (exactly)
+
+* component[regionalNodeNote] ^short = "Comment about other regional lymph nodes"
+* component[regionalNodeNote].code = screening-ultrasound-parameter-cs#scrn-0052-00040
+* component[regionalNodeNote].value[x] 1..1
+* component[regionalNodeNote].value[x] only string
+
+* component[additionalChanges] ^short = "Additional ultrasound changes"
+* component[additionalChanges].code = screening-ultrasound-parameter-cs#scrn-0052-00019
+* component[additionalChanges].value[x] 1..1
+* component[additionalChanges].value[x] only string
+
+* component[focalLesionPresent] ^short = "Focal breast lesion present"
+* component[focalLesionPresent].code = screening-ultrasound-parameter-cs#scrn-0052-00021
+* component[focalLesionPresent].value[x] 1..1
+* component[focalLesionPresent].value[x] only boolean
+
+* component[clockFacePosition] ^short = "Lesion clock-face position, 1 to 12"
+* component[clockFacePosition].code = screening-ultrasound-parameter-cs#scrn-0052-00022
+* component[clockFacePosition].value[x] 1..1
+* component[clockFacePosition].value[x] only integer
+* component[clockFacePosition].valueInteger ^minValueInteger = 1
+* component[clockFacePosition].valueInteger ^maxValueInteger = 12
+
+* component[distanceFromNipple] ^short = "Distance from nipple"
+* component[distanceFromNipple].code = screening-ultrasound-parameter-cs#scrn-0052-00023
+* component[distanceFromNipple].value[x] 1..1
+* component[distanceFromNipple].value[x] only Quantity
+* component[distanceFromNipple].valueQuantity.value 1..1
+* component[distanceFromNipple].valueQuantity.value ^minValueDecimal = 0
+* component[distanceFromNipple].valueQuantity.unit = "mm" (exactly)
+* component[distanceFromNipple].valueQuantity.system = $ucum (exactly)
+* component[distanceFromNipple].valueQuantity.code = #mm (exactly)
+
+* component[lesionLength] ^short = "Lesion length"
+* component[lesionLength].code = screening-ultrasound-parameter-cs#scrn-0052-00024
+* component[lesionLength].value[x] 1..1
+* component[lesionLength].value[x] only Quantity
+* component[lesionLength].valueQuantity.value 1..1
+* component[lesionLength].valueQuantity.value ^minValueDecimal = 0
+* component[lesionLength].valueQuantity.unit = "mm" (exactly)
+* component[lesionLength].valueQuantity.system = $ucum (exactly)
+* component[lesionLength].valueQuantity.code = #mm (exactly)
+
+* component[lesionWidth] ^short = "Lesion width"
+* component[lesionWidth].code = screening-ultrasound-parameter-cs#scrn-0052-00025
+* component[lesionWidth].value[x] 1..1
+* component[lesionWidth].value[x] only Quantity
+* component[lesionWidth].valueQuantity.value 1..1
+* component[lesionWidth].valueQuantity.value ^minValueDecimal = 0
+* component[lesionWidth].valueQuantity.unit = "mm" (exactly)
+* component[lesionWidth].valueQuantity.system = $ucum (exactly)
+* component[lesionWidth].valueQuantity.code = #mm (exactly)
+
+* component[lesionThickness] ^short = "Lesion thickness"
+* component[lesionThickness].code = screening-ultrasound-parameter-cs#scrn-0052-00026
+* component[lesionThickness].value[x] 1..1
+* component[lesionThickness].value[x] only Quantity
+* component[lesionThickness].valueQuantity.value 1..1
+* component[lesionThickness].valueQuantity.value ^minValueDecimal = 0
+* component[lesionThickness].valueQuantity.unit = "mm" (exactly)
+* component[lesionThickness].valueQuantity.system = $ucum (exactly)
+* component[lesionThickness].valueQuantity.code = #mm (exactly)
+
+* component[internalStructureHomogeneous].code = screening-ultrasound-parameter-cs#scrn-0052-00031
+* component[internalStructureHomogeneous].value[x] 1..1
+* component[internalStructureHomogeneous].value[x] only boolean
+
+* component[internalStructureHeterogeneous].code = screening-ultrasound-parameter-cs#scrn-0052-00032
+* component[internalStructureHeterogeneous].value[x] 1..1
+* component[internalStructureHeterogeneous].value[x] only boolean
+
+* component[internalStructureCysticInclusions].code = screening-ultrasound-parameter-cs#scrn-0052-00033
+* component[internalStructureCysticInclusions].value[x] 1..1
+* component[internalStructureCysticInclusions].value[x] only boolean
+
+* component[internalStructureMicrocalcifications].code = screening-ultrasound-parameter-cs#scrn-0052-00034
+* component[internalStructureMicrocalcifications].value[x] 1..1
+* component[internalStructureMicrocalcifications].value[x] only boolean
+
+* component[internalStructureMacrocalcifications].code = screening-ultrasound-parameter-cs#scrn-0052-00035
+* component[internalStructureMacrocalcifications].value[x] 1..1
+* component[internalStructureMacrocalcifications].value[x] only boolean
