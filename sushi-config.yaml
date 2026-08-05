@@ -109,6 +109,8 @@ pages:
     title: Sick Leave
   dhis-tuberculosis.md:
     title: Tuberculosis (DHIS)
+  forms.md:
+    title: Forms
   changelog.md:
     title: Changelog
   translationinfo.md:
@@ -127,6 +129,7 @@ menu:
     Cervical and Breast Cancer Screening: cervical-breast-cancer-screening.html
     Sick Leave: sick-leave.html
     Tuberculosis (DHIS): dhis-tuberculosis.html
+  Forms: forms.html
   Artifacts: artifacts.html
   Changelog: changelog.html
 
