@@ -56,11 +56,7 @@ jobs:
       - name: Check QA report
         run: |
           # Configuration
-          # 1 known error, tolerated for now: DHISObservationMicroscopy.method is not a subset of
-          # core's REQUIRED lab-method-vs (0.6.0). It is emitted during profile snapshot validation
-          # and is NOT suppressible via input/ignoreWarnings.txt. Set back to 0 once uz.dhp.core
-          # ships the extensible method binding (already in dev), which clears it at the source.
-          MAX_ALLOWED_ERRORS=1
+          MAX_ALLOWED_ERRORS=0
           MAX_ALLOWED_WARNINGS=0
 
           if [ ! -f "output/qa.json" ]; then
@@ -78,7 +74,7 @@ jobs:
           
           # Check if errors exceed threshold
           if [ "$ERRORS" -gt $MAX_ALLOWED_ERRORS ]; then
-            echo "❌ Too many errors: $ERRORS (maximum allowed: $MAX_ALLOWED_ERRORS known errors)"
+            echo "❌ Too many errors: $ERRORS (maximum allowed: $MAX_ALLOWED_ERRORS)"
             exit 1
           fi
           
