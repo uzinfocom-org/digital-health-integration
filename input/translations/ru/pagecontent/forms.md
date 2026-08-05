@@ -3,18 +3,6 @@
 внедрения: проверить формулировки, варианты ответов, логику переходов между вопросами и -
 если опросник что-то вычисляет - результаты вычислений.
 
-В этом руководстве опубликованы [шаблон опросника для скрининга](Questionnaire-screening-intake-template.html),
-используемый интеграцией [скрининга рака шейки матки и молочной железы](cervical-breast-cancer-screening.html),
-и [опросник по гепатиту](Questionnaire-hepatitis-questionnaire.html).
-Формы Министерства здравоохранения в этом руководстве - [011](StructureDefinition-form-011-hemodialysis-composition.html),
-[066](StructureDefinition-form-066-hospital-discharge-composition.html),
-[066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) и
-[130](StructureDefinition-form-130-laboratory-test-results-composition.html) - это
-клинические документы, а не опросники, поэтому здесь они не отображаются. Их поэлементное
-сопоставление приведено на страницах [Форма 011](form-011-mapping.html),
-[Форма 066](form-066-mapping.html), [Форма 066-1](form-066-1-mapping.html) и
-[Форма 130](form-130-mapping.html).
-
 <style>
 #form-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
 #form-picker { font: inherit; font-size: 0.9rem; padding: 6px 10px; border: 1px solid #c3d0d4; border-radius: 6px; background: #fff; color: #2a3d45; max-width: 100%; }

@@ -3,17 +3,6 @@ live form. This is meant for reviewing and trying a form before implementing it:
 the wording, the answer options, the skip logic, and - where a questionnaire calculates
 something - the calculated results.
 
-This guide publishes the [screening questionnaire template](Questionnaire-screening-intake-template.html),
-used by the [cervical and breast cancer screening](cervical-breast-cancer-screening.html)
-integration, and the [hepatitis questionnaire](Questionnaire-hepatitis-questionnaire.html).
-The Ministry of Health forms in this guide - [011](StructureDefinition-form-011-hemodialysis-composition.html),
-[066](StructureDefinition-form-066-hospital-discharge-composition.html),
-[066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) and
-[130](StructureDefinition-form-130-laboratory-test-results-composition.html) - are clinical
-documents rather than questionnaires, so they are not rendered here. Their field-by-field
-mappings are on the [Form 011](form-011-mapping.html), [Form 066](form-066-mapping.html),
-[Form 066-1](form-066-1-mapping.html) and [Form 130](form-130-mapping.html) pages.
-
 <style>
 #form-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
 #form-picker { font: inherit; font-size: 0.9rem; padding: 6px 10px; border: 1px solid #c3d0d4; border-radius: 6px; background: #fff; color: #2a3d45; max-width: 100%; }

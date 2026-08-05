@@ -4,18 +4,6 @@ ko'rish uchun mo'ljallangan: savollarning matnini, javob variantlarini, savollar
 o'tish mantig'ini va - agar so'rovnoma biror narsani hisoblasa - hisoblash natijalarini
 tekshiring.
 
-Ushbu qo'llanmada [skrining so'rovnomasi shabloni](Questionnaire-screening-intake-template.html)
-chop etilgan, u [bachadon bo'yni va ko'krak bezi saratoni skriningi](cervical-breast-cancer-screening.html)
-integratsiyasida ishlatiladi, hamda [gepatit so'rovnomasi](Questionnaire-hepatitis-questionnaire.html).
-Ushbu qo'llanmadagi Sog'liqni saqlash vazirligi formalari - [011](StructureDefinition-form-011-hemodialysis-composition.html),
-[066](StructureDefinition-form-066-hospital-discharge-composition.html),
-[066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) va
-[130](StructureDefinition-form-130-laboratory-test-results-composition.html) - so'rovnoma
-emas, balki klinik hujjatlardir, shuning uchun ular bu yerda ko'rsatilmaydi. Ularning
-maydonlar bo'yicha moslashtirilishi [Forma 011](form-011-mapping.html),
-[Forma 066](form-066-mapping.html), [Forma 066-1](form-066-1-mapping.html) va
-[Forma 130](form-130-mapping.html) sahifalarida keltirilgan.
-
 <style>
 #form-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
 #form-picker { font: inherit; font-size: 0.9rem; padding: 6px 10px; border: 1px solid #c3d0d4; border-radius: 6px; background: #fff; color: #2a3d45; max-width: 100%; }
