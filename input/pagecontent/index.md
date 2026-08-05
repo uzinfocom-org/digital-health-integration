@@ -154,7 +154,7 @@ flowchart TD
 
 Artifacts in this guide - profiles, extensions, code systems, value sets, concept maps, naming systems and the FHIR package - carry the version of the guide itself. Versioning follows [Semantic Versioning (SemVer)](https://semver.org/) in the format `MAJOR.MINOR.PATCH`, so every artifact in version `0.7.0` of the guide is also versioned `0.7.0` and it is always clear which release an artifact belongs to.
 
-`MAJOR` and `MINOR` follow [UZ Core](https://dhp.uz/fhir/core/). A `0.7.x` release of this guide is built against UZ Core `0.7.x` and is consistent with it, which is why the first release of this guide is `0.7.0` rather than `0.1.0`. `PATCH` does not follow UZ Core: this guide can publish a patch release on its own, and a UZ Core patch release does not require one here. To see exactly which version this guide depends on, consult the dependency table below.
+`MAJOR` and `MINOR` follow [UZ Core](https://dhp.uz/fhir/core/): a release of this guide carries the major and minor version of the UZ Core release it is built against and consistent with. `PATCH` does not follow UZ Core: this guide can publish a patch release on its own, and a UZ Core patch release does not require one here. To see exactly which version this guide depends on, consult the dependency table below.
 
 While an artifact is in development and not yet ready for production use, it has a status of `draft`. Once it is ready for production use it is marked `active`, and a withdrawn artifact is marked `retired`.
 
