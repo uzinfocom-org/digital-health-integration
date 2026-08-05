@@ -1,6 +1,6 @@
 name: Release
 
-# Publishes a release when a semver tag (e.g. 0.1.0) is pushed:
+# Publishes a release when a semver tag (e.g. 0.7.0) is pushed:
 #   1. builds the IG,
 #   2. verifies the built package is uz.dhp.integrations#<tag>,
 #   3. creates the GitHub Release <tag> with package.tgz attached,
