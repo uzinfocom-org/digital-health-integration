@@ -9,7 +9,7 @@ Description: "SNOMED CT supplement containing Uzbek and Russian designations for
     2026.1.0
 )
 
-* #47079000 "Ultrasound of breast"
+* #47079000 "Ultrasonography of breast"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Ультразвуковое исследование молочной железы"
   * ^designation[+].language = #uz

@@ -7,7 +7,7 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * ^experimental = true
 * ^publisher = "DHP Integration"
 
-* code = $sct#47079000 "Ultrasound of breast"
+* code = $sct#47079000 "Ultrasonography of breast"
 * value[x] 0..0
 * hasMember MS
 * component[transformationZone] 0..0

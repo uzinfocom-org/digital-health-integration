@@ -9,7 +9,7 @@ Description: "Value set of SNOMED CT codes for diagnostic referrals and reports.
 
 * include codes from system $sct
 
-// * $sct#47079000 "Ultrasound of breast"
+// * $sct#47079000 "Ultrasonography of breast"
 // * $sct#122548005 "Biopsy of breast"
 // * $sct#65801008 "Excision"
 // * $sct#71651007 "Mammography"
