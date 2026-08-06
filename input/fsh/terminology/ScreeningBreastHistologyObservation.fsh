@@ -90,11 +90,11 @@ Description: "Specialized screening Observation for breast histology and patholo
 * component[largestInvasiveFocus].valueQuantity.value 1..1
 * component[largestInvasiveFocus].valueQuantity.value ^minValueDecimal = 0
 * component[largestInvasiveFocus].valueQuantity.unit 1..1
-* component[largestInvasiveFocus].valueQuantity.unit = "mm" (exactly)
 * component[largestInvasiveFocus].valueQuantity.system 1..1
-* component[largestInvasiveFocus].valueQuantity.system = $ucum (exactly)
 * component[largestInvasiveFocus].valueQuantity.code 1..1
-* component[largestInvasiveFocus].valueQuantity.code = #mm (exactly)
+* component[largestInvasiveFocus].valueQuantity ^patternQuantity.unit = "mm"
+* component[largestInvasiveFocus].valueQuantity ^patternQuantity.system = $ucum
+* component[largestInvasiveFocus].valueQuantity ^patternQuantity.code = #mm
 
 * component[dcisPresent] ^short = "Presence of ductal carcinoma in situ (DCIS)"
 * component[dcisPresent].code = screening-specialized-observation-parameter-cs#scrn-0073-00008
@@ -193,10 +193,10 @@ Description: "Specialized screening Observation for breast histology and patholo
 * component[dermalLymphovascularInvasion].value[x] from ScreeningHistologyLymphovascularInvasionVS (required)
 
 * component[residualCancerBurdenClass] ^short = "Residual Cancer Burden class"
-* component[residualCancerBurdenClass].code = screening-specialized-observation-parameter-cs#scrn-0073-00025
+* component[residualCancerBurdenClass].code = ScreeningSpecializedObservationParameterCS#scrn-0073-00025
 * component[residualCancerBurdenClass].value[x] 1..1
 * component[residualCancerBurdenClass].value[x] only CodeableConcept
-* component[residualCancerBurdenClass].value[x] from ScreeningResidualCancerBurdenClassVS (required)
+* component[residualCancerBurdenClass].valueCodeableConcept from ScreeningResidualCancerBurdenClassVS (required)
 
 * component[invasiveResectionMarginStatus] ^short = "Resection margin status for invasive carcinoma"
 * component[invasiveResectionMarginStatus].code = screening-specialized-observation-parameter-cs#scrn-0073-00038
@@ -243,9 +243,12 @@ Description: "Specialized screening Observation for breast histology and patholo
 * component[largestLymphNodeMetastasis].value[x] only Quantity
 * component[largestLymphNodeMetastasis].valueQuantity.value 1..1
 * component[largestLymphNodeMetastasis].valueQuantity.value ^minValueDecimal = 0
-* component[largestLymphNodeMetastasis].valueQuantity.unit = "mm" (exactly)
-* component[largestLymphNodeMetastasis].valueQuantity.system = $ucum (exactly)
-* component[largestLymphNodeMetastasis].valueQuantity.code = #mm (exactly)
+* component[largestLymphNodeMetastasis].valueQuantity.unit 1..1
+* component[largestLymphNodeMetastasis].valueQuantity.system 1..1
+* component[largestLymphNodeMetastasis].valueQuantity.code 1..1
+* component[largestLymphNodeMetastasis].valueQuantity ^patternQuantity.unit = "mm"
+* component[largestLymphNodeMetastasis].valueQuantity ^patternQuantity.system = $ucum
+* component[largestLymphNodeMetastasis].valueQuantity ^patternQuantity.code = #mm
 
 * component[extranodalExtension] ^short = "Extranodal extension"
 * component[extranodalExtension].code = screening-specialized-observation-parameter-cs#scrn-0073-00024

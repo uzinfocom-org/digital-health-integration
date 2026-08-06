@@ -2,6 +2,8 @@
 Instance: ScreeningBreastRiskResponseExample
 InstanceOf: UZCoreQuestionnaireResponse
 Usage: #example
+Title: "Screening Breast Risk Response Example"
+Description: "Example completed response to the Screening breast cancer risk questionnaire."
 * id = "screening-breast-risk-response-example"
 * language = #ru
 * identifier[0].use = #usual
@@ -75,6 +77,8 @@ Usage: #example
 Instance: ScreeningCervicalRiskResponseExample
 InstanceOf: UZCoreQuestionnaireResponse
 Usage: #example
+Title: "Screening Cervical Risk Response Example"
+Description: "Example completed response to the Screening cervical cancer risk questionnaire."
 * id = "screening-cervical-risk-response-example"
 * language = #ru
 * identifier[0].use = #usual
@@ -179,6 +183,8 @@ Usage: #example
 Instance: ScreeningWomanExamResponse128
 InstanceOf: UZCoreQuestionnaireResponse
 Usage: #example
+Title: "Screening Woman Examination Response Example"
+Description: "Example completed response to the Screening woman examination questionnaire."
 * id = "screening-woman-exam-response-128"
 * language = #ru
 * identifier[0].use = #usual

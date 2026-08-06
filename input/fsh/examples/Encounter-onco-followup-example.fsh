@@ -2,6 +2,8 @@
 Instance: EncounterOncoFollowupExample
 InstanceOf: ScreeningEncounter
 Usage: #example
+Title: "Screening Oncology Follow-up Encounter Example"
+Description: "Example ambulatory consultation encounter referenced by Screening questionnaires, diagnostic requests, procedures, and observations."
 
 * id = "Encounter-onco-followup"
 * identifier[0].use = #usual

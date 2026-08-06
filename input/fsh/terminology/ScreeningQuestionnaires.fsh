@@ -2,6 +2,8 @@
 Instance: ScreeningBreastRiskQuestionnaire
 InstanceOf: UZCoreQuestionnaire
 Usage: #definition
+Title: "Screening Breast Risk Questionnaire"
+Description: "Questionnaire used by Screening to assess breast cancer risk."
 * id = "screening-breast-risk"
 * language = #uz
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/screening-breast-risk"
@@ -13,6 +15,7 @@ Usage: #definition
 * status = #active
 * name = "ScreeningBreastRiskQuestionnaire"
 * title = "Ko'krak bezi so'rovnomasi"
+* description = "Screening tizimida ko‘krak bezi saratoni xavfini baholash uchun so‘rovnoma."
 * title.extension[0].extension[0].url = "lang"
 * title.extension[0].extension[0].valueCode = #ru
 * title.extension[0].extension[1].url = "content"
@@ -318,6 +321,8 @@ Usage: #definition
 Instance: ScreeningCervicalRiskQuestionnaire
 InstanceOf: UZCoreQuestionnaire
 Usage: #definition
+Title: "Screening Cervical Risk Questionnaire"
+Description: "Questionnaire used by Screening to assess cervical cancer risk."
 * id = "screening-cervical-risk"
 * language = #uz
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk"
@@ -329,6 +334,7 @@ Usage: #definition
 * status = #active
 * name = "ScreeningCervicalRiskQuestionnaire"
 * title = "Bachadon bo'yni bo'yicha so'rovnoma"
+* description = "Screening tizimida bachadon bo‘yni saratoni xavfini baholash uchun so‘rovnoma."
 * title.extension[0].extension[0].url = "lang"
 * title.extension[0].extension[0].valueCode = #ru
 * title.extension[0].extension[1].url = "content"

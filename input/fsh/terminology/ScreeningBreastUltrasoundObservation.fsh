@@ -8,7 +8,8 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * ^publisher = "DHP Integration"
 
 * code = $sct#47079000 "Ultrasonography of breast"
-* value[x] 0..0
+* value[x] 0..1
+* value[x] only CodeableConcept
 * hasMember MS
 * component[transformationZone] 0..0
 * component[breastDensity] 0..0
@@ -179,9 +180,12 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * component[menstrualCycleDuration].value[x] only Quantity
 * component[menstrualCycleDuration].valueQuantity.value 1..1
 * component[menstrualCycleDuration].valueQuantity.value ^minValueDecimal = 0
-* component[menstrualCycleDuration].valueQuantity.unit = "d" (exactly)
-* component[menstrualCycleDuration].valueQuantity.system = $ucum (exactly)
-* component[menstrualCycleDuration].valueQuantity.code = #d (exactly)
+* component[menstrualCycleDuration].valueQuantity.unit 1..1
+* component[menstrualCycleDuration].valueQuantity.system 1..1
+* component[menstrualCycleDuration].valueQuantity.code 1..1
+* component[menstrualCycleDuration].valueQuantity ^patternQuantity.unit = "d"
+* component[menstrualCycleDuration].valueQuantity ^patternQuantity.system = $ucum
+* component[menstrualCycleDuration].valueQuantity ^patternQuantity.code = #d
 
 * component[anamnesis] ^short = "Ultrasound anamnesis"
 * component[anamnesis].code = screening-ultrasound-parameter-cs#scrn-0052-00003
@@ -194,9 +198,12 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * component[fibroglandularThickness].value[x] only Quantity
 * component[fibroglandularThickness].valueQuantity.value 1..1
 * component[fibroglandularThickness].valueQuantity.value ^minValueDecimal = 0
-* component[fibroglandularThickness].valueQuantity.unit = "mm" (exactly)
-* component[fibroglandularThickness].valueQuantity.system = $ucum (exactly)
-* component[fibroglandularThickness].valueQuantity.code = #mm (exactly)
+* component[fibroglandularThickness].valueQuantity.unit 1..1
+* component[fibroglandularThickness].valueQuantity.system 1..1
+* component[fibroglandularThickness].valueQuantity.code 1..1
+* component[fibroglandularThickness].valueQuantity ^patternQuantity.unit = "mm"
+* component[fibroglandularThickness].valueQuantity ^patternQuantity.system = $ucum
+* component[fibroglandularThickness].valueQuantity ^patternQuantity.code = #mm
 
 * component[maximumDuctDiameter] ^short = "Maximum duct diameter"
 * component[maximumDuctDiameter].code = screening-ultrasound-parameter-cs#scrn-0052-00011
@@ -204,9 +211,12 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * component[maximumDuctDiameter].value[x] only Quantity
 * component[maximumDuctDiameter].valueQuantity.value 1..1
 * component[maximumDuctDiameter].valueQuantity.value ^minValueDecimal = 0
-* component[maximumDuctDiameter].valueQuantity.unit = "mm" (exactly)
-* component[maximumDuctDiameter].valueQuantity.system = $ucum (exactly)
-* component[maximumDuctDiameter].valueQuantity.code = #mm (exactly)
+* component[maximumDuctDiameter].valueQuantity.unit 1..1
+* component[maximumDuctDiameter].valueQuantity.system 1..1
+* component[maximumDuctDiameter].valueQuantity.code 1..1
+* component[maximumDuctDiameter].valueQuantity ^patternQuantity.unit = "mm"
+* component[maximumDuctDiameter].valueQuantity ^patternQuantity.system = $ucum
+* component[maximumDuctDiameter].valueQuantity ^patternQuantity.code = #mm
 
 * component[elastographyStiffness] ^short = "Elastography stiffness; unit is supplied by Screening"
 * component[elastographyStiffness].code = screening-ultrasound-parameter-cs#scrn-0052-00014
@@ -216,8 +226,8 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * component[elastographyStiffness].valueQuantity.value ^minValueDecimal = 0
 * component[elastographyStiffness].valueQuantity.unit 1..1
 * component[elastographyStiffness].valueQuantity.system 1..1
-* component[elastographyStiffness].valueQuantity.system = $ucum (exactly)
 * component[elastographyStiffness].valueQuantity.code 1..1
+* component[elastographyStiffness].valueQuantity ^patternQuantity.system = $ucum
 
 * component[axillaryMaximumNodeSize] ^short = "Maximum axillary lymph node size"
 * component[axillaryMaximumNodeSize].code = screening-ultrasound-parameter-cs#scrn-0052-00038
@@ -225,9 +235,12 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * component[axillaryMaximumNodeSize].value[x] only Quantity
 * component[axillaryMaximumNodeSize].valueQuantity.value 1..1
 * component[axillaryMaximumNodeSize].valueQuantity.value ^minValueDecimal = 0
-* component[axillaryMaximumNodeSize].valueQuantity.unit = "mm" (exactly)
-* component[axillaryMaximumNodeSize].valueQuantity.system = $ucum (exactly)
-* component[axillaryMaximumNodeSize].valueQuantity.code = #mm (exactly)
+* component[axillaryMaximumNodeSize].valueQuantity.unit 1..1
+* component[axillaryMaximumNodeSize].valueQuantity.system 1..1
+* component[axillaryMaximumNodeSize].valueQuantity.code 1..1
+* component[axillaryMaximumNodeSize].valueQuantity ^patternQuantity.unit = "mm"
+* component[axillaryMaximumNodeSize].valueQuantity ^patternQuantity.system = $ucum
+* component[axillaryMaximumNodeSize].valueQuantity ^patternQuantity.code = #mm
 
 * component[axillaryCorticalThickness] ^short = "Axillary lymph node cortical thickness"
 * component[axillaryCorticalThickness].code = screening-ultrasound-parameter-cs#scrn-0052-00039
@@ -235,9 +248,12 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * component[axillaryCorticalThickness].value[x] only Quantity
 * component[axillaryCorticalThickness].valueQuantity.value 1..1
 * component[axillaryCorticalThickness].valueQuantity.value ^minValueDecimal = 0
-* component[axillaryCorticalThickness].valueQuantity.unit = "mm" (exactly)
-* component[axillaryCorticalThickness].valueQuantity.system = $ucum (exactly)
-* component[axillaryCorticalThickness].valueQuantity.code = #mm (exactly)
+* component[axillaryCorticalThickness].valueQuantity.unit 1..1
+* component[axillaryCorticalThickness].valueQuantity.system 1..1
+* component[axillaryCorticalThickness].valueQuantity.code 1..1
+* component[axillaryCorticalThickness].valueQuantity ^patternQuantity.unit = "mm"
+* component[axillaryCorticalThickness].valueQuantity ^patternQuantity.system = $ucum
+* component[axillaryCorticalThickness].valueQuantity ^patternQuantity.code = #mm
 
 * component[regionalNodeNote] ^short = "Comment about other regional lymph nodes"
 * component[regionalNodeNote].code = screening-ultrasound-parameter-cs#scrn-0052-00040
@@ -267,9 +283,12 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * component[distanceFromNipple].value[x] only Quantity
 * component[distanceFromNipple].valueQuantity.value 1..1
 * component[distanceFromNipple].valueQuantity.value ^minValueDecimal = 0
-* component[distanceFromNipple].valueQuantity.unit = "mm" (exactly)
-* component[distanceFromNipple].valueQuantity.system = $ucum (exactly)
-* component[distanceFromNipple].valueQuantity.code = #mm (exactly)
+* component[distanceFromNipple].valueQuantity.unit 1..1
+* component[distanceFromNipple].valueQuantity.system 1..1
+* component[distanceFromNipple].valueQuantity.code 1..1
+* component[distanceFromNipple].valueQuantity ^patternQuantity.unit = "mm"
+* component[distanceFromNipple].valueQuantity ^patternQuantity.system = $ucum
+* component[distanceFromNipple].valueQuantity ^patternQuantity.code = #mm
 
 * component[lesionLength] ^short = "Lesion length"
 * component[lesionLength].code = screening-ultrasound-parameter-cs#scrn-0052-00024
@@ -277,9 +296,12 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * component[lesionLength].value[x] only Quantity
 * component[lesionLength].valueQuantity.value 1..1
 * component[lesionLength].valueQuantity.value ^minValueDecimal = 0
-* component[lesionLength].valueQuantity.unit = "mm" (exactly)
-* component[lesionLength].valueQuantity.system = $ucum (exactly)
-* component[lesionLength].valueQuantity.code = #mm (exactly)
+* component[lesionLength].valueQuantity.unit 1..1
+* component[lesionLength].valueQuantity.system 1..1
+* component[lesionLength].valueQuantity.code 1..1
+* component[lesionLength].valueQuantity ^patternQuantity.unit = "mm"
+* component[lesionLength].valueQuantity ^patternQuantity.system = $ucum
+* component[lesionLength].valueQuantity ^patternQuantity.code = #mm
 
 * component[lesionWidth] ^short = "Lesion width"
 * component[lesionWidth].code = screening-ultrasound-parameter-cs#scrn-0052-00025
@@ -287,9 +309,12 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * component[lesionWidth].value[x] only Quantity
 * component[lesionWidth].valueQuantity.value 1..1
 * component[lesionWidth].valueQuantity.value ^minValueDecimal = 0
-* component[lesionWidth].valueQuantity.unit = "mm" (exactly)
-* component[lesionWidth].valueQuantity.system = $ucum (exactly)
-* component[lesionWidth].valueQuantity.code = #mm (exactly)
+* component[lesionWidth].valueQuantity.unit 1..1
+* component[lesionWidth].valueQuantity.system 1..1
+* component[lesionWidth].valueQuantity.code 1..1
+* component[lesionWidth].valueQuantity ^patternQuantity.unit = "mm"
+* component[lesionWidth].valueQuantity ^patternQuantity.system = $ucum
+* component[lesionWidth].valueQuantity ^patternQuantity.code = #mm
 
 * component[lesionThickness] ^short = "Lesion thickness"
 * component[lesionThickness].code = screening-ultrasound-parameter-cs#scrn-0052-00026
@@ -297,9 +322,12 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * component[lesionThickness].value[x] only Quantity
 * component[lesionThickness].valueQuantity.value 1..1
 * component[lesionThickness].valueQuantity.value ^minValueDecimal = 0
-* component[lesionThickness].valueQuantity.unit = "mm" (exactly)
-* component[lesionThickness].valueQuantity.system = $ucum (exactly)
-* component[lesionThickness].valueQuantity.code = #mm (exactly)
+* component[lesionThickness].valueQuantity.unit 1..1
+* component[lesionThickness].valueQuantity.system 1..1
+* component[lesionThickness].valueQuantity.code 1..1
+* component[lesionThickness].valueQuantity ^patternQuantity.unit = "mm"
+* component[lesionThickness].valueQuantity ^patternQuantity.system = $ucum
+* component[lesionThickness].valueQuantity ^patternQuantity.code = #mm
 
 * component[internalStructureHomogeneous].code = screening-ultrasound-parameter-cs#scrn-0052-00031
 * component[internalStructureHomogeneous].value[x] 1..1

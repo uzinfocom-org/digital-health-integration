@@ -30,7 +30,6 @@ Description: "Specialized screening Observation for cervical histology conclusio
     metastasisType 0..1 MS and
     sentinelLymphNodeExamination 0..1 MS and
     extranodalExtension 0..1 MS and
-    residualCancerBurdenClass 0..0 and
     primaryConclusion 0..1 MS
 
 * component[histologicGrade] ^short = "Histologic grade of the cervical lesion"
@@ -47,11 +46,11 @@ Description: "Specialized screening Observation for cervical histology conclusio
 * component[stromalInvasionDepth].valueQuantity.value ^minValueDecimal = 0.1
 * component[stromalInvasionDepth].valueQuantity.value ^maxValueDecimal = 10
 * component[stromalInvasionDepth].valueQuantity.unit 1..1
-* component[stromalInvasionDepth].valueQuantity.unit = "mm" (exactly)
 * component[stromalInvasionDepth].valueQuantity.system 1..1
-* component[stromalInvasionDepth].valueQuantity.system = $ucum (exactly)
 * component[stromalInvasionDepth].valueQuantity.code 1..1
-* component[stromalInvasionDepth].valueQuantity.code = #mm (exactly)
+* component[stromalInvasionDepth].valueQuantity ^patternQuantity.unit = "mm"
+* component[stromalInvasionDepth].valueQuantity ^patternQuantity.system = $ucum
+* component[stromalInvasionDepth].valueQuantity ^patternQuantity.code = #mm
 
 * component[lymphovascularInvasion] ^short = "Lymphovascular space invasion (LVSI)"
 * component[lymphovascularInvasion].code = $loinc#59544-7 "Lymph-vascular invasion Cancer specimen"
@@ -84,9 +83,12 @@ Description: "Specialized screening Observation for cervical histology conclusio
 * component[closestMarginDistance].value[x] only Quantity
 * component[closestMarginDistance].valueQuantity.value 1..1
 * component[closestMarginDistance].valueQuantity.value ^minValueDecimal = 0
-* component[closestMarginDistance].valueQuantity.unit = "mm" (exactly)
-* component[closestMarginDistance].valueQuantity.system = $ucum (exactly)
-* component[closestMarginDistance].valueQuantity.code = #mm (exactly)
+* component[closestMarginDistance].valueQuantity.unit 1..1
+* component[closestMarginDistance].valueQuantity.system 1..1
+* component[closestMarginDistance].valueQuantity.code 1..1
+* component[closestMarginDistance].valueQuantity ^patternQuantity.unit = "mm"
+* component[closestMarginDistance].valueQuantity ^patternQuantity.system = $ucum
+* component[closestMarginDistance].valueQuantity ^patternQuantity.code = #mm
 
 * component[metastasisType].code = screening-specialized-observation-parameter-cs#scrn-0073-00022
 * component[metastasisType].value[x] 1..1

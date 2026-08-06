@@ -17,7 +17,8 @@ Description: "Structured breast or cervical immunohistochemistry results: ER, PR
 * derivedFrom 1..* MS
 * bodySite MS
 * code = ScreeningSpecializedObservationParameterCS#scrn-0073-00001
-* value[x] 0..0
+* value[x] 0..1
+* value[x] only CodeableConcept
 * component 1..* MS
 
 * component[transformationZone] 0..0
@@ -53,9 +54,9 @@ Description: "Structured breast or cervical immunohistochemistry results: ER, PR
 * component[ki67].valueQuantity.value ^minValueDecimal = 0
 * component[ki67].valueQuantity.value ^maxValueDecimal = 100
 * component[ki67].valueQuantity.system 1..1
-* component[ki67].valueQuantity.system = "http://unitsofmeasure.org" (exactly)
 * component[ki67].valueQuantity.code 1..1
-* component[ki67].valueQuantity.code = #% (exactly)
+* component[ki67].valueQuantity ^patternQuantity.system = "http://unitsofmeasure.org"
+* component[ki67].valueQuantity ^patternQuantity.code = #%
 
 * component[her2Ihc] ^short = "HER2 immunohistochemistry score"
 * component[her2Ihc].code = $loinc#85319-2 "HER2 Ag [Presence] in Breast cancer specimen by Immune stain"
