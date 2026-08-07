@@ -5,4 +5,8 @@ Description: "Breast surgical procedure types accepted in pathology requests."
 * insert IntegrationsValueSet(screening-breast-surgical-procedure-type-vs)
 * ^experimental = true
 
-* include codes from system screening-breast-surgical-procedure-type-cs
+* include $sct#64368001
+* include $sct#384723003
+* include $sct#72258006
+* include $sct#428564008
+* include $sct#150298000

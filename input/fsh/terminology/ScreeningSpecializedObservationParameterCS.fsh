@@ -4,47 +4,17 @@ Title: "Screening Specialized Observation Parameter CodeSystem"
 Description: "Local codes for specialized screening Observation results and component parameters."
 * insert OriginalCodeSystemDraft(screening-specialized-observation-parameter-cs)
 
-* #scrn-0073-00001 "Immunogistokimyoviy tadqiqot natijasi"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Результат иммуногистохимического исследования"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Immunohistochemistry result"
-
-* #scrn-0073-00002 "Estrogen retseptori (ER) uchun Allred bahosi"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Оценка Allred для рецепторов эстрогена (ER)"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Allred score for estrogen receptor (ER)"
-
-* #scrn-0073-00003 "Progesteron retseptori (PR) uchun Allred bahosi"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Оценка Allred для рецепторов прогестерона (PR)"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Allred score for progesterone receptor (PR)"
-
 * #scrn-0073-00004 "Ko‘krak bezidagi topilma"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Находка в молочной железе"
   * ^designation[+].language = #en
   * ^designation[=].value = "Breast finding"
 
-* #scrn-0073-00005 "Ko‘krak bezi gistologiyasi natijasi"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Результат гистологии молочной железы"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Breast histology result"
-
 * #scrn-0073-00006 "Gistologik tur"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Гистологический тип"
   * ^designation[+].language = #en
   * ^designation[=].value = "Histologic type"
-
-* #scrn-0073-00007 "Material sinfi"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Класс материала"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Material class"
 
 * #scrn-0073-00008 "DCIS mavjudligi"
   * ^designation[0].language = #ru
@@ -100,18 +70,6 @@ Description: "Local codes for specialized screening Observation results and comp
   * ^designation[+].language = #en
   * ^designation[=].value = "Axillary lymph node differentiation"
 
-* #scrn-0073-00017 "Bachadon bo‘yni gistologiyasi natijasi"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Результат гистологии шейки матки"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Cervical histology result"
-
-* #scrn-0073-00018 "Stromal invaziya chuqurligi"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Глубина стромальной инвазии"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Stromal invasion depth"
-
 * #scrn-0073-00019 "Rezeksiya chetining holati"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Состояние края резекции"
@@ -136,23 +94,11 @@ Description: "Local codes for specialized screening Observation results and comp
   * ^designation[+].language = #en
   * ^designation[=].value = "Metastasis type"
 
-* #scrn-0073-00023 "Sentinel limfa tugunini tekshirish"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Проверка сторожевого лимфатического узла"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Sentinel lymph node examination"
-
 * #scrn-0073-00024 "Ekstranodal tarqalish"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Экстранодальное распространение"
   * ^designation[+].language = #en
   * ^designation[=].value = "Extranodal extension"
-
-* #scrn-0073-00025 "Qoldiq o‘sma yuklamasi indeksi (RCB)"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Патоморфоз — индекс RCB"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Residual Cancer Burden (RCB) class"
 
 * #scrn-0073-00026 "Mammografiyani o‘qish raqami"
   * ^designation[0].language = #ru
@@ -190,12 +136,6 @@ Description: "Local codes for specialized screening Observation results and comp
   * ^designation[+].language = #en
   * ^designation[=].value = "Overall histologic grade"
 
-* #scrn-0073-00032 "O‘sma fokalligi"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Фокальность опухоли"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Tumor focality"
-
 * #scrn-0073-00033 "O‘smaning tarqalishi"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Распространение опухоли"
@@ -219,12 +159,6 @@ Description: "Local codes for specialized screening Observation results and comp
   * ^designation[=].value = "Болезнь Педжета"
   * ^designation[+].language = #en
   * ^designation[=].value = "Paget disease"
-
-* #scrn-0073-00037 "Dermal limfovaskulyar invaziya"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Дермальная лимфоваскулярная инвазия"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Dermal lymphovascular invasion"
 
 * #scrn-0073-00038 "Invaziv komponent uchun rezeksiya cheti"
   * ^designation[0].language = #ru
@@ -273,12 +207,6 @@ Description: "Local codes for specialized screening Observation results and comp
   * ^designation[=].value = "Размер наибольшего метастаза в лимфоузле"
   * ^designation[+].language = #en
   * ^designation[=].value = "Largest lymph node metastasis"
-
-* #scrn-0073-00046 "Uzoq metastaz joyi"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Локализация отдалённого метастаза"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Distant metastasis site"
 
 * #scrn-0073-00047 "Yakuniy patologik bosqich"
   * ^designation[0].language = #ru

@@ -5,4 +5,8 @@ Description: "Defines Screening Cervical Material Type"
 * insert IntegrationsValueSet(screening-cervical-material-type-vs)
 * ^experimental = true
 * ^language = #uz
-* include codes from system screening-cervical-material-type-cs
+* include $sct#51675008
+* include $sct#265891003
+* include $sct#52889002
+* include $sct#8889005
+* include $sct#54535009

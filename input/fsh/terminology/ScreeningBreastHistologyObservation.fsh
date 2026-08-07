@@ -7,7 +7,7 @@ Description: "Specialized screening Observation for breast histology and patholo
 * ^experimental = true
 * ^publisher = "DHP Integration"
 
-* code = screening-specialized-observation-parameter-cs#scrn-0073-00005
+* code = $sct#168394000
 * component[transformationZone] 0..0
 * component[birads] 0..0
 * component[breastDensity] 0..0
@@ -51,7 +51,7 @@ Description: "Specialized screening Observation for breast histology and patholo
     primaryConclusion 0..1 MS
 
 * component[materialClass] ^short = "Class of material received for histology"
-* component[materialClass].code = screening-specialized-observation-parameter-cs#scrn-0073-00007
+* component[materialClass].code = $sct#371439000
 * component[materialClass].value[x] 1..1
 * component[materialClass].value[x] only CodeableConcept
 * component[materialClass].value[x] from ScreeningBreastMaterialClassVS (required)
@@ -162,7 +162,7 @@ Description: "Specialized screening Observation for breast histology and patholo
 * component[overallGrade].value[x] from ScreeningCervicalHistologicGradeVS (required)
 
 * component[tumorFocality] ^short = "Tumor focality"
-* component[tumorFocality].code = screening-specialized-observation-parameter-cs#scrn-0073-00032
+* component[tumorFocality].code = $sct#396199003
 * component[tumorFocality].value[x] 1..1
 * component[tumorFocality].value[x] only CodeableConcept
 
@@ -187,13 +187,13 @@ Description: "Specialized screening Observation for breast histology and patholo
 * component[pagetDiseasePresent].value[x] only boolean
 
 * component[dermalLymphovascularInvasion] ^short = "Dermal lymphovascular invasion"
-* component[dermalLymphovascularInvasion].code = screening-specialized-observation-parameter-cs#scrn-0073-00037
+* component[dermalLymphovascularInvasion].code = $sct#351551000210107
 * component[dermalLymphovascularInvasion].value[x] 1..1
 * component[dermalLymphovascularInvasion].value[x] only CodeableConcept
 * component[dermalLymphovascularInvasion].value[x] from ScreeningHistologyLymphovascularInvasionVS (required)
 
 * component[residualCancerBurdenClass] ^short = "Residual Cancer Burden class"
-* component[residualCancerBurdenClass].code = ScreeningSpecializedObservationParameterCS#scrn-0073-00025
+* component[residualCancerBurdenClass].code = $sct#444987009
 * component[residualCancerBurdenClass].value[x] 1..1
 * component[residualCancerBurdenClass].value[x] only CodeableConcept
 * component[residualCancerBurdenClass].valueCodeableConcept from ScreeningResidualCancerBurdenClassVS (required)
@@ -256,7 +256,7 @@ Description: "Specialized screening Observation for breast histology and patholo
 * component[extranodalExtension].value[x] only boolean
 
 * component[distantMetastasis] ^short = "Distant metastasis site"
-* component[distantMetastasis].code = screening-specialized-observation-parameter-cs#scrn-0073-00046
+* component[distantMetastasis].code = $sct#385421009
 * component[distantMetastasis].value[x] 1..1
 * component[distantMetastasis].value[x] only CodeableConcept
 

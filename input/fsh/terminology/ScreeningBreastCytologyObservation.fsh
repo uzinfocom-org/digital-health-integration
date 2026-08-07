@@ -20,10 +20,10 @@ Description: "Breast cytology conclusion classified using the Yokohama system."
     materialClass 1..1 MS and
     primaryConclusion 0..1 MS
 
-* component[materialClass].code = screening-specialized-observation-parameter-cs#scrn-0073-00007
+* component[materialClass].code = $sct#371439000
 * component[materialClass].value[x] 1..1
 * component[materialClass].value[x] only CodeableConcept
-* component[materialClass].valueCodeableConcept = ScreeningBreastMaterialClassCS#scrn-0072-00003
+* component[materialClass].valueCodeableConcept = $sct#764445001
 
 * component[primaryConclusion].code = screening-specialized-observation-parameter-cs#scrn-0073-00048
 * component[primaryConclusion].value[x] 1..1

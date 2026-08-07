@@ -5,4 +5,6 @@ Description: "Resection margin status values used in Screening histology conclus
 * insert IntegrationsValueSet(screening-resection-margin-status-vs)
 * ^status = #active
 * ^experimental = true
-* include codes from system ScreeningResectionMarginStatusCS
+* include $sct#55182004
+* include $sct#44228008
+* include $sct#369710003

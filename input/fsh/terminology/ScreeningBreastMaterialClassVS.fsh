@@ -6,4 +6,6 @@ Description: "Types of material obtained for histological and cytological examin
 * ^status = #active
 * ^experimental = true
 
-* include codes from system ScreeningBreastMaterialClassCS
+* include $sct#258415003
+* include $sct#373826004
+* include $sct#764445001

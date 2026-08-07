@@ -4,13 +4,8 @@ CodeSystem: ScreeningBreastQuestionnaireAnswerCS
 Id: screening-breast-questionnaire-answer-cs
 Title: "Breast questionnaire answers"
 Description: "Answer codes used by the breast questionnaire Questionnaire."
-* ^url = "https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-breast-questionnaire-answer-cs"
+* insert OriginalCodeSystem(screening-breast-questionnaire-answer-cs)
 * ^version = "1.0.0"
-* ^status = #active
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* ^language = #uz
 * #scrn-0070-00001 "7-11 yosh"
 * #scrn-0070-00001 ^designation[0].language = #ru
 * #scrn-0070-00001 ^designation[=].value = "7-11 лет"
@@ -82,13 +77,8 @@ CodeSystem: ScreeningCervicalQuestionnaireAnswerCS
 Id: screening-cervical-questionnaire-answer-cs
 Title: "Cervical questionnaire answers"
 Description: "Answer codes used by the cervical questionnaire Questionnaire."
-* ^url = "https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-cervical-questionnaire-answer-cs"
+* insert OriginalCodeSystem(screening-cervical-questionnaire-answer-cs)
 * ^version = "1.0.0"
-* ^status = #active
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* ^language = #uz
 * #scrn-0071-00001 "Hech qanday amal bajarilmagan"
 * #scrn-0071-00001 ^designation[0].language = #ru
 * #scrn-0071-00001 ^designation[=].value = "Не было операций"

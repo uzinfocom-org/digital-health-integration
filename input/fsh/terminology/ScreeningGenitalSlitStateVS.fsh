@@ -5,4 +5,5 @@ Description: "Defines Screening Genital Slit State"
 * insert IntegrationsValueSet(screening-genital-slit-state-vs)
 * ^experimental = true
 * ^language = #uz
-* include codes from system screening-genital-slit-state-cs
+* include $sct#29179001
+* include $sct#434851000124108

@@ -5,4 +5,5 @@ Description: "Defines Screening Breast Palpation Assessment"
 * insert IntegrationsValueSet(screening-breast-palpation-assessment-vs)
 * ^experimental = true
 * ^language = #uz
-* include codes from system screening-breast-palpation-assessment-cs
+* include $sct#53430007
+* include $sct#20020131

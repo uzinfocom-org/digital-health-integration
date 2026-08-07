@@ -6,17 +6,17 @@ Expression: "orderDetail.parameter.where(code.coding.where(system = 'https://ter
 Invariant: spr-2
 Description: "A breast biopsy request must include the biopsy subtype."
 Severity: #error
-Expression: "orderDetail.parameter.where(code.coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-histology-order-parameter-cs' and code = 'scrn-0069-00001').exists()).value.ofType(CodeableConcept).coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-breast-material-class-cs' and code = 'scrn-0072-00001').exists() implies orderDetail.parameter.where(code.coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-histology-order-parameter-cs' and code = 'scrn-0069-00002').exists()).exists()"
+Expression: "orderDetail.parameter.where(code.coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-histology-order-parameter-cs' and code = 'scrn-0069-00001').exists()).value.ofType(CodeableConcept).coding.where(system = 'http://snomed.info/sct' and code = '258415003').exists() implies orderDetail.parameter.where(code.coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-histology-order-parameter-cs' and code = 'scrn-0069-00002').exists()).exists()"
 
 Invariant: spr-3
 Description: "A breast surgical specimen request must include the surgical procedure type."
 Severity: #error
-Expression: "orderDetail.parameter.where(code.coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-histology-order-parameter-cs' and code = 'scrn-0069-00001').exists()).value.ofType(CodeableConcept).coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-breast-material-class-cs' and code = 'scrn-0072-00002').exists() implies orderDetail.parameter.where(code.coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-histology-order-parameter-cs' and code = 'scrn-0069-00003').exists()).exists()"
+Expression: "orderDetail.parameter.where(code.coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-histology-order-parameter-cs' and code = 'scrn-0069-00001').exists()).value.ofType(CodeableConcept).coding.where(system = 'http://snomed.info/sct' and code = '373826004').exists() implies orderDetail.parameter.where(code.coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-histology-order-parameter-cs' and code = 'scrn-0069-00003').exists()).exists()"
 
 Invariant: spr-4
 Description: "A breast cytology request must include the cytology material type."
 Severity: #error
-Expression: "orderDetail.parameter.where(code.coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-histology-order-parameter-cs' and code = 'scrn-0069-00001').exists()).value.ofType(CodeableConcept).coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-breast-material-class-cs' and code = 'scrn-0072-00003').exists() implies orderDetail.parameter.where(code.coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-histology-order-parameter-cs' and code = 'scrn-0069-00004').exists()).exists()"
+Expression: "orderDetail.parameter.where(code.coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-histology-order-parameter-cs' and code = 'scrn-0069-00001').exists()).value.ofType(CodeableConcept).coding.where(system = 'http://snomed.info/sct' and code = '764445001').exists() implies orderDetail.parameter.where(code.coding.where(system = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-histology-order-parameter-cs' and code = 'scrn-0069-00004').exists()).exists()"
 
 Profile: ScreeningPathologyServiceRequest
 Parent: ScreeningServiceRequest

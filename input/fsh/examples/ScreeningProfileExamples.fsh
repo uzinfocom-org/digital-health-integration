@@ -12,7 +12,7 @@ Description: "Example request for an ultrasound-guided breast core biopsy."
 * identifier[0].value = "BIOPSY-REQ-1001"
 * status = #active
 * intent = #order
-* code.concept = ScreeningBreastBiopsySubtypeCS#scrn-0061-00005
+* code.concept = $sct#277667006
 * subject.reference = "Patient/lola-oripova"
 * encounter.reference = "Encounter/Encounter-onco-followup"
 * authoredOn = 2026-07-17T11:30:00+05:00
@@ -27,7 +27,7 @@ Description: "Example completed ultrasound-guided breast core biopsy."
 * identifier[0].system = "https://dhp.uz/fhir/core/sid/uz/screening"
 * identifier[0].value = "BIOPSY-PROC-1001"
 * status = #completed
-* code = ScreeningBreastBiopsySubtypeCS#scrn-0061-00005
+* code = $sct#277667006
 * subject.reference = "Patient/lola-oripova"
 * encounter.reference = "Encounter/Encounter-onco-followup"
 * occurrenceDateTime = 2026-07-17T12:00:00+05:00
@@ -49,9 +49,9 @@ Description: "Example pathology request for a breast biopsy specimen with its bi
 * authoredOn = 2026-07-17T12:10:00+05:00
 * requester.reference = "PractitionerRole/practitioner-role-surgeon"
 * orderDetail.parameter[materialClass].code = ScreeningHistologyOrderParameterCS#scrn-0069-00001
-* orderDetail.parameter[materialClass].valueCodeableConcept = ScreeningBreastMaterialClassCS#scrn-0072-00001
+* orderDetail.parameter[materialClass].valueCodeableConcept = $sct#258415003
 * orderDetail.parameter[biopsySubtype].code = ScreeningHistologyOrderParameterCS#scrn-0069-00002
-* orderDetail.parameter[biopsySubtype].valueCodeableConcept = ScreeningBreastBiopsySubtypeCS#scrn-0061-00005
+* orderDetail.parameter[biopsySubtype].valueCodeableConcept = $sct#277667006
 
 Instance: ScreeningSpecimenExample
 InstanceOf: ScreeningSpecimen
@@ -62,7 +62,7 @@ Description: "Example breast biopsy specimen collected for the pathology request
 * identifier[0].system = "https://dhp.uz/fhir/core/sid/uz/screening"
 * identifier[0].value = "SPEC-1001"
 * status = #available
-* type = ScreeningBreastMaterialClassCS#scrn-0072-00001
+* type = $sct#258415003
 * subject.reference = "Patient/lola-oripova"
 * request[0].reference = "ServiceRequest/screening-pathology-request-example"
 * collection.collector.reference = "PractitionerRole/practitioner-role-surgeon"
@@ -84,8 +84,8 @@ Description: "Example final breast cytology conclusion classified as Yokohama C3
 * effectiveDateTime = 2026-07-17T16:00:00+05:00
 * performer[0].reference = "PractitionerRole/practitioner-role-pathologist"
 * valueCodeableConcept = ScreeningYokohamaCategoryCS#scrn-0084-00003
-* component[materialClass].code = ScreeningSpecializedObservationParameterCS#scrn-0073-00007
-* component[materialClass].valueCodeableConcept = ScreeningBreastMaterialClassCS#scrn-0072-00003
+* component[materialClass].code = $sct#371439000
+* component[materialClass].valueCodeableConcept = $sct#764445001
 * component[primaryConclusion].code = ScreeningSpecializedObservationParameterCS#scrn-0073-00048
 * component[primaryConclusion].valueBoolean = true
 
@@ -99,13 +99,13 @@ Description: "Example final breast biopsy histology result."
 * identifier[0].value = "HIST-1001"
 * basedOn[0].reference = "ServiceRequest/screening-pathology-request-example"
 * status = #final
-* code = ScreeningSpecializedObservationParameterCS#scrn-0073-00005
+* code = $sct#168394000
 * subject.reference = "Patient/lola-oripova"
 * encounter.reference = "Encounter/Encounter-onco-followup"
 * effectiveDateTime = 2026-07-17T16:00:00+05:00
 * performer[0].reference = "PractitionerRole/practitioner-role-pathologist"
-* component[materialClass].code = ScreeningSpecializedObservationParameterCS#scrn-0073-00007
-* component[materialClass].valueCodeableConcept = ScreeningBreastMaterialClassCS#scrn-0072-00001
+* component[materialClass].code = $sct#371439000
+* component[materialClass].valueCodeableConcept = $sct#258415003
 * component[primaryConclusion].code = ScreeningSpecializedObservationParameterCS#scrn-0073-00048
 * component[primaryConclusion].valueBoolean = true
 
@@ -119,12 +119,13 @@ Description: "Example final breast ultrasonography result with one coded finding
 * identifier[0].value = "US-1001"
 * status = #final
 * code = http://snomed.info/sct#47079000 "Ultrasonography of breast"
+* bodySite = $sct#80248007 "Left breast structure"
 * subject.reference = "Patient/lola-oripova"
 * encounter.reference = "Encounter/Encounter-onco-followup"
 * effectiveDateTime = 2026-07-17T11:00:00+05:00
 * performer[0].reference = "PractitionerRole/practitioner-role-ultrasound-doctor"
 * component[breastFinding].code = ScreeningSpecializedObservationParameterCS#scrn-0073-00004
-* component[breastFinding].valueCodeableConcept = ScreeningBreastFindingCS#scrn-0028-00007
+* component[breastFinding].valueCodeableConcept = $sct#89164003
 
 Instance: ScreeningCervicalHistologyObservationExample
 InstanceOf: ScreeningCervicalHistologyObservation
@@ -135,13 +136,13 @@ Description: "Example final cervical histology conclusion classified as CIN 2."
 * identifier[0].system = "https://dhp.uz/fhir/core/sid/uz/screening"
 * identifier[0].value = "CERV-HIST-1001"
 * status = #final
-* code = ScreeningSpecializedObservationParameterCS#scrn-0073-00017
+* code = $sct#168394000
 * subject.reference = "Patient/lola-oripova"
 * encounter.reference = "Encounter/Encounter-onco-followup"
 * effectiveDateTime = 2026-07-18T15:00:00+05:00
 * performer[0].reference = "PractitionerRole/practitioner-role-pathologist"
 * bodySite = http://snomed.info/sct#71252005 "Cervix uteri structure"
-* valueCodeableConcept = ScreeningCervicalHistologyMorphologyCS#scrn-0075-00002
+* valueCodeableConcept = $sct#285838002
 * component[primaryConclusion].code = ScreeningSpecializedObservationParameterCS#scrn-0073-00048
 * component[primaryConclusion].valueBoolean = true
 
@@ -154,13 +155,13 @@ Description: "Example immunohistochemistry result derived from the breast histol
 * identifier[0].system = "https://dhp.uz/fhir/core/sid/uz/screening"
 * identifier[0].value = "IHC-1001"
 * status = #final
-* code = ScreeningSpecializedObservationParameterCS#scrn-0073-00001
+* code = $sct#117617002
 * subject.reference = "Patient/lola-oripova"
 * encounter.reference = "Encounter/Encounter-onco-followup"
 * effectiveDateTime = 2026-07-17T16:30:00+05:00
 * performer[0].reference = "PractitionerRole/practitioner-role-pathologist"
 * derivedFrom[0].reference = "Observation/screening-breast-histology-observation-example"
-* component[allredER].code = ScreeningSpecializedObservationParameterCS#scrn-0073-00002
+* component[allredER].code = $sct#445104009
 * component[allredER].valueInteger = 7
 
 Instance: ScreeningMammographyObservationExample

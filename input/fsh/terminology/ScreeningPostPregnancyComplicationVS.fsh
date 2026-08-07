@@ -5,4 +5,6 @@ Description: "Defines Screening Post Pregnancy Complication"
 * insert IntegrationsValueSet(screening-post-pregnancy-complication-vs)
 * ^experimental = true
 * ^language = #uz
-* include codes from system screening-post-pregnancy-complication-cs
+* include $sct#255410009
+* include $sct#285409006
+* include $sct#17369002

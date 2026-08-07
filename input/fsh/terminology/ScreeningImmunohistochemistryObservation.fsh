@@ -16,7 +16,7 @@ Description: "Structured breast or cervical immunohistochemistry results: ER, PR
 * performer 1..* MS
 * derivedFrom 1..* MS
 * bodySite MS
-* code = ScreeningSpecializedObservationParameterCS#scrn-0073-00001
+* code = $sct#117617002
 * value[x] 0..1
 * value[x] only CodeableConcept
 * component 1..* MS
@@ -33,14 +33,14 @@ Description: "Structured breast or cervical immunohistochemistry results: ER, PR
     p16 0..1 MS
 
 * component[allredER] ^short = "Allred score for estrogen receptor (ER), 0 to 8"
-* component[allredER].code = ScreeningSpecializedObservationParameterCS#scrn-0073-00002
+* component[allredER].code = $sct#445104009
 * component[allredER].value[x] 1..1
 * component[allredER].value[x] only integer
 * component[allredER].valueInteger ^minValueInteger = 0
 * component[allredER].valueInteger ^maxValueInteger = 8
 
 * component[allredPR] ^short = "Allred score for progesterone receptor (PR), 0 to 8"
-* component[allredPR].code = ScreeningSpecializedObservationParameterCS#scrn-0073-00003
+* component[allredPR].code = $sct#445104009
 * component[allredPR].value[x] 1..1
 * component[allredPR].value[x] only integer
 * component[allredPR].valueInteger ^minValueInteger = 0

@@ -1,5 +1,5 @@
 Profile: ScreeningSpecimen
-Parent: Specimen
+Parent: UZCoreSpecimen
 Id: screening-specimen
 Title: "Screening Specimen"
 Description: "Breast or cervical specimen collected during screening."

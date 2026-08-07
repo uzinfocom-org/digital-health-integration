@@ -5,4 +5,6 @@ Description: "Defines Screening Breast Assessment"
 * insert IntegrationsValueSet(screening-breast-assessment-vs)
 * ^experimental = true
 * ^language = #uz
-* include codes from system screening-breast-assessment-cs
+* include $sct#20897003
+* include $sct#6703006
+* include $sct#8915006

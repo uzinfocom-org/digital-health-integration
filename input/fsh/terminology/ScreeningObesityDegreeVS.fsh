@@ -5,4 +5,5 @@ Description: "Defines Screening Obesity Degree"
 * insert IntegrationsValueSet(screening-obesity-degree-vs)
 * ^experimental = true
 * ^language = #uz
-* include codes from system screening-obesity-degree-cs
+* include $sct#162864005
+* include $sct#83911000119104

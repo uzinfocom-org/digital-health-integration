@@ -7,7 +7,7 @@ Description: "Specialized screening Observation for cervical histology conclusio
 * ^experimental = true
 * ^publisher = "DHP Integration"
 
-* code = screening-specialized-observation-parameter-cs#scrn-0073-00017
+* code = $sct#168394000
 * bodySite 1..1 MS
 * bodySite = $sct#71252005 "Cervix uteri structure"
 * value[x] 1..1
@@ -39,7 +39,7 @@ Description: "Specialized screening Observation for cervical histology conclusio
 * component[histologicGrade].value[x] from ScreeningCervicalHistologicGradeVS (required)
 
 * component[stromalInvasionDepth] ^short = "Depth of stromal invasion"
-* component[stromalInvasionDepth].code = screening-specialized-observation-parameter-cs#scrn-0073-00018
+* component[stromalInvasionDepth].code = $sct#396235003
 * component[stromalInvasionDepth].value[x] 1..1
 * component[stromalInvasionDepth].value[x] only Quantity
 * component[stromalInvasionDepth].valueQuantity.value 1..1
@@ -95,7 +95,7 @@ Description: "Specialized screening Observation for cervical histology conclusio
 * component[metastasisType].value[x] only CodeableConcept
 * component[metastasisType].value[x] from ScreeningMetastasisTypeVS (required)
 
-* component[sentinelLymphNodeExamination].code = screening-specialized-observation-parameter-cs#scrn-0073-00023
+* component[sentinelLymphNodeExamination].code = $sct#396487001
 * component[sentinelLymphNodeExamination].value[x] 1..1
 * component[sentinelLymphNodeExamination].value[x] only CodeableConcept
 * component[sentinelLymphNodeExamination].value[x] from ScreeningSentinelLymphNodeExaminationVS (required)

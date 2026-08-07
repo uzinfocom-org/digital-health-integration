@@ -11,6 +11,9 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * value[x] 0..1
 * value[x] only CodeableConcept
 * hasMember MS
+* bodySite 1..1 MS
+* bodySite ^short = "Examined breast side"
+* bodySite from ScreeningUltrasoundBreastSideVS (required)
 * component[transformationZone] 0..0
 * component[breastDensity] 0..0
 * component[imageQuality] 0..0
@@ -30,7 +33,6 @@ Description: "Specialized screening Observation for breast ultrasound parameters
     axillaryNodeDifferentiation 0..1 MS and
     regionalNodeStatus 0..1 MS and
     dynamics 0..1 MS and
-    breastSide 0..1 MS and
     breastQuadrant 0..1 MS and
     lesionShape 0..1 MS and
     lesionOrientation 0..1 MS and
@@ -133,11 +135,6 @@ Description: "Specialized screening Observation for breast ultrasound parameters
 * component[dynamics].code = screening-ultrasound-parameter-cs#scrn-0052-00020
 * component[dynamics].value[x] only CodeableConcept
 * component[dynamics].value[x] from ScreeningUltrasoundDynamicsVS (required)
-
-* component[breastSide] ^short = "Breast side"
-* component[breastSide].code = screening-specialized-observation-parameter-cs#scrn-0073-00014
-* component[breastSide].value[x] only CodeableConcept
-* component[breastSide].value[x] from ScreeningUltrasoundBreastSideVS (required)
 
 * component[breastQuadrant] ^short = "Breast quadrant"
 * component[breastQuadrant].code = screening-specialized-observation-parameter-cs#scrn-0073-00015

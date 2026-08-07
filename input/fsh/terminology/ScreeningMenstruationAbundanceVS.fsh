@@ -5,4 +5,6 @@ Description: "Defines Screening Menstruation Abundance"
 * insert IntegrationsValueSet(screening-menstruation-abundance-vs)
 * ^experimental = true
 * ^language = #uz
-* include codes from system screening-menstruation-abundance-cs
+* include $sct#52788002
+* include $sct#308550003
+* include $sct#386692008
