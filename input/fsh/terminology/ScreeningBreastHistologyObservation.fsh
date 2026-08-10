@@ -7,7 +7,7 @@ Description: "Specialized screening Observation for breast histology and patholo
 * ^experimental = true
 * ^publisher = "DHP Integration"
 
-* code = $sct#168394000
+* code = $sct#394597005
 * component[transformationZone] 0..0
 * component[birads] 0..0
 * component[breastDensity] 0..0

@@ -13,4 +13,4 @@ Description: "SNOMED CT concepts used for recording breast mammography findings 
 * include $sct#12747003
 * include $sct#89164003
 * include $sct#390787006
-* include $sct#58817003
+* include $sct#400096001

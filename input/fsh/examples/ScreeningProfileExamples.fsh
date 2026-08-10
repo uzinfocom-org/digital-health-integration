@@ -99,7 +99,7 @@ Description: "Example final breast biopsy histology result."
 * identifier[0].value = "HIST-1001"
 * basedOn[0].reference = "ServiceRequest/screening-pathology-request-example"
 * status = #final
-* code = $sct#168394000
+* code = $sct#394597005
 * subject.reference = "Patient/lola-oripova"
 * encounter.reference = "Encounter/Encounter-onco-followup"
 * effectiveDateTime = 2026-07-17T16:00:00+05:00
@@ -136,7 +136,7 @@ Description: "Example final cervical histology conclusion classified as CIN 2."
 * identifier[0].system = "https://dhp.uz/fhir/core/sid/uz/screening"
 * identifier[0].value = "CERV-HIST-1001"
 * status = #final
-* code = $sct#168394000
+* code = $sct#394597005
 * subject.reference = "Patient/lola-oripova"
 * encounter.reference = "Encounter/Encounter-onco-followup"
 * effectiveDateTime = 2026-07-18T15:00:00+05:00
@@ -161,8 +161,10 @@ Description: "Example immunohistochemistry result derived from the breast histol
 * effectiveDateTime = 2026-07-17T16:30:00+05:00
 * performer[0].reference = "PractitionerRole/practitioner-role-pathologist"
 * derivedFrom[0].reference = "Observation/screening-breast-histology-observation-example"
-* component[allredER].code = $sct#445104009
+* component[allredER].code = screening-specialized-observation-parameter-cs#scrn-0073-00002
 * component[allredER].valueInteger = 7
+* component[allredPR].code = screening-specialized-observation-parameter-cs#scrn-0073-00003
+* component[allredPR].valueInteger = 5
 
 Instance: ScreeningMammographyObservationExample
 InstanceOf: ScreeningMammographyObservation

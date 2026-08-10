@@ -7,7 +7,7 @@ Description: "Specialized screening Observation for cervical histology conclusio
 * ^experimental = true
 * ^publisher = "DHP Integration"
 
-* code = $sct#168394000
+* code = $sct#394597005
 * bodySite 1..1 MS
 * bodySite = $sct#71252005 "Cervix uteri structure"
 * value[x] 1..1

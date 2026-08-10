@@ -6,4 +6,4 @@ Description: "Defines Screening Previous Operation"
 * ^experimental = true
 * ^language = #uz
 * include $sct#80146002
-* include $sct#26789009
+* include $sct#173422009

@@ -9,7 +9,6 @@ Description: "Breast and cervical specimen types accepted by ScreeningSpecimen."
 * include $sct#373826004
 * include $sct#764445001
 * include $sct#51675008
-* include $sct#265891003
 * include $sct#52889002
 * include $sct#8889005
 * include $sct#54535009

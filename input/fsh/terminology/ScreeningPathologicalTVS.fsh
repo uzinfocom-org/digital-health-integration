@@ -5,7 +5,7 @@ Description: "Defines Screening Pathological T"
 * insert IntegrationsValueSet(screening-pathological-t-vs)
 * ^experimental = true
 * ^language = #uz
-* include $sct#53786006
-* include $sct#80898003
-* include $sct#90402004
-* include $sct#6123003
+* include $sct#1228957006
+* include $sct#1229852009
+* include $sct#1229859000
+* include $sct#1229864001
