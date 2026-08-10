@@ -7,6 +7,6 @@ Description: "Breast surgical procedure types accepted in pathology requests."
 
 * include $sct#64368001
 * include $sct#384723003
-* include $sct#72258006
+* include $sct#172049005
 * include $sct#428564008
-* include $sct#150298000
+* include $sct#172043006

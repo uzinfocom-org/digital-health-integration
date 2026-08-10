@@ -520,7 +520,7 @@ Description: "Example completed response to the Screening woman examination ques
 * item[4].item[5].answer[0].valueCoding.system = $sct
 * item[4].item[5].answer[0].valueCoding.code = #78623009
 * item[4].item[5].answer[1].valueCoding.system = $sct
-* item[4].item[5].answer[1].valueCoding.code = #154616000
+* item[4].item[5].answer[1].valueCoding.code = #95315005
 * item[4].item[5].answer[2].valueCoding.system = $sct
 * item[4].item[5].answer[2].valueCoding.code = #386804004
 * item[4].item[5].answer[3].valueCoding.system = $sct
@@ -763,7 +763,7 @@ Description: "Example completed response to the Screening woman examination ques
 * item[8].item[9].linkId = "breast-palpation-assessment"
 * item[8].item[9].text = "При пальпации"
 * item[8].item[9].answer[0].valueCoding.system = $sct
-* item[8].item[9].answer[0].valueCoding.code = #20020131
+* item[8].item[9].answer[0].valueCoding.code = #299976000
 * item[8].item[9].answer[1].valueCoding.system = $sct
 * item[8].item[9].answer[1].valueCoding.code = #53430007
 * item[8].item[10].linkId = "axillary-nodes-palpable"

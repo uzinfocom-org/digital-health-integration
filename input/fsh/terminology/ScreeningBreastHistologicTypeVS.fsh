@@ -7,7 +7,6 @@ Description: "Defines Screening Breast Histologic Type"
 * ^language = #uz
 * include codes from system screening-breast-histologic-type-cs
 * include $sct#472906008
-* include $sct#476361000210101
 * include $sct#264505003
 * include $sct#105261000119101
 * include $sct#307596009
@@ -21,9 +20,9 @@ Description: "Defines Screening Breast Histologic Type"
 * include $sct#9618003
 * include $sct#30566004
 * include $sct#703545003
-* include $sct#128676001
+* include $sct#703547006
 * include $sct#703546002
-* include $sct#421980000
+* include $sct#703594003
 * include $sct#64524002
 * include $sct#33889003
 * include $sct#77284006

@@ -6,4 +6,4 @@ Description: "Defines Screening Breast Palpation Assessment"
 * ^experimental = true
 * ^language = #uz
 * include $sct#53430007
-* include $sct#20020131
+* include $sct#299976000

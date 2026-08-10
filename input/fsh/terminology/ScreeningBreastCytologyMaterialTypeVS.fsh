@@ -10,4 +10,4 @@ Description: "Breast cytology material types accepted in pathology requests."
 * include $sct#277667006
 * include $sct#1220572004
 * include $sct#786883001
-* include $sct#258486007
+* include $sct#258433009

@@ -4,6 +4,20 @@ Title: "Screening Specialized Observation Parameter CodeSystem"
 Description: "Local codes for specialized screening Observation results and component parameters."
 * insert OriginalCodeSystemDraft(screening-specialized-observation-parameter-cs)
 
+// SNOMED CT 445104009 (Allred score for neoplasm) covers both receptors with a
+// single concept, so ER and PR keep local codes to stay separately identifiable.
+* #scrn-0073-00002 "Estrogen retseptori (ER) uchun Allred bahosi"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Оценка Allred для рецепторов эстрогена (ER)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Allred score for estrogen receptor (ER)"
+
+* #scrn-0073-00003 "Progesteron retseptori (PR) uchun Allred bahosi"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Оценка Allred для рецепторов прогестерона (PR)"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Allred score for progesterone receptor (PR)"
+
 * #scrn-0073-00004 "Ko‘krak bezidagi topilma"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Находка в молочной железе"

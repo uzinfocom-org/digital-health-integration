@@ -6,5 +6,5 @@ Description: "Resection margin status values used in Screening histology conclus
 * ^status = #active
 * ^experimental = true
 * include $sct#55182004
-* include $sct#44228008
+* include $sct#370109009
 * include $sct#369710003
