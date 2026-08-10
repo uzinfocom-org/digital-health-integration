@@ -28,6 +28,8 @@ Best Practice Recommendation: In general, all observations should have a perform
 
 # Screening: body-site is too large for the publisher to verify subset membership
 Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs is a proper subset of http://hl7.org/fhir/ValueSet/body-site|5.0.0 - value set is too large to check
+# Screening: breast-side VS (two SNOMED codes) is trivially a subset of screening-body-site-vs (all of SNOMED), but the parent is too large for the publisher to verify
+Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-ultrasound-breast-side-vs is a proper subset of https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs - value set is too large to check
 
 # IG Publisher 2.2.10 emits an OID-assignment recommendation for every CodeSystem/ValueSet. We don't use OID-based terminology (e.g. CDA), so assigning OIDs IG-wide adds no value here.
 %should have an OID assigned to cater for possible use with OID based terminology systems%
