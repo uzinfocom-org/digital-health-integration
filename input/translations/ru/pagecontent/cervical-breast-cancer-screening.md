@@ -267,7 +267,27 @@
 | [Риск рака шейки матки](Questionnaire-screening-cervical-risk.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk` | [ScreeningCervicalRiskResponseExample](QuestionnaireResponse-screening-cervical-risk-response-example.html) |
 | [Медицинский осмотр женщины](Questionnaire-screening-woman-exam.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam` | [ScreeningWomanExamResponse128](QuestionnaireResponse-screening-woman-exam-response-128.html) |
 
-Два опросника оценки риска используют числовые идентификаторы вопросов исходной системы Screening (например, `118`, `34`), а также `statusRisk` для вычисленного уровня риска. Опросник медицинского осмотра использует описательные linkId, определённые в спецификации интеграции компонента скрининга, например `cervical-postcoital-bleeding` и `morbi-anamnesis`; группы и подгруппы оформляются в том же стиле kebab-case.
+### Итоговый документ скрининга
+
+Итоговый документ скрининга собирает всё, что зафиксировано в рамках одного цикла скрининга, в один скачиваемый документ. Он может быть сформирован на любом этапе цикла: то, что ещё не внесено, просто не попадает в документ, поэтому сформированный на раннем этапе документ содержит только ответы на опросники.
+
+Отдельные этапы не получают собственный Composition - каждый результат остаётся Observation, а этот документ ссылается на них.
+
+Профиль: [ScreeningComposition](StructureDefinition-screening-composition.html)
+
+Примеры: [ScreeningCompositionExample](Composition-screening-composition-example.html), [ScreeningCompositionDocumentExample](Bundle-screening-composition-document-example.html)
+
+| Записываемая информация | Справочник | Пример кода | Где хранится |
+| :--- | :--- | :--- | :--- |
+| Тип документа | - | `LOINC#34133-9` (Summary of episode note) | `Composition.type` |
+| Опросники | - | `LOINC#74465-6` | `section[questionnaire].entry` (QuestionnaireResponse) |
+| Результаты всех выполненных этапов | - | `LOINC#30954-2` | `section[results].entry` (Observation) |
+| Окончательный диагноз по МКБ-10 | - | `LOINC#29308-4` | `section[diagnosis].entry` (Condition) |
+| Автор | - | - | `Composition.author` (PractitionerRole) |
+| Ответственная организация | - | - | `Composition.custodian` |
+| Документируемые направления, процедуры и визиты | - | - | `Composition.event.detail` |
+
+Чтобы передать итоговый документ как неизменяемый, поместите его в `Bundle` с `type = document`, где Composition является **первой** записью, а все ресурсы, на которые он ссылается - Patient, Encounter, Condition, Observation, QuestionnaireResponse и прочие - находятся в том же Bundle.
 
 ### Витальные показатели (рост, вес, ИМТ)
 

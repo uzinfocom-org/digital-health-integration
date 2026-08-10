@@ -267,7 +267,27 @@ Uchta so'rovnoma nashr etiladi. Javoblar QuestionnaireResponse ko'rinishida qayt
 | [Bachadon bo'yni saratoni xavfi](Questionnaire-screening-cervical-risk.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk` | [ScreeningCervicalRiskResponseExample](QuestionnaireResponse-screening-cervical-risk-response-example.html) |
 | [Ayolning tibbiy ko'rigi](Questionnaire-screening-woman-exam.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam` | [ScreeningWomanExamResponse128](QuestionnaireResponse-screening-woman-exam-response-128.html) |
 
-Ikkita xavf so'rovnomasi manba Screening tizimining raqamli savol identifikatorlaridan (masalan, `118`, `34`) hamda hisoblangan xavf darajasi uchun `statusRisk` dan foydalanadi. Tibbiy ko'rik so'rovnomasi skrining komponenti integratsiyasi spetsifikatsiyasida aniqlangan tavsifiy linkId larni ishlatadi, masalan `cervical-postcoital-bleeding` va `morbi-anamnesis`; guruh va kichik guruhlar ham xuddi shu kebab-case uslubida.
+### Skrining yakuniy hujjati
+
+Skrining yakuniy hujjati bitta skrining tsikli doirasida qayd etilgan hamma narsani bitta yuklab olinadigan hujjatga jamlaydi. U tsiklning istalgan bosqichida shakllantirilishi mumkin: hali kiritilmagan narsalar hujjatga tushmaydi, shuning uchun erta shakllantirilgan hujjat faqat so'rovnoma javoblarini o'z ichiga oladi.
+
+Alohida bosqichlar o'z Composition iga ega bo'lmaydi - har bir natija Observation bo'lib qoladi, bu hujjat esa ularga havola qiladi.
+
+Profil: [ScreeningComposition](StructureDefinition-screening-composition.html)
+
+Misollar: [ScreeningCompositionExample](Composition-screening-composition-example.html), [ScreeningCompositionDocumentExample](Bundle-screening-composition-document-example.html)
+
+| Qayd etiladigan ma'lumot | Ma'lumotnoma | Misol kodi | Qayerda saqlanadi |
+| :--- | :--- | :--- | :--- |
+| Hujjat turi | - | `LOINC#34133-9` (Summary of episode note) | `Composition.type` |
+| So'rovnomalar | - | `LOINC#74465-6` | `section[questionnaire].entry` (QuestionnaireResponse) |
+| Bajarilgan barcha bosqichlar natijalari | - | `LOINC#30954-2` | `section[results].entry` (Observation) |
+| MKB-10 bo'yicha yakuniy tashxis | - | `LOINC#29308-4` | `section[diagnosis].entry` (Condition) |
+| Muallif | - | - | `Composition.author` (PractitionerRole) |
+| Mas'ul tashkilot | - | - | `Composition.custodian` |
+| Hujjatlashtirilgan yo'llanmalar, muolajalar va tashriflar | - | - | `Composition.event.detail` |
+
+Yakuniy hujjatni o'zgarmas ko'rinishda uzatish uchun uni `type = document` bo'lgan `Bundle` ga joylashtiring: Composition **birinchi** yozuv bo'lishi, u havola qiladigan barcha resurslar - Patient, Encounter, Condition, Observation, QuestionnaireResponse va boshqalar - o'sha Bundle ichida bo'lishi kerak.
 
 ### Hayotiy ko'rsatkichlar (bo'y, vazn, TVI)
 

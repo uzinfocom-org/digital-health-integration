@@ -267,7 +267,27 @@ Three questionnaires are published. Answers come back as a QuestionnaireResponse
 | [Cervical risk](Questionnaire-screening-cervical-risk.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk` | [ScreeningCervicalRiskResponseExample](QuestionnaireResponse-screening-cervical-risk-response-example.html) |
 | [Woman medical exam](Questionnaire-screening-woman-exam.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam` | [ScreeningWomanExamResponse128](QuestionnaireResponse-screening-woman-exam-response-128.html) |
 
-The two risk questionnaires use the numeric question identifiers of the source Screening system (for example `118`, `34`) plus `statusRisk` for the computed risk level. The medical exam questionnaire uses the descriptive linkIds defined in the screening component integration specification, such as `cervical-postcoital-bleeding` and `morbi-anamnesis`; groups and subgroups use the same kebab-case style.
+### Screening summary document
+
+The screening summary gathers everything recorded for one screening episode into a single downloadable document. It can be produced at any point in the cycle: whatever has not been recorded yet is simply left out, so a summary generated early carries only the questionnaire answers.
+
+Individual steps do not get their own Composition - each result stays an Observation, and this document references them.
+
+Profile: [ScreeningComposition](StructureDefinition-screening-composition.html)
+
+Examples: [ScreeningCompositionExample](Composition-screening-composition-example.html), [ScreeningCompositionDocumentExample](Bundle-screening-composition-document-example.html)
+
+| Information to record | Value set | Example code | Stored in |
+| :--- | :--- | :--- | :--- |
+| Document type | - | `LOINC#34133-9` (Summary of episode note) | `Composition.type` |
+| Questionnaires | - | `LOINC#74465-6` | `section[questionnaire].entry` (QuestionnaireResponse) |
+| Results of every completed step | - | `LOINC#30954-2` | `section[results].entry` (Observation) |
+| Final ICD-10 diagnosis | - | `LOINC#29308-4` | `section[diagnosis].entry` (Condition) |
+| Author | - | - | `Composition.author` (PractitionerRole) |
+| Responsible organisation | - | - | `Composition.custodian` |
+| Referrals, procedures and visits documented | - | - | `Composition.event.detail` |
+
+To hand the summary over as an immutable document, put it in a `Bundle` with `type = document`, with the Composition as the **first** entry and every resource it references - Patient, Encounter, Condition, Observation, QuestionnaireResponse and the rest - in the same Bundle.
 
 ### Vital signs (height, weight, BMI)
 
