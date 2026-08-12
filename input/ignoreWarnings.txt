@@ -5,7 +5,7 @@
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
 # Faulty error in IG publisher, this link does work
-The link 'https://dhp.uz/fhir/core/%' cannot be resolved
+The link 'https://dhp.uz/fhir/core/%
 
 # Warning that can be ignored for our use since our instances use Uzbek/Russian but generated narrative in English
 Resource has a language (uz), and the XHTML has a lang (en), but they differ
@@ -32,11 +32,6 @@ Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screeni
 # IG Publisher 2.2.10 emits an OID-assignment recommendation for every CodeSystem/ValueSet. We don't use OID-based terminology (e.g. CDA), so assigning OIDs IG-wide adds no value here.
 %should have an OID assigned to cater for possible use with OID based terminology systems%
 
-# Observation.method subset checks for our Tub006 microscopy-method VS (Petroff / NALC,
-# which are specimen-decontamination methods). Pre-0.6.0 core bound method to the huge FHIR
-# observation-methods VS, so the check was skipped as "too large to check".
-Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/dhis-observation-method-vs is a proper subset of http://hl7.org/fhir/ValueSet/observation-methods|5.0.0 - value set is too large to check
-
 # NOTE: core 0.6.0 re-bound Observation.method to a REQUIRED lab-method-vs, so our method VS is now
 # flagged "not a subset" as a hard ERROR. That error is emitted during profile snapshot validation
 # and is NOT suppressible here (ignoreWarnings does not filter this class - verified). It is
@@ -47,11 +42,3 @@ Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/dhis-ob
 # Trailing % => startsWith match: the real message has an embedded newline before its final ')',
 # so an exact-match line never matches. Cut at (>1000) to stay independent of tx-server wording.
 Unable to expand included value set 'http://hl7.org/fhir/ValueSet/body-site': The value set 'http://hl7.org/fhir/ValueSet/body-site|5.0.0' expansion has too many codes to produce (>1000)%
-
-Error from https://tx.fhir.org/r5: Error: The code System "http://snomed.info/sct" has a grammar, and cannot be enumerated directly
-
-Binding https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs could not be expanded
-
-Unable to expand included value set 'https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-diagnostic-procedure-vs': Error from 
-https://tx.fhir.org/r5: Error: The code System "http://snomed.info/sct" has a grammar, and cannot be enumerated directly (and Error from 
-https://tx.fhir.org/r5: Error: The code System "http://snomed.info/sct" has a grammar, and cannot be enumerated directly )
