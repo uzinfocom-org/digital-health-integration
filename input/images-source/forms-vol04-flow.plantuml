@@ -12,7 +12,7 @@ SUP -> PH : delivery
 PH -> PH : 132 quantitative receipt, 137 stock accounting
 W -> PH : 134 requisition (waybill)
 PH -> W : 136 drugs issued to departments
-PH -> PH : 135/139 daily expense, 138/140 turnover by funding,\n141 balance
+PH -> PH : 135/139 daily expense, 138/140 turnover statements,\n141 balance
 
 note over PH
   Inventory and accounting, not patient-level clinical data;

@@ -2,7 +2,7 @@ Volume 8 is the blood service: how donated blood is collected, checked, processe
 
 ### What the blood service does
 
-Blood cannot be manufactured; it has to be donated, and it carries real risk if it is mishandled or carries infection. So the service is built around a careful, traceable chain:
+Blood cannot be manufactured; it has to be donated, and it carries real risk if it is mishandled or infected. So the service is built around a careful, traceable chain:
 
 - A donor volunteers and is registered.
 - Their blood is screened. Before anything is used, the donor's blood is tested for its group (A, B, O, Rh) and for infections such as HIV, hepatitis and syphilis. A donor who fails screening is set aside.

@@ -23,7 +23,7 @@ Most of these forms are registers and inspection acts - running lists and one-of
 
 ### A sample outbreak
 
-Imagine several people in a town falling ill after eating at the same canteen. A clinician who sees the first cases sends an urgent food-poisoning notification (263, 264; the general infectious-disease register is 060). The SES service opens an epidemiological investigation (262), visits the canteen, and takes samples of the food and swabs of the kitchen. The microbiology lab identifies the bacterium responsible (350, 370). With the source confirmed, the service orders the premises disinfected (390) and, because hygiene rules were broken, issues a violation notice and a penalty to the canteen (311, 312). The outbreak is traced, stopped, and acted upon - the work of several sub-domains in one event.
+Imagine several people in a town falling ill after eating at the same canteen. A clinician who sees the first cases sends the rapid notification (form 058, filed under volume 3), which the service logs in its food-poisoning and urgent-notification registers (263, 264). The SES service opens an epidemiological investigation (262), visits the canteen, and takes samples of the food and swabs of the kitchen. The microbiology lab identifies the bacterium responsible (350). With the source confirmed, the service orders the premises disinfected (390) and, because hygiene rules were broken, issues a violation notice and a penalty to the canteen (311, 312). The outbreak is traced, stopped, and acted upon - the work of several sub-domains in one event.
 
 <div>{% include forms-vol11-flow.svg %}</div><br clear="all"/>
 

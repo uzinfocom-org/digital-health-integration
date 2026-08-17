@@ -1,6 +1,6 @@
 The Ministry of Health standardises Uzbekistan's primary medical documentation through Order No. 399 and its annexes - forms numbered up to 399 (with sub-forms such as 009-1 or 015-1..015-26, 468 forms and sub-forms in total). This page is the map of those forms: what exists, how it groups, and the recurring document patterns that let you recognise many forms by a few shapes.
 
-The forms organise along two axes. The Ministry groups them by service line into 11 volumes - that tells you *where a form lives*. Cutting across the volumes are a handful of document types and patient journeys - those tell you *what kind of document a form is*.
+The forms organise along two axes. The Ministry groups them by service line into 11 volumes - that tells you *where a form lives*. Cutting across the volumes are a handful of recurring document types - those tell you *what kind of document a form is*. The patient journeys that link forms across volumes are drawn on the map below and on each volume page.
 
 ### The 11 volumes
 
@@ -19,6 +19,8 @@ The forms organise along two axes. The Ministry groups them by service line into
 | [9.0 Pathological anatomy](forms-volume-09-pathology.html) | Autopsy, surgical pathology, histology | 223-228 | 6 |
 | [10.0 Forensic medicine](forms-volume-10-forensic.html) | Forensic examination and laboratories | 229-245 | 17 |
 | [11.0 Sanitary-epidemiology](forms-volume-11-sanitary-epidemiology.html) | Public-health surveillance, environmental and microbiology labs | 246-399 (+045-x, 060) | 161 |
+
+The number ranges interleave rather than partition cleanly (volume 2's forms sit inside volume 3's 011-130 span); the count column is each volume's actual size.
 
 ### Document types
 
@@ -44,4 +46,4 @@ The practical rule: a `jurnal` is something you query, a `karta` is something yo
 
 Each form is identified by a category code and, where it has an official number, an external identifier - see [Document categories and identifiers](document-categories.html). Category codes come from [DocumentCategoryCS](CodeSystem-document-category-cs.html), most of whose codes follow the `form-NNN` pattern of Order 399.
 
-The volume pages linked above place every form in context. As forms are modelled in full they will gain mapping pages (for example [Form 011](form-011-mapping.html)), linked from here as they are produced.
+The volume pages linked above place every form in context. As forms are modelled in full they will gain mapping pages - see [Form 011](form-011-mapping.html), [Form 066](form-066-mapping.html), [Form 066-1](form-066-1-mapping.html) and [Form 130](form-130-mapping.html).

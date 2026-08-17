@@ -33,6 +33,6 @@ Each month the facility's standing commission estimates the drug need from bed n
 | 136 | Drugs issued to departments report |
 | 137 | Drug stock accounting sheet |
 | 138 | Turnover statement by financing source |
-| 139 | Daily quantitative expense document |
-| 140 | Turnover statement by financing source (2) |
+| 139 | Daily quantitative expense document (facility's internal pharmacy) |
+| 140 | Drug turnover statement |
 | 141 | Drug balance (per period) |
