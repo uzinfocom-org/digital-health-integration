@@ -113,6 +113,30 @@ pages:
     title: Narcology
   forms.md:
     title: Forms
+  forms-overview.md:
+    title: Forms Overview
+  forms-volume-01-inpatient.md:
+    title: 1.0 Inpatient Hospital
+  forms-volume-02-ambulatory.md:
+    title: 2.0 Ambulatory-Polyclinic
+  forms-volume-03-diagnostics-laboratory.md:
+    title: 3.0 Diagnostics & Laboratory
+  forms-volume-04-pharmacy.md:
+    title: 4.0 Pharmacy & Supply
+  forms-volume-05-emergency.md:
+    title: 5.0 Emergency & Air Ambulance
+  forms-volume-06-genetics-screening.md:
+    title: 6.0 Genetics & Screening
+  forms-volume-07-hiv.md:
+    title: 7.0 HIV/AIDS Service
+  forms-volume-08-blood-service.md:
+    title: 8.0 Blood Service
+  forms-volume-09-pathology.md:
+    title: 9.0 Pathological Anatomy
+  forms-volume-10-forensic.md:
+    title: 10.0 Forensic Medicine
+  forms-volume-11-sanitary-epidemiology.md:
+    title: 11.0 Sanitary-Epidemiology
   changelog.md:
     title: Changelog
   translationinfo.md:
