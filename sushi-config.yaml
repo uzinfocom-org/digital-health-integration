@@ -111,8 +111,8 @@ pages:
     title: Tuberculosis (DHIS)
   narcology.md:
     title: Narcology
-  forms.md:
-    title: Forms
+  questionnaires.md:
+    title: Questionnaires
   forms-overview.md:
     title: Forms Overview
   forms-volume-01-inpatient.md:
@@ -158,7 +158,6 @@ menu:
     Narcology: narcology.html
   Forms:
     Overview: forms-overview.html
-    Try the forms: forms.html
     1.0 Inpatient hospital: forms-volume-01-inpatient.html
     2.0 Ambulatory-polyclinic: forms-volume-02-ambulatory.html
     3.0 Diagnostics & laboratory: forms-volume-03-diagnostics-laboratory.html
@@ -170,6 +169,7 @@ menu:
     9.0 Pathological anatomy: forms-volume-09-pathology.html
     10.0 Forensic medicine: forms-volume-10-forensic.html
     11.0 Sanitary-epidemiology: forms-volume-11-sanitary-epidemiology.html
+  Questionnaires: questionnaires.html
   Artifacts: artifacts.html
   Changelog: changelog.html
 
