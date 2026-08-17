@@ -1,0 +1,21 @@
+@startuml forms-vol04-flow
+title Sample flow - pharmacy stock and supply (volume 4)
+autonumber
+
+participant "Ward / dept" as W
+participant "Facility\npharmacy" as PH
+participant "Supplier" as SUP
+
+PH -> PH : 131 monthly need by treatment standards & bed-count\n(standing commission)
+PH -> SUP : procurement order
+SUP -> PH : delivery
+PH -> PH : 132 quantitative receipt, 137 stock accounting
+W -> PH : 134 requisition (waybill)
+PH -> W : 136 drugs issued to departments
+PH -> PH : 135/139 daily expense, 138/140 turnover statements,\n141 balance
+
+note over PH
+  Inventory and accounting, not patient-level clinical data;
+  largely out of initial clinical-integration scope.
+end note
+@enduml

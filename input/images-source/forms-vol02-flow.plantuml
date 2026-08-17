@@ -1,0 +1,29 @@
+@startuml forms-vol02-flow
+title Sample flow - an outpatient visit and what it can trigger
+autonumber
+
+actor Patient as P
+participant "Polyclinic\nreception" as R
+participant "Physician\n(vol 2)" as DR
+participant "Diagnostics & lab\n(vol 3)" as DX
+participant "Specialised dispensary\nregistry (TB/onko/narco)" as REG
+
+P -> R : presents at polyclinic
+R -> R : 024 outpatient visit registration\n(024-1..4 daily reception logs)
+R -> DR : 025 ambulatory card opened
+DR -> DX : orders tests / imaging (volume 3)
+DX -> DR : results returned
+
+alt chronic condition confirmed
+  DR -> DR : 030 dispensary observation card\n(030-1/030-2/030-4 by disease)
+end
+alt notifiable diagnosis
+  DR -> REG : 089 / 090 / 091 first-time notification
+end
+alt certificate requested
+  DR -> P : 086 / 043 / 044 medical certificate (signed)
+end
+alt immunisation due
+  DR -> DR : 063 immunisation card + 064 register
+end
+@enduml

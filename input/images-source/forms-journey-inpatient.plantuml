@@ -1,0 +1,34 @@
+@startuml forms-journey-inpatient
+title Sample journey - an inpatient surgical episode (volumes 1, 3, 8)
+autonumber
+
+actor Patient as P
+participant "Admissions" as ADM
+participant "Ward / surgery\n(vol 1)" as WARD
+participant "Diagnostics & lab\n(vol 3)" as DX
+participant "Blood bank\n(vol 8)" as BB
+
+P -> ADM : arrives for admission
+ADM -> ADM : 001 admission/refusal journal
+ADM -> WARD : 003 inpatient medical card opened
+WARD -> DX : orders tests and imaging
+DX -> WARD : 040-130 lab results, 015 ultrasound, 017 X-ray, 020 ECG
+WARD -> WARD : 008 surgical procedure record\n004 anaesthesia register + 005 anaesthesia sheet
+
+alt transfusion required
+  WARD -> BB : 213 requisition for blood products
+  BB -> WARD : 211 issue of ready blood product
+  WARD -> WARD : 009 transfusion record (+ 009-1..009-4)
+end
+
+alt needs intensive care
+  WARD -> WARD : 006 ICU dynamic observation
+end
+
+WARD -> WARD : 007 bed-movement sheet updated
+alt discharged
+  WARD -> WARD : 027 medical-record extract\n066 discharge statistical card
+else died
+  WARD -> WARD : 106 death certificate registration
+end
+@enduml
