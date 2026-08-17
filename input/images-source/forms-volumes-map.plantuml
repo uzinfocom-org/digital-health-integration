@@ -9,7 +9,6 @@ skinparam rectangle {
   BackgroundColor<<ops>> #FEF7E0
   BackgroundColor<<public>> #F3E8FD
 }
-title The 11 form volumes of Order 399 and how patient journeys cross them
 
 rectangle "1.0 Inpatient hospital\n(001-010, 096-097, 103, 106)" as V1 <<core>> [[forms-volume-01-inpatient.html]]
 rectangle "2.0 Ambulatory-polyclinic\n(023-111)" as V2 <<core>> [[forms-volume-02-ambulatory.html]]

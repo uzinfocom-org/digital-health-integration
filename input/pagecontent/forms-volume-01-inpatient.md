@@ -13,8 +13,6 @@ When someone is admitted to a hospital, the staff open a record that travels wit
 
 Running alongside all of this is the maternity track: a woman in labour is admitted, the birth is recorded, the newborn gets its own record and birth certificate, and if things go wrong there are forms for early termination or for a death around the time of birth.
 
-So the volume is not a random pile of forms - it is the sequence of events of a hospital stay, each event captured as it happens.
-
 ### How the forms relate
 
 The admission journal (001) is the front door: a simple running list of who came in. For anyone actually admitted, a medical card (003) is opened, and this card is the spine of the stay. The anaesthesia (004, 005), surgery (008), intensive-care (006) and transfusion (009) records are only created if those events occur, and each one refers back to the card. The bed-movement sheet (007) is a separate housekeeping record that tracks how many beds are occupied. The stay closes with either a discharge - written up on the extract and statistical card (027, 066), which Order 399 files under [volume 3](forms-volume-03-diagnostics-laboratory.html) - or a death, logged in the death-certificate register (106).

@@ -4,7 +4,7 @@ Volume 2 covers everyday care that does not involve staying overnight in hospita
 
 A polyclinic does several different jobs, and the forms group around them:
 
-- Seeing patients. People come in (or are visited at home) and are seen by a doctor, who keeps a card for each patient that builds up over years.
+- Seeing patients. People come in (or are visited at home) and are seen by a doctor, who keeps a record for each patient that builds up over years.
 - Watching chronic patients. Someone with a long-term illness - diabetes, a psychiatric condition, cancer, tuberculosis - is put under "dispensary observation", which means regular scheduled check-ups recorded over time.
 - Vaccinating. Children and adults receive scheduled vaccines, tracked on a card and in a register.
 - Issuing certificates. A great deal of outpatient work is producing official papers: fitness to drive, fitness for a job or study, sick leave, fitness to travel abroad. These are signed documents with legal weight.
