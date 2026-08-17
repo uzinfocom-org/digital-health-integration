@@ -2,9 +2,7 @@ CodeSystem: DocumentCategoryCS
 Id: document-category-cs
 Title: "Document Category"
 Description: "Categories for clinical documents and other knowledge resources in Uzbekistan integrations. Based on Ministry of Health Order 399."
-* ^experimental = true
-* ^caseSensitive = true
-* ^language = #uz
+* insert OriginalCodeSystemDraft(document-category-cs)
 
 // 1.0 Hospital forms (first 20 from Order 399)
 * #form-001 "Tibbiy muassasaga qabul qilingan yoki rad etilganlarni hisobga olish"
@@ -181,3 +179,22 @@ Description: "Categories for clinical documents and other knowledge resources in
   * ^designation[=].value = "Sick leave certificate"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Лист нетрудоспособности"
+
+
+* #form-066-1 "Psixiatrik/narkologik chiqarish statistik kartasi"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Psychiatric/narcological discharge statistical card"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Психиатрическая/наркологическая статистическая карта выписки"
+
+* #form-066 "Shifoxonadan chiqarilganlarning statistik kartasi"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Hospital discharge statistical card"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Статистическая карта выписанного из стационара"
+
+* #form-130 "Laboratoriya tahlil natijalari"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Laboratory Test Results"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Результаты лабораторных исследований"

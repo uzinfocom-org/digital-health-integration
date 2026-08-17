@@ -1,0 +1,16 @@
+CODE	UZB	RUS	ENG
+emdoc-0001-0001	kasallik	заболевание	disease
+emdoc-0001-0002	vaqtinchalik mehnatga layoqatsizlikka olib kelgan jarohat	травма с временной утратой нетрудоспособности	injury with temporary loss of work capacity
+emdoc-0001-0003	karantin	карантин	quarantine
+emdoc-0001-0004	ishlab chiqarishda yuz bergan baxtsiz hodisa va uning oqibatlari	несчастный случай на производстве и его последствия	occupational accident and its consequences
+emdoc-0001-0005	homiladorlik va tug‘ruq ta’tili	отпуск по беременности и родам	maternity leave
+emdoc-0001-0006	ortopedik-protez muassasasining statsionar sharoitida protezlash	протезирование в условиях стационара протезно-ортопедического предприятия	prosthetic care provided in the inpatient setting of a prosthetic and orthopedic facility
+emdoc-0001-0007	kasbiy kasallik va uning kuchayishi	профессиональное заболевание и его обострение	occupational disease and its exacerbation
+emdoc-0001-0008	sanator-kurort (yoki ambulator-kurort) davolanish	санаторно-курортного (амбулаторно-курортного) лечения	sanatorium-resort (outpatient-resort) treatment
+emdoc-0001-0009	kasal oila a’zosini parvarish qilish	уход за больным членом семьи	care for a sick family member
+emdoc-0001-0010	boshqa holatlar (zaharlanish, tibbiy muolajalar va boshqalar)	иное состояние (отравление, проведение манипуляци и др.)	other conditions (poisoning, medical procedures, etc.)
+emdoc-0001-0011	14 yoshdan kichik bolaning kasalligi	в случае заболевания ребенка в возрасте до 14 лет	illness of a child under 14 years of age
+emdoc-0001-0012	nogiron bola	ребенок-инвалид	disabled child
+emdoc-0001-0013	emlashdan keyingi asorat yoki bolaning yomon sifatli o‘smalari bilan bog‘liq kasallik	заболевание, связанное с поствакцинальным осложнением, или при злокачественном новообразовании у ребенка	disease associated with post-vaccination complication or with malignant neoplasm in a child
+emdoc-0001-0014	OIV bilan kasallangan bola	вич-инфицированный ребенок	HIV-infected child
+emdoc-0001-0015	yangi tug‘ilgan chaqaloqni parvarish qilish	уход за новорожденным	care for a newborn

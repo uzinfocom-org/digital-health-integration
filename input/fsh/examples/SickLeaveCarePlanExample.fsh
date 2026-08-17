@@ -1,7 +1,7 @@
 Instance: ExamplePatient
 InstanceOf: UZCorePatient
 Usage: #example
-Title: "Example Patient"
+Title: "Example Patient - Karimov"
 Description: "Minimal example patient for sick leave"
 * identifier[nationalId].value = "31234567890124"
 * name.use = #official

@@ -94,6 +94,49 @@ When a document is updated (e.g., a form is created and later modified), `Compos
 
 For standalone resources (e.g., CarePlan), use the resource's own `.identifier`.
 
+### Finding documents
+
+A [document Bundle](https://hl7.org/fhir/documents.html) is searched through its Composition, not through its contents. `Bundle` itself has only five search parameters, and the one that reaches the clinical content is `composition`, which resolves to the first entry of the bundle:
+
+| Parameter | Type | Expression |
+|-----------|------|------------|
+| `composition` | reference | `Bundle.entry[0].resource as Composition` |
+| `identifier` | token | `Bundle.identifier` |
+| `type` | token | `Bundle.type` |
+| `timestamp` | date | `Bundle.timestamp` |
+
+Chaining through `composition` gives access to the Composition search parameters, including `category`, `identifier`, `subject`, `encounter` and `date`. Since the FHIR document rules require the Composition to be the first entry, this always addresses the document's Composition.
+
+Because the category is the primary classifier, searching by category is the usual way to find all documents of one type. All Form 066 documents:
+
+```
+GET [base]/Bundle?type=document&composition.category=https://terminology.dhp.uz/fhir/integrations/CodeSystem/document-category-cs|form-066
+```
+
+The form number is an alternative when the caller works from the official form reference:
+
+```
+GET [base]/Bundle?type=document&composition.identifier=https://dhp.uz/fhir/core/sid/doc/uz/form-number|066
+```
+
+Form 066 documents for a single patient:
+
+```
+GET [base]/Bundle?type=document&composition.category=https://terminology.dhp.uz/fhir/integrations/CodeSystem/document-category-cs|form-066&composition.subject=Patient/123
+```
+
+The two instance identifiers answer different questions. `Bundle.identifier` retrieves one exact document instance:
+
+```
+GET [base]/Bundle?identifier=urn:ietf:rfc:3986|urn:uuid:760e8400-e29b-41d4-a716-446655440066
+```
+
+`Composition.identifier` retrieves every version of the same document, each version being a separate bundle with its own `Bundle.identifier`:
+
+```
+GET [base]/Bundle?type=document&composition.identifier=urn:ietf:rfc:3986|urn:uuid:861f9511-f30c-52e5-b827-557766550666
+```
+
 ### Summary
 
 | Element | Purpose | Example |
