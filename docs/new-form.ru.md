@@ -20,18 +20,16 @@
 | 8 | Переводы страниц (ru + uz) | `input/translations/ru/pagecontent/`, `input/translations/uz/pagecontent/` |
 | 9 | Запись в чейнджлоге | `input/pagecontent/changelog.md` (+ переводы) |
 
-Questionnaire формы (если он есть) регистрировать нигде не нужно: страница forms.html подхватывает все Questionnaire этого IG автоматически и рендерит их как живые формы.
-
 Соглашения по именованию (на примере 066):
 - Профиль: `Profile: Form066HospitalDischargeComposition`, `Id: form-066-hospital-discharge-composition`, `Parent: Composition`.
 - Файл примера: `Form066HospitalDischarge.fsh`, инстанс `example-form-066-hospital-discharge` (рендерится как `Bundle-example-form-066-hospital-discharge.html`).
-- Файл вступления именуется по `Id` профиля: `StructureDefinition-form-066-hospital-discharge-composition-intro.md`. Издатель сам подставит его в начало страницы профиля - вручную нигде регистрировать не нужно.
+- Файл вступления именуется по `Id` профиля: `StructureDefinition-form-066-hospital-discharge-composition-intro.md`. Публикатор сам подставит его в начало страницы профиля - вручную нигде регистрировать не нужно.
 
 ## Порядок действий
 
 ### 1. Профиль Composition
 
-Опишите шапку документа и его разделы. Базовый шаблон:
+Опишите метаданные документа и его разделы. Базовый шаблон:
 
 ```fsh
 Profile: Form0XXNameComposition
@@ -76,20 +74,6 @@ Description: "Composition profile for Form 0XX ..."
 - `encounter` делайте `0..1`, если форма не всегда привязана к конкретному случаю обслуживания (так в 130).
 - На элементы можно вешать `^short` с номерами полей исходной формы (см. 066-1, там это сделано на узбекском/английском) - это помогает читать профиль рядом с бумажной формой. Необязательно, но желательно.
 
-Диагнозы храните не порядком записей, а в подразделах по роли. Сам раздел тогда `entry 0..0`, а внутри - вложенные `section`, нарезанные по коду из `DiagnosisRoleCS`:
-
-```fsh
-* section[finalDiagnosis].entry 0..0
-* section[finalDiagnosis].section ^slicing.discriminator.type = #value
-* section[finalDiagnosis].section ^slicing.discriminator.path = "code"
-* section[finalDiagnosis].section ^slicing.rules = #open
-* section[finalDiagnosis].section contains main 1..1 and competing 0..1 and complication 0..1
-* section[finalDiagnosis].section[main].code = $diagnosis-role#main
-* section[finalDiagnosis].section[main].entry only Reference(UZCoreCondition)
-```
-
-`DiagnosisRoleCS` (Id `diagnosis-role-integration`, алиас `$diagnosis-role`) уже содержит роли (`referral`, `main`, `competing`, `concomitant`, `background`, `complication`, причины смерти) и переиспользуется между формами - новые коды добавляйте туда, а не заводите свой CS. В `Description` этого CS перечислены использующие его формы - допишите туда свою.
-
 ### 2. Код категории документа
 
 В `input/fsh/terminology/DocumentCategoryCS.fsh` добавьте код формы. Display - на узбекском, переводы - через `designation` (en + ru):
@@ -101,8 +85,6 @@ Description: "Composition profile for Form 0XX ..."
   * ^designation[+].language = #ru
   * ^designation[=].value = "Название формы по-русски"
 ```
-
-Отдельно ValueSet править не нужно: `DocumentCategoryVS` включает всю систему целиком.
 
 ### 3. Пример-документ (Bundle)
 
@@ -148,32 +130,7 @@ Usage: #inline
 * section[=].entry[0] = Reference(urn:uuid:...0002)
 ```
 
-Что важно в примере:
-- У каждого инлайн-ресурса проставляйте `* language = #en`.
-- UUID у `Bundle.identifier` и `Composition.identifier` - разные и уникальные в пределах IG: не копируйте их из другого примера, не поправив.
-- Какой профиль для какого ресурса - см. таблицу ниже. Если профиля UZ Core нет, берите базовый ресурс FHIR.
-- `Provenance` берите по профилю `UZCoreProvenance` (как в 130): `target = Reference(Bundle/example-form-0XX-name)`, агент - `author` из `$provenance-participant-type`, подпись - `signature` с `type[nationalType]` из `$signature-type-cs`, `who`, `when`, `sigFormat`, `data`. Примеры 011/066 используют базовый `Provenance` с агентом `attester` - этого кода нет в ValueSet ядра (там только `author` и `legal`), поэтому для новых форм так не делайте.
-
-Выбор профиля под данные. UZ Core закрывает почти все нужные ресурсы - сверяйтесь со страницей Artifacts ядра, прежде чем брать базовый ресурс:
-
-| Данные | Профиль / ресурс |
-|--------|------------------|
-| Пациент | `UZCorePatient` |
-| Случай (госпитализация) | `UZCoreEncounter`, или собственный подпрофиль (как `UZCoreEncounter066`), если нужны доп. ограничения |
-| Измерения, анализы, витальные показатели | `UZCoreObservation` |
-| Соц.-эконом. данные (статус, образование, доход, льготы) | `UZCoreSocioeconomicObservation` |
-| Диагнозы | `UZCoreCondition` (+ `category` из `$diagnosis-role`) |
-| Врач / роль врача | `UZCorePractitioner` / `UZCorePractitionerRole` |
-| Родственник | `UZCoreRelatedPerson` |
-| Организация / отделение | `UZCoreOrganization` / `UZCoreLocation` |
-| Направление на лабораторное исследование | `UZCoreServiceRequestLaboratory` |
-| Образец | `UZCoreSpecimen` |
-| Заключение лаборатории / диагностики | `UZCoreDiagnosticReport` |
-| Операция | `UZCoreProcedure` |
-| Лекарство | `UZCoreMedication` / `UZCoreMedicationDispense` |
-| Эпизод лечения | `UZCoreEpisodeOfCare` |
-| Подпись документа | `UZCoreProvenance` |
-| Оплата, прочее без профиля | базовые `Coverage`, `Basic` и т. п. |
+UUID у `Bundle.identifier` и `Composition.identifier` - разные и уникальные в пределах IG: не копируйте их из другого примера, не поправив.
 
 ### 4. Страница соответствия полей
 
@@ -232,7 +189,7 @@ menu:
 
 - [ ] Профиль `Composition` в `input/fsh/profiles/`
 - [ ] Код `#form-0XX` в `DocumentCategoryCS.fsh` (uz + en/ru designation)
-- [ ] Пример-`Bundle` (`#document`) в `input/fsh/examples/` с `UZCoreProvenance`
+- [ ] Пример-`Bundle` (`#document`) в `input/fsh/examples/` с `Provenance`
 - [ ] Страница `form-0XX-mapping.md`
 - [ ] Файл вступления `StructureDefinition-<id>-intro.md`
 - [ ] Запись в `pages:` и пункт меню в `sushi-config.yaml`
