@@ -134,9 +134,7 @@ UUID у `Bundle.identifier` и `Composition.identifier` - разные и уни
 
 ### 4. Страница соответствия полей
 
-`input/pagecontent/form-0XX-mapping.md` - построчная таблица полей формы. Структура: блок `<style>` с ширинами колонок, заголовок, раздел Overview (со ссылками на профиль и пример), таблицы по разделам с колонками `UZ | RU | FHIR Path | Code | Example`, схема Bundle structure и ссылка на пример. Проще всего скопировать существующую (`form-066-mapping.md` или `form-130-mapping.md`) и заменить содержимое.
-
-Коды в колонке Code: разделы - LOINC; диагнозы - ICD-10; операции - SNOMED CT / ICHI; анализы и показатели - LOINC. Если стандартного кода нет - локальный код (`LocalObservationCodeCS`) или пометка `Local code - TBD`.
+`input/pagecontent/form-0XX-mapping.md` - построчная таблица полей формы для разработчиков, реализующих интеграцию. Структура: блок `<style>` с ширинами колонок, заголовок, раздел Overview (со ссылками на профиль и пример), таблицы по разделам с колонками `UZ | RU | FHIR Path | Code | Example`, схема Bundle structure и ссылка на пример. Проще всего скопировать существующую (`form-066-mapping.md` или `form-130-mapping.md`) и заменить содержимое.
 
 ### 5. Вступление к профилю
 
@@ -167,8 +165,6 @@ menu:
 - `IntegrationsValueSet(id)` - ValueSet;
 - `SupplementCodeSystemDraft(id, supplements, version)` / `SupplementCodeSystem(...)` - сапплемент (например, переводы к SNOMED CT); параметр `supplements` передаётся алиасом (`$sct`), без кавычек.
 
-Свой код роли диагноза - в существующий `DiagnosisRoleCS`, а не в новый CS.
-
 ### 8. Переводы страниц
 
 Каждая страница IG существует на трёх языках: английский оригинал в `input/pagecontent/` и одноимённые переводы в `input/translations/ru/pagecontent/` и `input/translations/uz/pagecontent/`. Для новой формы переведите страницу соответствия и вступление к профилю на русский и узбекский в том же PR. Терминологию отдельно переводить не нужно - там переводы задаются через `designation` прямо в FSH.
@@ -179,11 +175,10 @@ menu:
 
 ## Сборка и проверка
 
-- Полная сборка: `_genonce.sh` (он сам запускает SUSHI, отдельно SUSHI гонять не нужно).
+- Полная сборка: `_genonce.sh` (он сам запускает SUSHI, отдельно SUSHI гонять не нужно). Если публикатору не хватает памяти, дайте ему 12 ГБ через переменную окружения: `export JAVA_TOOL_OPTIONS="-Xmx12g"` (macOS/Linux) или `set JAVA_TOOL_OPTIONS=-Xmx12g` (Windows).
 - Правки только в markdown: `./fast-narrative-rebuild.sh` (~12 c) вместо полной сборки.
 - Параллельно две полные сборки не запускайте - они конфликтуют на общем локе `~/.fhir`.
-- После сборки проверьте QA: ошибки/предупреждения сверяйте с `input/ignoreWarnings.txt`; ожидаемые гасите там же.
-- Переводы: каталоги `input/translations/ru` и `input/translations/uz` подключены через `translation-sources` в `sushi-config.yaml`; сборка выкладывает `output/en`, `output/ru` и `output/uz`, а `output/*.html` в корне - только заглушки с выбором языка. Все страницы переведены на оба языка - новые страницы переводите сразу (см. шаг 8).
+- После сборки откройте страницу QA (`output/qa.html`) и исправьте новые ошибки и предупреждения.
 
 ## Чек-лист новой формы
 
