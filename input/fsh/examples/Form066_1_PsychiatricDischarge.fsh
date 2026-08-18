@@ -5,7 +5,7 @@ Title: "Form 066-1 - Psychiatric/Narcological discharge statistical card"
 Description: "Example of a psychiatric/narcological hospital discharge statistical card"
 * language = #en
 * identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:uuid:760e8400-e29b-41d4-a716-446655440066"
+* identifier.value = "urn:uuid:9c2b7f14-3d5a-4e88-b1c6-2f0a7d4e6611"
 * type = #document
 * timestamp = "2026-01-15T14:30:00+05:00"
 
@@ -156,7 +156,7 @@ InstanceOf: Form066_1_PsychiatricDischargeComposition
 Usage: #inline
 * language = #en
 * identifier[0].system = "urn:ietf:rfc:3986"
-* identifier[=].value = "urn:uuid:861f9511-f30c-52e5-b827-557766550666"
+* identifier[=].value = "urn:uuid:4a1e8d20-6b93-4c57-9f8e-3d5c1b7a0661"
 * identifier[+].system = "https://dhp.uz/fhir/core/sid/doc/uz/form-number"
 * identifier[=].value = "066-1"
 * status = #final
@@ -281,7 +281,7 @@ Usage: #inline
 * name.given[0] = "Alisher"
 * name.given[+] = "Valiyevich"
 * birthDate = "1990-04-12"
-* extension[nationality].extension[code].valueCodeableConcept = https://terminology.dhp.uz/fhir/core/CodeSystem/nationality-cs#23 "Azerbaijanis"
+* extension[nationality].extension[code].valueCodeableConcept = https://terminology.dhp.uz/fhir/core/CodeSystem/nationality-cs#704 "AZERBAIJANIAN"
 * gender = #male
 * telecom[0].system = #phone
 * telecom[0].value = "+998901234567"
@@ -311,8 +311,10 @@ InstanceOf: UZCoreEncounter066
 Usage: #inline
 * language = #en
 * status = #completed
-* identifier[0].value = "REG-066-2026-0001"
+* identifier[0].system = "https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number"
+* identifier[=].value = "MRN-066-1-2026-0001"
 * class = $v3-ActCode#IMP "inpatient encounter"
+* type = $encounter-type-cs#mserv-0001-00004 // Treatment
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * actualPeriod.start = "2026-01-05T10:00:00+05:00"
 * actualPeriod.end = "2026-01-15T14:00:00+05:00"
@@ -321,10 +323,10 @@ Usage: #inline
 * admission.origin.extension[admissionOrigin].valueCodeableConcept = admit-source-home-cs#mserv-0003-00001 "From home"
 * admission.origin.display = "From home"
 * admission.reAdmission = $re-admission-local-cs#first-time "First time"
-* reason.value.concept = $encounter-purpose-cs#enc-001 "Diagnostics"
+* reason.value.concept = $encounter-purpose-cs#enc-pur-001 "Diagnostics"
 * priority = $encounter-local-priority-cs#transferred "Transferred from another facility"
 * admission.admitSource = $admit-source-local-cs#mserv-0006-00002 "Dispensary"
-* admission.dischargeDisposition = $discharge-disposition-home-cs#mserv-0004-00001 "Hospitalized"
+* admission.dischargeDisposition = $discharge-disposition-home-cs#mserv-0004-00004 "Discharged"
 * subjectStatus = $encounter-local-subject-status-cs#loc-cs-001 "Recovered"
 * location[0].form = $location-form#161.0 "Narcological"
 * length = 10 'd' "days"
@@ -821,7 +823,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-01-07T10:00:00+05:00"
 * performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)
-* valueCodeableConcept = https://terminology.dhp.uz/CodeSystem/tb-drug-sensitivity#Tub-004-001 "Drug-sensitive"
+* valueCodeableConcept = https://terminology.dhp.uz/fhir/integrations/CodeSystem/tb-drug-sensitivity-cs#Tub-004-001 "Drug-sensitive"
 
 
 // Observation was used because there is no dedicated base FHIR element for temporary disability period dates.

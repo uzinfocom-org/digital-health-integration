@@ -1,3 +1,5 @@
+> **Машинный перевод, требуется проверка человеком.** Эта страница автоматически переведена с английского языка с помощью искусственного интеллекта и пока не проверена редактором. При любых расхождениях приоритет имеет оригинальная англоязычная версия.
+
 ### Категории и идентификаторы документов
 
 DHP использует несколько механизмов для классификации и идентификации клинических документов:
@@ -93,6 +95,49 @@ graph TB
 ```
 
 Для автономных ресурсов (например, CarePlan) используйте собственный `.identifier` ресурса.
+
+### Поиск документов
+
+Поиск [document Bundle](https://hl7.org/fhir/documents.html) выполняется через его Composition, а не по содержимому пакета. У самого `Bundle` всего пять параметров поиска, и доступ к клиническому содержимому даёт только `composition`, который разрешается в первый элемент пакета:
+
+| Параметр | Тип | Выражение |
+|----------|-----|-----------|
+| `composition` | reference | `Bundle.entry[0].resource as Composition` |
+| `identifier` | token | `Bundle.identifier` |
+| `type` | token | `Bundle.type` |
+| `timestamp` | date | `Bundle.timestamp` |
+
+Цепочка через `composition` открывает доступ к параметрам поиска Composition, включая `category`, `identifier`, `subject`, `encounter` и `date`. Поскольку правила FHIR-документов требуют, чтобы Composition был первым элементом, такая цепочка всегда адресует Composition документа.
+
+Так как категория является основным классификатором, поиск по категории - обычный способ найти все документы одного типа. Все документы Формы 066:
+
+```
+GET [base]/Bundle?type=document&composition.category=https://terminology.dhp.uz/fhir/integrations/CodeSystem/document-category-cs|form-066
+```
+
+Номер формы - альтернатива для тех, кто работает с официальным номером формы:
+
+```
+GET [base]/Bundle?type=document&composition.identifier=https://dhp.uz/fhir/core/sid/doc/uz/form-number|066
+```
+
+Документы Формы 066 для одного пациента:
+
+```
+GET [base]/Bundle?type=document&composition.category=https://terminology.dhp.uz/fhir/integrations/CodeSystem/document-category-cs|form-066&composition.subject=Patient/123
+```
+
+Два идентификатора экземпляров отвечают на разные вопросы. `Bundle.identifier` возвращает один конкретный экземпляр документа:
+
+```
+GET [base]/Bundle?identifier=urn:ietf:rfc:3986|urn:uuid:760e8400-e29b-41d4-a716-446655440066
+```
+
+`Composition.identifier` возвращает все версии одного и того же документа, при этом каждая версия является отдельным пакетом со своим `Bundle.identifier`:
+
+```
+GET [base]/Bundle?type=document&composition.identifier=urn:ietf:rfc:3986|urn:uuid:861f9511-f30c-52e5-b827-557766550666
+```
 
 ### Сводка
 

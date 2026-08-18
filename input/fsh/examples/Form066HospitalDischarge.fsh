@@ -301,6 +301,7 @@ Usage: #inline
 * identifier[0].system = "https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number"
 * identifier[=].value = "MRN-066-2026-0001"
 * class = $v3-ActCode#IMP "inpatient encounter"
+* type = $encounter-type-cs#mserv-0001-00004 // Treatment
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * subjectStatus = $encounter-local-subject-status-cs#loc-cs-001 "Recovered"
 * actualPeriod.start = "2026-01-05T10:00:00+05:00"
@@ -308,10 +309,9 @@ Usage: #inline
 * serviceProvider = Reference(urn:uuid:06600004-1111-2222-3333-444444444444)
 * admission.reAdmission = $re-admission-local-cs#first-time "First time"
 * admission.admitSource = $admit-source-local-cs#mserv-0006-00001 "Without referral / Self-referred"
-* admission.dischargeDisposition = $discharge-disposition-home-cs#mserv-0004-00001 "Hospitalized"
-* subjectStatus = $encounter-local-subject-status-cs#loc-cs-001 "Recovered"
+* admission.dischargeDisposition = $discharge-disposition-home-cs#mserv-0004-00004 "Discharged"
 * length = 10 'd' "days"
-* location[0].form = $location-form#101 "Therapy"
+* location[0].form = $location-form#101.0 "Therapy"
 * location[0].period.start = "2026-01-05T10:00:00+05:00"
 * location[0].period.end = "2026-01-15T14:00:00+05:00"
 * location[0].location = Reference(urn:uuid:06600023-1111-2222-3333-444444444444)
@@ -810,7 +810,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-01-07T10:00:00+05:00"
 * performer = Reference(urn:uuid:06600008-1111-2222-3333-444444444444)
-* valueCodeableConcept = https://terminology.dhp.uz/CodeSystem/tb-drug-sensitivity#Tub-004-001 "Drug-sensitive"
+* valueCodeableConcept = https://terminology.dhp.uz/fhir/integrations/CodeSystem/tb-drug-sensitivity-cs#Tub-004-001 "Drug-sensitive"
 
 
 

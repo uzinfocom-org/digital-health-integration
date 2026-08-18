@@ -92,14 +92,14 @@ For a complete reference instance, see the [Form 066 hospital discharge example]
 | Jami o'rin kunlar | Койко-дни | Observation.valueQuantity / Encounter.length | LOINC `78033-8` "Hospital stay duration" | 10 days |
 | Shundan, reanimatsiyada | Из них, в реанимации | Observation.valueQuantity | LOINC `LP76050-1` "Intensive care unit" | 0 days |
 | Chiqarilgan bo'lim | Отделение выписки | Organization.name | Local code | Therapeutic department |
-| Shifoxonadan chiqarish holati | Исход госпитализации | Encounter.subjectStatus | Local code | Recovered |
-| Bemor holati | Состояние пациента | Encounter.admission.dischargeDisposition | Local code | Hospitalized |
+| Shifoxonadan chiqarish holati | Исход госпитализации | Encounter.admission.dischargeDisposition | Local code | Discharged |
+| Bemor holati | Состояние пациента | Encounter.subjectStatus | Local code | Recovered |
 
 ---
 
 ### Final Diagnosis
 
-Each diagnosis is tagged with `Condition.category` from the [Diagnosis Role](CodeSystem-diagnosis-role.html) code system and placed in a matching per-role sub-section of the Composition, so the role is preserved without relying on entry order - Основной → `main`, Конкурирующий → `competing`, Сопутствующий → `concomitant`, Фоновый → `background`, Осложнение → `complication`.
+Each diagnosis is tagged with `Condition.category` from the [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) code system and placed in a matching per-role sub-section of the Composition, so the role is preserved without relying on entry order - Основной → `main`, Конкурирующий → `competing`, Сопутствующий → `concomitant`, Фоновый → `background`, Осложнение → `complication`.
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
@@ -113,7 +113,7 @@ Each diagnosis is tagged with `Condition.category` from the [Diagnosis Role](Cod
 
 ### Pathologoanatomical Diagnosis
 
-Causes of death are tagged the same way (`Condition.category`, [Diagnosis Role](CodeSystem-diagnosis-role.html)) in per-role sub-sections - Непосредственная причина смерти → `immediate-cause-of-death`, вызвавшее её заболевание → `underlying-cause-of-death`, Основное заболевание → `main-disease-death`, Другие значимые заболевания → `other-significant-death`.
+Causes of death are tagged the same way (`Condition.category`, [Diagnosis Role](CodeSystem-diagnosis-role-integration.html)) in per-role sub-sections - Непосредственная причина смерти → `immediate-cause-of-death`, вызвавшее её заболевание → `underlying-cause-of-death`, Основное заболевание → `main-disease-death`, Другие значимые заболевания → `other-significant-death`.
 
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|

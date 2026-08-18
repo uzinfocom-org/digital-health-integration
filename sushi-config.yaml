@@ -9,7 +9,7 @@ name: DHP integrations
 title: Uzbekistan Digital Health Platform - Integrations
 description: Profiles for DHP integrations with systems in Uzbekistan
 status: draft # draft | active | retired | unknown
-version: 0.1.0
+version: 0.7.0
 fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build
@@ -25,7 +25,7 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  uz.dhp.core: 0.5.0
+  uz.dhp.core: 0.7.0
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -59,12 +59,12 @@ dependencies:
 # http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
 #
 parameters:
-  special-url-base: https://terminology.dhp.uz
+  special-url-base: https://terminology.dhp.uz/fhir/integrations
   excludettl: true
   # shownav: true
 
   pin-canonicals: pin-all
-  apply-version: false # don't override the version in the knowledge resources
+  apply-version: false # don't override the version in the knowledge resourcesi
   default-version: true
 
   show-inherited-invariants: false # hide invariants inherited from the base resource in profile tables
@@ -88,6 +88,36 @@ parameters:
 # │ input/includes. To use a provided input/includes/menu.xml file, delete the "menu"              │
 # │ property below.                                                                                │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+pages:
+  index.md:
+    title: Home
+  document-categories.md:
+    title: Document Categories
+  document-statuses.md:
+    title: Document Statuses
+  form-011-mapping.md:
+    title: Form 011 Mapping
+  form-066-mapping.md:
+    title: Form 066 Mapping
+  form-066-1-mapping.md:
+    title: Form 066 1 Mapping
+  form-130-mapping.md:
+    title: Form 130 Mapping
+  cervical-breast-cancer-screening.md:
+    title: Cervical and Breast Cancer Screening
+  sick-leave.md:
+    title: Sick Leave
+  dhis-tuberculosis.md:
+    title: Tuberculosis (DHIS)
+  narcology.md:
+    title: Narcology
+  forms.md:
+    title: Forms
+  changelog.md:
+    title: Changelog
+  translationinfo.md:
+    title: Translationinfo
+
 menu:
   Home: index.html
   Documents:
@@ -96,6 +126,13 @@ menu:
     Form 011 Mapping: form-011-mapping.html
     Form 066 Mapping: form-066-mapping.html
     Form 066-1 Mapping: form-066-1-mapping.html
+    Form 130 Mapping: form-130-mapping.html
+  Integrations:
+    Cervical and Breast Cancer Screening: cervical-breast-cancer-screening.html
+    Sick Leave: sick-leave.html
+    Tuberculosis (DHIS): dhis-tuberculosis.html
+    Narcology: narcology.html
+  Forms: forms.html
   Artifacts: artifacts.html
   Changelog: changelog.html
 

@@ -1,0 +1,54 @@
+Оriginal element	FHIR element / name			Flags		Cardinality	Example	Document	Type	Description & Constraints
+	Careplan.category			ΣS	D	1..1	mserv-0005-00001	local	Code	Категория Careplan
+Пациент	Careplan.subject			ΣS	D	1..1			Reference(Patient | Group)	Для кого открыт ЛН
+Причина ЛН	Careplan.addresses:reason			ΣS	D	0..1	emdoc-0001-0001	local	CodeableReference	Причина ЛН
+										Binding: https://terminology.dhp.uz/ValueSet/sickleave-reason-vs (required)
+Статус	Careplan.status + workflow status extension			ΣS	D	1..1	completed	HL7 FHIR	code	Статус ЛН
+										Binding: https://dhp.uz/ValueSet/sickleave-workflow-status-vs
+История статуса	Careplan.extension:statusHistory			ΣS	D	0..*				Список кодов прошлых статусов (текущий статус может быть включен для охвата даты начала статуса)
+Исторический статус	Careplan.extension:statusHistory.status			ΣS	D	0..*				Binding: https://dhp.uz/ValueSet/sickleave-workflow-status-vs
+Период когда статус был активен	Careplan.extension:statusHistory.period			ΣS	D	0..*				Длительность нахождения больничного листа в указанном статусе
+Номер ЛН (master ID)	Careplan.identifier:series			ΣS	D	0..1	01ТШ 005591125		Identifier	Бизнес идентификатор http://dhp.uz/NamingSystem/sickleave
+Диагноз МКБ-10	Careplan.addresses:diagnosis			ΣS	D	0..1	J11.0		CodeableReference (Condition)	Binding: МКБ-10
+Тип диагноза (для diagnosis use)	Careplan.extension:	care-for.diagnosis.use		ΣS	D	0..1	gencl-0001-00008	local	Code	"Тип диагноза
+Binding: https://terminology.dhp.uz/fhir/core/ValueSet/diagnosis-type-vs"
+Дата открытия	Careplan.created			ΣS	D	0..1	08-20-25		dateTime	
+Дата закрытия	Careplan.period			ΣS	D	0..1	20.08.2025 - 24.08.2025		Period	
+ФИО врача	Careplan.contributor.practitioner.name			ΣS	D	0..1			Reference(Practitioner | PractitionerRole | Organization | CareTeam)	Кто предоставил ЛН (ФИО врача)
+ФИО зав.отделением	Сareplan.custodian.practitioner.name			ΣS	D	0..1			Reference(Practitioner | PractitionerRole | Device | Organization | CareTeam)	Кто является назначенной ответственной стороной (ФИО зав.отделения)
+ФИО	RelatedPerson.name			Σ S	  D	0..1	Boltayev Damir Ketmonovich		HumanName	"ФИО связанного лица
++ Rule: Только если Причина ЛН: уход за больным членом семьи, в случае заболевания ребенка в возрасте до 14 лет либо ребенок-инвалид"
+Пол	Careplan.extension:	care-for.RelatedPerson.gender		Σ S	  D	0..1	male		Code	"Пол связанного лица
+Binding: https://terminology.medcore.uz/ValueSet/gender
++ Rule: Только если Причина ЛН: уход за больным членом семьи, в случае заболевания ребенка в возрасте до 14 лет либо ребенок-инвалид"
+	Careplan.extension:	care-for.RelatedPerson.gender-other		Σ S	  D	0..1			coding	"Дифференциация административного пола ""другой"" 
+Binding: https://terminology.medcore.uz/ValueSet/gender-other-vs
++ Rule: Только если Причина ЛН: уход за больным членом семьи, в случае заболевания ребенка в возрасте до 14 лет либо ребенок-инвалид"
+Дата рождения	Careplan.extension:	care-for.RelatedPerson.birthdate		Σ S	  D	0..1	01-01-50		CodeableReference(RelatedPerson.birthdate)	"Дата рождения связанного лица
+Binding: https://terminology.medcore.uz/ValueSet/gender
++ Rule: Только если Причина ЛН: уход за больным членом семьи, в случае заболевания ребенка в возрасте до 14 лет либо ребенок-инвалид"
+	Observation.basedOn = reference to the CarePlan									
+	Observation.code = 224459001 On sick leave from work			Σ S	  D	0..*	224459001	Snomed	BackboneElement	Компоненты SickLeave
+		code		Σ S	  D	0..1			CodeableConcept	Тип компонента
+		value[x]		Σ S	  D	0..1				
+			valueCoding						Code	
+			valueBoolean						boolean	
+			valueDateTime						dateTime	
+Городская принадлежность	Observation.component.code = emdoc-0009-0001			ΣS	D	0..1	emdoc-0003-0001		code	"Городская принадлежность | население кишлака
+Binding: https://dhp.uz/ValueSet/sickleave-patient-belonging-vs"
+Место проишествия	Observation.component.code = emdoc-0009-0002			ΣS	D	0..1	emdoc-0004-0002		Code	"Место проишествия 
+https://dhp.uz/ValueSet/sickleave-place-of-incident-vs"
+Выдача ЛН пациенту из другого города	Observation.component.code = emdoc-0009-0003			ΣS	D	0..1	false		boolean	Выдача ЛН пациенту из другого города
+Информация о контакте с больным инфекционным заболеванием	Observation.component.code = emdoc-0009-0004			ΣS	D	0..1	false		boolean	Информация о контакте с больным инфекционным заболеванием
+Степень родства	Observation.component.code = emdoc-0009-0005			ΣS	D	0..1			code	"Степень родства
++ Rule: Только если Причина ЛН: уход за больным членом семьи, в случае заболевания ребенка в возрасте до 14 лет либо ребенок-инвалид"
+Режим	Observation.component.code = emdoc-0009-0006			ΣS	D	0..1	AMB		Code	"Режим
++ Rule: Только если статус Отправлен на подтверждение"
+Данные о нарушении режима	Observation.component.code = emdoc-0009-0007			Σ S	  D	0..1	emdoc-0007-0005		Code	"Данные о нарушении режима
++ Rule: Только если статус Отправлен на подтверждение"
+Временно перевестись на другую работу	Observation.component.code = emdoc-0009-0008			Σ S	  D	0..1			dateTime	"Временно перевестись на другую работу
++ Rule: Только если статус Отправлен на подтверждение"
+Заключения	Observation.component.code = emdoc-0009-0009			Σ S	  D	0..1			Code	"Заключение
++ Rule: Только если статус Дополнен данными ВТЭК"
+Дата проверки	Observation.component.code = emdoc-0009-0010			Σ S	  D	0..1			dateTime	"Дата проверки
++ Rule: Только если статус Дополнен данными ВТЭК"

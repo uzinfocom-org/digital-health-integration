@@ -1,8 +1,8 @@
 CodeSystem: DiagnosisRoleCS
-Id: diagnosis-role
+Id: diagnosis-role-integration
 Title: "Diagnosis Role Code System"
 Description: "Roles a diagnosis can play within a clinical document (e.g. main, competing, concomitant, background, complication, and causes of death). Used to make each diagnosis self-identifying so a source form can be reconstructed without relying on the order of entries. Reusable across MoH forms (uz/ru/en). Currently used in [Form 066 - Hospital Discharge Statistical Card](StructureDefinition-form-066-hospital-discharge-composition.html) and [Form 066-1 - Psychiatric/Narcological Discharge Statistical Card](StructureDefinition-form-066-1-psychiatric-discharge-composition.html)."
-* insert OriginalCodeSystemDraft(diagnosis-role)
+* insert OriginalCodeSystemDraft(diagnosis-role-integration)
 
 * #referral "Yo'llagan muassasa tashxisi"
   * ^designation[0].language = #ru

@@ -1,0 +1,11 @@
+Code	UZB	RU	EN
+  draft	Qoralama	Черновик	Draft
+  active	Faol	Открыт	Active
+  revoked	Faolsizlantirilgan	Деактивирован	Revoked
+  completed	Yopiq	Закрыт	Completed
+  entered-in-error	Xato kiritilgan	Введено по ошибке	Entered in Error
+emdoc-0002-0001	Uzaytirilgan	Продлен	Extended
+emdoc-0002-0002	TMEKga yuborilgan	Направлен во ВТЭК	Sent to MSEC
+emdoc-0002-0003	TMEK ma’lumotlari bilan to‘ldirilgan	Дополнен данными ВТЭК	Supplemented with MSEC data
+emdoc-0002-0004	Tasdiqlashga yuborilgan	Отправлен на утверждение	Sent for approval
+emdoc-0002-0005	Qaytarilgan	Возвращен	Returned

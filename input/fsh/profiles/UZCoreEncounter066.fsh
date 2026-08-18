@@ -18,6 +18,7 @@ Usage: #example
 
 * status = #completed
 * class = $v3-ActCode#IMP "Inpatient encounter"
+* type = $encounter-type-cs#mserv-0001-00004 // Treatment
 * subject = Reference(ExamplePatient)
 
 * admission.origin.display = "Home"
