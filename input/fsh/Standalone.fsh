@@ -306,6 +306,8 @@ Usage: #example
 Description: "Example practitioner role linking a clinician to a tuberculosis treatment facility."
 Title: "Practitioner Role Example"
 
+* language = #uz
+* code = $position-and-profession-cs#2212.125 "Vrach ftiziatr"
 * practitioner = Reference(Practitioner/example-practitioner)
 * organization = Reference(Organization/example-organization)
 

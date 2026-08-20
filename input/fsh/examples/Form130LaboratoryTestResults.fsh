@@ -315,6 +315,7 @@ Instance: practitionerrole-referring-130
 InstanceOf: UZCorePractitionerRole
 Usage: #inline
 
+* code = $position-and-profession-cs#2211.1 "General practitioner"
 * practitioner = Reference(urn:uuid:13000006-1111-2222-3333-444444444444) //practitioner-referring-130
 * organization = Reference(urn:uuid:13000004-1111-2222-3333-444444444444) //organization-requesting-130
 
@@ -322,6 +323,7 @@ Instance: practitionerrole-lab-130
 InstanceOf: UZCorePractitionerRole
 Usage: #inline
 
+* code = $position-and-profession-cs#2212.53 "Doctor of laboratory clinical biochemical laboratory"
 * practitioner = Reference(urn:uuid:13000007-1111-2222-3333-444444444444) //practitioner-lab-130
 * organization = Reference(urn:uuid:13000005-1111-2222-3333-444444444444) //organization-laboratory-130
 
@@ -330,7 +332,7 @@ Usage: #inline
 //=====================================================
 
 Instance: servicerequest-130
-InstanceOf: UZCoreServiceRequestLaboratory
+InstanceOf: UZCoreServiceRequest
 Usage: #inline
 
 * status = #completed

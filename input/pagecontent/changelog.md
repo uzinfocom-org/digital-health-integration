@@ -28,6 +28,8 @@ The [screening body site](CodeSystem-screening-body-site-cs.html) and [diagnosti
 
 #### Breaking changes
 
+The guide is now built against [UZ Core 0.8.0](https://dhp.uz/fhir/core/changelog.html), which carries breaking changes of its own. Three of them reach this guide: the laboratory request in [form 130](form-130-mapping.html) now conforms to UZ Core ServiceRequest, whose canonical moved from `https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest-laboratory` to `https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest`; `code` on UZ Core PractitionerRole is now mandatory, so every PractitionerRole exchanged through this guide has to carry a position code; and the coverage type codes have been renumbered, so `dtsj-treated-case` on a Coverage is now `covtp-0001-00001`. The UZ Core changelog lists the rest.
+
 The local breast finding code system, its SNOMED CT supplement and the ConceptMap between them have been removed. [Breast mammography findings](ValueSet-screening-breast-finding-vs.html) previously admitted the whole of SNOMED CT plus one local code for macrocalcifications; it now enumerates the nine SNOMED CT concepts that are actually reported. Findings recorded under `https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-breast-finding-cs` must be restated in SNOMED CT, and a SNOMED CT concept outside those nine no longer validates.
 
 #### Documentation

@@ -743,7 +743,7 @@ Usage: #inline
 * status = #active
 * kind = #insurance
 * beneficiary = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
-* type = $coverage-type#dtsj-treated-case "State Health Insurance treated case (Resolution No. PQ-311)"
+* type = $coverage-type#covtp-0001-00001 "State Health Insurance treated case (Resolution No. PQ-311)"
 
 
 

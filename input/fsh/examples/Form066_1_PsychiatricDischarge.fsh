@@ -810,7 +810,7 @@ Usage: #inline
 * status = #active
 * beneficiary = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * kind = #insurance
-* type = $coverage-type#dtsj-treated-case "State Health Insurance treated case (Resolution No. PQ-311)"
+* type = $coverage-type#covtp-0001-00001 "State Health Insurance treated case (Resolution No. PQ-311)"
 
 
 Instance: observation-tb-drug-sensitivity-066-1

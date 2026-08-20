@@ -28,6 +28,8 @@
 
 #### Несовместимые изменения
 
+Руководство теперь построено на [UZ Core 0.8.0](https://dhp.uz/fhir/core/changelog.html), который несёт собственные несовместимые изменения. Три из них затрагивают это руководство: лабораторный запрос в [форме 130](form-130-mapping.html) теперь соответствует UZ Core ServiceRequest, канонический URL которого перенесён с `https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest-laboratory` на `https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest`; `code` в UZ Core PractitionerRole стал обязательным, поэтому каждый PractitionerRole, которым обменивается это руководство, должен нести код должности; а коды типа покрытия перенумерованы, поэтому `dtsj-treated-case` в Coverage теперь `covtp-0001-00001`. Остальные перечислены в журнале изменений UZ Core.
+
 Локальная кодовая система находок молочной железы, её дополнение SNOMED CT и ConceptMap между ними удалены. [Находки маммографии](ValueSet-screening-breast-finding-vs.html) ранее допускали весь SNOMED CT плюс один локальный код для макрокальцинатов; теперь набор перечисляет девять реально используемых понятий SNOMED CT. Находки, записанные под `https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-breast-finding-cs`, должны быть переписаны в SNOMED CT, а понятие SNOMED CT вне этих девяти больше не проходит валидацию.
 
 #### Документация

@@ -28,6 +28,8 @@ To'rtta nom tizimi Skrining almashadigan identifikatorlarni tavsiflaydi - so'rov
 
 #### Buzuvchi o'zgarishlar
 
+Qo'llanma endi [UZ Core 0.8.0](https://dhp.uz/fhir/core/changelog.html) asosida qurilgan, u esa o'zining buzuvchi o'zgarishlariga ega. Ulardan uchtasi ushbu qo'llanmaga taalluqli: [130-shakl](form-130-mapping.html) dagi laboratoriya so'rovi endi UZ Core ServiceRequest ga mos keladi, uning kanonik manzili `https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest-laboratory` dan `https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest` ga ko'chdi; UZ Core PractitionerRole dagi `code` majburiy bo'ldi, shuning uchun ushbu qo'llanma orqali almashinadigan har bir PractitionerRole lavozim kodini olib yurishi shart; qamrov turi kodlari esa qayta raqamlandi, shuning uchun Coverage dagi `dtsj-treated-case` endi `covtp-0001-00001`. Qolganlari UZ Core o'zgarishlar jurnalida keltirilgan.
+
 Ko'krak bezi topilmalarining mahalliy kod tizimi, uning SNOMED CT qo'shimchasi va ular orasidagi ConceptMap olib tashlandi. [Mammografiya topilmalari](ValueSet-screening-breast-finding-vs.html) ilgari butun SNOMED CT ni va makrokalsinatlar uchun bitta mahalliy kodni qabul qilar edi; endi to'plam amalda qayd etiladigan to'qqizta SNOMED CT tushunchasini sanab o'tadi. `https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-breast-finding-cs` ostida yozilgan topilmalar SNOMED CT da qayta ifodalanishi kerak, bu to'qqiztadan tashqaridagi SNOMED CT tushunchasi esa endi validatsiyadan o'tmaydi.
 
 #### Hujjatlashtirish
