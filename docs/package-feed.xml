@@ -9,7 +9,7 @@
     <description>FHIR Packages published for DHP Integrations</description>
     <link>https://raw.githubusercontent.com/uzinfocom-org/digital-health-integration/refs/heads/main/docs/package-feed.xml</link>
     <generator>Manual</generator>
-    <lastBuildDate>Wed, 05 Aug 2026 07:56:31 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2026 05:57:12 +0000</lastBuildDate>
     <atom:link href="https://raw.githubusercontent.com/uzinfocom-org/digital-health-integration/refs/heads/main/docs/package-feed.xml" rel="self" type="application/rss+xml"/>
     <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
     <language>en</language>
@@ -23,6 +23,17 @@
        <fhir:version>5.0.0</fhir:version>
        <fhir:kind>IG</fhir:kind>
        <pubDate>Wed, 05 Aug 2026 07:56:31 +0000</pubDate>
+     </item>
+
+     <item>
+       <title>uz.dhp.integrations#0.8.0</title>
+       <description>DHP Integrations Implementation Guide Package version 0.8.0</description>
+       <link>https://github.com/uzinfocom-org/digital-health-integration/releases/download/0.8.0/package.tgz</link>
+       <guid isPermaLink="true">https://github.com/uzinfocom-org/digital-health-integration/releases/download/0.8.0/package.tgz</guid>
+       <dc:creator>Vadim Peretokin</dc:creator>
+       <fhir:version>5.0.0</fhir:version>
+       <fhir:kind>IG</fhir:kind>
+       <pubDate>Fri, 21 Aug 2026 05:57:12 +0000</pubDate>
      </item>
 
   </channel>
