@@ -10,7 +10,6 @@ Description: "ConceptMap for mapping Cancer ID status codes to DHP status codes"
 * publisher = "Uzinfocom"
 
 * sourceScopeCanonical = Canonical(CancerIdVS)
-// * targetScopeCanonical = Canonical()
 
 // Group 1: CancerIdCS to CancerEncounterSubjectStatusCS
 * group[+].source = Canonical(CancerIdCS)
