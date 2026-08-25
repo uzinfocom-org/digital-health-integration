@@ -1,0 +1,34 @@
+@startuml tuberculosis-model-en
+hide circle
+hide empty members
+title How a tuberculosis record fits together
+
+class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{Open the UZ Core Patient profile}]]
+class Encounter [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-encounter.html{Open the UZ Core Encounter profile}]]
+class DHISEpisodeOfCare [[StructureDefinition-dhis-episode-of-care.html{Open the DHISEpisodeOfCare profile}]] #E8F0FE
+class DHISCondition [[StructureDefinition-dhis-condition.html{Open the DHISCondition profile}]] #E8F0FE
+class DHISSpecimen [[StructureDefinition-dhis-specimen.html{Open the DHISSpecimen profile}]] #E8F0FE
+class DHISObservation [[StructureDefinition-dhis-observation.html{Open the DHISObservation profile}]] #E8F0FE
+class DHISObservationMicroscopy [[StructureDefinition-dhis-observation-microscopy.html{Open the DHISObservationMicroscopy profile}]] #E8F0FE
+class DHISObservationXray [[StructureDefinition-dhis-observation-xray.html{Open the DHISObservationXray profile}]] #E8F0FE
+class DHISObservationHIV [[StructureDefinition-dhis-observation-hiv.html{Open the DHISObservationHIV profile}]] #E8F0FE
+
+Patient "1" <-- "0..*" DHISEpisodeOfCare : « patient »
+Patient "1" <-- "0..*" DHISCondition : « subject »
+Patient "1" <-- "0..*" DHISSpecimen : « subject »
+DHISCondition "1" <-- "0..*" DHISEpisodeOfCare : « diagnosis.condition »
+DHISCondition "1" <-- "0..*" Encounter : « diagnosis.condition »
+DHISSpecimen "0..*" <-- "0..*" DHISSpecimen : « parent »
+DHISSpecimen "0..1" <-- "0..*" DHISObservation : « specimen »
+Patient "1" <-- "0..*" DHISObservation : « subject »
+DHISSpecimen "0..1" <-- "0..*" DHISObservationMicroscopy : « specimen »
+Patient "1" <-- "0..*" DHISObservationMicroscopy : « subject »
+Patient "1" <-- "0..*" DHISObservationXray : « subject »
+Patient "1" <-- "0..*" DHISObservationHIV : « subject »
+
+' keep the diagram inside the page column: drop the two patient-only
+' results onto a lower rank instead of one wide row
+DHISObservation -[hidden]down- DHISObservationXray
+DHISObservationMicroscopy -[hidden]down- DHISObservationHIV
+
+@enduml

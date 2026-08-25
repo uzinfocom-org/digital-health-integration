@@ -1,0 +1,27 @@
+@startuml screening-model-en
+hide circle
+hide empty members
+title How a screening record fits together
+
+class ScreeningPatient [[StructureDefinition-screening-patient.html{Open the ScreeningPatient profile}]] #E8F0FE
+class ScreeningServiceRequest [[StructureDefinition-screening-service-request.html{Open the ScreeningServiceRequest profile}]] #E8F0FE
+class ScreeningSpecimen [[StructureDefinition-screening-specimen.html{Open the ScreeningSpecimen profile}]] #E8F0FE
+class ScreeningObservation [[StructureDefinition-screening-observation.html{Open the ScreeningObservation profile}]] #E8F0FE
+class ScreeningDiagnosticReport [[StructureDefinition-screening-diagnostic-report.html{Open the ScreeningDiagnosticReport profile}]] #E8F0FE
+class ScreeningComposition [[StructureDefinition-screening-composition.html{Open the ScreeningComposition profile}]] #E8F0FE
+class QuestionnaireResponse [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-questionnaire-response.html{Open the UZ Core QuestionnaireResponse profile}]]
+class Condition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-condition.html{Open the UZ Core Condition profile}]]
+
+ScreeningPatient "1" <-- "0..*" ScreeningServiceRequest : « subject »
+ScreeningPatient "1" <-- "0..*" ScreeningSpecimen : « subject »
+ScreeningPatient "1" <-- "0..*" ScreeningObservation : « subject »
+ScreeningPatient "1" <-- "0..*" ScreeningComposition : « subject »
+ScreeningServiceRequest "0..*" <-- "0..*" ScreeningSpecimen : « request »
+ScreeningServiceRequest "0..*" <-- "0..*" ScreeningObservation : « basedOn »
+ScreeningServiceRequest "0..*" <-- "0..*" ScreeningDiagnosticReport : « basedOn »
+ScreeningObservation "0..*" <-- "0..*" ScreeningDiagnosticReport : « result »
+ScreeningObservation "1..*" <-- "0..*" ScreeningComposition : « section[results].entry »
+Condition "1" <-- "0..*" ScreeningComposition : « section[diagnosis].entry »
+QuestionnaireResponse "1..*" <-- "0..*" ScreeningComposition : « section[questionnaire].entry »
+
+@enduml

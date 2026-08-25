@@ -1,0 +1,18 @@
+@startuml sick-leave-model-ru
+hide circle
+hide empty members
+title Как устроена запись о нетрудоспособности
+
+class SickLeaveObservation [[StructureDefinition-sick-leave-observation.html{Открыть профиль Sick Leave Observation}]] #E8F0FE
+class SickLeaveCarePlan [[StructureDefinition-sick-leave-careplan.html{Открыть профиль Sick Leave CarePlan}]] #E8F0FE
+class SickLeaveRelatedPerson [[StructureDefinition-sick-leave-related-person.html{Открыть профиль Sick Leave Related Person}]] #E8F0FE
+class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{Открыть профиль UZ Core Patient}]]
+class Practitioner [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-practitioner.html{Открыть профиль UZ Core Practitioner}]]
+
+SickLeaveCarePlan "1" <-- "0..*" SickLeaveObservation : « basedOn »
+Patient "1" <-- "0..*" SickLeaveCarePlan : « subject »
+Practitioner "0..*" <-- "0..*" SickLeaveCarePlan : « contributor / custodian »
+SickLeaveRelatedPerson "0..1" <-- "0..*" SickLeaveCarePlan : « extension[relatedPerson] »
+Patient "1" <-- "0..*" SickLeaveRelatedPerson : « patient »
+
+@enduml

@@ -256,4 +256,6 @@ Tipik Psixiatriya reestri yozuvi resurslarni quyidagicha bog'lashi mumkin:
 - [PsychiatryCommissionObservation](StructureDefinition-psychiatry-commission-observation.html) vrachlik-konsultatsiya komissiyasi qarorini, jumladan majburiy davolash qarorini asoslovchi huquqiy protokol yoki sudni qayd etadi.
 - [NarcologyPsychiatryFlag](StructureDefinition-narcology-psychiatry-flag.html) Psixiatriyaga tegishli muhim reestr ma'lumotlarini, jumladan `psycr0001-00001` kodi bilan ifodalangan majburiy statsionar davolashni qayd etadi.
 
+<div>{% include psychiatry-model-uz.svg %}</div><br clear="all"/>
+
 Bu resurslar bemor, kuzatuv epizodi, tashrif, tashkilot va amaliyotchi roli havolalari orqali bog'lanib, bemorning psixiatriya hisobiga qo'yilishini, klinik tashxislarni, ijtimoiy holatni, tibbiy tashriflarni, komissiya qarorlarini va muhim reestr belgilarini ifodalaydi.

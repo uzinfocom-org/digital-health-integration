@@ -1,0 +1,25 @@
+@startuml narcology-model-ru
+hide circle
+hide empty members
+title Как устроена запись Наркологического регистра
+
+class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{Открыть профиль UZ Core Patient}]]
+class Encounter [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-encounter.html{Открыть профиль UZ Core Encounter}]]
+class Condition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-condition.html{Открыть профиль UZ Core Condition}]]
+class SocioeconomicObservation [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-socioeconomic-observation.html{Открыть профиль UZ Core Socioeconomic Observation}]]
+class NarcologyEpisodeOfCare [[StructureDefinition-narcology-episode-of-care.html{Открыть профиль NarcologyEpisodeOfCare}]] #E8F0FE
+class NarcologyObservation [[StructureDefinition-narcology-observation.html{Открыть профиль NarcologyObservation}]] #E8F0FE
+class NarcologyPsychiatryFlag [[StructureDefinition-narcology-psychiatry-flag.html{Открыть профиль NarcologyPsychiatryFlag}]] #E8F0FE
+
+Patient "1" <-- "0..*" NarcologyEpisodeOfCare : « patient »
+Patient "1" <-- "0..*" Condition : « subject »
+Patient "1" <-- "0..*" SocioeconomicObservation : « subject »
+Patient "1" <-- "0..*" NarcologyObservation : « subject »
+Patient "1" <-- "0..*" NarcologyPsychiatryFlag : « subject »
+NarcologyEpisodeOfCare "0..1" <-- "0..*" Encounter : « episodeOfCare »
+Condition "1" <-- "0..*" NarcologyEpisodeOfCare : « diagnosis.condition »
+Encounter "0..1" <-- "0..*" Condition : « encounter »
+Encounter "0..1" <-- "0..*" NarcologyObservation : « encounter »
+Encounter "0..1" <-- "0..*" NarcologyPsychiatryFlag : « encounter »
+
+@enduml

@@ -14,6 +14,8 @@ Har bir bo'limda foydalaniladigan ma'lumotnoma, kod namunasi, boshqaruvchi profi
 
 Kodlanadigan qiymatlar ekvivalent tushuncha mavjud bo'lgan hamma joyda SNOMED CT yoki LOINC dan foydalanadi. Mahalliy kodlar faqat standart tushuncha mos kelmagan joyda qoladi; ular `screening-*-cs` CodeSystem larida o'zbek, rus va ingliz tilidagi belgilanishlari bilan nashr etiladi.
 
+<div>{% include screening-model-uz.svg %}</div><br clear="all"/>
+
 ### Test yoki muolajani buyurtirish (ServiceRequest)
 
 `ServiceRequest.code` ni buyurtirilayotgan test yoki muolajaga o'rnating.

@@ -16,6 +16,8 @@ Tushuncha standart ekvivalentga ega bo'lgan har qanday holatda, resurslar standa
 
 Odatdagi yozuv quyidagilarni bog'laydi: [bemor](#registering-a-patient-patient), bir yoki bir nechta [sil tashxislari](#recording-a-tb-diagnosis-condition), davolanish jarayonini guruhlaydigan [parvarish epizodi](#grouping-the-treatment-course-episodeofcare), olingan [namunalar](#collecting-a-specimen-specimen), va ulardan olingan [diagnostik test natijalari](#recording-diagnostic-test-results-observation).
 
+<div>{% include tuberculosis-model-uz.svg %}</div><br clear="all"/>
+
 ### Bemorni ro'yxatga olish (Patient) {#registering-a-patient-patient}
 
 Har bir sil yozuvining sub'ekti. DHIS ga xos Patient profili mavjud emas; bevosita UZ Core dan foydalaning.
