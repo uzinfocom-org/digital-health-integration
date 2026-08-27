@@ -158,3 +158,5 @@ Alias: $position-and-profession-cs = https://terminology.dhp.uz/fhir/core/CodeSy
 Alias: $diagnostic-report-status-vs = https://terminology.dhp.uz/fhir/core/ValueSet/diagnostic-report-status-vs
 
 Alias: $specimen-role = http://hl7.org/fhir/specimen-role
+
+Alias: $form-sections-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form-sections-cs
