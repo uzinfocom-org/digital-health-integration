@@ -1,0 +1,25 @@
+@startuml narcology-model-en
+hide circle
+hide empty members
+title How a narcology registry record fits together
+
+class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{Open the UZ Core Patient profile}]]
+class Encounter [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-encounter.html{Open the UZ Core Encounter profile}]]
+class Condition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-condition.html{Open the UZ Core Condition profile}]]
+class SocioeconomicObservation [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-socioeconomic-observation.html{Open the UZ Core Socioeconomic Observation profile}]]
+class NarcologyEpisodeOfCare [[StructureDefinition-narcology-episode-of-care.html{Open the NarcologyEpisodeOfCare profile}]] #E8F0FE
+class NarcologyObservation [[StructureDefinition-narcology-observation.html{Open the NarcologyObservation profile}]] #E8F0FE
+class NarcologyPsychiatryFlag [[StructureDefinition-narcology-psychiatry-flag.html{Open the NarcologyPsychiatryFlag profile}]] #E8F0FE
+
+Patient "1" <-- "0..*" NarcologyEpisodeOfCare : « patient »
+Patient "1" <-- "0..*" Condition : « subject »
+Patient "1" <-- "0..*" SocioeconomicObservation : « subject »
+Patient "1" <-- "0..*" NarcologyObservation : « subject »
+Patient "1" <-- "0..*" NarcologyPsychiatryFlag : « subject »
+NarcologyEpisodeOfCare "0..1" <-- "0..*" Encounter : « episodeOfCare »
+Condition "1" <-- "0..*" NarcologyEpisodeOfCare : « diagnosis.condition »
+Encounter "0..1" <-- "0..*" Condition : « encounter »
+Encounter "0..1" <-- "0..*" NarcologyObservation : « encounter »
+Encounter "0..1" <-- "0..*" NarcologyPsychiatryFlag : « encounter »
+
+@enduml

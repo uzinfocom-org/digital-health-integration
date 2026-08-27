@@ -284,4 +284,6 @@ A typical Narcology Registry record may connect the resources as follows:
 - [NarcologyObservation](StructureDefinition-narcology-observation.html) records the medical-consultation commission decision and may reference the related `Encounter`.
 - [NarcologyPsychiatryFlag](StructureDefinition-narcology-psychiatry-flag.html) records important narcology registry information, such as social danger or compulsory treatment.
 
+<div>{% include narcology-model-en.svg %}</div><br clear="all"/>
+
 These resources are linked through patient, episode-of-care, encounter, organization, and practitioner-role references to represent the patient's narcology registration, clinical diagnoses, social status, medical encounters, commission decisions, and important registry flags.

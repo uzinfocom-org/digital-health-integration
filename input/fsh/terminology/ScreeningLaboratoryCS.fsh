@@ -3,7 +3,7 @@ Id: screening-laboratory-cs
 Title: "Laboratory Tests CodeSystem"
 Description: "Terminology for laboratory tests used in cervical and breast cancer screening programs (LOINC)"
 
-* insert SupplementCodeSystemDraft(screening-laboratory-cs, $loinc, 2.82)
+* insert SupplementCodeSystemDraft(screening-laboratory-cs, $loinc, 2.82.0)
 
 * #18500-9 "Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep"
   * ^designation[0].language = #ru

@@ -16,6 +16,8 @@ Mehnatga layoqatsizlik varaqasi o'z ichiga oladigan tushunchalarning aksariyati 
 
 Odatdagi yozuv quyidagilarni bog'laydi: varaqaning o'zi bo'lgan [mehnatga layoqatsizlik holati](#opening-a-sick-leave-case-careplan), unga nisbatan qayd etilgan [qo'shimcha atributlar](#recording-additional-attributes-observation) va - oila a'zosini parvarish qilish varaqalari uchun - [parvarish qilinayotgan shaxs](#family-care-the-person-cared-for-relatedperson). Holat varaqa berilgan [bemor](#supporting-resources) ni va uni bergan tibbiyot xodimlarini ko'rsatadi.
 
+<div>{% include sick-leave-model-uz.svg %}</div><br clear="all"/>
+
 ### Mehnatga layoqatsizlik holatini ochish (CarePlan) {#opening-a-sick-leave-case-careplan}
 
 Varaqaning o'zi. CarePlan mehnatga layoqatsizlik holatini uning butun hayotiy sikli davomida ifodalaydi; `addresses` ham varaqa berilish sababini, ham ICD-10 bo'yicha tashxisni o'z ichiga oladi, hayotiy sikl holati esa workflow-status kengaytmasida kuzatib boriladi.

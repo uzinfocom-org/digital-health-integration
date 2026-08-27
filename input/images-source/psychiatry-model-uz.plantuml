@@ -1,0 +1,25 @@
+@startuml psychiatry-model-uz
+hide circle
+hide empty members
+title Psixiatriya reestri yozuvi qanday tuzilgan
+
+class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{UZ Core Patient profilini ochish}]]
+class Encounter [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-encounter.html{UZ Core Encounter profilini ochish}]]
+class SocioeconomicObservation [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-socioeconomic-observation.html{UZ Core Socioeconomic Observation profilini ochish}]]
+class PsychiatryEpisodeOfCare [[StructureDefinition-psychiatry-episode-of-care.html{PsychiatryEpisodeOfCare profilini ochish}]] #E8F0FE
+class PsychiatryCondition [[StructureDefinition-psychiatry-condition.html{PsychiatryCondition profilini ochish}]] #E8F0FE
+class PsychiatryCommissionObservation [[StructureDefinition-psychiatry-commission-observation.html{PsychiatryCommissionObservation profilini ochish}]] #E8F0FE
+class NarcologyPsychiatryFlag [[StructureDefinition-narcology-psychiatry-flag.html{NarcologyPsychiatryFlag profilini ochish}]] #E8F0FE
+
+Patient "1" <-- "0..*" PsychiatryEpisodeOfCare : « patient »
+Patient "1" <-- "0..*" PsychiatryCondition : « subject »
+Patient "1" <-- "0..*" SocioeconomicObservation : « subject »
+Patient "1" <-- "0..*" PsychiatryCommissionObservation : « subject »
+Patient "1" <-- "0..*" NarcologyPsychiatryFlag : « subject »
+PsychiatryEpisodeOfCare "0..1" <-- "0..*" Encounter : « episodeOfCare »
+PsychiatryCondition "1" <-- "0..*" PsychiatryEpisodeOfCare : « diagnosis.condition »
+Encounter "0..1" <-- "0..*" PsychiatryCondition : « encounter »
+Encounter "0..1" <-- "0..*" PsychiatryCommissionObservation : « encounter »
+Encounter "0..1" <-- "0..*" NarcologyPsychiatryFlag : « encounter »
+
+@enduml

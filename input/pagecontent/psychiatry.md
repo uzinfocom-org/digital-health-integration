@@ -267,4 +267,6 @@ A typical Psychiatry Registry record may connect the resources as follows:
 - [PsychiatryCommissionObservation](StructureDefinition-psychiatry-commission-observation.html) records the medical-consultation commission decision, including the legal protocol or court behind a compulsory-treatment order.
 - [NarcologyPsychiatryFlag](StructureDefinition-narcology-psychiatry-flag.html) records important registry information applicable to Psychiatry, including compulsory inpatient treatment represented by `psycr0001-00001`.
 
+<div>{% include psychiatry-model-en.svg %}</div><br clear="all"/>
+
 These resources are linked through patient, episode-of-care, encounter, organization, and practitioner-role references to represent the patient's psychiatry registration, clinical diagnoses, social status, medical encounters, commission decisions, and important registry flags.

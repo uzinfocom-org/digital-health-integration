@@ -1,0 +1,27 @@
+@startuml screening-model-uz
+hide circle
+hide empty members
+title Skrining yozuvi qanday tuzilgan
+
+class ScreeningPatient [[StructureDefinition-screening-patient.html{ScreeningPatient profilini ochish}]] #E8F0FE
+class ScreeningServiceRequest [[StructureDefinition-screening-service-request.html{ScreeningServiceRequest profilini ochish}]] #E8F0FE
+class ScreeningSpecimen [[StructureDefinition-screening-specimen.html{ScreeningSpecimen profilini ochish}]] #E8F0FE
+class ScreeningObservation [[StructureDefinition-screening-observation.html{ScreeningObservation profilini ochish}]] #E8F0FE
+class ScreeningDiagnosticReport [[StructureDefinition-screening-diagnostic-report.html{ScreeningDiagnosticReport profilini ochish}]] #E8F0FE
+class ScreeningComposition [[StructureDefinition-screening-composition.html{ScreeningComposition profilini ochish}]] #E8F0FE
+class QuestionnaireResponse [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-questionnaire-response.html{UZ Core QuestionnaireResponse profilini ochish}]]
+class Condition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-condition.html{UZ Core Condition profilini ochish}]]
+
+ScreeningPatient "1" <-- "0..*" ScreeningServiceRequest : « subject »
+ScreeningPatient "1" <-- "0..*" ScreeningSpecimen : « subject »
+ScreeningPatient "1" <-- "0..*" ScreeningObservation : « subject »
+ScreeningPatient "1" <-- "0..*" ScreeningComposition : « subject »
+ScreeningServiceRequest "0..*" <-- "0..*" ScreeningSpecimen : « request »
+ScreeningServiceRequest "0..*" <-- "0..*" ScreeningObservation : « basedOn »
+ScreeningServiceRequest "0..*" <-- "0..*" ScreeningDiagnosticReport : « basedOn »
+ScreeningObservation "0..*" <-- "0..*" ScreeningDiagnosticReport : « result »
+ScreeningObservation "1..*" <-- "0..*" ScreeningComposition : « section[results].entry »
+Condition "1" <-- "0..*" ScreeningComposition : « section[diagnosis].entry »
+QuestionnaireResponse "1..*" <-- "0..*" ScreeningComposition : « section[questionnaire].entry »
+
+@enduml
