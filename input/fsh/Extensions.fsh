@@ -116,3 +116,136 @@ Description: "Date of birth of the related person"
 * value[x] 1..1 MS
 
 * value[x] only date
+
+Extension: CancerLateralityQualifier
+Id: cancer-laterality-qualifier
+Title: "Cancer Laterality Qualifier"
+Description: "Laterality qualifier for the primary cancer diagnosis"
+
+* ^status = #draft
+* ^experimental = true
+* ^context.type = #element
+* ^context.expression = "Condition"
+
+* value[x] 0..1
+* value[x] only CodeableConcept
+* valueCodeableConcept from CancerLaterlityQualifierVS (required)
+
+
+Extension: CancerTopography
+Id: cancer-topography
+Title: "Cancer Topography"
+Description: "Topography of the primary cancer"
+
+* ^status = #draft
+* ^experimental = true
+* ^context.type = #element
+* ^context.expression = "Condition"
+
+* value[x] 0..1
+* value[x] only CodeableConcept
+* valueCodeableConcept from CancerICD3TopographyVS (required)
+
+
+Extension: CancerMorphology
+Id: cancer-morphology
+Title: "Cancer Morphology"
+Description: "Morphology of the primary cancer according to ICD-O-3"
+
+* ^status = #draft
+* ^experimental = true
+* ^context.type = #element
+* ^context.expression = "Condition"
+
+* value[x] 0..1
+* value[x] only CodeableConcept
+* valueCodeableConcept from CancerICD3MorphologyVS (required)
+
+
+Extension: CancerGradeDifferentiation
+Id: cancer-grade-differentiation
+Title: "Cancer Grade Differentiation"
+Description: "Degree of differentiation of the primary cancer"
+
+* ^status = #draft
+* ^experimental = true
+* ^context.type = #element
+* ^context.expression = "Condition"
+
+* value[x] 0..1
+* value[x] only CodeableConcept
+* valueCodeableConcept from CancerDegreeDifferentiationVS (required)
+
+
+Extension: CancerTumorBehavior
+Id: cancer-tumor-behavior
+Title: "Cancer Tumor Behavior"
+Description: "Behavior of the primary tumor"
+
+* ^status = #draft
+* ^experimental = true
+* ^context.type = #element
+* ^context.expression = "Condition"
+
+* value[x] 0..1
+* value[x] only CodeableConcept
+* valueCodeableConcept from CancerTumorBehaviorVS (required)
+
+
+Extension: CancerDetectionCircumstance
+Id: cancer-detection-circumstance
+Title: "Cancer Detection Circumstance"
+Description: "Circumstances under which the primary cancer was detected"
+
+* ^status = #draft
+* ^experimental = true
+* ^context.type = #element
+* ^context.expression = "Condition"
+
+* value[x] 0..1
+* value[x] only CodeableConcept
+* valueCodeableConcept from CancerDetectionCircumstanceVS (required)
+
+
+Extension: CancerConfirmationMethod
+Id: cancer-confirmation-method
+Title: "Cancer Confirmation Method"
+Description: "Method used to confirm the primary cancer diagnosis"
+
+* ^status = #draft
+* ^experimental = true
+* ^context.type = #element
+* ^context.expression = "Condition"
+
+* value[x] 0..1
+* value[x] only CodeableConcept
+* valueCodeableConcept from CancerConfirmationMethodVS (required)
+
+
+Extension: CancerICCC3Group
+Id: cancer-iccc-3-group
+Title: "Cancer ICCC-3 Group"
+Description: "ICCC-3 group for the primary cancer"
+
+* ^status = #draft
+* ^experimental = true
+* ^context.type = #element
+* ^context.expression = "Condition"
+
+* value[x] 0..1
+* value[x] only CodeableConcept
+* valueCodeableConcept from $iccc-3-vs (required)
+
+Extension: CancerRelatedCondition
+Id: cancer-related-condition
+Title: "Cancer Related Condition"
+Description: "Reference to the primary cancer condition associated with the secondary cancer condition."
+
+* ^status = #draft
+* ^experimental = true
+* ^context.type = #element
+* ^context.expression = "Condition"
+
+* value[x] 0..1
+* value[x] only Reference
+* valueReference only Reference(CancerConditionPrimary)

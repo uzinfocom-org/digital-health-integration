@@ -44,3 +44,5 @@ Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screeni
 # Trailing % => startsWith match: the real message has an embedded newline before its final ')',
 # so an exact-match line never matches. Cut at (>1000) to stay independent of tx-server wording.
 Unable to expand included value set 'http://hl7.org/fhir/ValueSet/body-site': The value set 'http://hl7.org/fhir/ValueSet/body-site|5.0.0' expansion has too many codes to produce (>1000)%
+
+Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/cancer-encounter-class-vs is a proper subset of https://terminology.dhp.uz/fhir/core/ValueSet/encounter-class-vs|0.8.0 - value set is too large to check

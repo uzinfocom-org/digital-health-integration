@@ -191,3 +191,22 @@ Usage: #definition
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/reg/uz/psychiatry"
 * uniqueId[=].preferred = true
+
+Instance: cancer-identifier-system
+InstanceOf: NamingSystem
+Description: "Identifier system for cancer registry identifiers in Uzbekistan"
+Usage: #definition
+
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/cancer-identifier-system"
+* name = "UzbekistanCancerIdentifier"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* date = "2026-08-14"
+* description = "Identifier system for identifying cancer-related records and patients within the Uzbekistan cancer registry."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used for identifiers related to cancer registry records in the Uzbekistan healthcare information system."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/reg/uz/cancer"
+* uniqueId[=].preferred = true

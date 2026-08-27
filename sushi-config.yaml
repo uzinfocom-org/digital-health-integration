@@ -113,6 +113,8 @@ pages:
     title: Narcology
   psychiatry.md:
     title: Psychiatry
+  cancer.md:
+    title: Cancer
   forms.md:
     title: Forms
   changelog.md:
@@ -135,6 +137,7 @@ menu:
     Tuberculosis (DHIS): dhis-tuberculosis.html
     Narcology: narcology.html
     Psychiatry: psychiatry.html
+    Cancer: cancer.html
   Forms: forms.html
   Artifacts: artifacts.html
   Changelog: changelog.html
