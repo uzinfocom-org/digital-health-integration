@@ -114,7 +114,7 @@ pages:
   psychiatry.md:
     title: Psychiatry
   forms.md:
-    title: Forms
+    title: Questionnaires
   changelog.md:
     title: Changelog
   translationinfo.md:
@@ -135,7 +135,7 @@ menu:
     Tuberculosis (DHIS): dhis-tuberculosis.html
     Narcology: narcology.html
     Psychiatry: psychiatry.html
-  Forms: forms.html
+  Questionnaires: forms.html
   Artifacts: artifacts.html
   Changelog: changelog.html
 
