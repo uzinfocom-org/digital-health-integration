@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:fhir="http://hl7.org/fhir/feed"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     version="2.0">
+  <channel>
+    <title>DHP Integrations Implementation Guides</title>
+    <description>FHIR Implementation Guides published for DHP Integrations</description>
+    <link>https://dhp.uz/fhir/integrations</link>
+    <generator>Manual</generator>
+    <lastBuildDate>Fri, 21 Aug 2026 05:57:12 +0000</lastBuildDate>
+    <atom:link href="https://raw.githubusercontent.com/uzinfocom-org/digital-health-integration/refs/heads/main/docs/publication-feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+    <language>en</language>
+    <ttl>600</ttl>
+
+     <item>
+       <title>Uzbekistan Digital Health Platform - Integrations version 0.7.0</title>
+       <description>First published release: Ministry of Health forms 011, 066, 066-1 and 130 profiled as FHIR documents, and the DHIS tuberculosis integration. Numbering starts at 0.7.0 so the guide matches the UZ Core release it is built against.</description>
+       <link>https://dhp.uz/fhir/integrations/0.7.0/index.html</link>
+       <guid isPermaLink="true">https://dhp.uz/fhir/integrations/0.7.0/index.html</guid>
+       <dc:creator>Vadim Peretokin</dc:creator>
+       <fhir:version>5.0.0</fhir:version>
+       <fhir:kind>IG</fhir:kind>
+       <pubDate>Wed, 05 Aug 2026 07:56:31 +0000</pubDate>
+     </item>
+
+     <item>
+       <title>Uzbekistan Digital Health Platform - Integrations version 0.8.0</title>
+       <description>Adds the narcology and psychiatry registries, and extends cervical and breast cancer screening with the pathology, breast imaging and screening document pathways. Built against UZ Core 0.8.0, which brings breaking changes.</description>
+       <link>https://dhp.uz/fhir/integrations/0.8.0/index.html</link>
+       <guid isPermaLink="true">https://dhp.uz/fhir/integrations/0.8.0/index.html</guid>
+       <dc:creator>Vadim Peretokin</dc:creator>
+       <fhir:version>5.0.0</fhir:version>
+       <fhir:kind>IG</fhir:kind>
+       <pubDate>Fri, 21 Aug 2026 05:57:12 +0000</pubDate>
+     </item>
+
+  </channel>
+</rss>
