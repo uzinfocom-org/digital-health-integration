@@ -1,0 +1,43 @@
+{
+  "doco" : "This json object lists all the package-list.json files found on this site, and for the convenience of pages that use this file to present a website index, some of the key information found in the package-lists is also contained in here.",
+  "packages" : [
+    {
+      "path" : "https://dhp.uz/fhir/core/package-list.json",
+      "package-id" : "uz.dhp.core",
+      "title" : "Uzbekistan Digital Health Platform",
+      "canonical" : "https://dhp.uz/fhir/core",
+      "category" : "National Base",
+      "ci-build" : "https://build.fhir.org/ig/uzinfocom-org/digital-health-ig",
+      "version-count" : 7,
+      "latest" : {
+        "version" : "0.8.0",
+        "date" : "2026-08-20",
+        "path" : "https://dhp.uz/fhir/core"
+      },
+      "milestone" : {
+        "version" : "0.8.0",
+        "date" : "2026-08-20",
+        "path" : "https://dhp.uz/fhir/core"
+      }
+    },
+    {
+      "path" : "https://dhp.uz/fhir/integrations/package-list.json",
+      "package-id" : "uz.dhp.integrations",
+      "title" : "Uzbekistan Digital Health Platform - Integrations",
+      "canonical" : "https://dhp.uz/fhir/integrations",
+      "category" : "EHR Access",
+      "ci-build" : "https://build.fhir.org/ig/uzinfocom-org/digital-health-integration",
+      "version-count" : 2,
+      "latest" : {
+        "version" : "0.8.0",
+        "date" : "2026-08-21",
+        "path" : "https://dhp.uz/fhir/integrations"
+      },
+      "milestone" : {
+        "version" : "0.8.0",
+        "date" : "2026-08-21",
+        "path" : "https://dhp.uz/fhir/integrations"
+      }
+    }
+  ]
+}
