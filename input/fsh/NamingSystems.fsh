@@ -136,6 +136,24 @@ Usage: #definition
 * uniqueId[0].value = "https://dhp.uz/fhir/core/sid/pro/uz/screening"
 * uniqueId[0].preferred = true
 
+Instance: antenatal-card-number-system
+InstanceOf: NamingSystem
+Description: "Identifier system for antenatal (pregnant woman individual) card numbers (Form 111) in Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/antenatal-card-number-system"
+* name = "UzbekistanAntenatalCardNumber"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* date = "2026-08-18"
+* description = "Registration number of the individual card of a pregnant and postpartum woman (Form 111), assigned by the women's consultation (ayollar maslahatxonasi)."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in Encounter.identifier for the antenatal episode of care corresponding to Form 111"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/antenatal-card-number"
+* uniqueId[=].preferred = true
+
 Instance: sick-leave-number-system
 InstanceOf: NamingSystem
 Description: "Identifier system for sick leave certificate numbers (листок нетрудоспособности, ЛН) in Uzbekistan"

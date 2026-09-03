@@ -1,6 +1,6 @@
 ### Ishlab chiqish jarayonida
 
-(Hozircha o'zgarishlar yo'q)
+[111-shakl — homilador va tuqqan ayolning individual kartasi](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) FHIR hujjati sifatida profillangan bo'lib, Composition ning 15 ta bo'limi orqali ro'yxatga olish, tashxis, homiladorlik yakuni, anamnez, ko'riklar, takroriy tashriflar, tug'ishga tayyorlash, patronaj tashriflari, perinatal xavfni baholash va mutaxassislar xulosalarini qamrab oladi. Uning namunaviy hujjat-Bundle'i va [maydonma-maydon moslashtirish sahifasi](form-111-mapping.html) mavjud.
 
 ### Versiya 0.8.0
 

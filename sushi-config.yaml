@@ -103,6 +103,8 @@ pages:
     title: Form 066 1 Mapping
   form-130-mapping.md:
     title: Form 130 Mapping
+  form-111-mapping.md:
+    title: Form 111 Mapping
   cervical-breast-cancer-screening.md:
     title: Cervical and Breast Cancer Screening
   sick-leave.md:
@@ -129,6 +131,7 @@ menu:
     Form 066 Mapping: form-066-mapping.html
     Form 066-1 Mapping: form-066-1-mapping.html
     Form 130 Mapping: form-130-mapping.html
+    Form 111 Mapping: form-111-mapping.html
   Integrations:
     Cervical and Breast Cancer Screening: cervical-breast-cancer-screening.html
     Sick Leave: sick-leave.html
