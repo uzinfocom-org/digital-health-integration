@@ -357,17 +357,83 @@
       .catch(function (e) { status(T.loadFailed + e.message); });
   }
 
-  // Label the picker with each questionnaire's own title in the current language.
+  // ---------------------------------------------------------------------------
+  // Integration areas
+  //
+  // A questionnaire says which integration it comes from in a program useContext
+  // coded from integration-area-cs, so the picker can group the forms by service
+  // rather than presenting one flat list. The group labels come from that code
+  // system - nothing about the areas is spelled out here, so adding a code needs
+  // no change to this file. Unlike the translation extensions on a Questionnaire,
+  // code system designations are not flattened into concept.display by the IG
+  // Publisher, so the language has to be picked here.
+  // ---------------------------------------------------------------------------
+
+  var AREA_CS = 'https://terminology.dhp.uz/fhir/integrations/CodeSystem/integration-area-cs';
+  var PROGRAM = 'http://terminology.hl7.org/CodeSystem/usage-context-type|program';
+  var areaCache = {};        // lang -> Promise of { code -> display }
+
+  function areaOf(q) {
+    var hit = (q.useContext || []).filter(function (u) {
+      var c = u.code || {};
+      if ((c.system || '') + '|' + (c.code || '') !== PROGRAM) return false;
+      return ((u.valueCodeableConcept || {}).coding || []).some(function (v) {
+        return v.system === AREA_CS;
+      });
+    })[0];
+    if (!hit) return null;
+    var coding = hit.valueCodeableConcept.coding.filter(function (v) {
+      return v.system === AREA_CS;
+    })[0];
+    return { code: coding.code, display: coding.display || coding.code };
+  }
+
+  function areaDisplays(lang) {
+    if (areaCache[lang]) return areaCache[lang];
+    areaCache[lang] = getJson(BASE + lang + '/CodeSystem-integration-area-cs.json')
+      .then(function (cs) {
+        var map = {};
+        (cs.concept || []).forEach(function (c) {
+          var d = (c.designation || []).filter(function (x) { return x.language === lang; })[0];
+          map[c.code] = (d && d.value) || c.display || c.code;
+        });
+        return map;
+      })
+      .catch(function () { return {}; });   // fall back to the coding's own display
+    return areaCache[lang];
+  }
+
+  // Label the picker with each questionnaire's own title in the current language, and
+  // group it by the integration each form comes from. Rebuilt rather than relabelled,
+  // because the grouping is only known once every questionnaire has been loaded.
   function relabelPicker(lang) {
     var picker = el('form-picker');
-    return Promise.all(ids.map(function (id) {
+    var titles = Promise.all(ids.map(function (id) {
       return loadQuestionnaire(lang, id)
-        .then(function (q) { return q.title || q.name || id; })
-        .catch(function () { return id; });
-    })).then(function (titles) {
-      Array.prototype.forEach.call(picker.options, function (opt, i) {
-        opt.textContent = titles[i];
+        .then(function (q) { return { title: q.title || q.name || id, area: areaOf(q) }; })
+        .catch(function () { return { title: id, area: null }; });
+    }));
+    return Promise.all([titles, areaDisplays(lang)]).then(function (both) {
+      var forms = both[0], displays = both[1];
+      var selected = picker.value;
+      picker.textContent = '';
+      var groups = {};   // area code -> optgroup, in first-appearance order
+      var loose = [];    // forms belonging to no integration area, listed last
+      forms.forEach(function (f, i) {
+        var o = document.createElement('option');
+        o.value = ids[i];
+        o.textContent = f.title;
+        if (!f.area) { loose.push(o); return; }
+        var g = groups[f.area.code];
+        if (!g) {
+          g = groups[f.area.code] = document.createElement('optgroup');
+          g.label = displays[f.area.code] || f.area.display;
+          picker.appendChild(g);
+        }
+        g.appendChild(o);
       });
+      loose.forEach(function (o) { picker.appendChild(o); });
+      if (selected) picker.value = selected;
     });
   }
 

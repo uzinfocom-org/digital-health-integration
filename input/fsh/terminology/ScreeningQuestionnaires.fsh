@@ -13,6 +13,8 @@ Description: "Questionnaire used by Screening to assess breast cancer risk."
 * identifier[1].value = "RMJ"
 * version = "1.0.1"
 * status = #active
+* useContext[0].code = $usage-context-type#program
+* useContext[0].valueCodeableConcept = $integration-area#screening
 * name = "ScreeningBreastRiskQuestionnaire"
 * title = "Ko'krak bezi so'rovnomasi"
 * description = "Screening tizimida ko‘krak bezi saratoni xavfini baholash uchun so‘rovnoma."
@@ -163,6 +165,8 @@ Description: "Questionnaire used by Screening to assess cervical cancer risk."
 * identifier[1].value = "RSHM"
 * version = "1.0.1"
 * status = #active
+* useContext[0].code = $usage-context-type#program
+* useContext[0].valueCodeableConcept = $integration-area#screening
 * name = "ScreeningCervicalRiskQuestionnaire"
 * title = "Bachadon bo'yni bo'yicha so'rovnoma"
 * description = "Screening tizimida bachadon bo‘yni saratoni xavfini baholash uchun so‘rovnoma."
@@ -382,6 +386,8 @@ Usage: #definition
 * identifier[0].value = "WOMAN_CHECKUP"
 * version = "1.0.0"
 * status = #active
+* useContext[0].code = $usage-context-type#program
+* useContext[0].valueCodeableConcept = $integration-area#screening
 * name = "ScreeningWomanExamQuestionnaire"
 * title = "Осмотр женщины"
 * subjectType[0] = #Patient
