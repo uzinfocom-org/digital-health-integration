@@ -1,6 +1,8 @@
 ### In development
 
-(No changes yet)
+#### Added
+
+Every questionnaire published here now names the integration it comes from, in a `program` use context coded from [integration area](ValueSet-integration-area-vs.html). A client can list the forms of one service with `GET [base]/Questionnaire?context-type-value=program$https://terminology.dhp.uz/fhir/integrations/CodeSystem/integration-area-cs|screening`, and the [questionnaires](forms.html) page groups its form picker by the same context.
 
 ### Version 0.8.0
 
