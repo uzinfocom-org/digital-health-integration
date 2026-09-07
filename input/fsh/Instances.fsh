@@ -217,3 +217,28 @@ Description: "Republican Centre for Mental Health and Psychiatry, which maintain
 Usage: #example
 
 * name = "Respublika ruhiy salomatlik va psixiatriya markazi"
+
+Instance: example-hepatologist-role
+InstanceOf: UZCorePractitionerRole
+Title: "Hepatologist Role Example"
+Description: "Hepatologist role at the Samarkand Regional Infectious Diseases Clinical Hospital"
+Usage: #example
+
+* language = #uz
+* active = true
+* practitioner = Reference(example-hepatologist)
+* organization = Reference(samarkand-infectious-hospital)
+* code = $position-and-profession-cs#2212.41 
+* specialty = $profession-specialization-cs#394807007
+
+Instance: example-hepatologist
+InstanceOf: UZCorePractitioner
+Title: "Hepatologist Example"
+Description: "Example practitioner providing care for patients with viral hepatitis"
+Usage: #example
+
+* language = #uz
+* active = true
+* name[0].use = #official
+* name[0].family = "Karimov"
+* name[0].given[0] = "Akmal"

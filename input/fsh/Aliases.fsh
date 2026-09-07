@@ -167,6 +167,9 @@ Alias: $signature-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/sign
 Alias: $flag-status-cs = http://hl7.org/fhir/flag-status
 Alias: $profession-specialization-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/profession-specialization-cs
 
+Alias: $lab-methods-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/lab-methods-cs
+Alias: $hep-id-sys = https://dhp.uz/fhir/core/sid/pid/uz/hepatitis
+Alias: $diagnosis-type = https://terminology.dhp.uz/fhir/core/CodeSystem/diagnosis-type-cs
 // ===================== DMED early-detection screening questionnaires (moved from digital-health-ig) =====================
 Alias: $v2-0532 = http://terminology.hl7.org/CodeSystem/v2-0532
 Alias: $ordinal-value = http://hl7.org/fhir/StructureDefinition/ordinalValue

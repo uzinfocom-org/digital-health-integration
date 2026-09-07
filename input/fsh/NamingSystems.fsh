@@ -191,3 +191,22 @@ Usage: #definition
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/reg/uz/psychiatry"
 * uniqueId[=].preferred = true
+
+Instance: hepatitis-identifier
+InstanceOf: NamingSystem
+Description: "Official identifier system for hepatitis-related records in Uzbekistan"
+Usage: #definition
+
+* name = "UzbekistanHepatitisIdentifier"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* date = "2026-08-27"
+* description = "Identifier system used for hepatitis-related records in the Digital Health Platform of Uzbekistan"
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used to identify hepatitis-related records and questionnaires in Uzbekistan"
+
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/pid/uz/hepatitis"
+* uniqueId[=].preferred = true

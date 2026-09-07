@@ -116,3 +116,16 @@ Description: "Date of birth of the related person"
 * value[x] 1..1 MS
 
 * value[x] only date
+
+Extension: HepatitisConditionOutcome
+Id: hepatitis-condition-outcome
+Title: "Hepatitis Condition Outcome"
+Description: "Effectiveness of treatment at the time of removal from the A, B, C, D, E registry follow-up."
+* ^status = #active
+* ^experimental = true
+* ^url = "https://dhp.uz/fhir/integrations/StructureDefinition/hepatitis-condition-outcome"
+* ^context.type = #element
+* ^context.expression = "Condition"
+* value[x] only CodeableConcept
+* valueCodeableConcept 1..1 MS
+* valueCodeableConcept from HepatitisConditionOutcomeCodesVS (required)
