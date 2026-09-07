@@ -15,3 +15,4 @@ Description: "CodeSystem for Screening Ultrasound Intramammary Node Status"
   * ^designation[=].value = "Лоцируются"
   * ^designation[+].language = #en
   * ^designation[=].value = "Visualized"
+

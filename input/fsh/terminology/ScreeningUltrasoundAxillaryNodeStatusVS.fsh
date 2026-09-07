@@ -6,3 +6,5 @@ Description: "Defines Screening Ultrasound Axillary Node Status"
 * ^experimental = true
 * ^language = #uz
 * include codes from system screening-ultrasound-axillary-node-status-cs
+* include $sct#281900007
+* include $sct#263654008

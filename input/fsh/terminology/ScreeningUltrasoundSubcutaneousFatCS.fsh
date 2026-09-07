@@ -15,3 +15,15 @@ Description: "CodeSystem for Screening Ultrasound Subcutaneous Fat"
   * ^designation[=].value = "Отечна"
   * ^designation[+].language = #en
   * ^designation[=].value = "Edematous"
+
+* #scrn-0042-00003 "O‘zgarmagan"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Не изменена"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Not changed"
+
+* #scrn-0042-00004 "Yaqqol ifodalangan"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Выражена"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Pronounced"

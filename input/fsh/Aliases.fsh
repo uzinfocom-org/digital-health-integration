@@ -169,3 +169,26 @@ Alias: $profession-specialization-cs = https://terminology.dhp.uz/fhir/core/Code
 
 Alias: $usage-context-type = http://terminology.hl7.org/CodeSystem/usage-context-type
 Alias: $integration-area = https://terminology.dhp.uz/fhir/integrations/CodeSystem/integration-area-cs
+// ===================== DMED early-detection screening questionnaires (moved from digital-health-ig) =====================
+Alias: $v2-0532 = http://terminology.hl7.org/CodeSystem/v2-0532
+Alias: $ordinal-value = http://hl7.org/fhir/StructureDefinition/ordinalValue
+Alias: $variable = http://hl7.org/fhir/StructureDefinition/variable
+Alias: $sdc-calculated-expression = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression
+// screening-code-cs and ihd-risk-category-cs stay defined only in digital-health-ig (core) —
+// still used there by CVDRiskScreeningQuestionnaire and ScreeningIHDProbabilityQuestionnaire —
+// so these alias directly to the core canonical instead of duplicating the resource.
+Alias: $screening-code-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/screening-code-cs
+Alias: $ihd-risk-category-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/ihd-risk-category-cs
+Alias: $breast-cancer-risk-category-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/breast-cancer-risk-category-cs
+Alias: $cerebrovascular-alcohol-stress-level-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-alcohol-stress-level-cs
+Alias: $cerebrovascular-blood-pressure-status-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-blood-pressure-status-cs
+Alias: $cerebrovascular-cholesterol-status-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-cholesterol-status-cs
+Alias: $cerebrovascular-diabetes-status-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-diabetes-status-cs
+Alias: $cerebrovascular-family-history-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-family-history-cs
+Alias: $cerebrovascular-heart-condition-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-heart-condition-cs
+Alias: $cerebrovascular-physical-activity-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-physical-activity-cs
+Alias: $cerebrovascular-risk-category-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-risk-category-cs
+Alias: $cerebrovascular-smoking-status-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-smoking-status-cs
+Alias: $diabetes-risk-category-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/diabetes-risk-category-cs
+Alias: $ihd-chest-pain-type-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/ihd-chest-pain-type-cs
+Alias: $cvd-risk-category-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cvd-risk-category-cs

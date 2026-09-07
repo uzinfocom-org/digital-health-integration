@@ -7,6 +7,30 @@
 # Faulty error in IG publisher, this link does work
 The link 'https://dhp.uz/fhir/core/%
 
+# SDC only publishes for R4 (no R5 package exists); we depend on it cross-version so the
+# sdc-questionnaire-calculatedExpression used by the DMED screening questionnaires resolves - same suppression as in uz.dhp.core
+This IG is version 5.0.0, while the IG 'hl7.fhir.uv.sdc' is from version 4.0.1
+The ImplementationGuide is based on FHIR version 5.0.0 but package hl7.fhir.uv.sdc#3.0.0 is based on FHIR version 4.0.1. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
+The ImplementationGuide uses package hl7.fhir.uv.sdc#3.0.0 released on 2022-03-08, but the most recent appropriate version is 4.0.0. This reference is getting old and the more recent version should be considered
+
+# No external code system we use publishes Uzbek designations - not SNOMED CT (the DMED
+# questionnaire answerOptions), not ISO 3166 (the jurisdiction UZ on every CodeSystem/ValueSet),
+# not LOINC - so a uz-language resource necessarily falls back to the English canonical display.
+# That is correct and unfixable on our side.
+# Originally scoped to uz only, on the assumption that a ru gap was actionable via our local
+# SNOMED CT supplement CodeSystems (e.g. SnomedUzSupplementCS, ScreeningObservationCodesCS). Verified
+# empirically (2026-09-02) that this assumption doesn't hold when validating with an external -tx
+# server (tx.fhir.org, as both CI and _genonce.sh do): this message comes from the terminology
+# server checking SNOMED CT's own official ru designations, which never sees our local, unpublished
+# package supplements regardless of designation or valueset-supplement wiring. So a ru gap is exactly
+# as unfixable on our side as a uz gap - broadened to cover both.
+# Safe to match this broadly: the message only fires when the display used IS valid for the default
+# language, so it cannot mask a wrong code - that case is a separate "Wrong Display Name" message,
+# which is deliberately not suppressed.
+%for language(s) 'uz'. The display is%
+%for language(s) 'ru'. The display is%
+
+
 # Warning that can be ignored for our use since our instances use Uzbek/Russian but generated narrative in English
 Resource has a language (uz), and the XHTML has a lang (en), but they differ
 Resource has a language (ru), and the XHTML has a lang (en), but they differ

@@ -7,3 +7,4 @@ Description: "Defines Screening General Condition"
 * ^language = #uz
 * include $sct#162669003
 * include $sct#6736007
+* include codes from system screening-general-condition-cs

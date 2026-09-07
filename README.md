@@ -78,3 +78,4 @@ This IG is intended for implementers developing or configuring systems that need
 ## 📜 License
 
 This Implementation Guide is open-source under the **CC0-1.0** license.
+

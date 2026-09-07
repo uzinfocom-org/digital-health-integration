@@ -26,6 +26,9 @@ publisher:
 #
 dependencies:
   uz.dhp.core: 0.8.0
+  # R4-only package used cross-version for sdc-questionnaire-calculatedExpression (same as uz.dhp.core);
+  # the resulting version-mismatch messages are suppressed in ignoreWarnings.txt
+  hl7.fhir.uv.sdc: 3.0.0
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -114,7 +117,7 @@ pages:
   psychiatry.md:
     title: Psychiatry
   forms.md:
-    title: Forms
+    title: Questionnaires
   changelog.md:
     title: Changelog
   translationinfo.md:
@@ -135,7 +138,7 @@ menu:
     Tuberculosis (DHIS): dhis-tuberculosis.html
     Narcology: narcology.html
     Psychiatry: psychiatry.html
-  Forms: forms.html
+  Questionnaires: forms.html
   Artifacts: artifacts.html
   Changelog: changelog.html
 

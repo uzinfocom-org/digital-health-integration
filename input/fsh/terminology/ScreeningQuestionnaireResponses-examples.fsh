@@ -704,7 +704,8 @@ Description: "Example completed response to the Screening woman examination ques
 * item[7].item[1].linkId = "obesity-degree"
 * item[7].item[1].text = "Степень ожирения"
 * item[7].item[1].answer[0].valueCoding.system = $sct
-* item[7].item[1].answer[0].valueCoding.code = #162864005
+* item[7].item[1].answer[0].valueCoding.code = #443371000124107
+* item[7].item[1].answer[0].valueCoding.display = "Obese class I"
 * item[8].linkId = "hirsutism-general-exam"
 * item[8].text = "Степень гирсутизма и дополнительные данные общего осмотра"
 * item[8].item[0].linkId = "hirsutism-face"
@@ -781,9 +782,9 @@ Description: "Example completed response to the Screening woman examination ques
 * item[8].item[14].answer[0].valueBoolean = true
 * item[8].item[15].linkId = "urination"
 * item[8].item[15].text = "Мочеиспускание"
-* item[8].item[15].answer[0].valueCoding.system = "https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-urination-characteristic-cs"
-* item[8].item[15].answer[0].valueCoding.code = #scrn-0016-00002
-* item[8].item[15].answer[0].valueCoding.display = "С резкими болями"
+* item[8].item[15].answer[0].valueCoding.system = "http://snomed.info/sct"
+* item[8].item[15].answer[0].valueCoding.code = #49650001
+* item[8].item[15].answer[0].valueCoding.display = "Dysuria"
 * item[8].item[16].linkId = "urination-times-per-day"
 * item[8].item[16].text = "Кол-во раз в сутки"
 * item[8].item[16].answer[0].valueInteger = 1
