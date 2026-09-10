@@ -131,6 +131,12 @@ Description: "Categories for clinical documents and other knowledge resources in
   * ^designation[+].language = #ru
   * ^designation[=].value = "Регистрация свидетельства о перинатальной смерти"
 
+* #form-111 "Homilador va tuqqan ayolning individual kartasi"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Individual record of a pregnant and postpartum woman"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Индивидуальная карта беременной и родильницы"
+
 // Additional forms
 * #form-053 "Harbiy xizmatga chaqiriluvchilarning tibbiy kartasi"
   * ^designation[0].language = #en

@@ -43,6 +43,7 @@ Alias: $iso-3166 = urn:iso:std:iso:3166
 Alias: $iso3166-1-2 = http://hl7.org/fhir/ValueSet/iso3166-1-2
 Alias: $issue-severity = http://hl7.org/fhir/issue-severity
 Alias: $loinc = http://loinc.org
+Alias: $location-kinds-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/location-kinds-cs
 Alias: $location-status = http://hl7.org/fhir/location-status
 Alias: $location-unit = https://dhp.uz/fhir/core/NamingSystem/location-unit
 Alias: $mfa = https://gov.uz/ru/mfa
@@ -90,6 +91,7 @@ Alias: $v2-0131 = http://terminology.hl7.org/CodeSystem/v2-0131
 Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $v2-0360 = http://terminology.hl7.org/CodeSystem/v2-0360
 Alias: $v2-0487 = http://terminology.hl7.org/CodeSystem/v2-0487
+Alias: $v2-0532 = http://terminology.hl7.org/CodeSystem/v2-0532
 Alias: $v2-0916 = http://terminology.hl7.org/CodeSystem/v2-0916
 Alias: $v2-0936 = http://terminology.hl7.org/CodeSystem/v2-0936
 Alias: $v2-admission = http://terminology.hl7.org/CodeSystem/v2-0092
@@ -167,26 +169,5 @@ Alias: $signature-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/sign
 Alias: $flag-status-cs = http://hl7.org/fhir/flag-status
 Alias: $profession-specialization-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/profession-specialization-cs
 
-// ===================== DMED early-detection screening questionnaires (moved from digital-health-ig) =====================
-Alias: $v2-0532 = http://terminology.hl7.org/CodeSystem/v2-0532
-Alias: $ordinal-value = http://hl7.org/fhir/StructureDefinition/ordinalValue
-Alias: $variable = http://hl7.org/fhir/StructureDefinition/variable
-Alias: $sdc-calculated-expression = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression
-// screening-code-cs and ihd-risk-category-cs stay defined only in digital-health-ig (core) —
-// still used there by CVDRiskScreeningQuestionnaire and ScreeningIHDProbabilityQuestionnaire —
-// so these alias directly to the core canonical instead of duplicating the resource.
-Alias: $screening-code-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/screening-code-cs
-Alias: $ihd-risk-category-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/ihd-risk-category-cs
-Alias: $breast-cancer-risk-category-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/breast-cancer-risk-category-cs
-Alias: $cerebrovascular-alcohol-stress-level-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-alcohol-stress-level-cs
-Alias: $cerebrovascular-blood-pressure-status-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-blood-pressure-status-cs
-Alias: $cerebrovascular-cholesterol-status-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-cholesterol-status-cs
-Alias: $cerebrovascular-diabetes-status-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-diabetes-status-cs
-Alias: $cerebrovascular-family-history-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-family-history-cs
-Alias: $cerebrovascular-heart-condition-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-heart-condition-cs
-Alias: $cerebrovascular-physical-activity-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-physical-activity-cs
-Alias: $cerebrovascular-risk-category-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-risk-category-cs
-Alias: $cerebrovascular-smoking-status-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cerebrovascular-smoking-status-cs
-Alias: $diabetes-risk-category-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/diabetes-risk-category-cs
-Alias: $ihd-chest-pain-type-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/ihd-chest-pain-type-cs
-Alias: $cvd-risk-category-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/cvd-risk-category-cs
+// Form 096 local terminology aliases are maintained alongside its terminology artifacts
+// in input/fsh/terminology/form096/.
