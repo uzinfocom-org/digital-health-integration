@@ -150,6 +150,7 @@ Alias: $organization-tax-id-system-dhp = https://dhp.uz/fhir/core/sid/org/uz/sol
 Alias: $screening-local-id = https://dhp.uz/fhir/core/sid/uz/screening
 Alias: $screening-patient-id = https://dhp.uz/fhir/core/sid/pid/uz/screening
 Alias: $screening-practitioner-id = https://dhp.uz/fhir/core/sid/pro/uz/screening
+Alias: $screening-program-type-id = https://dhp.uz/fhir/core/sid/uz/screening-program-type
 Alias: $nationality-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/nationality-cs
 Alias: $doc-typecodes = http://hl7.org/fhir/ValueSet/doc-typecodes
 Alias: $mimetypes = http://hl7.org/fhir/ValueSet/mimetypes

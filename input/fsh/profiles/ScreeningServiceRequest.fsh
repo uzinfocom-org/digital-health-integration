@@ -6,6 +6,7 @@ Description: "Profile for creating referrals for laboratory and diagnostic inves
 * ^experimental = true
 * ^status = #active
 * ^publisher = "DHP Integration"
+* insert ScreeningMetaSource
 
 * identifier MS
 * status MS
@@ -24,12 +25,15 @@ Instance: ServiceRequest-cytology
 InstanceOf: ScreeningServiceRequest
 Usage: #example
 Description: "Referral for liquid-based cytology"
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "233"
 * identifier[=].use = #usual
 * identifier[+].system = $screening-local-id
 * identifier[=].value = "26-95-01-1-00065"
 * identifier[=].use = #usual
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "171149006"
 * status = #completed
 * intent = #order
 * code = $loinc#18500-9 "Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep" 
@@ -46,9 +50,12 @@ Instance: ServiceRequest-hpv
 InstanceOf: ScreeningServiceRequest
 Usage: #example
 Description: "Referral for HPV testing"
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "236"
 * identifier[=].use = #usual
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "171149006"
 * status = #completed
 * intent = #order
 * code =  $loinc#82675-0 "HPV I/H Risk 4 DNA Cvx Ql NAA+probe" 
@@ -65,9 +72,12 @@ Instance: ServiceRequest-colposcopy
 InstanceOf: ScreeningServiceRequest
 Usage: #example
 Description: "Referral for colposcopy"
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "234"
 * identifier[=].use = #usual
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "171149006"
 * status = #completed
 * intent = #order
 * code = $sct#392003006 "Colposcopy"
@@ -84,9 +94,12 @@ Instance: ServiceRequest-mammography
 InstanceOf: ScreeningServiceRequest
 Usage: #example
 Description: "Referral for mammography"
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "235"
 * identifier[=].use = #usual
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "268547008"
 * status = #completed
 * intent = #order
 * code = $sct#71651007 "Mammography"

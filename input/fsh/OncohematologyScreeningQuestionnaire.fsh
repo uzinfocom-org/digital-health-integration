@@ -4,6 +4,8 @@ Usage: #definition
 Title: "Oncohematology Screening Questionnaire"
 Description: "Example for Questionnaire for Oncohematology Screening"
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/OncohematologyScreeningQuestionnaire"
+* identifier[0].system = $screening-program-type-id
+* identifier[0].value = "762445000"
 * name = "OncohematologyScreeningQuestionnaire"
 * language = #uz
 * status = #active

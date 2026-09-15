@@ -4,6 +4,8 @@ Usage: #definition
 Title: "Breast Cancer Screening Questionnaire"
 Description: "Example for Questionnaire for breast cancer risk screening"
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/BreastCancerScreeningQuestionnaire"
+* identifier[0].system = $screening-program-type-id
+* identifier[0].value = "268547008"
 * name = "BreastCancerScreeningQuestionnaire"
 * language = #uz
 * status = #active

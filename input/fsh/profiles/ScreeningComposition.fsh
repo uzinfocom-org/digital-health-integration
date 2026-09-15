@@ -6,6 +6,7 @@ Description: "Downloadable summary of a cervical or breast cancer screening epis
 * ^status = #active
 * ^experimental = true
 * ^publisher = "DHP Integration"
+* insert ScreeningMetaSource
 
 * identifier 1..* MS
 * status MS
