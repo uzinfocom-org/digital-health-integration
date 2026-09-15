@@ -58,7 +58,7 @@ Usage: #example
 
 // citizenship temporarily omitted: IG Publisher 2.3.4 wrongly fails the required supplement on
 // iso-3166-2-vs because urn:iso:std:iso:3166 is only available on the terminology server.
-// Restore once the validator is fixed:
+// Restore once hapifhir/org.hl7.fhir.core#2636 is fixed in a publisher release:
 // * extension[citizenship].extension[code].valueCodeableConcept = urn:iso:std:iso:3166#UZ "Uzbekistan"
 * identifier[nationalId]
   * system = "https://dhp.uz/fhir/core/sid/pid/uz/ni"
