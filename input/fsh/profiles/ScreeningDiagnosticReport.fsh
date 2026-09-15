@@ -6,6 +6,7 @@ Description: "Profile for storing final medical reports resulting from cervical 
 * ^experimental = true
 * ^status = #active
 * ^publisher = "DHP Integration"
+* insert ScreeningMetaSource
 
 * identifier MS
 * basedOn MS
@@ -33,9 +34,12 @@ Instance: DiagnosticReport-breast-pathology
 InstanceOf: ScreeningDiagnosticReport
 Usage: #example
 Description: "Breast pathology report (histology plus immunohistochemistry), with the patient's prior special treatment history carried as supporting information rather than on the pathology request."
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "126"
 * identifier[=].use = #usual
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "268547008"
 * basedOn[0] = Reference(ServiceRequest/screening-pathology-request-example)
 * status = #final
 * code = $sct#714797009 "Histologic test"
@@ -54,9 +58,12 @@ Instance: DiagnosticReport-mammography
 InstanceOf: ScreeningDiagnosticReport
 Usage: #example
 Description: "Mammography report (summary and findings)"
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "123"
 * identifier[=].use = #usual
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "268547008"
 * basedOn[0] = Reference(ServiceRequest/ServiceRequest-mammography)
 * status = #final
 * code = $sct#71651007 "Mammography"
@@ -75,9 +82,12 @@ Instance: DiagnosticReport-cytology
 InstanceOf: ScreeningDiagnosticReport
 Usage: #example
 Description: "Laboratory report: Liquid-based cytology"
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "124"
 * identifier[=].use = #usual
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "171149006"
 * basedOn[0] = Reference(ServiceRequest/ServiceRequest-cytology)
 * status = #final
 * code = $loinc#18500-9 "Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep"  
@@ -95,9 +105,12 @@ Instance: DiagnosticReport-colposcopy
 InstanceOf: ScreeningDiagnosticReport
 Usage: #example
 Description: "Diagnostic report: Colposcopy"
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "125"
 * identifier[=].use = #usual
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "171149006"
 * basedOn[0] = Reference(ServiceRequest/ServiceRequest-colposcopy)
 * status = #final
 * code = $sct#392003006 "Colposcopy"

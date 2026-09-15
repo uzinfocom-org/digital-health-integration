@@ -4,6 +4,8 @@ Usage: #definition
 Title: "Diabetes Screening Questionnaire"
 Description: "Example for Diabetes Screening Questionnaire"
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/DiabetesScreeningQuestionnaire"
+* identifier[0].system = $screening-program-type-id
+* identifier[0].value = "171183004"
 * name = "DiabetesScreeningQuestionnaire"
 * language = #uz
 * status = #active

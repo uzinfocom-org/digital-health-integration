@@ -4,6 +4,8 @@ Usage: #definition
 Title: "Cervical Cancer Screening Questionnaire"
 Description: "Example for Questionnaire for Cervical Cancer Screening"
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/CervicalCancerScreeningQuestionnaire"
+* identifier[0].system = $screening-program-type-id
+* identifier[0].value = "171149006"
 * name = "CervicalCancerScreeningQuestionnaire"
 * version = "1.0.0"
 * language = #uz

@@ -11,6 +11,8 @@ Description: "Questionnaire used by Screening to assess breast cancer risk."
 * identifier[0].value = "1"
 * identifier[1].system = "https://dhp.uz/fhir/integrations/sid/screening/questionnaire-code"
 * identifier[1].value = "RMJ"
+* identifier[2].system = $screening-program-type-id
+* identifier[2].value = "268547008"
 * version = "1.0.1"
 * status = #active
 * useContext[0].code = $usage-context-type#program
@@ -163,6 +165,8 @@ Description: "Questionnaire used by Screening to assess cervical cancer risk."
 * identifier[0].value = "3"
 * identifier[1].system = "https://dhp.uz/fhir/integrations/sid/screening/questionnaire-code"
 * identifier[1].value = "RSHM"
+* identifier[2].system = $screening-program-type-id
+* identifier[2].value = "171149006"
 * version = "1.0.1"
 * status = #active
 * useContext[0].code = $usage-context-type#program
@@ -384,6 +388,10 @@ Usage: #definition
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam"
 * identifier[0].system = "https://dhp.uz/fhir/integrations/sid/screening/questionnaire-code"
 * identifier[0].value = "WOMAN_CHECKUP"
+* identifier[1].system = $screening-program-type-id
+* identifier[1].value = "268547008"
+* identifier[2].system = $screening-program-type-id
+* identifier[2].value = "171149006"
 * version = "1.0.0"
 * status = #active
 * useContext[0].code = $usage-context-type#program

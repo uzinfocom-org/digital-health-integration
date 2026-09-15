@@ -345,6 +345,6 @@
 | Роль | Пример кода |
 | :--- | :--- |
 | Лаборант | `screening-roles-cs#his_laboratory_laborant` |
-| Акушер-гинеколог | `screening-roles-cs#his_centre_obstetrics_gynecology_obstetrician_gynecologist` |
+| Акушер-гинеколог | `screening-roles-cs#his_centre_obgyn_obstetrician_gynecologist` |
 | Радиолог | `screening-roles-cs#his_ris_ragiologist_head` |
 | Патронажная медсестра | `screening-roles-cs#his_poliklinika_patronage_nurse` |
