@@ -1,0 +1,563 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ScreeningUltrasoundParameterCS",
+  "id": "screening-ultrasound-parameter-cs",
+  "title": "Screening Ultrasound Parameter CodeSystem",
+  "description": "CodeSystem for Screening Ultrasound Parameter",
+  "url": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-ultrasound-parameter-cs",
+  "concept": [
+    {
+      "code": "scrn-0052-00001",
+      "display": "Hayz sikli davomiyligi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Длительность менструального цикла"
+        },
+        {
+          "language": "en",
+          "value": "Menstrual cycle duration"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00003",
+      "display": "Anamnez",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Анамнез"
+        },
+        {
+          "language": "en",
+          "value": "Anamnesis"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00004",
+      "display": "Sut bezlarining simmetriyasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Симметричность молочных желез"
+        },
+        {
+          "language": "en",
+          "value": "Breast symmetry"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00005",
+      "display": "ACR bo‘yicha sut bezlari tarkibi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Тип строения молочных желез по ACR"
+        },
+        {
+          "language": "en",
+          "value": "ACR breast composition"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00006",
+      "display": "Teri va so‘rg‘ich holati",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Состояние кожи и соска"
+        },
+        {
+          "language": "en",
+          "value": "Skin and nipple condition"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00007",
+      "display": "To‘qimalar differensiasiyasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Дифференциация тканей"
+        },
+        {
+          "language": "en",
+          "value": "Tissue differentiation"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00008",
+      "display": "Teri osti yog‘ qavati",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Подкожно-жировая клетчатка"
+        },
+        {
+          "language": "en",
+          "value": "Subcutaneous fat"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00009",
+      "display": "Fibroglandulyar kompleks qalinligi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Толщина фиброгландулярного комплекса"
+        },
+        {
+          "language": "en",
+          "value": "Fibroglandular complex thickness"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00010",
+      "display": "Fibroglandulyar kompleks exogenligi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Эхогенность фиброгландулярного комплекса"
+        },
+        {
+          "language": "en",
+          "value": "Fibroglandular complex echogenicity"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00011",
+      "display": "Sut yo‘llarining maksimal diametri",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Максимальный диаметр протоков"
+        },
+        {
+          "language": "en",
+          "value": "Maximum duct diameter"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00012",
+      "display": "Sut yo‘llari holati",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Состояние протоков"
+        },
+        {
+          "language": "en",
+          "value": "Duct condition"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00013",
+      "display": "Retromammar bo‘shliq",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Ретромаммарное пространство"
+        },
+        {
+          "language": "en",
+          "value": "Retromammary space"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00014",
+      "display": "Elastografiya bo‘yicha qattiqlik",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Жесткость по эластографии"
+        },
+        {
+          "language": "en",
+          "value": "Elastography stiffness"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00015",
+      "display": "Elastografiyaning rangli turi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Цветовой тип эластографии"
+        },
+        {
+          "language": "en",
+          "value": "Elastography color type"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00016",
+      "display": "Intramammar limfa tugunlari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Интрамаммарные лимфатические узлы"
+        },
+        {
+          "language": "en",
+          "value": "Intramammary lymph nodes"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00017",
+      "display": "Qo‘ltiq osti limfa tugunlari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Аксиллярные (подмышечные) лимфатические узлы"
+        },
+        {
+          "language": "en",
+          "value": "Axillary lymph nodes"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00018",
+      "display": "O‘mrov osti / o‘mrov usti / parasternal limfa tugunlari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Подключичные / надключичные / парастернальные лимфатические узлы"
+        },
+        {
+          "language": "en",
+          "value": "Subclavian, supraclavicular or parasternal lymph nodes"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00019",
+      "display": "Qo‘shimcha o‘zgarishlar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Дополнительные изменения"
+        },
+        {
+          "language": "en",
+          "value": "Additional changes"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00020",
+      "display": "Oldingi tekshiruv bilan taqqoslash",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Сравнение с предыдущим исследованием"
+        },
+        {
+          "language": "en",
+          "value": "Comparison with previous study"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00021",
+      "display": "Sut bezining o‘choqli hosilasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Очаговое образование молочной железы"
+        },
+        {
+          "language": "en",
+          "value": "Focal breast lesion"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00022",
+      "display": "Soat siferblati bo‘yicha joylashuvi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Позиция по циферблату"
+        },
+        {
+          "language": "en",
+          "value": "Clock-face position"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00023",
+      "display": "So‘rg‘ichdan masofa",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Расстояние от соска"
+        },
+        {
+          "language": "en",
+          "value": "Distance from nipple"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00024",
+      "display": "O‘choq uzunligi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Длина очага"
+        },
+        {
+          "language": "en",
+          "value": "Lesion length"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00025",
+      "display": "O‘choq kengligi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Ширина очага"
+        },
+        {
+          "language": "en",
+          "value": "Lesion width"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00026",
+      "display": "O‘choq qalinligi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Толщина очага"
+        },
+        {
+          "language": "en",
+          "value": "Lesion thickness"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00027",
+      "display": "O‘choq shakli",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Форма очага"
+        },
+        {
+          "language": "en",
+          "value": "Lesion shape"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00028",
+      "display": "O‘choq yo‘nalishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Ориентация очага"
+        },
+        {
+          "language": "en",
+          "value": "Lesion orientation"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00029",
+      "display": "O‘choq chegaralari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Контуры очага"
+        },
+        {
+          "language": "en",
+          "value": "Lesion contours"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00030",
+      "display": "O‘choq exogenligi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Эхогенность очага"
+        },
+        {
+          "language": "en",
+          "value": "Lesion echogenicity"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00031",
+      "display": "Ichki tuzilishi: bir jinsli",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Внутренняя структура: однородная"
+        },
+        {
+          "language": "en",
+          "value": "Internal structure: homogeneous"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00032",
+      "display": "Ichki tuzilishi: geterogen",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Внутренняя структура: гетерогенная"
+        },
+        {
+          "language": "en",
+          "value": "Internal structure: heterogeneous"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00033",
+      "display": "Ichki tuzilishi: kistoz qo‘shilmalar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Внутренняя структура: кистозные включения"
+        },
+        {
+          "language": "en",
+          "value": "Internal structure: cystic inclusions"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00034",
+      "display": "Ichki tuzilishi: mikrokalsinatlar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Внутренняя структура: микрокальцинаты"
+        },
+        {
+          "language": "en",
+          "value": "Internal structure: microcalcifications"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00035",
+      "display": "Ichki tuzilishi: makrokalsinatlar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Внутренняя структура: макрокальцинаты"
+        },
+        {
+          "language": "en",
+          "value": "Internal structure: macrocalcifications"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00036",
+      "display": "O‘choqning akustik effektlari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Акустические эффекты очага"
+        },
+        {
+          "language": "en",
+          "value": "Lesion acoustic effects"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00037",
+      "display": "O‘choq vaskulyarizatsiyasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Васкуляризация очага"
+        },
+        {
+          "language": "en",
+          "value": "Lesion vascularization"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00038",
+      "display": "Aksillyar limfa tugunining maksimal o‘lchami",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Максимальный размер аксиллярного лимфатического узла"
+        },
+        {
+          "language": "en",
+          "value": "Maximum axillary lymph node size"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00039",
+      "display": "Aksillyar limfa tuguni kortikal qavatining qalinligi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Толщина коркового слоя аксиллярного лимфатического узла"
+        },
+        {
+          "language": "en",
+          "value": "Axillary lymph node cortical thickness"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0052-00040",
+      "display": "Boshqa regional limfa tugunlari bo‘yicha izoh",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Комментарий по другим регионарным лимфатическим узлам"
+        },
+        {
+          "language": "en",
+          "value": "Other regional lymph node note"
+        }
+      ]
+    }
+  ],
+  "caseSensitive": true,
+  "hierarchyMeaning": "is-a",
+  "language": "uz",
+  "experimental": true,
+  "count": 39
+}

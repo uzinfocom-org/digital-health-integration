@@ -1,0 +1,497 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "supplement",
+  "name": "CancerTNMStageCS",
+  "id": "cancer-tnm-stage-cs",
+  "title": "Cancer TNM Stage SNOMED CT Supplement",
+  "description": "SNOMED CT supplement containing Uzbek and Russian designations for cancer TNM staging concepts used in the Uzbekistan healthcare system.",
+  "url": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-tnm-stage-cs",
+  "concept": [
+    {
+      "code": "1352916008",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия 0"
+        },
+        {
+          "language": "uz",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "code": "1352825003",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия 0a"
+        },
+        {
+          "language": "uz",
+          "value": "0a"
+        }
+      ]
+    },
+    {
+      "code": "1352895007",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия 0is"
+        },
+        {
+          "language": "uz",
+          "value": "0is"
+        }
+      ]
+    },
+    {
+      "code": "1352927005",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия I"
+        },
+        {
+          "language": "uz",
+          "value": "I"
+        }
+      ]
+    },
+    {
+      "code": "1352843004",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IA"
+        },
+        {
+          "language": "uz",
+          "value": "Ia"
+        }
+      ]
+    },
+    {
+      "code": "1352911003",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IB"
+        },
+        {
+          "language": "uz",
+          "value": "Ib"
+        }
+      ]
+    },
+    {
+      "code": "1352919001",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IC"
+        },
+        {
+          "language": "uz",
+          "value": "Ic"
+        }
+      ]
+    },
+    {
+      "code": "1352954008",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IE"
+        },
+        {
+          "language": "uz",
+          "value": "IE"
+        }
+      ]
+    },
+    {
+      "code": "1352880005",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IS"
+        },
+        {
+          "language": "uz",
+          "value": "IS"
+        }
+      ]
+    },
+    {
+      "code": "1352890002",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IA1"
+        },
+        {
+          "language": "uz",
+          "value": "Ia1"
+        }
+      ]
+    },
+    {
+      "code": "1352945005",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IA2"
+        },
+        {
+          "language": "uz",
+          "value": "Ia2"
+        }
+      ]
+    },
+    {
+      "code": "1352854009",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IA3"
+        },
+        {
+          "language": "uz",
+          "value": "Ia3"
+        }
+      ]
+    },
+    {
+      "code": "1352816009",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IB1"
+        },
+        {
+          "language": "uz",
+          "value": "Ib1"
+        }
+      ]
+    },
+    {
+      "code": "1352864000",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IB2"
+        },
+        {
+          "language": "uz",
+          "value": "Ib2"
+        }
+      ]
+    },
+    {
+      "code": "1352944009",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия II"
+        },
+        {
+          "language": "uz",
+          "value": "II"
+        }
+      ]
+    },
+    {
+      "code": "1352856006",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IIA"
+        },
+        {
+          "language": "uz",
+          "value": "IIa"
+        }
+      ]
+    },
+    {
+      "code": "1352861008",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IIB"
+        },
+        {
+          "language": "uz",
+          "value": "IIb"
+        }
+      ]
+    },
+    {
+      "code": "1352831000",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IIC"
+        },
+        {
+          "language": "uz",
+          "value": "IIc"
+        }
+      ]
+    },
+    {
+      "code": "1352956005",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IIE"
+        },
+        {
+          "language": "uz",
+          "value": "IIE"
+        }
+      ]
+    },
+    {
+      "code": "1352829009",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IIA1"
+        },
+        {
+          "language": "uz",
+          "value": "IIa1"
+        }
+      ]
+    },
+    {
+      "code": "1352892005",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IIA2"
+        },
+        {
+          "language": "uz",
+          "value": "IIa2"
+        }
+      ]
+    },
+    {
+      "code": "1352871005",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия III"
+        },
+        {
+          "language": "uz",
+          "value": "III"
+        }
+      ]
+    },
+    {
+      "code": "1352915007",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IIIA"
+        },
+        {
+          "language": "uz",
+          "value": "IIIa"
+        }
+      ]
+    },
+    {
+      "code": "1352896008",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IIIB"
+        },
+        {
+          "language": "uz",
+          "value": "IIIb"
+        }
+      ]
+    },
+    {
+      "code": "1352848008",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IIIC"
+        },
+        {
+          "language": "uz",
+          "value": "IIIc"
+        }
+      ]
+    },
+    {
+      "code": "1352891003",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IIID"
+        },
+        {
+          "language": "uz",
+          "value": "IIId"
+        }
+      ]
+    },
+    {
+      "code": "1351850002",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IIIS"
+        },
+        {
+          "language": "uz",
+          "value": "IIIS"
+        }
+      ]
+    },
+    {
+      "code": "1352935008",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IIIA1"
+        },
+        {
+          "language": "uz",
+          "value": "IIIa1"
+        }
+      ]
+    },
+    {
+      "code": "1352882002",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IIIA2"
+        },
+        {
+          "language": "uz",
+          "value": "IIIa2"
+        }
+      ]
+    },
+    {
+      "code": "1352862001",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IIIC1"
+        },
+        {
+          "language": "uz",
+          "value": "IIIc1"
+        }
+      ]
+    },
+    {
+      "code": "1352833002",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IIIC2"
+        },
+        {
+          "language": "uz",
+          "value": "IIIc2"
+        }
+      ]
+    },
+    {
+      "code": "1352913000",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IV"
+        },
+        {
+          "language": "uz",
+          "value": "IV"
+        }
+      ]
+    },
+    {
+      "code": "1352822000",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IVA"
+        },
+        {
+          "language": "uz",
+          "value": "IVa"
+        }
+      ]
+    },
+    {
+      "code": "1352836005",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IVB"
+        },
+        {
+          "language": "uz",
+          "value": "IVb"
+        }
+      ]
+    },
+    {
+      "code": "1352921006",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IVC"
+        },
+        {
+          "language": "uz",
+          "value": "IVc"
+        }
+      ]
+    },
+    {
+      "code": "1352955009",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IVA1"
+        },
+        {
+          "language": "uz",
+          "value": "IVa1"
+        }
+      ]
+    },
+    {
+      "code": "1352953002",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Стадия IVA2"
+        },
+        {
+          "language": "uz",
+          "value": "IVa2"
+        }
+      ]
+    }
+  ],
+  "supplements": "http://snomed.info/sct",
+  "version": "2026.1.0",
+  "language": "en",
+  "experimental": true
+}
