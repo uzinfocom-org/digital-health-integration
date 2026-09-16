@@ -68,3 +68,43 @@ Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screeni
 # Trailing % => startsWith match: the real message has an embedded newline before its final ')',
 # so an exact-match line never matches. Cut at (>1000) to stay independent of tx-server wording.
 Unable to expand included value set 'http://hl7.org/fhir/ValueSet/body-site': The value set 'http://hl7.org/fhir/ValueSet/body-site|5.0.0' expansion has too many codes to produce (>1000)%
+
+Error from https://tx.fhir.org/r5: Error: The code System "http://snomed.info/sct" has a grammar, and cannot be enumerated directly
+
+Binding https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs could not be expanded
+
+Unable to expand included value set 'https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-diagnostic-procedure-vs': Error from
+https://tx.fhir.org/r5: Error: The code System "http://snomed.info/sct" has a grammar, and cannot be enumerated directly (and Error from
+https://tx.fhir.org/r5: Error: The code System "http://snomed.info/sct" has a grammar, and cannot be enumerated directly )
+
+# Form 111: registrationAndPersonalInformation legitimately accepts both plain lab-result Observations
+# and UZCoreSocioeconomicObservation entries (education, working conditions, etc). Socioeconomic
+# observations only add required constraints on top of base Observation, not on top of UZCoreObservation
+# (they're sibling profiles, both derived straight from Observation), so a valid SocioeconomicObservation
+# instance will always also structurally satisfy the looser UZCoreObservation. meta.profile already
+# disambiguates correctly for consumers; narrowing the section's allowed types would incorrectly exclude
+# the legitimate plain-Observation lab results that share the same section.
+Found multiple matching profiles for urn:uuid:11100023-1111-2222-3333-444444444444 among choices: https://dhp.uz/fhir/core/StructureDefinition/uz-core-observation%
+
+# Form 111: the DMEDForm111*CS source CodeSystems (input/fsh/terminology/DMEDForm111EnumCS.fsh) are
+# deliberately declared content = #fragment - they preserve only the DMED tokens actually observed in
+# the field-mapping evidence, not a guaranteed-complete enumeration of every token DMED could ever send.
+# Declaring them #complete instead would be factually wrong and would risk the validator wrongly
+# rejecting a real DMED token that just hasn't been catalogued yet. This warning is the expected,
+# accepted cost of that (correct) choice, not a defect - see the ConceptMap file's DMEDForm111*CM
+# instances, which all source from one of these fragment CodeSystems.
+%doesn't have all content (content = fragment), so the source codes cannot be checked
+
+# Form 111: several DMEDForm111*CM ConceptMap groups map DMED tokens straight to a handful of specific,
+# hand-picked SNOMED CT codes (e.g. blood group, RhD, pregnancy outcome). SNOMED CT itself is too large
+# for the publisher to load and check against, and defining a targetScope ValueSet for a one-off list of
+# a few SNOMED codes would add a whole extra artifact for no real benefit over the explicit target codes
+# already listed in the ConceptMap.
+%is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
+
+# Form 111: DMEDForm111EducationTypeCM and DMEDForm111FamilyStatusCM each have a second ConceptMap group
+# whose elements are entirely noMap = true (DMED tokens that intentionally map to nothing, per the
+# integration doc's rule that an expected noMap token is not an unknown/error). A group with no mapped
+# elements correctly has no group.target; this warning is the validator's inability to tell that apart
+# from a forgotten target, not an actual missing target.
+%No Target Code System, so the target codes cannot be checked

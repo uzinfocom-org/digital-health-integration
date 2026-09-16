@@ -198,3 +198,9 @@ Description: "Categories for clinical documents and other knowledge resources in
   * ^designation[=].value = "Laboratory Test Results"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Результаты лабораторных исследований"
+
+* #form-111 "Homilador va tuqqan ayolning individual kartasi"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Individual card of a pregnant and postpartum woman"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Индивидуальная карта беременной и родившей женщины"
