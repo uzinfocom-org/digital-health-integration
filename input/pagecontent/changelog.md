@@ -1,8 +1,14 @@
 ### In development
 
+(No changes yet)
+
+### Version 0.9.1
+
 #### Changed
 
 The [diabetes screening questionnaire](Questionnaire-DiabetesScreeningQuestionnaire.html) and the [screening intake template](Questionnaire-screening-intake-template.html) declared their versions as `1.0` and `1.1`; they now declare `1.0.0` and `1.1.0`, as every artifact version is `MAJOR.MINOR.PATCH`.
+
+The package is now built as a publication build. Its `package.json` carried `notForPublication` and a `file://` url, so [packages2.fhir.org](https://packages2.fhir.org/packages/uz.dhp.integrations) rejected every version. The guide is also built against [UZ Core 0.9.2](https://dhp.uz/fhir/core/changelog.html), whose package had the same flaw: links from this guide to UZ Core artifacts pointed at `file://` paths and now go to dhp.uz.
 
 ### Version 0.9.0
 

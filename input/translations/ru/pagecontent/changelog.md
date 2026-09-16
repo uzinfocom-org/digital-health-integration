@@ -1,8 +1,14 @@
 ### В разработке
 
+(Пока без изменений)
+
+### Версия 0.9.1
+
 #### Изменено
 
 [Опросник скрининга сахарного диабета](Questionnaire-DiabetesScreeningQuestionnaire.html) и [шаблон скринингового анкетирования](Questionnaire-screening-intake-template.html) объявляли версии `1.0` и `1.1`; теперь они объявляют `1.0.0` и `1.1.0`, поскольку версия любого артефакта имеет вид `MAJOR.MINOR.PATCH`.
+
+Пакет теперь собирается как публикационная сборка. Его `package.json` содержал `notForPublication` и URL `file://`, поэтому [packages2.fhir.org](https://packages2.fhir.org/packages/uz.dhp.integrations) отклонял все версии. Гайд также собирается на основе [UZ Core 0.9.2](https://dhp.uz/fhir/core/changelog.html), пакет которого имел тот же недостаток: ссылки из этого гайда на артефакты UZ Core вели на пути `file://`, а теперь ведут на dhp.uz.
 
 ### Версия 0.9.0
 

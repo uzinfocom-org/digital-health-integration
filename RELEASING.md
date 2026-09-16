@@ -19,9 +19,11 @@ Publishing a release is automated by [`.github/workflows/release.yml`](.github/w
    ```
 
 3. The **Release** workflow then automatically:
-   - builds the IG,
+   - builds the IG as a publication build (`-publish https://dhp.uz/fhir/integrations`),
    - verifies the built package is `uz.dhp.integrations#X.Y.Z` (and that the tag
-     matches `sushi-config.yaml`),
+     matches `sushi-config.yaml`), is not flagged `notForPublication` and has the
+     `https://dhp.uz/fhir/integrations` url - packages2.fhir.org rejects draft
+     packages,
    - creates the GitHub Release `X.Y.Z` with `package.tgz` attached, and
    - opens a PR adding `X.Y.Z` to [`docs/package-feed.xml`](docs/package-feed.xml)
      so the FHIR package registry discovers it.
