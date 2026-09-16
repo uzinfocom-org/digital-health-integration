@@ -74,19 +74,38 @@ jobs:
           echo "  QA Results:"
           echo "   Errors: $ERRORS"
           echo "   Warnings: $WARNINGS"
-          
+
+          print_messages() {
+            if [ -f "output/qa.txt" ]; then
+              echo "::group::QA report (errors + unsuppressed warnings only)"
+              # Keep only FATAL/ERROR/WARNING lines, each under its `== file ==`
+              # header. Suppressed warnings are already left out of qa.txt by the
+              # IG publisher; the per-file summary rows count them, so skip those.
+              awk '
+                /^== .* ==$/ { file = $0; next }
+                /^(FATAL|ERROR|WARNING):/ {
+                  if (file != shown) { print ""; print file; shown = file }
+                  print
+                }
+              ' output/qa.txt
+              echo "::endgroup::"
+            fi
+          }
+
           # Check if errors exceed threshold
           if [ "$ERRORS" -gt $MAX_ALLOWED_ERRORS ]; then
             echo "❌ Too many errors: $ERRORS (maximum allowed: $MAX_ALLOWED_ERRORS)"
+            print_messages
             exit 1
           fi
-          
+
           # Check if there are any warnings
           if [ "$WARNINGS" -gt $MAX_ALLOWED_WARNINGS ]; then
             echo "❌ Warnings found: $WARNINGS (maximum allowed: $MAX_ALLOWED_WARNINGS)"
+            print_messages
             exit 1
           fi
-          
+
           echo "✅ QA check passed: $ERRORS errors (≤$MAX_ALLOWED_ERRORS) and $WARNINGS warnings (≤$MAX_ALLOWED_WARNINGS)"
 
       - name: Upload output folder
