@@ -1,6 +1,8 @@
 ### Ishlab chiqish jarayonida
 
-(Hozircha o'zgarishlar yo'q)
+#### O'zgartirildi
+
+[Qandli diabet skriningi so'rovnomasi](Questionnaire-DiabetesScreeningQuestionnaire.html) versiyasini `1.0` deb e'lon qilardi; endi u `1.0.0` ni e'lon qiladi, chunki har qanday artefakt versiyasi `MAJOR.MINOR.PATCH` ko'rinishida bo'ladi.
 
 ### Versiya 0.9.0
 

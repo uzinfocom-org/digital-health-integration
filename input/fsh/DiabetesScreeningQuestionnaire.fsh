@@ -11,7 +11,7 @@ Description: "Example for Diabetes Screening Questionnaire"
 * status = #active
 * publisher = "Uzinfocom"
 * subjectType = #Patient
-* version = "1.0"
+* version = "1.0.0"
 * title = "Qandli diabetni erta aniqlash skriningi"
   * extension[$translation-extension][+]
     * extension[lang].valueCode = #ru

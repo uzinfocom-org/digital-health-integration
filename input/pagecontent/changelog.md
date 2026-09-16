@@ -1,6 +1,8 @@
 ### In development
 
-(No changes yet)
+#### Changed
+
+The [diabetes screening questionnaire](Questionnaire-DiabetesScreeningQuestionnaire.html) declared its version as `1.0`; it now declares `1.0.0`, as every artifact version is `MAJOR.MINOR.PATCH`.
 
 ### Version 0.9.0
 
