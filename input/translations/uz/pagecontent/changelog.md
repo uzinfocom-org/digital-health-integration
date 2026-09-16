@@ -2,6 +2,46 @@
 
 (Hozircha o'zgarishlar yo'q)
 
+### Versiya 0.9.0
+
+#### Qo'shildi
+
+DMed foydalanadigan to'qqizta skrining so'rovnomasi ta'riflar sifatida nashr etildi: [yurak-qon tomir kasalliklari xavfi](Questionnaire-CVDRiskScreeningQuestionnaire.html), [tserebrovaskulyar patologiya](Questionnaire-CerebrovascularScreeningQuestionnaire.html), [qandli diabet](Questionnaire-DiabetesScreeningQuestionnaire.html), [YuIK testoldi ehtimoli](Questionnaire-IhdPretestQuestionnaire.html), [onkogematologiya](Questionnaire-OncohematologyScreeningQuestionnaire.html), [ko'krak bezi saratoni](Questionnaire-BreastCancerScreeningQuestionnaire.html), [bachadon bo'yni saratoni](Questionnaire-CervicalCancerScreeningQuestionnaire.html), [gelmintozlar](Questionnaire-HelminthScreeningQuestionnaire.html) va [fertillik](Questionnaire-FertilityQuestionnaire.html). Har biri javoblarni SDC dagi `calculatedExpression` orqali hisoblaydi va yig'indini xavf toifasiga - [ko'krak bezi saratoni](CodeSystem-breast-cancer-risk-category-cs.html), [tserebrovaskulyar patologiya](CodeSystem-cerebrovascular-risk-category-cs.html), [yurak-qon tomir kasalliklari](CodeSystem-cvd-risk-category-cs.html) va [qandli diabet](CodeSystem-diabetes-risk-category-cs.html) - joylashtiradi, toifa esa tavsiya etiladigan kuzatuvni belgilaydi. Yurak-qon tomir xavfi so'rovnomasi va uning xavf toifalari UZ Core 0.9.0 dan bu yerga ko'chirildi.
+
+Ular uchun javoblar terminologiyasi tserebrovaskulyar so'rovnomaning [arterial bosim](CodeSystem-cerebrovascular-blood-pressure-status-cs.html), [xolesterin](CodeSystem-cerebrovascular-cholesterol-status-cs.html), [qandli diabet](CodeSystem-cerebrovascular-diabetes-status-cs.html), [yurak kasalliklari](CodeSystem-cerebrovascular-heart-condition-cs.html), [oilaviy anamnez](CodeSystem-cerebrovascular-family-history-cs.html), [chekish](CodeSystem-cerebrovascular-smoking-status-cs.html), [alkogol va stress](CodeSystem-cerebrovascular-alcohol-stress-level-cs.html) hamda [jismoniy faollik](CodeSystem-cerebrovascular-physical-activity-cs.html) javoblarini, [YuIK da ko'krak og'rig'i turini](CodeSystem-ihd-chest-pain-type-cs.html), shuningdek [qandli diabet](ValueSet-screening-diabetes-vs.html), [tamaki iste'moli](ValueSet-cvd-tobacco-use-vs.html), [bachadon bo'yni saratoni](ValueSet-cervical-cancer-screening-questionnaire-vs.html) va [fertillik](ValueSet-fertility-questionnaire-vs.html) javoblarining qiymatlar to'plamlarini qamrab oladi; oxirgi uchtasi SNOMED CT da kodlangan va o'zbekcha belgilarga ega.
+
+Bitta skrining dasturiga tegishli resurslar endi yangi [skrining dasturi turi](NamingSystem-screening-program-type-identifier-system.html) nom tizimidan identifikator olib yuradi, uning qiymati dasturning SNOMED CT kodidir. Uni ham DMed, ham OPV (ВПЧ) skrining tizimi klinik va ish jarayoni resurslariga yozadi, Patient, Practitioner va PractitionerRole ga esa yozmaydi.
+
+Patomorfologik xulosa SNOMED CT qamramagan mahalliy kodlar bilan to'ldirildi: [bachadon bo'yni gistologiyasi morfologiyasi](CodeSystem-screening-cervical-histology-morphology-cs.html) kichik turlari, [bachadon bo'yni](CodeSystem-screening-cervical-material-type-cs.html) va [ko'krak bezi sitologiyasi](CodeSystem-screening-breast-cytology-material-type-cs.html) material turlari hamda [ko'krak beziga jarrohlik amaliyoti turlari](CodeSystem-screening-breast-surgical-procedure-type-cs.html). [Ko'krak bezi o'smasining gistologik turi](ValueSet-screening-breast-histologic-type-vs.html) sakkizta kichik tur bilan kengaydi.
+
+Skrining so'rovnomalari endi o'zi qaysi integratsiyadan kelganini `program` foydalanish kontekstida, [integratsiya sohasi](ValueSet-integration-area-vs.html) kodi bilan ko'rsatadi: `GET [base]/Questionnaire?context-type-value=program$https://terminology.dhp.uz/fhir/integrations/CodeSystem/integration-area-cs|screening` so'rovi bitta xizmatning shakllarini qaytaradi, [so'rovnomalar](forms.html) sahifasi esa shakllar ro'yxatini xuddi shunday guruhlaydi.
+
+#### O'zgartirildi
+
+Mos tushuncha mavjud bo'lgan hamma joyda mahalliy kodlar SNOMED CT kodlari bilan almashtirildi, mahalliy kod tizimlariga esa qoldiq qoldirildi: [qindan ajralma turida](ValueSet-screening-vaginal-discharge-type-vs.html) rang va konsistensiyaning to'rtta qo'shma tavsifi, [siyish xususiyatida](ValueSet-screening-urination-characteristic-vs.html) bitta kod, [semizlik darajasida](ValueSet-screening-obesity-degree-vs.html) IV daraja va [umumiy holatda](ValueSet-screening-general-condition-vs.html) «nisbatan qoniqarli»; [qo'ltiq osti](ValueSet-screening-ultrasound-axillary-node-status-vs.html) va [intramammar limfa tugunlari holati](ValueSet-screening-ultrasound-intramammary-node-status-vs.html) endi butunlay SNOMED CT dan.
+
+Qiymatlar to'plamlari manba shakllarga yetishmagan javoblar bilan kengaytirildi: [ko'krak bezini paypaslash bahosi](ValueSet-screening-breast-palpation-assessment-vs.html) va [homiladorlik yakunida](ValueSet-screening-pregnancy-outcome-vs.html) bittadan SNOMED CT tushunchasi, [retromammar bo'shliq](CodeSystem-screening-ultrasound-retromammary-space-cs.html) va [teri osti yog' qatlamida](CodeSystem-screening-ultrasound-subcutaneous-fat-cs.html) «o'zgarmagan» va «yaqqol ifodalangan», [tana sohasi](CodeSystem-screening-body-site-cs.html) va [diagnostik muolajalar](CodeSystem-screening-diagnostic-procedure-cs.html) to'ldiruvchilarida oltita belgi.
+
+[Skrining laboratoriya tekshiruvlari](CodeSystem-screening-laboratory-cs.html) ning LOINC to'ldiruvchisi endi 2.82 o'rniga 2.82.0 versiyasini e'lon qiladi.
+
+Gepatit bilan og'rigan bemor misolidan fuqarolik olib tashlandi: UZ Core dagi `iso-3166-2-vs` `urn:iso:std:iso:3166` ga majburiy to'ldiruvchini e'lon qiladi, ammo uni hech bir FHIR paketi yetkazib bermaydi, shuning uchun validator bu to'plamga bog'langan har qanday misolni rad etadi. core dagi qiymatlar to'plami tuzatilgach, fuqarolik qaytariladi.
+
+Qo'llanma endi [UZ Core 0.9.0](https://dhp.uz/fhir/core/changelog.html) asosida yig'iladi. Uning mos kelmaydigan o'zgarishlaridan birortasi ham bu qo'llanmaga taalluqli emas.
+
+#### Mos kelmaydigan o'zgarishlar
+
+[Screening Composition](StructureDefinition-screening-composition.html), [DiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [DocumentReference](StructureDefinition-screening-document-reference.html), [Observation](StructureDefinition-screening-observation.html) va [ServiceRequest](StructureDefinition-screening-service-request.html) profillarida `meta` va `meta.source` endi 1..1 va Must Support, invariant esa resursni yaratgan tizimni ko'rsatuvchi `https://dhp.uz/fhir/source/screening` yoki `https://dhp.uz/fhir/source/dmed` qiymatini talab qiladi. Mavjud misollar uni qo'shishi shart.
+
+[Skrining rollari](CodeSystem-screening-roles-cs.html) dagi akusher-ginekolog kodi `his_centre_obstetrics_gynecology_obstetrician_gynecologist` dan `his_centre_obgyn_obstetrician_gynecologist` ga qisqartirildi.
+
+SNOMED CT qamrab olgan mahalliy kodlar olib tashlandi va ularni qayta ifodalash kerak: `scrn-0019-00003`, `scrn-0019-00005`, `scrn-0019-00006` va `scrn-0019-00008` (qindan ajralma), `scrn-0016-00001`, `scrn-0016-00002` va `scrn-0016-00003` (siyish), `scrn-0048-00001` va `scrn-0048-00002` (qo'ltiq osti limfa tugunlari holati). [Semizlik darajasi](ValueSet-screening-obesity-degree-vs.html) ham ruxsat etilgan SNOMED CT tushunchalarini `162864005` va `83911000119104` dan `443371000124107`, `443381000124105` va `819948005` ga o'zgartirdi.
+
+#### Hujjatlar
+
+[Skrining](cervical-breast-cancer-screening.html), [sil kasalligi](dhis-tuberculosis.html), [narkologiya](narcology.html), [psixiatriya](psychiatry.html) va [kasallik varaqasi](sick-leave.html) sahifalari endi resurs modeli diagrammasi bilan boshlanadi - uchala tilning har birida.
+
+«Shakllar» menyu bandi va sahifa sarlavhasi «So'rovnomalar» ga o'zgartirildi.
+
 ### Versiya 0.8.0
 
 #### Qo'shildi
