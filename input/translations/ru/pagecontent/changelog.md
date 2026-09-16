@@ -2,7 +2,7 @@
 
 #### Изменено
 
-[Опросник скрининга сахарного диабета](Questionnaire-DiabetesScreeningQuestionnaire.html) объявлял версию `1.0`; теперь он объявляет `1.0.0`, поскольку версия любого артефакта имеет вид `MAJOR.MINOR.PATCH`.
+[Опросник скрининга сахарного диабета](Questionnaire-DiabetesScreeningQuestionnaire.html) и [шаблон скринингового анкетирования](Questionnaire-screening-intake-template.html) объявляли версии `1.0` и `1.1`; теперь они объявляют `1.0.0` и `1.1.0`, поскольку версия любого артефакта имеет вид `MAJOR.MINOR.PATCH`.
 
 ### Версия 0.9.0
 

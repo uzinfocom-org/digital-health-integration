@@ -2,7 +2,7 @@
 
 #### Changed
 
-The [diabetes screening questionnaire](Questionnaire-DiabetesScreeningQuestionnaire.html) declared its version as `1.0`; it now declares `1.0.0`, as every artifact version is `MAJOR.MINOR.PATCH`.
+The [diabetes screening questionnaire](Questionnaire-DiabetesScreeningQuestionnaire.html) and the [screening intake template](Questionnaire-screening-intake-template.html) declared their versions as `1.0` and `1.1`; they now declare `1.0.0` and `1.1.0`, as every artifact version is `MAJOR.MINOR.PATCH`.
 
 ### Version 0.9.0
 

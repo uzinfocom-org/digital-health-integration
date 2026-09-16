@@ -2,7 +2,7 @@
 
 #### O'zgartirildi
 
-[Qandli diabet skriningi so'rovnomasi](Questionnaire-DiabetesScreeningQuestionnaire.html) versiyasini `1.0` deb e'lon qilardi; endi u `1.0.0` ni e'lon qiladi, chunki har qanday artefakt versiyasi `MAJOR.MINOR.PATCH` ko'rinishida bo'ladi.
+[Qandli diabet skriningi so'rovnomasi](Questionnaire-DiabetesScreeningQuestionnaire.html) va [skrining so'rovi shabloni](Questionnaire-screening-intake-template.html) versiyalarini `1.0` va `1.1` deb e'lon qilardi; endi ular `1.0.0` va `1.1.0` ni e'lon qiladi, chunki har qanday artefakt versiyasi `MAJOR.MINOR.PATCH` ko'rinishida bo'ladi.
 
 ### Versiya 0.9.0
 

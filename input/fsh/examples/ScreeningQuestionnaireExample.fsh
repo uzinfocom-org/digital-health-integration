@@ -10,7 +10,7 @@ Description: "Complaint questionnaire template for gynecologists"
 * identifier[0].value = "33333"
 * identifier[0].use = #usual
 
-* version = "1.1"
+* version = "1.1.0"
 * name = "Complaints"
 * title = "Complaints"
 * status = #active
