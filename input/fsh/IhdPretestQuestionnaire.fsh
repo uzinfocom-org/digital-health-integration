@@ -4,6 +4,8 @@ Usage: #definition
 Title: "IHD Pretest Probability Questionnaire"
 Description: "Pre-test probability of ischemic heart disease (ihd_screenings)"
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/IhdPretestQuestionnaire"
+* identifier[0].system = $screening-program-type-id
+* identifier[0].value = "171223006"
 * name = "IhdPretestQuestionnaire"
 * language = #uz
 * status = #draft

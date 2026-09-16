@@ -56,7 +56,10 @@ InstanceOf: UZCorePatient
 Description: "Gepatit profili uchun Tolibjon To'lanboev misolida namuna"
 Usage: #example
 
-* extension[citizenship].extension[code].valueCodeableConcept = urn:iso:std:iso:3166#UZ "Uzbekistan"
+// citizenship temporarily omitted: IG Publisher 2.3.4 wrongly fails the required supplement on
+// iso-3166-2-vs because urn:iso:std:iso:3166 is only available on the terminology server.
+// Restore once hapifhir/org.hl7.fhir.core#2636 is fixed in a publisher release:
+// * extension[citizenship].extension[code].valueCodeableConcept = urn:iso:std:iso:3166#UZ "Uzbekistan"
 * identifier[nationalId]
   * system = "https://dhp.uz/fhir/core/sid/pid/uz/ni"
   * value = "515050500505"

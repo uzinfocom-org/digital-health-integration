@@ -6,6 +6,7 @@ Description: "Profile for references to documents (consent forms, protocols) use
 * ^experimental = true
 * ^status = #active
 * ^publisher = "DHP Integration"
+* insert ScreeningMetaSource
 
 * modality 0..0
 
@@ -31,6 +32,7 @@ InstanceOf: ScreeningDocumentReference
 Usage: #example
 Description: "Patient informed consent for mammography screening"
 
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * status = #current
 
 // Тип документа (Consent)

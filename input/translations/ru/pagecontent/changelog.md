@@ -1,6 +1,48 @@
 ### В разработке
 
-(Пока без изменений)
+#### Изменено
+
+[Опросник скрининга сахарного диабета](Questionnaire-DiabetesScreeningQuestionnaire.html) и [шаблон скринингового анкетирования](Questionnaire-screening-intake-template.html) объявляли версии `1.0` и `1.1`; теперь они объявляют `1.0.0` и `1.1.0`, поскольку версия любого артефакта имеет вид `MAJOR.MINOR.PATCH`.
+
+### Версия 0.9.0
+
+#### Добавлено
+
+Девять скрининговых опросников, используемых DMed, опубликованы как определения: [риск сердечно-сосудистых заболеваний](Questionnaire-CVDRiskScreeningQuestionnaire.html), [цереброваскулярная патология](Questionnaire-CerebrovascularScreeningQuestionnaire.html), [сахарный диабет](Questionnaire-DiabetesScreeningQuestionnaire.html), [предтестовая вероятность ИБС](Questionnaire-IhdPretestQuestionnaire.html), [онкогематология](Questionnaire-OncohematologyScreeningQuestionnaire.html), [рак молочной железы](Questionnaire-BreastCancerScreeningQuestionnaire.html), [рак шейки матки](Questionnaire-CervicalCancerScreeningQuestionnaire.html), [гельминтозы](Questionnaire-HelminthScreeningQuestionnaire.html) и [фертильность](Questionnaire-FertilityQuestionnaire.html). Каждый подсчитывает ответы через `calculatedExpression` из SDC и относит сумму к категории риска - [рак молочной железы](CodeSystem-breast-cancer-risk-category-cs.html), [цереброваскулярная патология](CodeSystem-cerebrovascular-risk-category-cs.html), [сердечно-сосудистые заболевания](CodeSystem-cvd-risk-category-cs.html) и [сахарный диабет](CodeSystem-diabetes-risk-category-cs.html), - определяющей рекомендуемое наблюдение. Опросник сердечно-сосудистого риска и его категории риска перенесены сюда из UZ Core 0.9.0.
+
+Терминология ответов для них включает ответы цереброваскулярного опросника об [артериальном давлении](CodeSystem-cerebrovascular-blood-pressure-status-cs.html), [холестерине](CodeSystem-cerebrovascular-cholesterol-status-cs.html), [сахарном диабете](CodeSystem-cerebrovascular-diabetes-status-cs.html), [заболеваниях сердца](CodeSystem-cerebrovascular-heart-condition-cs.html), [семейном анамнезе](CodeSystem-cerebrovascular-family-history-cs.html), [курении](CodeSystem-cerebrovascular-smoking-status-cs.html), [алкоголе и стрессе](CodeSystem-cerebrovascular-alcohol-stress-level-cs.html) и [физической активности](CodeSystem-cerebrovascular-physical-activity-cs.html), [тип боли в груди при ИБС](CodeSystem-ihd-chest-pain-type-cs.html), а также наборы значений ответов о [сахарном диабете](ValueSet-screening-diabetes-vs.html), [употреблении табака](ValueSet-cvd-tobacco-use-vs.html), [раке шейки матки](ValueSet-cervical-cancer-screening-questionnaire-vs.html) и [фертильности](ValueSet-fertility-questionnaire-vs.html); последние три кодируются в SNOMED CT с узбекскими обозначениями.
+
+Ресурсы, относящиеся к одной скрининговой программе, теперь несут идентификатор из новой системы имён [типа скрининговой программы](NamingSystem-screening-program-type-identifier-system.html) со значением кода программы в SNOMED CT. Его записывают и DMed, и система скрининга ВПЧ на клинических и рабочих ресурсах, но не на Patient, Practitioner и PractitionerRole.
+
+Патоморфологическое заключение получило локальные коды на то, чего нет в SNOMED CT: подтипы [морфологии при гистологии шейки матки](CodeSystem-screening-cervical-histology-morphology-cs.html), типы материала при [биопсии шейки матки](CodeSystem-screening-cervical-material-type-cs.html) и [цитологии молочной железы](CodeSystem-screening-breast-cytology-material-type-cs.html), а также [типы хирургических вмешательств на молочной железе](CodeSystem-screening-breast-surgical-procedure-type-cs.html). [Гистологический тип опухоли молочной железы](ValueSet-screening-breast-histologic-type-vs.html) пополнился восемью подтипами.
+
+Скрининговые опросники теперь указывают интеграцию, из которой они происходят, в контексте использования `program` с кодом из [области интеграции](ValueSet-integration-area-vs.html): запрос `GET [base]/Questionnaire?context-type-value=program$https://terminology.dhp.uz/fhir/integrations/CodeSystem/integration-area-cs|screening` возвращает формы одной службы, а страница [опросников](forms.html) группирует список форм так же.
+
+#### Изменено
+
+Локальные коды заменены кодами SNOMED CT везде, где есть подходящее понятие, а локальным кодовым системам оставлен остаток: четыре составных описания цвета и консистенции в [типе выделений из влагалища](ValueSet-screening-vaginal-discharge-type-vs.html), один код в [характере мочеиспускания](ValueSet-screening-urination-characteristic-vs.html), IV степень в [степени ожирения](ValueSet-screening-obesity-degree-vs.html) и «относительно удовлетворительное» в [общем состоянии](ValueSet-screening-general-condition-vs.html); состояние [подмышечных](ValueSet-screening-ultrasound-axillary-node-status-vs.html) и [интрамаммарных лимфоузлов](ValueSet-screening-ultrasound-intramammary-node-status-vs.html) теперь целиком из SNOMED CT.
+
+Наборы значений расширены ответами, которых не хватало исходным формам: по одному понятию SNOMED CT в [оценке при пальпации молочной железы](ValueSet-screening-breast-palpation-assessment-vs.html) и [исходе беременности](ValueSet-screening-pregnancy-outcome-vs.html), «не изменено» и «выражена» в [ретромаммарном пространстве](CodeSystem-screening-ultrasound-retromammary-space-cs.html) и [подкожной жировой клетчатке](CodeSystem-screening-ultrasound-subcutaneous-fat-cs.html), шесть обозначений в дополнениях [участков тела](CodeSystem-screening-body-site-cs.html) и [диагностических процедур](CodeSystem-screening-diagnostic-procedure-cs.html).
+
+Дополнение LOINC [лабораторных исследований скрининга](CodeSystem-screening-laboratory-cs.html) теперь объявляет версию 2.82.0 вместо 2.82.
+
+Из примера пациента с гепатитом убрано гражданство: `iso-3166-2-vs` в UZ Core объявляет обязательное дополнение к `urn:iso:std:iso:3166`, которого нет ни в одном FHIR-пакете, поэтому валидатор отклоняет любой экземпляр, связанный с этим набором. Гражданство вернётся, когда набор значений в core будет исправлен.
+
+Руководство теперь собирается на [UZ Core 0.9.0](https://dhp.uz/fhir/core/changelog.html). Ни одно из его несовместимых изменений этого руководства не затрагивает.
+
+#### Несовместимые изменения
+
+`meta` и `meta.source` теперь 1..1 и Must Support в профилях [Screening Composition](StructureDefinition-screening-composition.html), [DiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [DocumentReference](StructureDefinition-screening-document-reference.html), [Observation](StructureDefinition-screening-observation.html) и [ServiceRequest](StructureDefinition-screening-service-request.html), а инвариант требует `https://dhp.uz/fhir/source/screening` или `https://dhp.uz/fhir/source/dmed`, указывающего создавшую ресурс систему. Существующие экземпляры должны его добавить.
+
+Код врача акушера-гинеколога в [ролях скрининга](CodeSystem-screening-roles-cs.html) сокращён с `his_centre_obstetrics_gynecology_obstetrician_gynecologist` до `his_centre_obgyn_obstetrician_gynecologist`.
+
+Локальные коды, покрытые SNOMED CT, удалены и должны быть переведены: `scrn-0019-00003`, `scrn-0019-00005`, `scrn-0019-00006` и `scrn-0019-00008` (выделения из влагалища), `scrn-0016-00001`, `scrn-0016-00002` и `scrn-0016-00003` (мочеиспускание), `scrn-0048-00001` и `scrn-0048-00002` (состояние подмышечных лимфоузлов). [Степень ожирения](ValueSet-screening-obesity-degree-vs.html) также сменила допустимые понятия SNOMED CT с `162864005` и `83911000119104` на `443371000124107`, `443381000124105` и `819948005`.
+
+#### Документация
+
+Страницы [скрининга](cervical-breast-cancer-screening.html), [туберкулёза](dhis-tuberculosis.html), [наркологии](narcology.html), [психиатрии](psychiatry.html) и [листа нетрудоспособности](sick-leave.html) теперь открываются диаграммой модели ресурсов - на каждом из трёх языков.
+
+Пункт меню и заголовок страницы «Формы» переименованы в «Опросники».
 
 ### Версия 0.8.0
 

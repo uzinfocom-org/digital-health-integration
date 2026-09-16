@@ -142,4 +142,4 @@ Description: "Example of a pathological distant metastasis (pM) category observa
 * focus = Reference(Condition/cancer-condition-example)
 * effectiveDateTime = "2026-09-15T10:00:00+05:00"
 * performer = Reference(PractitionerRole/practitionerrole-001)
-* valueCodeableConcept = cancer-cc-p-m-category-cs#cancer-0011-0002 
+* valueCodeableConcept = $sct#1352573004

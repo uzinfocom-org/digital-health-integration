@@ -331,6 +331,6 @@ Misollar: [practitioner-role-laborant](PractitionerRole-practitioner-role-labora
 | Rol | Misol kodi |
 | :--- | :--- |
 | Laborant | `screening-roles-cs#his_laboratory_laborant` |
-| Akusher-ginekolog | `screening-roles-cs#his_centre_obstetrics_gynecology_obstetrician_gynecologist` |
+| Akusher-ginekolog | `screening-roles-cs#his_centre_obgyn_obstetrician_gynecologist` |
 | Radiolog | `screening-roles-cs#his_ris_ragiologist_head` |
 | Patronaj hamshira | `screening-roles-cs#his_poliklinika_patronage_nurse` |

@@ -4,6 +4,10 @@ Usage: #definition
 Title: "Fertility Questionnaire Survey"
 Description: "Example Questionnaire for fertility history collection"
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/FertilityQuestionnaire"
+// NOTE: no SNOMED CT "fertility screening" concept found; closest active concept is
+// "Fertility care assessment" (408961002), which is an assessment, not strictly a screening — flag for review.
+* identifier[0].system = $screening-program-type-id
+* identifier[0].value = "408961002"
 * name = "FertilityQuestionnaire"
 * language = #uz
 * status = #active

@@ -1,6 +1,48 @@
 ### In development
 
-(No changes yet)
+#### Changed
+
+The [diabetes screening questionnaire](Questionnaire-DiabetesScreeningQuestionnaire.html) and the [screening intake template](Questionnaire-screening-intake-template.html) declared their versions as `1.0` and `1.1`; they now declare `1.0.0` and `1.1.0`, as every artifact version is `MAJOR.MINOR.PATCH`.
+
+### Version 0.9.0
+
+#### Added
+
+Nine screening questionnaires used by DMED are now published as definitions: [cardiovascular risk](Questionnaire-CVDRiskScreeningQuestionnaire.html), [cerebrovascular](Questionnaire-CerebrovascularScreeningQuestionnaire.html), [diabetes](Questionnaire-DiabetesScreeningQuestionnaire.html), [ischaemic heart disease pretest probability](Questionnaire-IhdPretestQuestionnaire.html), [oncohematology](Questionnaire-OncohematologyScreeningQuestionnaire.html), [breast cancer](Questionnaire-BreastCancerScreeningQuestionnaire.html), [cervical cancer](Questionnaire-CervicalCancerScreeningQuestionnaire.html), [helminthiasis](Questionnaire-HelminthScreeningQuestionnaire.html) and [fertility](Questionnaire-FertilityQuestionnaire.html). Each scores its answers with an SDC `calculatedExpression` into a risk category - [breast cancer](CodeSystem-breast-cancer-risk-category-cs.html), [cerebrovascular](CodeSystem-cerebrovascular-risk-category-cs.html), [cardiovascular](CodeSystem-cvd-risk-category-cs.html) and [diabetes](CodeSystem-diabetes-risk-category-cs.html) - that drives the recommended follow-up. The cardiovascular questionnaire and its risk categories moved here from UZ Core 0.9.0.
+
+Their answer terminology covers the cerebrovascular form's [blood pressure](CodeSystem-cerebrovascular-blood-pressure-status-cs.html), [cholesterol](CodeSystem-cerebrovascular-cholesterol-status-cs.html), [diabetes](CodeSystem-cerebrovascular-diabetes-status-cs.html), [heart condition](CodeSystem-cerebrovascular-heart-condition-cs.html), [family history](CodeSystem-cerebrovascular-family-history-cs.html), [smoking](CodeSystem-cerebrovascular-smoking-status-cs.html), [alcohol and stress](CodeSystem-cerebrovascular-alcohol-stress-level-cs.html) and [physical activity](CodeSystem-cerebrovascular-physical-activity-cs.html) answers, the [IHD chest pain type](CodeSystem-ihd-chest-pain-type-cs.html), and the [diabetes](ValueSet-screening-diabetes-vs.html), [tobacco use](ValueSet-cvd-tobacco-use-vs.html), [cervical cancer](ValueSet-cervical-cancer-screening-questionnaire-vs.html) and [fertility](ValueSet-fertility-questionnaire-vs.html) answer value sets, the last three SNOMED CT coded with Uzbek designations.
+
+Resources belonging to one screening programme now carry an identifier from the new [screening program type](NamingSystem-screening-program-type-identifier-system.html) naming system, valued with the programme's SNOMED CT code. DMED and the HPV screening system write it on clinical and workflow resources, not on Patient, Practitioner or PractitionerRole.
+
+Pathology reporting gained the local remainders SNOMED CT does not cover: [cervical histology morphology](CodeSystem-screening-cervical-histology-morphology-cs.html) subtypes, [cervical](CodeSystem-screening-cervical-material-type-cs.html) and [breast cytology](CodeSystem-screening-breast-cytology-material-type-cs.html) material types, and [breast surgical procedure types](CodeSystem-screening-breast-surgical-procedure-type-cs.html). [Breast histologic type](ValueSet-screening-breast-histologic-type-vs.html) grew by eight subtypes.
+
+The screening questionnaires now name the integration they come from, in a `program` use context coded from [integration area](ValueSet-integration-area-vs.html): `GET [base]/Questionnaire?context-type-value=program$https://terminology.dhp.uz/fhir/integrations/CodeSystem/integration-area-cs|screening` lists one service's forms, and the [questionnaires](forms.html) page groups its picker the same way.
+
+#### Changed
+
+Local codes have been replaced by SNOMED CT wherever a concept exists, leaving the local code systems with the remainder: four compound colour-and-consistency codes in [vaginal discharge type](ValueSet-screening-vaginal-discharge-type-vs.html), one in [urination characteristic](ValueSet-screening-urination-characteristic-vs.html), grade IV in [obesity degree](ValueSet-screening-obesity-degree-vs.html) and "relatively satisfactory" in [general condition](ValueSet-screening-general-condition-vs.html); [axillary](ValueSet-screening-ultrasound-axillary-node-status-vs.html) and [intramammary node status](ValueSet-screening-ultrasound-intramammary-node-status-vs.html) are now entirely SNOMED CT.
+
+Value sets widened for answers the source forms needed: a SNOMED CT concept each in [breast palpation assessment](ValueSet-screening-breast-palpation-assessment-vs.html) and [pregnancy outcome](ValueSet-screening-pregnancy-outcome-vs.html), "not changed" and "pronounced" in [retromammary space](CodeSystem-screening-ultrasound-retromammary-space-cs.html) and [subcutaneous fat](CodeSystem-screening-ultrasound-subcutaneous-fat-cs.html), and six designations in the [body site](CodeSystem-screening-body-site-cs.html) and [diagnostic procedure](CodeSystem-screening-diagnostic-procedure-cs.html) supplements.
+
+The [screening laboratory](CodeSystem-screening-laboratory-cs.html) LOINC supplement now declares version 2.82.0 rather than 2.82.
+
+Citizenship has been dropped from the hepatitis patient example: `iso-3166-2-vs` in UZ Core declares a required supplement on `urn:iso:std:iso:3166` that no FHIR package ships, so the validator fails any instance bound to it. It returns once the core value set is fixed.
+
+The guide is now built against [UZ Core 0.9.0](https://dhp.uz/fhir/core/changelog.html). None of its breaking changes reach this guide.
+
+#### Breaking changes
+
+`meta` and `meta.source` are now 1..1 and Must Support on [Screening Composition](StructureDefinition-screening-composition.html), [DiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [DocumentReference](StructureDefinition-screening-document-reference.html), [Observation](StructureDefinition-screening-observation.html) and [ServiceRequest](StructureDefinition-screening-service-request.html), with an invariant requiring `https://dhp.uz/fhir/source/screening` or `https://dhp.uz/fhir/source/dmed`, naming the creating system. Existing instances must add it.
+
+The obstetrician-gynecologist code in [screening roles](CodeSystem-screening-roles-cs.html) has been shortened from `his_centre_obstetrics_gynecology_obstetrician_gynecologist` to `his_centre_obgyn_obstetrician_gynecologist`.
+
+Local codes that SNOMED CT covers have been removed and must be restated: `scrn-0019-00003`, `scrn-0019-00005`, `scrn-0019-00006` and `scrn-0019-00008` (vaginal discharge), `scrn-0016-00001`, `scrn-0016-00002` and `scrn-0016-00003` (urination), and `scrn-0048-00001` and `scrn-0048-00002` (axillary node status). [Obesity degree](ValueSet-screening-obesity-degree-vs.html) also swapped `162864005` and `83911000119104` for `443371000124107`, `443381000124105` and `819948005`.
+
+#### Documentation
+
+The [screening](cervical-breast-cancer-screening.html), [tuberculosis](dhis-tuberculosis.html), [narcology](narcology.html), [psychiatry](psychiatry.html) and [sick leave](sick-leave.html) pages now open with a resource model diagram, in all three languages.
+
+The Forms menu entry and page title have been renamed to Questionnaires.
 
 ### Version 0.8.0
 

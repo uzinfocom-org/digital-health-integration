@@ -4,12 +4,14 @@ Usage: #definition
 Title: "Diabetes Screening Questionnaire"
 Description: "Example for Diabetes Screening Questionnaire"
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/DiabetesScreeningQuestionnaire"
+* identifier[0].system = $screening-program-type-id
+* identifier[0].value = "171183004"
 * name = "DiabetesScreeningQuestionnaire"
 * language = #uz
 * status = #active
 * publisher = "Uzinfocom"
 * subjectType = #Patient
-* version = "1.0"
+* version = "1.0.0"
 * title = "Qandli diabetni erta aniqlash skriningi"
   * extension[$translation-extension][+]
     * extension[lang].valueCode = #ru

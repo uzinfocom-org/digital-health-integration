@@ -4,6 +4,8 @@ Usage: #definition
 Title: "Helminth Disease Screening Questionnaire"
 Description: "Early detection questionnaire for helminthic diseases (children)"
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/HelminthScreeningQuestionnaire"
+* identifier[0].system = $screening-program-type-id
+* identifier[0].value = "171147008"
 * name = "HelminthScreeningQuestionnaire"
 * language = #uz
 * status = #draft

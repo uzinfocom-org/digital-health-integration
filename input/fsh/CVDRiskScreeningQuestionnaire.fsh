@@ -4,6 +4,8 @@ Usage: #definition
 Title: "CVD Risk Screening Questionnaire"
 Description: "Example for CVD Risk Screening Questionnaire"
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/CVDRiskScreeningQuestionnaire"
+* identifier[0].system = $screening-program-type-id
+* identifier[0].value = "300007000"
 * name = "CVDRiskScreeningQuestionnaire"
 * language = #uz
 * status = #draft
