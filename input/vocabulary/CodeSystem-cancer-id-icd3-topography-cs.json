@@ -1,0 +1,3307 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CancerIdICD3TopographyCS",
+  "id": "cancer-id-icd3-topography-cs",
+  "title": "Cancer ID Code System ICD-3 Topography",
+  "description": "Cancer ID code system for ICD-3 topography for Uzbekistan healthcare system",
+  "url": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-id-icd3-topography-cs",
+  "concept": [
+    {
+      "code": "1",
+      "display": "yuqori lab tashqi yuzasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "верхней губы наружн.поверхность"
+        }
+      ]
+    },
+    {
+      "code": "2",
+      "display": "pastki lab tashqi yuzasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "нижней губы наружн.поверхность"
+        }
+      ]
+    },
+    {
+      "code": "3",
+      "display": "lablar tashqi yuzasi qo'shimcha aniqlashtirishsiz (QA)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "губы наружн.поверхность БДУ"
+        }
+      ]
+    },
+    {
+      "code": "4",
+      "display": "yuqori lab shilliq qismi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "слизистая верхней губы"
+        }
+      ]
+    },
+    {
+      "code": "5",
+      "display": "pastki lab shilliq qismi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "слизистая нижней губы"
+        }
+      ]
+    },
+    {
+      "code": "6",
+      "display": "lablar shilliq qismi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "слизистая губы БДУ"
+        }
+      ]
+    },
+    {
+      "code": "7",
+      "display": "og'iz burchagi (lab bitishmalari)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "угол рта (спайка губ)"
+        }
+      ]
+    },
+    {
+      "code": "8",
+      "display": "labning bir nechta qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение нескольких смежных отделов губы"
+        }
+      ]
+    },
+    {
+      "code": "9",
+      "display": "lab QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "губа БДУ"
+        }
+      ]
+    },
+    {
+      "code": "10",
+      "display": "til asosi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "основание языка БДУ"
+        }
+      ]
+    },
+    {
+      "code": "11",
+      "display": "tilning yuqori yuzasi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "языка верхняя поверхность БДУ"
+        }
+      ]
+    },
+    {
+      "code": "12",
+      "display": "tilning yon yuzasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "языка боковая поверхность"
+        }
+      ]
+    },
+    {
+      "code": "13",
+      "display": "tilning pastki yuzasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "языка нижняя поверхность БДУ"
+        }
+      ]
+    },
+    {
+      "code": "14",
+      "display": "tilning old qismi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "языка передняя часть"
+        }
+      ]
+    },
+    {
+      "code": "15",
+      "display": "til bodomcha bezi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "миндалина язычная"
+        }
+      ]
+    },
+    {
+      "code": "16",
+      "display": "tilning chegeralangan sohasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "языка пограничная зона"
+        }
+      ]
+    },
+    {
+      "code": "17",
+      "display": "til QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "язык БДУ"
+        }
+      ]
+    },
+    {
+      "code": "18",
+      "display": "yuqori jag' milki",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "десна верхней челюсти"
+        }
+      ]
+    },
+    {
+      "code": "19",
+      "display": "pastki jag' milki",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "десна нижней челюсти"
+        }
+      ]
+    },
+    {
+      "code": "20",
+      "display": "milk QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "десна БДУ"
+        }
+      ]
+    },
+    {
+      "code": "21",
+      "display": "og'iz bo'shlig'i tubi old qismi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "дна полости рта передн.часть"
+        }
+      ]
+    },
+    {
+      "code": "22",
+      "display": "og'iz bo'shlig'i tubi yon qismi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "дна полости рта боков.отдел"
+        }
+      ]
+    },
+    {
+      "code": "23",
+      "display": "og'iz bo'shlig'i tubi kuplab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов дна полости рта"
+        }
+      ]
+    },
+    {
+      "code": "24",
+      "display": "og'iz bo'shlig'i tubi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "дно полости рта БДУ"
+        }
+      ]
+    },
+    {
+      "code": "25",
+      "display": "qattiq tanglay",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "небо твердое"
+        }
+      ]
+    },
+    {
+      "code": "26",
+      "display": "yumshoq tanglay QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "небо мягкое БДУ"
+        }
+      ]
+    },
+    {
+      "code": "27",
+      "display": "tanglay tilchasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "язычок небный"
+        }
+      ]
+    },
+    {
+      "code": "28",
+      "display": "tanglayning ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов неба"
+        }
+      ]
+    },
+    {
+      "code": "29",
+      "display": "tanglay QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "небо БДУ"
+        }
+      ]
+    },
+    {
+      "code": "30",
+      "display": "yonoq shilliq qavati",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "слизистая оболочка щеки"
+        }
+      ]
+    },
+    {
+      "code": "31",
+      "display": "og'iz dahliz",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "преддверие рта"
+        }
+      ]
+    },
+    {
+      "code": "32",
+      "display": "og'iz bo'shlig'i retromolyar sohasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "ретромолярная область полости рта"
+        }
+      ]
+    },
+    {
+      "code": "33",
+      "display": "og'iz bo'shlig'i ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов полости рта"
+        }
+      ]
+    },
+    {
+      "code": "34",
+      "display": "og'iz bo'shlig'i QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "полость рта БДУ"
+        }
+      ]
+    },
+    {
+      "code": "35",
+      "display": "quloq oldi so'lak bezi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "околоушная слюнная железа"
+        }
+      ]
+    },
+    {
+      "code": "36",
+      "display": "jag' osti so'lak bezi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поднижнечелюстная слюнная железа"
+        }
+      ]
+    },
+    {
+      "code": "37",
+      "display": "til osti so'lak bezi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "подъязычная слюнная железа"
+        }
+      ]
+    },
+    {
+      "code": "38",
+      "display": "ko'plab katta so'lak bezlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение нескольких смежных больших слюнных желез"
+        }
+      ]
+    },
+    {
+      "code": "39",
+      "display": "katta so'lak bezi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "большая слюнная железа"
+        }
+      ]
+    },
+    {
+      "code": "40",
+      "display": "bodomchasimon chuqurcha",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "ямка миндаликовая"
+        }
+      ]
+    },
+    {
+      "code": "41",
+      "display": "tanglay bodomcha bezi yoyi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "дужка небной миндалины"
+        }
+      ]
+    },
+    {
+      "code": "42",
+      "display": "tanglay bodomcha bezining ko'plab qismlarining zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных частей небной миндалины"
+        }
+      ]
+    },
+    {
+      "code": "43",
+      "display": "bodomsimon bez QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "миндалина БДУ"
+        }
+      ]
+    },
+    {
+      "code": "44",
+      "display": "hiqildoq usti chuqurchasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "надгортанника ямка"
+        }
+      ]
+    },
+    {
+      "code": "45",
+      "display": "hiqildoq usti old yuzasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "надгортанника передняя поверхность"
+        }
+      ]
+    },
+    {
+      "code": "46",
+      "display": "og'iz-halqum yon devori",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "ротоглотки боковая стенка"
+        }
+      ]
+    },
+    {
+      "code": "47",
+      "display": "og'iz-halqum orqa devori",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "ротоглотки задняя стенка"
+        }
+      ]
+    },
+    {
+      "code": "48",
+      "display": "jabrasmon yoriq",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "щель жаберная"
+        }
+      ]
+    },
+    {
+      "code": "49",
+      "display": "ohiz-halqum ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов ротоглотки"
+        }
+      ]
+    },
+    {
+      "code": "50",
+      "display": "og'iz-halqum QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "ротоглотка БДУ"
+        }
+      ]
+    },
+    {
+      "code": "51",
+      "display": "burun-halqum yuqori devori",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "носоглотки верхняя стенка"
+        }
+      ]
+    },
+    {
+      "code": "52",
+      "display": "burun-halqum orqa devori",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "носоглотки задняя стенка"
+        }
+      ]
+    },
+    {
+      "code": "53",
+      "display": "burun-halqum yon devori",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "носоглотки боковая стенка"
+        }
+      ]
+    },
+    {
+      "code": "54",
+      "display": "burun-halqum old devori",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "носоглотки передняя стенка"
+        }
+      ]
+    },
+    {
+      "code": "55",
+      "display": "burun-halqum ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов носоглотки"
+        }
+      ]
+    },
+    {
+      "code": "56",
+      "display": "burun-halqum QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "носоглотка БДУ"
+        }
+      ]
+    },
+    {
+      "code": "57",
+      "display": "hiqildoq-halqumning noksimon cho'ntagi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "грушевидный карман гортаноглотки"
+        }
+      ]
+    },
+    {
+      "code": "58",
+      "display": "hiqildoq-halqumning uzuksimon ort sohasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "заперстневидная область гортаноглотки"
+        }
+      ]
+    },
+    {
+      "code": "59",
+      "display": "hiqildoq usti cho'michsimon pastki halqum burmasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "складка нижнеглоточная черпалонадгортанная"
+        }
+      ]
+    },
+    {
+      "code": "60",
+      "display": "hiqildoq-halqum orqa devori",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "гортаноглотки задняя стенка"
+        }
+      ]
+    },
+    {
+      "code": "61",
+      "display": "hiqildoq-halqum ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных частей гортаноглотки"
+        }
+      ]
+    },
+    {
+      "code": "62",
+      "display": "hiqildoq-halqum QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "гортаноглотка БДУ"
+        }
+      ]
+    },
+    {
+      "code": "63",
+      "display": "halqum QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "глотка БДУ"
+        }
+      ]
+    },
+    {
+      "code": "64",
+      "display": "Valdeyer halqum xalqasi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "глоточное кольцо Вальдейера БДУ"
+        }
+      ]
+    },
+    {
+      "code": "65",
+      "display": "lablar, og'iz bo'shlig'i va halqumning zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "пораж-е отделов губы, полости рта и глотки"
+        }
+      ]
+    },
+    {
+      "code": "66",
+      "display": "qizilo'ngach bo'yin qismi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "пищевода шейный отдел"
+        }
+      ]
+    },
+    {
+      "code": "67",
+      "display": "qizilo'ngach ko'krak qismi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "пищевода грудной отдел"
+        }
+      ]
+    },
+    {
+      "code": "68",
+      "display": "qizilo'ngach qorin qismi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "пищевода брюшной отдел"
+        }
+      ]
+    },
+    {
+      "code": "69",
+      "display": "qizilo'ngach yuqori uchligi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "пищевода верхняя треть"
+        }
+      ]
+    },
+    {
+      "code": "70",
+      "display": "qizilo'ngach o'rta uchligi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "пищевода средняя треть"
+        }
+      ]
+    },
+    {
+      "code": "71",
+      "display": "qizilo'ngach pastki uchligi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "пищевода нижняя треть"
+        }
+      ]
+    },
+    {
+      "code": "72",
+      "display": "qizilo'ngach ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов пищевода"
+        }
+      ]
+    },
+    {
+      "code": "73",
+      "display": "oshqozon kardiyasi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кардия желудка БДУ"
+        }
+      ]
+    },
+    {
+      "code": "74",
+      "display": "oshqozon tubi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "желудка дно"
+        }
+      ]
+    },
+    {
+      "code": "75",
+      "display": "oshqozon tanasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "желудка тело"
+        }
+      ]
+    },
+    {
+      "code": "76",
+      "display": "oshqozonning 12 barmoq ichakka o'tadigan qismi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "желудка привратниковая часть"
+        }
+      ]
+    },
+    {
+      "code": "77",
+      "display": "qorin bo'yni",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "привратник"
+        }
+      ]
+    },
+    {
+      "code": "78",
+      "display": "oshqozon kichik egriligi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "желудка малая кривизна"
+        }
+      ]
+    },
+    {
+      "code": "79",
+      "display": "oshqozon katta egriligi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "желудка большая кривизна"
+        }
+      ]
+    },
+    {
+      "code": "80",
+      "display": "oshqozon ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "пораж-е неск-ких смежных отделов желудка"
+        }
+      ]
+    },
+    {
+      "code": "81",
+      "display": "oshqozon QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "желудок БДУ"
+        }
+      ]
+    },
+    {
+      "code": "82",
+      "display": "12 barmoq ichak",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кишка двенадцатиперстная"
+        }
+      ]
+    },
+    {
+      "code": "83",
+      "display": "och ichak",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кишка тощая"
+        }
+      ]
+    },
+    {
+      "code": "84",
+      "display": "yonbosh ichak",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кишка подвздошная"
+        }
+      ]
+    },
+    {
+      "code": "85",
+      "display": "Mekkel divertikuli",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "дивертикул Меккеля"
+        }
+      ]
+    },
+    {
+      "code": "86",
+      "display": "ingichka ichak ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов тонкого кишечника"
+        }
+      ]
+    },
+    {
+      "code": "87",
+      "display": "ingichka ichak",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "тонкий кишечник"
+        }
+      ]
+    },
+    {
+      "code": "88",
+      "display": "ko'r ichak",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "слепая кишка"
+        }
+      ]
+    },
+    {
+      "code": "89",
+      "display": "chuvalchangsimon o'simta",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "аппендикс"
+        }
+      ]
+    },
+    {
+      "code": "90",
+      "display": "ko'tariluvchi chambar ichak",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "восходящая ободочная кишка"
+        }
+      ]
+    },
+    {
+      "code": "91",
+      "display": "yo'g'on ichak o'ng (jigar) burilishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "ободочной кишки правый (печеночный) изгиб"
+        }
+      ]
+    },
+    {
+      "code": "92",
+      "display": "ko'ndalang chambar ichak",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поперечная ободочная кишка"
+        }
+      ]
+    },
+    {
+      "code": "93",
+      "display": "yo'g'on ichak chap (taloq) burilishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "ободочной кишки левый (селезеночный) изгиб"
+        }
+      ]
+    },
+    {
+      "code": "94",
+      "display": "tushuvchi chambar ichak",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "нисходящая ободочная кишка"
+        }
+      ]
+    },
+    {
+      "code": "95",
+      "display": "sigmasimon ichak",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "сигмовидная кишка"
+        }
+      ]
+    },
+    {
+      "code": "96",
+      "display": "yo'g'on ichak ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов ободочной кишки"
+        }
+      ]
+    },
+    {
+      "code": "97",
+      "display": "yo'g'on ichak QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "ободочная кишка БДУ"
+        }
+      ]
+    },
+    {
+      "code": "98",
+      "display": "rektosigmoid birikma",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "ректосигмоидное соединение"
+        }
+      ]
+    },
+    {
+      "code": "99",
+      "display": "to'g'ri ichak",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "прямая кишка"
+        }
+      ]
+    },
+    {
+      "code": "100",
+      "display": "anus",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "анус"
+        }
+      ]
+    },
+    {
+      "code": "101",
+      "display": "anal kanal",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "анальный канал"
+        }
+      ]
+    },
+    {
+      "code": "102",
+      "display": "kloakogen soha",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "клоакогенная зона"
+        }
+      ]
+    },
+    {
+      "code": "103",
+      "display": "to'g'ri ichak va anusning ko'plab qismlarining zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение нескольких отделов прямой кишки и ануса"
+        }
+      ]
+    },
+    {
+      "code": "104",
+      "display": "jigar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "печень"
+        }
+      ]
+    },
+    {
+      "code": "105",
+      "display": "jigar ichi o't yo'li",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "внутрипеченочный желчный проток"
+        }
+      ]
+    },
+    {
+      "code": "106",
+      "display": "o't pufagi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "желчный пузырь"
+        }
+      ]
+    },
+    {
+      "code": "107",
+      "display": "jigardan tashqari o't yo'li",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "внепеченочный желчный проток"
+        }
+      ]
+    },
+    {
+      "code": "108",
+      "display": "jigar-oshqozon osti bezi Fater ampulasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "ампула Фатера печеночно-поджелудочная"
+        }
+      ]
+    },
+    {
+      "code": "109",
+      "display": "o't yo'llari ko'plab qismlarining zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "пораж-е неск-х отделов желчевыводящих путей"
+        }
+      ]
+    },
+    {
+      "code": "110",
+      "display": "jigar yo'llari QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "желчные пути БДУ"
+        }
+      ]
+    },
+    {
+      "code": "111",
+      "display": "oshqozon osti bezi boshchasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поджелудочной железы головка"
+        }
+      ]
+    },
+    {
+      "code": "112",
+      "display": "oshqozon osti bezi boshchasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поджелудочной железы тело"
+        }
+      ]
+    },
+    {
+      "code": "113",
+      "display": "oshqozon osti bezi dumi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поджелудочной железы хвост"
+        }
+      ]
+    },
+    {
+      "code": "114",
+      "display": "oshqozon osti bezi yo'li",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поджелудочной железы проток"
+        }
+      ]
+    },
+    {
+      "code": "115",
+      "display": "oshqozon osti bezi Langergans orolchalari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "островки Лангерганса поджелуд.железы"
+        }
+      ]
+    },
+    {
+      "code": "116",
+      "display": "oshqozon osti bezining boshqa qismlari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поджелудочной железы др.части"
+        }
+      ]
+    },
+    {
+      "code": "117",
+      "display": "oshqozon osti bezi ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов поджелудочной ж-зы"
+        }
+      ]
+    },
+    {
+      "code": "118",
+      "display": "oshqozon osti bezi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поджелудочная железа БДУ"
+        }
+      ]
+    },
+    {
+      "code": "119",
+      "display": "ichaklar QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кишечник БДУ"
+        }
+      ]
+    },
+    {
+      "code": "120",
+      "display": "hazm qilish tizimi ko'plab qismlarining zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких отделов пищеварительной системы"
+        }
+      ]
+    },
+    {
+      "code": "121",
+      "display": "oshqozon-ichak tizimi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "желудочно-кишечный тракт БДУ"
+        }
+      ]
+    },
+    {
+      "code": "122",
+      "display": "burun bo'shlig'i",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "полость носа"
+        }
+      ]
+    },
+    {
+      "code": "123",
+      "display": "o'rta quloq",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "среднее ухо"
+        }
+      ]
+    },
+    {
+      "code": "124",
+      "display": "yuqori jag' bo'shlig'i",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "пазуха верхнечелюстная"
+        }
+      ]
+    },
+    {
+      "code": "125",
+      "display": "g'alvirsimon bo'shliq",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "пазуха решетчатая"
+        }
+      ]
+    },
+    {
+      "code": "126",
+      "display": "peshona bo'shlig'i",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "пазуха лобная"
+        }
+      ]
+    },
+    {
+      "code": "127",
+      "display": "ponasimon bo'shliq",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "пазуха клиновидная"
+        }
+      ]
+    },
+    {
+      "code": "128",
+      "display": "qo'shimcha (yondosh) bo'shliqlarning qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных придаточных пазух"
+        }
+      ]
+    },
+    {
+      "code": "129",
+      "display": "qo'shimcha (yondosh) bo'shliqlar QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "придаточная пазуха БДУ"
+        }
+      ]
+    },
+    {
+      "code": "130",
+      "display": "ovoz yorig'i (boylam sohasi)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "голосовая щель"
+        }
+      ]
+    },
+    {
+      "code": "131",
+      "display": "hiqildoqning boylam usti sohasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "гортань над голосовой щелью"
+        }
+      ]
+    },
+    {
+      "code": "132",
+      "display": "hiqildoqning boylam osti sohasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "гортань под голосовой щелью"
+        }
+      ]
+    },
+    {
+      "code": "133",
+      "display": "hiqildoq tog'aylari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "гортани хрящ"
+        }
+      ]
+    },
+    {
+      "code": "134",
+      "display": "hiqildoq ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов гортани"
+        }
+      ]
+    },
+    {
+      "code": "135",
+      "display": "hiqildoq QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "гортань БДУ"
+        }
+      ]
+    },
+    {
+      "code": "136",
+      "display": "traxeya",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "трахея"
+        }
+      ]
+    },
+    {
+      "code": "137",
+      "display": "bosh bronx",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "главный бронх"
+        }
+      ]
+    },
+    {
+      "code": "138",
+      "display": "o'pkaning yuqori bo'lagi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "легкого верхняя доля"
+        }
+      ]
+    },
+    {
+      "code": "139",
+      "display": "o'pkaning o'rta bo'lagi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "легкого средняя доля"
+        }
+      ]
+    },
+    {
+      "code": "140",
+      "display": "o'pkaning pastki bo'lagi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "легкого нижняя доля"
+        }
+      ]
+    },
+    {
+      "code": "141",
+      "display": "o'pka va bronxning ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение нескольких смежных отделов легкого или бронха"
+        }
+      ]
+    },
+    {
+      "code": "142",
+      "display": "o'pka QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "легкое БДУ"
+        }
+      ]
+    },
+    {
+      "code": "143",
+      "display": "ayrisimon bez",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "тимус"
+        }
+      ]
+    },
+    {
+      "code": "144",
+      "display": "yurak",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "сердце"
+        }
+      ]
+    },
+    {
+      "code": "145",
+      "display": "ko'ks old sohasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "средостение переднее"
+        }
+      ]
+    },
+    {
+      "code": "146",
+      "display": "ko'ks orqa sohasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "средостение заднее"
+        }
+      ]
+    },
+    {
+      "code": "147",
+      "display": "ko'ks oralig'i QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "средостение БДУ"
+        }
+      ]
+    },
+    {
+      "code": "148",
+      "display": "plevra QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "плевра БДУ"
+        }
+      ]
+    },
+    {
+      "code": "149",
+      "display": "yurak, ko'ks oralig'i va plevraning ko'plab qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "смежное множеств.пораж-е сердца, средостения и плевры"
+        }
+      ]
+    },
+    {
+      "code": "150",
+      "display": "yuqori nafas yo'llari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "верхние дыхательные пути"
+        }
+      ]
+    },
+    {
+      "code": "151",
+      "display": "nafas tizimi ko'plab qismlarining zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение нескольких отделов дыхательной системы"
+        }
+      ]
+    },
+    {
+      "code": "152",
+      "display": "nafas tizimi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "дыхательная система БДУ"
+        }
+      ]
+    },
+    {
+      "code": "153",
+      "display": "qo'lning uzun va kurak suyagi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "длинная кость верх.конечности, лопатка"
+        }
+      ]
+    },
+    {
+      "code": "154",
+      "display": "qo'lning kalta suyagi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "короткая кость верх.конечности"
+        }
+      ]
+    },
+    {
+      "code": "155",
+      "display": "oyoqning uzun suyagi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "длинная кость нижн.конечности"
+        }
+      ]
+    },
+    {
+      "code": "156",
+      "display": "oyoqning kalta suyagi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "короткая кость нижн.конечности"
+        }
+      ]
+    },
+    {
+      "code": "157",
+      "display": "oyoo'-qo'llarning ko'plab zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "множеств.поражение костей конечности"
+        }
+      ]
+    },
+    {
+      "code": "158",
+      "display": "oyoq-qo'llar suyaklari QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кость конечности БДУ"
+        }
+      ]
+    },
+    {
+      "code": "159",
+      "display": "bosh va yuz suyaklari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кость черепа и лица"
+        }
+      ]
+    },
+    {
+      "code": "160",
+      "display": "pastki jag' suyagi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кость нижней челюсти"
+        }
+      ]
+    },
+    {
+      "code": "161",
+      "display": "umurtqa",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "позвоночник"
+        }
+      ]
+    },
+    {
+      "code": "162",
+      "display": "qovurg'a, to'sh, o'mrov",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "ребро, грудина, ключица"
+        }
+      ]
+    },
+    {
+      "code": "163",
+      "display": "chanoq, dumg'aza va dum suyaklari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "тазовая кость, крестец, копчик"
+        }
+      ]
+    },
+    {
+      "code": "164",
+      "display": "suyak, bo'g'im, bo'g'im tog'ayining ma'lum chegaradan chiqib zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "пораж-е костей, суставов, суставных хрящей, выходящее за пределы одной лок-ции"
+        }
+      ]
+    },
+    {
+      "code": "165",
+      "display": "suyak QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кость БДУ"
+        }
+      ]
+    },
+    {
+      "code": "166",
+      "display": "qon",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кровь"
+        }
+      ]
+    },
+    {
+      "code": "167",
+      "display": "suyak ko'migi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "костный мозг"
+        }
+      ]
+    },
+    {
+      "code": "168",
+      "display": "taloq",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "селезенка"
+        }
+      ]
+    },
+    {
+      "code": "169",
+      "display": "retikuloendotelial tizim QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "ретикулоэндотелиальная система БДУ"
+        }
+      ]
+    },
+    {
+      "code": "170",
+      "display": "qon ishlab chiqaruvchi tizim QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кроветворная система БДУ"
+        }
+      ]
+    },
+    {
+      "code": "171",
+      "display": "lab terisi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кожа губы БДУ"
+        }
+      ]
+    },
+    {
+      "code": "172",
+      "display": "qovoq terisi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кожа века"
+        }
+      ]
+    },
+    {
+      "code": "173",
+      "display": "tashqi quloq",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "наружное ухо"
+        }
+      ]
+    },
+    {
+      "code": "174",
+      "display": "yuz terisi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кожа лица"
+        }
+      ]
+    },
+    {
+      "code": "175",
+      "display": "boshning sochli qismi va bo'yin terisi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кожа волосистой части головы и шеи"
+        }
+      ]
+    },
+    {
+      "code": "176",
+      "display": "tana terisi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кожа туловища"
+        }
+      ]
+    },
+    {
+      "code": "177",
+      "display": "qo'l va elka terisi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кожа верхней конечности, плеча"
+        }
+      ]
+    },
+    {
+      "code": "178",
+      "display": "oyoq va son terisi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кожа нижней конечности, бедра"
+        }
+      ]
+    },
+    {
+      "code": "179",
+      "display": "terining ko'plab zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "множественное поражение кожи"
+        }
+      ]
+    },
+    {
+      "code": "180",
+      "display": "teri QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кожа БДУ"
+        }
+      ]
+    },
+    {
+      "code": "181",
+      "display": "bosh, yuz va bo'yinning periferik nervlari va vegetativ AT",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "периф.нервы и вегетат.НС головы, лица и шеи (за искл-ем НС орбиты)"
+        }
+      ]
+    },
+    {
+      "code": "182",
+      "display": "qo'l va elka kamarining periferik nervlari va vegetativ AT",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "периф.нервы и вегет.НС верхн.кон-ти и надплечья"
+        }
+      ]
+    },
+    {
+      "code": "183",
+      "display": "oyoq va sonningperiferik nervlari va vegetativ AT",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "периф.нервы и вегет.НС нижней кон-ти, бедра"
+        }
+      ]
+    },
+    {
+      "code": "184",
+      "display": "ko'krak qafasining periferik nervlari va vegetativ AT",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "периф.нервы и вегет.НС грудной клетки"
+        }
+      ]
+    },
+    {
+      "code": "185",
+      "display": "qorinning periferik nervlari va vegetativ AT",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "периф.нервы и вегет.НС живота"
+        }
+      ]
+    },
+    {
+      "code": "186",
+      "display": "chanoqning periferik nervlari va vegetativ AT",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "периф.нервы и вегет.НС таза"
+        }
+      ]
+    },
+    {
+      "code": "187",
+      "display": "orqa (tana orqa qismi) ning periferik nervlari va vegetativ AT",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "периф.нервы и вегет.НС спины"
+        }
+      ]
+    },
+    {
+      "code": "188",
+      "display": "periferik nervlar va vegetativ ATning ko'plab zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "множественное поражение периферических нервов и вегетативной НС"
+        }
+      ]
+    },
+    {
+      "code": "189",
+      "display": "periferik nervlar va vegetativ ATQA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "периферические нервы и вегетативная НС БДУ"
+        }
+      ]
+    },
+    {
+      "code": "190",
+      "display": "qorin orti bo'shlig'i",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "забрюшинное пространство"
+        }
+      ]
+    },
+    {
+      "code": "191",
+      "display": "qorin parda, aniq sohasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "брюшина, уточн.часть"
+        }
+      ]
+    },
+    {
+      "code": "192",
+      "display": "qorin parda, noaniq sohasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "брюшина, неуточн.часть"
+        }
+      ]
+    },
+    {
+      "code": "193",
+      "display": "qorin orti bo'shlig'i va qorin pardaning ko'plab qismlarining zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-х отделов забрюшинного пространства и брюшины"
+        }
+      ]
+    },
+    {
+      "code": "194",
+      "display": "bosh, yuz, bo'yinning yumshoq to'qimasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мягкие ткани головы, лица, шеи"
+        }
+      ]
+    },
+    {
+      "code": "195",
+      "display": "qo'l, elkaning biriktiruvchi va yumshoq to'qimasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "соед.и мягкие ткани верхней конечности, плеча"
+        }
+      ]
+    },
+    {
+      "code": "196",
+      "display": "oyoq va sonning biriktiruvchi va yumshoq to'qimasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "соед.и мягкие ткани нижней конечности и бедра"
+        }
+      ]
+    },
+    {
+      "code": "197",
+      "display": "ko'krak devori yumshoq to'qimasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мягкие ткани грудной стенки"
+        }
+      ]
+    },
+    {
+      "code": "198",
+      "display": "qorin devori yumshoq to'qimasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мягкие ткани брюшной стенки"
+        }
+      ]
+    },
+    {
+      "code": "199",
+      "display": "chanoqning biriktiruvchi va yumshoq to'qimasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "соед.и мягкие ткани таза"
+        }
+      ]
+    },
+    {
+      "code": "200",
+      "display": "orqa (tana orqa qismi) ning yumshoq to'qimasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мягкие ткани спины"
+        }
+      ]
+    },
+    {
+      "code": "201",
+      "display": "tananing ko'plab qismlari yumshoq to'qimasining zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "пораж-е мягких тканей неск-ких областей тела"
+        }
+      ]
+    },
+    {
+      "code": "202",
+      "display": "biriktiruvchi va yumshoq to'qima QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "соединительные и мягкие ткани БДУ"
+        }
+      ]
+    },
+    {
+      "code": "203",
+      "display": "sut bezi, so'rg'ich va so'rg'ich atrofi (areola)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "молочной железы сосок и околососковый кружок"
+        }
+      ]
+    },
+    {
+      "code": "204",
+      "display": "sut bezi markaziy qismi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "молочной железы центральная часть"
+        }
+      ]
+    },
+    {
+      "code": "205",
+      "display": "sut bezi yuqori-ichki kvadranti",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "молочной железы верхне-внутренний квадрант"
+        }
+      ]
+    },
+    {
+      "code": "206",
+      "display": "sut bezi pastki-ichki kvadranti",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "молочной железы нижне-внутренний квадрант"
+        }
+      ]
+    },
+    {
+      "code": "207",
+      "display": "sut bezi yuqori-tashqi kvadranti",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "молочной железы верхне-наружный квадрант"
+        }
+      ]
+    },
+    {
+      "code": "208",
+      "display": "sut bezi pastki-tashqi kvadranti",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "молочной железы нижне-наружный квадрант"
+        }
+      ]
+    },
+    {
+      "code": "209",
+      "display": "sut bezi qo'ltiq osti o'simtasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "молочной железы подмышечный отросток"
+        }
+      ]
+    },
+    {
+      "code": "210",
+      "display": "sut bezining ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поpаж-е неск-ких смежных отделов молочной ж-зы"
+        }
+      ]
+    },
+    {
+      "code": "211",
+      "display": "sut bezi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "молочная железа БДУ"
+        }
+      ]
+    },
+    {
+      "code": "212",
+      "display": "katta uyatli lab",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "большая срамная губа"
+        }
+      ]
+    },
+    {
+      "code": "213",
+      "display": "kichik uyatli lab",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "малая срамная губа"
+        }
+      ]
+    },
+    {
+      "code": "214",
+      "display": "klitor",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "клитор"
+        }
+      ]
+    },
+    {
+      "code": "215",
+      "display": "qin dahlizining ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов вульвы"
+        }
+      ]
+    },
+    {
+      "code": "216",
+      "display": "qin dahlizi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "вульва БДУ"
+        }
+      ]
+    },
+    {
+      "code": "217",
+      "display": "qin QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "влагалище БДУ"
+        }
+      ]
+    },
+    {
+      "code": "218",
+      "display": "bachadon bo'ynining ichki qismi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "шейки матки внутренняя часть"
+        }
+      ]
+    },
+    {
+      "code": "219",
+      "display": "bachadon bo'ynining tashqi qismi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "шейки матки наружная часть"
+        }
+      ]
+    },
+    {
+      "code": "220",
+      "display": "bachadon bo'yniningko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов шейки матки"
+        }
+      ]
+    },
+    {
+      "code": "221",
+      "display": "bachadon bo'yni",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "шейка матки"
+        }
+      ]
+    },
+    {
+      "code": "222",
+      "display": "bachadon bo'yinchasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "матки перешеек"
+        }
+      ]
+    },
+    {
+      "code": "223",
+      "display": "endometriy",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "эндометрий"
+        }
+      ]
+    },
+    {
+      "code": "224",
+      "display": "miometriy",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "миометрий"
+        }
+      ]
+    },
+    {
+      "code": "225",
+      "display": "bachadon tubi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "матки дно"
+        }
+      ]
+    },
+    {
+      "code": "226",
+      "display": "bachadon tanasining ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов тела матки"
+        }
+      ]
+    },
+    {
+      "code": "227",
+      "display": "bachadon tanasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "тело матки"
+        }
+      ]
+    },
+    {
+      "code": "228",
+      "display": "bachadon QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "матка БДУ"
+        }
+      ]
+    },
+    {
+      "code": "229",
+      "display": "tuxumdon",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "яичник"
+        }
+      ]
+    },
+    {
+      "code": "230",
+      "display": "fallopiev nayi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "труба фаллопиева"
+        }
+      ]
+    },
+    {
+      "code": "231",
+      "display": "bachadon keng boylami",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "матки широкая связка"
+        }
+      ]
+    },
+    {
+      "code": "232",
+      "display": "bachadon yumaloq boylami",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "матки круглая связка"
+        }
+      ]
+    },
+    {
+      "code": "233",
+      "display": "parametriy",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "параметрий"
+        }
+      ]
+    },
+    {
+      "code": "234",
+      "display": "bachadon ortiqlari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "придаток матки"
+        }
+      ]
+    },
+    {
+      "code": "235",
+      "display": "ayollar jinsiy a'zolarining boshqa sohalari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "др.отделы женских половых органов"
+        }
+      ]
+    },
+    {
+      "code": "236",
+      "display": "ayollar ko'plab jinsiy a'zolarining zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение нескольких женских половых органов"
+        }
+      ]
+    },
+    {
+      "code": "237",
+      "display": "ayollar jinsiy a'zolari QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "женские половые органы БДУ"
+        }
+      ]
+    },
+    {
+      "code": "238",
+      "display": "plasenta (yo'ldosh)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "плацента"
+        }
+      ]
+    },
+    {
+      "code": "239",
+      "display": "jinsiy olat cheka kertmagi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "полового члена крайняя плоть"
+        }
+      ]
+    },
+    {
+      "code": "240",
+      "display": "jinsiy olat boshchasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "полового члена головка"
+        }
+      ]
+    },
+    {
+      "code": "241",
+      "display": "jinsiy olat tanasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "полового члена тело"
+        }
+      ]
+    },
+    {
+      "code": "242",
+      "display": "jinsiy olat ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов полового члена"
+        }
+      ]
+    },
+    {
+      "code": "243",
+      "display": "jinsiy olat QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "половой член БДУ"
+        }
+      ]
+    },
+    {
+      "code": "244",
+      "display": "prostata bezi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "предстательная железа"
+        }
+      ]
+    },
+    {
+      "code": "245",
+      "display": "yorg'oqqa tushmagan moyak",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "яичко неопустившееся"
+        }
+      ]
+    },
+    {
+      "code": "246",
+      "display": "yorg'oqqa tushgan moyak",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "яичко опустившееся"
+        }
+      ]
+    },
+    {
+      "code": "247",
+      "display": "moyak QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "яичко БДУ"
+        }
+      ]
+    },
+    {
+      "code": "248",
+      "display": "moyakning ortiqlari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "придаток яичка"
+        }
+      ]
+    },
+    {
+      "code": "249",
+      "display": "urug' tizimchasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "семенной канатик"
+        }
+      ]
+    },
+    {
+      "code": "250",
+      "display": "yorg'oq QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мошонка БДУ"
+        }
+      ]
+    },
+    {
+      "code": "251",
+      "display": "erkaklar jinsiy a'zolarining boshqa sohalari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "др.отделы мужских половых органов"
+        }
+      ]
+    },
+    {
+      "code": "252",
+      "display": "erkaklar ko'plab jinsiy a'zolarining zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение несколькихмужских половых органов"
+        }
+      ]
+    },
+    {
+      "code": "253",
+      "display": "erkaklar jinsiy a'zolari QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мужские половые органы БДУ"
+        }
+      ]
+    },
+    {
+      "code": "254",
+      "display": "buyrak",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "почка"
+        }
+      ]
+    },
+    {
+      "code": "255",
+      "display": "buyrak jomi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "почечная лоханка"
+        }
+      ]
+    },
+    {
+      "code": "256",
+      "display": "siydik nayi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мочеточник"
+        }
+      ]
+    },
+    {
+      "code": "257",
+      "display": "siydik pufagi uchburchagi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мочевого пузыря треугольник"
+        }
+      ]
+    },
+    {
+      "code": "258",
+      "display": "siydik pufagi gumbazi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мочевого пузыря купол"
+        }
+      ]
+    },
+    {
+      "code": "259",
+      "display": "siydik pufagi yon devori",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мочевого пузыря боковая стенка"
+        }
+      ]
+    },
+    {
+      "code": "260",
+      "display": "siydik pufagi old devori",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мочевого пузыря передняя стенка"
+        }
+      ]
+    },
+    {
+      "code": "261",
+      "display": "siydik pufagi orqa devori",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мочевого пузыря задняя стенка"
+        }
+      ]
+    },
+    {
+      "code": "262",
+      "display": "siydik pufagi bo'yinchasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мочевого пузыря шейка"
+        }
+      ]
+    },
+    {
+      "code": "263",
+      "display": "siydik nayi teshigi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "устье мочеточника"
+        }
+      ]
+    },
+    {
+      "code": "264",
+      "display": "uraxus (birlamchi siydik yo'li)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "урахус (проток первичный мочевой)"
+        }
+      ]
+    },
+    {
+      "code": "265",
+      "display": "siydik pufagining ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов мочевого пузыря"
+        }
+      ]
+    },
+    {
+      "code": "266",
+      "display": "siydik pufagi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мочевой пузырь БДУ"
+        }
+      ]
+    },
+    {
+      "code": "267",
+      "display": "siydik kanali",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "канал мочеиспускательный"
+        }
+      ]
+    },
+    {
+      "code": "268",
+      "display": "parauretral bez",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "железа парауретральная"
+        }
+      ]
+    },
+    {
+      "code": "269",
+      "display": "ko'plab ayirish a'zolarining zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение нескольких мочевых органов"
+        }
+      ]
+    },
+    {
+      "code": "270",
+      "display": "ayirish a'zolari QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мочевыделительная система БДУ"
+        }
+      ]
+    },
+    {
+      "code": "271",
+      "display": "kon'yunktiva",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "конъюнктива"
+        }
+      ]
+    },
+    {
+      "code": "272",
+      "display": "shox parda QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "роговица БДУ"
+        }
+      ]
+    },
+    {
+      "code": "273",
+      "display": "to'r parda QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "сетчатка"
+        }
+      ]
+    },
+    {
+      "code": "274",
+      "display": "ko'z tomirli pardasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "глаза сосудистая оболочка"
+        }
+      ]
+    },
+    {
+      "code": "275",
+      "display": "ko'z kipriksimon tanasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "глаза ресничное тело"
+        }
+      ]
+    },
+    {
+      "code": "276",
+      "display": "yosh bezi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "слезная железа БДУ"
+        }
+      ]
+    },
+    {
+      "code": "277",
+      "display": "ko'z kosasi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "глазница БДУ"
+        }
+      ]
+    },
+    {
+      "code": "278",
+      "display": "ko'zning ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов глаза"
+        }
+      ]
+    },
+    {
+      "code": "279",
+      "display": "ko'z QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "глаз БДУ"
+        }
+      ]
+    },
+    {
+      "code": "280",
+      "display": "bosh miya pardasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "оболочка головного мозга"
+        }
+      ]
+    },
+    {
+      "code": "281",
+      "display": "orqa miya pardasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "оболочка спинного мозга"
+        }
+      ]
+    },
+    {
+      "code": "282",
+      "display": "miya pardasi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "оболочка мозга БДУ"
+        }
+      ]
+    },
+    {
+      "code": "283",
+      "display": "katta miya (bo'lma va qorinchalardan tashqari)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "большой мозг (кроме долей и желудочков)"
+        }
+      ]
+    },
+    {
+      "code": "284",
+      "display": "miyaning peshona bo'lmasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "лобная доля мозга"
+        }
+      ]
+    },
+    {
+      "code": "285",
+      "display": "miyaning chakka bo'lmasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "височная доля мозга"
+        }
+      ]
+    },
+    {
+      "code": "286",
+      "display": "miyaning tepa bo'lmasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "теменная доля мозга"
+        }
+      ]
+    },
+    {
+      "code": "287",
+      "display": "miyaning ensa bo'lmasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "затылочная доля мозга"
+        }
+      ]
+    },
+    {
+      "code": "288",
+      "display": "miya qorinchalari QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "желудочек мозга БДУ"
+        }
+      ]
+    },
+    {
+      "code": "289",
+      "display": "miyacha",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мозжечок"
+        }
+      ]
+    },
+    {
+      "code": "290",
+      "display": "bosh miya ustuni",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "ствол головного мозга"
+        }
+      ]
+    },
+    {
+      "code": "291",
+      "display": "bosh miyaning ko'plab qismlarining qo'shma zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких смежных отделов головного мозга"
+        }
+      ]
+    },
+    {
+      "code": "292",
+      "display": "bosh miya QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "головной мозг БДУ"
+        }
+      ]
+    },
+    {
+      "code": "293",
+      "display": "orqa miya",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "спинной мозг"
+        }
+      ]
+    },
+    {
+      "code": "294",
+      "display": "ot dumi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "конский хвост"
+        }
+      ]
+    },
+    {
+      "code": "295",
+      "display": "hid sezish nervi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "обонятельный нерв"
+        }
+      ]
+    },
+    {
+      "code": "296",
+      "display": "ko'ruv nervi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "зрительный нерв"
+        }
+      ]
+    },
+    {
+      "code": "297",
+      "display": "eshitish nervi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "слуховой нерв"
+        }
+      ]
+    },
+    {
+      "code": "298",
+      "display": "bosh miya nervi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "черепномозговой нерв"
+        }
+      ]
+    },
+    {
+      "code": "299",
+      "display": "miya va MATning ko'plab qismlarining zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "поражение неск-ких отделов мозга и ЦНС"
+        }
+      ]
+    },
+    {
+      "code": "300",
+      "display": "MAT QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "ЦНС БДУ"
+        }
+      ]
+    },
+    {
+      "code": "301",
+      "display": "qalqonsimon bez",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "щитовидная железа"
+        }
+      ]
+    },
+    {
+      "code": "302",
+      "display": "buyrak usti bezi po'stlog'i",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "кора надпочечника"
+        }
+      ]
+    },
+    {
+      "code": "303",
+      "display": "buyrak usti bezi miya (mag'iz) qavati",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "мозговое вещество надпочечника"
+        }
+      ]
+    },
+    {
+      "code": "304",
+      "display": "burak usti bezi QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "надпочечник БДУ"
+        }
+      ]
+    },
+    {
+      "code": "305",
+      "display": "qalqon oldi bezi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "паращитовидная железа"
+        }
+      ]
+    },
+    {
+      "code": "306",
+      "display": "gipofiz",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "гипофиз"
+        }
+      ]
+    },
+    {
+      "code": "307",
+      "display": "kriniofaringeal yo'l",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "краниофарингеальный проток"
+        }
+      ]
+    },
+    {
+      "code": "308",
+      "display": "g'uddasimon bez",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "шишковидная железа"
+        }
+      ]
+    },
+    {
+      "code": "309",
+      "display": "karotid glomus",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "каротидный гломус"
+        }
+      ]
+    },
+    {
+      "code": "310",
+      "display": "aortal glomus va boshqa paragangliylar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "аортальный гломус и др.параганглии"
+        }
+      ]
+    },
+    {
+      "code": "311",
+      "display": "endokrin bezlarining ko'plab zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "эндокринных желез множественное поражение"
+        }
+      ]
+    },
+    {
+      "code": "312",
+      "display": "endokrin bez QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "эндокринная железа БДУ"
+        }
+      ]
+    },
+    {
+      "code": "313",
+      "display": "bosh, yuz, bo'yin QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "голова, лицо, шея БДУ"
+        }
+      ]
+    },
+    {
+      "code": "314",
+      "display": "ko'krak bo'shlig'i QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "грудная полость БДУ"
+        }
+      ]
+    },
+    {
+      "code": "315",
+      "display": "qorin QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "живот БДУ"
+        }
+      ]
+    },
+    {
+      "code": "316",
+      "display": "chanoq QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "таз БДУ"
+        }
+      ]
+    },
+    {
+      "code": "317",
+      "display": "qo'llar QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "верхняя конечность БДУ"
+        }
+      ]
+    },
+    {
+      "code": "318",
+      "display": "oyoqlar QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "нижняя конечность БДУ"
+        }
+      ]
+    },
+    {
+      "code": "319",
+      "display": "noaniq lokalizatsiyali boshqa o'smalar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "др.неуточненные локализации"
+        }
+      ]
+    },
+    {
+      "code": "320",
+      "display": "aniqlanmagan a'zolarning ko'plab zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "множественное поражение неуточненных органов"
+        }
+      ]
+    },
+    {
+      "code": "321",
+      "display": "bosh va bo'yin l.t",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "л.у головы и шеи"
+        }
+      ]
+    },
+    {
+      "code": "322",
+      "display": "ko'krak ichi l.t",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "внутригрудные л.у"
+        }
+      ]
+    },
+    {
+      "code": "323",
+      "display": "qorin ichi l.t",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "внутрибрюшные л.у"
+        }
+      ]
+    },
+    {
+      "code": "324",
+      "display": "ko'ltiq osti va qo'llar l.t",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "л.у подмышки и верхней конечности"
+        }
+      ]
+    },
+    {
+      "code": "325",
+      "display": "chov va oyoqlar l.t",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "л.у паха и нижней конености"
+        }
+      ]
+    },
+    {
+      "code": "326",
+      "display": "chanoq ichi l.t",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "внутритазовые л.у"
+        }
+      ]
+    },
+    {
+      "code": "327",
+      "display": "limfa tugunlarning ko'plab zararlanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "множественное поражение лимфоузлов"
+        }
+      ]
+    },
+    {
+      "code": "328",
+      "display": "limfa tugun QA",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "лимфоузел БДУ"
+        }
+      ]
+    },
+    {
+      "code": "329",
+      "display": "noaniq lokalizatsiyali",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "неизвестная локализация"
+        }
+      ]
+    }
+  ],
+  "caseSensitive": true,
+  "hierarchyMeaning": "is-a",
+  "language": "uz",
+  "experimental": true,
+  "count": 329
+}
