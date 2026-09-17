@@ -116,3 +116,14 @@ Description: "Date of birth of the related person"
 * value[x] 1..1 MS
 
 * value[x] only date
+
+Extension: MainProcedure
+Id: main-procedure
+Title: "Main procedure flag"
+Description: "Indicates whether this Procedure is the main/primary operation among several recorded for the same encounter on Form 066, as opposed to Procedure.category, which describes the kind of procedure rather than its precedence."
+* ^status = #draft
+* ^experimental = true
+* ^context.type = #element
+* ^context.expression = "Procedure"
+* value[x] 1..1
+* value[x] only boolean

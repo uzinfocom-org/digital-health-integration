@@ -666,12 +666,13 @@ Usage: #inline
 
 
 Instance: procedure-surgery-066
-InstanceOf: Procedure
+InstanceOf: Procedure066
 Usage: #inline
 * language = #en
 * status = #completed
 * category = $sct#387713003 "Surgical procedure (procedure)"
 * code = $sct#387713003 "Surgical procedure (procedure)"
+* extension[mainProcedure].valueBoolean = true
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
 * occurrenceDateTime = "2026-01-08T11:30:00+05:00"
@@ -786,8 +787,7 @@ InstanceOf: UZCoreRelatedPerson
 Usage: #inline
 * language = #en
 * patient = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
-// * relationship[0].coding[0] = $v3-RoleCode#MTH "mother"
-* relationship[0].coding[0] = $v3-RoleClass#NOK
+* relationship[0].coding[0] = $v3-RoleCode#MTH "mother"
 * identifier[nationalId]
   * value = "39876543210987"
 * name[0]
@@ -830,14 +830,19 @@ Usage: #inline
 
 
 Instance: provenance-signature-066
-InstanceOf: Provenance
+InstanceOf: UZCoreProvenance
 Usage: #inline
 * language = #en
 * target = Reference(Bundle/example-form-066-hospital-discharge)
+* occurredDateTime = "2026-01-15T14:45:00+05:00"
 * recorded = "2026-01-15T14:45:00+05:00"
-* agent.type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#attester "Attester"
+* activity = $v3-DocumentCompletion#LA
+* patient = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
+* agent.type = $provenance-participant-type#attester "Attester"
 * agent.who = Reference(urn:uuid:06600008-1111-2222-3333-444444444444) "Rasulov B.B."
-* signature.type = urn:iso-astm:E1762-95:2013#1.2.840.10065.1.12.1.1 "Author's Signature"
+* entity.role = $provenance-entity-role#source
+* entity.what = Reference(Bundle/example-form-066-hospital-discharge)
+* signature.type[nationalType] = signature-type-cs#soliqAuth
 * signature.when = "2026-01-15T14:45:00+05:00"
 * signature.who = Reference(urn:uuid:06600008-1111-2222-3333-444444444444) "Rasulov B.B."
 * signature.sigFormat = #application/pdf
