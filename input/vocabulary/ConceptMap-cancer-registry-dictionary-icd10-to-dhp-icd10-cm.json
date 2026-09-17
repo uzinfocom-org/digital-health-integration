@@ -1,9 +1,9 @@
 {
   "resourceType": "ConceptMap",
-  "id": "cancer-registry-icd10-to-dhp-icd10-cm",
-  "url": "https://terminology.dhp.uz/fhir/integrations/ConceptMap/cancer-registry-icd10-to-dhp-icd10-cm",
-  "title": "Cancer Registry ICD-10 to DHP ICD-10-CM",
-  "description": "ConceptMap defining the mapping between ICD-10 codes provided by the Cancer Registry and the corresponding ICD-10-CM codes used by DHP.",
+  "id": "cancer-registry-dictionary-icd10-to-dhp-icd10-cm",
+  "url": "https://terminology.dhp.uz/fhir/integrations/ConceptMap/cancer-registry-dictionary-icd10-to-dhp-icd10-cm",
+  "title": "Cancer Registry Dictionary ICD-10 to DHP ICD-10",
+  "description": "ConceptMap defining the mapping between Cancer Registry internal diagnosis identifiers and the corresponding ICD-10 codes used by DHP.",
   "group": [
     {
       "element": [
@@ -134824,13 +134824,13 @@
           "display": "Hayot faoliyatini qo‘llab turuvchi aniqlanmagan mexanizm va moslamaga bog‘liqlilik"
         }
       ],
-      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-id-icd-10-cs",
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-icd-10-cs",
       "target": "http://hl7.org/fhir/sid/icd-10"
     }
   ],
-  "name": "CancerRegistryICD10ToDHPICD10CM",
+  "name": "CancerRegistryDictionaryICD10ToDHPICD10CM",
   "status": "draft",
   "experimental": false,
   "publisher": "Uzinfocom",
-  "sourceScopeCanonical": "https://terminology.dhp.uz/fhir/integrations/ValueSet/cancer-id-icd10-vs"
+  "sourceScopeCanonical": "https://terminology.dhp.uz/fhir/integrations/ValueSet/cancer-registry-dictionary-icd-10-vs"
 }

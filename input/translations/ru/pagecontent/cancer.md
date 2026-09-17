@@ -168,9 +168,9 @@
 
 | Исходные данные | ConceptMap | Целевая терминология |
 | :--- | :--- | :--- |
-| Статус регистра и связанные локальные идентификаторы | [Статус Онкологического регистра в статус DHP](ConceptMap-cancer-registry-status-to-dhp-status-cm.html) | CodeSystem DHP и Cancer |
-| Идентификатор ICD-10 регистра | [ICD-10 Онкологического регистра в ICD-10 DHP](ConceptMap-cancer-registry-icd10-to-dhp-icd10-cm.html) | ICD-10 |
-| Идентификатор топографии ICD-O-3 регистра | [Топография ICD-O-3 Онкологического регистра в ICD-O-3 DHP](ConceptMap-cancer-registry-icd3-topography-to-dhp-icd3-topography-cm.html) | ICD-O-3 |
+| Статус регистра и связанные локальные идентификаторы | [Статус Онкологического регистра в статус DHP](ConceptMap-cancer-registry-dictionary-to-dhp-status-cm.html) | CodeSystem DHP и Cancer |
+| Идентификатор ICD-10 регистра | [ICD-10 Онкологического регистра в ICD-10 DHP](ConceptMap-cancer-registry-dictionary-icd10-to-dhp-icd10-cm.html) | ICD-10 |
+| Идентификатор топографии ICD-O-3 регистра | [Топография ICD-O-3 Онкологического регистра в ICD-O-3 DHP](ConceptMap-cancer-registry-dict-icdo3-topography-to-dhp-icdo3-cm.html) | ICD-O-3 |
 
 ### Вспомогательные ресурсы
 

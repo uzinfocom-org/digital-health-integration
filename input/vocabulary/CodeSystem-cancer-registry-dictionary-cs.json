@@ -2,11 +2,11 @@
   "resourceType": "CodeSystem",
   "status": "draft",
   "content": "complete",
-  "name": "CancerIdCS",
-  "id": "cancer-id-cs",
-  "title": "Cancer Registry Patient ID",
-  "description": "Code system for identifiers assigned by the Cancer Registry to patients with cancer.",
-  "url": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-id-cs",
+  "name": "CancerRegistryDictionaryCS",
+  "id": "cancer-registry-dictionary-cs",
+  "title": "Cancer Registry Dictionary",
+  "description": "Dictionary code system used by the Uzbekistan Cancer Registry.",
+  "url": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
   "concept": [
     {
       "code": "29",
@@ -38,7 +38,7 @@
     },
     {
       "code": "31",
-      "display": "Ko‘chib ketgan",
+      "display": "Ko'chib ketgan",
       "designation": [
         {
           "language": "ru",
@@ -80,7 +80,7 @@
     },
     {
       "code": "357",
-      "display": "Spetsifik o‘sma markerlari",
+      "display": "Spetsifik o'sma markerlari",
       "designation": [
         {
           "language": "ru",
@@ -136,7 +136,7 @@
     },
     {
       "code": "354",
-      "display": "Faqat o‘lim haqidagi guvohnoma (DCO)",
+      "display": "Faqat o'lim haqidagi guvohnoma (DCO)",
       "designation": [
         {
           "language": "ru",
@@ -192,7 +192,7 @@
     },
     {
       "code": "506",
-      "display": "Boshqa tibbiyot muassasasining kasallik tarixidan (ambulator kartasidan) ko‘chirma",
+      "display": "Boshqa tibbiyot muassasasining kasallik tarixidan (ambulator kartasidan) ko'chirma",
       "designation": [
         {
           "language": "ru",
@@ -276,7 +276,7 @@
     },
     {
       "code": "510",
-      "display": "O‘lim haqidagi guvohnoma",
+      "display": "O'lim haqidagi guvohnoma",
       "designation": [
         {
           "language": "ru",
@@ -318,7 +318,7 @@
     },
     {
       "code": "513",
-      "display": "Xususiy tibbiyot muassasasining kasallik tarixidan (ambulator kartasidan) ko‘chirma",
+      "display": "Xususiy tibbiyot muassasasining kasallik tarixidan (ambulator kartasidan) ko'chirma",
       "designation": [
         {
           "language": "ru",
@@ -346,7 +346,7 @@
     },
     {
       "code": "337",
-      "display": "O‘ng tomonda",
+      "display": "O'ng tomonda",
       "designation": [
         {
           "language": "ru",
@@ -416,7 +416,7 @@
     },
     {
       "code": "348",
-      "display": "Boshqa turdagi profilaktik ko‘riklarda aniqlangan",
+      "display": "Boshqa turdagi profilaktik ko'riklarda aniqlangan",
       "designation": [
         {
           "language": "ru",
@@ -430,7 +430,7 @@
     },
     {
       "code": "349",
-      "display": "Parallel profilaktik ko‘rik vaqtida aniqlangan",
+      "display": "Parallel profilaktik ko'rik vaqtida aniqlangan",
       "designation": [
         {
           "language": "ru",
@@ -486,7 +486,7 @@
     },
     {
       "code": "353",
-      "display": "Otopsiyadan keyin vafotidan so‘ng hisobga olingan",
+      "display": "Otopsiyadan keyin vafotidan so'ng hisobga olingan",
       "designation": [
         {
           "language": "ru",
@@ -1998,7 +1998,7 @@
     },
     {
       "code": "860",
-      "display": "O‘pka (plevra)",
+      "display": "O'pka (plevra)",
       "designation": [
         {
           "language": "ru",
@@ -2040,7 +2040,7 @@
     },
     {
       "code": "863",
-      "display": "Yumshoq to‘qimalar",
+      "display": "Yumshoq to'qimalar",
       "designation": [
         {
           "language": "ru",
@@ -2222,7 +2222,7 @@
     },
     {
       "code": "651",
-      "display": "O‘tkazilmagan",
+      "display": "O'tkazilmagan",
       "designation": [
         {
           "language": "ru",
@@ -2334,7 +2334,7 @@
     },
     {
       "code": "659",
-      "display": "Boshqa kasalliklar bo‘yicha",
+      "display": "Boshqa kasalliklar bo'yicha",
       "designation": [
         {
           "language": "ru",
@@ -2348,7 +2348,7 @@
     },
     {
       "code": "660",
-      "display": "Asoratlar bo‘yicha",
+      "display": "Asoratlar bo'yicha",
       "designation": [
         {
           "language": "ru",
@@ -2362,7 +2362,7 @@
     },
     {
       "code": "661",
-      "display": "O‘tkazilmagan",
+      "display": "O'tkazilmagan",
       "designation": [
         {
           "language": "ru",
@@ -2418,7 +2418,7 @@
     },
     {
       "code": "665",
-      "display": "Qo‘shma nur terapiyasi: kontakt + masofaviy nur terapiyasi",
+      "display": "Qo'shma nur terapiyasi: kontakt + masofaviy nur terapiyasi",
       "designation": [
         {
           "language": "ru",
@@ -2432,7 +2432,7 @@
     },
     {
       "code": "666",
-      "display": "Qo‘shma nur terapiyasi: kontakt + rentgenoterapiya",
+      "display": "Qo'shma nur terapiyasi: kontakt + rentgenoterapiya",
       "designation": [
         {
           "language": "ru",
@@ -2488,7 +2488,7 @@
     },
     {
       "code": "670",
-      "display": "Jarrohlik davolash + qo‘shma nur terapiyasi",
+      "display": "Jarrohlik davolash + qo'shma nur terapiyasi",
       "designation": [
         {
           "language": "ru",
@@ -2614,7 +2614,7 @@
     },
     {
       "code": "679",
-      "display": "Qo‘shma nur terapiyasi: masofaviy nur terapiyasi + rentgenoterapiya",
+      "display": "Qo'shma nur terapiyasi: masofaviy nur terapiyasi + rentgenoterapiya",
       "designation": [
         {
           "language": "ru",
@@ -2642,7 +2642,7 @@
     },
     {
       "code": "364",
-      "display": "G2 (O‘rtacha darajada differensiallashgan)",
+      "display": "G2 (O'rtacha darajada differensiallashgan)",
       "designation": [
         {
           "language": "ru",
@@ -2768,7 +2768,7 @@
     },
     {
       "code": "373",
-      "display": "GX (Darajasini aniqlab bo‘lmaydi)",
+      "display": "GX (Darajasini aniqlab bo'lmaydi)",
       "designation": [
         {
           "language": "ru",

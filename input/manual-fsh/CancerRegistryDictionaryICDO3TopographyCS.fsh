@@ -1,8 +1,8 @@
-CodeSystem: CancerIdICD3TopographyCS
-Id: cancer-id-icd3-topography-cs
-Title: "Cancer ID Code System ICD-3 Topography"
-Description: "Cancer ID code system for ICD-3 topography for Uzbekistan healthcare system"
-* insert OriginalCodeSystemDraft(cancer-id-icd3-topography-cs)
+CodeSystem: CancerRegistryDictionaryICDO3TopographyCS
+Id: cancer-registry-dictionary-icd-o-3-topography-cs
+Title: "Cancer Registry Dictionary ICD-O-3 Topography"
+Description: "Registry-internal topography identifiers used by the Uzbekistan Cancer Registry and mapped to core ICD-O-3 codes through a ConceptMap."
+* insert OriginalCodeSystemDraft(cancer-registry-dictionary-icd-o-3-topography-cs)
 
 * #1 "yuqori lab tashqi yuzasi"
   * ^designation[0].language = #ru

@@ -2,11 +2,11 @@
   "resourceType": "CodeSystem",
   "status": "draft",
   "content": "complete",
-  "name": "CancerIdICD10CS",
-  "id": "cancer-id-icd-10-cs",
-  "title": "Cancer Registry ICD-10 translation in Uzbek, Russian and English",
-  "description": "ICD-10 code system used by the Uzbekistan Cancer Registry",
-  "url": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-id-icd-10-cs",
+  "name": "CancerRegistryDictionaryICD10CS",
+  "id": "cancer-registry-dictionary-icd-10-cs",
+  "title": "Cancer Registry Dictionary ICD-10",
+  "description": "Registry-internal diagnosis identifiers used by the Uzbekistan Cancer Registry and mapped to core ICD-10 codes through a ConceptMap.",
+  "url": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-icd-10-cs",
   "concept": [
     {
       "code": "1",

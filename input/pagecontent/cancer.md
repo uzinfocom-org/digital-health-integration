@@ -168,9 +168,9 @@ Use these ConceptMaps when incoming registry data contains numeric Cancer Regist
 
 | Source data | ConceptMap | Target terminology |
 | :--- | :--- | :--- |
-| Registry status and related local identifiers | [Cancer Registry Status to DHP Status](ConceptMap-cancer-registry-status-to-dhp-status-cm.html) | DHP and Cancer CodeSystems |
-| Registry ICD-10 identifier | [Cancer Registry ICD-10 to DHP ICD-10](ConceptMap-cancer-registry-icd10-to-dhp-icd10-cm.html) | ICD-10 |
-| Registry ICD-O-3 topography identifier | [Cancer Registry ICD-O-3 Topography to DHP ICD-O-3 Topography](ConceptMap-cancer-registry-icd3-topography-to-dhp-icd3-topography-cm.html) | ICD-O-3 |
+| Registry status and related local identifiers | [Cancer Registry Status to DHP Status](ConceptMap-cancer-registry-dictionary-to-dhp-status-cm.html) | DHP and Cancer CodeSystems |
+| Registry ICD-10 identifier | [Cancer Registry ICD-10 to DHP ICD-10](ConceptMap-cancer-registry-dictionary-icd10-to-dhp-icd10-cm.html) | ICD-10 |
+| Registry ICD-O-3 topography identifier | [Cancer Registry ICD-O-3 Topography to DHP ICD-O-3 Topography](ConceptMap-cancer-registry-dict-icdo3-topography-to-dhp-icdo3-cm.html) | ICD-O-3 |
 
 ### Supporting resources
 

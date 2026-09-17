@@ -70,3 +70,5 @@ Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screeni
 Unable to expand included value set 'http://hl7.org/fhir/ValueSet/body-site': The value set 'http://hl7.org/fhir/ValueSet/body-site|5.0.0' expansion has too many codes to produce (>1000)%
 
 Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/cancer-body-location-vs is a proper subset of http://hl7.org/fhir/ValueSet/body-site|5.0.0 - value set is too large to check
+
+The Target Code System http://snomed.info/sct is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed

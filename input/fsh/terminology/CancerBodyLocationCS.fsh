@@ -31,7 +31,7 @@ Description: "SNOMED CT supplement containing Uzbek and Russian designations for
   * ^designation[0].language = #ru
   * ^designation[=].value = "Легкое (плевра)"
   * ^designation[+].language = #uz
-  * ^designation[=].value = "O‘pka (plevra)"
+  * ^designation[=].value = "O'pka (plevra)"
 
 * #12738006 "Brain structure"
   * ^designation[0].language = #ru
@@ -49,7 +49,7 @@ Description: "SNOMED CT supplement containing Uzbek and Russian designations for
   * ^designation[0].language = #ru
   * ^designation[=].value = "Мягкие ткани"
   * ^designation[+].language = #uz
-  * ^designation[=].value = "Yumshoq to‘qimalar"
+  * ^designation[=].value = "Yumshoq to'qimalar"
 
 * #23451007 "Adrenal structure"
   * ^designation[0].language = #ru

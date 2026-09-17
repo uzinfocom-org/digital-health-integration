@@ -1,17 +1,17 @@
-Instance: cancer-registry-icd10-to-dhp-icd10-cm
+Instance: cancer-registry-dictionary-icd10-to-dhp-icd10-cm
 InstanceOf: ConceptMap
 Usage: #definition
-Title: "Cancer Registry ICD-10 to DHP ICD-10-CM"
-Description: "ConceptMap defining the mapping between ICD-10 codes provided by the Cancer Registry and the corresponding ICD-10-CM codes used by DHP."
-* name = "CancerRegistryICD10ToDHPICD10CM"
-* url = "https://terminology.dhp.uz/fhir/integrations/ConceptMap/cancer-registry-icd10-to-dhp-icd10-cm"
+Title: "Cancer Registry Dictionary ICD-10 to DHP ICD-10"
+Description: "ConceptMap defining the mapping between Cancer Registry internal diagnosis identifiers and the corresponding ICD-10 codes used by DHP."
+* name = "CancerRegistryDictionaryICD10ToDHPICD10CM"
+* url = "https://terminology.dhp.uz/fhir/integrations/ConceptMap/cancer-registry-dictionary-icd10-to-dhp-icd10-cm"
 * status = #draft
 * experimental = false
 * publisher = "Uzinfocom"
 
-* sourceScopeCanonical = Canonical(CancerIdICD10VS)
+* sourceScopeCanonical = Canonical(CancerRegistryDictionaryICD10VS)
 
-* group[+].source = Canonical(CancerIdICD10CS)
+* group[+].source = Canonical(CancerRegistryDictionaryICD10CS)
 * group[=].target = $icd-10
 
 * group[=].element[+].code = #1

@@ -1,8 +1,8 @@
-CodeSystem: CancerIdCS
-Id: cancer-id-cs
-Title: "Cancer Registry Patient ID"
-Description: "Code system for identifiers assigned by the Cancer Registry to patients with cancer."
-* insert OriginalCodeSystemDraft(cancer-id-cs)
+CodeSystem: CancerRegistryDictionaryCS
+Id: cancer-registry-dictionary-cs
+Title: "Cancer Registry Dictionary"
+Description: "Dictionary code system used by the Uzbekistan Cancer Registry."
+* insert OriginalCodeSystemDraft(cancer-registry-dictionary-cs)
 
 * #29 "Tirik"
   * ^designation[0].language = #ru
@@ -16,7 +16,7 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Deceased"
 
-* #31 "Ko‘chib ketgan"
+* #31 "Ko'chib ketgan"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Выехал"
   * ^designation[+].language = #en
@@ -34,7 +34,7 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Removed from the registry due to completion of the follow-up period"
 
-* #357 "Spetsifik o‘sma markerlari"
+* #357 "Spetsifik o'sma markerlari"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Специфические опухолевые маркёры"
   * ^designation[+].language = #en
@@ -58,7 +58,7 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Cytogenetics and/or molecular diagnostics"
 
-* #354 "Faqat o‘lim haqidagi guvohnoma (DCO)"
+* #354 "Faqat o'lim haqidagi guvohnoma (DCO)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Только свидетельство о смерти (DCO)"
   * ^designation[+].language = #en
@@ -82,7 +82,7 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Medical record (outpatient card) of a branch of the Republican Specialized Scientific and Practical Medical Center of Oncology and Radiology"
 
-* #506 "Boshqa tibbiyot muassasasining kasallik tarixidan (ambulator kartasidan) ko‘chirma"
+* #506 "Boshqa tibbiyot muassasasining kasallik tarixidan (ambulator kartasidan) ko'chirma"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Выписка из истории болезни (амб.карты) другого государственного медицинского учреждения"
   * ^designation[+].language = #en
@@ -118,7 +118,7 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Republican Specialized Scientific and Practical Medical Center of Hematology"
 
-* #510 "O‘lim haqidagi guvohnoma"
+* #510 "O'lim haqidagi guvohnoma"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Свидетельство о смерти"
   * ^designation[+].language = #en
@@ -136,7 +136,7 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Pathology bureau"
 
-* #513 "Xususiy tibbiyot muassasasining kasallik tarixidan (ambulator kartasidan) ko‘chirma"
+* #513 "Xususiy tibbiyot muassasasining kasallik tarixidan (ambulator kartasidan) ko'chirma"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Выписка из истории болезни (амб.карты) частного медицинского учреждения"
   * ^designation[+].language = #en
@@ -148,7 +148,7 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Left"
 
-* #337 "O‘ng tomonda"
+* #337 "O'ng tomonda"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Справа"
   * ^designation[+].language = #en
@@ -178,13 +178,13 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Detected in the Onconazorat office"
 
-* #348 "Boshqa turdagi profilaktik ko‘riklarda aniqlangan"
+* #348 "Boshqa turdagi profilaktik ko'riklarda aniqlangan"
   * ^designation[0].language = #ru
   * ^designation[=].value = "При других видах профосмотра"
   * ^designation[+].language = #en
   * ^designation[=].value = "Detected during other types of preventive examinations"
 
-* #349 "Parallel profilaktik ko‘rik vaqtida aniqlangan"
+* #349 "Parallel profilaktik ko'rik vaqtida aniqlangan"
   * ^designation[0].language = #ru
   * ^designation[=].value = "При параллельном профосмотре"
   * ^designation[+].language = #en
@@ -208,7 +208,7 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Registered posthumously without an autopsy"
 
-* #353 "Otopsiyadan keyin vafotidan so‘ng hisobga olingan"
+* #353 "Otopsiyadan keyin vafotidan so'ng hisobga olingan"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Учтен посмертно после вскрытия"
   * ^designation[+].language = #en
@@ -856,7 +856,7 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Liver"
 
-* #860 "O‘pka (plevra)"
+* #860 "O'pka (plevra)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Легкое (плевра)"
   * ^designation[+].language = #en
@@ -874,7 +874,7 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Ovary"
 
-* #863 "Yumshoq to‘qimalar"
+* #863 "Yumshoq to'qimalar"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Мягкие ткани"
   * ^designation[+].language = #en
@@ -952,7 +952,7 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Treated as an inpatient"
 
-* #651 "O‘tkazilmagan"
+* #651 "O'tkazilmagan"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Не проводилось"
   * ^designation[+].language = #en
@@ -1000,19 +1000,19 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Examination"
 
-* #659 "Boshqa kasalliklar bo‘yicha"
+* #659 "Boshqa kasalliklar bo'yicha"
   * ^designation[0].language = #ru
   * ^designation[=].value = "По поводу других заболеваний"
   * ^designation[+].language = #en
   * ^designation[=].value = "For other diseases"
 
-* #660 "Asoratlar bo‘yicha"
+* #660 "Asoratlar bo'yicha"
   * ^designation[0].language = #ru
   * ^designation[=].value = "По поводу осложнений"
   * ^designation[+].language = #en
   * ^designation[=].value = "For complications"
 
-* #661 "O‘tkazilmagan"
+* #661 "O'tkazilmagan"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Не проводилось"
   * ^designation[+].language = #en
@@ -1036,13 +1036,13 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Short-focus X-ray therapy"
 
-* #665 "Qo‘shma nur terapiyasi: kontakt + masofaviy nur terapiyasi"
+* #665 "Qo'shma nur terapiyasi: kontakt + masofaviy nur terapiyasi"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Сочетанное лучевое: конт.+дистанц."
   * ^designation[+].language = #en
   * ^designation[=].value = "Combined radiation therapy: contact + external beam radiation therapy"
 
-* #666 "Qo‘shma nur terapiyasi: kontakt + rentgenoterapiya"
+* #666 "Qo'shma nur terapiyasi: kontakt + rentgenoterapiya"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Сочетанное лучевое: конт.+рентген."
   * ^designation[+].language = #en
@@ -1066,7 +1066,7 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Surgery + short-focus X-ray therapy"
 
-* #670 "Jarrohlik davolash + qo‘shma nur terapiyasi"
+* #670 "Jarrohlik davolash + qo'shma nur terapiyasi"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Хирургическое+сочетанная лучевая терапия"
   * ^designation[+].language = #en
@@ -1120,7 +1120,7 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "Surgery + radiopharmaceuticals"
 
-* #679 "Qo‘shma nur terapiyasi: masofaviy nur terapiyasi + rentgenoterapiya"
+* #679 "Qo'shma nur terapiyasi: masofaviy nur terapiyasi + rentgenoterapiya"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Сочетанное лучевое:дистанционная лучевая терапия+рентгентерапия"
   * ^designation[+].language = #en
@@ -1132,7 +1132,7 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "G1 (Well differentiated)"
 
-* #364 "G2 (O‘rtacha darajada differensiallashgan)"
+* #364 "G2 (O'rtacha darajada differensiallashgan)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "G2 (Средне дифференцированная)"
   * ^designation[+].language = #en
@@ -1186,7 +1186,7 @@ Description: "Code system for identifiers assigned by the Cancer Registry to pat
   * ^designation[+].language = #en
   * ^designation[=].value = "High grade"
 
-* #373 "GX (Darajasini aniqlab bo‘lmaydi)"
+* #373 "GX (Darajasini aniqlab bo'lmaydi)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "GX (Не может быть установлена)"
   * ^designation[+].language = #en

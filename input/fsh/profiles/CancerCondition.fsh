@@ -2,8 +2,7 @@ Profile: CancerCondition
 Parent: UZCoreCondition
 Id: cancer-condition
 Title: "Cancer Condition"
-Description: "Determination of tumor topography. Diagnosis according to ICD-O-3."
-
+Description: "Defines a Condition profile for representing a patient's cancer diagnosis, including the type and site of the malignancy, laterality, circumstances of detection, diagnosis and registration dates, cancer classification, and staging information."
 * ^experimental = true
 * ^status = #active
 * ^date = "2026-09-15"
@@ -22,12 +21,12 @@ Description: "Determination of tumor topography. Diagnosis according to ICD-O-3.
 * code from CancerICD10VS (required)
 
 * extension contains
-    CancerICCC3Group named cancer-iccc-3-group 0..1 MS
+    CancerICCC3Group named cancer-iccc-3-group 0..1 MS and
+    CancerDetectionCondition named detection-condition 0..1 MS
 
 * bodySite MS
-* bodySite from CancerLateralityQualifierVS
 * bodySite.extension contains
-    CancerDetectionCondition named detection-condition 0..1 MS
+    CancerLateralityQualifier named laterality 0..1 MS
 
 * subject 1..1 MS
 * subject only Reference(UZCorePatient)
@@ -44,16 +43,13 @@ Description: "Determination of tumor topography. Diagnosis according to ICD-O-3.
 * participant.actor only Reference(UZCoreOrganization)
 
 * stage MS
-* stage.summary MS
-* stage.summary from CancerTNMStageVS (example)
-
 * stage.assessment MS
 * stage.assessment only Reference(CancerObservationTNMStageGroup)
 
 
 Instance: cancer-condition-example
 InstanceOf: CancerCondition
-Description: "Example of a confirmed active malignant neoplasm of the tongue, registered in the cancer registry, including diagnosis type, cancer classification, detection condition, anatomical site, and TNM stage information."
+Description: "Example of a confirmed active malignant neoplasm of the tongue, registered in the cancer registry, including diagnosis type, cancer classification, detection condition, anatomical site, laterality, and TNM stage information."
 Title: "Cancer Condition Example"
 Usage: #example
 
@@ -67,10 +63,11 @@ Usage: #example
 * code = $icd-10#C02 "Malignant neoplasm of other and unspecified parts of tongue"
 
 * extension[diagnosisType].valueCodeableConcept = $diagnosis-type-cs#cancer-0003-0003 "Notification from a branch of the Republican Specialized Scientific and Practical Medical Center of Oncology and Radiology"
-* extension[cancer-iccc-3-group].valueCodeableConcept =  $iccc-3#IIId2
+* extension[cancer-iccc-3-group].valueCodeableConcept = $iccc-3#IIId2
+* extension[detection-condition].valueCodeableConcept = cancer-detection-condition-cs#cancer-0005-0002 "Detected in the Onconazorat office"
 
-* bodySite = $sct#7771000 "Left"
-* bodySite.extension[detection-condition].valueCodeableConcept = cancer-detection-condition-cs#cancer-0005-0002 "Detected in the Onconazorat office"
+* bodySite = $sct#21974007 "Tongue structure"
+* bodySite.extension[laterality].valueCodeableConcept = $sct#7771000 "Left"
 
 * subject = Reference(Patient/example-salim)
 * encounter = Reference(Encounter/cancer-encounter-example)
@@ -80,5 +77,4 @@ Usage: #example
 
 * participant.actor = Reference(Organization/example-organization)
 
-* stage.summary = $sct#1352944009 "II (UICC)"
 * stage.assessment = Reference(Observation/cancer-observation-tnm-stage-group-example)

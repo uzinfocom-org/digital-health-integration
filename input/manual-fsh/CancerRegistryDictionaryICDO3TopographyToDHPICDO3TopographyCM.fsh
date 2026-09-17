@@ -1,17 +1,17 @@
-Instance: cancer-registry-icd3-topography-to-dhp-icd3-topography-cm
+Instance: cancer-registry-dict-icdo3-topography-to-dhp-icdo3-cm
 InstanceOf: ConceptMap
 Usage: #definition
-Title: "Cancer Registry ICD-O-3 Topography to DHP ICD-O-3 Topography"
-Description: "ConceptMap defining the mapping between ICD-O-3 topography codes received from the Cancer Registry and the corresponding ICD-O-3 topography codes used by DHP."
-* name = "CancerRegistryICD3TopographyToDHPICD3TopographyCM"
-* url = "https://terminology.dhp.uz/fhir/integrations/ConceptMap/cancer-registry-icd3-topography-to-dhp-icd3-topography-cm"
+Title: "Cancer Registry Dictionary ICD-O-3 Topography to DHP ICD-O-3 Topography"
+Description: "ConceptMap defining the mapping between Cancer Registry internal topography identifiers and the corresponding ICD-O-3 topography codes used by DHP."
+* name = "CancerRegistryDictionaryICDO3TopographyToDHPICDO3TopographyCM"
+* url = "https://terminology.dhp.uz/fhir/integrations/ConceptMap/cancer-registry-dict-icdo3-topography-to-dhp-icdo3-cm"
 * status = #draft
 * experimental = false
 * publisher = "Uzinfocom"
 
-* sourceScopeCanonical = Canonical(CancerIdICD3TopographyVS)
+* sourceScopeCanonical = Canonical(CancerRegistryDictionaryICDO3TopographyVS)
 
-* group[+].source = Canonical(CancerIdICD3TopographyCS)
+* group[+].source = Canonical(CancerRegistryDictionaryICDO3TopographyCS)
 * group[=].target =  $icd-o-3
 
 * group[=].element[+].code = #1

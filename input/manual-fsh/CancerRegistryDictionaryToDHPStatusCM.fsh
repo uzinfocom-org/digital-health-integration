@@ -1,18 +1,18 @@
-Instance: cancer-registry-status-to-dhp-status-cm
+Instance: cancer-registry-dictionary-to-dhp-status-cm
 InstanceOf: ConceptMap
 Usage: #definition
-Title: "Cancer Registry Status to DHP Status"
+Title: "Cancer Registry Dictionary to DHP Status"
 Description: "ConceptMap defining the mapping between cancer status codes used by the Cancer Registry and the corresponding status codes used by DHP."
-* name = "CancerRegistryStatusToDHPStatusCM"
-* url = "https://dhp.uz/fhir/integrations/ConceptMap/cancer-registry-status-to-dhp-status-cm"
+* name = "CancerRegistryDictionaryToDHPStatusCM"
+* url = "https://terminology.dhp.uz/fhir/integrations/ConceptMap/cancer-registry-dictionary-to-dhp-status-cm"
 * status = #draft
 * experimental = false
 * publisher = "Uzinfocom"
 
-* sourceScopeCanonical = Canonical(CancerIdVS)
+* sourceScopeCanonical = Canonical(CancerRegistryDictionaryVS)
 
-// Group 1: CancerIdCS to CancerEncounterSubjectStatusCS
-* group[+].source = Canonical(CancerIdCS)
+// Group 1: CancerRegistryDictionaryCS to CancerEncounterSubjectStatusCS
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
 * group[=].target = $discharge-disposition-home-cs
 
 * group[=].element[+].code = #29
@@ -46,8 +46,8 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].relationship = #equivalent
 
 
-// Group 2: CancerIdCS to CancerConfirmationMethodCS
-* group[+].source = Canonical(CancerIdCS)
+// Group 2: CancerRegistryDictionaryCS to CancerConfirmationMethodCS
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
 * group[=].target = Canonical(CancerConfirmationMethodCS)
 
 * group[=].element[+].code = #357
@@ -92,8 +92,8 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].display = "Инструментальные методы"
 * group[=].element[=].target[=].relationship = #equivalent
 
-// Group 3: CancerIdCS to CancerDiagnosisTypeCS
-* group[+].source = Canonical(CancerIdCS)
+// Group 3: CancerRegistryDictionaryCS to CancerDiagnosisTypeCS
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
 * group[=].target = $diagnosis-type-cs
 
 * group[=].element[+].code = #505
@@ -162,9 +162,9 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].display = "Патологоанатомический диагноз"
 * group[=].element[=].target[=].relationship = #equivalent
 
-// Group 4: CancerIdCS to CancerLaterlityQualifierCS
-* group[+].source = Canonical(CancerIdCS)
-* group[=].target = Canonical(CancerLateralityQualifierCS)
+// Group 4: CancerRegistryDictionaryCS to CancerLaterlityQualifierCS
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
+* group[=].target = $sct
 
 * group[=].element[+].code = #336
 * group[=].element[=].display = "Слева"
@@ -190,8 +190,8 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].display = "Unknown"
 * group[=].element[=].target[=].relationship = #equivalent
 
-// Group 5: CancerIdCS to CancerDetectionConditionCS
-* group[+].source = Canonical(CancerIdCS)
+// Group 5: CancerRegistryDictionaryCS to CancerDetectionConditionCS
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
 * group[=].target = Canonical(CancerDetectionConditionCS)
 
 * group[=].element[+].code = #346
@@ -243,9 +243,9 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].relationship = #equivalent
 
 
-// Group 6: CancerIdCS to CancerCCCtCategoryCS
-* group[+].source = Canonical(CancerIdCS)
-* group[=].target = Canonical(CancerCCCtCategorySnomedCS)
+// Group 6: CancerRegistryDictionaryCS to CancerCCCtCategoryCS
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
+* group[=].target = $sct
 
 * group[=].element[+].code = #412
 * group[=].element[=].display = "X"
@@ -439,7 +439,7 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].display = "1b2"
 * group[=].element[=].target[=].relationship = #equivalent
 
-* group[+].source = Canonical(CancerIdCS)
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
 * group[=].target = Canonical(CancerCCCtCategoryCS)
 
 * group[=].element[+].code = #437
@@ -449,9 +449,9 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].relationship = #equivalent
 
 
-// Group 7: CancerIdCS to CancerCCcNCategoryCS
-* group[+].source = Canonical(CancerIdCS)
-* group[=].target = Canonical(CancerCCcNCategoryCS)
+// Group 7: CancerRegistryDictionaryCS to CancerCCcNCategoryCS
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
+* group[=].target = $sct
 
 * group[=].element[+].code = #871
 * group[=].element[=].display = "0"
@@ -537,8 +537,8 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].display = "3c"
 * group[=].element[=].target[=].relationship = #equivalent
 
-// Group 8: CancerIdCS to CancerCCcMCategoryCS
-* group[+].source = Canonical(CancerIdCS)
+// Group 8: CancerRegistryDictionaryCS to CancerCCcMCategoryCS
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
 * group[=].target = Canonical(CancerCCcMCategoryCS)
 
 * group[=].element[+].code = #451
@@ -547,8 +547,8 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].display = "X"
 * group[=].element[=].target[=].relationship = #equivalent
 
-* group[+].source = Canonical(CancerIdCS)
-* group[=].target = Canonical(CancerCCcMCategorySnomedCS)
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
+* group[=].target = $sct
 
 * group[=].element[+].code = #452
 * group[=].element[=].display = "0"
@@ -587,9 +587,9 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].relationship = #equivalent
 
 
-// Group 9: CancerIdCS to CancerCCpTCategoryCS
-* group[+].source = Canonical(CancerIdCS)
-* group[=].target = Canonical(CancerCCpTCategoryCS)
+// Group 9: CancerRegistryDictionaryCS to CancerCCpTCategoryCS
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
+* group[=].target = $sct
 
 * group[=].element[+].code = #461
 * group[=].element[=].display = "x"
@@ -765,9 +765,10 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].display = "1b2"
 * group[=].element[=].target[=].relationship = #equivalent
 
-// Group 10: CancerIdCS to CancerCCpNCategoryCS
-* group[+].source = Canonical(CancerIdCS)
-* group[=].target = Canonical(CancerCCpNCategoryCS)
+// Group 10: CancerRegistryDictionaryCS to CancerCCpNCategoryCS
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
+* group[=].target = $sct
+
 * group[=].element[+].code = #484
 * group[=].element[=].display = "X"
 * group[=].element[=].target[+].code = #1352605004
@@ -853,9 +854,9 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].relationship = #equivalent
 
 
-// Group 11: CancerIdCS to CancerCCpMCategoryCS
-* group[+].source = Canonical(CancerIdCS)
-* group[=].target = Canonical(CancerCCpMCategorySnomedCS)
+// Group 11: CancerRegistryDictionaryCS to CancerCCpMCategoryCS
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
+* group[=].target = $sct
 
 * group[=].element[+].code = #500
 * group[=].element[=].display = "1"
@@ -887,7 +888,7 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].display = "1d"
 * group[=].element[=].target[=].relationship = #equivalent
 
-* group[+].source = Canonical(CancerIdCS)
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
 * group[=].target = Canonical(CancerCCpMCategoryCS)
 
 * group[=].element[+].code = #498
@@ -902,55 +903,55 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].display = "0"
 * group[=].element[=].target[=].relationship = #equivalent
 
-// Group 12: CancerIdCS to CancerBodyLocationCS
-* group[+].source = Canonical(CancerIdCS)
-* group[=].target = Canonical(CancerBodyLocationCS)
+// Group 12: CancerRegistryDictionaryCS to CancerBodyLocationCS
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
+* group[=].target = $sct
 
 * group[=].element[+].code = #857
 * group[=].element[=].display = "Лимфоузлы"
-* group[=].element[=].target[+].code = $sct#59441001
+* group[=].element[=].target[+].code = #59441001
 * group[=].element[=].target[=].display = "Structure of lymph node"
 * group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #858
 * group[=].element[=].display = "Кости"
-* group[=].element[=].target[+].code = $sct#272673000
+* group[=].element[=].target[+].code = #272673000
 * group[=].element[=].target[=].display = "Bone structure"
 * group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #859
 * group[=].element[=].display = "Печень"
-* group[=].element[=].target[+].code = $sct#10200004
+* group[=].element[=].target[+].code = #10200004
 * group[=].element[=].target[=].display = "Liver structure"
 * group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #860
 * group[=].element[=].display = "Легкое (плевра)"
-* group[=].element[=].target[+].code = $sct#110549009
+* group[=].element[=].target[+].code = #110549009
 * group[=].element[=].target[=].display = "Lung and pleura, CS"
 * group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #861
 * group[=].element[=].display = "Головной мозг"
-* group[=].element[=].target[+].code = $sct#12738006
+* group[=].element[=].target[+].code = #12738006
 * group[=].element[=].target[=].display = "Brain structure"
 * group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #862
 * group[=].element[=].display = "Яичник"
-* group[=].element[=].target[+].code = $sct#15497006
+* group[=].element[=].target[+].code = #15497006
 * group[=].element[=].target[=].display = "Ovarian structure"
 * group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #863
 * group[=].element[=].display = "Мягкие ткани"
-* group[=].element[=].target[+].code = $sct#87784001
+* group[=].element[=].target[+].code = #87784001
 * group[=].element[=].target[=].display = "Soft tissue"
 * group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #864
 * group[=].element[=].display = "Надпочечник"
-* group[=].element[=].target[+].code = $sct#23451007
+* group[=].element[=].target[+].code = #23451007
 * group[=].element[=].target[=].display = "Adrenal structure"
 * group[=].element[=].target[=].relationship = #equivalent
 
@@ -962,13 +963,13 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 
 * group[=].element[+].code = #866
 * group[=].element[=].display = "Брюшина"
-* group[=].element[=].target[+].code = $sct#15425007
+* group[=].element[=].target[+].code = #15425007
 * group[=].element[=].target[=].display = "Structure of serous membrane of peritoneum"
 * group[=].element[=].target[=].relationship = #equivalent
 
 
-// Group 13: CancerIdCS to CancerEmergingProcessCS
-* group[+].source = Canonical(CancerIdCS)
+// Group 13: CancerRegistryDictionaryCS to CancerEmergingProcessCS
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
 * group[=].target = Canonical(CancerEmergingProcessCS)
 
 * group[=].element[+].code = #850
@@ -1013,8 +1014,8 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].display = "Трансформация"
 * group[=].element[=].target[=].relationship = #equivalent
 
-// Group 14: CancerIdCS to EncounterDischargeDisposition
-* group[+].source = Canonical(CancerIdCS)
+// Group 14: CancerRegistryDictionaryCS to EncounterDischargeDisposition
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
 * group[=].target = $v3-ActCode
 
 * group[=].element[+].code = #649
@@ -1029,9 +1030,9 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].display = "inpatient encounter"
 * group[=].element[=].target[=].relationship = #equivalent
 
-// Group 15: CancerIdCS to CancerTreatmentIntent
-* group[+].source = Canonical(CancerIdCS)
-* group[=].target = Canonical(CancerTreatmentIntentSnomedCS)
+// Group 15: CancerRegistryDictionaryCS to CancerTreatmentIntent
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
+* group[=].target = $sct
 
 * group[=].element[+].code = #651
 * group[=].element[=].display = "Не проводилось"
@@ -1076,7 +1077,7 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].relationship = #equivalent
 
 
-* group[+].source = Canonical(CancerIdCS)
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
 * group[=].target = Canonical(CancerTreatmentIntentCS)
 
 * group[=].element[+].code = #656
@@ -1097,8 +1098,8 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].display = "Asoratlar bo‘yicha"
 * group[=].element[=].target[=].relationship = #equivalent
 
-// Group 16: CancerIdCS to CancerSpecialTreatmentCS
-* group[+].source = Canonical(CancerIdCS)
+// Group 16: CancerRegistryDictionaryCS to CancerSpecialTreatmentCS
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
 * group[=].target = Canonical(CancerSpecialTreatmentCS)
 
 * group[=].element[+].code = #661
@@ -1216,9 +1217,9 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].relationship = #equivalent
 
 
-// Group 17: CancerIdCS to CancerDegreeDifferentiationCS
-* group[+].source = Canonical(CancerIdCS)
-* group[=].target = Canonical(CancerDegreeDifferentiationCS)
+// Group 17: CancerRegistryDictionaryCS to CancerDegreeDifferentiationCS
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
+* group[=].target = $sct
 
 * group[=].element[+].code = #363
 * group[=].element[=].display = "G1 (Высоко дифференцированная)"
@@ -1262,7 +1263,7 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * group[=].element[=].target[=].display = "GX: Histologic grade cannot be assessed"
 * group[=].element[=].target[=].relationship = #equivalent
 
-* group[+].source = Canonical(CancerIdCS)
+* group[+].source = Canonical(CancerRegistryDictionaryCS)
 * group[=].target = $loinc
 
 * group[=].element[+].code = #367

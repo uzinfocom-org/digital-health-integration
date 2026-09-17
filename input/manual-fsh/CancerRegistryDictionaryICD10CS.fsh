@@ -1,8 +1,8 @@
-CodeSystem: CancerIdICD10CS
-Id: cancer-id-icd-10-cs
-Title: "Cancer Registry ICD-10 translation in Uzbek, Russian and English"
-Description: "ICD-10 code system used by the Uzbekistan Cancer Registry"
-* insert OriginalCodeSystemDraft(cancer-id-icd-10-cs)
+CodeSystem: CancerRegistryDictionaryICD10CS
+Id: cancer-registry-dictionary-icd-10-cs
+Title: "Cancer Registry Dictionary ICD-10"
+Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Cancer Registry and mapped to core ICD-10 codes through a ConceptMap."
+* insert OriginalCodeSystemDraft(cancer-registry-dictionary-icd-10-cs)
 
 * #1 "Ayrim yuqumli va parazitar kasalliklar"
   * ^designation[0].language = #ru

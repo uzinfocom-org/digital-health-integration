@@ -27,9 +27,7 @@ Description: "Observation describing cancer morphology, behavior, and primary bo
 
 * value[x] only CodeableConcept
 * valueCodeableConcept 0..1 MS
-* valueCodeableConcept.coding 1..1 MS
-* valueCodeableConcept.coding.system 1..1
-* valueCodeableConcept.coding.system = "http://terminology.hl7.org/CodeSystem/icd-o-3"
+* valueCodeableConcept from $icd-o-3-morphology-vs (required)
 
 * bodySite 0..1 MS
 * bodySite.coding ^slicing.discriminator.type = #value

@@ -168,9 +168,9 @@ Kiruvchi ma'lumotlarda DHP terminologiya kodlari o'rniga Onkologiya registrining
 
 | Manba ma'lumoti | ConceptMap | Maqsad terminologiya |
 | :--- | :--- | :--- |
-| Registr holati va tegishli mahalliy identifikatorlar | [Onkologiya registri holatidan DHP holatiga](ConceptMap-cancer-registry-status-to-dhp-status-cm.html) | DHP va Cancer CodeSystem lari |
-| Registr ICD-10 identifikatori | [Onkologiya registri ICD-10 dan DHP ICD-10 ga](ConceptMap-cancer-registry-icd10-to-dhp-icd10-cm.html) | ICD-10 |
-| Registr ICD-O-3 topografiya identifikatori | [Onkologiya registri ICD-O-3 topografiyasidan DHP ICD-O-3 topografiyasiga](ConceptMap-cancer-registry-icd3-topography-to-dhp-icd3-topography-cm.html) | ICD-O-3 |
+| Registr holati va tegishli mahalliy identifikatorlar | [Onkologiya registri holatidan DHP holatiga](ConceptMap-cancer-registry-dictionary-to-dhp-status-cm.html) | DHP va Cancer CodeSystem lari |
+| Registr ICD-10 identifikatori | [Onkologiya registri ICD-10 dan DHP ICD-10 ga](ConceptMap-cancer-registry-dictionary-icd10-to-dhp-icd10-cm.html) | ICD-10 |
+| Registr ICD-O-3 topografiya identifikatori | [Onkologiya registri ICD-O-3 topografiyasidan DHP ICD-O-3 topografiyasiga](ConceptMap-cancer-registry-dict-icdo3-topography-to-dhp-icdo3-cm.html) | ICD-O-3 |
 
 ### Yordamchi resurslar
 
