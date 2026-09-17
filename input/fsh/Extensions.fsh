@@ -116,3 +116,15 @@ Description: "Date of birth of the related person"
 * value[x] 1..1 MS
 
 * value[x] only date
+
+// dispensary registration (Д-учёт)
+Extension: DiseaseNature
+Id: disease-nature
+Title: "Disease Nature"
+Description: "Nature of the disease recorded when a patient is placed under dispensary observation, sent by DMED as `disease_nature`."
+Context: Condition
+* ^status = #draft
+* ^experimental = true
+* value[x] 1..1 MS
+* value[x] only CodeableConcept
+* valueCodeableConcept from DispensaryDiseaseNatureVS (required)
