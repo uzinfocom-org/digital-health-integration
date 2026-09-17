@@ -68,7 +68,10 @@ jobs:
         run: |
           # Run the publisher directly against the working https terminology server;
           # _genonce.sh would fall back to `-tx n/a` and skip terminology validation.
-          java -jar input-cache/publisher.jar -ig . -tx https://tx.fhir.org
+          # -publish makes this a publication build. Without it the publisher marks
+          # the package notForPublication with a file:// url, which packages2.fhir.org
+          # rejects and which turns links from dependent guides into file:// links.
+          java -jar input-cache/publisher.jar -ig . -tx https://tx.fhir.org -publish https://dhp.uz/fhir/integrations
 
       - name: Verify built package
         run: |
@@ -79,6 +82,15 @@ jobs:
           echo "Built $NAME#$PVER"
           if [ "$NAME" != "uz.dhp.integrations" ] || [ "$PVER" != "$VERSION" ]; then
             echo "::error::Built package $NAME#$PVER does not match uz.dhp.integrations#$VERSION"
+            exit 1
+          fi
+          if [ "$(echo "$PKG" | jq -r '.notForPublication // false')" != "false" ]; then
+            echo "::error::Built package is flagged notForPublication - not a publication build"
+            exit 1
+          fi
+          URL=$(echo "$PKG" | jq -r .url)
+          if [ "$URL" != "https://dhp.uz/fhir/integrations" ]; then
+            echo "::error::Built package url is $URL, expected https://dhp.uz/fhir/integrations"
             exit 1
           fi
 
