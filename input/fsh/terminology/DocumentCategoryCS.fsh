@@ -101,6 +101,12 @@ Description: "Categories for clinical documents and other knowledge resources in
   * ^designation[+].language = #ru
   * ^designation[=].value = "Запись сеанса гемодиализа"
 
+* #form-044 "Chet elga safar qiluvchi shaxsning tibbiy ma'lumotnomasi"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Certificate on absence of medical contraindications for travel abroad"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Справка об отсутствии медицинских противопоказаний для выезда за границу"
+
 * #form-096 "Tug'ruq tibbiy kartasi"
   * ^designation[0].language = #en
   * ^designation[=].value = "Birth medical record"

@@ -201,3 +201,4 @@ Alias: $icd-o-3-morphology-vs = https://terminology.dhp.uz/fhir/core/ValueSet/ic
 Alias: $icd-o-3-topography-vs = https://terminology.dhp.uz/fhir/core/ValueSet/icd-o-3-topography-vs
 Alias: $icd-o-3 = http://terminology.hl7.org/CodeSystem/icd-o-3
 Alias: $nci = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+Alias: $form-sections-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form-sections-cs
