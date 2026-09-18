@@ -118,6 +118,8 @@ pages:
     title: Psychiatry
   cancer.md:
     title: Cancer
+  hepatitis.md:
+    title: Hepatitis
   forms.md:
     title: Questionnaires
   changelog.md:
@@ -141,6 +143,7 @@ menu:
     Narcology: narcology.html
     Psychiatry: psychiatry.html
     Cancer: cancer.html
+    Hepatitis: hepatitis.html
   Questionnaires: forms.html
   Artifacts: artifacts.html
   Changelog: changelog.html
