@@ -16,6 +16,12 @@ Coded values use SNOMED CT or LOINC wherever an equivalent concept exists. Local
 
 <div>{% include screening-model-en.svg %}</div><br clear="all"/>
 
+### Program and source identifiers
+
+**Screening program type.** A second `identifier`, system `https://dhp.uz/fhir/core/sid/uz/screening-program-type`, naming the SNOMED CT screening program a resource belongs to - for example `171149006` (Cervical screen) or `268547008` (Screening for breast cancer). Written by convention on Observation, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen, Composition, and Questionnaire/QuestionnaireResponse when the whole questionnaire is one program - not on Patient, Practitioner or PractitionerRole, which are shared across programs. The [Woman medical exam](Questionnaire-screening-woman-exam.html) questionnaire and its response carry both program codes, since the questionnaire spans both programs.
+
+**Source system.** `meta.source` identifies which system created a resource: `https://dhp.uz/fhir/source/screening` (this Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System) or `https://dhp.uz/fhir/source/dmed` (DMED). Required and enforced by invariant on [ScreeningObservation](StructureDefinition-screening-observation.html), [ScreeningServiceRequest](StructureDefinition-screening-service-request.html), [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [ScreeningDocumentReference](StructureDefinition-screening-document-reference.html) and [ScreeningComposition](StructureDefinition-screening-composition.html). Do not infer the source system from the presence of an identifier from `https://dhp.uz/fhir/core/sid/uz/screening` - that identifier system does not indicate which system produced a resource.
+
 ### Ordering a test or procedure (ServiceRequest)
 
 Set `ServiceRequest.code` to the test or procedure being ordered.

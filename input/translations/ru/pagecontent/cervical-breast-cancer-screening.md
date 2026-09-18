@@ -16,6 +16,12 @@
 
 <div>{% include screening-model-ru.svg %}</div><br clear="all"/>
 
+### Идентификаторы программы и источника
+
+**Тип программы скрининга.** Второй `identifier`, система `https://dhp.uz/fhir/core/sid/uz/screening-program-type`, указывающий код SNOMED CT программы скрининга, к которой относится ресурс, - например, `171149006` (скрининг шейки матки) или `268547008` (скрининг рака молочной железы). По соглашению указывается в Observation, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen, Composition, а также в Questionnaire/QuestionnaireResponse, если опросник целиком относится к одной программе, - но не в Patient, Practitioner или PractitionerRole, которые являются общими для обеих программ. Опросник [Осмотр женщины](Questionnaire-screening-woman-exam.html) и ответ на него содержат оба кода программы, так как опросник охватывает обе программы.
+
+**Система-источник.** `meta.source` указывает, какая система создала ресурс: `https://dhp.uz/fhir/source/screening` (данная информационная система скрининга рака шейки матки и молочной железы) либо `https://dhp.uz/fhir/source/dmed` (ДМЕД). Обязательное поле, проверяется инвариантом в профилях [ScreeningObservation](StructureDefinition-screening-observation.html), [ScreeningServiceRequest](StructureDefinition-screening-service-request.html), [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [ScreeningDocumentReference](StructureDefinition-screening-document-reference.html) и [ScreeningComposition](StructureDefinition-screening-composition.html). Не пытайтесь определить систему-источник по наличию идентификатора из системы `https://dhp.uz/fhir/core/sid/uz/screening` - эта система идентификаторов не указывает, какая система создала ресурс.
+
 ### Назначение теста или процедуры (ServiceRequest)
 
 Установите `ServiceRequest.code` в назначаемый тест или процедуру.

@@ -16,6 +16,12 @@ Kodlanadigan qiymatlar ekvivalent tushuncha mavjud bo'lgan hamma joyda SNOMED CT
 
 <div>{% include screening-model-uz.svg %}</div><br clear="all"/>
 
+### Dastur va manba tizimi identifikatorlari
+
+**Skrining dasturi turi.** Ikkinchi `identifier`, tizim `https://dhp.uz/fhir/core/sid/uz/screening-program-type`, resurs tegishli bo'lgan skrining dasturining SNOMED CT kodini bildiradi - masalan, `171149006` (bachadon bo'yni skriningi) yoki `268547008` (sut bezi saratoni skriningi). Kelishuvga ko'ra Observation, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen, Composition, shuningdek so'rovnoma butunlay bitta dasturga tegishli bo'lganda Questionnaire/QuestionnaireResponse da ko'rsatiladi - lekin ikkala dastur uchun umumiy bo'lgan Patient, Practitioner yoki PractitionerRole da ko'rsatilmaydi. [Ayolni tibbiy ko'rikdan o'tkazish](Questionnaire-screening-woman-exam.html) so'rovnomasi va unga javob ikkala dastur kodini ham o'z ichiga oladi, chunki so'rovnoma ikkala dasturni ham qamrab oladi.
+
+**Manba tizimi.** `meta.source` resursni qaysi tizim yaratganini bildiradi: `https://dhp.uz/fhir/source/screening` (ushbu bachadon bo'yni va sut bezi saratoni skriningi axborot tizimi) yoki `https://dhp.uz/fhir/source/dmed` (DMED). Majburiy maydon, [ScreeningObservation](StructureDefinition-screening-observation.html), [ScreeningServiceRequest](StructureDefinition-screening-service-request.html), [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [ScreeningDocumentReference](StructureDefinition-screening-document-reference.html) va [ScreeningComposition](StructureDefinition-screening-composition.html) profillarida invariant orqali tekshiriladi. Manba tizimini `https://dhp.uz/fhir/core/sid/uz/screening` tizimidan olingan identifikator mavjudligiga qarab aniqlamang - bu identifikator tizimi resursni qaysi tizim yaratganini bildirmaydi.
+
 ### Test yoki muolajani buyurtirish (ServiceRequest)
 
 `ServiceRequest.code` ni buyurtirilayotgan test yoki muolajaga o'rnating.
