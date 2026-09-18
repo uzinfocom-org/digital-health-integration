@@ -72,3 +72,8 @@ Unable to expand included value set 'http://hl7.org/fhir/ValueSet/body-site': Th
 Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/cancer-body-location-vs is a proper subset of http://hl7.org/fhir/ValueSet/body-site|5.0.0 - value set is too large to check
 
 The Target Code System http://snomed.info/sct is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
+
+# procedure-code-vs cannot be expanded because the external terminology server
+# does not have the required procedure-code-cs supplement, and the underlying
+# value set is too large (>10000 codes) for tx.fhir.org to expand.
+Unable to expand included value set 'https://terminology.dhp.uz/fhir/core/ValueSet/procedure-code-vs': Required supplement not found: https://terminology.dhp.uz/fhir/core/CodeSystem/procedure-code-cs|2026.1.0%

@@ -140,6 +140,8 @@ Alias: $location-form = https://terminology.dhp.uz/fhir/core/CodeSystem/organiza
 Alias: $coverage-type = https://terminology.dhp.uz/fhir/core/CodeSystem/coverage-type-cs
 Alias: $encounter-purpose-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-purpose-cs
 Alias: $encounter-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-type-cs
+Alias: $composition-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/composition-type-cs
+Alias: $diagnosis-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/diagnosis-type-cs
 
 // ===================== SCREENING =====================
 Alias: $organizational-subordination-group-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/organizational-subordination-group-cs
