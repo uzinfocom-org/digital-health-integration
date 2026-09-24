@@ -167,6 +167,8 @@ Alias: $signature-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/sign
 
 Alias: $flag-status-cs = http://hl7.org/fhir/flag-status
 Alias: $profession-specialization-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/profession-specialization-cs
+Alias: $request-intent = http://hl7.org/fhir/request-intent
+
 
 Alias: $condition-category = http://terminology.hl7.org/CodeSystem/condition-category
 Alias: $diagnosis-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/diagnosis-type-cs
