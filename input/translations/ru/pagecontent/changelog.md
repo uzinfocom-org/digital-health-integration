@@ -1,6 +1,16 @@
 ### В разработке
 
-(Пока без изменений)
+#### Критические изменения
+
+Системы идентификаторов Скрининга теперь следуют шаблону `https://dhp.uz/fhir/core/sid/{namespace}/{country}/{type}`. У двух из них не было сегмента пространства имён, а идентификатор случая общественного здравоохранения находился в пространстве организаций, хотя идентифицирует случаи и ответы на опросники. Записи и случаи перенесены в пространство `doc`, тип программы - в общую систему программ `prg`, которую любая программа здравоохранения может использовать со своим значением. Значения идентификаторов не меняются; отправителям нужно сменить систему:
+
+| Идентификатор | Прежняя система | Новая система |
+|---|---|---|
+| [Запись Скрининга](NamingSystem-screening-identifier-system.html) | `https://dhp.uz/fhir/core/sid/uz/screening` | `https://dhp.uz/fhir/core/sid/doc/uz/screening` |
+| [Случай общественного здравоохранения](NamingSystem-ScreeningPublicHealthCaseNamingSystem.html) | `https://dhp.uz/fhir/core/sid/org/uz/screening` | `https://dhp.uz/fhir/core/sid/doc/uz/screening-case` |
+| [Тип программы скрининга](NamingSystem-screening-program-type-identifier-system.html) | `https://dhp.uz/fhir/core/sid/uz/screening-program-type` | `https://dhp.uz/fhir/core/sid/prg/uz/program` |
+
+Система имён для ПИНФЛ Узбекистана удалена. ПИНФЛ - это национальный идентификатор, который UZ Core уже определяет как `https://dhp.uz/fhir/core/sid/pid/uz/ni`; передавайте его в этой системе вместо `https://dhp.uz/fhir/core/sid/uz/pinfl`.
 
 ### Версия 0.9.1
 
@@ -72,7 +82,7 @@
 
 Шестьдесят кодовых систем и сто шесть наборов значений обеспечивают всю необходимую для этого терминологию. У УЗИ молочной железы есть набор значений для каждого описываемого параметра - от [состава молочной железы по ACR](ValueSet-screening-ultrasound-acr-composition-vs.html) и [эхогенности фиброгландулярной ткани](ValueSet-screening-ultrasound-fibroglandular-echogenicity-vs.html) через [форму](ValueSet-screening-ultrasound-lesion-shape-vs.html), [контур](ValueSet-screening-ultrasound-lesion-contour-vs.html), [эхогенность](ValueSet-screening-ultrasound-lesion-echogenicity-vs.html), [ориентацию](ValueSet-screening-ultrasound-lesion-orientation-vs.html) и [васкуляризацию](ValueSet-screening-ultrasound-lesion-vascularization-vs.html) образования до состояния [подмышечных](ValueSet-screening-ultrasound-axillary-node-status-vs.html) и [регионарных лимфоузлов](ValueSet-screening-ultrasound-regional-node-status-vs.html). Патоморфологическое заключение покрывают [гистологический тип опухоли молочной железы](ValueSet-screening-breast-histologic-type-vs.html), [степень дифференцировки при гистологии шейки матки](ValueSet-screening-cervical-histologic-grade-vs.html), патологические стадии [T](ValueSet-screening-pathological-t-vs.html), [N](ValueSet-screening-pathological-n-vs.html) и [M](ValueSet-screening-pathological-m-vs.html), [состояние края резекции](ValueSet-screening-resection-margin-status-vs.html), [лимфоваскулярная инвазия](ValueSet-screening-histology-lymphovascular-invasion-vs.html), [балл HER2 по иммуногистохимии](ValueSet-screening-her2-ihc-score-vs.html), [результат p16](ValueSet-screening-p16-result-vs.html) и [Йокогамская категория](ValueSet-screening-yokohama-category-vs.html). У гинекологического осмотра свои наборы, среди них [состояние шейки матки](ValueSet-screening-cervix-condition-vs.html), [выделения из влагалища](ValueSet-screening-vaginal-discharge-type-vs.html) и [пролапс стенок влагалища](ValueSet-screening-vaginal-wall-prolapse-vs.html), а у каждого вопроса опросников оценки риска есть набор значений для его ответов.
 
-Четыре системы имён описывают идентификаторы, которыми обменивается Скрининг, - [идентификатор опросника](NamingSystem-ScreeningQuestionnaireIdNamingSystem.html) и [код опросника](NamingSystem-ScreeningQuestionnaireCodeNamingSystem.html), присваиваемые определению опросника, идентификатор [случая общественного здравоохранения](NamingSystem-ScreeningPublicHealthCaseNamingSystem.html) и исходный идентификатор [формы 025](NamingSystem-ScreeningForm025IdNamingSystem.html), - а вместе с ними добавлена система имён для [ПИНФЛ Узбекистана](NamingSystem-UzbekistanPinflNamingSystem.html).
+Четыре системы имён описывают идентификаторы, которыми обменивается Скрининг, - [идентификатор опросника](NamingSystem-ScreeningQuestionnaireIdNamingSystem.html) и [код опросника](NamingSystem-ScreeningQuestionnaireCodeNamingSystem.html), присваиваемые определению опросника, идентификатор [случая общественного здравоохранения](NamingSystem-ScreeningPublicHealthCaseNamingSystem.html) и исходный идентификатор [формы 025](NamingSystem-ScreeningForm025IdNamingSystem.html), - а вместе с ними добавлена система имён для ПИНФЛ Узбекистана.
 
 #### Изменено
 
