@@ -128,7 +128,7 @@ O'lim sabablari xuddi shu tarzda (`Condition.category`, [Diagnosis Role](CodeSys
 
 ### Jarrohlik amaliyotlari
 
-Operatsiya kodi - bu ICHI o'zak kodi (Target.Action.Means), `Procedure.code` ichida `http://id.who.int/icd/release/11/ichi` tizimi bilan uzatiladi. Bog'lanish butun klassifikatsiyaga emas, balki [ICHI Codes Accepted by DMED](https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs) ga qaratilgan, chunki DMED ro'yxati eskiroq kesim: uning 6 853 kodidan 6 176 tasi JSST hozir nashr etadigan 9 428 o'zak kod ichida, 677 tasi esa JSST keyinchalik olib tashlagan kodlar. Bu 677 kod kod tizimida `inactive = true` bilan saqlanadi, shunda mavjud yozuvlar validatsiyadan o'tadi; yangi yozuvlar uchun ulardan foydalanish mumkin emas. Platforma operatsiyani o'zi kodlaganda, tanlov [ICHI Codes](https://terminology.dhp.uz/fhir/integrations/ValueSet/ichi-vs) dan qilinadi, unda bu kodlar yo'q.
+Operatsiya kodi - `Procedure.code` ichida `http://id.who.int/icd/release/11/ichi` tizimi bilan uzatiladigan ICHI o'zak kodi (Target.Action.Means). Uni [ICHI Codes Accepted by DMED](https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs) dan tanlang - DMED shu kodlarni qabul qiladi. Bu kodlarning ba'zilari ICHI da nofaol va faqat DMED da mavjud yozuvlar validatsiyadan o'tishi uchun qoldirilgan - yangi operatsiyani faol kod bilan kodlang. 066-shakldan tashqari qayd etilgan protsedura [ICHI Codes](https://terminology.dhp.uz/fhir/core/ValueSet/ichi-vs) dan kodlanadi.
 
 | UZ | RU | FHIR yo'li | Kod | Misol |
 |----|----|------------|------|---------|

@@ -128,7 +128,7 @@
 
 ### Хирургические вмешательства
 
-Код операции - это стержневой код ICHI (Target.Action.Means), передаваемый в `Procedure.code` с системой `http://id.who.int/icd/release/11/ichi`. Привязка идёт к [ICHI Codes Accepted by DMED](https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs), а не ко всей классификации, поскольку список DMED - более старый срез: из его 6 853 кодов 6 176 входят в 9 428 стержневых кодов, публикуемых ВОЗ сейчас, а 677 - это коды, которые ВОЗ с тех пор убрала. Эти 677 присутствуют в системе кодов с `inactive = true`, чтобы существующие записи проходили валидацию; для новых записей их использовать нельзя. Когда платформа кодирует операцию сама, выбор делается из [ICHI Codes](https://terminology.dhp.uz/fhir/integrations/ValueSet/ichi-vs), где их нет.
+Код операции - это стержневой код ICHI (Target.Action.Means), передаваемый в `Procedure.code` с системой `http://id.who.int/icd/release/11/ichi`. Выбирайте его из [ICHI Codes Accepted by DMED](https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs) - это то, что принимает DMED. Часть этих кодов в ICHI неактивна и оставлена только для того, чтобы уже имеющиеся в DMED записи проходили валидацию - новую операцию кодируйте активным кодом. Процедура вне формы 066 кодируется из [ICHI Codes](https://terminology.dhp.uz/fhir/core/ValueSet/ichi-vs).
 
 | UZ | RU | Путь FHIR | Код | Пример |
 |----|----|------------|------|---------|
