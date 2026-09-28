@@ -9,10 +9,8 @@ Description: "An operation recorded in the surgical procedures section of a form
 * ^publisher = "Uzinfocom"
 
 * code 1..1 MS
-// DMED's list is an older ICHI snapshot and its picker is unrestricted, so this binding
-// also admits the codes WHO has since withdrawn - they are inactive in the code system
-// and exist here so records already in DMED validate, not so new ones can use them.
-// Anything the platform codes itself should come from the core $ichi-vs instead.
+// Admits the withdrawn codes DMED still holds, so records already in DMED stay valid.
+// Use the core $ichi-vs for anything the platform codes itself.
 * code from $dmed-ichi-vs (required)
 * occurrence[x] 1..1 MS
 * occurrenceDateTime only dateTime
