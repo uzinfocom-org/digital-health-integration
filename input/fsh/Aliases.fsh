@@ -203,4 +203,7 @@ Alias: $cvd-risk-category-cs = https://terminology.dhp.uz/fhir/integrations/Code
 Alias: $icd-o-3-morphology-vs = https://terminology.dhp.uz/fhir/core/ValueSet/icd-o-3-morphology-vs
 Alias: $icd-o-3-topography-vs = https://terminology.dhp.uz/fhir/core/ValueSet/icd-o-3-topography-vs
 Alias: $icd-o-3 = http://terminology.hl7.org/CodeSystem/icd-o-3
+Alias: $ichi = http://id.who.int/icd/release/11/ichi
+Alias: $dmed-ichi-vs = https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs
+Alias: $ichi-vs = https://terminology.dhp.uz/fhir/core/ValueSet/ichi-vs
 Alias: $nci = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl

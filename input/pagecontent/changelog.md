@@ -1,6 +1,10 @@
 ### In development
 
-(No changes yet)
+#### Added
+
+The operation code on a [form 066](form-066-mapping.html) hospital discharge summary is now an ICHI code. [Form 066 Surgical Procedure](StructureDefinition-form-066-surgical-procedure.html) profiles the Procedure the surgical procedures section references, binding `Procedure.code` to [ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html). Previously the section accepted any Procedure and the example coded the operation as SNOMED CT `387713003` "Surgical procedure", which records that an operation happened but not which one.
+
+[ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html) enumerates the 6,853 ICHI codes DMED carries. DMED runs an older snapshot of ICHI, so it holds 6,176 of the 9,428 stem codes WHO currently publishes plus 677 WHO has since withdrawn. The withdrawn codes are `inactive` in [the code system](https://dhp.uz/fhir/core/CodeSystem-who-ichi.html) and this value set admits them, so records already in DMED stay valid; they should not be used for new ones. When the platform codes a procedure itself, [ICHI Codes](https://dhp.uz/fhir/core/ValueSet-ichi-vs.html) in UZ Core is the set to pick from.
 
 ### Version 0.9.1
 

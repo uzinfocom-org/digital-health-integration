@@ -123,7 +123,7 @@ Description: "Composition profile for Form 066 hospital discharge statistical ca
 * section[surgicalProcedures].code 1..1
 * section[surgicalProcedures].code = $loinc#29554-3 "Procedure Narrative"
 * section[surgicalProcedures].entry 1..*
-* section[surgicalProcedures].entry only Reference(Procedure)
+* section[surgicalProcedures].entry only Reference(Form066SurgicalProcedure)
 
 * section[laboratoryResults].title 1..1
 * section[laboratoryResults].code 1..1

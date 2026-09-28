@@ -126,12 +126,14 @@ Causes of death are tagged the same way (`Condition.category`, [Diagnosis Role](
 
 ### Surgical Procedures
 
+The operation code is an ICHI stem code - Target.Action.Means - carried on `Procedure.code` with system `http://id.who.int/icd/release/11/ichi`. Bind to [ICHI Codes Accepted by DMED](https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs) rather than the whole classification, because DMED's list is an older snapshot: of its 6,853 codes, 6,176 are among the 9,428 stem codes WHO currently publishes and 677 are codes WHO has since dropped. Those 677 are present in the code system with `inactive = true` so existing records still validate; they must not be used for new ones. When the platform codes a procedure itself, pick from [ICHI Codes](https://terminology.dhp.uz/fhir/integrations/ValueSet/ichi-vs), which excludes them.
+
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
 | Sana va vaqti | Дата и время операции | [Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html).occurrenceDateTime | - | 2026-01-08T11:30:00+05:00 |
-| Kod (ICHI) | Код операции | Procedure.code | SNOMED CT / ICHI | 123.AB.45 |
+| Kod (ICHI) | Код операции | Procedure.code | [ICHI Codes Accepted by DMED](https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs) | JBB.AE.AD |
 | Asosiy | Основная операция | Procedure.category | Local | Main |
-| Nomi | Наименование операции | Procedure.code.text | - | Surgical procedure |
+| Nomi | Наименование операции | Procedure.code.text | - | Bronchoscopy |
 | Shifokor | Врач | Procedure.performer.actor | [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html) | Rasulov B.B. |
 
 ---

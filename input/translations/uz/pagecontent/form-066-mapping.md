@@ -128,12 +128,14 @@ O'lim sabablari xuddi shu tarzda (`Condition.category`, [Diagnosis Role](CodeSys
 
 ### Jarrohlik amaliyotlari
 
+Operatsiya kodi - bu ICHI o'zak kodi (Target.Action.Means), `Procedure.code` ichida `http://id.who.int/icd/release/11/ichi` tizimi bilan uzatiladi. Bog'lanish butun klassifikatsiyaga emas, balki [ICHI Codes Accepted by DMED](https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs) ga qaratilgan, chunki DMED ro'yxati eskiroq kesim: uning 6 853 kodidan 6 176 tasi JSST hozir nashr etadigan 9 428 o'zak kod ichida, 677 tasi esa JSST keyinchalik olib tashlagan kodlar. Bu 677 kod kod tizimida `inactive = true` bilan saqlanadi, shunda mavjud yozuvlar validatsiyadan o'tadi; yangi yozuvlar uchun ulardan foydalanish mumkin emas. Platforma operatsiyani o'zi kodlaganda, tanlov [ICHI Codes](https://terminology.dhp.uz/fhir/integrations/ValueSet/ichi-vs) dan qilinadi, unda bu kodlar yo'q.
+
 | UZ | RU | FHIR yo'li | Kod | Misol |
 |----|----|------------|------|---------|
 | Sana va vaqti | Дата и время операции | [Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html).occurrenceDateTime | - | 2026-01-08T11:30:00+05:00 |
-| Kod (ICHI) | Код операции | Procedure.code | SNOMED CT / ICHI | 123.AB.45 |
+| Kod (ICHI) | Код операции | Procedure.code | [ICHI Codes Accepted by DMED](https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs) | JBB.AE.AD |
 | Asosiy | Основная операция | Procedure.category | Local | Main |
-| Nomi | Наименование операции | Procedure.code.text | - | Surgical procedure |
+| Nomi | Наименование операции | Procedure.code.text | - | Bronchoscopy |
 | Shifokor | Врач | Procedure.performer.actor | [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html) | Rasulov B.B. |
 
 ---

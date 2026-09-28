@@ -128,12 +128,14 @@
 
 ### Хирургические вмешательства
 
+Код операции - это стержневой код ICHI (Target.Action.Means), передаваемый в `Procedure.code` с системой `http://id.who.int/icd/release/11/ichi`. Привязка идёт к [ICHI Codes Accepted by DMED](https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs), а не ко всей классификации, поскольку список DMED - более старый срез: из его 6 853 кодов 6 176 входят в 9 428 стержневых кодов, публикуемых ВОЗ сейчас, а 677 - это коды, которые ВОЗ с тех пор убрала. Эти 677 присутствуют в системе кодов с `inactive = true`, чтобы существующие записи проходили валидацию; для новых записей их использовать нельзя. Когда платформа кодирует операцию сама, выбор делается из [ICHI Codes](https://terminology.dhp.uz/fhir/integrations/ValueSet/ichi-vs), где их нет.
+
 | UZ | RU | Путь FHIR | Код | Пример |
 |----|----|------------|------|---------|
 | Sana va vaqti | Дата и время операции | [Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html).occurrenceDateTime | - | 2026-01-08T11:30:00+05:00 |
-| Kod (ICHI) | Код операции | Procedure.code | SNOMED CT / ICHI | 123.AB.45 |
+| Kod (ICHI) | Код операции | Procedure.code | [ICHI Codes Accepted by DMED](https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs) | JBB.AE.AD |
 | Asosiy | Основная операция | Procedure.category | Local | Main |
-| Nomi | Наименование операции | Procedure.code.text | - | Surgical procedure |
+| Nomi | Наименование операции | Procedure.code.text | - | Bronchoscopy |
 | Shifokor | Врач | Procedure.performer.actor | [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html) | Rasulov B.B. |
 
 ---
