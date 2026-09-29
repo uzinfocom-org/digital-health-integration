@@ -3,11 +3,12 @@ Id: dmed-ichi-vs
 Title: "ICHI Codes Accepted by DMED"
 Description: "The ICHI codes DMED carries, which is the set a form 066 surgical procedure can be coded with. Enumerated rather than filtered, because no property of the code system distinguishes them. Includes the codes WHO no longer publishes, so existing DMED records validate; those are inactive in the code system and should be migrated."
 * ^url = "https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs"
-* ^version = "0.1.0"
+* ^version = "2026.9.24"
+* ^versionAlgorithmString = "semver"
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-09-17"
-* ^publisher = "DHP Integration"
+* ^date = "2026-09-24"
+* ^publisher = "Uzinfocom"
 * ^compose.inactive = true
 * $ichi#AAA.AD.AA
 * $ichi#AAA.AD.AE

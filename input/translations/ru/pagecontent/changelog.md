@@ -1,6 +1,10 @@
 ### В разработке
 
-(Пока без изменений)
+#### Добавлено
+
+Код операции в [выписной карте формы 066](form-066-mapping.html) теперь код ICHI. [Form 066 Surgical Procedure](StructureDefinition-form-066-surgical-procedure.html) профилирует Procedure, на который ссылается раздел хирургических вмешательств, и привязывает `Procedure.code` к [ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html). Раньше раздел принимал любой Procedure, а в примере операция была закодирована как SNOMED CT `387713003` «Surgical procedure», что фиксирует сам факт операции, но не её вид.
+
+[ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html) перечисляет 6 853 кода ICHI, которые есть в DMED. DMED работает на более старом срезе ICHI, поэтому содержит 6 176 из 9 428 стержневых кодов, публикуемых ВОЗ сейчас, плюс 677 кодов, которые ВОЗ с тех пор убрала. Убранные коды помечены `inactive` в [системе кодов](https://dhp.uz/fhir/core/CodeSystem-who-ichi.html), и этот набор значений их допускает, чтобы записи, уже имеющиеся в DMED, оставались валидными; для новых записей их использовать не следует. Когда платформа кодирует процедуру сама, выбор делается из [ICHI Codes](https://dhp.uz/fhir/core/ValueSet-ichi-vs.html) в UZ Core.
 
 ### Версия 0.9.1
 

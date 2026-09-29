@@ -1,6 +1,10 @@
 ### Ishlab chiqish jarayonida
 
-(Hozircha o'zgarishlar yo'q)
+#### Qo'shildi
+
+[066-shakl](form-066-mapping.html) statsionardan chiqarish kartasidagi operatsiya kodi endi ICHI kodi. [Form 066 Surgical Procedure](StructureDefinition-form-066-surgical-procedure.html) jarrohlik amaliyotlari bo'limi havola qiladigan Procedure ni profillaydi va `Procedure.code` ni [ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html) ga bog'laydi. Ilgari bo'lim har qanday Procedure ni qabul qilardi, misolda esa operatsiya SNOMED CT `387713003` "Surgical procedure" sifatida kodlangan edi - bu operatsiya bo'lganini qayd etadi, ammo qanday operatsiya bo'lganini ko'rsatmaydi.
+
+[ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html) DMED da mavjud 6 853 ICHI kodini sanab o'tadi. DMED ICHI ning eskiroq kesimida ishlaydi, shuning uchun unda JSST hozir nashr etadigan 9 428 o'zak koddan 6 176 tasi va JSST keyinchalik olib tashlagan 677 kod bor. Olib tashlangan kodlar [kod tizimida](https://dhp.uz/fhir/core/CodeSystem-who-ichi.html) `inactive` deb belgilangan, bu ro'yxat esa ularni qabul qiladi - shunda DMED da allaqachon mavjud yozuvlar validatsiyadan o'tadi; yangi yozuvlar uchun ulardan foydalanmaslik kerak. Platforma protsedurani o'zi kodlaganda, UZ Core dagi [ICHI Codes](https://dhp.uz/fhir/core/ValueSet-ichi-vs.html) dan tanlanadi.
 
 ### Versiya 0.9.1
 
