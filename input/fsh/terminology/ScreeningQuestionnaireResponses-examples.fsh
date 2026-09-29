@@ -10,7 +10,7 @@ Description: "Example completed response to the Screening breast cancer risk que
 * identifier[0].type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
 * identifier[0].type.coding[0].code = #PHC
 * identifier[0].type.coding[0].display = "Public Health Case Identifier"
-* identifier[0].system = "https://dhp.uz/fhir/core/sid/org/uz/screening"
+* identifier[0].system = "https://dhp.uz/fhir/core/sid/doc/uz/screening-case"
 * identifier[0].value = "136-RMJ"
 * identifier[1].system = $screening-program-type-id
 * identifier[1].value = "268547008"
@@ -86,7 +86,7 @@ Description: "Example completed response to the Screening cervical cancer risk q
 * identifier[0].type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
 * identifier[0].type.coding[0].code = #PHC
 * identifier[0].type.coding[0].display = "Public Health Case Identifier"
-* identifier[0].system = "https://dhp.uz/fhir/core/sid/org/uz/screening"
+* identifier[0].system = "https://dhp.uz/fhir/core/sid/doc/uz/screening-case"
 * identifier[0].value = "136-RSHM"
 * identifier[1].system = $screening-program-type-id
 * identifier[1].value = "171149006"
@@ -193,7 +193,7 @@ Description: "Example completed response to the Screening woman examination ques
 * identifier[0].type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
 * identifier[0].type.coding[0].code = #PHC
 * identifier[0].type.coding[0].display = "Public Health Case Identifier"
-* identifier[0].system = "https://dhp.uz/fhir/core/sid/org/uz/screening"
+* identifier[0].system = "https://dhp.uz/fhir/core/sid/doc/uz/screening-case"
 * identifier[0].value = "128"
 * identifier[1].system = "https://dhp.uz/fhir/integrations/sid/screening/form025-id"
 * identifier[1].value = "117"
@@ -204,7 +204,7 @@ Description: "Example completed response to the Screening woman examination ques
 * questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam"
 * status = #completed
 * authored = 2026-01-21T05:07:15.806Z
-* author.identifier.system = "https://dhp.uz/fhir/core/sid/uz/pinfl"
+* author.identifier.system = "https://dhp.uz/fhir/core/sid/pid/uz/ni"
 * author.identifier.value = "31705584220029"
 * author.display = "ABDUMALIK KHASHIMOV MUYDINOVICH"
 * item[0].linkId = "complaints"

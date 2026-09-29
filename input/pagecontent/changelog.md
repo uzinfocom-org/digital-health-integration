@@ -1,5 +1,17 @@
 ### In development
 
+#### Breaking changes
+
+The Screening identifier systems now follow the `https://dhp.uz/fhir/core/sid/{namespace}/{country}/{type}` pattern. Two had no namespace segment, and the public health case identifier sat in the organization namespace although it identifies cases and questionnaire responses. Records and cases move to the `doc` namespace, the program type to the general `prg` program system, which any health program can reuse with its own value. Identifier values are unchanged; senders switch the system:
+
+| Identifier | Old system | New system |
+|---|---|---|
+| [Screening record](NamingSystem-screening-identifier-system.html) | `https://dhp.uz/fhir/core/sid/uz/screening` | `https://dhp.uz/fhir/core/sid/doc/uz/screening` |
+| [Public health case](NamingSystem-ScreeningPublicHealthCaseNamingSystem.html) | `https://dhp.uz/fhir/core/sid/org/uz/screening` | `https://dhp.uz/fhir/core/sid/doc/uz/screening-case` |
+| [Screening program type](NamingSystem-screening-program-type-identifier-system.html) | `https://dhp.uz/fhir/core/sid/uz/screening-program-type` | `https://dhp.uz/fhir/core/sid/prg/uz/program` |
+
+The Uzbekistan PINFL naming system is removed. PINFL is the national identifier UZ Core already defines as `https://dhp.uz/fhir/core/sid/pid/uz/ni`; send it under that system instead of `https://dhp.uz/fhir/core/sid/uz/pinfl`.
+
 #### Added
 
 The operation code on a [form 066](form-066-mapping.html) hospital discharge summary is now an ICHI code. [Form 066 Surgical Procedure](StructureDefinition-form-066-surgical-procedure.html) profiles the Procedure the surgical procedures section references, binding `Procedure.code` to [ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html). Previously the section accepted any Procedure and the example coded the operation as SNOMED CT `387713003` "Surgical procedure", which records that an operation happened but not which one.
@@ -76,7 +88,7 @@ A screening cycle can now be published as a document. [Screening Composition](St
 
 Sixty code systems and a hundred and six value sets supply the terminology all of this needs. Breast ultrasound reporting has a value set per reported parameter, from [ACR breast composition](ValueSet-screening-ultrasound-acr-composition-vs.html) and [fibroglandular echogenicity](ValueSet-screening-ultrasound-fibroglandular-echogenicity-vs.html) through lesion [shape](ValueSet-screening-ultrasound-lesion-shape-vs.html), [contour](ValueSet-screening-ultrasound-lesion-contour-vs.html), [echogenicity](ValueSet-screening-ultrasound-lesion-echogenicity-vs.html), [orientation](ValueSet-screening-ultrasound-lesion-orientation-vs.html) and [vascularization](ValueSet-screening-ultrasound-lesion-vascularization-vs.html) to [axillary](ValueSet-screening-ultrasound-axillary-node-status-vs.html) and [regional node status](ValueSet-screening-ultrasound-regional-node-status-vs.html). Pathology reporting is covered by [breast histologic type](ValueSet-screening-breast-histologic-type-vs.html), [cervical histologic grade](ValueSet-screening-cervical-histologic-grade-vs.html), pathological [T](ValueSet-screening-pathological-t-vs.html), [N](ValueSet-screening-pathological-n-vs.html) and [M](ValueSet-screening-pathological-m-vs.html) stage, [resection margin status](ValueSet-screening-resection-margin-status-vs.html), [lymphovascular invasion](ValueSet-screening-histology-lymphovascular-invasion-vs.html), [HER2 immunohistochemistry score](ValueSet-screening-her2-ihc-score-vs.html), [p16 result](ValueSet-screening-p16-result-vs.html) and the [Yokohama category](ValueSet-screening-yokohama-category-vs.html). The gynecological examination has its own sets, among them [cervix condition](ValueSet-screening-cervix-condition-vs.html), [vaginal discharge](ValueSet-screening-vaginal-discharge-type-vs.html) and [vaginal wall prolapse](ValueSet-screening-vaginal-wall-prolapse-vs.html), and every question in the risk questionnaires has a value set for its answers.
 
-Four naming systems record the identifiers Screening exchanges - the [questionnaire identifier](NamingSystem-ScreeningQuestionnaireIdNamingSystem.html) and [questionnaire code](NamingSystem-ScreeningQuestionnaireCodeNamingSystem.html) assigned to a questionnaire definition, the [public health case](NamingSystem-ScreeningPublicHealthCaseNamingSystem.html) identifier and the [form 025](NamingSystem-ScreeningForm025IdNamingSystem.html) source identifier - alongside one for the [Uzbekistan PINFL](NamingSystem-UzbekistanPinflNamingSystem.html).
+Four naming systems record the identifiers Screening exchanges - the [questionnaire identifier](NamingSystem-ScreeningQuestionnaireIdNamingSystem.html) and [questionnaire code](NamingSystem-ScreeningQuestionnaireCodeNamingSystem.html) assigned to a questionnaire definition, the [public health case](NamingSystem-ScreeningPublicHealthCaseNamingSystem.html) identifier and the [form 025](NamingSystem-ScreeningForm025IdNamingSystem.html) source identifier - alongside one for the Uzbekistan PINFL.
 
 #### Changed
 

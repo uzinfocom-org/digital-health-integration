@@ -99,7 +99,7 @@ Usage: #definition
 * usage = "Business-identifier system for clinical and administrative records within the Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System (e.g. Observation, DiagnosticReport, ServiceRequest, Condition, QuestionnaireResponse, PractitionerRole). Person identities use the pid/pro systems instead."
 * jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/uz/screening"
+* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/doc/uz/screening"
 * uniqueId[0].preferred = true
 
 Instance: screening-program-type-identifier-system
@@ -116,7 +116,7 @@ Usage: #definition
 * usage = "Written by the DMED and HPV (ВПЧ) screening systems on every clinical or workflow resource that belongs to a single screening program (Observation including anthropometry, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen, Composition, and Questionnaire/QuestionnaireResponse when the questionnaire covers one program). Not used on Patient, Practitioner or PractitionerRole, which are shared across programs. The value is the program's SNOMED CT code: 171149006 Cervical screen, 268547008 Screening for breast cancer, 300007000 Screening for cardiovascular system disease, 171183004 Diabetes screening, 171223006 Ischaemic heart disease screening, 171147008 Screening for intestinal helminthiasis, 762445000 Screening for haematological disorder, 408961002 Fertility care assessment. Cerebrovascular screening has no suitable SNOMED CT concept and uses its screening-code-cs code, mserv-0007-00003. This identifier does not replace the resource's business identifier from screening-identifier-system and does not indicate which system (DMED or HPV) produced the resource."
 * jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/uz/screening-program-type"
+* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/prg/uz/program"
 * uniqueId[0].preferred = true
 
 Instance: screening-patient-identifier-system

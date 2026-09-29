@@ -43,7 +43,7 @@ Description: "NamingSystem for Screening public-health case and questionnaire re
 * responsible = "Screening"
 * description = "Identifier assigned by Screening to a public-health case or questionnaire response."
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/org/uz/screening"
+* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/doc/uz/screening-case"
 * uniqueId[0].preferred = true
 
 Instance: ScreeningForm025IdNamingSystem
@@ -60,20 +60,4 @@ Description: "NamingSystem for source form 025 identifiers assigned by Screening
 * description = "Source identifier of a Screening form 025 record."
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://dhp.uz/fhir/integrations/sid/screening/form025-id"
-* uniqueId[0].preferred = true
-
-Instance: UzbekistanPinflNamingSystem
-InstanceOf: NamingSystem
-Usage: #definition
-Title: "Uzbekistan PINFL NamingSystem"
-Description: "NamingSystem for the personal identification number of an individual in Uzbekistan."
-* name = "UzbekistanPinflNamingSystem"
-* status = #active
-* kind = #identifier
-* date = 2026-08-05
-* publisher = "DHP Integration"
-* responsible = "Digital Health Platform"
-* description = "Personal identification number of an individual (PINFL) in Uzbekistan."
-* uniqueId[0].type = #uri
-* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/uz/pinfl"
 * uniqueId[0].preferred = true
