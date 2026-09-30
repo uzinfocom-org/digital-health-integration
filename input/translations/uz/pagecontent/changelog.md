@@ -18,7 +18,7 @@ Gepatit registrida ham model bor: [Hepatitis Patient](StructureDefinition-hepati
 
 [YuIK testoldi ehtimoli bo'yicha xavf kategoriyalari](CodeSystem-ihd-risk-category-cs.html) endi shu yerda e'lon qilinadi. [YuIK testoldi ehtimoli so'rovnomasi](Questionnaire-IhdPretestQuestionnaire.html) xavf kategoriyasi savoliga javoblarda ulardan allaqachon foydalanardi, biroq UZ Core ning hech bir relizida mavjud bo'lmagan UZ Core kanonik URL manzili ostida.
 
-[Onkologiya](cancer.html) va [gepatit](hepatitis.html) sahifalarida resurslar o'zaro qanday bog'lanishini ko'rsatuvchi diagramma paydo bo'ldi. Boshqa integratsiya sahifalaridagi diagrammalar endi integratsiyaning barcha profillarini o'z ichiga oladi, noto'g'ri kardinalliklar tuzatildi. Barcha diagrammalar klinik grafni ko'rsatadi, tashkilotlar, tibbiyot xodimlari va boshqa ishtirokchilarga havolalarsiz.
+[Onkologiya](cancer.html) va [gepatit](hepatitis.html) sahifalarida resurslar o'zaro qanday bog'lanishini ko'rsatuvchi diagramma paydo bo'ldi. Boshqa integratsiya sahifalaridagi diagrammalar endi integratsiyaning barcha profillarini o'z ichiga oladi (skriningning yakuniy hujjati ScreeningComposition bundan mustasno), noto'g'ri kardinalliklar tuzatildi. Barcha diagrammalar klinik grafni ko'rsatadi, tashkilotlar, tibbiyot xodimlari va boshqa ishtirokchilarga havolalarsiz.
 
 #### O'zgartirildi
 
