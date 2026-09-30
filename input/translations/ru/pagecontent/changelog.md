@@ -1,10 +1,26 @@
 ### В разработке
 
+(Пока без изменений)
+
+### Версия 0.10.0
+
 #### Добавлено
+
+[Онкологический регистр](cancer.html) теперь представлен моделью FHIR, построенной по образцу [mCODE](https://hl7.org/fhir/us/mcode/STU4/) там, где это позволяют данные регистра. [Cancer Condition](StructureDefinition-cancer-condition.html) содержит диагноз, идентификатор регистра, латеральность и обстоятельства выявления, [Cancer Episode Of Care](StructureDefinition-cancer-episode-of-care.html) объединяет курс лечения, а [Cancer Encounter](StructureDefinition-cancer-encounter.html) - визит в его рамках. Шесть профилей Observation фиксируют морфологию и поведение опухоли, степень дифференцировки, метастазы, категории TNM и стадию TNM.
+
+Для кодирования используются ICD-10, ICD-O-3, SNOMED CT и LOINC там, где они есть, а локальные системы кодов - для понятий регистра, таких как обстоятельства выявления, метод подтверждения и цель лечения. Три ConceptMap переводят собственные справочные идентификаторы регистра для статуса, ICD-10 и топографии ICD-O-3 в коды, которые ожидает DHP.
+
+У регистра гепатитов тоже есть модель: [Hepatitis Patient](StructureDefinition-hepatitis-patient.html), [Condition](StructureDefinition-hepatitis-condition.html), [Episode Of Care](StructureDefinition-hepatitis-episode-of-care.html), [Encounter](StructureDefinition-hepatitis-encounter.html), профили Observation для лабораторных и ультразвуковых исследований, а также [Questionnaire](StructureDefinition-hepatitis-questionnaire.html) и [ответ на него](StructureDefinition-hepatitis-questionnaire-response.html) для опросника лечения - вместо непрофилированных примеров, которые поставлялись в 0.9.0. Записи несут идентификатор регистра в системе `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis`. [Сопоставление регистра гепатитов](hepatitis.html) описывает каждое поле.
+
+Код операции в [выписной карте формы 066](form-066-mapping.html) теперь код ICHI. [Form 066 Surgical Procedure](StructureDefinition-form-066-surgical-procedure.html) профилирует Procedure, на который ссылается раздел хирургических вмешательств, и привязывает `Procedure.code` к [ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html). Раньше раздел принимал любой Procedure.
+
+[ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html) перечисляет 6 853 кода, которые есть в DMED: 6 176 из 9 428 стержневых кодов, публикуемых ВОЗ сейчас, плюс 677 кодов, которые ВОЗ с тех пор убрала. Убранные помечены `inactive` в [системе кодов](https://dhp.uz/fhir/core/CodeSystem-who-ichi.html) и допускаются здесь, чтобы записи, уже имеющиеся в DMED, оставались валидными, но использовать их в дальнейшем не следует. Процедуру, которую платформа кодирует сама, выбирают из [ICHI Codes](https://dhp.uz/fhir/core/ValueSet-ichi-vs.html) в UZ Core.
 
 [Категории риска по предтестовой вероятности ИБС](CodeSystem-ihd-risk-category-cs.html) теперь публикуются здесь. [Опросник предтестовой вероятности ИБС](Questionnaire-IhdPretestQuestionnaire.html) уже использовал их в ответах на вопрос о категории риска, но под каноническим URL UZ Core, которого нет ни в одном релизе UZ Core.
 
 #### Изменено
+
+Гайд собирается на основе [UZ Core 0.10.0](https://dhp.uz/fhir/core/changelog.html), где публикуется система кодов ICHI, нужная форме 066, и привязка `Procedure.code` ослаблена до extensible.
 
 Опросники по [сахарному диабету](Questionnaire-DiabetesScreeningQuestionnaire.html), [онкогематологии](Questionnaire-OncohematologyScreeningQuestionnaire.html), [раку молочной железы](Questionnaire-BreastCancerScreeningQuestionnaire.html), [раку шейки матки](Questionnaire-CervicalCancerScreeningQuestionnaire.html) и [фертильности](Questionnaire-FertilityQuestionnaire.html) теперь содержат `Questionnaire.code` из `screening-code-cs` UZ Core, как уже содержали остальные четыре скрининговых опросника.
 
@@ -12,13 +28,13 @@
 
 Опросники по [сахарному диабету](Questionnaire-DiabetesScreeningQuestionnaire.html) и [сердечно-сосудистому риску](Questionnaire-CVDRiskScreeningQuestionnaire.html) теперь подсчитывают баллы по тем ответам, которые в них действительно есть. Опросник диабета сравнивал возраст, окружность талии и семейный анамнез с кодами, которых нет ни в одном варианте ответа, поэтому эти вопросы всегда давали 0 баллов; опросник сердечно-сосудистого риска сравнивал курение с устаревшим локальным кодом, поэтому курящие искались в половине таблицы ВОЗ/МОАГ для некурящих. Ответы не изменились.
 
-#### Критические изменения
+Версии всех артефактов имеют вид `MAJOR.MINOR.PATCH`. [Опросник скрининга сахарного диабета](Questionnaire-DiabetesScreeningQuestionnaire.html) и [шаблон скринингового анкетирования](Questionnaire-screening-intake-template.html) объявляли версии `1.0` и `1.1`; теперь они объявляют `1.0.0` и `1.1.0`.
 
-Вопрос `infertility-icd-diagnosis` опросника фертильности теперь имеет тип `coding` с привязкой к МКБ-10 и допускает несколько ответов вместо свободного текста `string`. Ответы должны передавать по одному `valueCoding` на каждый диагноз вместо `valueString`.
+Каждый опросник теперь указывает интеграцию, к которой относится, в контексте использования `program`: у девяти скрининговых опросников и опросника по гепатиту его не было, и на странице [опросников](forms.html) они оставались без группы. В [Integration Area](CodeSystem-integration-area-cs.html) добавлен код `hepatitis`, а `screening` теперь охватывает всю скрининговую службу, а не только скрининг рака шейки матки и молочной железы.
 
-Коды категорий риска ИБС `low`, `medium` и `high` сохраняются, но их система меняется с `https://terminology.dhp.uz/fhir/core/CodeSystem/ihd-risk-category-cs` на `https://terminology.dhp.uz/fhir/integrations/CodeSystem/ihd-risk-category-cs`.
+#### Несовместимые изменения
 
-Системы идентификаторов Скрининга теперь следуют шаблону `https://dhp.uz/fhir/core/sid/{namespace}/{country}/{type}`. У двух из них не было сегмента пространства имён, а идентификатор случая общественного здравоохранения находился в пространстве организаций, хотя идентифицирует случаи и ответы на опросники. Записи и случаи перенесены в пространство `doc`, тип программы - в общую систему программ `prg`, которую любая программа здравоохранения может использовать со своим значением. Значения идентификаторов не меняются; отправителям нужно сменить систему:
+Системы идентификаторов Скрининга теперь следуют шаблону `https://dhp.uz/fhir/core/sid/{namespace}/{country}/{type}`. У двух из них не было сегмента пространства имён, а идентификатор случая общественного здравоохранения находился в пространстве организаций, хотя идентифицирует случаи, а не организации. Записи и случаи перенесены в пространство `doc`, тип программы - в общую систему программ `prg`, которую любая программа здравоохранения может использовать со своим значением. Значения идентификаторов не меняются; отправителям нужно сменить систему:
 
 | Идентификатор | Прежняя система | Новая система |
 |---|---|---|
@@ -28,19 +44,9 @@
 
 Система имён для ПИНФЛ Узбекистана удалена. ПИНФЛ - это национальный идентификатор, который UZ Core уже определяет как `https://dhp.uz/fhir/core/sid/pid/uz/ni`; передавайте его в этой системе вместо `https://dhp.uz/fhir/core/sid/uz/pinfl`.
 
-#### Добавлено
+Вопрос `infertility-icd-diagnosis` опросника фертильности теперь имеет тип `coding` с привязкой к МКБ-10 и допускает несколько ответов вместо свободного текста `string`. Ответы должны передавать по одному `valueCoding` на каждый диагноз вместо `valueString`.
 
-Код операции в [выписной карте формы 066](form-066-mapping.html) теперь код ICHI. [Form 066 Surgical Procedure](StructureDefinition-form-066-surgical-procedure.html) профилирует Procedure, на который ссылается раздел хирургических вмешательств, и привязывает `Procedure.code` к [ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html). Раньше раздел принимал любой Procedure, а в примере операция была закодирована как SNOMED CT `387713003` «Surgical procedure», что фиксирует сам факт операции, но не её вид.
-
-[ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html) перечисляет 6 853 кода ICHI, которые есть в DMED. DMED работает на более старом срезе ICHI, поэтому содержит 6 176 из 9 428 стержневых кодов, публикуемых ВОЗ сейчас, плюс 677 кодов, которые ВОЗ с тех пор убрала. Убранные коды помечены `inactive` в [системе кодов](https://dhp.uz/fhir/core/CodeSystem-who-ichi.html), и этот набор значений их допускает, чтобы записи, уже имеющиеся в DMED, оставались валидными; для новых записей их использовать не следует. Когда платформа кодирует процедуру сама, выбор делается из [ICHI Codes](https://dhp.uz/fhir/core/ValueSet-ichi-vs.html) в UZ Core.
-
-### Версия 0.9.1
-
-#### Изменено
-
-[Опросник скрининга сахарного диабета](Questionnaire-DiabetesScreeningQuestionnaire.html) и [шаблон скринингового анкетирования](Questionnaire-screening-intake-template.html) объявляли версии `1.0` и `1.1`; теперь они объявляют `1.0.0` и `1.1.0`, поскольку версия любого артефакта имеет вид `MAJOR.MINOR.PATCH`.
-
-Пакет теперь собирается как публикационная сборка. Его `package.json` содержал `notForPublication` и URL `file://`, поэтому [packages2.fhir.org](https://packages2.fhir.org/packages/uz.dhp.integrations) отклонял все версии. Гайд также собирается на основе [UZ Core 0.9.2](https://dhp.uz/fhir/core/changelog.html), пакет которого имел тот же недостаток: ссылки из этого гайда на артефакты UZ Core вели на пути `file://`, а теперь ведут на dhp.uz.
+Коды категорий риска ИБС `low`, `medium` и `high` сохраняются, но их система меняется с `https://terminology.dhp.uz/fhir/core/CodeSystem/ihd-risk-category-cs` на `https://terminology.dhp.uz/fhir/integrations/CodeSystem/ihd-risk-category-cs`.
 
 ### Версия 0.9.0
 
