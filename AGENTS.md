@@ -18,3 +18,4 @@ New clinical forms follow `docs/new-form.ru.md`.
 - **Content**: Markdown pages in `input/pagecontent/`, translations in `input/translations/{ru,uz}/`
 - **Canonical base**: `https://dhp.uz/fhir/integrations` for profiles and `https://terminology.dhp.uz/fhir/integrations` for terminologies
 - **Identifier systems**: reuse the core `https://dhp.uz/fhir/core/sid/{namespace}/{country}/{type}` systems (modelling guidelines §2.8)
+- **Questionnaires**: a questionnaire that belongs to an integration names it in a `program` useContext coded from `integration-area-cs`, so the [questionnaires](input/pagecontent/forms.md) page can group it
