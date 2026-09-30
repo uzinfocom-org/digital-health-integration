@@ -44,7 +44,18 @@ Publishing a release is automated by [`.github/workflows/release.yml`](.github/w
    those scripts live in
    [dhp-gitlab-publishing](https://github.com/vadi2/dhp-gitlab-publishing).
 
-5. **Merge the package-feed PR.**
+5. **Merge the package-feed PR.** The Release workflow opens it with
+   `GITHUB_TOKEN`, and events from that token start no workflows, so the
+   required `sushi` and `ig-publisher` checks never report and the ruleset
+   blocks the merge. Push any commit to its branch to make them run:
+
+   ```bash
+   BRANCH=chore/package-feed-X.Y.Z
+   git fetch origin $BRANCH && git checkout $BRANCH
+   git commit --allow-empty -m "run checks" && git push
+   ```
+
+   Then merge it; the squash drops the extra commit.
 
 `main` is ruleset-protected (PR + `sushi`/`ig-publisher` checks required), so the
 feed change must go through a PR rather than a direct push.
