@@ -1,6 +1,22 @@
 ### In development
 
+#### Added
+
+The [IHD pre-test probability risk categories](CodeSystem-ihd-risk-category-cs.html) are now published here. The [IHD pretest questionnaire](Questionnaire-IhdPretestQuestionnaire.html) already answered its risk category item from them, but under a UZ Core canonical that no UZ Core release contains.
+
+#### Changed
+
+The [diabetes](Questionnaire-DiabetesScreeningQuestionnaire.html), [oncohematology](Questionnaire-OncohematologyScreeningQuestionnaire.html), [breast cancer](Questionnaire-BreastCancerScreeningQuestionnaire.html), [cervical cancer](Questionnaire-CervicalCancerScreeningQuestionnaire.html) and [fertility](Questionnaire-FertilityQuestionnaire.html) questionnaires now carry `Questionnaire.code` from UZ Core `screening-code-cs`, as the other four screening questionnaires already did.
+
+A [fertility questionnaire response with diagnosed infertility](QuestionnaireResponse-example-fertility-questionnaire-response-infertility.html) shows two ICD-10 diagnoses, each recorded as its own Condition ([first](Condition-example-fertility-infertility-condition.html), [second](Condition-example-fertility-infertility-condition-2.html)) whose `evidence` references the response.
+
+The [diabetes](Questionnaire-DiabetesScreeningQuestionnaire.html) and [cardiovascular risk](Questionnaire-CVDRiskScreeningQuestionnaire.html) questionnaires now score the answers they actually offer. Diabetes compared age, waist and family history against codes no answer option carries, so those items always scored 0; cardiovascular risk compared tobacco use against a stale local code, so smokers were looked up in the non-smoker half of the WHO/ISH chart. Answers are unchanged.
+
 #### Breaking changes
+
+The fertility questionnaire's `infertility-icd-diagnosis` item is now `coding` bound to ICD-10 and repeats, instead of free-text `string`. Responses must send one `valueCoding` per diagnosis instead of `valueString`.
+
+The IHD risk category codes `low`, `medium` and `high` keep their codes but their system changes from `https://terminology.dhp.uz/fhir/core/CodeSystem/ihd-risk-category-cs` to `https://terminology.dhp.uz/fhir/integrations/CodeSystem/ihd-risk-category-cs`.
 
 The Screening identifier systems now follow the `https://dhp.uz/fhir/core/sid/{namespace}/{country}/{type}` pattern. Two had no namespace segment, and the public health case identifier sat in the organization namespace although it identifies cases and questionnaire responses. Records and cases move to the `doc` namespace, the program type to the general `prg` program system, which any health program can reuse with its own value. Identifier values are unchanged; senders switch the system:
 

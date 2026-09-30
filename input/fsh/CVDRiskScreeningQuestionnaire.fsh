@@ -267,7 +267,7 @@ Description: "Example for CVD Risk Screening Questionnaire"
   * extension[$variable][=].valueExpression.expression = "iif(%sexcode = 'male', 0, iif(%sexcode = 'female', 1, {}))"
   * extension[$variable][+].valueExpression.name = #smkIdx
   * extension[$variable][=].valueExpression.language = #"text/fhirpath"
-  * extension[$variable][=].valueExpression.expression = "iif(%smk = 'scrn-0073-00002', 1, 0)"
+  * extension[$variable][=].valueExpression.expression = "iif(%smk = '110483000', 1, 0)"
   * extension[$variable][+].valueExpression.name = #idx
   * extension[$variable][=].valueExpression.language = #"text/fhirpath"
   * extension[$variable][=].valueExpression.expression = "((((%sexIdx * 2 + %smkIdx) * 7 + %ageIdx) * 5 + %sbpIdx) * 5 + %bmiIdx)"

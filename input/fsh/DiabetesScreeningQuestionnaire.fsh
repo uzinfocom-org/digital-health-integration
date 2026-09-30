@@ -19,6 +19,7 @@ Description: "Example for Diabetes Screening Questionnaire"
   * extension[$translation-extension][+]
     * extension[lang].valueCode = #en
     * extension[content].valueString = "Early Diabetes Screening"
+* code = $screening-code-cs#mserv-0007-00006 "Qandli diabetni erta aniqlash so'rovnomasi"
 
 // Question 1: Age band. Score: 40-64=5, 65+=7
 * item[+]
@@ -285,14 +286,14 @@ Description: "Example for Diabetes Screening Questionnaire"
   * extension[$variable][=].valueExpression.expression = "%resource.item.where(linkId='age').answer.value.ofType(Coding).code.first()"
   * extension[$variable][+].valueExpression.name = #ageScore
   * extension[$variable][=].valueExpression.language = #"text/fhirpath"
-  * extension[$variable][=].valueExpression.expression = "iif(%ageCode = 'age-40-64', 5, iif(%ageCode = 'age-65-plus', 7, 0))"
+  * extension[$variable][=].valueExpression.expression = "iif(%ageCode = 'scrn-0074-00001', 5, iif(%ageCode = 'scrn-0074-00002', 7, 0))"
 
   * extension[$variable][+].valueExpression.name = #waistCode
   * extension[$variable][=].valueExpression.language = #"text/fhirpath"
   * extension[$variable][=].valueExpression.expression = "%resource.item.where(linkId='waist').answer.value.ofType(Coding).code.first()"
   * extension[$variable][+].valueExpression.name = #waistScore
   * extension[$variable][=].valueExpression.language = #"text/fhirpath"
-  * extension[$variable][=].valueExpression.expression = "iif(%waistCode = 'sm-94-101' or %waistCode = 'sm-80-87', 3, iif(%waistCode = 'sm-102-plus' or %waistCode = 'sm-88-plus', 4, 0))"
+  * extension[$variable][=].valueExpression.expression = "iif(%waistCode = 'scrn-0074-00004' or %waistCode = 'scrn-0074-00007', 3, iif(%waistCode = 'scrn-0074-00005' or %waistCode = 'scrn-0074-00008', 4, 0))"
 
   * extension[$variable][+].valueExpression.name = #sedentaryCode
   * extension[$variable][=].valueExpression.language = #"text/fhirpath"
@@ -306,7 +307,7 @@ Description: "Example for Diabetes Screening Questionnaire"
   * extension[$variable][=].valueExpression.expression = "%resource.item.where(linkId='family-history').answer.value.ofType(Coding).code.first()"
   * extension[$variable][+].valueExpression.name = #familyScore
   * extension[$variable][=].valueExpression.language = #"text/fhirpath"
-  * extension[$variable][=].valueExpression.expression = "iif(%familyCode = 'first-degree', 4, iif(%familyCode = 'second-degree', 2, 0))"
+  * extension[$variable][=].valueExpression.expression = "iif(%familyCode = '416855002', 4, iif(%familyCode = 'scrn-0074-00010', 2, 0))"
 
   * extension[$variable][+].valueExpression.name = #totalScore
   * extension[$variable][=].valueExpression.language = #"text/fhirpath"

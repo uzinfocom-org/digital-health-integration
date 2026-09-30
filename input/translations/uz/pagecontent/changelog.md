@@ -1,6 +1,22 @@
 ### Ishlab chiqish jarayonida
 
+#### Qo'shildi
+
+[YuIK testoldi ehtimoli bo'yicha xavf kategoriyalari](CodeSystem-ihd-risk-category-cs.html) endi shu yerda e'lon qilinadi. [YuIK testoldi ehtimoli so'rovnomasi](Questionnaire-IhdPretestQuestionnaire.html) xavf kategoriyasi savoliga javoblarda ulardan allaqachon foydalanardi, biroq UZ Core ning hech bir relizida mavjud bo'lmagan UZ Core kanonik URL manzili ostida.
+
+#### O'zgartirildi
+
+[Qandli diabet](Questionnaire-DiabetesScreeningQuestionnaire.html), [onkogematologiya](Questionnaire-OncohematologyScreeningQuestionnaire.html), [ko'krak bezi saratoni](Questionnaire-BreastCancerScreeningQuestionnaire.html), [bachadon bo'yni saratoni](Questionnaire-CervicalCancerScreeningQuestionnaire.html) va [fertillik](Questionnaire-FertilityQuestionnaire.html) so'rovnomalari endi UZ Core `screening-code-cs` dan olingan `Questionnaire.code` ga ega, qolgan to'rtta skrining so'rovnomasidagi kabi.
+
+[Bepushtlik aniqlangan fertillik so'rovnomasi javobi](QuestionnaireResponse-example-fertility-questionnaire-response-infertility.html) XKT-10 bo'yicha ikkita tashxisni ko'rsatadi; ularning har biri alohida Condition sifatida qayd etilgan ([birinchi](Condition-example-fertility-infertility-condition.html), [ikkinchi](Condition-example-fertility-infertility-condition-2.html)) va ularning `evidence` maydoni shu javobga havola qiladi.
+
+[Qandli diabet](Questionnaire-DiabetesScreeningQuestionnaire.html) va [yurak-qon tomir xavfi](Questionnaire-CVDRiskScreeningQuestionnaire.html) so'rovnomalari endi ballarni o'zlarida haqiqatan mavjud bo'lgan javoblar bo'yicha hisoblaydi. Qandli diabet so'rovnomasi yosh, bel o'lchami va oilaviy anamnezni hech bir javob variantida bo'lmagan kodlar bilan solishtirardi, shuning uchun bu savollar doim 0 ball berardi; yurak-qon tomir xavfi so'rovnomasi tamaki iste'molini eskirgan mahalliy kod bilan solishtirardi, shuning uchun chekuvchilar JSST/XGJ jadvalining chekmaydiganlar qismidan qidirilardi. Javoblar o'zgarmagan.
+
 #### Muhim o'zgarishlar
+
+Fertillik so'rovnomasining `infertility-icd-diagnosis` savoli endi erkin matnli `string` o'rniga XKT-10 ga bog'langan va takrorlanuvchi `coding` turiga ega. Javoblar `valueString` o'rniga har bir tashxis uchun bittadan `valueCoding` yuborishi kerak.
+
+YuIK xavf kategoriyalarining `low`, `medium` va `high` kodlari saqlanadi, ammo ularning tizimi `https://terminology.dhp.uz/fhir/core/CodeSystem/ihd-risk-category-cs` dan `https://terminology.dhp.uz/fhir/integrations/CodeSystem/ihd-risk-category-cs` ga o'zgaradi.
 
 Skrining identifikator tizimlari endi `https://dhp.uz/fhir/core/sid/{namespace}/{country}/{type}` shabloniga amal qiladi. Ulardan ikkitasida nomlar maydoni segmenti yo'q edi, jamoat salomatligi holati identifikatori esa holatlar va so'rovnoma javoblarini identifikatsiya qilsa-da, tashkilotlar nomlar maydonida joylashgan edi. Yozuvlar va holatlar `doc` nomlar maydoniga, dastur turi esa har qanday sog'liqni saqlash dasturi o'z qiymati bilan qayta foydalanishi mumkin bo'lgan umumiy `prg` dastur tizimiga ko'chirildi. Identifikator qiymatlari o'zgarmaydi; yuboruvchilar tizimni almashtiradi:
 

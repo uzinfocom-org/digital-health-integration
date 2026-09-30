@@ -13,7 +13,7 @@ Description: "Questionnaire used by Screening to assess breast cancer risk."
 * identifier[1].value = "RMJ"
 * identifier[2].system = $screening-program-type-id
 * identifier[2].value = "268547008"
-* version = "1.0.1"
+* version = "1.1.0"
 * status = #active
 * useContext[0].code = $usage-context-type#program
 * useContext[0].valueCodeableConcept = $integration-area#screening
@@ -151,6 +151,7 @@ Description: "Questionnaire used by Screening to assess breast cancer risk."
 * item[11].readOnly = true
 * item[11].answerConstraint = #optionsOnly
 * item[11].answerValueSet = "https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-risk-level-vs"
+* insert ScreeningBreastRiskScoring
 
 // Source: Questionnaire-cervical-risk.json
 Instance: ScreeningCervicalRiskQuestionnaire
@@ -167,7 +168,7 @@ Description: "Questionnaire used by Screening to assess cervical cancer risk."
 * identifier[1].value = "RSHM"
 * identifier[2].system = $screening-program-type-id
 * identifier[2].value = "171149006"
-* version = "1.0.1"
+* version = "1.1.0"
 * status = #active
 * useContext[0].code = $usage-context-type#program
 * useContext[0].valueCodeableConcept = $integration-area#screening
@@ -378,6 +379,7 @@ Description: "Questionnaire used by Screening to assess cervical cancer risk."
 * item[18].readOnly = true
 * item[18].answerConstraint = #optionsOnly
 * item[18].answerValueSet = "https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-risk-level-vs"
+* insert ScreeningCervicalRiskScoring
 
 // Source: Questionnaire-woman-exam.json
 Instance: ScreeningWomanExamQuestionnaire

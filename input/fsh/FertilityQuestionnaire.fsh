@@ -26,6 +26,7 @@ Description: "Example Questionnaire for fertility history collection"
   * extension[$translation-extension][+]
     * extension[lang].valueCode = #en
     * extension[content].valueString = "Questionnaire for fertility history collection"
+* code = $screening-code-cs#mserv-0007-00002 "Fertillik bo'yicha so'rovnoma"
 
 * item[+]
   * linkId = "menstruation"
@@ -437,7 +438,12 @@ Description: "Example Questionnaire for fertility history collection"
       * extension[$translation-extension][+]
         * extension[lang].valueCode = #en
         * extension[content].valueString = "ICD diagnosis"
-    * type = #string
+    // Was #string — changed to #coding so each answer can drive a real coded Condition.code.
+    // repeats: several diagnoses can be chosen (DMED fertility_screening_disease_codes is one-to-many);
+    // each chosen code becomes its own Condition with evidence -> this QuestionnaireResponse.
+    * type = #coding
+    * repeats = true
+    * answerValueSet = $icd-10-vs
 
 Instance: example-fertility-questionnaire-response
 InstanceOf: UZCoreQuestionnaireResponse
@@ -446,7 +452,7 @@ Title: "Пример ответа на опросник фертильности
 Description: "Пример заполненного опросника по фертильности пациента"
 * questionnaire = Canonical(FertilityQuestionnaire)
 * status = #completed
-* subject = Reference(example-salim)
+* subject = Reference(lola-oripova)
 * authored = "2026-07-01T14:30:00+05:00"
 * language = #ru
 
@@ -470,3 +476,75 @@ Description: "Пример заполненного опросника по фе
   * item[+]
     * linkId = "infertility-present"
     * answer[+].valueCoding = $v2-0532#N "No"
+
+Instance: example-fertility-questionnaire-response-infertility
+InstanceOf: UZCoreQuestionnaireResponse
+Usage: #example
+Title: "Пример ответа на опросник фертильности — установлено бесплодие"
+Description: "Пример заполненного опросника по фертильности пациента с диагностированным бесплодием, для которого создаётся Condition (см. example-fertility-infertility-condition)"
+* identifier[0].system = $screening-program-type-id
+* identifier[0].value = "408961002"
+* questionnaire = Canonical(FertilityQuestionnaire)
+* status = #completed
+* subject = Reference(lola-oripova)
+* authored = "2026-07-27T14:26:00+05:00"
+* language = #ru
+
+* item[+]
+  * linkId = "menstruation"
+  * item[+]
+    * linkId = "menstruation-present"
+    * answer[+].valueCoding = $v2-0532#Y "Yes"
+  * item[+]
+    * linkId = "menstruation-age-start"
+    * answer[+].valueInteger = 13
+
+* item[+]
+  * linkId = "perinatal-losses"
+  * item[+]
+    * linkId = "perinatal-losses-present"
+    * answer[+].valueCoding = $v2-0532#N "No"
+
+* item[+]
+  * linkId = "infertility"
+  * item[+]
+    * linkId = "infertility-present"
+    * answer[+].valueCoding = $v2-0532#Y "Yes"
+  * item[+]
+    * linkId = "infertility-type"
+    * answer[+].valueCoding = $sct#297106006 "Primary infertility"
+  * item[+]
+    * linkId = "infertility-diagnosis-date"
+    * answer[+].valueDate = "2026-07-27"
+  * item[+]
+    * linkId = "infertility-icd-diagnosis"
+    * answer[+].valueCoding = $icd-10#N97.0 "Female infertility associated with anovulation"
+    * answer[+].valueCoding = $icd-10#N97.1 "Female infertility of tubal origin"
+
+Instance: example-fertility-infertility-condition
+InstanceOf: UZCoreCondition
+Usage: #example
+Title: "Диагноз бесплодия — пример (1 из 2)"
+Description: "Первый из двух диагнозов бесплодия по МКБ-10, выбранных в опроснике фертильности (example-fertility-questionnaire-response-infertility); один Condition на каждый выбранный диагноз, связь через Condition.evidence"
+* identifier[0].system = $screening-program-type-id
+* identifier[0].value = "408961002"
+* clinicalStatus = $condition-clinical#active
+* code.coding[0] = $icd-10#N97.0 "Female infertility associated with anovulation"
+* subject = Reference(lola-oripova)
+* recordedDate = "2026-07-27"
+* participant[0].actor = Reference(example-practitioner)
+* evidence[0].reference = Reference(example-fertility-questionnaire-response-infertility)
+
+Instance: example-fertility-infertility-condition-2
+InstanceOf: UZCoreCondition
+Usage: #example
+Title: "Диагноз бесплодия — пример (2 из 2)"
+Description: "Второй диагноз бесплодия по МКБ-10 из того же опросника фертильности; тот же evidence, что и у example-fertility-infertility-condition"
+* identifier[0].system = $screening-program-type-id
+* identifier[0].value = "408961002"
+* clinicalStatus = $condition-clinical#active
+* code.coding[0] = $icd-10#N97.1 "Female infertility of tubal origin"
+* subject = Reference(lola-oripova)
+* recordedDate = "2026-07-27"
+* participant[0].actor = Reference(example-practitioner)
+* evidence[0].reference = Reference(example-fertility-questionnaire-response-infertility)
