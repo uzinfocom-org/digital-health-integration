@@ -5,9 +5,16 @@ Publishing a release is automated by [`.github/workflows/release.yml`](.github/w
 ## Steps
 
 1. **Prepare-release PR.** Open a PR that:
-   - bumps `version:` in `sushi-config.yaml` to `X.Y.Z`, and
+   - bumps `version:` in `sushi-config.yaml` to `X.Y.Z`,
+   - bumps the `uz.dhp.core` dependency to the core release this version builds
+     against, and
    - rolls the changelog `### In development` section into a `### Version X.Y.Z`
      section (en/ru/uz), resetting *In development* to `(No changes yet)`.
+
+   A new core version only resolves once UZ Core has released it and its package
+   feed PR is merged, because CI installs `uz.dhp.core` from packages.fhir.org.
+   Check <https://packages.fhir.org/uz.dhp.core> lists the version before
+   pushing the bump, or `ig-publisher` fails on an unresolvable dependency.
 
    Merge it once CI is green.
 
@@ -55,7 +62,22 @@ Publishing a release is automated by [`.github/workflows/release.yml`](.github/w
    git commit --allow-empty -m "run checks" && git push
    ```
 
-   Then merge it; the squash drops the extra commit.
+   Auto-merge is already armed by the workflow, so the PR merges itself shortly
+   after the checks pass; merge it by hand if it has not. The squash drops the
+   extra commit.
+
+6. **Announce the release.** Send one email to the implementation teams and to
+   the Civitta review covering both guides when UZ Core released the same
+   version, rather than one email each, and post the same announcement to the
+   implementation Telegram group in Russian. Send it once the package feed PR is
+   merged, so the version is installable when people go looking for it.
+
+   The announcement needs the version and package coordinates
+   (`uz.dhp.integrations#X.Y.Z`), a short summary written from the
+   `### Version X.Y.Z` changelog section, the breaking changes spelled out, and
+   links to the [guide](https://dhp.uz/fhir/integrations), the
+   [changelog](https://dhp.uz/fhir/integrations/changelog.html) and the GitHub
+   release.
 
 `main` is ruleset-protected (PR + `sushi`/`ig-publisher` checks required), so the
 feed change must go through a PR rather than a direct push.
