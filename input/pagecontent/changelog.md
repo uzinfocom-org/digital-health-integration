@@ -18,6 +18,8 @@ The operation code on a [form 066](form-066-mapping.html) hospital discharge sum
 
 The [IHD pre-test probability risk categories](CodeSystem-ihd-risk-category-cs.html) are now published here. The [IHD pretest questionnaire](Questionnaire-IhdPretestQuestionnaire.html) already answered its risk category item from them, but under a UZ Core canonical that no UZ Core release contains.
 
+The [cancer](cancer.html) and [hepatitis](hepatitis.html) pages now show a diagram of how their resources link together. The diagrams on the other integration pages now include every profile of the integration, with several wrong cardinalities corrected. All of them show the clinical graph, leaving out references to organizations, practitioners and other actors.
+
 #### Changed
 
 The guide is built against [UZ Core 0.10.0](https://dhp.uz/fhir/core/changelog.html), which publishes the ICHI code system form 066 needs and relaxes `Procedure.code` to an extensible binding.

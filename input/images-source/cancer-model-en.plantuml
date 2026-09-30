@@ -1,0 +1,41 @@
+@startuml cancer-model-en
+hide circle
+hide empty members
+title How a cancer registry record fits together
+
+class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{Open the UZ Core Patient profile}]]
+class CancerCondition [[StructureDefinition-cancer-condition.html{Open the CancerCondition profile}]] #E8F0FE
+class CancerEpisodeOfCare [[StructureDefinition-cancer-episode-of-care.html{Open the CancerEpisodeOfCare profile}]] #E8F0FE
+class CancerEncounter [[StructureDefinition-cancer-encounter.html{Open the CancerEncounter profile}]] #E8F0FE
+class CancerObservationTumorMorphology [[StructureDefinition-cancer-observation-tumor-morphology.html{Open the CancerObservationTumorMorphology profile}]] #E8F0FE
+class CancerObservationBehavior [[StructureDefinition-cancer-observation-behavior.html{Open the CancerObservationBehavior profile}]] #E8F0FE
+class CancerObservationHistologicGrade [[StructureDefinition-cancer-observation-histologic-grade.html{Open the CancerObservationHistologicGrade profile}]] #E8F0FE
+class CancerObservationMetastase [[StructureDefinition-cancer-observation-metastase.html{Open the CancerObservationMetastase profile}]] #E8F0FE
+class CancerObservationTNMStageGroup [[StructureDefinition-cancer-observation-tnm-stage-group.html{Open the CancerObservationTNMStageGroup profile}]] #E8F0FE
+class CancerObservationTNMCategory [[StructureDefinition-cancer-observation-tnm-category.html{Open the CancerObservationTNMCategory profile}]] #E8F0FE
+
+
+Patient "1" <-- "0..*" CancerEpisodeOfCare : « patient »
+Patient "1" <-- "0..*" CancerEncounter : « subject »
+Patient "1" <-- "0..*" CancerCondition : « subject »
+CancerEpisodeOfCare "0..*" <-- "0..*" CancerEncounter : « episodeOfCare »
+CancerEpisodeOfCare "0..*" --> "1" CancerCondition : « diagnosis.condition »
+CancerEncounter "0..*" -right-> "1" CancerCondition : « diagnosis.condition »
+CancerCondition "0..*" --> "0..1" CancerEncounter : « encounter »
+CancerCondition "1" <-- "0..*" CancerObservationTumorMorphology : « focus »
+CancerCondition "1" <-- "0..*" CancerObservationMetastase : « focus »
+CancerCondition "1" <-- "0..*" CancerObservationTNMStageGroup : « focus »
+CancerCondition "0..*" --> "0..*" CancerObservationTNMStageGroup : « stage.assessment »
+CancerObservationTumorMorphology "0..*" --> "0..*" CancerObservationBehavior : « hasMember »
+CancerObservationTumorMorphology "0..*" --> "0..*" CancerObservationHistologicGrade : « hasMember »
+CancerObservationTNMStageGroup "0..*" --> "0..*" CancerObservationTNMCategory : « hasMember »
+CancerCondition "1" <-- "0..*" CancerObservationBehavior : « focus »
+CancerCondition "1" <-- "0..*" CancerObservationHistologicGrade : « focus »
+CancerCondition "1" <-- "0..*" CancerObservationTNMCategory : « focus »
+
+note "Every Observation also references\nthe Patient through « subject »" as N1
+N1 .. CancerObservationMetastase
+
+caption Clinical graph: references to organizations, practitioners and other actors are left out to keep the diagram readable.
+
+@enduml

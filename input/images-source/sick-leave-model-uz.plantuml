@@ -3,16 +3,17 @@ hide circle
 hide empty members
 title Mehnatga layoqatsizlik yozuvi qanday tuzilgan
 
-class SickLeaveObservation [[StructureDefinition-sick-leave-observation.html{Sick Leave Observation profilini ochish}]] #E8F0FE
-class SickLeaveCarePlan [[StructureDefinition-sick-leave-careplan.html{Sick Leave CarePlan profilini ochish}]] #E8F0FE
-class SickLeaveRelatedPerson [[StructureDefinition-sick-leave-related-person.html{Sick Leave Related Person profilini ochish}]] #E8F0FE
 class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{UZ Core Patient profilini ochish}]]
-class Practitioner [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-practitioner.html{UZ Core Practitioner profilini ochish}]]
+class SickLeaveCarePlan [[StructureDefinition-sick-leave-careplan.html{SickLeaveCarePlan profilini ochish}]] #E8F0FE
+class SickLeaveObservation [[StructureDefinition-sick-leave-observation.html{SickLeaveObservation profilini ochish}]] #E8F0FE
+class SickLeaveRelatedPerson [[StructureDefinition-sick-leave-related-person.html{SickLeaveRelatedPerson profilini ochish}]] #E8F0FE
 
-SickLeaveCarePlan "1" <-- "0..*" SickLeaveObservation : « basedOn »
 Patient "1" <-- "0..*" SickLeaveCarePlan : « subject »
-Practitioner "0..*" <-- "0..*" SickLeaveCarePlan : « contributor / custodian »
-SickLeaveRelatedPerson "0..1" <-- "0..*" SickLeaveCarePlan : « extension[relatedPerson] »
+Patient "0..1" <-- "0..*" SickLeaveObservation : « subject »
 Patient "1" <-- "0..*" SickLeaveRelatedPerson : « patient »
+SickLeaveCarePlan "1" <-- "0..*" SickLeaveObservation : « basedOn »
+SickLeaveCarePlan "0..*" --> "0..1" SickLeaveRelatedPerson : « extension[relatedPerson] »
+
+caption Klinik graf: diagramma o'qilishi oson bo'lishi uchun tashkilotlar, tibbiyot xodimlari va boshqa ishtirokchilarga havolalar ko'rsatilmagan.
 
 @enduml

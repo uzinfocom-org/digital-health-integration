@@ -1,0 +1,41 @@
+@startuml cancer-model-ru
+hide circle
+hide empty members
+title Как устроена запись онкологического регистра
+
+class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{Открыть профиль UZ Core Patient}]]
+class CancerCondition [[StructureDefinition-cancer-condition.html{Открыть профиль CancerCondition}]] #E8F0FE
+class CancerEpisodeOfCare [[StructureDefinition-cancer-episode-of-care.html{Открыть профиль CancerEpisodeOfCare}]] #E8F0FE
+class CancerEncounter [[StructureDefinition-cancer-encounter.html{Открыть профиль CancerEncounter}]] #E8F0FE
+class CancerObservationTumorMorphology [[StructureDefinition-cancer-observation-tumor-morphology.html{Открыть профиль CancerObservationTumorMorphology}]] #E8F0FE
+class CancerObservationBehavior [[StructureDefinition-cancer-observation-behavior.html{Открыть профиль CancerObservationBehavior}]] #E8F0FE
+class CancerObservationHistologicGrade [[StructureDefinition-cancer-observation-histologic-grade.html{Открыть профиль CancerObservationHistologicGrade}]] #E8F0FE
+class CancerObservationMetastase [[StructureDefinition-cancer-observation-metastase.html{Открыть профиль CancerObservationMetastase}]] #E8F0FE
+class CancerObservationTNMStageGroup [[StructureDefinition-cancer-observation-tnm-stage-group.html{Открыть профиль CancerObservationTNMStageGroup}]] #E8F0FE
+class CancerObservationTNMCategory [[StructureDefinition-cancer-observation-tnm-category.html{Открыть профиль CancerObservationTNMCategory}]] #E8F0FE
+
+
+Patient "1" <-- "0..*" CancerEpisodeOfCare : « patient »
+Patient "1" <-- "0..*" CancerEncounter : « subject »
+Patient "1" <-- "0..*" CancerCondition : « subject »
+CancerEpisodeOfCare "0..*" <-- "0..*" CancerEncounter : « episodeOfCare »
+CancerEpisodeOfCare "0..*" --> "1" CancerCondition : « diagnosis.condition »
+CancerEncounter "0..*" -right-> "1" CancerCondition : « diagnosis.condition »
+CancerCondition "0..*" --> "0..1" CancerEncounter : « encounter »
+CancerCondition "1" <-- "0..*" CancerObservationTumorMorphology : « focus »
+CancerCondition "1" <-- "0..*" CancerObservationMetastase : « focus »
+CancerCondition "1" <-- "0..*" CancerObservationTNMStageGroup : « focus »
+CancerCondition "0..*" --> "0..*" CancerObservationTNMStageGroup : « stage.assessment »
+CancerObservationTumorMorphology "0..*" --> "0..*" CancerObservationBehavior : « hasMember »
+CancerObservationTumorMorphology "0..*" --> "0..*" CancerObservationHistologicGrade : « hasMember »
+CancerObservationTNMStageGroup "0..*" --> "0..*" CancerObservationTNMCategory : « hasMember »
+CancerCondition "1" <-- "0..*" CancerObservationBehavior : « focus »
+CancerCondition "1" <-- "0..*" CancerObservationHistologicGrade : « focus »
+CancerCondition "1" <-- "0..*" CancerObservationTNMCategory : « focus »
+
+note "Каждое наблюдение (Observation) также\nссылается на пациента через « subject »" as N1
+N1 .. CancerObservationMetastase
+
+caption Клинический граф: ссылки на организации, медработников и других участников не показаны, чтобы схема оставалась читаемой.
+
+@enduml

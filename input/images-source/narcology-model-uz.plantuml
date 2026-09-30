@@ -12,14 +12,18 @@ class NarcologyObservation [[StructureDefinition-narcology-observation.html{Narc
 class NarcologyPsychiatryFlag [[StructureDefinition-narcology-psychiatry-flag.html{NarcologyPsychiatryFlag profilini ochish}]] #E8F0FE
 
 Patient "1" <-- "0..*" NarcologyEpisodeOfCare : « patient »
-Patient "1" <-- "0..*" Condition : « subject »
 Patient "1" <-- "0..*" SocioeconomicObservation : « subject »
-Patient "1" <-- "0..*" NarcologyObservation : « subject »
-Patient "1" <-- "0..*" NarcologyPsychiatryFlag : « subject »
-NarcologyEpisodeOfCare "0..1" <-- "0..*" Encounter : « episodeOfCare »
-Condition "1" <-- "0..*" NarcologyEpisodeOfCare : « diagnosis.condition »
-Encounter "0..1" <-- "0..*" Condition : « encounter »
+NarcologyEpisodeOfCare "0..*" --> "0..*" Condition : « diagnosis.condition »
+NarcologyEpisodeOfCare "0..*" <-- "0..*" Encounter : « episodeOfCare »
+Patient "0..1" <-- "0..*" Encounter : « subject »
+Patient "1" <-- "0..*" Condition : « subject »
+Condition "0..*" <-right- "0..*" Encounter : «  diagnosis.condition  »
+Condition "0..*" -right-> "0..1" Encounter : «   encounter   »
+Encounter "0..1" <--- "0..*" NarcologyPsychiatryFlag : « encounter »
 Encounter "0..1" <-- "0..*" NarcologyObservation : « encounter »
-Encounter "0..1" <-- "0..*" NarcologyPsychiatryFlag : « encounter »
+Patient "1" <-- "0..*" NarcologyPsychiatryFlag : « subject »
+Patient "0..1" <-- "0..*" NarcologyObservation : « subject »
+
+caption Klinik graf: diagramma o'qilishi oson bo'lishi uchun tashkilotlar, tibbiyot xodimlari va boshqa ishtirokchilarga havolalar ko'rsatilmagan.
 
 @enduml

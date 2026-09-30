@@ -1,0 +1,31 @@
+@startuml hepatitis-model-ru
+hide circle
+hide empty members
+title Как устроена запись реестра гепатита
+
+class HepatitisPatient [[StructureDefinition-hepatitis-patient.html{Открыть профиль HepatitisPatient}]] #E8F0FE
+class HepatitisEpisodeOfCare [[StructureDefinition-hepatitis-episode-of-care.html{Открыть профиль HepatitisEpisodeOfCare}]] #E8F0FE
+class HepatitisEncounter [[StructureDefinition-hepatitis-encounter.html{Открыть профиль HepatitisEncounter}]] #E8F0FE
+class HepatitisCondition [[StructureDefinition-hepatitis-condition.html{Открыть профиль HepatitisCondition}]] #E8F0FE
+class HepatitisObservationAnalysis [[StructureDefinition-hepatitis-observation-analysis.html{Открыть профиль HepatitisObservationAnalysis}]] #E8F0FE
+class HepatitisObservationUltraSound [[StructureDefinition-hepatitis-observation-ultra-sound.html{Открыть профиль HepatitisObservationUltraSound}]] #E8F0FE
+class HepatitisQuestionnaireResponse [[StructureDefinition-hepatitis-questionnaire-response.html{Открыть профиль HepatitisQuestionnaireResponse}]] #E8F0FE
+class HepatitisQuestionnaire [[StructureDefinition-hepatitis-questionnaire.html{Открыть профиль HepatitisQuestionnaire}]] #E8F0FE
+class SocioeconomicObservation [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-socioeconomic-observation.html{Открыть профиль UZ Core SocioeconomicObservation}]]
+
+
+HepatitisEpisodeOfCare "0..*" --> "1" HepatitisPatient : « patient »
+HepatitisEncounter "0..*" --> "1" HepatitisPatient : « subject »
+HepatitisCondition "0..*" --> "1" HepatitisPatient : « subject »
+HepatitisEpisodeOfCare "0..*" <-- "0..*" HepatitisEncounter : « episodeOfCare »
+HepatitisEpisodeOfCare "0..*" --> "0..*" HepatitisCondition : « diagnosis.condition »
+HepatitisCondition "0..*" --> "0..1" HepatitisEncounter : « encounter »
+HepatitisPatient "0..1" <-- "0..*" HepatitisObservationAnalysis : « subject »
+HepatitisPatient "0..1" <-- "0..*" HepatitisObservationUltraSound : « subject »
+HepatitisPatient "0..1" <-- "0..*" HepatitisQuestionnaireResponse : « subject »
+HepatitisQuestionnaireResponse "0..*" --> "1" HepatitisQuestionnaire : « questionnaire »
+HepatitisQuestionnaireResponse "0..*" --> "0..*" SocioeconomicObservation : « partOf »
+
+caption Клинический граф: ссылки на организации, медработников и других участников не показаны, чтобы схема оставалась читаемой.
+
+@enduml

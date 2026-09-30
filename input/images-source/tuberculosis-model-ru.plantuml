@@ -15,20 +15,23 @@ class DHISObservationHIV [[StructureDefinition-dhis-observation-hiv.html{Отк�
 
 Patient "1" <-- "0..*" DHISEpisodeOfCare : « patient »
 Patient "1" <-- "0..*" DHISCondition : « subject »
-Patient "1" <-- "0..*" DHISSpecimen : « subject »
-DHISCondition "1" <-- "0..*" DHISEpisodeOfCare : « diagnosis.condition »
-DHISCondition "1" <-- "0..*" Encounter : « diagnosis.condition »
+Patient "0..1" <-- "0..*" Encounter : « subject »
+Patient "0..1" <-- "0..*" DHISSpecimen : « subject »
+DHISCondition "0..*" <-- "0..*" DHISEpisodeOfCare : « diagnosis.condition »
+DHISCondition "0..*" <-- "0..*" Encounter : « diagnosis.condition »
 DHISSpecimen "0..*" <-- "0..*" DHISSpecimen : « parent »
 DHISSpecimen "0..1" <-- "0..*" DHISObservation : « specimen »
-Patient "1" <-- "0..*" DHISObservation : « subject »
 DHISSpecimen "0..1" <-- "0..*" DHISObservationMicroscopy : « specimen »
-Patient "1" <-- "0..*" DHISObservationMicroscopy : « subject »
-Patient "1" <-- "0..*" DHISObservationXray : « subject »
-Patient "1" <-- "0..*" DHISObservationHIV : « subject »
 
-' keep the diagram inside the page column: drop the two patient-only
-' results onto a lower rank instead of one wide row
+note "Каждое наблюдение (Observation) также\nссылается на пациента через « subject »" as N1
+N1 .. DHISObservationXray
+N1 .. DHISObservationHIV
+
+' keep the diagram inside the page column: the four results sit on
+' a lower rank, with the two patient-only results under the note
 DHISObservation -[hidden]down- DHISObservationXray
 DHISObservationMicroscopy -[hidden]down- DHISObservationHIV
+
+caption Клинический граф: ссылки на организации, медработников и других участников не показаны, чтобы схема оставалась читаемой.
 
 @enduml

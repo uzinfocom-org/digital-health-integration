@@ -15,6 +15,8 @@ Condition, EpisodeOfCare, and both Observation profiles require one `identifier[
 
 The [care episode](#following-the-care-episode) references the [patient](#registering-the-patient) and [diagnosis](#recording-diagnosis-and-outcome). A [visit](#recording-the-visit) can reference the episode, and the diagnosis references the visit. Observations and [questionnaire answers](#recording-answers) identify their patient independently. The examples share one patient record, and the visit links to the care episode.
 
+<div>{% include hepatitis-model-en.svg %}</div><br clear="all"/>
+
 ### Registering the patient (Patient) {#registering-the-patient}
 
 The patient record provides identity, demographics, and contact details. HepatitisPatient inherits UZ Core Patient and marks `telecom` as Must Support; this does not by itself make the field mandatory.

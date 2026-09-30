@@ -14,6 +14,8 @@ The central resource is `CancerCondition`. `CancerEpisodeOfCare` groups the trea
 
 That shape follows [mCODE](https://hl7.org/fhir/us/mcode/STU4/) where the registry's data allows: the diagnosis on a Condition, morphology, behavior and disease progression as Observations linked by `focus`, and the TNM categories gathered under a stage group through `hasMember`. It departs from mCODE where the registry differs, coding diagnoses with ICD-10 rather than SNOMED CT and keeping registry-specific concepts in local code systems.
 
+<div>{% include cancer-model-en.svg %}</div><br clear="all"/>
+
 Standard ICD-10, ICD-O-3, SNOMED CT and LOINC codes are used where available. Registry-specific concepts remain in local Cancer CodeSystems. ConceptMaps translate the registry's numeric identifiers into the terminology used by DHP.
 
 ### Recording a cancer diagnosis (CancerCondition)

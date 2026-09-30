@@ -3,16 +3,17 @@ hide circle
 hide empty members
 title How a sick leave record fits together
 
-class SickLeaveObservation [[StructureDefinition-sick-leave-observation.html{Open the Sick Leave Observation profile}]] #E8F0FE
-class SickLeaveCarePlan [[StructureDefinition-sick-leave-careplan.html{Open the Sick Leave CarePlan profile}]] #E8F0FE
-class SickLeaveRelatedPerson [[StructureDefinition-sick-leave-related-person.html{Open the Sick Leave Related Person profile}]] #E8F0FE
 class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{Open the UZ Core Patient profile}]]
-class Practitioner [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-practitioner.html{Open the UZ Core Practitioner profile}]]
+class SickLeaveCarePlan [[StructureDefinition-sick-leave-careplan.html{Open the SickLeaveCarePlan profile}]] #E8F0FE
+class SickLeaveObservation [[StructureDefinition-sick-leave-observation.html{Open the SickLeaveObservation profile}]] #E8F0FE
+class SickLeaveRelatedPerson [[StructureDefinition-sick-leave-related-person.html{Open the SickLeaveRelatedPerson profile}]] #E8F0FE
 
-SickLeaveCarePlan "1" <-- "0..*" SickLeaveObservation : « basedOn »
 Patient "1" <-- "0..*" SickLeaveCarePlan : « subject »
-Practitioner "0..*" <-- "0..*" SickLeaveCarePlan : « contributor / custodian »
-SickLeaveRelatedPerson "0..1" <-- "0..*" SickLeaveCarePlan : « extension[relatedPerson] »
+Patient "0..1" <-- "0..*" SickLeaveObservation : « subject »
 Patient "1" <-- "0..*" SickLeaveRelatedPerson : « patient »
+SickLeaveCarePlan "1" <-- "0..*" SickLeaveObservation : « basedOn »
+SickLeaveCarePlan "0..*" --> "0..1" SickLeaveRelatedPerson : « extension[relatedPerson] »
+
+caption Clinical graph: references to organizations, practitioners and other actors are left out to keep the diagram readable.
 
 @enduml

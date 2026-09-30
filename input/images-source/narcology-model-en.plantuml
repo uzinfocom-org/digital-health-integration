@@ -12,14 +12,18 @@ class NarcologyObservation [[StructureDefinition-narcology-observation.html{Open
 class NarcologyPsychiatryFlag [[StructureDefinition-narcology-psychiatry-flag.html{Open the NarcologyPsychiatryFlag profile}]] #E8F0FE
 
 Patient "1" <-- "0..*" NarcologyEpisodeOfCare : « patient »
-Patient "1" <-- "0..*" Condition : « subject »
 Patient "1" <-- "0..*" SocioeconomicObservation : « subject »
-Patient "1" <-- "0..*" NarcologyObservation : « subject »
-Patient "1" <-- "0..*" NarcologyPsychiatryFlag : « subject »
-NarcologyEpisodeOfCare "0..1" <-- "0..*" Encounter : « episodeOfCare »
-Condition "1" <-- "0..*" NarcologyEpisodeOfCare : « diagnosis.condition »
-Encounter "0..1" <-- "0..*" Condition : « encounter »
+NarcologyEpisodeOfCare "0..*" --> "0..*" Condition : « diagnosis.condition »
+NarcologyEpisodeOfCare "0..*" <-- "0..*" Encounter : « episodeOfCare »
+Patient "0..1" <-- "0..*" Encounter : « subject »
+Patient "1" <-- "0..*" Condition : « subject »
+Condition "0..*" <-right- "0..*" Encounter : «  diagnosis.condition  »
+Condition "0..*" -right-> "0..1" Encounter : «   encounter   »
+Encounter "0..1" <--- "0..*" NarcologyPsychiatryFlag : « encounter »
 Encounter "0..1" <-- "0..*" NarcologyObservation : « encounter »
-Encounter "0..1" <-- "0..*" NarcologyPsychiatryFlag : « encounter »
+Patient "1" <-- "0..*" NarcologyPsychiatryFlag : « subject »
+Patient "0..1" <-- "0..*" NarcologyObservation : « subject »
+
+caption Clinical graph: references to organizations, practitioners and other actors are left out to keep the diagram readable.
 
 @enduml

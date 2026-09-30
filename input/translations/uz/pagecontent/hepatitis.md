@@ -17,6 +17,8 @@ Condition, EpisodeOfCare va ikkala Observation profili `https://dhp.uz/fhir/core
 
 [Yordam ko‘rsatish epizodi](#following-the-care-episode) [bemor](#registering-the-patient) va [tashxis](#recording-diagnosis-and-outcome) ga havola qiladi. [Tashrif](#recording-the-visit) epizodga, tashxis esa tashrifga havola qilishi mumkin. Kuzatuvlar va [so‘rovnoma javoblari](#recording-answers) bemorni mustaqil ko‘rsatadi. Misollar bitta bemor yozuvidan foydalanadi va tashrif yordam ko‘rsatish epizodiga bog‘langan.
 
+<div>{% include hepatitis-model-uz.svg %}</div><br clear="all"/>
+
 ### Bemorni ro‘yxatga olish (Patient) {#registering-the-patient}
 
 Bemor yozuvi identifikatsiya, demografik va aloqa ma’lumotlarini saqlaydi. HepatitisPatient UZ Core Patient profilidan meros oladi va `telecom` ni Must Support deb belgilaydi; bu belgi o‘z-o‘zidan maydonni majburiy qilmaydi.

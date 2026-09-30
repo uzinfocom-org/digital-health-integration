@@ -1,0 +1,41 @@
+@startuml cancer-model-uz
+hide circle
+hide empty members
+title Onkologiya registri yozuvi qanday tuzilgan
+
+class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{UZ Core Patient profilini ochish}]]
+class CancerCondition [[StructureDefinition-cancer-condition.html{CancerCondition profilini ochish}]] #E8F0FE
+class CancerEpisodeOfCare [[StructureDefinition-cancer-episode-of-care.html{CancerEpisodeOfCare profilini ochish}]] #E8F0FE
+class CancerEncounter [[StructureDefinition-cancer-encounter.html{CancerEncounter profilini ochish}]] #E8F0FE
+class CancerObservationTumorMorphology [[StructureDefinition-cancer-observation-tumor-morphology.html{CancerObservationTumorMorphology profilini ochish}]] #E8F0FE
+class CancerObservationBehavior [[StructureDefinition-cancer-observation-behavior.html{CancerObservationBehavior profilini ochish}]] #E8F0FE
+class CancerObservationHistologicGrade [[StructureDefinition-cancer-observation-histologic-grade.html{CancerObservationHistologicGrade profilini ochish}]] #E8F0FE
+class CancerObservationMetastase [[StructureDefinition-cancer-observation-metastase.html{CancerObservationMetastase profilini ochish}]] #E8F0FE
+class CancerObservationTNMStageGroup [[StructureDefinition-cancer-observation-tnm-stage-group.html{CancerObservationTNMStageGroup profilini ochish}]] #E8F0FE
+class CancerObservationTNMCategory [[StructureDefinition-cancer-observation-tnm-category.html{CancerObservationTNMCategory profilini ochish}]] #E8F0FE
+
+
+Patient "1" <-- "0..*" CancerEpisodeOfCare : « patient »
+Patient "1" <-- "0..*" CancerEncounter : « subject »
+Patient "1" <-- "0..*" CancerCondition : « subject »
+CancerEpisodeOfCare "0..*" <-- "0..*" CancerEncounter : « episodeOfCare »
+CancerEpisodeOfCare "0..*" --> "1" CancerCondition : « diagnosis.condition »
+CancerEncounter "0..*" -right-> "1" CancerCondition : « diagnosis.condition »
+CancerCondition "0..*" --> "0..1" CancerEncounter : « encounter »
+CancerCondition "1" <-- "0..*" CancerObservationTumorMorphology : « focus »
+CancerCondition "1" <-- "0..*" CancerObservationMetastase : « focus »
+CancerCondition "1" <-- "0..*" CancerObservationTNMStageGroup : « focus »
+CancerCondition "0..*" --> "0..*" CancerObservationTNMStageGroup : « stage.assessment »
+CancerObservationTumorMorphology "0..*" --> "0..*" CancerObservationBehavior : « hasMember »
+CancerObservationTumorMorphology "0..*" --> "0..*" CancerObservationHistologicGrade : « hasMember »
+CancerObservationTNMStageGroup "0..*" --> "0..*" CancerObservationTNMCategory : « hasMember »
+CancerCondition "1" <-- "0..*" CancerObservationBehavior : « focus »
+CancerCondition "1" <-- "0..*" CancerObservationHistologicGrade : « focus »
+CancerCondition "1" <-- "0..*" CancerObservationTNMCategory : « focus »
+
+note "Har bir kuzatuv (Observation) « subject »\norqali bemorga ham havola qiladi" as N1
+N1 .. CancerObservationMetastase
+
+caption Klinik graf: diagramma o'qilishi oson bo'lishi uchun tashkilotlar, tibbiyot xodimlari va boshqa ishtirokchilarga havolalar ko'rsatilmagan.
+
+@enduml

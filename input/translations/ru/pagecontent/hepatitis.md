@@ -17,6 +17,8 @@ Condition, EpisodeOfCare и оба профиля Observation требуют о�
 
 [Эпизод помощи](#following-the-care-episode) ссылается на [пациента](#registering-the-patient) и [диагноз](#recording-diagnosis-and-outcome). [Посещение](#recording-the-visit) может ссылаться на эпизод, а диагноз — на посещение. Наблюдения и [ответы на анкету](#recording-answers) самостоятельно указывают пациента. Примеры используют одну запись пациента, а посещение связано с эпизодом помощи.
 
+<div>{% include hepatitis-model-ru.svg %}</div><br clear="all"/>
+
 ### Регистрация пациента (Patient) {#registering-the-patient}
 
 Запись пациента содержит идентификационные, демографические и контактные данные. HepatitisPatient наследует UZ Core Patient и помечает `telecom` как Must Support; сама по себе эта пометка не делает поле обязательным.
