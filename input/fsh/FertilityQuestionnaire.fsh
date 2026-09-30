@@ -11,6 +11,8 @@ Description: "Example Questionnaire for fertility history collection"
 * name = "FertilityQuestionnaire"
 * language = #uz
 * status = #active
+* useContext[0].code = $usage-context-type#program
+* useContext[0].valueCodeableConcept = $integration-area#screening
 * subjectType = #Patient
 * title = "Fertillik bo‘yicha so‘rovnoma"
   * extension[$translation-extension][+]

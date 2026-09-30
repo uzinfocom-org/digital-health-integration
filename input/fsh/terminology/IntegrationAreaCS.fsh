@@ -10,12 +10,12 @@ Title: "Integration Area"
 Description: "Areas of integration covered by this guide. Each code names one integrating system or service whose resources this guide specifies."
 * insert OriginalCodeSystemDraft(integration-area-cs)
 
-* #screening "Ko'krak bezi va bachadon bo'yni saratoni skriningi"
-  * ^definition = "Cervical and breast cancer screening, as run by the national screening service."
+* #screening "Skrining"
+  * ^definition = "Screening as run by the national screening service: cervical and breast cancer screening, and the risk questionnaires the service uses."
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Скрининг рака молочной железы и шейки матки"
+  * ^designation[=].value = "Скрининг"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Cervical and breast cancer screening"
+  * ^designation[=].value = "Screening"
 
 * #sick-leave "Kasallik varaqasi"
   * ^definition = "Issuing and managing sick leave certificates."
@@ -44,3 +44,10 @@ Description: "Areas of integration covered by this guide. Each code names one in
   * ^designation[=].value = "Психиатрия"
   * ^designation[+].language = #en
   * ^designation[=].value = "Psychiatry"
+
+* #hepatitis "Virusli gepatit"
+  * ^definition = "Viral hepatitis care, exchanged with the Viral Hepatitis Registration and Monitoring System."
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Вирусный гепатит"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Viral hepatitis"

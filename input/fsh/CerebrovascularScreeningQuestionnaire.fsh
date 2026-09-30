@@ -16,6 +16,8 @@ Description: "Early detection questionnaire for cerebrovascular disease"
 * name = "CerebrovascularScreeningQuestionnaire"
 * language = #uz
 * status = #draft
+* useContext[0].code = $usage-context-type#program
+* useContext[0].valueCodeableConcept = $integration-area#screening
 * publisher = "Ministry of Health of the Republic of Uzbekistan"
 * subjectType = #Patient
 * title = "Tserebrovaskulyar patologiyani erta aniqlash so'rovnomasi"

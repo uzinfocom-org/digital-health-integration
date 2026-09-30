@@ -39,6 +39,8 @@ Usage: #example
 * version = "1.0.0"
 
 * status = #active
+* useContext[0].code = $usage-context-type#program
+* useContext[0].valueCodeableConcept = $integration-area#hepatitis
 * title = "HEPATITIS QUESTIONNAIRE"
 
 * identifier

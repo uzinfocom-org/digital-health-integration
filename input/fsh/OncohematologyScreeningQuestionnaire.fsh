@@ -9,6 +9,8 @@ Description: "Example for Questionnaire for Oncohematology Screening"
 * name = "OncohematologyScreeningQuestionnaire"
 * language = #uz
 * status = #active
+* useContext[0].code = $usage-context-type#program
+* useContext[0].valueCodeableConcept = $integration-area#screening
 * publisher = "Uzinfocom"
 * subjectType = #Patient
 * title = "Onkogematologik kasalliklarni erta aniqlash so‘rovnomasi"

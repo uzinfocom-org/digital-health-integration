@@ -9,6 +9,8 @@ Description: "Pre-test probability of ischemic heart disease (ihd_screenings)"
 * name = "IhdPretestQuestionnaire"
 * language = #uz
 * status = #draft
+* useContext[0].code = $usage-context-type#program
+* useContext[0].valueCodeableConcept = $integration-area#screening
 * publisher = "Ministry of Health of the Republic of Uzbekistan"
 * subjectType = #Patient
 * title = "IBS predtest ehtimolini baholash so'rovnomasi"

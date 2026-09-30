@@ -9,6 +9,8 @@ Description: "Early detection questionnaire for helminthic diseases (children)"
 * name = "HelminthScreeningQuestionnaire"
 * language = #uz
 * status = #draft
+* useContext[0].code = $usage-context-type#program
+* useContext[0].valueCodeableConcept = $integration-area#screening
 * publisher = "Ministry of Health of the Republic of Uzbekistan"
 * subjectType = #Patient
 * title = "Gijja kasalliklarini erta aniqlash so'rovnomasi"

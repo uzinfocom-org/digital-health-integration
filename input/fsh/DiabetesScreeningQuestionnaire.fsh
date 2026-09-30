@@ -9,6 +9,8 @@ Description: "Example for Diabetes Screening Questionnaire"
 * name = "DiabetesScreeningQuestionnaire"
 * language = #uz
 * status = #active
+* useContext[0].code = $usage-context-type#program
+* useContext[0].valueCodeableConcept = $integration-area#screening
 * publisher = "Uzinfocom"
 * subjectType = #Patient
 * version = "1.0.0"

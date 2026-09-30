@@ -10,6 +10,8 @@ Description: "Example for Questionnaire for Cervical Cancer Screening"
 * version = "1.0.0"
 * language = #uz
 * status = #active
+* useContext[0].code = $usage-context-type#program
+* useContext[0].valueCodeableConcept = $integration-area#screening
 * subjectType = #Patient
 * title = "Bachadon bo'yni saratonini erta aniqlash bo'yicha so'rovnoma"
 * title.extension[$translation-extension][+]

@@ -9,6 +9,8 @@ Description: "Example for CVD Risk Screening Questionnaire"
 * name = "CVDRiskScreeningQuestionnaire"
 * language = #uz
 * status = #draft
+* useContext[0].code = $usage-context-type#program
+* useContext[0].valueCodeableConcept = $integration-area#screening
 * publisher = "Ministry of Health of the Republic of Uzbekistan"
 * subjectType = #Patient
 * title = "Yurak-qon tomir kasalliklari xavfini erta aniqlash skriningi"
