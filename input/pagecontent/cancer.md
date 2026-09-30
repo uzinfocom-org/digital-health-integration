@@ -12,6 +12,8 @@ The Cancer Registry records cancer diagnoses, treatment episodes, encounters, tu
 
 The central resource is `CancerCondition`. `CancerEpisodeOfCare` groups the treatment course, and `CancerEncounter` records a visit within that course. Observations linked through `focus` describe morphology, behavior, grade, progression and staging. All resources refer to the same patient.
 
+That shape follows [mCODE](https://hl7.org/fhir/us/mcode/STU4/) where the registry's data allows: the diagnosis on a Condition, morphology, behavior and disease progression as Observations linked by `focus`, and the TNM categories gathered under a stage group through `hasMember`. It departs from mCODE where the registry differs, coding diagnoses with ICD-10 rather than SNOMED CT and keeping registry-specific concepts in local code systems.
+
 Standard ICD-10, ICD-O-3, SNOMED CT and LOINC codes are used where available. Registry-specific concepts remain in local Cancer CodeSystems. ConceptMaps translate the registry's numeric identifiers into the terminology used by DHP.
 
 ### Recording a cancer diagnosis (CancerCondition)

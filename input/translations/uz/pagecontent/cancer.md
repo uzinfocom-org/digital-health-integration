@@ -12,6 +12,8 @@ Onkologiya registri saraton tashxislari, davolash epizodlari, tashriflar, o'sma 
 
 Asosiy resurs — `CancerCondition`. `CancerEpisodeOfCare` davolash kursini birlashtiradi, `CancerEncounter` esa shu kurs doirasidagi tashrifni qayd etadi. `focus` orqali tashxisga bog'langan kuzatuvlar morfologiya, xulq, daraja, rivojlanish va bosqichlashni tavsiflaydi. Barcha resurslar bir bemorga havola qiladi.
 
+Bu tuzilma registr ma'lumotlari imkon bergan joyda [mCODE](https://hl7.org/fhir/us/mcode/STU4/) ga amal qiladi: tashxis Condition da, morfologiya, xulq va kasallik rivojlanishi `focus` orqali bog'langan Observation larda, TNM toifalari esa `hasMember` orqali bosqich ostida to'planadi. Registr boshqacha bo'lgan joyda farq bor: tashxislar SNOMED CT emas, ICD-10 bilan kodlanadi, registrga xos tushunchalar esa mahalliy kod tizimlarida qoladi.
+
 Mavjud bo'lsa, standart ICD-10, ICD-O-3, SNOMED CT va LOINC kodlari ishlatiladi. Registrga xos tushunchalar mahalliy Cancer CodeSystem larida saqlanadi. ConceptMap lar registrning raqamli identifikatorlarini DHP terminologiyasiga o'giradi.
 
 ### Saraton tashxisini qayd etish (CancerCondition)
