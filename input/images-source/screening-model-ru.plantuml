@@ -2,24 +2,27 @@
 hide circle
 hide empty members
 left to right direction
+skinparam packageStyle rectangle
 title Как устроена запись скрининга
 
+package "Патология" {
+  class ScreeningPathologyServiceRequest <<ScreeningServiceRequest>> [[StructureDefinition-screening-pathology-service-request.html{Открыть профиль ScreeningPathologyServiceRequest}]] #E8F0FE
+  class ScreeningBreastBiopsyServiceRequest <<ScreeningServiceRequest>> [[StructureDefinition-screening-breast-biopsy-service-request.html{Открыть профиль ScreeningBreastBiopsyServiceRequest}]] #E8F0FE
+  class ScreeningSpecimen [[StructureDefinition-screening-specimen.html{Открыть профиль ScreeningSpecimen}]] #E8F0FE
+  class ScreeningBreastCytologyObservation <<ScreeningObservation>> [[StructureDefinition-screening-breast-cytology-observation.html{Открыть профиль ScreeningBreastCytologyObservation}]] #E8F0FE
+  class ScreeningBreastHistologyObservation <<ScreeningObservation>> [[StructureDefinition-screening-breast-histology-observation.html{Открыть профиль ScreeningBreastHistologyObservation}]] #E8F0FE
+  class ScreeningImmunohistochemistryObservation <<ScreeningObservation>> [[StructureDefinition-screening-immunohistochemistry-observation.html{Открыть профиль ScreeningImmunohistochemistryObservation}]] #E8F0FE
+}
 class ScreeningPatient [[StructureDefinition-screening-patient.html{Открыть профиль ScreeningPatient}]] #E8F0FE
 class ScreeningPractitioner [[StructureDefinition-screening-practitioner.html{Открыть профиль ScreeningPractitioner}]] #E8F0FE
 class ScreeningDocumentReference [[StructureDefinition-screening-document-reference.html{Открыть профиль ScreeningDocumentReference}]] #E8F0FE
 class ScreeningDiagnosticReport [[StructureDefinition-screening-diagnostic-report.html{Открыть профиль ScreeningDiagnosticReport}]] #E8F0FE
 class ScreeningServiceRequest [[StructureDefinition-screening-service-request.html{Открыть профиль ScreeningServiceRequest}]] #E8F0FE
-class ScreeningBreastBiopsyServiceRequest <<ScreeningServiceRequest>> [[StructureDefinition-screening-breast-biopsy-service-request.html{Открыть профиль ScreeningBreastBiopsyServiceRequest}]] #E8F0FE
-class ScreeningPathologyServiceRequest <<ScreeningServiceRequest>> [[StructureDefinition-screening-pathology-service-request.html{Открыть профиль ScreeningPathologyServiceRequest}]] #E8F0FE
 class ScreeningBreastBiopsyProcedure [[StructureDefinition-screening-breast-biopsy-procedure.html{Открыть профиль ScreeningBreastBiopsyProcedure}]] #E8F0FE
-class ScreeningSpecimen [[StructureDefinition-screening-specimen.html{Открыть профиль ScreeningSpecimen}]] #E8F0FE
 class ScreeningObservation [[StructureDefinition-screening-observation.html{Открыть профиль ScreeningObservation}]] #E8F0FE
 class ScreeningMammographyObservation <<ScreeningObservation>> [[StructureDefinition-screening-mammography-observation.html{Открыть профиль ScreeningMammographyObservation}]] #E8F0FE
 class ScreeningBreastUltrasoundObservation <<ScreeningObservation>> [[StructureDefinition-screening-breast-ultrasound-observation.html{Открыть профиль ScreeningBreastUltrasoundObservation}]] #E8F0FE
-class ScreeningBreastCytologyObservation <<ScreeningObservation>> [[StructureDefinition-screening-breast-cytology-observation.html{Открыть профиль ScreeningBreastCytologyObservation}]] #E8F0FE
-class ScreeningBreastHistologyObservation <<ScreeningObservation>> [[StructureDefinition-screening-breast-histology-observation.html{Открыть профиль ScreeningBreastHistologyObservation}]] #E8F0FE
 class ScreeningCervicalHistologyObservation <<ScreeningObservation>> [[StructureDefinition-screening-cervical-histology-observation.html{Открыть профиль ScreeningCervicalHistologyObservation}]] #E8F0FE
-class ScreeningImmunohistochemistryObservation <<ScreeningObservation>> [[StructureDefinition-screening-immunohistochemistry-observation.html{Открыть профиль ScreeningImmunohistochemistryObservation}]] #E8F0FE
 class ScreeningSpecialTreatmentObservation <<ScreeningObservation>> [[StructureDefinition-screening-special-treatment-observation.html{Открыть профиль ScreeningSpecialTreatmentObservation}]] #E8F0FE
 class VitalSigns [[https://hl7.org/fhir/observation-vitalsigns.html{Открыть профили FHIR vital signs}]]
 class Condition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-condition.html{Открыть профиль UZ Core Condition}]]

@@ -2,24 +2,27 @@
 hide circle
 hide empty members
 left to right direction
+skinparam packageStyle rectangle
 title Skrining yozuvi qanday tuzilgan
 
+package "Patologiya" {
+  class ScreeningPathologyServiceRequest <<ScreeningServiceRequest>> [[StructureDefinition-screening-pathology-service-request.html{ScreeningPathologyServiceRequest profilini ochish}]] #E8F0FE
+  class ScreeningBreastBiopsyServiceRequest <<ScreeningServiceRequest>> [[StructureDefinition-screening-breast-biopsy-service-request.html{ScreeningBreastBiopsyServiceRequest profilini ochish}]] #E8F0FE
+  class ScreeningSpecimen [[StructureDefinition-screening-specimen.html{ScreeningSpecimen profilini ochish}]] #E8F0FE
+  class ScreeningBreastCytologyObservation <<ScreeningObservation>> [[StructureDefinition-screening-breast-cytology-observation.html{ScreeningBreastCytologyObservation profilini ochish}]] #E8F0FE
+  class ScreeningBreastHistologyObservation <<ScreeningObservation>> [[StructureDefinition-screening-breast-histology-observation.html{ScreeningBreastHistologyObservation profilini ochish}]] #E8F0FE
+  class ScreeningImmunohistochemistryObservation <<ScreeningObservation>> [[StructureDefinition-screening-immunohistochemistry-observation.html{ScreeningImmunohistochemistryObservation profilini ochish}]] #E8F0FE
+}
 class ScreeningPatient [[StructureDefinition-screening-patient.html{ScreeningPatient profilini ochish}]] #E8F0FE
 class ScreeningPractitioner [[StructureDefinition-screening-practitioner.html{ScreeningPractitioner profilini ochish}]] #E8F0FE
 class ScreeningDocumentReference [[StructureDefinition-screening-document-reference.html{ScreeningDocumentReference profilini ochish}]] #E8F0FE
 class ScreeningDiagnosticReport [[StructureDefinition-screening-diagnostic-report.html{ScreeningDiagnosticReport profilini ochish}]] #E8F0FE
 class ScreeningServiceRequest [[StructureDefinition-screening-service-request.html{ScreeningServiceRequest profilini ochish}]] #E8F0FE
-class ScreeningBreastBiopsyServiceRequest <<ScreeningServiceRequest>> [[StructureDefinition-screening-breast-biopsy-service-request.html{ScreeningBreastBiopsyServiceRequest profilini ochish}]] #E8F0FE
-class ScreeningPathologyServiceRequest <<ScreeningServiceRequest>> [[StructureDefinition-screening-pathology-service-request.html{ScreeningPathologyServiceRequest profilini ochish}]] #E8F0FE
 class ScreeningBreastBiopsyProcedure [[StructureDefinition-screening-breast-biopsy-procedure.html{ScreeningBreastBiopsyProcedure profilini ochish}]] #E8F0FE
-class ScreeningSpecimen [[StructureDefinition-screening-specimen.html{ScreeningSpecimen profilini ochish}]] #E8F0FE
 class ScreeningObservation [[StructureDefinition-screening-observation.html{ScreeningObservation profilini ochish}]] #E8F0FE
 class ScreeningMammographyObservation <<ScreeningObservation>> [[StructureDefinition-screening-mammography-observation.html{ScreeningMammographyObservation profilini ochish}]] #E8F0FE
 class ScreeningBreastUltrasoundObservation <<ScreeningObservation>> [[StructureDefinition-screening-breast-ultrasound-observation.html{ScreeningBreastUltrasoundObservation profilini ochish}]] #E8F0FE
-class ScreeningBreastCytologyObservation <<ScreeningObservation>> [[StructureDefinition-screening-breast-cytology-observation.html{ScreeningBreastCytologyObservation profilini ochish}]] #E8F0FE
-class ScreeningBreastHistologyObservation <<ScreeningObservation>> [[StructureDefinition-screening-breast-histology-observation.html{ScreeningBreastHistologyObservation profilini ochish}]] #E8F0FE
 class ScreeningCervicalHistologyObservation <<ScreeningObservation>> [[StructureDefinition-screening-cervical-histology-observation.html{ScreeningCervicalHistologyObservation profilini ochish}]] #E8F0FE
-class ScreeningImmunohistochemistryObservation <<ScreeningObservation>> [[StructureDefinition-screening-immunohistochemistry-observation.html{ScreeningImmunohistochemistryObservation profilini ochish}]] #E8F0FE
 class ScreeningSpecialTreatmentObservation <<ScreeningObservation>> [[StructureDefinition-screening-special-treatment-observation.html{ScreeningSpecialTreatmentObservation profilini ochish}]] #E8F0FE
 class VitalSigns [[https://hl7.org/fhir/observation-vitalsigns.html{FHIR vital signs profillarini ochish}]]
 class Condition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-condition.html{UZ Core Condition profilini ochish}]]
