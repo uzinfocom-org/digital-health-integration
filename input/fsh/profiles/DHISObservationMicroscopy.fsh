@@ -53,5 +53,5 @@ Usage: #example
 * performer.reference = "Organization/example-organization"
 * component[0]
   * code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dhis-observation-component-code-cs#tub004-0005 "AMK/KAN/CAP result"
-  * valueCodeableConcept = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dhis-observation-codeable-concept-cs#Tub003-0040 "Macrota sample sediment"
+  * valueCodeableConcept = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dhis-observation-codeable-concept-cs#tub003-0040 "Macrota sample sediment"
   * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#POS "Positive"

@@ -5,29 +5,29 @@ Description: "Local code system of tuberculosis observation component codes, inc
 
 * insert OriginalCodeSystemDraft(dhis-observation-component-code-cs)
 
-* #tub004-0001 "INH ↑ MIK natijasi"
+* #tub004-0001 "Xpert MTB/XDR - INH"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Результат INH ↑МИК"
+  * ^designation[=].value = "Xpert MTB/XDR - INH"
   * ^designation[+].language = #en
-  * ^designation[=].value = "INH high MIC result"
+  * ^designation[=].value = "Xpert MTB/XDR - INH"
 
-* #tub004-0002 "INH ↓ MIK / ETH natijasi"
+* #tub004-0002 "Xpert MTB/XDR - ETH"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Результат INH ↓МИК / ETH"
+  * ^designation[=].value = "Xpert MTB/XDR - ETH"
   * ^designation[+].language = #en
-  * ^designation[=].value = "INH low MIC / ETH result"
+  * ^designation[=].value = "Xpert MTB/XDR - ETH"
 
-* #tub004-0003 "FQL ↑ MIK natijasi"
+* #tub004-0003 "Xpert MTB/XDR - FQL"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Результат FQL ↑МИК"
+  * ^designation[=].value = "Xpert MTB/XDR - FQL"
   * ^designation[+].language = #en
-  * ^designation[=].value = "FQL high MIC result"
+  * ^designation[=].value = "Xpert MTB/XDR - FQL"
 
-* #tub004-0004 "FQL ↓ MIK natijasi"
+* #tub004-0004 "Xpert MTB/XDR - AMK"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Результат FQL ↓МИК"
+  * ^designation[=].value = "Xpert MTB/XDR - AMK"
   * ^designation[+].language = #en
-  * ^designation[=].value = "FQL low MIC result"
+  * ^designation[=].value = "Xpert MTB/XDR - AMK"
 
 * #tub004-0005 "AMK/KAN/CAP natijasi"
   * ^designation[0].language = #ru
@@ -47,41 +47,41 @@ Description: "Local code system of tuberculosis observation component codes, inc
   * ^designation[+].language = #en
   * ^designation[=].value = "Rifampicin (1.0 mg/mL)"
 
-* #tub004-0008 "Izoniazid (0,1 mg/ml)"
+* #tub004-0008 "Izoniazid (0,1 mkg/ml)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Изониазид (0,1 мг/мл)"
+  * ^designation[=].value = "Изониазид (0,1 мкг/мл)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Isoniazid (0.1 mg/mL)"
+  * ^designation[=].value = "Isoniazid (0.1 mcg/mL)"
 
-* #tub004-0009 "Etambutol (5,0 mg/ml)"
+* #tub004-0009 "Etambutol (5,0 mkg/ml)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Этамбутол (5,0 мг/мл)"
+  * ^designation[=].value = "Этамбутол (5,0 мкг/мл)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Ethambutol (5.0 mg/mL)"
+  * ^designation[=].value = "Ethambutol (5.0 mcg/mL)"
 
-* #tub004-0010 "Pirazinamid (100 mg/ml)"
+* #tub004-0010 "Pirazinamid (100 mkg/ml)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Пиразинамид (100 мг/мл)"
+  * ^designation[=].value = "Пиразинамид (100 мкг/мл)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Pyrazinamide (100 mg/mL)"
+  * ^designation[=].value = "Pyrazinamide (100 mcg/mL)"
 
-* #tub004-0011 "Levofloksatsin (2,0 mg/ml)"
+* #tub004-0011 "Levofloksatsin (1,0 mkg/ml)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Левофлоксацин (2,0 мг/мл)"
+  * ^designation[=].value = "Левофлоксацин (1,0 мкг/мл)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Levofloxacin (2.0 mg/mL)"
+  * ^designation[=].value = "Levofloxacin (1.0 mcg/mL)"
 
-* #tub004-0012 "Moksifloksatsin (1,0 mg/ml)"
+* #tub004-0012 "Moksifloksatsin (1,0 mkg/ml)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Моксифлоксацин (1,0 мг/мл)"
+  * ^designation[=].value = "Моксифлоксацин (1,0 мкг/мл)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Moxifloxacin (1.0 mg/mL)"
+  * ^designation[=].value = "Moxifloxacin (1.0 mcg/mL)"
 
-* #tub004-0013 "Moksifloksatsin (0,25 mg/ml)"
+* #tub004-0013 "Moksifloksatsin (0,25 mkg/ml)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Моксифлоксацин (0,25 мг/мл)"
+  * ^designation[=].value = "Моксифлоксацин (0,25 мкг/мл)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Moxifloxacin (0.25 mg/mL)"
+  * ^designation[=].value = "Moxifloxacin (0.25 mcg/mL)"
 
 * #tub004-0014 "Gatifloksatsin (0,25 mg/ml)"
   * ^designation[0].language = #ru
@@ -89,47 +89,47 @@ Description: "Local code system of tuberculosis observation component codes, inc
   * ^designation[+].language = #en
   * ^designation[=].value = "Gatifloxacin (0.25 mg/mL)"
 
-* #tub004-0015 "Amikatsin (1,0 mg/ml)"
+* #tub004-0015 "Amikatsin (1,0 mkg/ml)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Амикацин (1,0 мг/мл)"
+  * ^designation[=].value = "Амикацин (1,0 мкг/мл)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Amikacin (1.0 mg/mL)"
+  * ^designation[=].value = "Amikacin (1.0 mcg/mL)"
 
-* #tub004-0016 "Protionamid (2,5 mg/ml)"
+* #tub004-0016 "Protionamid (2,0 mkg/ml)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Протионамид (2,5 мг/мл)"
+  * ^designation[=].value = "Протионамид (2,0 мкг/мл)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Prothionamide (2.5 mg/mL)"
+  * ^designation[=].value = "Prothionamide (2.0 mcg/mL)"
 
-* #tub004-0017 "Linezolid (1,0 mg/ml)"
+* #tub004-0017 "Linezolid (1,0 mkg/ml)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Линезолид (1,0 мг/мл)"
+  * ^designation[=].value = "Линезолид (1,0 мкг/мл)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Linezolid (1.0 mg/mL)"
+  * ^designation[=].value = "Linezolid (1.0 mcg/mL)"
 
-* #tub004-0018 "Klofazimin (1,0 mg/ml)"
+* #tub004-0018 "Klofazimin (1,0 mkg/ml)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Клофазимин (1,0 мг/мл)"
+  * ^designation[=].value = "Клофазимин (1,0 мкг/мл)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Clofazimine (1.0 mg/mL)"
+  * ^designation[=].value = "Clofazimine (1.0 mcg/mL)"
 
-* #tub004-0019 "Bedaquilin (1,0 mg/ml)"
+* #tub004-0019 "Bedakvilin (1,0 mkg/ml)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Бедаквилин (1,0 мг/мл)"
+  * ^designation[=].value = "Бедаквилин (1,0 мкг/мл)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Bedaquiline (1.0 mg/mL)"
+  * ^designation[=].value = "Bedaquiline (1.0 mcg/mL)"
 
-* #tub004-0020 "Delamanid (0,06 mg/ml)"
+* #tub004-0020 "Delamanid (0,06 mkg/ml)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Деламанид (0,06 мг/мл)"
+  * ^designation[=].value = "Деламанид (0,06 мкг/мл)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Delamanid (0.06 mg/mL)"
+  * ^designation[=].value = "Delamanid (0.06 mcg/mL)"
 
-* #tub004-0021 "Pretomanid (1,0 mg/ml)"
+* #tub004-0021 "Pretomanid (1,0 mkg/ml)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Претоманид (1,0 мг/мл)"
+  * ^designation[=].value = "Претоманид (1,0 мкг/мл)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Pretomanid (1.0 mg/mL)"
+  * ^designation[=].value = "Pretomanid (1.0 mcg/mL)"
 
 * #tub004-0022 "Rifampcin"
   * ^designation[0].language = #ru
@@ -137,15 +137,15 @@ Description: "Local code system of tuberculosis observation component codes, inc
   * ^designation[+].language = #en
   * ^designation[=].value = "Rifampcin"
 
-* #tub004-0023 "Isoniazid ↑MIC"
+* #tub004-0023 "Isoniazid"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Изониazid ↑МИK"
+  * ^designation[=].value = "Изoниazid"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Isoniazid ↑MIC"
+  * ^designation[=].value = "Isoniazid"
 
 * #tub004-0024 "Isoniazid ↓MIC"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Изониazid ↓МИK"
+  * ^designation[=].value = "Изoниazid ↓MИK"
   * ^designation[+].language = #en
   * ^designation[=].value = "Isoniazid ↓MIC"
 
@@ -185,11 +185,11 @@ Description: "Local code system of tuberculosis observation component codes, inc
   * ^designation[+].language = #en
   * ^designation[=].value = "Kanamycin"
 
-* #tub004-0031 "CM/AS izolyatini identifikatsiya qilish"
+* #tub004-0031 "CAP"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Идентификация изолята CM/AS"
+  * ^designation[=].value = "CAP"
   * ^designation[+].language = #en
-  * ^designation[=].value = "CM/AS isolate identification"
+  * ^designation[=].value = "CAP"
 
 * #tub004-0032 "Gradatsiya"
   * ^designation[0].language = #ru
