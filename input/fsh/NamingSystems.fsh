@@ -162,11 +162,12 @@ Usage: #definition
 * status = #active
 * kind = #identifier
 * publisher = "Uzinfocom"
+* insert SickLeaveContactInstance
 * responsible = "Ministry of Health of the Republic of Uzbekistan"
 * date = "2026-07-20"
 * description = "Certificate series and number of a sick leave document (Номер ЛН), assigned when the листок нетрудоспособности is issued."
 * jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
-* usage = "Used in CarePlan.identifier[series] for the sick leave certificate number (e.g., 01ТШ 005591125)"
+* usage = "Used in CarePlan.identifier[code] for the sick leave certificate number (e.g., 01ТШ 005591125)"
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/sickleave"
 * uniqueId[=].preferred = true

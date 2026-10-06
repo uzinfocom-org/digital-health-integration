@@ -1,0 +1,32 @@
+@startuml sick-leave-flow-ru
+skinparam sequenceMessageAlign left
+skinparam responseMessageBelowArrow true
+title Порядок записи: открытие, продление и закрытие листка
+
+participant "Сервис больничных листов" as SVC #E8F0FE
+participant "FHIR-сервер DHP" as DHP #DCFCE7
+participant "Потребитель" as C #FEF3C7
+
+note over SVC, DHP : Patient, Practitioner и Organization уже есть в DHP
+
+== Открытие ==
+SVC -> DHP : POST Condition (предварительный, provisional)
+SVC -> DHP : POST RelatedPerson, если он есть в документе
+SVC -> DHP : POST CarePlan (opened, active)\nссылается на Condition и RelatedPerson
+SVC -> DHP : POST Observation (basedOn на CarePlan)
+
+== Продление ==
+SVC -> DHP : PUT CarePlan (extended, active)\nновый incapacityPeriod и запись statusHistory
+
+== Закрытие ==
+SVC -> DHP : POST Condition (итоговый, confirmed)
+SVC -> DHP : PUT Condition (предварительный): clinicalStatus resolved
+SVC -> DHP : PUT CarePlan (closed, completed)\nссылается на оба диагноза
+
+== Чтение ==
+C -> DHP : GET CarePlan/{id}
+DHP --> C : текущая версия
+C -> DHP : чтение связанных Condition, Observation...
+
+caption Ресурс записывается после ресурсов, на которые он ссылается
+@enduml
