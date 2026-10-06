@@ -1,0 +1,32 @@
+@startuml sick-leave-flow-uz
+skinparam sequenceMessageAlign left
+skinparam responseMessageBelowArrow true
+title Yozish tartibi: varaqani ochish, uzaytirish va yopish
+
+participant "Kasallik varaqalari xizmati" as SVC #E8F0FE
+participant "DHP FHIR serveri" as DHP #DCFCE7
+participant "Iste'molchi" as C #FEF3C7
+
+note over SVC, DHP : Patient, Practitioner va Organization DHP da allaqachon mavjud
+
+== Ochish ==
+SVC -> DHP : POST Condition (dastlabki, provisional)
+SVC -> DHP : POST RelatedPerson, agar hujjatda bo'lsa
+SVC -> DHP : POST CarePlan (opened, active)\nCondition va RelatedPerson ga havola qiladi
+SVC -> DHP : POST Observation (CarePlan ga basedOn)
+
+== Uzaytirish ==
+SVC -> DHP : PUT CarePlan (extended, active)\nyangi incapacityPeriod va statusHistory yozuvi
+
+== Yopish ==
+SVC -> DHP : POST Condition (yakuniy, confirmed)
+SVC -> DHP : PUT Condition (dastlabki): clinicalStatus resolved
+SVC -> DHP : PUT CarePlan (closed, completed)\nikkala tashxisga havola qiladi
+
+== O'qish ==
+C -> DHP : GET CarePlan/{id}
+DHP --> C : joriy versiya
+C -> DHP : bog'liq Condition, Observation... ni o'qish
+
+caption Resurs o'zi havola qiladigan resurslardan keyin yoziladi
+@enduml

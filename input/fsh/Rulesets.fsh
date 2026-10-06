@@ -51,3 +51,17 @@ RuleSet: ScreeningMetaSource
 * meta.source ^short = "https://dhp.uz/fhir/source/screening | https://dhp.uz/fhir/source/dmed"
 * meta.source ^comment = "Identifies which system created this resource: the HPV (ВПЧ) screening system or DMED. Do not infer source system from the presence of an identifier from screening-identifier-system -- that system's usage does not indicate which system produced a resource; DMED currently not writing to it is an implementation detail, not a guarantee."
 * obeys smeta-1
+
+RuleSet: SickLeaveContact
+* ^contact[+].name = "DHP SickLeave"
+* ^contact[=].telecom[0].system = #email
+* ^contact[=].telecom[=].value = "rustam.sadikov17@gmail.com"
+* ^contact[=].telecom[+].system = #url
+* ^contact[=].telecom[=].value = "https://t.me/roosyabuddy"
+
+RuleSet: SickLeaveContactInstance
+* contact[+].name = "DHP SickLeave"
+* contact[=].telecom[0].system = #email
+* contact[=].telecom[=].value = "rustam.sadikov17@gmail.com"
+* contact[=].telecom[+].system = #url
+* contact[=].telecom[=].value = "https://t.me/roosyabuddy"
