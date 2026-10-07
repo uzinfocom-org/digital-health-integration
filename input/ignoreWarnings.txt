@@ -69,6 +69,34 @@ Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screeni
 # so an exact-match line never matches. Cut at (>1000) to stay independent of tx-server wording.
 Unable to expand included value set 'http://hl7.org/fhir/ValueSet/body-site': The value set 'http://hl7.org/fhir/ValueSet/body-site|5.0.0' expansion has too many codes to produce (>1000)%
 
+# dmed-form-066-arrival-type-unmapped, -transportation-kind-unmapped and -hospitalization-reason-unmapped
+# record that these DMED Form 066 fields currently have no FHIR target at all (see each CodeSystem's
+# description) - every element is noMap = true by design, so the group legitimately omits
+# group.target (0..1 in R5, precisely to allow an all-unmapped group). This warning is the expected,
+# harmless side effect of that; there is no real target system to declare without inventing one.
+# Leading % => endsWith match: the resource name differs per ConceptMap, the tail doesn't.
+%No Target Code System, so the target codes cannot be checked
+
+# Same class of known IG Publisher false positive as the '//%' entry above (inline scripts for table
+# filters flagged illegal), on artifacts-table.html's own inline <script> - vendored template markup
+# from fhir2.base.template's includes/artifacts-table.xml (~350 lines of DataTables wiring), not
+# anything authored in this repo. The rule only matters "if this IG is to build on the HL7 ci-build"
+# (ci.fhir.org); this IG publishes via its own GitHub Actions to dhp.uz, not through that
+# infrastructure, so the condition the warning is about doesn't apply here. Kept as a separate entry
+# (rather than widening '//%' above) since it pins to this specific script's signature.
+# Trailing % => startsWith match; exact line/column and output path differ per language (en/ru/uz).
+The <script> containing the javascript 'document.addEventLis'... is illegal and not allowed on the HL7 ci-build%
+
 Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/cancer-body-location-vs is a proper subset of http://hl7.org/fhir/ValueSet/body-site|5.0.0 - value set is too large to check
 
 The Target Code System http://snomed.info/sct is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
+
+
+# Introduced by IG Publisher 2.3.5 (2.3.4 does not report it). The type slice comes from the parent
+# profile, not from this IG: uz.dhp.core 0.10.0 UZCoreQuestionnaire slices
+# item.answerOption.value[x]:valueCoding to add a translation extension on display, and the base
+# R5 binding on value[x] (questionnaire-answers, strength = example) is then flagged as having no
+# effect on the integer/date/time/Reference choices. Example bindings are non-normative, so nothing
+# is lost. Only HepatitisQuestionnaire derives from UZCoreQuestionnaire here. Remove once core fixes
+# the slicing (digital-health-ig).
+The Binding on the type slicer Questionnaire.item.answerOption.value[x] applies to all its slices, but it only makes sense for some of its types, so it has no effect on the slices for integer, date, time, Reference
