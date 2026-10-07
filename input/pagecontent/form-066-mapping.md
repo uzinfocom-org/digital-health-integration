@@ -25,7 +25,7 @@ For a complete reference instance, see the [Form 066 hospital discharge example]
 
 ### Field Mapping
 
-# UZ-066 Hospital Discharge Statistical Card - FHIR Mapping
+### UZ-066 Hospital Discharge Statistical Card - FHIR Mapping
 
 ---
 

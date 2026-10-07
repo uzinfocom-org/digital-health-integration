@@ -15,13 +15,13 @@
 
 > **Mashina tarjimasi, inson tomonidan tekshirilishi zarur.** Ushbu sahifa ingliz tilidan sun'iy intellekt yordamida avtomatik tarjima qilingan va hali muharrir tomonidan tekshirilmagan. Har qanday nomuvofiqlikda asl inglizcha versiya ustuvor hisoblanadi.
 
-# 130-shakl – Laboratoriya tekshiruvi natijalari
+### 130-shakl – Laboratoriya tekshiruvi natijalari
 
 Ushbu sahifa **130-shakl (Laboratoriya tekshiruvi natijalari)** maydonlari va ularning FHIR resurslariga mosligini tavsiflaydi.
 
 ---
 
-## Umumiy ma'lumot
+#### Umumiy ma'lumot
 
 130-shakl laboratoriya tekshiruvi natijalari va ularga tegishli ma'muriy ma'lumotlarni o'z ichiga oladi. Shakldagi ma'lumotlar **FHIR Document** ko'rinishidagi bir nechta FHIR resurslariga xaritalanadi va **Form130LaboratoryTestResultsComposition** profiliga mos keladi. Mavjud bo'lgan hollarda resurslar **UZ Core** profillariga muvofiq yaratiladi.
 
@@ -29,13 +29,13 @@ To'liq namunaviy hujjat uchun **130-shakl laboratoriya tekshiruvi natijalari nam
 
 ---
 
-## Maydonlar xaritasi
+#### Maydonlar xaritasi
 
-# UZ-130 Laboratoriya tekshiruvi natijalari – FHIR xaritasi
+### UZ-130 Laboratoriya tekshiruvi natijalari – FHIR xaritasi
 
 ---
 
-## Bemor ma'lumotlari
+#### Bemor ma'lumotlari
 
 | UZ-130 | RU-130 | FHIR Path | Kod | Misol |
 |--------|---------|-----------|------|--------|
@@ -47,7 +47,7 @@ To'liq namunaviy hujjat uchun **130-shakl laboratoriya tekshiruvi natijalari nam
 
 ---
 
-## Laboratoriya buyurtmasi ma'lumotlari
+#### Laboratoriya buyurtmasi ma'lumotlari
 
 | UZ-130 | RU-130 | FHIR Path | Kod | Misol |
 |--------|---------|-----------|------|--------|
@@ -57,7 +57,7 @@ To'liq namunaviy hujjat uchun **130-shakl laboratoriya tekshiruvi natijalari nam
 
 ---
 
-## Namuna (Specimen) ma'lumotlari
+#### Namuna (Specimen) ma'lumotlari
 
 | UZ-130 | RU-130 | FHIR Path | Kod | Misol |
 |--------|---------|-----------|------|--------|
@@ -67,7 +67,7 @@ To'liq namunaviy hujjat uchun **130-shakl laboratoriya tekshiruvi natijalari nam
 
 ---
 
-## Umumiy qon tahlili (CBC) natijalari
+#### Umumiy qon tahlili (CBC) natijalari
 
 | UZ-130 | RU-130 | FHIR Path | Kod | Misol |
 |--------|---------|-----------|------|--------|
@@ -105,7 +105,7 @@ To'liq namunaviy hujjat uchun **130-shakl laboratoriya tekshiruvi natijalari nam
 
 ---
 
-## Mas'ul shaxslar
+#### Mas'ul shaxslar
 
 | UZ-130 | RU-130 | FHIR Path | Kod | Misol |
 |--------|---------|-----------|------|--------|
@@ -114,7 +114,7 @@ To'liq namunaviy hujjat uchun **130-shakl laboratoriya tekshiruvi natijalari nam
 
 ---
 
-## Bundle tuzilmasi
+#### Bundle tuzilmasi
 
 130-shakl hujjati **Form130LaboratoryTestResultsComposition** profiliga mos keluvchi Composition resursini o'z ichiga olgan FHIR Bundle ko'rinishida taqdim etiladi.
 
@@ -133,6 +133,6 @@ Bundle (document)
 └── Provenance (yozuv muallifi va kelib chiqishi)
 ```
 
-## Misol
+#### Misol
 
 To'liq FHIR hujjati namunasi uchun [130-shakl laboratoriya tekshiruvi natijalari namunasi](Bundle-example-form-130-laboratory-test-results.html) ga qarang.
