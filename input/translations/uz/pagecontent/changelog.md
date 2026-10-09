@@ -1,6 +1,8 @@
-### Ishlab chiqish jarayonida
+### Versiya 0.11.0
 
 #### O'zgartirildi
+
+Qo'llanma [UZ Core 0.11.0](https://dhp.uz/fhir/core/changelog.html) asosida yig'iladi. Uning mos kelmaydigan o'zgarishlaridan bu qo'llanmaga faqat skrining kodlarining olib tashlanishi taalluqli, quyidagi skrining so'rovnomalari esa ulardan SNOMED CT ga o'tib bo'lgan.
 
 Skrining so'rovnomalari endi `Questionnaire.code` ni SNOMED CT da olib yuradi - dastur turi identifikatoridagi konseptning o'zi: [YuIK testoldi ehtimoli](Questionnaire-IhdPretestQuestionnaire.html), [fertillik](Questionnaire-FertilityQuestionnaire.html), [gelmintozlar](Questionnaire-HelminthScreeningQuestionnaire.html), [yurak-qon tomir xavfi](Questionnaire-CVDRiskScreeningQuestionnaire.html), [qandli diabet](Questionnaire-DiabetesScreeningQuestionnaire.html), [ko'krak bezi saratoni](Questionnaire-BreastCancerScreeningQuestionnaire.html), [onkogematologiya](Questionnaire-OncohematologyScreeningQuestionnaire.html) va [bachadon bo'yni saratoni](Questionnaire-CervicalCancerScreeningQuestionnaire.html). Ular avval UZ Core `screening-code-cs` kodini olib yurar edi, UZ Core 0.11.0 uni SNOMED CT foydasiga olib tashlaydi. [Serebrovaskulyar](Questionnaire-CerebrovascularScreeningQuestionnaire.html) so'rovnoma `screening-code-cs#mserv-0007-00003` ni saqlab qoladi, chunki unga mos SNOMED CT konsepti yo'q.
 
