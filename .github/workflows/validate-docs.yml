@@ -21,6 +21,9 @@ jobs:
 
   ig-publisher:
     runs-on: ubuntu-latest
+    env:
+      PUBLISHER_URL: https://media.githubusercontent.com/media/vadi2/ig-publisher-builds/main/publisher-3.0.0-optimised.jar
+      PUBLISHER_SHA256: 34f1bc11c5fd1a9c1d639ad5a8b11b4939073c09e8b8c99838d626c0dde796c1
 
     steps:
       - uses: actions/checkout@v7
@@ -31,6 +34,16 @@ jobs:
       - name: Install Sushi
         run: sudo npm install -g fsh-sushi
 
+      # Validate with the optimised publisher build from vadi2/ig-publisher-builds,
+      # which is much faster than the official jar; release.yml still publishes
+      # with the official one. The jar is served via Git LFS, so cache it by
+      # checksum rather than re-downloading 250 MB on every run.
+      - name: Cache IG publisher
+        uses: actions/cache@v6
+        with:
+          path: input-cache/publisher.jar
+          key: publisher-${{ env.PUBLISHER_SHA256 }}
+
       - name: Install IG publisher
         run: |
           # Download the IG Publisher directly rather than via _updatePublisher.sh.
@@ -38,9 +51,10 @@ jobs:
           # root now returns 404 (the https /r4 API is fine), so the gate aborts
           # the whole build. Fetching the jar directly avoids the broken check.
           mkdir -p input-cache
-          curl -fL --retry 4 --retry-delay 10 -o input-cache/publisher.jar \
-            https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar
-          file input-cache/publisher.jar | grep -q "Java archive" || { echo "::error::publisher.jar download invalid"; exit 1; }
+          if ! echo "$PUBLISHER_SHA256  input-cache/publisher.jar" | sha256sum -c --status 2>/dev/null; then
+            curl -fL --retry 4 --retry-delay 10 -o input-cache/publisher.jar "$PUBLISHER_URL"
+            echo "$PUBLISHER_SHA256  input-cache/publisher.jar" | sha256sum -c || { echo "::error::publisher.jar download invalid"; exit 1; }
+          fi
 
       - name: Check that the IG builds successfully
         env:
