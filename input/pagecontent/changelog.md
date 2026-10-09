@@ -2,9 +2,13 @@
 
 #### Changed
 
-The screening questionnaires now carry `Questionnaire.code` in SNOMED CT, the same concept as their program type identifier: [IHD pre-test probability](Questionnaire-IhdPretestQuestionnaire.html), [fertility](Questionnaire-FertilityQuestionnaire.html), [helminths](Questionnaire-HelminthScreeningQuestionnaire.html), [cardiovascular risk](Questionnaire-CVDRiskScreeningQuestionnaire.html), [diabetes](Questionnaire-DiabetesScreeningQuestionnaire.html), [breast cancer](Questionnaire-BreastCancerScreeningQuestionnaire.html), [oncohematology](Questionnaire-OncohematologyScreeningQuestionnaire.html) and [cervical cancer](Questionnaire-CervicalCancerScreeningQuestionnaire.html). They previously carried a UZ Core `screening-code-cs` code, which UZ Core is replacing with SNOMED CT. The [cerebrovascular](Questionnaire-CerebrovascularScreeningQuestionnaire.html) questionnaire keeps `screening-code-cs#mserv-0007-00003`, as SNOMED CT has no suitable concept for it.
+The screening questionnaires now carry `Questionnaire.code` in SNOMED CT, the same concept as their program type identifier: [IHD pre-test probability](Questionnaire-IhdPretestQuestionnaire.html), [fertility](Questionnaire-FertilityQuestionnaire.html), [helminths](Questionnaire-HelminthScreeningQuestionnaire.html), [cardiovascular risk](Questionnaire-CVDRiskScreeningQuestionnaire.html), [diabetes](Questionnaire-DiabetesScreeningQuestionnaire.html), [breast cancer](Questionnaire-BreastCancerScreeningQuestionnaire.html), [oncohematology](Questionnaire-OncohematologyScreeningQuestionnaire.html) and [cervical cancer](Questionnaire-CervicalCancerScreeningQuestionnaire.html). They previously carried a UZ Core `screening-code-cs` code, which UZ Core 0.11.0 removes in favour of SNOMED CT. The [cerebrovascular](Questionnaire-CerebrovascularScreeningQuestionnaire.html) questionnaire keeps `screening-code-cs#mserv-0007-00003`, as SNOMED CT has no suitable concept for it.
 
 The [screening program type](NamingSystem-screening-program-type-identifier-system.html) identifier now documents a third value besides the SNOMED CT codes and `mserv-0007-00003`: `breast-cervical-unspecified`, which the HPV screening system writes on a resource it creates for breast and cervical cancer screening but cannot attribute to either program - a Condition whose ICD-10 code is on neither program's list, or on both, and a referral to a branch of the national oncology or maternal and child health centre. Such a resource carries exactly one program type identifier.
+
+#### Documentation
+
+The [cancer](cancer.html) and [hepatitis](hepatitis.html) pages now show a diagram of how their resources link together. The diagrams on the other integration pages now include every profile of the integration (screening leaves out the ScreeningComposition document), with several wrong cardinalities corrected. All of them show the clinical graph, leaving out references to organizations, practitioners and other actors.
 
 ### Version 0.10.0
 
@@ -21,8 +25,6 @@ The operation code on a [form 066](form-066-mapping.html) hospital discharge sum
 [ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html) enumerates the 6,853 codes DMED carries: 6,176 of the 9,428 stem codes WHO currently publishes, plus 677 WHO has since withdrawn. The withdrawn ones are `inactive` in [the code system](https://dhp.uz/fhir/core/CodeSystem-who-ichi.html) and admitted here so records already in DMED stay valid, but should not be used going forward. A procedure the platform codes itself comes from [ICHI Codes](https://dhp.uz/fhir/core/ValueSet-ichi-vs.html) in UZ Core.
 
 The [IHD pre-test probability risk categories](CodeSystem-ihd-risk-category-cs.html) are now published here. The [IHD pretest questionnaire](Questionnaire-IhdPretestQuestionnaire.html) already answered its risk category item from them, but under a UZ Core canonical that no UZ Core release contains.
-
-The [cancer](cancer.html) and [hepatitis](hepatitis.html) pages now show a diagram of how their resources link together. The diagrams on the other integration pages now include every profile of the integration (screening leaves out the ScreeningComposition document), with several wrong cardinalities corrected. All of them show the clinical graph, leaving out references to organizations, practitioners and other actors.
 
 #### Changed
 

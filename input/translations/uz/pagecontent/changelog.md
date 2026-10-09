@@ -2,9 +2,13 @@
 
 #### O'zgartirildi
 
-Skrining so'rovnomalari endi `Questionnaire.code` ni SNOMED CT da olib yuradi - dastur turi identifikatoridagi konseptning o'zi: [YuIK testoldi ehtimoli](Questionnaire-IhdPretestQuestionnaire.html), [fertillik](Questionnaire-FertilityQuestionnaire.html), [gelmintozlar](Questionnaire-HelminthScreeningQuestionnaire.html), [yurak-qon tomir xavfi](Questionnaire-CVDRiskScreeningQuestionnaire.html), [qandli diabet](Questionnaire-DiabetesScreeningQuestionnaire.html), [ko'krak bezi saratoni](Questionnaire-BreastCancerScreeningQuestionnaire.html), [onkogematologiya](Questionnaire-OncohematologyScreeningQuestionnaire.html) va [bachadon bo'yni saratoni](Questionnaire-CervicalCancerScreeningQuestionnaire.html). Ular avval UZ Core `screening-code-cs` kodini olib yurar edi, UZ Core uni SNOMED CT bilan almashtirmoqda. [Serebrovaskulyar](Questionnaire-CerebrovascularScreeningQuestionnaire.html) so'rovnoma `screening-code-cs#mserv-0007-00003` ni saqlab qoladi, chunki unga mos SNOMED CT konsepti yo'q.
+Skrining so'rovnomalari endi `Questionnaire.code` ni SNOMED CT da olib yuradi - dastur turi identifikatoridagi konseptning o'zi: [YuIK testoldi ehtimoli](Questionnaire-IhdPretestQuestionnaire.html), [fertillik](Questionnaire-FertilityQuestionnaire.html), [gelmintozlar](Questionnaire-HelminthScreeningQuestionnaire.html), [yurak-qon tomir xavfi](Questionnaire-CVDRiskScreeningQuestionnaire.html), [qandli diabet](Questionnaire-DiabetesScreeningQuestionnaire.html), [ko'krak bezi saratoni](Questionnaire-BreastCancerScreeningQuestionnaire.html), [onkogematologiya](Questionnaire-OncohematologyScreeningQuestionnaire.html) va [bachadon bo'yni saratoni](Questionnaire-CervicalCancerScreeningQuestionnaire.html). Ular avval UZ Core `screening-code-cs` kodini olib yurar edi, UZ Core 0.11.0 uni SNOMED CT foydasiga olib tashlaydi. [Serebrovaskulyar](Questionnaire-CerebrovascularScreeningQuestionnaire.html) so'rovnoma `screening-code-cs#mserv-0007-00003` ni saqlab qoladi, chunki unga mos SNOMED CT konsepti yo'q.
 
 [Skrining dasturi turi](NamingSystem-screening-program-type-identifier-system.html) identifikatori uchun SNOMED CT kodlari va `mserv-0007-00003` dan tashqari endi uchinchi qiymat ham tavsiflangan - `breast-cervical-unspecified`. Uni OPV (ВПЧ) skrining tizimi ko'krak bezi va bachadon bo'yni saratoni skriningi doirasida yaratilgan, lekin hech bir dasturga biriktirib bo'lmaydigan resursga yozadi: ICD-10 kodi hech bir dastur ro'yxatiga kirmaydigan yoki ikkalasiga ham kiradigan Condition, hamda RSNPMCOiR yoki RSNPMCZMiR filialiga yo'llanma. Bunday resurs dastur turining faqat bitta identifikatoriga ega bo'ladi.
+
+#### Hujjatlar
+
+[Onkologiya](cancer.html) va [gepatit](hepatitis.html) sahifalarida resurslar o'zaro qanday bog'lanishini ko'rsatuvchi diagramma paydo bo'ldi. Boshqa integratsiya sahifalaridagi diagrammalar endi integratsiyaning barcha profillarini o'z ichiga oladi (skriningning yakuniy hujjati ScreeningComposition bundan mustasno), noto'g'ri kardinalliklar tuzatildi. Barcha diagrammalar klinik grafni ko'rsatadi, tashkilotlar, tibbiyot xodimlari va boshqa ishtirokchilarga havolalarsiz.
 
 ### Versiya 0.10.0
 
@@ -21,8 +25,6 @@ Gepatit registrida ham model bor: [Hepatitis Patient](StructureDefinition-hepati
 [ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html) DMED da mavjud 6 853 kodni sanab o'tadi: JSST hozir nashr etadigan 9 428 o'zak koddan 6 176 tasi va JSST keyinchalik olib tashlagan 677 kod. Olib tashlanganlari [kod tizimida](https://dhp.uz/fhir/core/CodeSystem-who-ichi.html) `inactive` deb belgilangan va bu yerda qabul qilinadi - shunda DMED da allaqachon mavjud yozuvlar validatsiyadan o'tadi, ammo kelgusida ulardan foydalanmaslik kerak. Platforma o'zi kodlaydigan protsedura UZ Core dagi [ICHI Codes](https://dhp.uz/fhir/core/ValueSet-ichi-vs.html) dan olinadi.
 
 [YuIK testoldi ehtimoli bo'yicha xavf kategoriyalari](CodeSystem-ihd-risk-category-cs.html) endi shu yerda e'lon qilinadi. [YuIK testoldi ehtimoli so'rovnomasi](Questionnaire-IhdPretestQuestionnaire.html) xavf kategoriyasi savoliga javoblarda ulardan allaqachon foydalanardi, biroq UZ Core ning hech bir relizida mavjud bo'lmagan UZ Core kanonik URL manzili ostida.
-
-[Onkologiya](cancer.html) va [gepatit](hepatitis.html) sahifalarida resurslar o'zaro qanday bog'lanishini ko'rsatuvchi diagramma paydo bo'ldi. Boshqa integratsiya sahifalaridagi diagrammalar endi integratsiyaning barcha profillarini o'z ichiga oladi (skriningning yakuniy hujjati ScreeningComposition bundan mustasno), noto'g'ri kardinalliklar tuzatildi. Barcha diagrammalar klinik grafni ko'rsatadi, tashkilotlar, tibbiyot xodimlari va boshqa ishtirokchilarga havolalarsiz.
 
 #### O'zgartirildi
 

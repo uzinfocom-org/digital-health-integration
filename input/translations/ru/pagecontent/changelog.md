@@ -2,9 +2,13 @@
 
 #### Изменено
 
-Скрининговые опросники теперь содержат `Questionnaire.code` в SNOMED CT - тот же концепт, что и в идентификаторе типа программы: [предтестовая вероятность ИБС](Questionnaire-IhdPretestQuestionnaire.html), [фертильность](Questionnaire-FertilityQuestionnaire.html), [гельминтозы](Questionnaire-HelminthScreeningQuestionnaire.html), [риск сердечно-сосудистых заболеваний](Questionnaire-CVDRiskScreeningQuestionnaire.html), [сахарный диабет](Questionnaire-DiabetesScreeningQuestionnaire.html), [рак молочной железы](Questionnaire-BreastCancerScreeningQuestionnaire.html), [онкогематология](Questionnaire-OncohematologyScreeningQuestionnaire.html) и [рак шейки матки](Questionnaire-CervicalCancerScreeningQuestionnaire.html). Ранее они содержали код из `screening-code-cs` UZ Core, который UZ Core заменяет на SNOMED CT. [Цереброваскулярный](Questionnaire-CerebrovascularScreeningQuestionnaire.html) опросник сохраняет `screening-code-cs#mserv-0007-00003`, так как подходящего концепта SNOMED CT для него нет.
+Скрининговые опросники теперь содержат `Questionnaire.code` в SNOMED CT - тот же концепт, что и в идентификаторе типа программы: [предтестовая вероятность ИБС](Questionnaire-IhdPretestQuestionnaire.html), [фертильность](Questionnaire-FertilityQuestionnaire.html), [гельминтозы](Questionnaire-HelminthScreeningQuestionnaire.html), [риск сердечно-сосудистых заболеваний](Questionnaire-CVDRiskScreeningQuestionnaire.html), [сахарный диабет](Questionnaire-DiabetesScreeningQuestionnaire.html), [рак молочной железы](Questionnaire-BreastCancerScreeningQuestionnaire.html), [онкогематология](Questionnaire-OncohematologyScreeningQuestionnaire.html) и [рак шейки матки](Questionnaire-CervicalCancerScreeningQuestionnaire.html). Ранее они содержали код из `screening-code-cs` UZ Core, который UZ Core 0.11.0 удаляет в пользу SNOMED CT. [Цереброваскулярный](Questionnaire-CerebrovascularScreeningQuestionnaire.html) опросник сохраняет `screening-code-cs#mserv-0007-00003`, так как подходящего концепта SNOMED CT для него нет.
 
 Для идентификатора [типа скрининговой программы](NamingSystem-screening-program-type-identifier-system.html) помимо кодов SNOMED CT и `mserv-0007-00003` теперь описано третье значение - `breast-cervical-unspecified`. Его записывает система скрининга ВПЧ на ресурс, созданный в рамках скрининга рака молочной железы и шейки матки, но который нельзя отнести ни к одной из программ: Condition, чей код МКБ-10 не входит ни в один из списков программ или входит в оба, и направление в филиал РСНПМЦОиР или РСНПМЦЗМиР. Такой ресурс содержит ровно один идентификатор типа программы.
+
+#### Документация
+
+На страницах [онкологии](cancer.html) и [гепатита](hepatitis.html) появилась схема связей между ресурсами. Схемы на страницах остальных интеграций теперь включают все профили интеграции (кроме итогового документа скрининга ScreeningComposition), а ошибочные кратности исправлены. Все схемы показывают клинический граф, без ссылок на организации, медработников и других участников.
 
 ### Версия 0.10.0
 
@@ -21,8 +25,6 @@
 [ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html) перечисляет 6 853 кода, которые есть в DMED: 6 176 из 9 428 стержневых кодов, публикуемых ВОЗ сейчас, плюс 677 кодов, которые ВОЗ с тех пор убрала. Убранные помечены `inactive` в [системе кодов](https://dhp.uz/fhir/core/CodeSystem-who-ichi.html) и допускаются здесь, чтобы записи, уже имеющиеся в DMED, оставались валидными, но использовать их в дальнейшем не следует. Процедуру, которую платформа кодирует сама, выбирают из [ICHI Codes](https://dhp.uz/fhir/core/ValueSet-ichi-vs.html) в UZ Core.
 
 [Категории риска по предтестовой вероятности ИБС](CodeSystem-ihd-risk-category-cs.html) теперь публикуются здесь. [Опросник предтестовой вероятности ИБС](Questionnaire-IhdPretestQuestionnaire.html) уже использовал их в ответах на вопрос о категории риска, но под каноническим URL UZ Core, которого нет ни в одном релизе UZ Core.
-
-На страницах [онкологии](cancer.html) и [гепатита](hepatitis.html) появилась схема связей между ресурсами. Схемы на страницах остальных интеграций теперь включают все профили интеграции (кроме итогового документа скрининга ScreeningComposition), а ошибочные кратности исправлены. Все схемы показывают клинический граф, без ссылок на организации, медработников и других участников.
 
 #### Изменено
 
