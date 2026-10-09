@@ -5,7 +5,7 @@ Title: "Cervical Cancer Screening Questionnaire"
 Description: "Example for Questionnaire for Cervical Cancer Screening"
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/CervicalCancerScreeningQuestionnaire"
 * identifier[0].system = $screening-program-type-id
-* identifier[0].value = "171149006"
+* identifier[0].value = "mserv-0007-00009"
 * name = "CervicalCancerScreeningQuestionnaire"
 * version = "1.0.0"
 * language = #uz
@@ -582,6 +582,9 @@ Title: "Bachadon bo'yni saratoni skriningi so'rovnomasiga javob namunasi"
 Description: "Bemor tomonidan to'ldirilgan bachadon bo'yni saratoni skriningi so'rovnomasining namunaviy javobi"
 
 * questionnaire = Canonical(CervicalCancerScreeningQuestionnaire)
+* identifier[0].system = $screening-program-type-id
+* identifier[0].value = "mserv-0007-00009"
+* meta.source = "https://dhp.uz/fhir/source/dmed"
 * status = #completed
 * subject = Reference(lola-oripova)
 * authored = "2026-07-01T14:30:00+05:00"

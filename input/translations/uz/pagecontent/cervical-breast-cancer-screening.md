@@ -18,9 +18,43 @@ Kodlanadigan qiymatlar ekvivalent tushuncha mavjud bo'lgan hamma joyda SNOMED CT
 
 ### Dastur va manba tizimi identifikatorlari
 
-**Skrining dasturi turi.** Ikkinchi `identifier`, tizim `https://dhp.uz/fhir/core/sid/prg/uz/program`, resurs tegishli bo'lgan skrining dasturining SNOMED CT kodini bildiradi - masalan, `171149006` (bachadon bo'yni skriningi) yoki `268547008` (sut bezi saratoni skriningi). Kelishuvga ko'ra Observation, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen, Composition, shuningdek so'rovnoma butunlay bitta dasturga tegishli bo'lganda Questionnaire/QuestionnaireResponse da ko'rsatiladi - lekin ikkala dastur uchun umumiy bo'lgan Patient, Practitioner yoki PractitionerRole da ko'rsatilmaydi. [Ayolni tibbiy ko'rikdan o'tkazish](Questionnaire-screening-woman-exam.html) so'rovnomasi va unga javob ikkala dastur kodini ham o'z ichiga oladi, chunki so'rovnoma ikkala dasturni ham qamrab oladi. Ko'krak bezi va bachadon bo'yni saratoni skriningi doirasida yaratilgan, lekin hech bir dasturga biriktirib bo'lmaydigan resurs buning o'rniga `breast-cervical-unspecified` qiymatli bitta dastur turi identifikatoriga ega bo'ladi: ICD-10 kodi hech bir dastur ro'yxatiga kirmaydigan yoki ikkalasiga ham kiradigan Condition, hamda RSNPMCOiR yoki RSNPMCZMiR filialiga yo'llanma.
+**Skrining dasturi turi.** `https://dhp.uz/fhir/core/sid/prg/uz/program` tizimidagi qo'shimcha `identifier` resurs tegishli bo'lgan aniq dasturni bildiradi. HPV tizimi bachadon bo'yni uchun `171149006`, sut bezi uchun `268547008` dan foydalanadi; alohida DMED dasturlari quyidagi mahalliy qiymatlardan foydalanadi. Kelishuvga ko'ra identifikator Observation, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen, Composition va bitta dasturga tegishli Questionnaire/QuestionnaireResponse da ko'rsatiladi, umumiy Patient, Practitioner yoki PractitionerRole da emas. HPV [Ayolni tibbiy ko'rikdan o'tkazish](Questionnaire-screening-woman-exam.html) so'rovnomasi va javobi ikkala HPV dasturi identifikatorini saqlaydi. Hech bir dasturga aniq biriktirib bo'lmaydigan HPV resursi bitta `breast-cervical-unspecified` identifikatoriga ega: ICD-10 kodi hech bir ro'yxatga kirmaydigan yoki ikkalasiga kiradigan Condition va RSNPMCOiR yoki RSNPMCZMiR filialiga yo'llanma. Bu qiymat DMED dasturining muqobil identifikatori emas.
 
 **Manba tizimi.** `meta.source` resursni qaysi tizim yaratganini bildiradi: `https://dhp.uz/fhir/source/screening` (ushbu bachadon bo'yni va sut bezi saratoni skriningi axborot tizimi) yoki `https://dhp.uz/fhir/source/dmed` (DMED). Majburiy maydon, [ScreeningObservation](StructureDefinition-screening-observation.html), [ScreeningServiceRequest](StructureDefinition-screening-service-request.html), [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [ScreeningDocumentReference](StructureDefinition-screening-document-reference.html) va [ScreeningComposition](StructureDefinition-screening-composition.html) profillarida invariant orqali tekshiriladi. Manba tizimini `https://dhp.uz/fhir/core/sid/doc/uz/screening` tizimidan olingan identifikator mavjudligiga qarab aniqlamang - bu identifikator tizimi resursni qaysi tizim yaratganini bildirmaydi.
+
+### Nima uchun DMED va HPV dasturi identifikatorlari farq qiladi
+
+O'xshash nomlar saratonning bir xil joylashuvini bildiradi, ammo dasturlarning jarayonlari va yakunlanish mezonlari farq qiladi. DMED [sut bezi so'rovnomasi](Questionnaire-BreastCancerScreeningQuestionnaire.html) xavf omillari, ball va toifani qayd etadi; [bachadon bo'yni so'rovnomasi](Questionnaire-CervicalCancerScreeningQuestionnaire.html) tibbiy va reproduktiv anamnezni yig'adi. HPV tizimi o'zining [sut bezi](Questionnaire-screening-breast-risk.html) va [bachadon bo'yni](Questionnaire-screening-cervical-risk.html) xavf so'rovnomalari, ayol ko'rigi hamda ushbu sahifada tavsiflangan laboratoriya, tasvirlash, patomorfologiya va yakuniy tashxis jarayonlariga ega. Qo'shimcha DMED bosqichlari mavjud bo'lsa, ular DMED dasturiga tegishli bo'lib, HPV dasturida avtomatik hisobga olinmaydi.
+
+Nom yoki klinik kodning mosligi dasturlarni o'zaro almashtirishga asos emas. Alohida mahalliy DMED identifikatorlari bir dastur so'rovnomasini boshqa dasturda ishtirok etish yoki uni yakunlash deb hisoblashning oldini oladi. Umumiy SNOMED klinik kodi ushbu turli jarayonlarni ajratmaydi; mahalliy identifikatorlar HPV identifikatorlarini o'zgartirmasdan DMED dasturlarini ajratadi.
+
+Jadvaldagi barcha qiymatlar uchun `Identifier.system = https://dhp.uz/fhir/core/sid/prg/uz/program`:
+
+| Dastur | `identifier.value` | Dasturni amalga oshiruvchi tizim | So'rovnoma |
+| :--- | :--- | :--- | :--- |
+| DMED sut bezi so'rovnomasi dasturi | `mserv-0007-00007` | DMED | [BreastCancerScreeningQuestionnaire](Questionnaire-BreastCancerScreeningQuestionnaire.html) |
+| HPV sut bezi skriningi dasturi | `268547008` | HPV tizimi | [screening-breast-risk](Questionnaire-screening-breast-risk.html) va tegishli keyingi bosqichlar |
+| DMED bachadon bo'yni so'rovnomasi dasturi | `mserv-0007-00009` | DMED | [CervicalCancerScreeningQuestionnaire](Questionnaire-CervicalCancerScreeningQuestionnaire.html) |
+| HPV bachadon bo'yni skriningi dasturi | `171149006` | HPV tizimi | [screening-cervical-risk](Questionnaire-screening-cervical-risk.html) va tegishli keyingi bosqichlar |
+
+Dastur identifikatori aniq yozuvning barqaror identifikatoriga qo'shimcha ravishda uzatiladi. `Questionnaire.code` va tekshiruv/muolaja kodlari klinik mazmunni tasniflaydi va qiymatlar o'xshash bo'lsa ham dastur identifikatorini almashtirmaydi. Dastur identifikatori faqat so'rovnoma javobida emas, tegishli bog'langan klinik resurslarda ham ko'rsatiladi. `meta.source` alohida kelib chiqishni bildiradi: DMED resurslari uchun `https://dhp.uz/fhir/source/dmed`, HPV resurslari uchun `https://dhp.uz/fhir/source/screening`.
+
+### Takliflar va dasturni amalga oshiruvchi tizim
+
+Skrining taklifi (`ServiceRequest.intent = plan`) belgilangan dastur identifikatorini saqlaydi. DMED yuqoridagi ikkita mahalliy dasturni, HPV tizimi esa SNOMED identifikatorli ikkita dasturni amalga oshiradi. Bu moslik integratsiya jarayonini belgilaydi; bemor dasturiy ta'minotni tanlash uchun emas, tibbiy tashkilotga taklif qilinadi. Ijrochi va xizmat joyi alohida ko'rsatiladi.
+
+Har bir MIS markaziy tizim yoki MIS tomonidan yaratilganidan qat'i nazar, aynan bemor, dastur va joriy siklga tegishli taklifni topib qayta ishlatadi. Bir xil saraton joylashuvi, nom yoki klinik kod tufayli boshqa dastur taklifini qayta ishlatish yoki boshqa dastur identifikatorini muqobil sifatida qo'shish mumkin emas. Masalan, quyidagi so'rovlar sut bezining ikki dasturini ajratadi (`|` belgisi `%7C` sifatida kodlanadi):
+
+```http
+GET [base]/ServiceRequest?subject=Patient/{id}&intent=plan&status=draft,active&identifier=https://dhp.uz/fhir/core/sid/prg/uz/program|mserv-0007-00007
+GET [base]/ServiceRequest?subject=Patient/{id}&intent=plan&status=draft,active&identifier=https://dhp.uz/fhir/core/sid/prg/uz/program|268547008
+```
+
+Siklni tanlash va takroriy yozuvlarni oldini olish takliflar shartnomasiga ham mos bo'lishi kerak: dastur identifikatori siklni aniqlamaydi. Javobdan bemor va dastur identifikatorini tekshiring. MIS markaziy taklifni qabul qilganda uning haqiqiy `meta.source` qiymatini saqlaydi; qabul qiluvchini ko'rsatish uchun manbani DMED yoki HPV ga almashtirmang. Markaziy takliflar uchun manba cheklovi mos kelmaydigan klinik skrining profili emas, kelishilgan profil ishlatiladi.
+
+Sikl klinik resurslari o'z dasturi taklifiga qo'llab-quvvatlanadigan `basedOn` maydoni yoki kelishilgan kengaytma orqali havola qiladi; bevosita yo'llanmalarga havolalar saqlanadi. Yakunlanish tegishli dastur bosqichlari va to'g'ri bog'langan natijalar asosida aniqlanadi. DMED dasturining yakunlanishi HPV dasturini avtomatik yakunlamaydi. Portal dasturlarni saraton joylashuvi bo'yicha guruhlashi mumkin, ammo takliflar, sikllar va bajarilish holatlarini alohida saqlaydi.
+
+Ilgari nashr etilgan DMED sut bezi/bachadon bo'yni so'rovnomalari HPV dasturi identifikatorlaridan foydalangan. Yangi ta'riflar, yuboruvchi mosliklari va takliflarni qidirish mahalliy DMED qiymatlariga muvofiqlashtiriladi. Tarixiy yozuvlarni ko'chirish uchun alohida qaror kerak; ularning dasturini yashirincha o'zgartirmang yoki faqat nomidan aniqlamang.
 
 ### Test yoki muolajani buyurtirish (ServiceRequest)
 

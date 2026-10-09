@@ -18,9 +18,43 @@ Coded values use SNOMED CT or LOINC wherever an equivalent concept exists. Local
 
 ### Program and source identifiers
 
-**Screening program type.** A second `identifier`, system `https://dhp.uz/fhir/core/sid/prg/uz/program`, naming the SNOMED CT screening program a resource belongs to - for example `171149006` (Screening for malignant neoplasm of cervix) or `268547008` (Screening for malignant neoplasm of breast). Written by convention on Observation, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen, Composition, and Questionnaire/QuestionnaireResponse when the whole questionnaire is one program - not on Patient, Practitioner or PractitionerRole, which are shared across programs. The [Woman medical exam](Questionnaire-screening-woman-exam.html) questionnaire and its response carry both program codes, since the questionnaire spans both programs. A resource created for breast and cervical cancer screening that cannot be attributed to either program carries a single program type identifier with the value `breast-cervical-unspecified` instead: a Condition whose ICD-10 code is on neither program's list, or on both, and a referral to a branch of the national oncology or maternal and child health centre.
+**Screening program type.** An additional `identifier`, system `https://dhp.uz/fhir/core/sid/prg/uz/program`, identifies the specific screening program a resource belongs to. The HPV screening system uses `171149006` for cervical screening and `268547008` for breast screening; the distinct DMED programs use the local values listed below. Written by convention on Observation, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen, Composition, and Questionnaire/QuestionnaireResponse when the whole questionnaire is one program - not on Patient, Practitioner or PractitionerRole, which are shared across programs. The HPV [Woman medical exam](Questionnaire-screening-woman-exam.html) questionnaire and its response carry both HPV program codes. An HPV resource that cannot be attributed to either program carries a single program type identifier with the value `breast-cervical-unspecified` instead: a Condition whose ICD-10 code is on neither program's list, or on both, and a referral to a branch of the national oncology or maternal and child health centre. This classification is not an alias for a DMED program.
 
 **Source system.** `meta.source` identifies which system created a resource: `https://dhp.uz/fhir/source/screening` (this Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System) or `https://dhp.uz/fhir/source/dmed` (DMED). Required and enforced by invariant on [ScreeningObservation](StructureDefinition-screening-observation.html), [ScreeningServiceRequest](StructureDefinition-screening-service-request.html), [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [ScreeningDocumentReference](StructureDefinition-screening-document-reference.html) and [ScreeningComposition](StructureDefinition-screening-composition.html). Do not infer the source system from the presence of an identifier from `https://dhp.uz/fhir/core/sid/doc/uz/screening` - that identifier system does not indicate which system produced a resource.
+
+### Why DMED and HPV have different program identifiers
+
+The similar names describe the same cancer site, but the programs have different workflows and completion criteria. DMED's [breast questionnaire](Questionnaire-BreastCancerScreeningQuestionnaire.html) records risk-factor answers and a calculated score/category; its [cervical questionnaire](Questionnaire-CervicalCancerScreeningQuestionnaire.html) collects medical and reproductive history. The HPV screening system has its own [breast](Questionnaire-screening-breast-risk.html) and [cervical](Questionnaire-screening-cervical-risk.html) risk questionnaires, the woman medical exam, and the laboratory, imaging, pathology and final-diagnosis pathways described on this page. Additional DMED activities, when present, belong to the DMED program and do not automatically satisfy the HPV program.
+
+The two programs are not interchangeable merely because their names or clinical codes match. Distinct local DMED identifiers prevent a questionnaire in one program from being counted as participation in, or completion of, the other. The existing broad clinical SNOMED coding does not identify these different program workflows; local identifiers distinguish the DMED programs without changing the HPV identifiers.
+
+All values in this table use `Identifier.system = https://dhp.uz/fhir/core/sid/prg/uz/program`:
+
+| Program | `identifier.value` | Implementing system | Questionnaire |
+| :--- | :--- | :--- | :--- |
+| DMED breast questionnaire program | `mserv-0007-00007` | DMED | [BreastCancerScreeningQuestionnaire](Questionnaire-BreastCancerScreeningQuestionnaire.html) |
+| HPV breast screening program | `268547008` | HPV screening system | [screening-breast-risk](Questionnaire-screening-breast-risk.html), followed by applicable screening activities |
+| DMED cervical questionnaire program | `mserv-0007-00009` | DMED | [CervicalCancerScreeningQuestionnaire](Questionnaire-CervicalCancerScreeningQuestionnaire.html) |
+| HPV cervical screening program | `171149006` | HPV screening system | [screening-cervical-risk](Questionnaire-screening-cervical-risk.html), followed by applicable screening activities |
+
+The program identifier is additional to the stable identifier of the individual record. `Questionnaire.code` and the codes of tests/procedures classify clinical content; they do not replace the program identifier, even where the values look similar. The identifier is carried on applicable related clinical resources as well as the questionnaire response. `meta.source` remains a separate statement of origin: DMED-created resources use `https://dhp.uz/fhir/source/dmed`; HPV-created resources use `https://dhp.uz/fhir/source/screening`.
+
+### Invitations and the implementing system
+
+A screening invitation (`ServiceRequest.intent = plan`) carries the identifier of the intended program. DMED handles the two local programs above; the HPV screening system handles the two SNOMED-identified programs. The program mapping determines the applicable integration workflow; the patient is invited to a healthcare organization, not asked to choose a software system. Clinical performer/location details remain separate from this mapping.
+
+Each MIS finds and reuses the invitation for the exact patient, program and current cycle, whether it was created centrally or by a MIS. It must not reuse an invitation for the other program based on a similar cancer site, title or clinical code, or add the other program's identifier as an alias. For example, these candidate searches distinguish the two breast programs (`|` must be URL-encoded as `%7C`):
+
+```http
+GET [base]/ServiceRequest?subject=Patient/{id}&intent=plan&status=draft,active&identifier=https://dhp.uz/fhir/core/sid/prg/uz/program|mserv-0007-00007
+GET [base]/ServiceRequest?subject=Patient/{id}&intent=plan&status=draft,active&identifier=https://dhp.uz/fhir/core/sid/prg/uz/program|268547008
+```
+
+Cycle selection and duplicate prevention must also follow the invitation contract; a program identifier alone is not a cycle identity. After retrieval, verify the patient's identity and program identifier. An invitation created centrally keeps its actual `meta.source` when a MIS accepts it; do not set its source to DMED or HPV simply to indicate the recipient. Use the agreed profile for centrally created invitations rather than asserting that an administrative source conforms to a clinical screening profile's source restriction.
+
+Clinical resources for the cycle reference that program's invitation through their supported `basedOn` field or agreed equivalent extension, preserving immediate-order links where applicable. Completion is evaluated against the applicable program's defined activities and valid linked evidence; completion of the DMED program does not automatically complete the HPV program. The portal may display the programs together under the same cancer site, while keeping their invitations, cycles and completion states separate.
+
+Previously published DMED breast/cervical Questionnaires used the HPV program identifiers. New definitions, sender mappings and invitation lookup must be aligned with the local DMED values. Historical records require an explicit migration decision; do not silently relabel them or infer their program from a title alone.
 
 ### Ordering a test or procedure (ServiceRequest)
 
