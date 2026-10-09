@@ -18,7 +18,8 @@ PsychiatryEpisodeOfCare "0..*" <-- "0..*" Encounter : « episodeOfCare »
 Patient "0..1" <-- "0..*" Encounter : « subject »
 Patient "1" <-- "0..*" PsychiatryCondition : « subject »
 PsychiatryCondition "0..*" <-right- "0..*" Encounter : « diagnosis.condition »
-PsychiatryCondition "0..*" -right-> "0..1" Encounter : « encounter »
+' norank gives this link its own SVG id; two ranked links between the same classes share one
+Encounter "0..1" <-[norank]- "0..*" PsychiatryCondition : « encounter »
 Encounter "0..1" <--- "0..*" NarcologyPsychiatryFlag : « encounter »
 Encounter "0..1" <-- "0..*" PsychiatryCommissionObservation : « encounter »
 Patient "1" <-- "0..*" NarcologyPsychiatryFlag : « subject »
