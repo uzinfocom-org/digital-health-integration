@@ -18,9 +18,34 @@ Coded values use SNOMED CT or LOINC wherever an equivalent concept exists. Local
 
 ### Program and source identifiers
 
-**Screening program type.** A second `identifier`, system `https://dhp.uz/fhir/core/sid/prg/uz/program`, naming the SNOMED CT screening program a resource belongs to - for example `171149006` (Screening for malignant neoplasm of cervix) or `268547008` (Screening for malignant neoplasm of breast). Written by convention on Observation, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen, Composition, and Questionnaire/QuestionnaireResponse when the whole questionnaire is one program - not on Patient, Practitioner or PractitionerRole, which are shared across programs. The [Woman medical exam](Questionnaire-screening-woman-exam.html) questionnaire and its response carry both program codes, since the questionnaire spans both programs. A resource created for breast and cervical cancer screening that cannot be attributed to either program carries a single program type identifier with the value `breast-cervical-unspecified` instead: a Condition whose ICD-10 code is on neither program's list, or on both, and a referral to a branch of the national oncology or maternal and child health centre.
+**Screening program type.** An additional `identifier`, system `https://dhp.uz/fhir/core/sid/prg/uz/program`, identifies the specific screening program a resource belongs to. The HPV screening system uses `171149006` for cervical screening and `268547008` for breast screening; the distinct DMED programs use the local values listed below. Written by convention on Observation, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen, and Questionnaire/QuestionnaireResponse when the whole questionnaire is one program - not on Patient, Practitioner or PractitionerRole, which are shared across programs. The HPV [Woman medical exam](Questionnaire-screening-woman-exam.html) questionnaire and its response carry both HPV program codes. An HPV resource that cannot be attributed to either program carries a single program type identifier with the value `breast-cervical-unspecified` instead: a Condition whose ICD-10 code is on neither program's list, or on both, and a referral to a branch of the national oncology or maternal and child health centre. This classification is not an alias for a DMED program.
 
 **Source system.** `meta.source` identifies which system created a resource: `https://dhp.uz/fhir/source/screening` (this Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System) or `https://dhp.uz/fhir/source/dmed` (DMED). Required and enforced by invariant on [ScreeningObservation](StructureDefinition-screening-observation.html), [ScreeningServiceRequest](StructureDefinition-screening-service-request.html), [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [ScreeningDocumentReference](StructureDefinition-screening-document-reference.html) and [ScreeningComposition](StructureDefinition-screening-composition.html). Do not infer the source system from the presence of an identifier from `https://dhp.uz/fhir/core/sid/doc/uz/screening` - that identifier system does not indicate which system produced a resource.
+
+This source metadata rule applies to clinical evidence and orders; new plan invitations use the separate [screening plan profile](StructureDefinition-screening-plan-service-request.html) and omit `meta.source`.
+
+### Why DMED and HPV have different program identifiers
+
+The similar names describe the same cancer site, but the programs have different workflows and completion criteria. DMED's [breast questionnaire](Questionnaire-BreastCancerScreeningQuestionnaire.html) records risk-factor answers and a calculated score/category; its [cervical questionnaire](Questionnaire-CervicalCancerScreeningQuestionnaire.html) collects medical and reproductive history. The HPV screening system has its own [breast](Questionnaire-screening-breast-risk.html) and [cervical](Questionnaire-screening-cervical-risk.html) risk questionnaires, the woman medical exam, and the laboratory, imaging, pathology and final-diagnosis pathways described on this page. Additional DMED activities, when present, belong to the DMED program and do not automatically satisfy the HPV program.
+
+The two programs are not interchangeable merely because their names or clinical codes match. Distinct local DMED identifiers prevent a questionnaire in one program from being counted as participation in, or completion of, the other. The existing broad clinical SNOMED coding does not identify these different program workflows; local identifiers distinguish the DMED programs without changing the HPV identifiers.
+
+All values in this table use `Identifier.system = https://dhp.uz/fhir/core/sid/prg/uz/program`:
+
+| Program | `identifier.value` | Implementing system | Questionnaire |
+| :--- | :--- | :--- | :--- |
+| DMED breast questionnaire program | `mserv-0007-00007` | DMED | [BreastCancerScreeningQuestionnaire](Questionnaire-BreastCancerScreeningQuestionnaire.html) |
+| HPV breast screening program | `268547008` | HPV screening system | [screening-breast-risk](Questionnaire-screening-breast-risk.html), followed by applicable screening activities |
+| DMED cervical questionnaire program | `mserv-0007-00009` | DMED | [CervicalCancerScreeningQuestionnaire](Questionnaire-CervicalCancerScreeningQuestionnaire.html) |
+| HPV cervical screening program | `171149006` | HPV screening system | [screening-cervical-risk](Questionnaire-screening-cervical-risk.html), followed by applicable screening activities |
+
+The program identifier is additional to the stable identifier of the individual record. `Questionnaire.code` and the codes of tests/procedures classify clinical content; they do not replace the program identifier, even where the values look similar. The identifier is carried on applicable related clinical resources as well as the questionnaire response. `meta.source` remains a separate statement of origin: DMED-created resources use `https://dhp.uz/fhir/source/dmed`; HPV-created resources use `https://dhp.uz/fhir/source/screening`.
+
+### Invitations and the implementing system
+
+Use the [screening plan and invitation contract](screening-plans.html). Both a national invitation and an independent MIS plan carry category SNOMED CT `310422005` and one exact program identifier. DMED and HPV breast/cervical programs stay distinct. Ministry invitations carry `instantiatesCanonical = canonical|version`; MIS plans omit it. Plans omit `meta.source` and `occurrencePeriod`; clinical evidence retains source metadata.
+
+The HPV plan remains active across repeated screenings; DMED completes its own plan after saving the linked QuestionnaireResponse. Match the current definition version before reusing a national invitation. Several current candidates are a conflict, and an old-version invitation must not prevent creating the current one. Preserve immediate-order links alongside the plan link. Historical identifiers are not silently relabelled.
 
 ### Ordering a test or procedure (ServiceRequest)
 
@@ -278,27 +303,9 @@ Three questionnaires are published. Answers come back as a QuestionnaireResponse
 | [Cervical risk](Questionnaire-screening-cervical-risk.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk` | [ScreeningCervicalRiskResponseExample](QuestionnaireResponse-screening-cervical-risk-response-example.html) |
 | [Woman medical exam](Questionnaire-screening-woman-exam.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam` | [ScreeningWomanExamResponse128](QuestionnaireResponse-screening-woman-exam-response-128.html) |
 
-### Screening summary document
+### Historical screening summary documents
 
-The screening summary gathers everything recorded for one screening episode into a single downloadable document. It can be produced at any point in the cycle: whatever has not been recorded yet is simply left out, so a summary generated early carries only the questionnaire answers.
-
-Individual steps do not get their own Composition - each result stays an Observation, and this document references them.
-
-Profile: [ScreeningComposition](StructureDefinition-screening-composition.html)
-
-Examples: [ScreeningCompositionExample](Composition-screening-composition-example.html), [ScreeningCompositionDocumentExample](Bundle-screening-composition-document-example.html)
-
-| Information to record | Value set | Example code | Stored in |
-| :--- | :--- | :--- | :--- |
-| Document type | - | `LOINC#34133-9` (Summary of episode note) | `Composition.type` |
-| Questionnaires | - | `LOINC#74465-6` | `section[questionnaire].entry` (QuestionnaireResponse) |
-| Results of every completed step | - | `LOINC#30954-2` | `section[results].entry` (Observation) |
-| Final ICD-10 diagnosis | - | `LOINC#29308-4` | `section[diagnosis].entry` (Condition) |
-| Author | - | - | `Composition.author` (PractitionerRole) |
-| Responsible organisation | - | - | `Composition.custodian` |
-| Referrals and procedures documented | - | - | `Composition.event.detail` |
-
-To hand the summary over as an immutable document, put it in a `Bundle` with `type = document`, with the Composition as the **first** entry and every resource it references - Patient, Condition, Observation, QuestionnaireResponse and the rest - in the same Bundle.
+[ScreeningComposition](StructureDefinition-screening-composition.html) is retired. Its canonical and existing examples are retained for historical validation. New HPV workflows do not create or read Composition; retrieve atomic results by program identifier or via `basedOn` on the [screening plan](screening-plans.html).
 
 ### Vital signs (height, weight, BMI)
 

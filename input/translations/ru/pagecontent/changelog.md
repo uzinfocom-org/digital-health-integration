@@ -1,10 +1,20 @@
 ### В разработке
 
+(Пока нет изменений)
+
+### Версия 0.11.0
+
+#### Добавлено
+
+Новые [профили и контракт планов](screening-plans.html) различают приглашения Минздрава и самостоятельные планы МИС. Обязательны категория приглашения, точный идентификатор программы и исполнитель; meta.source и occurrencePeriod не передаются. Приглашение Минздрава ссылается на canonical|version. Профили программы/мероприятия снабжены примером опросника. Необязательные причины закрытия остаются черновым предложением до согласования.
+
+Программы DMED РМЖ/РШМ используют mserv-0007-00007/mserv-0007-00009, ВПЧ сохраняет 268547008/171149006. Клинические коды и расчёт баллов опросников не меняются. Патоморфологический ServiceRequest.basedOn допускает 1..*, иммуногистохимический Observation — несколько ссылок. ScreeningComposition retired; канонический URL и исторические примеры сохранены.
+
 #### Изменено
 
-Скрининговые опросники теперь содержат `Questionnaire.code` в SNOMED CT - тот же концепт, что и в идентификаторе типа программы: [предтестовая вероятность ИБС](Questionnaire-IhdPretestQuestionnaire.html), [фертильность](Questionnaire-FertilityQuestionnaire.html), [гельминтозы](Questionnaire-HelminthScreeningQuestionnaire.html), [риск сердечно-сосудистых заболеваний](Questionnaire-CVDRiskScreeningQuestionnaire.html), [сахарный диабет](Questionnaire-DiabetesScreeningQuestionnaire.html), [рак молочной железы](Questionnaire-BreastCancerScreeningQuestionnaire.html), [онкогематология](Questionnaire-OncohematologyScreeningQuestionnaire.html) и [рак шейки матки](Questionnaire-CervicalCancerScreeningQuestionnaire.html). Ранее они содержали код из `screening-code-cs` UZ Core, который UZ Core заменяет на SNOMED CT. [Цереброваскулярный](Questionnaire-CerebrovascularScreeningQuestionnaire.html) опросник сохраняет `screening-code-cs#mserv-0007-00003`, так как подходящего концепта SNOMED CT для него нет.
+Скрининговые опросники теперь содержат `Questionnaire.code` в SNOMED CT — клинические концепты услуг: [предтестовая вероятность ИБС](Questionnaire-IhdPretestQuestionnaire.html), [фертильность](Questionnaire-FertilityQuestionnaire.html), [гельминтозы](Questionnaire-HelminthScreeningQuestionnaire.html), [риск сердечно-сосудистых заболеваний](Questionnaire-CVDRiskScreeningQuestionnaire.html), [сахарный диабет](Questionnaire-DiabetesScreeningQuestionnaire.html), [рак молочной железы](Questionnaire-BreastCancerScreeningQuestionnaire.html), [онкогематология](Questionnaire-OncohematologyScreeningQuestionnaire.html) и [рак шейки матки](Questionnaire-CervicalCancerScreeningQuestionnaire.html). Ранее они содержали код из `screening-code-cs` UZ Core, который UZ Core заменяет на SNOMED CT. [Цереброваскулярный](Questionnaire-CerebrovascularScreeningQuestionnaire.html) опросник сохраняет `screening-code-cs#mserv-0007-00003`, так как подходящего концепта SNOMED CT для него нет.
 
-Для идентификатора [типа скрининговой программы](NamingSystem-screening-program-type-identifier-system.html) помимо кодов SNOMED CT и `mserv-0007-00003` теперь описано третье значение - `breast-cervical-unspecified`. Его записывает система скрининга ВПЧ на ресурс, созданный в рамках скрининга рака молочной железы и шейки матки, но который нельзя отнести ни к одной из программ: Condition, чей код МКБ-10 не входит ни в один из списков программ или входит в оба, и направление в филиал РСНПМЦОиР или РСНПМЦЗМиР. Такой ресурс содержит ровно один идентификатор типа программы.
+Для идентификатора [типа скрининговой программы](NamingSystem-screening-program-type-identifier-system.html) также описана классификация результатов `breast-cervical-unspecified`. Его записывает система скрининга ВПЧ на ресурс, созданный в рамках скрининга рака молочной железы и шейки матки, но который нельзя отнести ни к одной из программ: Condition, чей код МКБ-10 не входит ни в один из списков программ или входит в оба, и направление в филиал РСНПМЦОиР или РСНПМЦЗМиР. Такой ресурс содержит ровно один идентификатор типа программы.
 
 ### Версия 0.10.0
 

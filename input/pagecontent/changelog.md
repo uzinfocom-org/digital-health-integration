@@ -1,10 +1,20 @@
 ### In development
 
+(No changes yet)
+
+### Version 0.11.0
+
+#### Added
+
+New [screening plan profiles and contract](screening-plans.html) separate Ministry invitations from independent MIS plans. The invitation category, exact program identifier and performer are required; plans omit meta.source and occurrencePeriod. National invitations reference canonical|version. Versioned program and activity profiles include a questionnaire activity example. Optional closure reasons remain a draft proposal pending agreement.
+
+DMED breast/cervical program identifiers are mserv-0007-00007/mserv-0007-00009; HPV retains 268547008/171149006. Clinical questionnaire codes and scoring remain unchanged. Pathology ServiceRequest.basedOn allows 1..* and immunohistochemistry Observation allows multiple links. ScreeningComposition is retired, with its canonical and historical examples retained.
+
 #### Changed
 
-The screening questionnaires now carry `Questionnaire.code` in SNOMED CT, the same concept as their program type identifier: [IHD pre-test probability](Questionnaire-IhdPretestQuestionnaire.html), [fertility](Questionnaire-FertilityQuestionnaire.html), [helminths](Questionnaire-HelminthScreeningQuestionnaire.html), [cardiovascular risk](Questionnaire-CVDRiskScreeningQuestionnaire.html), [diabetes](Questionnaire-DiabetesScreeningQuestionnaire.html), [breast cancer](Questionnaire-BreastCancerScreeningQuestionnaire.html), [oncohematology](Questionnaire-OncohematologyScreeningQuestionnaire.html) and [cervical cancer](Questionnaire-CervicalCancerScreeningQuestionnaire.html). They previously carried a UZ Core `screening-code-cs` code, which UZ Core is replacing with SNOMED CT. The [cerebrovascular](Questionnaire-CerebrovascularScreeningQuestionnaire.html) questionnaire keeps `screening-code-cs#mserv-0007-00003`, as SNOMED CT has no suitable concept for it.
+The screening questionnaires now carry `Questionnaire.code` in SNOMED CT, clinical service concepts: [IHD pre-test probability](Questionnaire-IhdPretestQuestionnaire.html), [fertility](Questionnaire-FertilityQuestionnaire.html), [helminths](Questionnaire-HelminthScreeningQuestionnaire.html), [cardiovascular risk](Questionnaire-CVDRiskScreeningQuestionnaire.html), [diabetes](Questionnaire-DiabetesScreeningQuestionnaire.html), [breast cancer](Questionnaire-BreastCancerScreeningQuestionnaire.html), [oncohematology](Questionnaire-OncohematologyScreeningQuestionnaire.html) and [cervical cancer](Questionnaire-CervicalCancerScreeningQuestionnaire.html). They previously carried a UZ Core `screening-code-cs` code, which UZ Core is replacing with SNOMED CT. The [cerebrovascular](Questionnaire-CerebrovascularScreeningQuestionnaire.html) questionnaire keeps `screening-code-cs#mserv-0007-00003`, as SNOMED CT has no suitable concept for it.
 
-The [screening program type](NamingSystem-screening-program-type-identifier-system.html) identifier now documents a third value besides the SNOMED CT codes and `mserv-0007-00003`: `breast-cervical-unspecified`, which the HPV screening system writes on a resource it creates for breast and cervical cancer screening but cannot attribute to either program - a Condition whose ICD-10 code is on neither program's list, or on both, and a referral to a branch of the national oncology or maternal and child health centre. Such a resource carries exactly one program type identifier.
+The [screening program type](NamingSystem-screening-program-type-identifier-system.html) identifier also documents the evidence classification `breast-cervical-unspecified`, which the HPV screening system writes on a resource it creates for breast and cervical cancer screening but cannot attribute to either program - a Condition whose ICD-10 code is on neither program's list, or on both, and a referral to a branch of the national oncology or maternal and child health centre. Such a resource carries exactly one program type identifier.
 
 ### Version 0.10.0
 

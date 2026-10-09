@@ -18,9 +18,34 @@ Kodlanadigan qiymatlar ekvivalent tushuncha mavjud bo'lgan hamma joyda SNOMED CT
 
 ### Dastur va manba tizimi identifikatorlari
 
-**Skrining dasturi turi.** Ikkinchi `identifier`, tizim `https://dhp.uz/fhir/core/sid/prg/uz/program`, resurs tegishli bo'lgan skrining dasturining SNOMED CT kodini bildiradi - masalan, `171149006` (bachadon bo'yni skriningi) yoki `268547008` (sut bezi saratoni skriningi). Kelishuvga ko'ra Observation, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen, Composition, shuningdek so'rovnoma butunlay bitta dasturga tegishli bo'lganda Questionnaire/QuestionnaireResponse da ko'rsatiladi - lekin ikkala dastur uchun umumiy bo'lgan Patient, Practitioner yoki PractitionerRole da ko'rsatilmaydi. [Ayolni tibbiy ko'rikdan o'tkazish](Questionnaire-screening-woman-exam.html) so'rovnomasi va unga javob ikkala dastur kodini ham o'z ichiga oladi, chunki so'rovnoma ikkala dasturni ham qamrab oladi. Ko'krak bezi va bachadon bo'yni saratoni skriningi doirasida yaratilgan, lekin hech bir dasturga biriktirib bo'lmaydigan resurs buning o'rniga `breast-cervical-unspecified` qiymatli bitta dastur turi identifikatoriga ega bo'ladi: ICD-10 kodi hech bir dastur ro'yxatiga kirmaydigan yoki ikkalasiga ham kiradigan Condition, hamda RSNPMCOiR yoki RSNPMCZMiR filialiga yo'llanma.
+**Skrining dasturi turi.** `https://dhp.uz/fhir/core/sid/prg/uz/program` tizimidagi qo'shimcha `identifier` resurs tegishli bo'lgan aniq dasturni bildiradi. HPV tizimi bachadon bo'yni uchun `171149006`, sut bezi uchun `268547008` dan foydalanadi; alohida DMED dasturlari quyidagi mahalliy qiymatlardan foydalanadi. Kelishuvga ko'ra identifikator Observation, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen va bitta dasturga tegishli Questionnaire/QuestionnaireResponse da ko'rsatiladi, umumiy Patient, Practitioner yoki PractitionerRole da emas. HPV [Ayolni tibbiy ko'rikdan o'tkazish](Questionnaire-screening-woman-exam.html) so'rovnomasi va javobi ikkala HPV dasturi identifikatorini saqlaydi. Hech bir dasturga aniq biriktirib bo'lmaydigan HPV resursi bitta `breast-cervical-unspecified` identifikatoriga ega: ICD-10 kodi hech bir ro'yxatga kirmaydigan yoki ikkalasiga kiradigan Condition va RSNPMCOiR yoki RSNPMCZMiR filialiga yo'llanma. Bu qiymat DMED dasturining muqobil identifikatori emas.
 
-**Manba tizimi.** `meta.source` resursni qaysi tizim yaratganini bildiradi: `https://dhp.uz/fhir/source/screening` (ushbu bachadon bo'yni va sut bezi saratoni skriningi axborot tizimi) yoki `https://dhp.uz/fhir/source/dmed` (DMED). Majburiy maydon, [ScreeningObservation](StructureDefinition-screening-observation.html), [ScreeningServiceRequest](StructureDefinition-screening-service-request.html), [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [ScreeningDocumentReference](StructureDefinition-screening-document-reference.html) va [ScreeningComposition](StructureDefinition-screening-composition.html) profillarida invariant orqali tekshiriladi. Manba tizimini `https://dhp.uz/fhir/core/sid/doc/uz/screening` tizimidan olingan identifikator mavjudligiga qarab aniqlamang - bu identifikator tizimi resursni qaysi tizim yaratganini bildirmaydi.
+**Manba tizimi.** `meta.source` resursni qaysi tizim yaratganini bildiradi: `https://dhp.uz/fhir/source/screening` (ushbu bachadon bo'yni va sut bezi saratoni skriningi axborot tizimi) yoki `https://dhp.uz/fhir/source/dmed` (DMED). Majburiy maydon, [ScreeningObservation](StructureDefinition-screening-observation.html), [ScreeningServiceRequest](StructureDefinition-screening-service-request.html), [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [ScreeningDocumentReference](StructureDefinition-screening-document-reference.html) profillarida invariant orqali tekshiriladi. Manba tizimini `https://dhp.uz/fhir/core/sid/doc/uz/screening` tizimidan olingan identifikator mavjudligiga qarab aniqlamang - bu identifikator tizimi resursni qaysi tizim yaratganini bildirmaydi.
+
+Manba qoidasi klinik natijalar va yo'llanmalarga tegishli; yangi takliflar alohida [reja profilidan](StructureDefinition-screening-plan-service-request.html) foydalanadi va `meta.source` yubormaydi.
+
+### Nima uchun DMED va HPV dasturi identifikatorlari farq qiladi
+
+O'xshash nomlar saratonning bir xil joylashuvini bildiradi, ammo dasturlarning jarayonlari va yakunlanish mezonlari farq qiladi. DMED [sut bezi so'rovnomasi](Questionnaire-BreastCancerScreeningQuestionnaire.html) xavf omillari, ball va toifani qayd etadi; [bachadon bo'yni so'rovnomasi](Questionnaire-CervicalCancerScreeningQuestionnaire.html) tibbiy va reproduktiv anamnezni yig'adi. HPV tizimi o'zining [sut bezi](Questionnaire-screening-breast-risk.html) va [bachadon bo'yni](Questionnaire-screening-cervical-risk.html) xavf so'rovnomalari, ayol ko'rigi hamda ushbu sahifada tavsiflangan laboratoriya, tasvirlash, patomorfologiya va yakuniy tashxis jarayonlariga ega. Qo'shimcha DMED bosqichlari mavjud bo'lsa, ular DMED dasturiga tegishli bo'lib, HPV dasturida avtomatik hisobga olinmaydi.
+
+Nom yoki klinik kodning mosligi dasturlarni o'zaro almashtirishga asos emas. Alohida mahalliy DMED identifikatorlari bir dastur so'rovnomasini boshqa dasturda ishtirok etish yoki uni yakunlash deb hisoblashning oldini oladi. Umumiy SNOMED klinik kodi ushbu turli jarayonlarni ajratmaydi; mahalliy identifikatorlar HPV identifikatorlarini o'zgartirmasdan DMED dasturlarini ajratadi.
+
+Jadvaldagi barcha qiymatlar uchun `Identifier.system = https://dhp.uz/fhir/core/sid/prg/uz/program`:
+
+| Dastur | `identifier.value` | Dasturni amalga oshiruvchi tizim | So'rovnoma |
+| :--- | :--- | :--- | :--- |
+| DMED sut bezi so'rovnomasi dasturi | `mserv-0007-00007` | DMED | [BreastCancerScreeningQuestionnaire](Questionnaire-BreastCancerScreeningQuestionnaire.html) |
+| HPV sut bezi skriningi dasturi | `268547008` | HPV tizimi | [screening-breast-risk](Questionnaire-screening-breast-risk.html) va tegishli keyingi bosqichlar |
+| DMED bachadon bo'yni so'rovnomasi dasturi | `mserv-0007-00009` | DMED | [CervicalCancerScreeningQuestionnaire](Questionnaire-CervicalCancerScreeningQuestionnaire.html) |
+| HPV bachadon bo'yni skriningi dasturi | `171149006` | HPV tizimi | [screening-cervical-risk](Questionnaire-screening-cervical-risk.html) va tegishli keyingi bosqichlar |
+
+Dastur identifikatori aniq yozuvning barqaror identifikatoriga qo'shimcha ravishda uzatiladi. `Questionnaire.code` va tekshiruv/muolaja kodlari klinik mazmunni tasniflaydi va qiymatlar o'xshash bo'lsa ham dastur identifikatorini almashtirmaydi. Dastur identifikatori faqat so'rovnoma javobida emas, tegishli bog'langan klinik resurslarda ham ko'rsatiladi. `meta.source` alohida kelib chiqishni bildiradi: DMED resurslari uchun `https://dhp.uz/fhir/source/dmed`, HPV resurslari uchun `https://dhp.uz/fhir/source/screening`.
+
+### Takliflar va dasturni amalga oshiruvchi tizim
+
+[Reja va taklif kontrakti](screening-plans.html) qo'llanadi. Vazirlik taklifi va MIS mustaqil rejasi SNOMED CT `310422005` toifasi hamda aynan bitta dastur identifikatorini yuboradi. DMED va OPV ko'krak bezi/bachadon bo'yni dasturlari alohida qoladi. Vazirlik taklifi `instantiatesCanonical = canonical|version` ni yuboradi; MIS rejasi uni yubormaydi. Rejada `meta.source` va `occurrencePeriod` bo'lmaydi; klinik natijalar manba metama'lumotlarini saqlaydi.
+
+OPV rejasi takroriy tekshiruvlar uchun active qoladi. DMED bog'langan QuestionnaireResponse ni saqlagandan so'ng o'z rejasini yopadi. Vazirlik taklifini qayta ishlatishdan oldin ta'rifning joriy versiyasini tekshiring. Bir nechta mos reja konflikt; eski versiya joriy taklifni yaratishni to'smaydi. Reja havolasi bilan birga bevosita buyurtma havolasini saqlang. Tarixiy identifikatorlar avtomatik almashtirilmaydi.
 
 ### Test yoki muolajani buyurtirish (ServiceRequest)
 
@@ -278,27 +303,9 @@ Uchta so'rovnoma nashr etiladi. Javoblar QuestionnaireResponse ko'rinishida qayt
 | [Bachadon bo'yni saratoni xavfi](Questionnaire-screening-cervical-risk.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk` | [ScreeningCervicalRiskResponseExample](QuestionnaireResponse-screening-cervical-risk-response-example.html) |
 | [Ayolning tibbiy ko'rigi](Questionnaire-screening-woman-exam.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam` | [ScreeningWomanExamResponse128](QuestionnaireResponse-screening-woman-exam-response-128.html) |
 
-### Skrining yakuniy hujjati
+### Skriningning tarixiy yakuniy hujjatlari
 
-Skrining yakuniy hujjati bitta skrining tsikli doirasida qayd etilgan hamma narsani bitta yuklab olinadigan hujjatga jamlaydi. U tsiklning istalgan bosqichida shakllantirilishi mumkin: hali kiritilmagan narsalar hujjatga tushmaydi, shuning uchun erta shakllantirilgan hujjat faqat so'rovnoma javoblarini o'z ichiga oladi.
-
-Alohida bosqichlar o'z Composition iga ega bo'lmaydi - har bir natija Observation bo'lib qoladi, bu hujjat esa ularga havola qiladi.
-
-Profil: [ScreeningComposition](StructureDefinition-screening-composition.html)
-
-Misollar: [ScreeningCompositionExample](Composition-screening-composition-example.html), [ScreeningCompositionDocumentExample](Bundle-screening-composition-document-example.html)
-
-| Qayd etiladigan ma'lumot | Ma'lumotnoma | Misol kodi | Qayerda saqlanadi |
-| :--- | :--- | :--- | :--- |
-| Hujjat turi | - | `LOINC#34133-9` (Summary of episode note) | `Composition.type` |
-| So'rovnomalar | - | `LOINC#74465-6` | `section[questionnaire].entry` (QuestionnaireResponse) |
-| Bajarilgan barcha bosqichlar natijalari | - | `LOINC#30954-2` | `section[results].entry` (Observation) |
-| MKB-10 bo'yicha yakuniy tashxis | - | `LOINC#29308-4` | `section[diagnosis].entry` (Condition) |
-| Muallif | - | - | `Composition.author` (PractitionerRole) |
-| Mas'ul tashkilot | - | - | `Composition.custodian` |
-| Hujjatlashtirilgan yo'llanmalar va muolajalar | - | - | `Composition.event.detail` |
-
-Yakuniy hujjatni o'zgarmas ko'rinishda uzatish uchun uni `type = document` bo'lgan `Bundle` ga joylashtiring: Composition **birinchi** yozuv bo'lishi, u havola qiladigan barcha resurslar - Patient, Condition, Observation, QuestionnaireResponse va boshqalar - o'sha Bundle ichida bo'lishi kerak.
+[ScreeningComposition](StructureDefinition-screening-composition.html) retired bo'ladi. Kanonik URL va mavjud misollar tarixni tekshirish uchun saqlanadi. Yangi OPV jarayoni Composition yaratmaydi va o'qimaydi; alohida natijalarni dastur identifikatori yoki [rejaga](screening-plans.html) `basedOn` orqali oling.
 
 ### Hayotiy ko'rsatkichlar (bo'y, vazn, TVI)
 

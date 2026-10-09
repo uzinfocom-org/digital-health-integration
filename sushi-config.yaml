@@ -9,7 +9,7 @@ name: DHP integrations
 title: Uzbekistan Digital Health Platform - Integrations
 description: Profiles for DHP integrations with systems in Uzbekistan
 status: draft # draft | active | retired | unknown
-version: 0.10.0
+version: 0.11.0
 fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build
@@ -25,7 +25,7 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  uz.dhp.core: 0.10.0
+  uz.dhp.core: 0.11.0
   # R4-only package used cross-version for sdc-questionnaire-calculatedExpression (same as uz.dhp.core);
   # the resulting version-mismatch messages are suppressed in ignoreWarnings.txt
   hl7.fhir.uv.sdc: 3.0.0
@@ -106,6 +106,8 @@ pages:
     title: Form 066 1 Mapping
   form-130-mapping.md:
     title: Form 130 Mapping
+  screening-plans.md:
+    title: Screening Plans and Invitations
   cervical-breast-cancer-screening.md:
     title: Cervical and Breast Cancer Screening
   sick-leave.md:
@@ -137,6 +139,7 @@ menu:
     Form 066-1 Mapping: form-066-1-mapping.html
     Form 130 Mapping: form-130-mapping.html
   Integrations:
+    Screening Plans and Invitations: screening-plans.html
     Cervical and Breast Cancer Screening: cervical-breast-cancer-screening.html
     Sick Leave: sick-leave.html
     Tuberculosis (DHIS): dhis-tuberculosis.html

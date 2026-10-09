@@ -18,9 +18,34 @@
 
 ### Идентификаторы программы и источника
 
-**Тип программы скрининга.** Второй `identifier`, система `https://dhp.uz/fhir/core/sid/prg/uz/program`, указывающий код SNOMED CT программы скрининга, к которой относится ресурс, - например, `171149006` (скрининг шейки матки) или `268547008` (скрининг рака молочной железы). По соглашению указывается в Observation, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen, Composition, а также в Questionnaire/QuestionnaireResponse, если опросник целиком относится к одной программе, - но не в Patient, Practitioner или PractitionerRole, которые являются общими для обеих программ. Опросник [Осмотр женщины](Questionnaire-screening-woman-exam.html) и ответ на него содержат оба кода программы, так как опросник охватывает обе программы. Ресурс, созданный в рамках скрининга рака молочной железы и шейки матки, который нельзя отнести ни к одной из программ, вместо этого содержит один идентификатор типа программы со значением `breast-cervical-unspecified`: Condition, чей код МКБ-10 не входит ни в один из списков программ или входит в оба, и направление в филиал РСНПМЦОиР или РСНПМЦЗМиР.
+**Тип программы скрининга.** Дополнительный `identifier` с системой `https://dhp.uz/fhir/core/sid/prg/uz/program` определяет конкретную программу, к которой относится ресурс. Система ВПЧ использует `171149006` для РШМ и `268547008` для РМЖ; отдельные программы DMED используют локальные значения из таблицы ниже. По соглашению идентификатор указывается в Observation, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen, а также в Questionnaire/QuestionnaireResponse, если опросник целиком относится к одной программе, но не в общих Patient, Practitioner или PractitionerRole. Опросник ВПЧ [Осмотр женщины](Questionnaire-screening-woman-exam.html) и ответ на него содержат оба идентификатора программ ВПЧ. Ресурс ВПЧ, который нельзя отнести ни к одной из программ, содержит один идентификатор типа программы со значением `breast-cervical-unspecified`: Condition, чей код МКБ-10 не входит ни в один из списков программ или входит в оба, и направление в филиал РСНПМЦОиР или РСНПМЦЗМиР. Это значение не является альтернативным идентификатором программы DMED.
 
-**Система-источник.** `meta.source` указывает, какая система создала ресурс: `https://dhp.uz/fhir/source/screening` (данная информационная система скрининга рака шейки матки и молочной железы) либо `https://dhp.uz/fhir/source/dmed` (ДМЕД). Обязательное поле, проверяется инвариантом в профилях [ScreeningObservation](StructureDefinition-screening-observation.html), [ScreeningServiceRequest](StructureDefinition-screening-service-request.html), [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [ScreeningDocumentReference](StructureDefinition-screening-document-reference.html) и [ScreeningComposition](StructureDefinition-screening-composition.html). Не пытайтесь определить систему-источник по наличию идентификатора из системы `https://dhp.uz/fhir/core/sid/doc/uz/screening` - эта система идентификаторов не указывает, какая система создала ресурс.
+**Система-источник.** `meta.source` указывает, какая система создала ресурс: `https://dhp.uz/fhir/source/screening` (данная информационная система скрининга рака шейки матки и молочной железы) либо `https://dhp.uz/fhir/source/dmed` (ДМЕД). Обязательное поле, проверяется инвариантом в профилях [ScreeningObservation](StructureDefinition-screening-observation.html), [ScreeningServiceRequest](StructureDefinition-screening-service-request.html), [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [ScreeningDocumentReference](StructureDefinition-screening-document-reference.html). Не пытайтесь определить систему-источник по наличию идентификатора из системы `https://dhp.uz/fhir/core/sid/doc/uz/screening` - эта система идентификаторов не указывает, какая система создала ресурс.
+
+Правило источника относится к клиническим результатам и направлениям; новые приглашения используют отдельный [профиль плана](StructureDefinition-screening-plan-service-request.html) и не содержат `meta.source`.
+
+### Почему у DMED и ВПЧ разные идентификаторы программ
+
+Похожие названия указывают на одну локализацию рака, но программы различаются процессами и критериями завершения. В DMED [опросник РМЖ](Questionnaire-BreastCancerScreeningQuestionnaire.html) содержит ответы о факторах риска и расчёт балла/категории; [опросник РШМ](Questionnaire-CervicalCancerScreeningQuestionnaire.html) собирает медицинский и репродуктивный анамнез. В системе ВПЧ есть собственные опросники риска [РМЖ](Questionnaire-screening-breast-risk.html) и [РШМ](Questionnaire-screening-cervical-risk.html), осмотр женщины, лабораторные исследования, визуализация, патоморфология и постановка окончательного диагноза, описанные на этой странице. Дополнительные этапы DMED, если они выполняются, относятся к программе DMED и не засчитываются автоматически в программе ВПЧ.
+
+Программы не взаимозаменяемы из-за совпадения названия или клинического кода. Отдельные локальные идентификаторы DMED предотвращают учёт анкеты одной программы как участия в другой или её завершения. Общий клинический код SNOMED не определяет эти разные процессы; локальные идентификаторы различают программы DMED, сохраняя идентификаторы ВПЧ.
+
+Для всех значений таблицы используется `Identifier.system = https://dhp.uz/fhir/core/sid/prg/uz/program`:
+
+| Программа | `identifier.value` | Система, реализующая программу | Опросник |
+| :--- | :--- | :--- | :--- |
+| Программа опросника РМЖ в DMED | `mserv-0007-00007` | DMED | [BreastCancerScreeningQuestionnaire](Questionnaire-BreastCancerScreeningQuestionnaire.html) |
+| Программа скрининга РМЖ в ВПЧ | `268547008` | Система ВПЧ | [screening-breast-risk](Questionnaire-screening-breast-risk.html) и последующие применимые этапы |
+| Программа опросника РШМ в DMED | `mserv-0007-00009` | DMED | [CervicalCancerScreeningQuestionnaire](Questionnaire-CervicalCancerScreeningQuestionnaire.html) |
+| Программа скрининга РШМ в ВПЧ | `171149006` | Система ВПЧ | [screening-cervical-risk](Questionnaire-screening-cervical-risk.html) и последующие применимые этапы |
+
+Идентификатор программы передаётся дополнительно к стабильному идентификатору конкретной записи. `Questionnaire.code` и коды исследований/процедур классифицируют клиническое содержание и не заменяют идентификатор программы, даже если значения похожи. Идентификатор указывается на применимых связанных клинических ресурсах, а не только на ответе на опросник. `meta.source` отдельно сообщает происхождение: ресурсы DMED используют `https://dhp.uz/fhir/source/dmed`, ресурсы ВПЧ — `https://dhp.uz/fhir/source/screening`.
+
+### Приглашения и система, реализующая программу
+
+Используется [контракт планов и приглашений](screening-plans.html). Приглашение Минздрава и собственный план МИС содержат категорию SNOMED CT `310422005` и ровно один идентификатор программы. Программы DMED и ВПЧ по РМЖ/РШМ остаются отдельными. Приглашение Минздрава несёт `instantiatesCanonical = canonical|version`; собственный план МИС не содержит этого поля. План не содержит `meta.source` и `occurrencePeriod`; метаданные источника клинических результатов сохраняются.
+
+План ВПЧ остаётся active для повторных обследований. DMED завершает собственный план после сохранения связанного QuestionnaireResponse. Перед переиспользованием приглашения Минздрава проверяют текущую версию определения. Несколько подходящих планов — конфликт; старая версия не блокирует создание текущей. Ссылки на непосредственные направления сохраняют вместе со ссылкой на план. Исторические идентификаторы не переименовывают автоматически.
 
 ### Назначение теста или процедуры (ServiceRequest)
 
@@ -292,27 +317,9 @@
 | [Риск рака шейки матки](Questionnaire-screening-cervical-risk.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk` | [ScreeningCervicalRiskResponseExample](QuestionnaireResponse-screening-cervical-risk-response-example.html) |
 | [Медицинский осмотр женщины](Questionnaire-screening-woman-exam.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam` | [ScreeningWomanExamResponse128](QuestionnaireResponse-screening-woman-exam-response-128.html) |
 
-### Итоговый документ скрининга
+### Исторические сводные документы скрининга
 
-Итоговый документ скрининга собирает всё, что зафиксировано в рамках одного цикла скрининга, в один скачиваемый документ. Он может быть сформирован на любом этапе цикла: то, что ещё не внесено, просто не попадает в документ, поэтому сформированный на раннем этапе документ содержит только ответы на опросники.
-
-Отдельные этапы не получают собственный Composition - каждый результат остаётся Observation, а этот документ ссылается на них.
-
-Профиль: [ScreeningComposition](StructureDefinition-screening-composition.html)
-
-Примеры: [ScreeningCompositionExample](Composition-screening-composition-example.html), [ScreeningCompositionDocumentExample](Bundle-screening-composition-document-example.html)
-
-| Записываемая информация | Справочник | Пример кода | Где хранится |
-| :--- | :--- | :--- | :--- |
-| Тип документа | - | `LOINC#34133-9` (Summary of episode note) | `Composition.type` |
-| Опросники | - | `LOINC#74465-6` | `section[questionnaire].entry` (QuestionnaireResponse) |
-| Результаты всех выполненных этапов | - | `LOINC#30954-2` | `section[results].entry` (Observation) |
-| Окончательный диагноз по МКБ-10 | - | `LOINC#29308-4` | `section[diagnosis].entry` (Condition) |
-| Автор | - | - | `Composition.author` (PractitionerRole) |
-| Ответственная организация | - | - | `Composition.custodian` |
-| Документируемые направления и процедуры | - | - | `Composition.event.detail` |
-
-Чтобы передать итоговый документ как неизменяемый, поместите его в `Bundle` с `type = document`, где Composition является **первой** записью, а все ресурсы, на которые он ссылается - Patient, Condition, Observation, QuestionnaireResponse и прочие - находятся в том же Bundle.
+[ScreeningComposition](StructureDefinition-screening-composition.html) получает статус retired. Канонический URL и прежние примеры сохраняются для проверки истории. Новый процесс ВПЧ не создаёт и не читает Composition; отдельные результаты получают по идентификатору программы или через `basedOn` на [план](screening-plans.html).
 
 ### Витальные показатели (рост, вес, ИМТ)
 

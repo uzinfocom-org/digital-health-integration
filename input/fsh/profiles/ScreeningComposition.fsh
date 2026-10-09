@@ -3,7 +3,8 @@ Parent: Composition
 Id: screening-composition
 Title: "Screening Composition"
 Description: "Downloadable summary of a cervical or breast cancer screening episode. It aggregates the results recorded so far, the final diagnosis and the surrounding clinical context."
-* ^status = #active
+* ^status = #retired
+* ^purpose = "Retained for validation and interpretation of historical documents. New HPV screening workflows do not create or read Composition; results are read by program identifier or through basedOn on the screening plan."
 * ^experimental = true
 * ^publisher = "DHP Integration"
 * insert ScreeningMetaSource
