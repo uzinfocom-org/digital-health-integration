@@ -1,5 +1,9 @@
 ### В разработке
 
+#### Добавлено
+
+[Форма 111 - индивидуальная карта беременной и родильницы](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) профилирована как FHIR-документ, охватывающий постановку на учёт, диагноз, исход беременности, анамнез, осмотры, повторные визиты, подготовку к родам, патронажные визиты, оценку перинатального риска и заключения специалистов в 16 разделах Composition. Для неё есть пример документа-Bundle и [страница пополевого сопоставления](form-111-mapping.html).
+
 #### Изменено
 
 Скрининговые опросники теперь содержат `Questionnaire.code` в SNOMED CT - тот же концепт, что и в идентификаторе типа программы: [предтестовая вероятность ИБС](Questionnaire-IhdPretestQuestionnaire.html), [фертильность](Questionnaire-FertilityQuestionnaire.html), [гельминтозы](Questionnaire-HelminthScreeningQuestionnaire.html), [риск сердечно-сосудистых заболеваний](Questionnaire-CVDRiskScreeningQuestionnaire.html), [сахарный диабет](Questionnaire-DiabetesScreeningQuestionnaire.html), [рак молочной железы](Questionnaire-BreastCancerScreeningQuestionnaire.html), [онкогематология](Questionnaire-OncohematologyScreeningQuestionnaire.html) и [рак шейки матки](Questionnaire-CervicalCancerScreeningQuestionnaire.html). Ранее они содержали код из `screening-code-cs` UZ Core, который UZ Core заменяет на SNOMED CT. [Цереброваскулярный](Questionnaire-CerebrovascularScreeningQuestionnaire.html) опросник сохраняет `screening-code-cs#mserv-0007-00003`, так как подходящего концепта SNOMED CT для него нет.
