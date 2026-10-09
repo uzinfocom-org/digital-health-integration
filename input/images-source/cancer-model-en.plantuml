@@ -24,7 +24,8 @@ CancerEncounter "0..*" -right-> "1" CancerCondition : « diagnosis.condition »
 CancerCondition "0..*" --> "0..1" CancerEncounter : « encounter »
 CancerCondition "1" <-- "0..*" CancerObservationTumorMorphology : « focus »
 CancerCondition "1" <-- "0..*" CancerObservationMetastase : « focus »
-CancerCondition "1" <-- "0..*" CancerObservationTNMStageGroup : « focus »
+' norank gives this link its own SVG id; two ranked links between the same classes share one
+CancerObservationTNMStageGroup "0..*" -[norank]-> "1" CancerCondition : « focus »
 CancerCondition "0..*" --> "0..*" CancerObservationTNMStageGroup : « stage.assessment »
 CancerObservationTumorMorphology "0..*" --> "0..*" CancerObservationBehavior : « hasMember »
 CancerObservationTumorMorphology "0..*" --> "0..*" CancerObservationHistologicGrade : « hasMember »
@@ -32,6 +33,9 @@ CancerObservationTNMStageGroup "0..*" --> "0..*" CancerObservationTNMCategory : 
 CancerCondition "1" <-- "0..*" CancerObservationBehavior : « focus »
 CancerCondition "1" <-- "0..*" CancerObservationHistologicGrade : « focus »
 CancerCondition "1" <-- "0..*" CancerObservationTNMCategory : « focus »
+' keep the observation row in its usual order now that one « focus » link is norank
+CancerObservationTumorMorphology -[hidden]right- CancerObservationTNMStageGroup
+CancerObservationTNMStageGroup -[hidden]right- CancerObservationMetastase
 
 note "Every Observation also references\nthe Patient through « subject »" as N1
 N1 .. CancerObservationMetastase
