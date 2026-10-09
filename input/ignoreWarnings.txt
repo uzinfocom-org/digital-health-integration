@@ -72,9 +72,3 @@ Unable to expand included value set 'http://hl7.org/fhir/ValueSet/body-site': Th
 Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/cancer-body-location-vs is a proper subset of http://hl7.org/fhir/ValueSet/body-site|5.0.0 - value set is too large to check
 
 The Target Code System http://snomed.info/sct is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
-
-# IG Publisher 3.0.0 warns about any binding on a type slicer, including the R5 base binding the
-# profile inherits (hepatitis-questionnaire narrows answerOption.value[x] but adds no binding).
-# Suppressed in the main IG (uz.dhp.core) too. Fixed upstream in
-# https://github.com/hapifhir/org.hl7.fhir.core/pull/2701 - remove once released.
-The Binding on the type slicer Questionnaire.item.answerOption.value[x] applies to all its slices, but it only makes sense for some of its types, so it has no effect on the slices for integer, date, time, Reference

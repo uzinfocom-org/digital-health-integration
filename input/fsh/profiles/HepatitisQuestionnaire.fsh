@@ -18,6 +18,7 @@ Description: "Structured questionnaire used for collecting clinical and epidemio
 
 
 * item.enableBehavior MS
+* item.answerOption.value[x] only string or Coding
 * item.item MS
 
 * item.item.enableWhen 0..* MS
