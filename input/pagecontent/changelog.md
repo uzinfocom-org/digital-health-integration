@@ -1,5 +1,9 @@
 ### Version 0.11.0
 
+#### Added
+
+[Form 111 individual card of a pregnant and postpartum woman](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) is profiled as a FHIR Document, covering registration, diagnosis, pregnancy outcome, anamnesis, examinations, follow-up visits, birth preparation, patronage visits, perinatal risk assessment and specialist conclusions across 16 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-111-mapping.html).
+
 #### Changed
 
 The guide is built against [UZ Core 0.11.0](https://dhp.uz/fhir/core/changelog.html). Of its breaking changes, only the removed screening codes reach this guide, and the screening questionnaires below have already moved off them to SNOMED CT.
