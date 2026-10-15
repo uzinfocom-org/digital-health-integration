@@ -136,6 +136,8 @@ UUID у `Bundle.identifier` и `Composition.identifier` - разные и уни
 
 `input/pagecontent/form-0XX-mapping.md` - построчная таблица полей формы для разработчиков, реализующих интеграцию. Структура: блок `<style>` с ширинами колонок, заголовок, раздел Overview (со ссылками на профиль и пример), таблицы по разделам с колонками `UZ | RU | FHIR Path | Code | Example`, схема Bundle structure и ссылка на пример. Проще всего скопировать существующую (`form-066-mapping.md` или `form-130-mapping.md`) и заменить содержимое.
 
+Для каждого поля, которое ложится на `Observation`, указывайте в колонке `FHIR Path` конкретный тип значения, а не `Observation.value[x]`: `Observation.valueBoolean`, `Observation.valueQuantity` (с единицей UCUM, например `d` или `g`), `Observation.valueCodeableConcept` (с ValueSet) и т. д. В примере используйте тот же тип. Тип должен соответствовать коду в `Observation.code`: у LOINC смотрите шкалу (`SCALE_TYP`) - для `Qn` нужен `Quantity` (или `Range`), для `Ord`/`Nom` - `CodeableConcept`, а если у кода есть список ответов LOINC (`LL...`), берите ответы из него.
+
 ### 5. Вступление к профилю
 
 `input/pagecontent/StructureDefinition-<id профиля>-intro.md` - одна-две строки со ссылками на страницу соответствия и на пример. Шаблон - в существующих `*-intro.md`.
@@ -185,7 +187,7 @@ menu:
 - [ ] Профиль `Composition` в `input/fsh/profiles/`
 - [ ] Код `#form-0XX` в `DocumentCategoryCS.fsh` (uz + en/ru designation)
 - [ ] Пример-`Bundle` (`#document`) в `input/fsh/examples/` с `Provenance`
-- [ ] Страница `form-0XX-mapping.md`
+- [ ] Страница `form-0XX-mapping.md`, у каждого поля на `Observation` указан тип `value[x]`, совместимый с кодом
 - [ ] Файл вступления `StructureDefinition-<id>-intro.md`
 - [ ] Запись в `pages:` и пункт меню в `sushi-config.yaml`
 - [ ] Недостающие алиасы / терминология / подпрофили
