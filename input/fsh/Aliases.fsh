@@ -43,6 +43,7 @@ Alias: $iso-3166 = urn:iso:std:iso:3166
 Alias: $iso3166-1-2 = http://hl7.org/fhir/ValueSet/iso3166-1-2
 Alias: $issue-severity = http://hl7.org/fhir/issue-severity
 Alias: $loinc = http://loinc.org
+Alias: $location-kinds-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/location-kinds-cs
 Alias: $location-status = http://hl7.org/fhir/location-status
 Alias: $location-unit = https://dhp.uz/fhir/core/NamingSystem/location-unit
 Alias: $mfa = https://gov.uz/ru/mfa
