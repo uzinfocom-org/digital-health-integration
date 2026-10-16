@@ -4,6 +4,10 @@
 
 The [screening plans and invitations](cervical-breast-cancer-screening.html#screening-plans) section of the screening page sets out how a screening program invites a patient and tracks the patient's plan with existing UZ Core profiles, without new profiles of its own. A UZ Core ActivityDefinition is the invitation template (`kind` = `ServiceRequest`, `intent` = `plan`), a UZ Core PlanDefinition pins it by version, and the patient's plan is a UZ Core ServiceRequest with `intent` = `plan`, the screening invitation category and one program identifier. The MIS owns the plan status: DMED completes its plan once the questionnaire is saved, while HPV keeps its plan active across screening rounds. DHP does not infer completion from results.
 
+#### Added
+
+[Form 111 individual card of a pregnant and postpartum woman](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) is profiled as a FHIR Document, covering registration, diagnosis, pregnancy outcome, anamnesis, examinations, follow-up visits, birth preparation, patronage visits, perinatal risk assessment and specialist conclusions across 16 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-111-mapping.html).
+
 #### Changed
 
 The guide is built against [UZ Core 0.11.1](https://dhp.uz/fhir/core/changelog.html), whose ActivityDefinition `kind` allows ServiceRequest.

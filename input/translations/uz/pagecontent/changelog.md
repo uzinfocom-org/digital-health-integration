@@ -4,6 +4,10 @@
 
 Skrining sahifasidagi [Skrining rejalari va takliflari](cervical-breast-cancer-screening.html#screening-plans) bo'limi skrining dasturi bemorni qanday taklif qilishi va uning rejasini yangi profillarsiz, mavjud UZ Core profillarida qanday yuritishini tavsiflaydi. UZ Core ActivityDefinition taklif shabloni bo'ladi (`kind` = `ServiceRequest`, `intent` = `plan`), UZ Core PlanDefinition uni versiyasi bilan biriktiradi, bemorning rejasi esa `intent` = `plan`, skriningga taklif toifasi va bitta dastur identifikatoriga ega UZ Core ServiceRequest dir. Reja holatini MIS boshqaradi: DMED so'rovnoma saqlangach o'z rejasini yakunlaydi, OPV esa rejani skrining bosqichlari davomida faol saqlaydi. DHP natijalarga qarab rejani yakunlangan deb hisoblamaydi.
 
+#### Qo'shildi
+
+[111-shakl — homilador va tuqqan ayolning individual kartasi](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) FHIR hujjati sifatida profillangan bo'lib, Composition ning 16 ta bo'limi orqali ro'yxatga olish, tashxis, homiladorlik yakuni, anamnez, ko'riklar, takroriy tashriflar, tug'ishga tayyorlash, patronaj tashriflari, perinatal xavfni baholash va mutaxassislar xulosalarini qamrab oladi. Uning namunaviy hujjat-Bundle'i va [maydonma-maydon moslashtirish sahifasi](form-111-mapping.html) mavjud.
+
 #### O'zgartirildi
 
 Qo'llanma [UZ Core 0.11.1](https://dhp.uz/fhir/core/changelog.html) asosida yig'iladi, unda ActivityDefinition `kind` ServiceRequest ga ruxsat beradi.
