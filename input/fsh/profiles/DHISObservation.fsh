@@ -47,6 +47,6 @@ Usage: #example
 * valueCodeableConcept =  http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#POS "Positive"
 * specimen = Reference(example-dhis-specimen)
 
-* component[0].code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dhis-observation-component-code-cs#tub004-0008 "Isoniazid (0.1 mg/mL)"
-* component[0].valueCodeableConcept = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dhis-observation-codeable-concept-cs#Tub003-0040 "Macrota sample sediment"
+* component[0].code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dhis-observation-component-code-cs#tub004-0008 "Isoniazid (0.1 mcg/mL)"
+* component[0].valueCodeableConcept = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dhis-observation-codeable-concept-cs#tub003-0040 "Macrota sample sediment"
 
