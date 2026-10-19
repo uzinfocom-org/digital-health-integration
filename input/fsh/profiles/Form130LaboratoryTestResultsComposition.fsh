@@ -8,7 +8,8 @@ Description: "Composition profile for Form 130 laboratory test results."
 * status = #final
 * type = $loinc#11502-2 "Laboratory report"
 * category 1..1
-* category = $document-category-cs#form-130 "Laboratory Test Results"
+* category = $document-category-cs#form-130
+* category ^short = "Laboratory Test Results"
 
 * subject 1..1
 * subject only Reference(UZCorePatient)

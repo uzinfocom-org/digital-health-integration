@@ -1,3 +1,9 @@
+### In development
+
+#### Changed
+
+The Composition profiles of forms [066](StructureDefinition-form-066-hospital-discharge-composition.html), [066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html), [011](StructureDefinition-form-011-hemodialysis-composition.html) and [130](StructureDefinition-form-130-laboratory-test-results-composition.html) fix `category` by code only, without an English display, so a document in Uzbek or Russian passes validation with the display in its own language.
+
 ### Version 0.11.1
 
 #### Added

@@ -8,7 +8,8 @@ Description: "Composition profile for Form 011 (Hemodialysis Session Record) doc
 * status = #final
 * type = $loinc#29749-9 "Dialysis records"
 * category 1..1
-* category = $document-category-cs#form-011 "Hemodialysis session record"
+* category = $document-category-cs#form-011
+* category ^short = "Hemodialysis session record"
 * subject 1..1
 * subject only Reference(UZCorePatient)
 * encounter 1..1

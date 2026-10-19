@@ -1,3 +1,9 @@
+### Ishlab chiqilmoqda
+
+#### O'zgartirildi
+
+[066](StructureDefinition-form-066-hospital-discharge-composition.html), [066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html), [011](StructureDefinition-form-011-hemodialysis-composition.html) va [130](StructureDefinition-form-130-laboratory-test-results-composition.html) shakllarining Composition profillari `category` ni inglizcha display siz, faqat kod bo'yicha belgilaydi, shuning uchun o'zbek yoki rus tilidagi hujjat display o'z tilida bo'lganda ham validatsiyadan o'tadi.
+
 ### Versiya 0.11.1
 
 #### Qo'shildi

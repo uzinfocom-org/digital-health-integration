@@ -42,7 +42,8 @@ Description: "Composition profile for Form 0XX ..."
 * status = #final
 * type = $loinc#18842-5 "Discharge summary"            // тип документа из LOINC
 * category 1..1
-* category = $document-category-cs#form-0XX "..."        // код добавьте в шаге 2
+* category = $document-category-cs#form-0XX              // код добавьте в шаге 2; без display - иначе документ на другом языке не пройдёт валидацию
+* category ^short = "..."
 * subject 1..1
 * subject only Reference(UZCorePatient)
 * encounter 1..1

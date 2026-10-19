@@ -1,3 +1,9 @@
+### В разработке
+
+#### Изменено
+
+Профили Composition форм [066](StructureDefinition-form-066-hospital-discharge-composition.html), [066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html), [011](StructureDefinition-form-011-hemodialysis-composition.html) и [130](StructureDefinition-form-130-laboratory-test-results-composition.html) фиксируют `category` только по коду, без английского display, поэтому документ на узбекском или русском проходит валидацию с display на своём языке.
+
 ### Версия 0.11.1
 
 #### Добавлено

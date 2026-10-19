@@ -14,7 +14,7 @@ Description: "Composition profile for Form 066-1."
 * type ^short = "066-1 shakl hujjat turi"
 
 * category 1..1
-* category = $document-category-cs#form-066-1 "Psychiatric/narcological discharge statistical card"
+* category = $document-category-cs#form-066-1
 * category ^short = "066-1 shakl hujjat kategoriyasi"
 
 * subject 1..1

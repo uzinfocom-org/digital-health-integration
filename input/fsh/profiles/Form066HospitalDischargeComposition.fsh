@@ -9,7 +9,8 @@ Description: "Composition profile for Form 066 hospital discharge statistical ca
 * status = #final
 * type = $loinc#18842-5 "Discharge summary"
 * category 1..1
-* category = $document-category-cs#form-066 "Hospital discharge statistical card"
+* category = $document-category-cs#form-066
+* category ^short = "Hospital discharge statistical card"
 
 * subject 1..1
 * subject only Reference(UZCorePatient)
