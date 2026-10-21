@@ -5,7 +5,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: uz.dhp.integrations
 canonical: https://dhp.uz/fhir/integrations
-name: DHP integrations
+name: DHPintegrations
 title: Uzbekistan Digital Health Platform - Integrations
 description: Profiles for DHP integrations with systems in Uzbekistan
 status: draft # draft | active | retired | unknown
