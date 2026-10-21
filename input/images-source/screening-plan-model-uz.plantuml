@@ -1,0 +1,23 @@
+@startuml screening-plan-model-uz
+hide circle
+hide empty members
+left to right direction
+title Skrining rejasi yozuv bilan qanday bog'langan
+
+class "ServiceRequest (reja)" as ScreeningPlan [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-servicerequest.html{UZ Core ServiceRequest profilini ochish}]]
+class PlanDefinition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-plan-definition.html{UZ Core PlanDefinition profilini ochish}]]
+class ActivityDefinition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-activitydefinition.html{UZ Core ActivityDefinition profilini ochish}]]
+class "ScreeningPatient" as PlanPatient [[StructureDefinition-screening-patient.html{ScreeningPatient profilini ochish}]] #E8F0FE
+class "QuestionnaireResponse,\nScreeningObservation,\nScreeningDiagnosticReport,\nScreeningBreastBiopsyProcedure,\nScreeningServiceRequest" as Evidence #E8F0FE
+class "ScreeningSpecimen" as PlanSpecimen [[StructureDefinition-screening-specimen.html{ScreeningSpecimen profilini ochish}]] #E8F0FE
+class "Condition" as PlanCondition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-condition.html{UZ Core Condition profilini ochish}]]
+
+Evidence "0..*" --> "0..*" ScreeningPlan : « basedOn »
+PlanSpecimen "0..*" --> "0..*" ScreeningPlan : « request »
+PlanCondition "0..*" --> "0..*" ScreeningPlan : « extension[event-basedOn] »
+ScreeningPlan "0..*" --> "1" PlanPatient : « subject »
+ScreeningPlan "0..*" --> "0..1" PlanDefinition : « instantiatesCanonical »
+PlanDefinition "0..*" --> "0..*" ActivityDefinition : « action.definitionCanonical »
+
+caption Klinik resurslar reja bilan birga bevosita yo'llanmaga havolani ham saqlaydi.
+@enduml

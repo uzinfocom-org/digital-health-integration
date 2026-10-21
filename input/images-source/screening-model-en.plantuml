@@ -41,12 +41,12 @@ ScreeningDiagnosticReport "0..*" --> "0..*" ScreeningServiceRequest : « basedOn
 ScreeningDiagnosticReport "0..*" --> "0..*" ScreeningObservation : « result »
 ScreeningDiagnosticReport "0..*" --> "1" ScreeningSpecialTreatmentObservation : « supportingInfo.reference »
 ScreeningDiagnosticReport "0..*" --> "0..*" ScreeningPathologyServiceRequest : « basedOn »
-ScreeningObservation "0..*" --> "0..1" ScreeningServiceRequest : « basedOn »
+ScreeningObservation "0..*" --> "0..*" ScreeningServiceRequest : « basedOn »
 ScreeningSpecimen "0..*" --> "0..*" ScreeningPathologyServiceRequest : « request »
-ScreeningBreastBiopsyServiceRequest "1" <-- "0..*" ScreeningPathologyServiceRequest : « basedOn »
-ScreeningPathologyServiceRequest "0..1" <-- "0..*" ScreeningBreastCytologyObservation : « basedOn »
-ScreeningPathologyServiceRequest "0..1" <-- "0..*" ScreeningBreastHistologyObservation : « basedOn »
-ScreeningPathologyServiceRequest "0..1" <-- "0..*" ScreeningImmunohistochemistryObservation : « basedOn »
+ScreeningBreastBiopsyServiceRequest "1..*" <-- "0..*" ScreeningPathologyServiceRequest : « basedOn »
+ScreeningPathologyServiceRequest "0..*" <-- "0..*" ScreeningBreastCytologyObservation : « basedOn »
+ScreeningPathologyServiceRequest "0..*" <-- "0..*" ScreeningBreastHistologyObservation : « basedOn »
+ScreeningPathologyServiceRequest "0..*" <-- "0..*" ScreeningImmunohistochemistryObservation : « basedOn »
 ScreeningImmunohistochemistryObservation "0..*" -[norank]-> "1..*" ScreeningBreastHistologyObservation : « derivedFrom »
 ScreeningObservation -[hidden]-> ScreeningMammographyObservation
 ScreeningObservation -[hidden]-> ScreeningBreastUltrasoundObservation
@@ -56,6 +56,6 @@ ScreeningPatient -[hidden]-> ScreeningPractitioner
 note "Every Observation and ServiceRequest also\nreferences the Patient through « subject »" as N1
 N1 .. ScreeningObservation
 
-caption Clinical graph: references to organizations, practitioners and other actors are left out to keep the diagram readable.\nScreeningComposition, the document that ties a screening together, is left out.
+caption Clinical graph: references to organizations, practitioners and other actors are left out to keep the diagram readable.\nThe retired ScreeningComposition is left out.
 
 @enduml

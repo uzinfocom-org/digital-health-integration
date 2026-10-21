@@ -27,7 +27,7 @@ To'liq namunaviy nusxa uchun [066-shakl statsionardan chiqarish misoli](Bundle-e
 
 ### Maydonlarni moslashtirish
 
-# UZ-066 Statsionardan chiqqan bemorning statistik kartasi - FHIR bilan moslashtirish
+### UZ-066 Statsionardan chiqqan bemorning statistik kartasi - FHIR bilan moslashtirish
 
 ---
 

@@ -41,12 +41,12 @@ ScreeningDiagnosticReport "0..*" --> "0..*" ScreeningServiceRequest : « basedOn
 ScreeningDiagnosticReport "0..*" --> "0..*" ScreeningObservation : « result »
 ScreeningDiagnosticReport "0..*" --> "1" ScreeningSpecialTreatmentObservation : « supportingInfo.reference »
 ScreeningDiagnosticReport "0..*" --> "0..*" ScreeningPathologyServiceRequest : « basedOn »
-ScreeningObservation "0..*" --> "0..1" ScreeningServiceRequest : « basedOn »
+ScreeningObservation "0..*" --> "0..*" ScreeningServiceRequest : « basedOn »
 ScreeningSpecimen "0..*" --> "0..*" ScreeningPathologyServiceRequest : « request »
-ScreeningBreastBiopsyServiceRequest "1" <-- "0..*" ScreeningPathologyServiceRequest : « basedOn »
-ScreeningPathologyServiceRequest "0..1" <-- "0..*" ScreeningBreastCytologyObservation : « basedOn »
-ScreeningPathologyServiceRequest "0..1" <-- "0..*" ScreeningBreastHistologyObservation : « basedOn »
-ScreeningPathologyServiceRequest "0..1" <-- "0..*" ScreeningImmunohistochemistryObservation : « basedOn »
+ScreeningBreastBiopsyServiceRequest "1..*" <-- "0..*" ScreeningPathologyServiceRequest : « basedOn »
+ScreeningPathologyServiceRequest "0..*" <-- "0..*" ScreeningBreastCytologyObservation : « basedOn »
+ScreeningPathologyServiceRequest "0..*" <-- "0..*" ScreeningBreastHistologyObservation : « basedOn »
+ScreeningPathologyServiceRequest "0..*" <-- "0..*" ScreeningImmunohistochemistryObservation : « basedOn »
 ScreeningImmunohistochemistryObservation "0..*" -[norank]-> "1..*" ScreeningBreastHistologyObservation : « derivedFrom »
 ScreeningObservation -[hidden]-> ScreeningMammographyObservation
 ScreeningObservation -[hidden]-> ScreeningBreastUltrasoundObservation
@@ -56,6 +56,6 @@ ScreeningPatient -[hidden]-> ScreeningPractitioner
 note "Har bir kuzatuv (Observation) va yo'llanma (ServiceRequest)\n« subject » orqali bemorga ham havola qiladi" as N1
 N1 .. ScreeningObservation
 
-caption Klinik graf: diagramma o'qilishi oson bo'lishi uchun tashkilotlar, tibbiyot xodimlari va boshqa ishtirokchilarga havolalar ko'rsatilmagan.\nSkriningni birlashtiruvchi yakuniy hujjat ScreeningComposition ko'rsatilmagan.
+caption Klinik graf: diagramma o'qilishi oson bo'lishi uchun tashkilotlar, tibbiyot xodimlari va boshqa ishtirokchilarga havolalar ko'rsatilmagan.\nIste'moldan chiqarilgan ScreeningComposition ko'rsatilmagan.
 
 @enduml

@@ -1,11 +1,5 @@
 ### In development
 
-#### Changed
-
-The screening questionnaires now carry `Questionnaire.code` in SNOMED CT, the same concept as their program type identifier: [IHD pre-test probability](Questionnaire-IhdPretestQuestionnaire.html), [fertility](Questionnaire-FertilityQuestionnaire.html), [helminths](Questionnaire-HelminthScreeningQuestionnaire.html), [cardiovascular risk](Questionnaire-CVDRiskScreeningQuestionnaire.html), [diabetes](Questionnaire-DiabetesScreeningQuestionnaire.html), [breast cancer](Questionnaire-BreastCancerScreeningQuestionnaire.html), [oncohematology](Questionnaire-OncohematologyScreeningQuestionnaire.html) and [cervical cancer](Questionnaire-CervicalCancerScreeningQuestionnaire.html). They previously carried a UZ Core `screening-code-cs` code, which UZ Core is replacing with SNOMED CT. The [cerebrovascular](Questionnaire-CerebrovascularScreeningQuestionnaire.html) questionnaire keeps `screening-code-cs#mserv-0007-00003`, as SNOMED CT has no suitable concept for it.
-
-The [screening program type](NamingSystem-screening-program-type-identifier-system.html) identifier now documents a third value besides the SNOMED CT codes and `mserv-0007-00003`: `breast-cervical-unspecified`, which the HPV screening system writes on a resource it creates for breast and cervical cancer screening but cannot attribute to either program - a Condition whose ICD-10 code is on neither program's list, or on both, and a referral to a branch of the national oncology or maternal and child health centre. Such a resource carries exactly one program type identifier.
-
 #### Breaking changes
 
 The [sick leave](sick-leave.html) model now follows the DHP sick leave service API v3, and [Sick leave](sick-leave.html) maps every field of the API to where it is stored. Senders change:
@@ -23,6 +17,42 @@ The CarePlan gains the [incapacity period](StructureDefinition-care-for-incapaci
 
 [Sick Leave Observation](StructureDefinition-sick-leave-observation.html) fixes only the system and code of `Observation.code`; it no longer requires the exact display `On sick leave from work`. The pages of the four sick leave profiles now show, step by step, the JSON to send, from the smallest valid instance to a full one. The [Sick Leave](sick-leave.html) page gains the data flow, the lifecycle and timeline diagrams, colored status badges, a side-by-side mapping from the API response to FHIR, one sick leave in three versions with diffs, an integrator checklist and the responsible team. The sick leave profiles, extensions and terminology name the **DHP SickLeave** working group in `contact`.
 
+### Version 0.11.1
+
+#### Added
+
+The [screening plans and invitations](cervical-breast-cancer-screening.html#screening-plans) section of the screening page sets out how a screening program invites a patient and tracks the patient's plan with existing UZ Core profiles, without new profiles of its own. A UZ Core ActivityDefinition is the invitation template (`kind` = `ServiceRequest`, `intent` = `plan`), a UZ Core PlanDefinition pins it by version, and the patient's plan is a UZ Core ServiceRequest with `intent` = `plan`, the screening invitation category and one program identifier. The MIS owns the plan status: DMED completes its plan once the questionnaire is saved, while HPV keeps its plan active across screening rounds. DHP does not infer completion from results.
+
+#### Changed
+
+The guide is built against [UZ Core 0.11.1](https://dhp.uz/fhir/core/changelog.html), whose ActivityDefinition `kind` allows ServiceRequest.
+
+[Screening Pathology Service Request](StructureDefinition-screening-pathology-service-request.html) `basedOn` allows 1..* instead of 1..1, and [Screening Immunohistochemistry Observation](StructureDefinition-screening-immunohistochemistry-observation.html) `basedOn` 0..* instead of 0..1, so they can reference both the clinical order and the screening plan. Existing resources remain valid.
+
+[ScreeningComposition](StructureDefinition-screening-composition.html) is retired. New screening flows do not use it, but its canonical, structure and examples stay, so the documents HPV still sends continue to validate.
+
+#### Breaking changes
+
+The DMED [breast](Questionnaire-BreastCancerScreeningQuestionnaire.html) and [cervical](Questionnaire-CervicalCancerScreeningQuestionnaire.html) cancer screening questionnaires carry the program identifiers `mserv-0007-00007` and `mserv-0007-00009` instead of `268547008` and `171149006`, which now identify only the HPV screening programs. Their clinical codes and scoring are unchanged.
+
+#### Documentation
+
+The [cervical and breast cancer screening](cervical-breast-cancer-screening.html) page explains the program identifier as a short list of where it goes and its exceptions, and shows how a screening plan links to the record in a diagram of its own. The main screening diagram has its `basedOn` cardinalities corrected.
+
+### Version 0.11.0
+
+#### Changed
+
+The guide is built against [UZ Core 0.11.0](https://dhp.uz/fhir/core/changelog.html). Of its breaking changes, only the removed screening codes reach this guide, and the screening questionnaires below have already moved off them to SNOMED CT.
+
+The screening questionnaires now carry `Questionnaire.code` in SNOMED CT, the same concept as their program type identifier: [IHD pre-test probability](Questionnaire-IhdPretestQuestionnaire.html), [fertility](Questionnaire-FertilityQuestionnaire.html), [helminths](Questionnaire-HelminthScreeningQuestionnaire.html), [cardiovascular risk](Questionnaire-CVDRiskScreeningQuestionnaire.html), [diabetes](Questionnaire-DiabetesScreeningQuestionnaire.html), [breast cancer](Questionnaire-BreastCancerScreeningQuestionnaire.html), [oncohematology](Questionnaire-OncohematologyScreeningQuestionnaire.html) and [cervical cancer](Questionnaire-CervicalCancerScreeningQuestionnaire.html). They previously carried a UZ Core `screening-code-cs` code, which UZ Core 0.11.0 removes in favour of SNOMED CT. The [cerebrovascular](Questionnaire-CerebrovascularScreeningQuestionnaire.html) questionnaire keeps `screening-code-cs#mserv-0007-00003`, as SNOMED CT has no suitable concept for it.
+
+The [screening program type](NamingSystem-screening-program-type-identifier-system.html) identifier now documents a third value besides the SNOMED CT codes and `mserv-0007-00003`: `breast-cervical-unspecified`, which the HPV screening system writes on a resource it creates for breast and cervical cancer screening but cannot attribute to either program - a Condition whose ICD-10 code is on neither program's list, or on both, and a referral to a branch of the national oncology or maternal and child health centre. Such a resource carries exactly one program type identifier.
+
+#### Documentation
+
+The [cancer](cancer.html) and [hepatitis](hepatitis.html) pages now show a diagram of how their resources link together. The diagrams on the other integration pages now include every profile of the integration (screening leaves out the ScreeningComposition document), with several wrong cardinalities corrected. All of them show the clinical graph, leaving out references to organizations, practitioners and other actors.
+
 ### Version 0.10.0
 
 #### Added
@@ -38,8 +68,6 @@ The operation code on a [form 066](form-066-mapping.html) hospital discharge sum
 [ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html) enumerates the 6,853 codes DMED carries: 6,176 of the 9,428 stem codes WHO currently publishes, plus 677 WHO has since withdrawn. The withdrawn ones are `inactive` in [the code system](https://dhp.uz/fhir/core/CodeSystem-who-ichi.html) and admitted here so records already in DMED stay valid, but should not be used going forward. A procedure the platform codes itself comes from [ICHI Codes](https://dhp.uz/fhir/core/ValueSet-ichi-vs.html) in UZ Core.
 
 The [IHD pre-test probability risk categories](CodeSystem-ihd-risk-category-cs.html) are now published here. The [IHD pretest questionnaire](Questionnaire-IhdPretestQuestionnaire.html) already answered its risk category item from them, but under a UZ Core canonical that no UZ Core release contains.
-
-The [cancer](cancer.html) and [hepatitis](hepatitis.html) pages now show a diagram of how their resources link together. The diagrams on the other integration pages now include every profile of the integration (screening leaves out the ScreeningComposition document), with several wrong cardinalities corrected. All of them show the clinical graph, leaving out references to organizations, practitioners and other actors.
 
 #### Changed
 

@@ -110,3 +110,20 @@ Description: "Referral for mammography"
 * requester.display = "Lyuba Dadaeva Yuldashevna"
 * performer[0] = Reference(Organization/xonobod-medical-association)
 * performer[=].display = "Xonobod City Medical Association"
+
+
+Instance: ServiceRequest-screening-invitation-cervical
+InstanceOf: UZCoreServiceRequest
+Usage: #example
+Description: "Invitation of the national cervical cancer screening program, not yet accepted. The category marks it as a screening invitation; the program identifier names the program."
+* intent = #plan
+* category[dhpCategory] = $sct#310422005 "Prevention/screening invitation"
+* identifier[0].system = $screening-program-type-id
+* identifier[0].value = "171149006"
+* instantiatesCanonical = "https://dhp.uz/fhir/integrations/PlanDefinition/example-hpv-cervical-plan|1.0.0"
+* status = #draft
+* code = $sct#171149006 "Screening for malignant neoplasm of cervix"
+* subject = Reference(Patient/lola-oripova)
+* subject.display = "Lola Oripova Shakhzodovna"
+* authoredOn = "2025-11-01T09:00:00+05:00"
+* performer[0] = Reference(Organization/xonobod-medical-association)

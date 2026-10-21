@@ -1,10 +1,10 @@
-# DHP Integrations Implementation Guide
+### DHP Integrations Implementation Guide
 
-## Overview
+#### Overview
 
 This Implementation Guide defines FHIR R5-based integration specifications for third-party systems that integrate with the [Digital Health Platform (DHP)](https://dhp.uz/fhir/core/en/index.html). It is designed to enable external healthcare systems to exchange data with DHP while maintaining their own data sovereignty.
 
-## Purpose
+#### Purpose
 
 DHP Integrations IG provides:
 
@@ -18,7 +18,7 @@ This IG is intended for implementers developing or configuring systems that need
 
 While external systems may develop their own FHIR Implementation Guides, this IG may include profiles developed collaboratively with external system vendors to streamline the integration process and reduce implementation overhead.
 
-## Integration approach - hybrid model
+#### Integration approach - hybrid model
 
 DHP uses a hybrid integration approach where not all data is centralized. Instead, the platform combines centralized storage of core healthcare data with distributed, specialized data maintained by external systems.
 
@@ -44,7 +44,7 @@ graph LR
     style Other fill:#9B59B6,stroke:#7D3C98,stroke-width:2px,color:#fff
 ```
 
-### Data stored in DHP
+##### Data stored in DHP
 
 DHP centrally stores and manages core healthcare data:
 
@@ -54,7 +54,7 @@ DHP centrally stores and manages core healthcare data:
 - **Laboratory results** - lab results and diagnostic reports transmitted from LIS systems
 - **Master registries** - patient registry, provider directory, organization registry, and terminology services
 
-### Data maintained by external systems
+##### Data maintained by external systems
 
 External systems maintain their own operational data while integrating via FHIR APIs. Examples include:
 
@@ -63,7 +63,7 @@ External systems maintain their own operational data while integrating via FHIR 
 - **LIS systems** - laboratory workflows, specimen tracking, and detailed test processing data
 - **Other 3rd-party systems** - any healthcare application with specialized data or services that need to integrate with DHP
 
-### Integration pattern
+##### Integration pattern
 
 For most external system data, DHP can store references to data in external systems rather than duplicating everything. However, certain critical data like laboratory results are transmitted to and stored in DHP. This hybrid approach:
 
@@ -74,7 +74,7 @@ For most external system data, DHP can store references to data in external syst
 
 DHP and external systems maintain complementary data sets and interact through FHIR and custom APIs: DHP provides authoritative master data and core clinical records, while external systems provide specialized operational data and domain-specific capabilities.
 
-## Data exchange approaches
+#### Data exchange approaches
 
 Integrations with DHP support two complementary methods for exchanging healthcare data:
 
@@ -107,17 +107,17 @@ graph LR
     style DHP fill:#4A90E2,stroke:#2E5C8A,stroke-width:3px,color:#fff
 ```
 
-### Request resources
+##### Request resources
 
 For operational workflows requiring status tracking, DHP prefers [request resources](https://hl7.org/fhir/R5/workflow.html). Common examples include [ServiceRequest](https://hl7.org/fhir/R5/servicerequest.html), [MedicationRequest](https://hl7.org/fhir/R5/medicationrequest.html), [Appointment](https://hl7.org/fhir/R5/appointment.html), [CarePlan](https://hl7.org/fhir/R5/careplan.html), and [Claim](https://hl7.org/fhir/R5/claim.html). These resources support workflow state tracking (requested → accepted → in-progress → completed), making them ideal for real-time coordination.
 
-### Clinical Documents
+##### Clinical Documents
 
 For data requiring legal authentication and long-term persistence (e.g., Form 003 for inpatient stays, Form 096 for births), DHP uses **Clinical Documents** - a Bundle containing a Composition header with metadata and attestation, plus referenced clinical resources (Patient, Observation, Condition, etc.).
 
 When a signature is required, 3rd party systems will display an iframe from the DHP platform where practitioners will log in to authenticate themselves using oneID. This will generate a cryptographic signature (either as JWS Digital Signature or based on the W3C Verifiable Credentials Data Model, to be decided) that will be returned to the 3rd party system to be attached as a [Provenance.signature](https://hl7.org/fhir/R5/provenance-definitions.html#Provenance.signature). Additionally, DHP also pre-adopts [R6 signing rules](https://build.fhir.org/signatures.html#Bundles) as they significantly differ from R5 and that is the future direction where FHIR is going.
 
-#### Choosing the right approach
+###### Choosing the right approach
 
 ```mermaid
 flowchart TD
@@ -150,7 +150,7 @@ flowchart TD
     style Iframe fill:#FCE4EC,stroke:#E91E63,stroke-width:2px
 ```
 
-## Identification of versions
+#### Identification of versions
 
 Artifacts in this guide - profiles, extensions, code systems, value sets, concept maps, naming systems and the FHIR package - carry the version of the guide itself. Versioning follows [Semantic Versioning (SemVer)](https://semver.org/) in the format `MAJOR.MINOR.PATCH`, so every artifact in version `0.7.0` of the guide is also versioned `0.7.0` and it is always clear which release an artifact belongs to.
 
@@ -158,14 +158,14 @@ Artifacts in this guide - profiles, extensions, code systems, value sets, concep
 
 While an artifact is in development and not yet ready for production use, it has a status of `draft`. Once it is ready for production use it is marked `active`, and a withdrawn artifact is marked `retired`.
 
-### Development versions: 0.x.x
+##### Development versions: 0.x.x
 
 - Guide status: `draft`
 - Artifact status: `draft`, with the `experimental` flag set to `true`
 - Used during initial development and testing
 - Breaking changes may occur between minor versions
 
-### Production versions: 1.x.x and later
+##### Production versions: 1.x.x and later
 
 - Guide status: `active`
 - Artifact status: `active`, with the `experimental` flag set to `false`

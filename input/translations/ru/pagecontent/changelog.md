@@ -1,11 +1,5 @@
 ### В разработке
 
-#### Изменено
-
-Скрининговые опросники теперь содержат `Questionnaire.code` в SNOMED CT - тот же концепт, что и в идентификаторе типа программы: [предтестовая вероятность ИБС](Questionnaire-IhdPretestQuestionnaire.html), [фертильность](Questionnaire-FertilityQuestionnaire.html), [гельминтозы](Questionnaire-HelminthScreeningQuestionnaire.html), [риск сердечно-сосудистых заболеваний](Questionnaire-CVDRiskScreeningQuestionnaire.html), [сахарный диабет](Questionnaire-DiabetesScreeningQuestionnaire.html), [рак молочной железы](Questionnaire-BreastCancerScreeningQuestionnaire.html), [онкогематология](Questionnaire-OncohematologyScreeningQuestionnaire.html) и [рак шейки матки](Questionnaire-CervicalCancerScreeningQuestionnaire.html). Ранее они содержали код из `screening-code-cs` UZ Core, который UZ Core заменяет на SNOMED CT. [Цереброваскулярный](Questionnaire-CerebrovascularScreeningQuestionnaire.html) опросник сохраняет `screening-code-cs#mserv-0007-00003`, так как подходящего концепта SNOMED CT для него нет.
-
-Для идентификатора [типа скрининговой программы](NamingSystem-screening-program-type-identifier-system.html) помимо кодов SNOMED CT и `mserv-0007-00003` теперь описано третье значение - `breast-cervical-unspecified`. Его записывает система скрининга ВПЧ на ресурс, созданный в рамках скрининга рака молочной железы и шейки матки, но который нельзя отнести ни к одной из программ: Condition, чей код МКБ-10 не входит ни в один из списков программ или входит в оба, и направление в филиал РСНПМЦОиР или РСНПМЦЗМиР. Такой ресурс содержит ровно один идентификатор типа программы.
-
 #### Несовместимые изменения
 
 Модель [листка нетрудоспособности](sick-leave.html) теперь соответствует API v3 сервиса больничных листов DHP, а страница [листка нетрудоспособности](sick-leave.html) сопоставляет каждое поле API месту его хранения. Отправителям нужно учесть:
@@ -23,6 +17,42 @@
 
 [Sick Leave Observation](StructureDefinition-sick-leave-observation.html) фиксирует в `Observation.code` только систему и код и больше не требует точного display `On sick leave from work`. На страницах четырёх профилей листка нетрудоспособности теперь шаг за шагом показан JSON для отправки - от наименьшего валидного экземпляра до полного. На странице [Листок нетрудоспособности](sick-leave.html) появились поток данных, диаграммы жизненного цикла и временной шкалы, цветные бейджи статусов, соответствие ответа API и FHIR бок о бок, один листок в трёх версиях с diff, чеклист интегратора и ответственная команда. Профили, расширения и терминология листка указывают в `contact` рабочую группу **DHP SickLeave**.
 
+### Версия 0.11.1
+
+#### Добавлено
+
+Раздел [Планы скрининга и приглашения](cervical-breast-cancer-screening.html#screening-plans) на странице скрининга описывает, как программа скрининга приглашает пациента и ведёт его план на существующих профилях UZ Core, без собственных новых профилей. UZ Core ActivityDefinition служит шаблоном приглашения (`kind` = `ServiceRequest`, `intent` = `plan`), UZ Core PlanDefinition закрепляет его с версией, а план пациента - это UZ Core ServiceRequest с `intent` = `plan`, категорией приглашения на скрининг и одним идентификатором программы. Статусом плана управляет МИС: DMED завершает свой план после сохранения опросника, а ВПЧ держит план активным между раундами скрининга. DHP не выводит завершение плана из результатов.
+
+#### Изменено
+
+Руководство собирается на [UZ Core 0.11.1](https://dhp.uz/fhir/core/changelog.html), где ActivityDefinition `kind` допускает ServiceRequest.
+
+В [Screening Pathology Service Request](StructureDefinition-screening-pathology-service-request.html) `basedOn` допускает 1..* вместо 1..1, а в [Screening Immunohistochemistry Observation](StructureDefinition-screening-immunohistochemistry-observation.html) `basedOn` - 0..* вместо 0..1, чтобы ссылаться и на клиническое направление, и на план скрининга. Существующие ресурсы остаются валидными.
+
+[ScreeningComposition](StructureDefinition-screening-composition.html) выведен из употребления (retired). Новые процессы скрининга его не используют, но канонический URL, структура и примеры сохранены, поэтому документы, которые ВПЧ продолжает отправлять, по-прежнему проходят проверку.
+
+#### Несовместимые изменения
+
+Опросники DMED по скринингу рака [молочной железы](Questionnaire-BreastCancerScreeningQuestionnaire.html) и [шейки матки](Questionnaire-CervicalCancerScreeningQuestionnaire.html) содержат идентификаторы программ `mserv-0007-00007` и `mserv-0007-00009` вместо `268547008` и `171149006`, которые теперь обозначают только программы скрининга ВПЧ. Их клинические коды и подсчёт баллов не изменились.
+
+#### Документация
+
+На странице [скрининга рака шейки матки и молочной железы](cervical-breast-cancer-screening.html) идентификатор программы описан коротким списком: где он указывается и какие есть исключения, а связь плана скрининга с записью показана на отдельной схеме. На основной схеме скрининга исправлены кардинальности `basedOn`.
+
+### Версия 0.11.0
+
+#### Изменено
+
+Руководство собирается на [UZ Core 0.11.0](https://dhp.uz/fhir/core/changelog.html). Из его несовместимых изменений это руководство затрагивает только удаление кодов скрининга, и скрининговые опросники ниже уже перешли с них на SNOMED CT.
+
+Скрининговые опросники теперь содержат `Questionnaire.code` в SNOMED CT - тот же концепт, что и в идентификаторе типа программы: [предтестовая вероятность ИБС](Questionnaire-IhdPretestQuestionnaire.html), [фертильность](Questionnaire-FertilityQuestionnaire.html), [гельминтозы](Questionnaire-HelminthScreeningQuestionnaire.html), [риск сердечно-сосудистых заболеваний](Questionnaire-CVDRiskScreeningQuestionnaire.html), [сахарный диабет](Questionnaire-DiabetesScreeningQuestionnaire.html), [рак молочной железы](Questionnaire-BreastCancerScreeningQuestionnaire.html), [онкогематология](Questionnaire-OncohematologyScreeningQuestionnaire.html) и [рак шейки матки](Questionnaire-CervicalCancerScreeningQuestionnaire.html). Ранее они содержали код из `screening-code-cs` UZ Core, который UZ Core 0.11.0 удаляет в пользу SNOMED CT. [Цереброваскулярный](Questionnaire-CerebrovascularScreeningQuestionnaire.html) опросник сохраняет `screening-code-cs#mserv-0007-00003`, так как подходящего концепта SNOMED CT для него нет.
+
+Для идентификатора [типа скрининговой программы](NamingSystem-screening-program-type-identifier-system.html) помимо кодов SNOMED CT и `mserv-0007-00003` теперь описано третье значение - `breast-cervical-unspecified`. Его записывает система скрининга ВПЧ на ресурс, созданный в рамках скрининга рака молочной железы и шейки матки, но который нельзя отнести ни к одной из программ: Condition, чей код МКБ-10 не входит ни в один из списков программ или входит в оба, и направление в филиал РСНПМЦОиР или РСНПМЦЗМиР. Такой ресурс содержит ровно один идентификатор типа программы.
+
+#### Документация
+
+На страницах [онкологии](cancer.html) и [гепатита](hepatitis.html) появилась схема связей между ресурсами. Схемы на страницах остальных интеграций теперь включают все профили интеграции (кроме итогового документа скрининга ScreeningComposition), а ошибочные кратности исправлены. Все схемы показывают клинический граф, без ссылок на организации, медработников и других участников.
+
 ### Версия 0.10.0
 
 #### Добавлено
@@ -38,8 +68,6 @@
 [ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html) перечисляет 6 853 кода, которые есть в DMED: 6 176 из 9 428 стержневых кодов, публикуемых ВОЗ сейчас, плюс 677 кодов, которые ВОЗ с тех пор убрала. Убранные помечены `inactive` в [системе кодов](https://dhp.uz/fhir/core/CodeSystem-who-ichi.html) и допускаются здесь, чтобы записи, уже имеющиеся в DMED, оставались валидными, но использовать их в дальнейшем не следует. Процедуру, которую платформа кодирует сама, выбирают из [ICHI Codes](https://dhp.uz/fhir/core/ValueSet-ichi-vs.html) в UZ Core.
 
 [Категории риска по предтестовой вероятности ИБС](CodeSystem-ihd-risk-category-cs.html) теперь публикуются здесь. [Опросник предтестовой вероятности ИБС](Questionnaire-IhdPretestQuestionnaire.html) уже использовал их в ответах на вопрос о категории риска, но под каноническим URL UZ Core, которого нет ни в одном релизе UZ Core.
-
-На страницах [онкологии](cancer.html) и [гепатита](hepatitis.html) появилась схема связей между ресурсами. Схемы на страницах остальных интеграций теперь включают все профили интеграции (кроме итогового документа скрининга ScreeningComposition), а ошибочные кратности исправлены. Все схемы показывают клинический граф, без ссылок на организации, медработников и других участников.
 
 #### Изменено
 

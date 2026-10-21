@@ -143,7 +143,7 @@ Description: "Colposcopy conclusion including transformation zone assessment."
 * issued = "2025-11-17T13:28:17.239+02:00"
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-gynecologist)
-* valueCodeableConcept = screening-colposcopy-cs#scr-colpo-2 "LSIL"
+* valueCodeableConcept = $sct#416030007 "Cervicovaginal cytology: Low grade squamous intraepithelial lesion"
 * component[0].code = $sct#1285652007 "Structure of transition zone of cervix uteri"
 * component[=].valueCodeableConcept = screening-transformation-zone-cs#scr-tz-2 "Type 2 (partially in canal)"
 

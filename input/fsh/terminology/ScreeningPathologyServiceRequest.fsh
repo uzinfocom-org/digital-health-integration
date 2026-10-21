@@ -28,7 +28,7 @@ Description: "FHIR R5 request for breast or cervical pathology with conditionall
 * ^publisher = "DHP Integration"
 * obeys spr-1 and spr-2 and spr-3 and spr-4
 
-* basedOn 1..1 MS
+* basedOn 1..* MS
 * code.concept 1..1 MS
 * code.concept = $sct#714797009 "Histologic test"
 * orderDetail 1..1 MS

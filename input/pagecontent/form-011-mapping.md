@@ -22,7 +22,7 @@ For a complete reference instance, see the [Form 011 hemodialysis example](Bundl
 
 ### Field Mapping
 
-# UZ-011 Hemodialysis Session Form - FHIR Mapping
+### UZ-011 Hemodialysis Session Form - FHIR Mapping
 
 | UZ-011 | RU-011 | FHIR Path | Code | Example Value |
 |--------|--------|-----------|------|---------------|

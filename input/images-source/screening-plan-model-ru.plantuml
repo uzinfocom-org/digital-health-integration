@@ -1,0 +1,23 @@
+@startuml screening-plan-model-ru
+hide circle
+hide empty members
+left to right direction
+title Как план скрининга связан с записью
+
+class "ServiceRequest (план)" as ScreeningPlan [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-servicerequest.html{Открыть профиль UZ Core ServiceRequest}]]
+class PlanDefinition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-plan-definition.html{Открыть профиль UZ Core PlanDefinition}]]
+class ActivityDefinition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-activitydefinition.html{Открыть профиль UZ Core ActivityDefinition}]]
+class "ScreeningPatient" as PlanPatient [[StructureDefinition-screening-patient.html{Открыть профиль ScreeningPatient}]] #E8F0FE
+class "QuestionnaireResponse,\nScreeningObservation,\nScreeningDiagnosticReport,\nScreeningBreastBiopsyProcedure,\nScreeningServiceRequest" as Evidence #E8F0FE
+class "ScreeningSpecimen" as PlanSpecimen [[StructureDefinition-screening-specimen.html{Открыть профиль ScreeningSpecimen}]] #E8F0FE
+class "Condition" as PlanCondition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-condition.html{Открыть профиль UZ Core Condition}]]
+
+Evidence "0..*" --> "0..*" ScreeningPlan : « basedOn »
+PlanSpecimen "0..*" --> "0..*" ScreeningPlan : « request »
+PlanCondition "0..*" --> "0..*" ScreeningPlan : « extension[event-basedOn] »
+ScreeningPlan "0..*" --> "1" PlanPatient : « subject »
+ScreeningPlan "0..*" --> "0..1" PlanDefinition : « instantiatesCanonical »
+PlanDefinition "0..*" --> "0..*" ActivityDefinition : « action.definitionCanonical »
+
+caption Клинические ресурсы сохраняют ссылку на непосредственное направление наряду с планом.
+@enduml

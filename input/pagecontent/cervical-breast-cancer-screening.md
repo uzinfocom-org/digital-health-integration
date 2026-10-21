@@ -18,9 +18,85 @@ Coded values use SNOMED CT or LOINC wherever an equivalent concept exists. Local
 
 ### Program and source identifiers
 
-**Screening program type.** A second `identifier`, system `https://dhp.uz/fhir/core/sid/prg/uz/program`, naming the SNOMED CT screening program a resource belongs to - for example `171149006` (Screening for malignant neoplasm of cervix) or `268547008` (Screening for malignant neoplasm of breast). Written by convention on Observation, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen, Composition, and Questionnaire/QuestionnaireResponse when the whole questionnaire is one program - not on Patient, Practitioner or PractitionerRole, which are shared across programs. The [Woman medical exam](Questionnaire-screening-woman-exam.html) questionnaire and its response carry both program codes, since the questionnaire spans both programs. A resource created for breast and cervical cancer screening that cannot be attributed to either program carries a single program type identifier with the value `breast-cervical-unspecified` instead: a Condition whose ICD-10 code is on neither program's list, or on both, and a referral to a branch of the national oncology or maternal and child health centre.
+**Screening program type.** Besides its record identifier, a screening resource carries a second `identifier` that says which screening program it belongs to. Its system is `https://dhp.uz/fhir/core/sid/prg/uz/program` and its value is the program's code from the table in the next section.
+
+- Add it to Observation, DiagnosticReport, ServiceRequest, Condition, Consent and Specimen, and to a Questionnaire and its QuestionnaireResponse when the whole questionnaire belongs to one program.
+- Leave it off Patient, Practitioner and PractitionerRole: they are shared across programs.
+- The HPV [Woman medical exam](Questionnaire-screening-woman-exam.html) questionnaire and its responses belong to both HPV programs, so they carry both codes.
+- An HPV resource that cannot be attributed to either program carries one identifier with the value `breast-cervical-unspecified`. This applies to a Condition whose ICD-10 code is on neither program's list, or on both, and to a referral to a branch of the national oncology or maternal and child health centre. `breast-cervical-unspecified` does not stand for a DMED program.
 
 **Source system.** `meta.source` identifies which system created a resource: `https://dhp.uz/fhir/source/screening` (this Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System) or `https://dhp.uz/fhir/source/dmed` (DMED). Required and enforced by invariant on [ScreeningObservation](StructureDefinition-screening-observation.html), [ScreeningServiceRequest](StructureDefinition-screening-service-request.html), [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [ScreeningDocumentReference](StructureDefinition-screening-document-reference.html) and [ScreeningComposition](StructureDefinition-screening-composition.html). Do not infer the source system from the presence of an identifier from `https://dhp.uz/fhir/core/sid/doc/uz/screening` - that identifier system does not indicate which system produced a resource.
+
+This source metadata rule applies to clinical evidence and orders; new plan invitations use the documented [screening plan contract](#screening-plans) and omit `meta.source`.
+
+### DMED and HPV programs
+
+Select the exact program identifier from [Screening Program Types](https://dhp.uz/fhir/core/en/ValueSet-screening-program-type-vs.html). The identifier is additional to the record identifier. DMED and HPV use distinct breast/cervical programs; matching clinical SNOMED codes do not make the programs interchangeable.
+
+| Program | `identifier.value` | Implementing system | Questionnaire |
+| :--- | :--- | :--- | :--- |
+| DMED breast questionnaire program | `mserv-0007-00007` | DMED | [Breast questionnaire](Questionnaire-BreastCancerScreeningQuestionnaire.html) |
+| HPV breast screening program | `268547008` | HPV screening system | [screening-breast-risk](Questionnaire-screening-breast-risk.html), followed by applicable screening activities |
+| DMED cervical questionnaire program | `mserv-0007-00009` | DMED | [Cervical questionnaire](Questionnaire-CervicalCancerScreeningQuestionnaire.html) |
+| HPV cervical screening program | `171149006` | HPV screening system | [screening-cervical-risk](Questionnaire-screening-cervical-risk.html), followed by applicable screening activities |
+
+<a id="screening-plans"></a>
+### Screening plans and invitations
+
+For each patient and program, the MIS links its clinical resources to a plan ServiceRequest. A national invitation is a plan created by DHP; if no open plan exists, the MIS creates its own. Use the existing Core profiles for these resources:
+
+| Resource | Purpose | Profile and example |
+| :--- | :--- | :--- |
+| PlanDefinition | Defines the national program and refers to its invitation template through `action.definitionCanonical` | [UZ Core PlanDefinition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-plan-definition.html); [example](PlanDefinition-example-hpv-cervical-plan.html) |
+| ActivityDefinition | Describes the invitation template: `kind = ServiceRequest`, `intent = plan`, `profile = https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest` | [UZ Core ActivityDefinition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-activitydefinition.html); [example](ActivityDefinition-example-hpv-cervical-invitation-activity.html) |
+| ServiceRequest | Records a patient's invitation or MIS plan for one program | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html); [national invitation](ServiceRequest-ServiceRequest-screening-invitation-cervical.html), [MIS plan](ServiceRequest-example-hpv-breast-mis-plan.html) |
+
+<div>{% include screening-plan-model-en.svg %}</div><br clear="all"/>
+
+#### Populating the patient plan
+
+| Field | What to send |
+| :--- | :--- |
+| `intent` | `plan` |
+| `category` | SNOMED CT `310422005` — Prevention/screening invitation |
+| `identifier` | One program identifier with system `https://dhp.uz/fhir/core/sid/prg/uz/program` and the program's exact code |
+| `subject` | Reference to the patient |
+| `authoredOn` | Date and time the plan was created |
+| `status` | `draft` for a national invitation; `active` when the MIS accepts it or creates its own plan |
+| `instantiatesCanonical` | National invitation: exact <code>PlanDefinition.url&#124;version</code>; independent MIS plan: omit |
+| `performer` | Assigned provider, if there is one; otherwise omit |
+| `code` | Optional clinical coding in `code.concept`; identify the program through `identifier` |
+| `meta.source`, `occurrencePeriod` | Omit on the plan; clinical resources retain their source metadata |
+
+#### Finding, activating and creating a plan
+
+Before saving screening data, find the patient's open plan for the exact program:
+
+```
+GET [base]/ServiceRequest?subject=Patient/{id}&intent=plan&status=draft,active&category=http://snomed.info/sct|310422005&identifier=https://dhp.uz/fhir/core/sid/prg/uz/program|{programCode}&_sort=-_lastUpdated
+```
+
+URL-encode parameter values in the request. For a national invitation, also compare `instantiatesCanonical` with the current program's exact canonical and version. An invitation to an older definition must not be reused for the current definition.
+
+1. One matching plan: reuse it; change `draft` to `active` when accepting an invitation, preserving the other fields.
+2. No matching open plan: create an `active` MIS plan without `instantiatesCanonical`.
+3. Several matching plans: resolve the duplicate records before linking results; sorting does not establish uniqueness.
+
+Use conditional creation (`If-None-Exist`) with the complete plan identity to prevent duplicates, and version-aware updates (`If-Match`) when changing an existing plan.
+
+#### Linking clinical resources and changing status
+
+| Clinical resource | Link to the plan |
+| :--- | :--- |
+| QuestionnaireResponse, Observation, DiagnosticReport, Procedure, clinical ServiceRequest | `basedOn[]` |
+| Specimen | `request[]` |
+| Condition | Standard [event-basedOn](https://hl7.org/fhir/extensions/StructureDefinition-event-basedOn.html) extension with `valueReference` |
+
+Keep the immediate clinical-order reference alongside the plan reference. Pathology ServiceRequest permits `basedOn` 1..*; IHC and other screening Observations permit 0..*. A shared resource may link to both HPV plans when it belongs to both programs.
+
+HPV keeps its plan `active` across repeated examinations. DMED sets the linked plan to `completed` after saving a completed QuestionnaireResponse, whether DHP or DMED created the plan. For a subsequent new DMED screening, repeat the open-plan lookup and create a new MIS plan if none exists; preserve the completed plan as history. See the [completed DMED plan](ServiceRequest-example-dmed-breast-plan-completed.html) and its [linked response](QuestionnaireResponse-example-dmed-breast-response-with-plan.html).
+
+The MIS changes plan status. DHP does not infer plan completion from the received results.
 
 ### Ordering a test or procedure (ServiceRequest)
 
@@ -87,8 +163,20 @@ Example: [colposcopy-result](Observation-colposcopy-result.html)
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
 | Procedure code | [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html) | `SNOMED CT#392003006` (colposcopy) | `Observation.code` |
-| Colposcopy impression | [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) | `screening-colposcopy-cs#scr-colpo-2` (LSIL) | `Observation.value` |
+| Colposcopy impression | [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) | `SNOMED CT#416030007` (LSIL) | `Observation.value` |
 | Transformation zone type | [ScreeningTransformationZoneVS](ValueSet-screening-transformation-zone-vs.html) | `screening-transformation-zone-cs#scr-tz-2` (Type 2) | `component` (code `SNOMED CT#1285652007`) |
+
+Use the following codes from [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) in `Observation.valueCodeableConcept`. Set `coding.system` to `http://snomed.info/sct` for SNOMED CT rows, or `https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-colposcopy-cs` for local rows.
+
+| Screening source value | Code | Coding system | Meaning |
+| :--- | :--- | :--- | :--- |
+| `NORM_NILM` | `373887005` | SNOMED CT | Negative for intraepithelial lesion or malignancy |
+| `LSIL` | `416030007` | SNOMED CT | Cervicovaginal cytology: Low grade squamous intraepithelial lesion |
+| `HSIL` | `22725004` | SNOMED CT | High-grade squamous intraepithelial lesion |
+| `ATYPICAL_CHANGE` | `scrn-0091-00004` | Local | Atypical change |
+| `ASC_H` | `373878001` | SNOMED CT | Atypical squamous cells, cannot exclude high-grade squamous intraepithelial lesion |
+| `CIN1` | `285836003` | SNOMED CT | Cervical intraepithelial neoplasia grade 1 |
+| `CIN2_PLUS` | `scrn-0091-00007` | Local | Cervical intraepithelial neoplasia grade 2 or worse (CIN 2+) |
 
 ### Mammography reading
 
@@ -278,27 +366,9 @@ Three questionnaires are published. Answers come back as a QuestionnaireResponse
 | [Cervical risk](Questionnaire-screening-cervical-risk.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk` | [ScreeningCervicalRiskResponseExample](QuestionnaireResponse-screening-cervical-risk-response-example.html) |
 | [Woman medical exam](Questionnaire-screening-woman-exam.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam` | [ScreeningWomanExamResponse128](QuestionnaireResponse-screening-woman-exam-response-128.html) |
 
-### Screening summary document
+### Historical screening summary documents
 
-The screening summary gathers everything recorded for one screening episode into a single downloadable document. It can be produced at any point in the cycle: whatever has not been recorded yet is simply left out, so a summary generated early carries only the questionnaire answers.
-
-Individual steps do not get their own Composition - each result stays an Observation, and this document references them.
-
-Profile: [ScreeningComposition](StructureDefinition-screening-composition.html)
-
-Examples: [ScreeningCompositionExample](Composition-screening-composition-example.html), [ScreeningCompositionDocumentExample](Bundle-screening-composition-document-example.html)
-
-| Information to record | Value set | Example code | Stored in |
-| :--- | :--- | :--- | :--- |
-| Document type | - | `LOINC#34133-9` (Summary of episode note) | `Composition.type` |
-| Questionnaires | - | `LOINC#74465-6` | `section[questionnaire].entry` (QuestionnaireResponse) |
-| Results of every completed step | - | `LOINC#30954-2` | `section[results].entry` (Observation) |
-| Final ICD-10 diagnosis | - | `LOINC#29308-4` | `section[diagnosis].entry` (Condition) |
-| Author | - | - | `Composition.author` (PractitionerRole) |
-| Responsible organisation | - | - | `Composition.custodian` |
-| Referrals and procedures documented | - | - | `Composition.event.detail` |
-
-To hand the summary over as an immutable document, put it in a `Bundle` with `type = document`, with the Composition as the **first** entry and every resource it references - Patient, Condition, Observation, QuestionnaireResponse and the rest - in the same Bundle.
+[ScreeningComposition](StructureDefinition-screening-composition.html) is retired. Its canonical and existing examples are retained for historical validation. HPV may continue to submit legacy Composition; retirement retains the canonical and structural rules and introduces no payload rejection. New screening flows do not require Composition; retrieve atomic results by program identifier or via `basedOn` on the [screening plan](#screening-plans).
 
 ### Vital signs (height, weight, BMI)
 

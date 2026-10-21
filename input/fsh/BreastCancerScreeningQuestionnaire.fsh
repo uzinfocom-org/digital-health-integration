@@ -5,7 +5,7 @@ Title: "Breast Cancer Screening Questionnaire"
 Description: "Example for Questionnaire for breast cancer risk screening"
 * url = "https://dhp.uz/fhir/integrations/Questionnaire/BreastCancerScreeningQuestionnaire"
 * identifier[0].system = $screening-program-type-id
-* identifier[0].value = "268547008"
+* identifier[0].value = "mserv-0007-00007"
 * name = "BreastCancerScreeningQuestionnaire"
 * language = #uz
 * status = #active
@@ -488,6 +488,9 @@ Usage: #example
 Title: "Ko‘krak bezi saratoni skriningiga javob namunasi"
 Description: "Bemorning ko‘krak bezi saratonini aniqlash skrining so‘rovnomasiga to‘ldirilgan javob namunasi"
 * questionnaire = Canonical(BreastCancerScreeningQuestionnaire)
+* identifier[0].system = $screening-program-type-id
+* identifier[0].value = "mserv-0007-00007"
+* meta.source = "https://dhp.uz/fhir/source/dmed"
 * status = #completed
 * subject = Reference(lola-oripova)
 * authored = "2026-07-01T14:30:00+05:00"

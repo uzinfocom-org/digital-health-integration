@@ -52,6 +52,8 @@ Best Practice Recommendation: In general, all observations should have a perform
 
 # Screening: body-site is too large for the publisher to verify subset membership
 Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs is a proper subset of http://hl7.org/fhir/ValueSet/body-site|5.0.0 - value set is too large to check
+# UZ Core 0.11.1 binds Observation.bodySite to its body-site-vs (all SNOMED CT body structures); version left open
+Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs is a proper subset of https://terminology.dhp.uz/fhir/core/ValueSet/body-site-vs|%
 # Screening: breast-side VS (two SNOMED codes) is trivially a subset of screening-body-site-vs (all of SNOMED), but the parent is too large for the publisher to verify
 Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-ultrasound-breast-side-vs is a proper subset of https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs - value set is too large to check
 
@@ -70,5 +72,10 @@ Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screeni
 Unable to expand included value set 'http://hl7.org/fhir/ValueSet/body-site': The value set 'http://hl7.org/fhir/ValueSet/body-site|5.0.0' expansion has too many codes to produce (>1000)%
 
 Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/cancer-body-location-vs is a proper subset of http://hl7.org/fhir/ValueSet/body-site|5.0.0 - value set is too large to check
+Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/cancer-body-location-vs is a proper subset of https://terminology.dhp.uz/fhir/core/ValueSet/body-site-vs|%
 
 The Target Code System http://snomed.info/sct is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
+
+# IG Publisher 3.0.0 generates the narrative of a canonical resource example once per IG language
+# (en, ru, uz) and gives each copy the same "metadata" anchor, then flags its own output.
+The XHTML  the resource contains more than one node for each of the following node ids and anchor names: metadata (3x)

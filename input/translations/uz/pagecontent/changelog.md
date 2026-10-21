@@ -1,11 +1,5 @@
 ### Ishlab chiqish jarayonida
 
-#### O'zgartirildi
-
-Skrining so'rovnomalari endi `Questionnaire.code` ni SNOMED CT da olib yuradi - dastur turi identifikatoridagi konseptning o'zi: [YuIK testoldi ehtimoli](Questionnaire-IhdPretestQuestionnaire.html), [fertillik](Questionnaire-FertilityQuestionnaire.html), [gelmintozlar](Questionnaire-HelminthScreeningQuestionnaire.html), [yurak-qon tomir xavfi](Questionnaire-CVDRiskScreeningQuestionnaire.html), [qandli diabet](Questionnaire-DiabetesScreeningQuestionnaire.html), [ko'krak bezi saratoni](Questionnaire-BreastCancerScreeningQuestionnaire.html), [onkogematologiya](Questionnaire-OncohematologyScreeningQuestionnaire.html) va [bachadon bo'yni saratoni](Questionnaire-CervicalCancerScreeningQuestionnaire.html). Ular avval UZ Core `screening-code-cs` kodini olib yurar edi, UZ Core uni SNOMED CT bilan almashtirmoqda. [Serebrovaskulyar](Questionnaire-CerebrovascularScreeningQuestionnaire.html) so'rovnoma `screening-code-cs#mserv-0007-00003` ni saqlab qoladi, chunki unga mos SNOMED CT konsepti yo'q.
-
-[Skrining dasturi turi](NamingSystem-screening-program-type-identifier-system.html) identifikatori uchun SNOMED CT kodlari va `mserv-0007-00003` dan tashqari endi uchinchi qiymat ham tavsiflangan - `breast-cervical-unspecified`. Uni OPV (ВПЧ) skrining tizimi ko'krak bezi va bachadon bo'yni saratoni skriningi doirasida yaratilgan, lekin hech bir dasturga biriktirib bo'lmaydigan resursga yozadi: ICD-10 kodi hech bir dastur ro'yxatiga kirmaydigan yoki ikkalasiga ham kiradigan Condition, hamda RSNPMCOiR yoki RSNPMCZMiR filialiga yo'llanma. Bunday resurs dastur turining faqat bitta identifikatoriga ega bo'ladi.
-
 #### Muhim o'zgarishlar
 
 [Mehnatga layoqatsizlik varaqasi](sick-leave.html) modeli endi DHP mehnatga layoqatsizlik varaqalari xizmatining API v3 ga mos keladi, [mehnatga layoqatsizlik varaqasi](sick-leave.html) sahifasi esa API ning har bir maydoni qayerda saqlanishini ko'rsatadi. Yuboruvchilar quyidagilarni hisobga olishi kerak:
@@ -23,6 +17,42 @@ CarePlan ga har bir davr uchun bittadan [mehnatga layoqatsizlik davri](Structure
 
 [Sick Leave Observation](StructureDefinition-sick-leave-observation.html) `Observation.code` da faqat tizim va kodni belgilaydi va endi aniq `On sick leave from work` display ni talab qilmaydi. Mehnatga layoqatsizlik varaqasining to'rtta profili sahifalarida endi yuboriladigan JSON eng kichik valid nusxadan to'liq nusxagacha bosqichma-bosqich ko'rsatilgan. [Mehnatga layoqatsizlik varaqasi](sick-leave.html) sahifasiga ma'lumotlar oqimi, hayotiy sikl va vaqt shkalasi diagrammalari, rangli holat belgilari, API javobi va FHIR ning yonma-yon mosligi, diff bilan uchta versiyadagi bitta varaqa, integrator nazorat ro'yxati va mas'ul jamoa qo'shildi. Varaqa profillari, kengaytmalari va terminologiyasi `contact` da **DHP SickLeave** ishchi guruhini ko'rsatadi.
 
+### Versiya 0.11.1
+
+#### Qo'shildi
+
+Skrining sahifasidagi [Skrining rejalari va takliflari](cervical-breast-cancer-screening.html#screening-plans) bo'limi skrining dasturi bemorni qanday taklif qilishi va uning rejasini yangi profillarsiz, mavjud UZ Core profillarida qanday yuritishini tavsiflaydi. UZ Core ActivityDefinition taklif shabloni bo'ladi (`kind` = `ServiceRequest`, `intent` = `plan`), UZ Core PlanDefinition uni versiyasi bilan biriktiradi, bemorning rejasi esa `intent` = `plan`, skriningga taklif toifasi va bitta dastur identifikatoriga ega UZ Core ServiceRequest dir. Reja holatini MIS boshqaradi: DMED so'rovnoma saqlangach o'z rejasini yakunlaydi, OPV esa rejani skrining bosqichlari davomida faol saqlaydi. DHP natijalarga qarab rejani yakunlangan deb hisoblamaydi.
+
+#### O'zgartirildi
+
+Qo'llanma [UZ Core 0.11.1](https://dhp.uz/fhir/core/changelog.html) asosida yig'iladi, unda ActivityDefinition `kind` ServiceRequest ga ruxsat beradi.
+
+[Screening Pathology Service Request](StructureDefinition-screening-pathology-service-request.html) da `basedOn` 1..1 o'rniga 1..*, [Screening Immunohistochemistry Observation](StructureDefinition-screening-immunohistochemistry-observation.html) da esa 0..1 o'rniga 0..* ga ruxsat beradi, shunda ular ham klinik yo'llanmaga, ham skrining rejasiga havola qila oladi. Mavjud resurslar yaroqliligicha qoladi.
+
+[ScreeningComposition](StructureDefinition-screening-composition.html) iste'moldan chiqarildi (retired). Yangi skrining jarayonlari undan foydalanmaydi, lekin kanonik URL, tuzilma va misollar saqlanadi, shuning uchun OPV hali yuborayotgan hujjatlar tekshiruvdan o'tishda davom etadi.
+
+#### Buzuvchi o'zgarishlar
+
+DMED ning [ko'krak bezi](Questionnaire-BreastCancerScreeningQuestionnaire.html) va [bachadon bo'yni](Questionnaire-CervicalCancerScreeningQuestionnaire.html) saratoni skrining so'rovnomalari `268547008` va `171149006` o'rniga `mserv-0007-00007` va `mserv-0007-00009` dastur identifikatorlariga ega; `268547008` va `171149006` endi faqat OPV skrining dasturlarini bildiradi. Ularning klinik kodlari va ball hisoblash o'zgarmagan.
+
+#### Hujjatlashtirish
+
+[Bachadon bo'yni va ko'krak bezi saratoni skriningi](cervical-breast-cancer-screening.html) sahifasida dastur identifikatori qisqa ro'yxat bilan tushuntirilgan: u qayerda ko'rsatiladi va qanday istisnolar bor, skrining rejasining yozuv bilan bog'lanishi esa alohida diagrammada ko'rsatilgan. Asosiy skrining diagrammasida `basedOn` kardinalliklari tuzatilgan.
+
+### Versiya 0.11.0
+
+#### O'zgartirildi
+
+Qo'llanma [UZ Core 0.11.0](https://dhp.uz/fhir/core/changelog.html) asosida yig'iladi. Uning mos kelmaydigan o'zgarishlaridan bu qo'llanmaga faqat skrining kodlarining olib tashlanishi taalluqli, quyidagi skrining so'rovnomalari esa ulardan SNOMED CT ga o'tib bo'lgan.
+
+Skrining so'rovnomalari endi `Questionnaire.code` ni SNOMED CT da olib yuradi - dastur turi identifikatoridagi konseptning o'zi: [YuIK testoldi ehtimoli](Questionnaire-IhdPretestQuestionnaire.html), [fertillik](Questionnaire-FertilityQuestionnaire.html), [gelmintozlar](Questionnaire-HelminthScreeningQuestionnaire.html), [yurak-qon tomir xavfi](Questionnaire-CVDRiskScreeningQuestionnaire.html), [qandli diabet](Questionnaire-DiabetesScreeningQuestionnaire.html), [ko'krak bezi saratoni](Questionnaire-BreastCancerScreeningQuestionnaire.html), [onkogematologiya](Questionnaire-OncohematologyScreeningQuestionnaire.html) va [bachadon bo'yni saratoni](Questionnaire-CervicalCancerScreeningQuestionnaire.html). Ular avval UZ Core `screening-code-cs` kodini olib yurar edi, UZ Core 0.11.0 uni SNOMED CT foydasiga olib tashlaydi. [Serebrovaskulyar](Questionnaire-CerebrovascularScreeningQuestionnaire.html) so'rovnoma `screening-code-cs#mserv-0007-00003` ni saqlab qoladi, chunki unga mos SNOMED CT konsepti yo'q.
+
+[Skrining dasturi turi](NamingSystem-screening-program-type-identifier-system.html) identifikatori uchun SNOMED CT kodlari va `mserv-0007-00003` dan tashqari endi uchinchi qiymat ham tavsiflangan - `breast-cervical-unspecified`. Uni OPV (ВПЧ) skrining tizimi ko'krak bezi va bachadon bo'yni saratoni skriningi doirasida yaratilgan, lekin hech bir dasturga biriktirib bo'lmaydigan resursga yozadi: ICD-10 kodi hech bir dastur ro'yxatiga kirmaydigan yoki ikkalasiga ham kiradigan Condition, hamda RSNPMCOiR yoki RSNPMCZMiR filialiga yo'llanma. Bunday resurs dastur turining faqat bitta identifikatoriga ega bo'ladi.
+
+#### Hujjatlar
+
+[Onkologiya](cancer.html) va [gepatit](hepatitis.html) sahifalarida resurslar o'zaro qanday bog'lanishini ko'rsatuvchi diagramma paydo bo'ldi. Boshqa integratsiya sahifalaridagi diagrammalar endi integratsiyaning barcha profillarini o'z ichiga oladi (skriningning yakuniy hujjati ScreeningComposition bundan mustasno), noto'g'ri kardinalliklar tuzatildi. Barcha diagrammalar klinik grafni ko'rsatadi, tashkilotlar, tibbiyot xodimlari va boshqa ishtirokchilarga havolalarsiz.
+
 ### Versiya 0.10.0
 
 #### Qo'shildi
@@ -38,8 +68,6 @@ Gepatit registrida ham model bor: [Hepatitis Patient](StructureDefinition-hepati
 [ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html) DMED da mavjud 6 853 kodni sanab o'tadi: JSST hozir nashr etadigan 9 428 o'zak koddan 6 176 tasi va JSST keyinchalik olib tashlagan 677 kod. Olib tashlanganlari [kod tizimida](https://dhp.uz/fhir/core/CodeSystem-who-ichi.html) `inactive` deb belgilangan va bu yerda qabul qilinadi - shunda DMED da allaqachon mavjud yozuvlar validatsiyadan o'tadi, ammo kelgusida ulardan foydalanmaslik kerak. Platforma o'zi kodlaydigan protsedura UZ Core dagi [ICHI Codes](https://dhp.uz/fhir/core/ValueSet-ichi-vs.html) dan olinadi.
 
 [YuIK testoldi ehtimoli bo'yicha xavf kategoriyalari](CodeSystem-ihd-risk-category-cs.html) endi shu yerda e'lon qilinadi. [YuIK testoldi ehtimoli so'rovnomasi](Questionnaire-IhdPretestQuestionnaire.html) xavf kategoriyasi savoliga javoblarda ulardan allaqachon foydalanardi, biroq UZ Core ning hech bir relizida mavjud bo'lmagan UZ Core kanonik URL manzili ostida.
-
-[Onkologiya](cancer.html) va [gepatit](hepatitis.html) sahifalarida resurslar o'zaro qanday bog'lanishini ko'rsatuvchi diagramma paydo bo'ldi. Boshqa integratsiya sahifalaridagi diagrammalar endi integratsiyaning barcha profillarini o'z ichiga oladi (skriningning yakuniy hujjati ScreeningComposition bundan mustasno), noto'g'ri kardinalliklar tuzatildi. Barcha diagrammalar klinik grafni ko'rsatadi, tashkilotlar, tibbiyot xodimlari va boshqa ishtirokchilarga havolalarsiz.
 
 #### O'zgartirildi
 
