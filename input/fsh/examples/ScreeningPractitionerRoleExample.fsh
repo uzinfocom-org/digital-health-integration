@@ -20,7 +20,7 @@ Description: "Obstetrician-gynecologist role of Lyuba Dadaeva at the Xonobod Cit
 * active = true
 * practitioner = Reference(Practitioner/lyuba-dadaeva)
 * organization = Reference(Organization/xonobod-medical-association)
-* code = screening-roles-cs#his_centre_obstetrics_gynecology_obstetrician_gynecologist
+* code = screening-roles-cs#his_centre_obgyn_obstetrician_gynecologist
 
 Instance: practitioner-role-radiologist
 InstanceOf: UZCorePractitionerRole

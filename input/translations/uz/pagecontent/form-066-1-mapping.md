@@ -27,7 +27,7 @@ To'liq namunaviy nusxa uchun [066-1-shakl psixiatrik/narkologik chiqarish misoli
 
 ### Maydonlarni moslashtirish
 
-# UZ-066-1 Psixiatrik/narkologik statsionardan chiqqan bemorning statistik kartasi - FHIR bilan moslashtirish
+### UZ-066-1 Psixiatrik/narkologik statsionardan chiqqan bemorning statistik kartasi - FHIR bilan moslashtirish
 
 ---
 

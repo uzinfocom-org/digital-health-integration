@@ -39,3 +39,15 @@ RuleSet: SupplementCodeSystem(id, supplements, version)
 * ^version = "{version}"
 * ^language = #en
 * ^experimental = false
+
+Invariant: smeta-1
+Description: "meta.source identifies the DMED or HPV screening system"
+Severity: #error
+Expression: "meta.source.replaceMatches('#.*$', '') in ('https://dhp.uz/fhir/source/screening' | 'https://dhp.uz/fhir/source/dmed')"
+
+RuleSet: ScreeningMetaSource
+* meta 1..1 MS
+* meta.source 1..1 MS
+* meta.source ^short = "https://dhp.uz/fhir/source/screening | https://dhp.uz/fhir/source/dmed"
+* meta.source ^comment = "Identifies which system created this resource: the HPV (ВПЧ) screening system or DMED. Do not infer source system from the presence of an identifier from screening-identifier-system -- that system's usage does not indicate which system produced a resource; DMED currently not writing to it is an implementation detail, not a guarantee."
+* obeys smeta-1

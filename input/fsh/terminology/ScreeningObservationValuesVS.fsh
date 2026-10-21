@@ -8,7 +8,7 @@ Description: "Combined value set of screening result codes for Observation.value
 // Объединяем все справочники результатов
 * include codes from system screening-cervical-cytology-cs
 * include codes from system screening-hpv-cs
-* include codes from system screening-colposcopy-cs
+* include codes from valueset ScreeningColposcopyVS
 * include codes from system screening-transformation-zone-cs
 * include codes from system screening-birads-cs
 * include codes from system screening-breast-form-cs

@@ -27,7 +27,7 @@ To'liq namunaviy nusxa uchun [066-shakl statsionardan chiqarish misoli](Bundle-e
 
 ### Maydonlarni moslashtirish
 
-# UZ-066 Statsionardan chiqqan bemorning statistik kartasi - FHIR bilan moslashtirish
+### UZ-066 Statsionardan chiqqan bemorning statistik kartasi - FHIR bilan moslashtirish
 
 ---
 
@@ -128,12 +128,14 @@ O'lim sabablari xuddi shu tarzda (`Condition.category`, [Diagnosis Role](CodeSys
 
 ### Jarrohlik amaliyotlari
 
+Operatsiya kodi - `Procedure.code` ichida `http://id.who.int/icd/release/11/ichi` tizimi bilan uzatiladigan ICHI o'zak kodi (Target.Action.Means). Uni [ICHI Codes Accepted by DMED](https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs) dan tanlang - DMED shu kodlarni qabul qiladi. Bu kodlarning ba'zilari ICHI da nofaol va faqat DMED da mavjud yozuvlar validatsiyadan o'tishi uchun qoldirilgan - yangi operatsiyani faol kod bilan kodlang. 066-shakldan tashqari qayd etilgan protsedura [ICHI Codes](https://terminology.dhp.uz/fhir/core/ValueSet/ichi-vs) dan kodlanadi.
+
 | UZ | RU | FHIR yo'li | Kod | Misol |
 |----|----|------------|------|---------|
 | Sana va vaqti | Дата и время операции | [Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html).occurrenceDateTime | - | 2026-01-08T11:30:00+05:00 |
-| Kod (ICHI) | Код операции | Procedure.code | SNOMED CT / ICHI | 123.AB.45 |
+| Kod (ICHI) | Код операции | Procedure.code | [ICHI Codes Accepted by DMED](https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs) | JBB.AE.AD |
 | Asosiy | Основная операция | Procedure.category | Local | Main |
-| Nomi | Наименование операции | Procedure.code.text | - | Surgical procedure |
+| Nomi | Наименование операции | Procedure.code.text | - | Bronchoscopy |
 | Shifokor | Врач | Procedure.performer.actor | [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html) | Rasulov B.B. |
 
 ---

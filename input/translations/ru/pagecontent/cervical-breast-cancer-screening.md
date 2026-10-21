@@ -14,6 +14,90 @@
 
 Кодируемые значения используют SNOMED CT или LOINC везде, где существует эквивалентное понятие. Локальные коды остаются только там, где стандартного понятия нет; они публикуются в CodeSystem `screening-*-cs` с обозначениями на узбекском, русском и английском языках.
 
+<div>{% include screening-model-ru.svg %}</div><br clear="all"/>
+
+### Идентификаторы программы и источника
+
+**Тип программы скрининга.** Помимо идентификатора записи, ресурс скрининга содержит второй `identifier`, который указывает, к какой программе скрининга он относится. Его система - `https://dhp.uz/fhir/core/sid/prg/uz/program`, значение - код программы из таблицы в следующем разделе.
+
+- Указывается в Observation, DiagnosticReport, ServiceRequest, Condition, Consent и Specimen, а также в Questionnaire и QuestionnaireResponse, если опросник целиком относится к одной программе.
+- Не указывается в Patient, Practitioner и PractitionerRole: они общие для всех программ.
+- Опросник ВПЧ [Осмотр женщины](Questionnaire-screening-woman-exam.html) и ответы на него относятся к обеим программам ВПЧ, поэтому содержат оба кода.
+- Ресурс ВПЧ, который нельзя отнести ни к одной из программ, содержит один идентификатор со значением `breast-cervical-unspecified`. Это Condition, чей код МКБ-10 не входит ни в один из списков программ или входит в оба, и направление в филиал РСНПМЦОиР или РСНПМЦЗМиР. `breast-cervical-unspecified` не обозначает программу DMED.
+
+**Система-источник.** `meta.source` указывает, какая система создала ресурс: `https://dhp.uz/fhir/source/screening` (данная информационная система скрининга рака шейки матки и молочной железы) либо `https://dhp.uz/fhir/source/dmed` (ДМЕД). Обязательное поле, проверяется инвариантом в профилях [ScreeningObservation](StructureDefinition-screening-observation.html), [ScreeningServiceRequest](StructureDefinition-screening-service-request.html), [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [ScreeningDocumentReference](StructureDefinition-screening-document-reference.html). Не пытайтесь определить систему-источник по наличию идентификатора из системы `https://dhp.uz/fhir/core/sid/doc/uz/screening` - эта система идентификаторов не указывает, какая система создала ресурс.
+
+Правило источника относится к клиническим результатам и направлениям; новые приглашения используют описанный [контракт плана](#screening-plans) и не содержат `meta.source`.
+
+### Программы DMED и ВПЧ
+
+Точное значение идентификатора программы выбирается из [Screening Program Types](https://dhp.uz/fhir/core/en/ValueSet-screening-program-type-vs.html). Оно передаётся дополнительно к идентификатору записи. Программы DMED и ВПЧ по РМЖ/РШМ различаются; совпадение клинического кода SNOMED не делает их взаимозаменяемыми.
+
+| Программа | `identifier.value` | Система, реализующая программу | Опросник |
+| :--- | :--- | :--- | :--- |
+| Программа опросника РМЖ в DMED | `mserv-0007-00007` | DMED | [Опросник РМЖ](Questionnaire-BreastCancerScreeningQuestionnaire.html) |
+| Программа скрининга РМЖ в ВПЧ | `268547008` | Система ВПЧ | [screening-breast-risk](Questionnaire-screening-breast-risk.html) и последующие применимые этапы |
+| Программа опросника РШМ в DMED | `mserv-0007-00009` | DMED | [Опросник РШМ](Questionnaire-CervicalCancerScreeningQuestionnaire.html) |
+| Программа скрининга РШМ в ВПЧ | `171149006` | Система ВПЧ | [screening-cervical-risk](Questionnaire-screening-cervical-risk.html) и последующие применимые этапы |
+
+<a id="screening-plans"></a>
+### Планы скрининга и приглашения
+
+Для каждого пациента и программы МИС связывает клинические ресурсы с плановым ServiceRequest. Национальное приглашение — план, созданный DHP; если открытого плана нет, МИС создаёт собственный. Для этих ресурсов используются существующие профили Core:
+
+| Ресурс | Назначение | Профиль и пример |
+| :--- | :--- | :--- |
+| PlanDefinition | Определение национальной программы; `action.definitionCanonical` ссылается на шаблон приглашения | [UZ Core PlanDefinition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-plan-definition.html); [пример](PlanDefinition-example-hpv-cervical-plan.html) |
+| ActivityDefinition | Шаблон приглашения: `kind = ServiceRequest`, `intent = plan`, `profile = https://dhp.uz/fhir/core/StructureDefinition/uz-core-servicerequest` | [UZ Core ActivityDefinition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-activitydefinition.html); [пример](ActivityDefinition-example-hpv-cervical-invitation-activity.html) |
+| ServiceRequest | Приглашение пациента или самостоятельный план МИС по одной программе | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html); [национальное приглашение](ServiceRequest-ServiceRequest-screening-invitation-cervical.html), [план МИС](ServiceRequest-example-hpv-breast-mis-plan.html) |
+
+<div>{% include screening-plan-model-ru.svg %}</div><br clear="all"/>
+
+#### Заполнение плана пациента
+
+| Поле | Что передавать |
+| :--- | :--- |
+| `intent` | `plan` |
+| `category` | SNOMED CT `310422005` — приглашение на профилактику/скрининг |
+| `identifier` | Один идентификатор программы: system `https://dhp.uz/fhir/core/sid/prg/uz/program`, value — точный код программы |
+| `subject` | Ссылка на пациента |
+| `authoredOn` | Дата и время создания плана |
+| `status` | `draft` для национального приглашения; `active`, когда МИС принимает его или создаёт собственный план |
+| `instantiatesCanonical` | Национальное приглашение: точная пара <code>PlanDefinition.url&#124;version</code>; самостоятельный план МИС: не передавать |
+| `performer` | Назначенный исполнитель, если он есть; иначе не передавать |
+| `code` | Необязательный клинический код в `code.concept`; программу определять по `identifier` |
+| `meta.source`, `occurrencePeriod` | В плане не передавать; клинические ресурсы сохраняют метаданные источника |
+
+#### Поиск, активация и создание плана
+
+Перед сохранением данных скрининга найти открытый план пациента по точной программе:
+
+```
+GET [base]/ServiceRequest?subject=Patient/{id}&intent=plan&status=draft,active&category=http://snomed.info/sct|310422005&identifier=https://dhp.uz/fhir/core/sid/prg/uz/program|{programCode}&_sort=-_lastUpdated
+```
+
+Значения параметров в запросе URL-кодируются. Для национального приглашения дополнительно сравнить `instantiatesCanonical` с точным каноническим URL и версией действующей программы. Приглашение на прежнее определение не переиспользуется для нового.
+
+1. Найден один подходящий план: переиспользовать; при принятии приглашения изменить `draft` на `active`, сохранив остальные поля.
+2. Подходящего открытого плана нет: создать собственный план МИС со статусом `active`, без `instantiatesCanonical`.
+3. Найдено несколько подходящих планов: устранить дубли до привязки результатов; сортировка не гарантирует уникальность.
+
+Для защиты от дублей используется условное создание (`If-None-Exist`) с полной идентичностью плана; изменение существующего плана защищается версией (`If-Match`).
+
+#### Связи клинических ресурсов и изменение статуса
+
+| Клинический ресурс | Ссылка на план |
+| :--- | :--- |
+| QuestionnaireResponse, Observation, DiagnosticReport, Procedure, клинический ServiceRequest | `basedOn[]` |
+| Specimen | `request[]` |
+| Condition | Стандартное расширение [event-basedOn](https://hl7.org/fhir/extensions/StructureDefinition-event-basedOn.html), `valueReference` |
+
+Ссылка на непосредственное клиническое направление сохраняется вместе со ссылкой на план. Патоморфологический ServiceRequest допускает `basedOn` 1..*, ИГХ и другие Observation скрининга — 0..*. Общий ресурс может ссылаться на оба плана ВПЧ, если относится к обеим программам.
+
+ВПЧ сохраняет план `active` при повторных обследованиях. DMED переводит связанный план в `completed` после сохранения завершённого QuestionnaireResponse, независимо от того, создал его DHP или DMED. Для следующего нового прохождения DMED повторяет поиск открытого плана и создаёт собственный, если подходящего нет; прежний completed-план остаётся в истории. Примеры: [завершённый план DMED](ServiceRequest-example-dmed-breast-plan-completed.html) и [связанный ответ](QuestionnaireResponse-example-dmed-breast-response-with-plan.html).
+
+Статус плана меняет МИС. DHP не вычисляет завершение плана по полученным результатам.
+
 ### Назначение теста или процедуры (ServiceRequest)
 
 Установите `ServiceRequest.code` в назначаемый тест или процедуру.
@@ -31,16 +115,17 @@
 
 ### Выпуск отчёта (DiagnosticReport)
 
-Установите `DiagnosticReport.code` в процедуру (те же коды, что и в направлении). Отчёт о маммографии может также содержать общее заключение в `conclusionCode`.
+Установите `DiagnosticReport.code` в процедуру (те же коды, что и в направлении). Отчёт о маммографии может также содержать общее заключение в `conclusionCode`. Отчёт по патоморфологии переносит историю специального лечения через `supportingInfo`, а не через направление.
 
 Профиль: [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html)
 
-Примеры: [DiagnosticReport-cytology](DiagnosticReport-DiagnosticReport-cytology.html), [DiagnosticReport-colposcopy](DiagnosticReport-DiagnosticReport-colposcopy.html), [DiagnosticReport-mammography](DiagnosticReport-DiagnosticReport-mammography.html)
+Примеры: [DiagnosticReport-cytology](DiagnosticReport-DiagnosticReport-cytology.html), [DiagnosticReport-colposcopy](DiagnosticReport-DiagnosticReport-colposcopy.html), [DiagnosticReport-mammography](DiagnosticReport-DiagnosticReport-mammography.html), [DiagnosticReport-breast-pathology](DiagnosticReport-DiagnosticReport-breast-pathology.html)
 
 | Записываемая информация | Справочник | Пример кода |
 | :--- | :--- | :--- |
 | Тип отчёта | [ScreeningLaboratoryVS](ValueSet-screening-laboratory-vs.html) / [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html) | `LOINC#18500-9` (цитология)<br>`SNOMED CT#392003006` (кольпоскопия)<br>`SNOMED CT#71651007` (маммография) |
 | Общее заключение BI-RADS (маммография) | [ScreeningBiradsVS](ValueSet-screening-birads-vs.html) | `screening-birads-cs#src-birads-2` (BI-RADS 2) |
+| Дополнительная клиническая информация (патоморфология) | `supportingInfo.type` из `http://terminology.hl7.org/CodeSystem/v2-0936` | `v2-0936#SCI` (Supporting Clinical Information) → `Observation` по профилю `ScreeningSpecialTreatmentObservation` |
 
 ### Результат цитологии
 
@@ -79,8 +164,20 @@
 | Записываемая информация | Справочник | Пример кода | Где хранится |
 | :--- | :--- | :--- | :--- |
 | Код процедуры | [ScreeningDiagnosticProcedureVS](ValueSet-screening-diagnostic-procedure-vs.html) | `SNOMED CT#392003006` (кольпоскопия) | `Observation.code` |
-| Заключение кольпоскопии | [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) | `screening-colposcopy-cs#scr-colpo-2` (LSIL) | `Observation.value` |
+| Заключение кольпоскопии | [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) | `SNOMED CT#416030007` (LSIL) | `Observation.value` |
 | Тип зоны трансформации | [ScreeningTransformationZoneVS](ValueSet-screening-transformation-zone-vs.html) | `screening-transformation-zone-cs#scr-tz-2` (Type 2) | `component` (код `SNOMED CT#1285652007`) |
+
+Передавайте следующие коды из [ScreeningColposcopyVS](ValueSet-screening-colposcopy-vs.html) в `Observation.valueCodeableConcept`. В `coding.system` указывайте `http://snomed.info/sct` для строк SNOMED CT, а для локальных строк — `https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-colposcopy-cs`.
+
+| Значение источника Screening | Код | Система кодирования | Значение |
+| :--- | :--- | :--- | :--- |
+| `NORM_NILM` | `373887005` | SNOMED CT | Отрицательно в отношении интраэпителиального поражения или злокачественности |
+| `LSIL` | `416030007` | SNOMED CT | Цервиковагинальная цитология: плоскоклеточное интраэпителиальное поражение низкой степени |
+| `HSIL` | `22725004` | SNOMED CT | Плоскоклеточное интраэпителиальное поражение высокой степени |
+| `ATYPICAL_CHANGE` | `scrn-0091-00004` | Локальная | Атипичные изменения |
+| `ASC_H` | `373878001` | SNOMED CT | Атипичные клетки плоского эпителия, нельзя исключить HSIL |
+| `CIN1` | `285836003` | SNOMED CT | Цервикальная интраэпителиальная неоплазия 1 степени |
+| `CIN2_PLUS` | `scrn-0091-00007` | Локальная | Цервикальная интраэпителиальная неоплазия 2 степени и выше (CIN 2+) |
 
 ### Описание маммографии
 
@@ -155,7 +252,23 @@
 | Тип цитологического материала молочной железы | [ScreeningBreastCytologyMaterialTypeVS](ValueSet-screening-breast-cytology-material-type-vs.html) | `screening-histology-order-parameter-cs#scrn-0069-00004` |
 | Тип материала шейки матки | [ScreeningCervicalMaterialTypeVS](ValueSet-screening-cervical-material-type-vs.html) | `screening-histology-order-parameter-cs#scrn-0069-00005` |
 
-Четыре инварианта делают второй параметр зависимым от класса материала: биопсия (`SNOMED CT#258415003`) требует указания подтипа биопсии, хирургический материал (`SNOMED CT#373826004`) - типа операции, а цитологический материал (`SNOMED CT#764445001`) - типа цитологического материала.
+Четыре инварианта делают второй параметр зависимым от класса материала: биопсия требует подтип биопсии, хирургический материал — вид операции, цитологический — вид цитологии, а профиль в целом требует ровно одну основную ветку (класс материала РМЖ либо тип материала РШМ). Виды, дата и другое лечение к этой заявке не относятся — они фиксируются отдельным `Observation`, см. следующий раздел.
+
+### Наблюдение о специальном лечении
+
+История ранее проведённого специального лечения (виды, дата, произвольный текст), относящаяся к патоморфологическому исследованию. Хранится отдельно от заявки и связывается с итоговым отчётом, а не с самим исследованием.
+
+Профиль: [ScreeningSpecialTreatmentObservation](StructureDefinition-screening-special-treatment-observation.html)
+
+Пример: [ScreeningSpecialTreatmentObservationExample](Observation-screening-special-treatment-observation-example.html)
+
+| Параметр | Справочник | Код компонента |
+| :--- | :--- | :--- |
+| Вид специального лечения (повторяемый) | [ScreeningSpecialTreatmentTypeVS](ValueSet-screening-special-treatment-type-vs.html) | `screening-histology-order-parameter-cs#scrn-0069-00006` |
+| Дата или период лечения | `Period` | `screening-histology-order-parameter-cs#scrn-0069-00007` |
+| Другое лечение | `string` | `screening-histology-order-parameter-cs#scrn-0069-00008` |
+
+Инвариант профиля требует текст другого лечения тогда и только тогда, когда среди видов специального лечения выбрано «Другое». Одна дата лечения представляется как `Period` с одинаковыми значениями `start` и `end`; если дата лечения неизвестна, опциональный компонент не передаётся. Этот исторический период лечения отличается от `ServiceRequest.occurrencePeriod` патоморфологической заявки, который обозначает плановое время выполнения запрошенного исследования. Ресурс связывается с итоговым `DiagnosticReport` через `DiagnosticReport.supportingInfo` (тип `http://terminology.hl7.org/CodeSystem/v2-0936#SCI`), а не с `ServiceRequest`.
 
 ### Образец (Specimen)
 
@@ -267,27 +380,9 @@
 | [Риск рака шейки матки](Questionnaire-screening-cervical-risk.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk` | [ScreeningCervicalRiskResponseExample](QuestionnaireResponse-screening-cervical-risk-response-example.html) |
 | [Медицинский осмотр женщины](Questionnaire-screening-woman-exam.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam` | [ScreeningWomanExamResponse128](QuestionnaireResponse-screening-woman-exam-response-128.html) |
 
-### Итоговый документ скрининга
+### Исторические сводные документы скрининга
 
-Итоговый документ скрининга собирает всё, что зафиксировано в рамках одного цикла скрининга, в один скачиваемый документ. Он может быть сформирован на любом этапе цикла: то, что ещё не внесено, просто не попадает в документ, поэтому сформированный на раннем этапе документ содержит только ответы на опросники.
-
-Отдельные этапы не получают собственный Composition - каждый результат остаётся Observation, а этот документ ссылается на них.
-
-Профиль: [ScreeningComposition](StructureDefinition-screening-composition.html)
-
-Примеры: [ScreeningCompositionExample](Composition-screening-composition-example.html), [ScreeningCompositionDocumentExample](Bundle-screening-composition-document-example.html)
-
-| Записываемая информация | Справочник | Пример кода | Где хранится |
-| :--- | :--- | :--- | :--- |
-| Тип документа | - | `LOINC#34133-9` (Summary of episode note) | `Composition.type` |
-| Опросники | - | `LOINC#74465-6` | `section[questionnaire].entry` (QuestionnaireResponse) |
-| Результаты всех выполненных этапов | - | `LOINC#30954-2` | `section[results].entry` (Observation) |
-| Окончательный диагноз по МКБ-10 | - | `LOINC#29308-4` | `section[diagnosis].entry` (Condition) |
-| Автор | - | - | `Composition.author` (PractitionerRole) |
-| Ответственная организация | - | - | `Composition.custodian` |
-| Документируемые направления, процедуры и визиты | - | - | `Composition.event.detail` |
-
-Чтобы передать итоговый документ как неизменяемый, поместите его в `Bundle` с `type = document`, где Composition является **первой** записью, а все ресурсы, на которые он ссылается - Patient, Encounter, Condition, Observation, QuestionnaireResponse и прочие - находятся в том же Bundle.
+[ScreeningComposition](StructureDefinition-screening-composition.html) получает статус retired. Канонический URL и прежние примеры сохраняются для проверки истории. ВПЧ может продолжать передавать Composition; retired сохраняет канонический URL и структурные правила и не вводит запрет на payload. Новый процесс не требует Composition; отдельные результаты получают по идентификатору программы или через `basedOn` на [план](#screening-plans).
 
 ### Витальные показатели (рост, вес, ИМТ)
 
@@ -326,6 +421,6 @@
 | Роль | Пример кода |
 | :--- | :--- |
 | Лаборант | `screening-roles-cs#his_laboratory_laborant` |
-| Акушер-гинеколог | `screening-roles-cs#his_centre_obstetrics_gynecology_obstetrician_gynecologist` |
+| Акушер-гинеколог | `screening-roles-cs#his_centre_obgyn_obstetrician_gynecologist` |
 | Радиолог | `screening-roles-cs#his_ris_ragiologist_head` |
 | Патронажная медсестра | `screening-roles-cs#his_poliklinika_patronage_nurse` |

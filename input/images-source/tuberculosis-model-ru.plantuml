@@ -1,0 +1,37 @@
+@startuml tuberculosis-model-ru
+hide circle
+hide empty members
+title Как устроена запись о туберкулёзе
+
+class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{Открыть профиль UZ Core Patient}]]
+class Encounter [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-encounter.html{Открыть профиль UZ Core Encounter}]]
+class DHISEpisodeOfCare [[StructureDefinition-dhis-episode-of-care.html{Открыть профиль DHISEpisodeOfCare}]] #E8F0FE
+class DHISCondition [[StructureDefinition-dhis-condition.html{Открыть профиль DHISCondition}]] #E8F0FE
+class DHISSpecimen [[StructureDefinition-dhis-specimen.html{Открыть профиль DHISSpecimen}]] #E8F0FE
+class DHISObservation [[StructureDefinition-dhis-observation.html{Открыть профиль DHISObservation}]] #E8F0FE
+class DHISObservationMicroscopy [[StructureDefinition-dhis-observation-microscopy.html{Открыть профиль DHISObservationMicroscopy}]] #E8F0FE
+class DHISObservationXray [[StructureDefinition-dhis-observation-xray.html{Открыть профиль DHISObservationXray}]] #E8F0FE
+class DHISObservationHIV [[StructureDefinition-dhis-observation-hiv.html{Открыть профиль DHISObservationHIV}]] #E8F0FE
+
+Patient "1" <-- "0..*" DHISEpisodeOfCare : « patient »
+Patient "1" <-- "0..*" DHISCondition : « subject »
+Patient "0..1" <-- "0..*" Encounter : « subject »
+Patient "0..1" <-- "0..*" DHISSpecimen : « subject »
+DHISCondition "0..*" <-- "0..*" DHISEpisodeOfCare : « diagnosis.condition »
+DHISCondition "0..*" <-- "0..*" Encounter : « diagnosis.condition »
+DHISSpecimen "0..*" <-- "0..*" DHISSpecimen : « parent »
+DHISSpecimen "0..1" <-- "0..*" DHISObservation : « specimen »
+DHISSpecimen "0..1" <-- "0..*" DHISObservationMicroscopy : « specimen »
+
+note "Каждое наблюдение (Observation) также\nссылается на пациента через « subject »" as N1
+N1 .. DHISObservationXray
+N1 .. DHISObservationHIV
+
+' keep the diagram inside the page column: the four results sit on
+' a lower rank, with the two patient-only results under the note
+DHISObservation -[hidden]down- DHISObservationXray
+DHISObservationMicroscopy -[hidden]down- DHISObservationHIV
+
+caption Клинический граф: ссылки на организации, медработников и других участников не показаны, чтобы схема оставалась читаемой.
+
+@enduml

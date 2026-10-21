@@ -29,7 +29,7 @@ Description: "Registry information that healthcare providers should be aware of 
 Instance: example-narcology-flag
 InstanceOf: NarcologyPsychiatryFlag
 Description: "Compulsory treatment flag raised on Salim's narcology registry record."
-Title: "Narcology and Psychiatry Flag Example"
+Title: "Narcology Flag Example"
 Usage: #example
 * status = $flag-status-cs#active "Active"
 * code = narcology-psychiatry-registry-flag-cs#registri0001-00002 "Compulsory treatment"
@@ -37,3 +37,16 @@ Usage: #example
 * period.start = "2026-03-12"
 * encounter = Reference(example-narcology-encounter)
 * author = Reference(example-narcologist-role)
+
+
+Instance: example-psychiatry-flag
+InstanceOf: NarcologyPsychiatryFlag
+Description: "Compulsory inpatient treatment flag raised on the John's psychiatry registry record."
+Title: "Psychiatry Flag Example"
+Usage: #example
+* status = $flag-status-cs#active "Active"
+* code = narcology-psychiatry-episode-of-care-type-group-cs#psycr0001-00001 "Compulsory inpatient treatment"
+* subject = Reference(example-patient-john)
+* period.start = "2026-08-15"
+* encounter = Reference(example-psychiatry-encounter)
+* author = Reference(example-commission-psychiatrist-role)

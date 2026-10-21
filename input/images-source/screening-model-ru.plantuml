@@ -1,0 +1,61 @@
+@startuml screening-model-ru
+hide circle
+hide empty members
+left to right direction
+skinparam packageStyle rectangle
+title Как устроена запись скрининга
+
+package "Патология" {
+  class ScreeningPathologyServiceRequest <<ScreeningServiceRequest>> [[StructureDefinition-screening-pathology-service-request.html{Открыть профиль ScreeningPathologyServiceRequest}]] #E8F0FE
+  class ScreeningBreastBiopsyServiceRequest <<ScreeningServiceRequest>> [[StructureDefinition-screening-breast-biopsy-service-request.html{Открыть профиль ScreeningBreastBiopsyServiceRequest}]] #E8F0FE
+  class ScreeningSpecimen [[StructureDefinition-screening-specimen.html{Открыть профиль ScreeningSpecimen}]] #E8F0FE
+  class ScreeningBreastCytologyObservation <<ScreeningObservation>> [[StructureDefinition-screening-breast-cytology-observation.html{Открыть профиль ScreeningBreastCytologyObservation}]] #E8F0FE
+  class ScreeningBreastHistologyObservation <<ScreeningObservation>> [[StructureDefinition-screening-breast-histology-observation.html{Открыть профиль ScreeningBreastHistologyObservation}]] #E8F0FE
+  class ScreeningImmunohistochemistryObservation <<ScreeningObservation>> [[StructureDefinition-screening-immunohistochemistry-observation.html{Открыть профиль ScreeningImmunohistochemistryObservation}]] #E8F0FE
+}
+class ScreeningPatient [[StructureDefinition-screening-patient.html{Открыть профиль ScreeningPatient}]] #E8F0FE
+class ScreeningPractitioner [[StructureDefinition-screening-practitioner.html{Открыть профиль ScreeningPractitioner}]] #E8F0FE
+class ScreeningDocumentReference [[StructureDefinition-screening-document-reference.html{Открыть профиль ScreeningDocumentReference}]] #E8F0FE
+class ScreeningDiagnosticReport [[StructureDefinition-screening-diagnostic-report.html{Открыть профиль ScreeningDiagnosticReport}]] #E8F0FE
+class ScreeningServiceRequest [[StructureDefinition-screening-service-request.html{Открыть профиль ScreeningServiceRequest}]] #E8F0FE
+class ScreeningBreastBiopsyProcedure [[StructureDefinition-screening-breast-biopsy-procedure.html{Открыть профиль ScreeningBreastBiopsyProcedure}]] #E8F0FE
+class ScreeningObservation [[StructureDefinition-screening-observation.html{Открыть профиль ScreeningObservation}]] #E8F0FE
+class ScreeningMammographyObservation <<ScreeningObservation>> [[StructureDefinition-screening-mammography-observation.html{Открыть профиль ScreeningMammographyObservation}]] #E8F0FE
+class ScreeningBreastUltrasoundObservation <<ScreeningObservation>> [[StructureDefinition-screening-breast-ultrasound-observation.html{Открыть профиль ScreeningBreastUltrasoundObservation}]] #E8F0FE
+class ScreeningCervicalHistologyObservation <<ScreeningObservation>> [[StructureDefinition-screening-cervical-histology-observation.html{Открыть профиль ScreeningCervicalHistologyObservation}]] #E8F0FE
+class ScreeningSpecialTreatmentObservation <<ScreeningObservation>> [[StructureDefinition-screening-special-treatment-observation.html{Открыть профиль ScreeningSpecialTreatmentObservation}]] #E8F0FE
+class VitalSigns [[https://hl7.org/fhir/observation-vitalsigns.html{Открыть профили FHIR vital signs}]]
+class Condition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-condition.html{Открыть профиль UZ Core Condition}]]
+class QuestionnaireResponse [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-questionnaire-response.html{Открыть профиль UZ Core QuestionnaireResponse}]]
+class Questionnaire [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-questionnaire.html{Открыть профиль UZ Core Questionnaire}]]
+
+ScreeningPatient "0..1" <-- "0..*" QuestionnaireResponse : « subject »
+QuestionnaireResponse "0..*" --> "1" Questionnaire : « questionnaire »
+ScreeningPatient "1" <-- "0..*" Condition : « subject »
+ScreeningPatient "0..1" <-- "0..*" ScreeningDocumentReference : « subject »
+ScreeningPatient "1" <-- "0..*" VitalSigns : « subject »
+ScreeningPatient "1" <-- "0..*" ScreeningBreastBiopsyProcedure : « subject »
+ScreeningPatient "0..1" <-- "0..*" ScreeningDiagnosticReport : « subject »
+ScreeningPatient "1" <-- "0..*" ScreeningSpecimen : « subject »
+ScreeningDiagnosticReport "0..*" --> "0..*" ScreeningServiceRequest : « basedOn »
+ScreeningDiagnosticReport "0..*" --> "0..*" ScreeningObservation : « result »
+ScreeningDiagnosticReport "0..*" --> "1" ScreeningSpecialTreatmentObservation : « supportingInfo.reference »
+ScreeningDiagnosticReport "0..*" --> "0..*" ScreeningPathologyServiceRequest : « basedOn »
+ScreeningObservation "0..*" --> "0..*" ScreeningServiceRequest : « basedOn »
+ScreeningSpecimen "0..*" --> "0..*" ScreeningPathologyServiceRequest : « request »
+ScreeningBreastBiopsyServiceRequest "1..*" <-- "0..*" ScreeningPathologyServiceRequest : « basedOn »
+ScreeningPathologyServiceRequest "0..*" <-- "0..*" ScreeningBreastCytologyObservation : « basedOn »
+ScreeningPathologyServiceRequest "0..*" <-- "0..*" ScreeningBreastHistologyObservation : « basedOn »
+ScreeningPathologyServiceRequest "0..*" <-- "0..*" ScreeningImmunohistochemistryObservation : « basedOn »
+ScreeningImmunohistochemistryObservation "0..*" -[norank]-> "1..*" ScreeningBreastHistologyObservation : « derivedFrom »
+ScreeningObservation -[hidden]-> ScreeningMammographyObservation
+ScreeningObservation -[hidden]-> ScreeningBreastUltrasoundObservation
+ScreeningObservation -[hidden]-> ScreeningCervicalHistologyObservation
+ScreeningPatient -[hidden]-> ScreeningPractitioner
+
+note "Каждое наблюдение (Observation) и направление (ServiceRequest)\nтакже ссылается на пациента через « subject »" as N1
+N1 .. ScreeningObservation
+
+caption Клинический граф: ссылки на организации, медработников и других участников не показаны, чтобы схема оставалась читаемой.\nВыведенный из употребления ScreeningComposition не показан.
+
+@enduml

@@ -2,7 +2,7 @@ Instance: screening-colposcopy-to-snomed
 InstanceOf: ConceptMap
 Usage: #definition
 Title: "Colposcopy Results to SNOMED CT"
-Description: "Maps local UZ screening colposcopy result codes to SNOMED CT."
+Description: "Maps local UZ screening colposcopy categories where a SNOMED CT target is available; exact SNOMED CT results are sent directly."
 * url = "https://terminology.dhp.uz/fhir/integrations/ConceptMap/screening-colposcopy-to-snomed"
 * name = "ScreeningColposcopyToSnomed"
 * status = #draft
@@ -14,30 +14,14 @@ Description: "Maps local UZ screening colposcopy result codes to SNOMED CT."
 * group.target = $sct
 * targetScopeCanonical = $sct-vs 
 
-// 1. NILM (Normal)
-* group.element[+].code = #scr-colpo-1
-* group.element[=].display = "NILM (Normal)"
-* group.element[=].target[+].code = #373887005
-* group.element[=].target[=].display = "Negative for intraepithelial lesion or malignancy"
-* group.element[=].target[=].relationship = #equivalent
-
-// 2. LSIL
-* group.element[+].code = #scr-colpo-2
-* group.element[=].display = "LSIL"
-* group.element[=].target[+].code = #416030007
-* group.element[=].target[=].display = "Cervicovaginal cytology: LSIL"
-* group.element[=].target[=].relationship = #equivalent
-
-// 3. HSIL
-* group.element[+].code = #scr-colpo-3
-* group.element[=].display = "HSIL"
-* group.element[=].target[+].code = #22725004
-* group.element[=].target[=].display = "High-grade squamous intraepithelial lesion"
-* group.element[=].target[=].relationship = #equivalent
-
-// 4. Atypical
-* group.element[+].code = #scr-colpo-4
-* group.element[=].display = "Atypical"
+// Atypical change is narrower than the general abnormal-colposcopy finding.
+* group.element[+].code = #scrn-0091-00004
+* group.element[=].display = "Atypical change"
 * group.element[=].target[+].code = #700450008
 * group.element[=].target[=].display = "Colposcopy abnormal"
 * group.element[=].target[=].relationship = #source-is-narrower-than-target
+
+// The combined CIN 2+ category has no exact SNOMED CT target asserted here.
+* group.element[+].code = #scrn-0091-00007
+* group.element[=].display = "Cervical intraepithelial neoplasia grade 2 or worse (CIN 2+)"
+* group.element[=].noMap = true

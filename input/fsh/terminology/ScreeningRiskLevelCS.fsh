@@ -21,3 +21,9 @@ Description: "Calculated screening risk levels returned by the Screening system.
   * ^designation[=].value = "Высокий риск"
   * ^designation[+].language = #en
   * ^designation[=].value = "High risk"
+
+* #scrn-0081-00004 "Juda yuqori xavf"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Очень высокий риск"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Very high risk"

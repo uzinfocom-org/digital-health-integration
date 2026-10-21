@@ -1,0 +1,30 @@
+@startuml narcology-model-ru
+hide circle
+hide empty members
+title Как устроена запись наркологического регистра
+
+class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{Открыть профиль UZ Core Patient}]]
+class Encounter [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-encounter.html{Открыть профиль UZ Core Encounter}]]
+class Condition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-condition.html{Открыть профиль UZ Core Condition}]]
+class SocioeconomicObservation [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-socioeconomic-observation.html{Открыть профиль UZ Core Socioeconomic Observation}]]
+class NarcologyEpisodeOfCare [[StructureDefinition-narcology-episode-of-care.html{Открыть профиль NarcologyEpisodeOfCare}]] #E8F0FE
+class NarcologyObservation [[StructureDefinition-narcology-observation.html{Открыть профиль NarcologyObservation}]] #E8F0FE
+class NarcologyPsychiatryFlag [[StructureDefinition-narcology-psychiatry-flag.html{Открыть профиль NarcologyPsychiatryFlag}]] #E8F0FE
+
+Patient "1" <-- "0..*" NarcologyEpisodeOfCare : « patient »
+Patient "1" <-- "0..*" SocioeconomicObservation : « subject »
+NarcologyEpisodeOfCare "0..*" --> "0..*" Condition : « diagnosis.condition »
+NarcologyEpisodeOfCare "0..*" <-- "0..*" Encounter : « episodeOfCare »
+Patient "0..1" <-- "0..*" Encounter : « subject »
+Patient "1" <-- "0..*" Condition : « subject »
+Condition "0..*" <-right- "0..*" Encounter : «  diagnosis.condition  »
+' norank gives this link its own SVG id; two ranked links between the same classes share one
+Encounter "0..1" <-[norank]- "0..*" Condition : «   encounter   »
+Encounter "0..1" <--- "0..*" NarcologyPsychiatryFlag : « encounter »
+Encounter "0..1" <-- "0..*" NarcologyObservation : « encounter »
+Patient "1" <-- "0..*" NarcologyPsychiatryFlag : « subject »
+Patient "0..1" <-- "0..*" NarcologyObservation : « subject »
+
+caption Клинический граф: ссылки на организации, медработников и других участников не показаны, чтобы схема оставалась читаемой.
+
+@enduml

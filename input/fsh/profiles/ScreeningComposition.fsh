@@ -3,9 +3,11 @@ Parent: Composition
 Id: screening-composition
 Title: "Screening Composition"
 Description: "Downloadable summary of a cervical or breast cancer screening episode. It aggregates the results recorded so far, the final diagnosis and the surrounding clinical context."
-* ^status = #active
+* ^status = #retired
+* ^purpose = "Retained for validation and interpretation of legacy documents, including Composition resources that HPV continues to submit. The canonical and structural constraints remain available. New screening workflows do not require Composition or use it to decide plan completion; individual results are read by program identifier or through explicit plan/order links."
 * ^experimental = true
 * ^publisher = "DHP Integration"
+* insert ScreeningMetaSource
 
 * identifier 1..* MS
 * status MS
@@ -13,8 +15,6 @@ Description: "Downloadable summary of a cervical or breast cancer screening epis
 
 * subject 1..1 MS
 * subject only Reference(ScreeningPatient)
-* encounter 0..1 MS
-* encounter only Reference(ScreeningEncounter)
 * date 1..1 MS
 
 * author 1..* MS
@@ -22,9 +22,9 @@ Description: "Downloadable summary of a cervical or breast cancer screening epis
 * custodian 1..1 MS
 * custodian only Reference(UZCoreOrganization)
 
-// The referrals, procedures and visits this document reports on.
+// The referrals and procedures this document reports on.
 * event 0..* MS
-* event.detail only CodeableReference(ScreeningServiceRequest or UZCoreProcedure or ScreeningEncounter)
+* event.detail only CodeableReference(ScreeningServiceRequest or UZCoreProcedure)
 
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"

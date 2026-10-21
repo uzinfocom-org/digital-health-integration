@@ -1,0 +1,2789 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CancerRegistryDictionaryCS",
+  "id": "cancer-registry-dictionary-cs",
+  "title": "Cancer Registry Dictionary",
+  "description": "Dictionary code system used by the Uzbekistan Cancer Registry.",
+  "url": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+  "concept": [
+    {
+      "code": "29",
+      "display": "Tirik",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Жив"
+        },
+        {
+          "language": "en",
+          "value": "Alive"
+        }
+      ]
+    },
+    {
+      "code": "30",
+      "display": "Vafot etgan",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Умер"
+        },
+        {
+          "language": "en",
+          "value": "Deceased"
+        }
+      ]
+    },
+    {
+      "code": "31",
+      "display": "Ko'chib ketgan",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Выехал"
+        },
+        {
+          "language": "en",
+          "value": "Moved away"
+        }
+      ]
+    },
+    {
+      "code": "32",
+      "display": "Tashxis tasdiqlanmadi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Диагноз не подтвердился"
+        },
+        {
+          "language": "en",
+          "value": "Diagnosis not confirmed"
+        }
+      ]
+    },
+    {
+      "code": "33",
+      "display": "Kuzatuv muddati tugaganligi sababli hisobdan chiqarilgan",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Снят с учета в связи с истечением сроков наблюдения"
+        },
+        {
+          "language": "en",
+          "value": "Removed from the registry due to completion of the follow-up period"
+        }
+      ]
+    },
+    {
+      "code": "357",
+      "display": "Spetsifik o'sma markerlari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Специфические опухолевые маркёры"
+        },
+        {
+          "language": "en",
+          "value": "Specific tumor markers"
+        }
+      ]
+    },
+    {
+      "code": "358",
+      "display": "Sitologik usulda (immunofenotiplash)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Цитологически (Иммунофенотипировние)"
+        },
+        {
+          "language": "en",
+          "value": "Cytology (immunophenotyping)"
+        }
+      ]
+    },
+    {
+      "code": "359",
+      "display": "Gistologiya",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Гистология"
+        },
+        {
+          "language": "en",
+          "value": "Histology"
+        }
+      ]
+    },
+    {
+      "code": "360",
+      "display": "Sitogenetika va/yoki molekulyar diagnostika",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Цитогенетика и/или молекулярная диагностика"
+        },
+        {
+          "language": "en",
+          "value": "Cytogenetics and/or molecular diagnostics"
+        }
+      ]
+    },
+    {
+      "code": "354",
+      "display": "Faqat o'lim haqidagi guvohnoma (DCO)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Только свидетельство о смерти (DCO)"
+        },
+        {
+          "language": "en",
+          "value": "Death certificate only (DCO)"
+        }
+      ]
+    },
+    {
+      "code": "355",
+      "display": "Faqat klinik jihatdan (instrumental tekshiruvlarsiz)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Только клинически (без инстурументального исследования)"
+        },
+        {
+          "language": "en",
+          "value": "Clinical diagnosis only (without instrumental examination)"
+        }
+      ]
+    },
+    {
+      "code": "356",
+      "display": "Instrumental tekshiruv usullari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Инструментальные методы"
+        },
+        {
+          "language": "en",
+          "value": "Instrumental diagnostic methods"
+        }
+      ]
+    },
+    {
+      "code": "505",
+      "display": "RSNPMCOvaR filiali kasallik tarixi (ambulator karta)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "История болезни или выписка из истории болезни (амб. Карта) филиала РСНПМЦОиР"
+        },
+        {
+          "language": "en",
+          "value": "Medical record (outpatient card) of a branch of the Republican Specialized Scientific and Practical Medical Center of Oncology and Radiology"
+        }
+      ]
+    },
+    {
+      "code": "506",
+      "display": "Boshqa tibbiyot muassasasining kasallik tarixidan (ambulator kartasidan) ko'chirma",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Выписка из истории болезни (амб.карты) другого государственного медицинского учреждения"
+        },
+        {
+          "language": "en",
+          "value": "Extract from the medical record (outpatient card) of another medical institution"
+        }
+      ]
+    },
+    {
+      "code": "507",
+      "display": "RSNPMCOvaR filiali xabarnomasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Извещение филиала РСНПМЦОиР"
+        },
+        {
+          "language": "en",
+          "value": "Notification from a branch of the Republican Specialized Scientific and Practical Medical Center of Oncology and Radiology"
+        }
+      ]
+    },
+    {
+      "code": "509",
+      "display": "Boshqa tibbiyot muassasasidan xabarnoma",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Извещение из другого медицинского учреждения"
+        },
+        {
+          "language": "en",
+          "value": "Notification from another medical institution"
+        }
+      ]
+    },
+    {
+      "code": "508",
+      "display": "RMO/GMO xabarnomasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Извещение РМО/ГМО"
+        },
+        {
+          "language": "en",
+          "value": "RMO/GMO notification"
+        }
+      ]
+    },
+    {
+      "code": "898",
+      "display": "Bolalar onkologiyasi, gematologiyasi va immunologiyasi Respublika ilmiy-amaliy tibbiyot markazining kasallik tarixi yoki kasallik tarixidan (ambulator kartadan) ko‘chirma",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "История болезни или выписка из истории болезни (амб.карта) РНПМЦ детской онкологии, гематологии и иммунологии"
+        },
+        {
+          "language": "en",
+          "value": "Medical record or extract from the medical record (outpatient card) of the Republican Scientific and Practical Medical Center of Pediatric Oncology, Hematology and Immunology"
+        }
+      ]
+    },
+    {
+      "code": "985",
+      "display": "Respublika ixtisoslashtirilgan ilmiy-amaliy gematologiya tibbiyot markazi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "РСНПМЦ гематологии"
+        },
+        {
+          "language": "en",
+          "value": "Republican Specialized Scientific and Practical Medical Center of Hematology"
+        }
+      ]
+    },
+    {
+      "code": "510",
+      "display": "O'lim haqidagi guvohnoma",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Свидетельство о смерти"
+        },
+        {
+          "language": "en",
+          "value": "Death certificate"
+        }
+      ]
+    },
+    {
+      "code": "511",
+      "display": "FHDYO organi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "ЗАГС"
+        },
+        {
+          "language": "en",
+          "value": "Civil Registry Office"
+        }
+      ]
+    },
+    {
+      "code": "512",
+      "display": "Patologoanatomik byuro",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Паталого-анатомическое бюро"
+        },
+        {
+          "language": "en",
+          "value": "Pathology bureau"
+        }
+      ]
+    },
+    {
+      "code": "513",
+      "display": "Xususiy tibbiyot muassasasining kasallik tarixidan (ambulator kartasidan) ko'chirma",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Выписка из истории болезни (амб.карты) частного медицинского учреждения"
+        },
+        {
+          "language": "en",
+          "value": "Extract from the medical record (outpatient card) of a private medical institution"
+        }
+      ]
+    },
+    {
+      "code": "336",
+      "display": "Chap tomonda",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Слева"
+        },
+        {
+          "language": "en",
+          "value": "Left"
+        }
+      ]
+    },
+    {
+      "code": "337",
+      "display": "O'ng tomonda",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Справа"
+        },
+        {
+          "language": "en",
+          "value": "Right"
+        }
+      ]
+    },
+    {
+      "code": "338",
+      "display": "Ikkala a’zo",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Оба органа"
+        },
+        {
+          "language": "en",
+          "value": "Both organs"
+        }
+      ]
+    },
+    {
+      "code": "339",
+      "display": "Noma’lum",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Неизвестно"
+        },
+        {
+          "language": "en",
+          "value": "Unknown"
+        }
+      ]
+    },
+    {
+      "code": "346",
+      "display": "Mustaqil ravishda murojaat qilgan",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Обратился самостоятельно"
+        },
+        {
+          "language": "en",
+          "value": "Self-referred"
+        }
+      ]
+    },
+    {
+      "code": "347",
+      "display": "Onkonazorat kabinetida aniqlangan",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Выявлен в кабинете Онконазорат"
+        },
+        {
+          "language": "en",
+          "value": "Detected in the Onconazorat office"
+        }
+      ]
+    },
+    {
+      "code": "348",
+      "display": "Boshqa turdagi profilaktik ko'riklarda aniqlangan",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "При других видах профосмотра"
+        },
+        {
+          "language": "en",
+          "value": "Detected during other types of preventive examinations"
+        }
+      ]
+    },
+    {
+      "code": "349",
+      "display": "Parallel profilaktik ko'rik vaqtida aniqlangan",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "При параллельном профосмотре"
+        },
+        {
+          "language": "en",
+          "value": "Detected during a concurrent preventive examination"
+        }
+      ]
+    },
+    {
+      "code": "350",
+      "display": "Skrining vaqtida aniqlangan",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "При скрининге"
+        },
+        {
+          "language": "en",
+          "value": "Detected during screening"
+        }
+      ]
+    },
+    {
+      "code": "351",
+      "display": "Hayotligida aniqlangan tashxis bilan vafotidan keyin hisobga olingan",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Учтен посмертно с диагнозом, установленом при жизни"
+        },
+        {
+          "language": "en",
+          "value": "Registered posthumously with a diagnosis established during life"
+        }
+      ]
+    },
+    {
+      "code": "352",
+      "display": "Otopsiyasiz vafotidan keyin hisobga olingan",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Учтен посмертно без вскрытия"
+        },
+        {
+          "language": "en",
+          "value": "Registered posthumously without an autopsy"
+        }
+      ]
+    },
+    {
+      "code": "353",
+      "display": "Otopsiyadan keyin vafotidan so'ng hisobga olingan",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Учтен посмертно после вскрытия"
+        },
+        {
+          "language": "en",
+          "value": "Registered posthumously after an autopsy"
+        }
+      ]
+    },
+    {
+      "code": "412",
+      "display": "X",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "X"
+        },
+        {
+          "language": "en",
+          "value": "X"
+        }
+      ]
+    },
+    {
+      "code": "413",
+      "display": "in situ",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "in situ"
+        },
+        {
+          "language": "en",
+          "value": "in situ"
+        }
+      ]
+    },
+    {
+      "code": "414",
+      "display": "0",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "0"
+        },
+        {
+          "language": "en",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "code": "415",
+      "display": "1",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1"
+        },
+        {
+          "language": "en",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "code": "416",
+      "display": "1a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1a"
+        },
+        {
+          "language": "en",
+          "value": "1a"
+        }
+      ]
+    },
+    {
+      "code": "417",
+      "display": "1b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1b"
+        },
+        {
+          "language": "en",
+          "value": "1b"
+        }
+      ]
+    },
+    {
+      "code": "418",
+      "display": "1c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1c"
+        },
+        {
+          "language": "en",
+          "value": "1c"
+        }
+      ]
+    },
+    {
+      "code": "419",
+      "display": "1d",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1d"
+        },
+        {
+          "language": "en",
+          "value": "1d"
+        }
+      ]
+    },
+    {
+      "code": "420",
+      "display": "2",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2"
+        },
+        {
+          "language": "en",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "code": "421",
+      "display": "2a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2a"
+        },
+        {
+          "language": "en",
+          "value": "2a"
+        }
+      ]
+    },
+    {
+      "code": "422",
+      "display": "2b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2b"
+        },
+        {
+          "language": "en",
+          "value": "2b"
+        }
+      ]
+    },
+    {
+      "code": "423",
+      "display": "2c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2c"
+        },
+        {
+          "language": "en",
+          "value": "2c"
+        }
+      ]
+    },
+    {
+      "code": "424",
+      "display": "2d",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2d"
+        },
+        {
+          "language": "en",
+          "value": "2d"
+        }
+      ]
+    },
+    {
+      "code": "425",
+      "display": "3",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3"
+        },
+        {
+          "language": "en",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "code": "426",
+      "display": "3a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3a"
+        },
+        {
+          "language": "en",
+          "value": "3a"
+        }
+      ]
+    },
+    {
+      "code": "427",
+      "display": "3b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3b"
+        },
+        {
+          "language": "en",
+          "value": "3b"
+        }
+      ]
+    },
+    {
+      "code": "428",
+      "display": "3c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3c"
+        },
+        {
+          "language": "en",
+          "value": "3c"
+        }
+      ]
+    },
+    {
+      "code": "429",
+      "display": "3d",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3d"
+        },
+        {
+          "language": "en",
+          "value": "3d"
+        }
+      ]
+    },
+    {
+      "code": "430",
+      "display": "3e",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3e"
+        },
+        {
+          "language": "en",
+          "value": "3e"
+        }
+      ]
+    },
+    {
+      "code": "431",
+      "display": "4",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "4"
+        },
+        {
+          "language": "en",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "code": "432",
+      "display": "4a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "4a"
+        },
+        {
+          "language": "en",
+          "value": "4a"
+        }
+      ]
+    },
+    {
+      "code": "433",
+      "display": "4b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "4b"
+        },
+        {
+          "language": "en",
+          "value": "4b"
+        }
+      ]
+    },
+    {
+      "code": "434",
+      "display": "4c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "4c"
+        },
+        {
+          "language": "en",
+          "value": "4c"
+        }
+      ]
+    },
+    {
+      "code": "435",
+      "display": "4d",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "4d"
+        },
+        {
+          "language": "en",
+          "value": "4d"
+        }
+      ]
+    },
+    {
+      "code": "436",
+      "display": "4e",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "4e"
+        },
+        {
+          "language": "en",
+          "value": "4e"
+        }
+      ]
+    },
+    {
+      "code": "872",
+      "display": "a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "a"
+        },
+        {
+          "language": "en",
+          "value": "a"
+        }
+      ]
+    },
+    {
+      "code": "873",
+      "display": "1a1",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1a1"
+        },
+        {
+          "language": "en",
+          "value": "1a1"
+        }
+      ]
+    },
+    {
+      "code": "874",
+      "display": "1a2",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1a2"
+        },
+        {
+          "language": "en",
+          "value": "1a2"
+        }
+      ]
+    },
+    {
+      "code": "875",
+      "display": "2a1",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2a1"
+        },
+        {
+          "language": "en",
+          "value": "2a1"
+        }
+      ]
+    },
+    {
+      "code": "876",
+      "display": "2a2",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2a2"
+        },
+        {
+          "language": "en",
+          "value": "2a2"
+        }
+      ]
+    },
+    {
+      "code": "877",
+      "display": "1b1",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1b1"
+        },
+        {
+          "language": "en",
+          "value": "1b1"
+        }
+      ]
+    },
+    {
+      "code": "878",
+      "display": "1b2",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1b2"
+        },
+        {
+          "language": "en",
+          "value": "1b2"
+        }
+      ]
+    },
+    {
+      "code": "437",
+      "display": "m",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "m"
+        },
+        {
+          "language": "en",
+          "value": "m"
+        }
+      ]
+    },
+    {
+      "code": "871",
+      "display": "0",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "0"
+        },
+        {
+          "language": "en",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "code": "438",
+      "display": "X",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "X"
+        },
+        {
+          "language": "en",
+          "value": "X"
+        }
+      ]
+    },
+    {
+      "code": "439",
+      "display": "1",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1"
+        },
+        {
+          "language": "en",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "code": "440",
+      "display": "1a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1a"
+        },
+        {
+          "language": "en",
+          "value": "1a"
+        }
+      ]
+    },
+    {
+      "code": "441",
+      "display": "1b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1b"
+        },
+        {
+          "language": "en",
+          "value": "1b"
+        }
+      ]
+    },
+    {
+      "code": "442",
+      "display": "1c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1c"
+        },
+        {
+          "language": "en",
+          "value": "1c"
+        }
+      ]
+    },
+    {
+      "code": "443",
+      "display": "2",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2"
+        },
+        {
+          "language": "en",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "code": "444",
+      "display": "2a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2a"
+        },
+        {
+          "language": "en",
+          "value": "2a"
+        }
+      ]
+    },
+    {
+      "code": "445",
+      "display": "2b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2b"
+        },
+        {
+          "language": "en",
+          "value": "2b"
+        }
+      ]
+    },
+    {
+      "code": "446",
+      "display": "2c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2c"
+        },
+        {
+          "language": "en",
+          "value": "2c"
+        }
+      ]
+    },
+    {
+      "code": "447",
+      "display": "3",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3"
+        },
+        {
+          "language": "en",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "code": "448",
+      "display": "3a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3a"
+        },
+        {
+          "language": "en",
+          "value": "3a"
+        }
+      ]
+    },
+    {
+      "code": "449",
+      "display": "3b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3b"
+        },
+        {
+          "language": "en",
+          "value": "3b"
+        }
+      ]
+    },
+    {
+      "code": "450",
+      "display": "3c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3c"
+        },
+        {
+          "language": "en",
+          "value": "3c"
+        }
+      ]
+    },
+    {
+      "code": "451",
+      "display": "X",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "X"
+        },
+        {
+          "language": "en",
+          "value": "X"
+        }
+      ]
+    },
+    {
+      "code": "452",
+      "display": "0",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "0"
+        },
+        {
+          "language": "en",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "code": "453",
+      "display": "1",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1"
+        },
+        {
+          "language": "en",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "code": "454",
+      "display": "1a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1a"
+        },
+        {
+          "language": "en",
+          "value": "1a"
+        }
+      ]
+    },
+    {
+      "code": "455",
+      "display": "1b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1b"
+        },
+        {
+          "language": "en",
+          "value": "1b"
+        }
+      ]
+    },
+    {
+      "code": "456",
+      "display": "1c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1c"
+        },
+        {
+          "language": "en",
+          "value": "1c"
+        }
+      ]
+    },
+    {
+      "code": "457",
+      "display": "1d",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1d"
+        },
+        {
+          "language": "en",
+          "value": "1d"
+        }
+      ]
+    },
+    {
+      "code": "461",
+      "display": "x",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "x"
+        },
+        {
+          "language": "en",
+          "value": "x"
+        }
+      ]
+    },
+    {
+      "code": "462",
+      "display": "in situ",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "in situ"
+        },
+        {
+          "language": "en",
+          "value": "in situ"
+        }
+      ]
+    },
+    {
+      "code": "463",
+      "display": "0",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "0"
+        },
+        {
+          "language": "en",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "code": "464",
+      "display": "1",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1"
+        },
+        {
+          "language": "en",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "code": "465",
+      "display": "1a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1a"
+        },
+        {
+          "language": "en",
+          "value": "1a"
+        }
+      ]
+    },
+    {
+      "code": "466",
+      "display": "1b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1b"
+        },
+        {
+          "language": "en",
+          "value": "1b"
+        }
+      ]
+    },
+    {
+      "code": "467",
+      "display": "1c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1c"
+        },
+        {
+          "language": "en",
+          "value": "1c"
+        }
+      ]
+    },
+    {
+      "code": "468",
+      "display": "2",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2"
+        },
+        {
+          "language": "en",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "code": "469",
+      "display": "2a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2a"
+        },
+        {
+          "language": "en",
+          "value": "2a"
+        }
+      ]
+    },
+    {
+      "code": "470",
+      "display": "2b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2b"
+        },
+        {
+          "language": "en",
+          "value": "2b"
+        }
+      ]
+    },
+    {
+      "code": "471",
+      "display": "2c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2c"
+        },
+        {
+          "language": "en",
+          "value": "2c"
+        }
+      ]
+    },
+    {
+      "code": "472",
+      "display": "2d",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2d"
+        },
+        {
+          "language": "en",
+          "value": "2d"
+        }
+      ]
+    },
+    {
+      "code": "473",
+      "display": "3",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3"
+        },
+        {
+          "language": "en",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "code": "474",
+      "display": "3a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3a"
+        },
+        {
+          "language": "en",
+          "value": "3a"
+        }
+      ]
+    },
+    {
+      "code": "475",
+      "display": "3b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3b"
+        },
+        {
+          "language": "en",
+          "value": "3b"
+        }
+      ]
+    },
+    {
+      "code": "476",
+      "display": "3c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3c"
+        },
+        {
+          "language": "en",
+          "value": "3c"
+        }
+      ]
+    },
+    {
+      "code": "477",
+      "display": "3d",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3d"
+        },
+        {
+          "language": "en",
+          "value": "3d"
+        }
+      ]
+    },
+    {
+      "code": "478",
+      "display": "4",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "4"
+        },
+        {
+          "language": "en",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "code": "479",
+      "display": "4a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "4a"
+        },
+        {
+          "language": "en",
+          "value": "4a"
+        }
+      ]
+    },
+    {
+      "code": "480",
+      "display": "4b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "4b"
+        },
+        {
+          "language": "en",
+          "value": "4b"
+        }
+      ]
+    },
+    {
+      "code": "481",
+      "display": "4c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "4c"
+        },
+        {
+          "language": "en",
+          "value": "4c"
+        }
+      ]
+    },
+    {
+      "code": "482",
+      "display": "4d",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "4d"
+        },
+        {
+          "language": "en",
+          "value": "4d"
+        }
+      ]
+    },
+    {
+      "code": "879",
+      "display": "a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "a"
+        },
+        {
+          "language": "en",
+          "value": "a"
+        }
+      ]
+    },
+    {
+      "code": "880",
+      "display": "1a1",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1a1"
+        },
+        {
+          "language": "en",
+          "value": "1a1"
+        }
+      ]
+    },
+    {
+      "code": "881",
+      "display": "1a2",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1a2"
+        },
+        {
+          "language": "en",
+          "value": "1a2"
+        }
+      ]
+    },
+    {
+      "code": "882",
+      "display": "2a1",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2a1"
+        },
+        {
+          "language": "en",
+          "value": "2a1"
+        }
+      ]
+    },
+    {
+      "code": "883",
+      "display": "2a2",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2a2"
+        },
+        {
+          "language": "en",
+          "value": "2a2"
+        }
+      ]
+    },
+    {
+      "code": "884",
+      "display": "1b1",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1b1"
+        },
+        {
+          "language": "en",
+          "value": "1b1"
+        }
+      ]
+    },
+    {
+      "code": "885",
+      "display": "1b2",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1b2"
+        },
+        {
+          "language": "en",
+          "value": "1b2"
+        }
+      ]
+    },
+    {
+      "code": "484",
+      "display": "X",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "X"
+        },
+        {
+          "language": "en",
+          "value": "X"
+        }
+      ]
+    },
+    {
+      "code": "485",
+      "display": "0",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "0"
+        },
+        {
+          "language": "en",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "code": "486",
+      "display": "1",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1"
+        },
+        {
+          "language": "en",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "code": "487",
+      "display": "1a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1a"
+        },
+        {
+          "language": "en",
+          "value": "1a"
+        }
+      ]
+    },
+    {
+      "code": "488",
+      "display": "1b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1b"
+        },
+        {
+          "language": "en",
+          "value": "1b"
+        }
+      ]
+    },
+    {
+      "code": "489",
+      "display": "1c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1c"
+        },
+        {
+          "language": "en",
+          "value": "1c"
+        }
+      ]
+    },
+    {
+      "code": "490",
+      "display": "2",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2"
+        },
+        {
+          "language": "en",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "code": "491",
+      "display": "2a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2a"
+        },
+        {
+          "language": "en",
+          "value": "2a"
+        }
+      ]
+    },
+    {
+      "code": "492",
+      "display": "2b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2b"
+        },
+        {
+          "language": "en",
+          "value": "2b"
+        }
+      ]
+    },
+    {
+      "code": "493",
+      "display": "2c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2c"
+        },
+        {
+          "language": "en",
+          "value": "2c"
+        }
+      ]
+    },
+    {
+      "code": "494",
+      "display": "3",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3"
+        },
+        {
+          "language": "en",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "code": "495",
+      "display": "3a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3a"
+        },
+        {
+          "language": "en",
+          "value": "3a"
+        }
+      ]
+    },
+    {
+      "code": "496",
+      "display": "3b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3b"
+        },
+        {
+          "language": "en",
+          "value": "3b"
+        }
+      ]
+    },
+    {
+      "code": "497",
+      "display": "3c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3c"
+        },
+        {
+          "language": "en",
+          "value": "3c"
+        }
+      ]
+    },
+    {
+      "code": "498",
+      "display": "X",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "X"
+        },
+        {
+          "language": "en",
+          "value": "X"
+        }
+      ]
+    },
+    {
+      "code": "499",
+      "display": "0",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "0"
+        },
+        {
+          "language": "en",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "code": "500",
+      "display": "1",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1"
+        },
+        {
+          "language": "en",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "code": "501",
+      "display": "1a",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1a"
+        },
+        {
+          "language": "en",
+          "value": "1a"
+        }
+      ]
+    },
+    {
+      "code": "502",
+      "display": "1b",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1b"
+        },
+        {
+          "language": "en",
+          "value": "1b"
+        }
+      ]
+    },
+    {
+      "code": "503",
+      "display": "1c",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1c"
+        },
+        {
+          "language": "en",
+          "value": "1c"
+        }
+      ]
+    },
+    {
+      "code": "504",
+      "display": "1d",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1d"
+        },
+        {
+          "language": "en",
+          "value": "1d"
+        }
+      ]
+    },
+    {
+      "code": "857",
+      "display": "Limfa tugunlari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Лимфоузлы"
+        },
+        {
+          "language": "en",
+          "value": "Lymph nodes"
+        }
+      ]
+    },
+    {
+      "code": "858",
+      "display": "Suyaklar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Кости"
+        },
+        {
+          "language": "en",
+          "value": "Bones"
+        }
+      ]
+    },
+    {
+      "code": "859",
+      "display": "Jigar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Печень"
+        },
+        {
+          "language": "en",
+          "value": "Liver"
+        }
+      ]
+    },
+    {
+      "code": "860",
+      "display": "O'pka (plevra)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Легкое (плевра)"
+        },
+        {
+          "language": "en",
+          "value": "Lung (pleura)"
+        }
+      ]
+    },
+    {
+      "code": "861",
+      "display": "Bosh miya",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Головной мозг"
+        },
+        {
+          "language": "en",
+          "value": "Brain"
+        }
+      ]
+    },
+    {
+      "code": "862",
+      "display": "Tuxumdon",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Яичник"
+        },
+        {
+          "language": "en",
+          "value": "Ovary"
+        }
+      ]
+    },
+    {
+      "code": "863",
+      "display": "Yumshoq to'qimalar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Мягкие ткани"
+        },
+        {
+          "language": "en",
+          "value": "Soft tissues"
+        }
+      ]
+    },
+    {
+      "code": "864",
+      "display": "Buyrak usti bezi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Надпочечник"
+        },
+        {
+          "language": "en",
+          "value": "Adrenal gland"
+        }
+      ]
+    },
+    {
+      "code": "865",
+      "display": "Boshqa a’zolar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Другие органы"
+        },
+        {
+          "language": "en",
+          "value": "Other organs"
+        }
+      ]
+    },
+    {
+      "code": "866",
+      "display": "Qorin pardasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Брюшина"
+        },
+        {
+          "language": "en",
+          "value": "Peritoneum"
+        }
+      ]
+    },
+    {
+      "code": "850",
+      "display": "Retsidiv",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Рецидив"
+        },
+        {
+          "language": "en",
+          "value": "Recurrence"
+        }
+      ]
+    },
+    {
+      "code": "851",
+      "display": "Mintaqaviy metastazlar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Регионарные метастазы"
+        },
+        {
+          "language": "en",
+          "value": "Regional metastases"
+        }
+      ]
+    },
+    {
+      "code": "852",
+      "display": "Uzoq metastazlar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Отдаленные метастазы"
+        },
+        {
+          "language": "en",
+          "value": "Distant metastases"
+        }
+      ]
+    },
+    {
+      "code": "853",
+      "display": "Biokimyoviy retsidiv",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Биохимический рецидив"
+        },
+        {
+          "language": "en",
+          "value": "Biochemical recurrence"
+        }
+      ]
+    },
+    {
+      "code": "854",
+      "display": "Jarayonning progressiyalanishi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Прогрессирование процесса"
+        },
+        {
+          "language": "en",
+          "value": "Disease progression"
+        }
+      ]
+    },
+    {
+      "code": "855",
+      "display": "Mahalliy tarqalgan jarayon",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Местнорапространенный процесс"
+        },
+        {
+          "language": "en",
+          "value": "Locally advanced disease"
+        }
+      ]
+    },
+    {
+      "code": "856",
+      "display": "Transformatsiya",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Трансформация"
+        },
+        {
+          "language": "en",
+          "value": "Transformation"
+        }
+      ]
+    },
+    {
+      "code": "649",
+      "display": "лечился амбулаторно",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "лечился амбулаторно"
+        },
+        {
+          "language": "en",
+          "value": "Treated as an outpatient"
+        }
+      ]
+    },
+    {
+      "code": "650",
+      "display": "лечился стационарно",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "лечился стационарно"
+        },
+        {
+          "language": "en",
+          "value": "Treated as an inpatient"
+        }
+      ]
+    },
+    {
+      "code": "651",
+      "display": "O'tkazilmagan",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Не проводилось"
+        },
+        {
+          "language": "en",
+          "value": "Not performed"
+        }
+      ]
+    },
+    {
+      "code": "652",
+      "display": "Radikal",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Радикальное"
+        },
+        {
+          "language": "en",
+          "value": "Radical"
+        }
+      ]
+    },
+    {
+      "code": "653",
+      "display": "Palliativ",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Паллиативное"
+        },
+        {
+          "language": "en",
+          "value": "Palliative"
+        }
+      ]
+    },
+    {
+      "code": "654",
+      "display": "Simptomatik",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Симптоматическое"
+        },
+        {
+          "language": "en",
+          "value": "Symptomatic"
+        }
+      ]
+    },
+    {
+      "code": "655",
+      "display": "Reabilitatsion",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Реабилитационное"
+        },
+        {
+          "language": "en",
+          "value": "Rehabilitative"
+        }
+      ]
+    },
+    {
+      "code": "656",
+      "display": "Tugallanmagan radikal",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Радикальное незавершенное"
+        },
+        {
+          "language": "en",
+          "value": "Incomplete radical treatment"
+        }
+      ]
+    },
+    {
+      "code": "657",
+      "display": "Profilaktik",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Профилактическое"
+        },
+        {
+          "language": "en",
+          "value": "Prophylactic"
+        }
+      ]
+    },
+    {
+      "code": "658",
+      "display": "Tekshiruv",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Обследование"
+        },
+        {
+          "language": "en",
+          "value": "Examination"
+        }
+      ]
+    },
+    {
+      "code": "659",
+      "display": "Boshqa kasalliklar bo'yicha",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "По поводу других заболеваний"
+        },
+        {
+          "language": "en",
+          "value": "For other diseases"
+        }
+      ]
+    },
+    {
+      "code": "660",
+      "display": "Asoratlar bo'yicha",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "По поводу осложнений"
+        },
+        {
+          "language": "en",
+          "value": "For complications"
+        }
+      ]
+    },
+    {
+      "code": "661",
+      "display": "O'tkazilmagan",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Не проводилось"
+        },
+        {
+          "language": "en",
+          "value": "Not performed"
+        }
+      ]
+    },
+    {
+      "code": "662",
+      "display": "Jarrohlik davolash",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Хирургическое"
+        },
+        {
+          "language": "en",
+          "value": "Surgical treatment"
+        }
+      ]
+    },
+    {
+      "code": "663",
+      "display": "Masofaviy nur terapiyasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Дистанционная лучевая терапия"
+        },
+        {
+          "language": "en",
+          "value": "External beam radiation therapy"
+        }
+      ]
+    },
+    {
+      "code": "664",
+      "display": "Qisqa fokusli rentgenoterapiya",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Короткофокусная рентгенотерапия"
+        },
+        {
+          "language": "en",
+          "value": "Short-focus X-ray therapy"
+        }
+      ]
+    },
+    {
+      "code": "665",
+      "display": "Qo'shma nur terapiyasi: kontakt + masofaviy nur terapiyasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Сочетанное лучевое: конт.+дистанц."
+        },
+        {
+          "language": "en",
+          "value": "Combined radiation therapy: contact + external beam radiation therapy"
+        }
+      ]
+    },
+    {
+      "code": "666",
+      "display": "Qo'shma nur terapiyasi: kontakt + rentgenoterapiya",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Сочетанное лучевое: конт.+рентген."
+        },
+        {
+          "language": "en",
+          "value": "Combined radiation therapy: contact + X-ray therapy"
+        }
+      ]
+    },
+    {
+      "code": "667",
+      "display": "Kimyoterapiya (gormonal terapiya)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Химиотерапевтическое (гормональное)"
+        },
+        {
+          "language": "en",
+          "value": "Chemotherapy (hormonal therapy)"
+        }
+      ]
+    },
+    {
+      "code": "668",
+      "display": "Jarrohlik davolash + masofaviy nur terapiyasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Хирургическое+дистанц.лучевая терапия"
+        },
+        {
+          "language": "en",
+          "value": "Surgery + external beam radiation therapy"
+        }
+      ]
+    },
+    {
+      "code": "669",
+      "display": "Jarrohlik davolash + qisqa fokusli rentgenoterapiya",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Хирургическое+короткофок.рентгенотерапия"
+        },
+        {
+          "language": "en",
+          "value": "Surgery + short-focus X-ray therapy"
+        }
+      ]
+    },
+    {
+      "code": "670",
+      "display": "Jarrohlik davolash + qo'shma nur terapiyasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Хирургическое+сочетанная лучевая терапия"
+        },
+        {
+          "language": "en",
+          "value": "Surgery + combined radiation therapy"
+        }
+      ]
+    },
+    {
+      "code": "671",
+      "display": "Jarrohlik davolash + kontakt nur terapiyasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Хирургическое+контактная лучевая терапия"
+        },
+        {
+          "language": "en",
+          "value": "Surgery + contact radiation therapy"
+        }
+      ]
+    },
+    {
+      "code": "672",
+      "display": "Jarrohlik davolash + kimyoterapiya (gormonal terapiya)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Хирургическое+химиотерапия (гормонотерапия)"
+        },
+        {
+          "language": "en",
+          "value": "Surgery + chemotherapy (hormonal therapy)"
+        }
+      ]
+    },
+    {
+      "code": "673",
+      "display": "Kompleks kimyo-nur terapiyasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Комплексная химиолучевая терапия"
+        },
+        {
+          "language": "en",
+          "value": "Combined chemoradiotherapy"
+        }
+      ]
+    },
+    {
+      "code": "674",
+      "display": "Jarrohlik davolash + nur terapiyasi + kimyoterapiya (gormonal terapiya)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Хирургичекое+ лучевое+химиотерапия (гормонотерапия)"
+        },
+        {
+          "language": "en",
+          "value": "Surgery + radiation therapy + chemotherapy (hormonal therapy)"
+        }
+      ]
+    },
+    {
+      "code": "675",
+      "display": "Radiofarmatsevtik preparatlar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Радиофармпрепараты"
+        },
+        {
+          "language": "en",
+          "value": "Radiopharmaceuticals"
+        }
+      ]
+    },
+    {
+      "code": "676",
+      "display": "Kontakt nur terapiyasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Контактная лучевая терапия"
+        },
+        {
+          "language": "en",
+          "value": "Contact radiation therapy"
+        }
+      ]
+    },
+    {
+      "code": "677",
+      "display": "Boshqa davolash usullari",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Другие виды воздействия"
+        },
+        {
+          "language": "en",
+          "value": "Other treatment modalities"
+        }
+      ]
+    },
+    {
+      "code": "678",
+      "display": "Jarrohlik davolash + radiofarmatsevtik preparatlar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Хирургическое+радиофармпрепараты"
+        },
+        {
+          "language": "en",
+          "value": "Surgery + radiopharmaceuticals"
+        }
+      ]
+    },
+    {
+      "code": "679",
+      "display": "Qo'shma nur terapiyasi: masofaviy nur terapiyasi + rentgenoterapiya",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Сочетанное лучевое:дистанционная лучевая терапия+рентгентерапия"
+        },
+        {
+          "language": "en",
+          "value": "Combined radiation therapy: external beam radiation therapy + X-ray therapy"
+        }
+      ]
+    },
+    {
+      "code": "363",
+      "display": "G1 (Yuqori darajada differensiallashgan)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "G1 (Высоко дифференцированная)"
+        },
+        {
+          "language": "en",
+          "value": "G1 (Well differentiated)"
+        }
+      ]
+    },
+    {
+      "code": "364",
+      "display": "G2 (O'rtacha darajada differensiallashgan)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "G2 (Средне дифференцированная)"
+        },
+        {
+          "language": "en",
+          "value": "G2 (Moderately differentiated)"
+        }
+      ]
+    },
+    {
+      "code": "365",
+      "display": "G3 (Past darajada differensiallashgan)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "G3 (Низко дифференцированная)"
+        },
+        {
+          "language": "en",
+          "value": "G3 (Poorly differentiated)"
+        }
+      ]
+    },
+    {
+      "code": "366",
+      "display": "G4 (Differensiallashmagan)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "G4 (Недифференцированная)"
+        },
+        {
+          "language": "en",
+          "value": "G4 (Undifferentiated)"
+        }
+      ]
+    },
+    {
+      "code": "367",
+      "display": "T-клеточная",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "T-клеточная"
+        },
+        {
+          "language": "en",
+          "value": "T-cell"
+        }
+      ]
+    },
+    {
+      "code": "368",
+      "display": "B-клеточная",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "B-клеточная"
+        },
+        {
+          "language": "en",
+          "value": "B-cell"
+        }
+      ]
+    },
+    {
+      "code": "369",
+      "display": "Нулевая клетка",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Нулевая клетка"
+        },
+        {
+          "language": "en",
+          "value": "Null cell"
+        }
+      ]
+    },
+    {
+      "code": "370",
+      "display": "NK-клетка",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "NK-клетка"
+        },
+        {
+          "language": "en",
+          "value": "NK cell"
+        }
+      ]
+    },
+    {
+      "code": "371",
+      "display": "Past darajali",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Низкая степень / Low grade"
+        },
+        {
+          "language": "en",
+          "value": "Low grade"
+        }
+      ]
+    },
+    {
+      "code": "372",
+      "display": "Yuqori darajali",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Высокая степень / High grade"
+        },
+        {
+          "language": "en",
+          "value": "High grade"
+        }
+      ]
+    },
+    {
+      "code": "373",
+      "display": "GX (Darajasini aniqlab bo'lmaydi)",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "GX (Не может быть установлена)"
+        },
+        {
+          "language": "en",
+          "value": "GX (Grade cannot be assessed)"
+        }
+      ]
+    }
+  ],
+  "caseSensitive": true,
+  "hierarchyMeaning": "is-a",
+  "language": "uz",
+  "experimental": true,
+  "count": 198
+}

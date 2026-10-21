@@ -9,7 +9,7 @@ name: DHP integrations
 title: Uzbekistan Digital Health Platform - Integrations
 description: Profiles for DHP integrations with systems in Uzbekistan
 status: draft # draft | active | retired | unknown
-version: 0.7.0
+version: 0.11.1
 fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build
@@ -25,7 +25,10 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  uz.dhp.core: 0.7.0
+  uz.dhp.core: 0.11.1
+  # R4-only package used cross-version for sdc-questionnaire-calculatedExpression (same as uz.dhp.core);
+  # the resulting version-mismatch messages are suppressed in ignoreWarnings.txt
+  hl7.fhir.uv.sdc: 3.0.0
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -111,7 +114,13 @@ pages:
     title: Tuberculosis (DHIS)
   narcology.md:
     title: Narcology
-  questionnaires.md:
+  psychiatry.md:
+    title: Psychiatry
+  cancer.md:
+    title: Cancer
+  hepatitis.md:
+    title: Hepatitis
+  forms.md:
     title: Questionnaires
   forms-overview.md:
     title: Forms Overview
@@ -156,6 +165,9 @@ menu:
     Sick Leave: sick-leave.html
     Tuberculosis (DHIS): dhis-tuberculosis.html
     Narcology: narcology.html
+    Psychiatry: psychiatry.html
+    Cancer: cancer.html
+    Hepatitis: hepatitis.html
   Forms:
     Overview: forms-overview.html
     1.0 Inpatient hospital: forms-volume-01-inpatient.html
@@ -169,7 +181,7 @@ menu:
     9.0 Pathological anatomy: forms-volume-09-pathology.html
     10.0 Forensic medicine: forms-volume-10-forensic.html
     11.0 Sanitary-epidemiology: forms-volume-11-sanitary-epidemiology.html
-  Questionnaires: questionnaires.html
+  Questionnaires: forms.html
   Artifacts: artifacts.html
   Changelog: changelog.html
 

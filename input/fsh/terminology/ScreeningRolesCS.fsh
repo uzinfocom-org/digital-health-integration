@@ -34,7 +34,7 @@ Description: "Local terminology for staff roles (positions) used in the cervical
   * ^designation[+].language = #en
   * ^designation[=].value = "Laboratory: Laborant"
 
-* #his_centre_obstetrics_gynecology_obstetrician_gynecologist "Akusherlik va ginekologiya markazi: Akusher-ginekolog"
+* #his_centre_obgyn_obstetrician_gynecologist "Akusherlik va ginekologiya markazi: Akusher-ginekolog"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Центр акушерства и гинекологии: Акушер-гинеколог"
   * ^designation[+].language = #en

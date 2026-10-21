@@ -12,7 +12,6 @@ Description: "Completed screening questionnaire (Complaints and Medical History)
 * status = #completed
 
 * subject = Reference(Patient/lola-oripova)
-* encounter = Reference(Encounter/Encounter-general)
 * authored = "2025-11-10T09:00:00Z"
 * author = Reference(PractitionerRole/practitioner-role-gynecologist)
 

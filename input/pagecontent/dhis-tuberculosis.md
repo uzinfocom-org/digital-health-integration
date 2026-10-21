@@ -14,6 +14,8 @@ Wherever a concept has a standard equivalent, resources carry the standard code 
 
 A typical record links together: a [patient](#registering-a-patient-patient), one or more [TB diagnoses](#recording-a-tb-diagnosis-condition), an [episode of care](#grouping-the-treatment-course-episodeofcare) that groups the treatment course, the [specimens](#collecting-a-specimen-specimen) collected, and the [diagnostic test results](#recording-diagnostic-test-results-observation) produced from them.
 
+<div>{% include tuberculosis-model-en.svg %}</div><br clear="all"/>
+
 ### Registering a patient (Patient)
 
 The subject of every TB record. There is no DHIS-specific Patient profile; use UZ Core directly.

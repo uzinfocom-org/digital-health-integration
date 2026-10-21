@@ -5,19 +5,22 @@ Title: "Screening Composition Example"
 Description: "Screening summary for a completed cycle: questionnaire answers, results of every step and the final ICD-10 diagnosis."
 * id = "screening-composition-example"
 * language = #en
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[0].value = "128"
+* identifier[1].system = $screening-program-type-id
+* identifier[1].value = "171149006"
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "268547008"
 * status = #final
 * type = $loinc#34133-9 "Summary of episode note"
 * subject = Reference(Patient/lola-oripova)
-* encounter = Reference(Encounter/Encounter-general)
 * date = "2025-12-17T12:00:00Z"
 * title = "Cervical and breast cancer screening summary"
 * author[0] = Reference(PractitionerRole/practitioner-role-gynecologist)
 * custodian = Reference(Organization/xonobod-medical-association)
 
 * event[0].detail[0].reference = Reference(ServiceRequest/screening-pathology-request-example)
-* event[=].detail[+].reference = Reference(Encounter/Encounter-general)
 
 * section[questionnaire].title = "Questionnaires"
 * section[questionnaire].code = $loinc#74465-6 "Questionnaire response Document"
@@ -56,8 +59,6 @@ Description: "The screening summary as an immutable FHIR document: the Compositi
 * entry[=].resource = ScreeningCompositionExample
 * entry[+].fullUrl = "https://dhp.uz/fhir/integrations/Patient/lola-oripova"
 * entry[=].resource = lola-oripova
-* entry[+].fullUrl = "https://dhp.uz/fhir/integrations/Encounter/Encounter-general"
-* entry[=].resource = Encounter-general
 * entry[+].fullUrl = "https://dhp.uz/fhir/integrations/PractitionerRole/practitioner-role-gynecologist"
 * entry[=].resource = practitioner-role-gynecologist
 * entry[+].fullUrl = "https://dhp.uz/fhir/integrations/Organization/xonobod-medical-association"

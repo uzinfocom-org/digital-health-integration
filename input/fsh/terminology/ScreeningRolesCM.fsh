@@ -43,7 +43,7 @@ Description: "Maps local cervical and breast cancer screening system practitione
 * group[=].element[=].target[=].display = "Медицинский лаборант"
 * group[=].element[=].target[=].relationship = #source-is-broader-than-target
 
-* group[=].element[+].code = #his_centre_obstetrics_gynecology_obstetrician_gynecologist
+* group[=].element[+].code = #his_centre_obgyn_obstetrician_gynecologist
 * group[=].element[=].display = "Center of Obstetrics & Gynecology: Obstetrician-gynecologist"
 * group[=].element[=].target[+].code = #2222.2
 * group[=].element[=].target[=].display = "Врач акушер-гинеколог роддома/перинатального центра (родзала, палатный, патологии беременности, экстренной гинекологии и пр.)"

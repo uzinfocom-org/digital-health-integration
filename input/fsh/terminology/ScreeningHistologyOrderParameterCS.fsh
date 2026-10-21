@@ -33,3 +33,18 @@ Description: "Types of parameters specified in histology, cytology and biopsy Se
   * ^designation[=].value = "Тип биопсийного материала шейки матки"
   * ^designation[+].language = #en
   * ^designation[=].value = "Cervical biopsy material type"
+* #scrn-0069-00006 "Maxsus davolash turi"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Вид специального лечения"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Special treatment type"
+* #scrn-0069-00007 "Davolash sanasi yoki davri"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Дата или период лечения"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Treatment date or period"
+* #scrn-0069-00008 "Boshqa davolash"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Другое лечение"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Other treatment"

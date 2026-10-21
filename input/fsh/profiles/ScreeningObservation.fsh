@@ -6,6 +6,7 @@ Description: "Profile for storing cervical and breast cancer screening results (
 * ^experimental = true
 * ^status = #active
 * ^publisher = "DHP Integration"
+* insert ScreeningMetaSource
 
 * bodySite MS
 
@@ -52,6 +53,7 @@ Instance: patient-workplace
 InstanceOf: ScreeningObservation
 Usage: #example
 Description: "Patient's place of work and employer, recorded as social history."
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "340"
 * identifier[=].use = #usual
@@ -59,7 +61,6 @@ Description: "Patient's place of work and employer, recorded as social history."
 * code = $sct#224406003 "Details relating to place of work and employer"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
-* encounter = Reference(Encounter/Encounter-general)
 * issued = "2025-11-17T13:28:17.239+02:00"
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-nurse)
@@ -69,15 +70,17 @@ Instance: cytology-result
 InstanceOf: ScreeningObservation
 Usage: #example
 Description: "Result of cytological smear examination: LSIL."
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "333"
 * identifier[=].use = #usual
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "171149006"
 * basedOn = Reference(ServiceRequest/ServiceRequest-cytology)
 * status = #final
-* code = $loinc#18500-9 "Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep"  
+* code = $loinc#18500-9 "Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
-* encounter = Reference(Encounter/Encounter-laboratory)
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * issued = "2025-11-17T13:28:17.239+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-laborant)
@@ -87,15 +90,17 @@ Instance: cytology-ai-analysis
 InstanceOf: ScreeningObservation
 Usage: #example
 Description: "Cytological smear analysis performed by an AI system."
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "333"
 * identifier[=].use = #usual
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "171149006"
 * basedOn = Reference(ServiceRequest/ServiceRequest-cytology)
 * status = #final
-* code = $loinc#18500-9 "Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep"  
+* code = $loinc#18500-9 "Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
-* encounter = Reference(Encounter/Encounter-laboratory)
 * issued = "2025-11-17T13:28:17.239+02:00"
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-laborant)
@@ -105,16 +110,18 @@ Instance: hpv-result
 InstanceOf: ScreeningObservation
 Usage: #example
 Description: "High-risk HPV DNA test result."
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "333"
 * identifier[=].use = #usual
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "171149006"
 * basedOn = Reference(ServiceRequest/ServiceRequest-hpv)
 * status = #final
 * code = $loinc#82675-0 "HPV I/H Risk 4 DNA Cvx Ql NAA+probe"
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
-* encounter = Reference(Encounter/Encounter-laboratory)
 * performer = Reference(PractitionerRole/practitioner-role-laborant)
 * valueCodeableConcept = screening-hpv-cs#scr-hpv-3 "Positive"
 
@@ -122,19 +129,21 @@ Instance: colposcopy-result
 InstanceOf: ScreeningObservation
 Usage: #example
 Description: "Colposcopy conclusion including transformation zone assessment."
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "334"
 * identifier[=].use = #usual
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "171149006"
 * basedOn = Reference(ServiceRequest/ServiceRequest-colposcopy)
 * status = #final
 * code = $sct#392003006 "Colposcopy"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
-* encounter = Reference(Encounter/Encounter-diagnostics)
 * issued = "2025-11-17T13:28:17.239+02:00"
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-gynecologist)
-* valueCodeableConcept = screening-colposcopy-cs#scr-colpo-2 "LSIL"
+* valueCodeableConcept = $sct#416030007 "Cervicovaginal cytology: Low grade squamous intraepithelial lesion"
 * component[0].code = $sct#1285652007 "Structure of transition zone of cervix uteri"
 * component[=].valueCodeableConcept = screening-transformation-zone-cs#scr-tz-2 "Type 2 (partially in canal)"
 
@@ -142,15 +151,17 @@ Instance: mammography-summary
 InstanceOf: ScreeningObservation
 Usage: #example
 Description: "Mammography summary including BI-RADS category, breast density, and image quality."
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "335"
 * identifier[=].use = #usual
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "268547008"
 * basedOn = Reference(ServiceRequest/ServiceRequest-mammography)
 * status = #final
 * code = $sct#71651007 "Mammography"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
-* encounter = Reference(Encounter/Encounter-radiology)
 * issued = "2025-11-17T13:28:17.239+02:00"
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-radiologist)
@@ -165,15 +176,17 @@ Instance: mammography-right-breast-finding
 InstanceOf: ScreeningObservation
 Usage: #example
 Description: "Finding (mole) detected in the right breast during mammography."
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "335"
 * identifier[=].use = #usual
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "268547008"
 * basedOn = Reference(ServiceRequest/ServiceRequest-mammography)
 * status = #final
 * code = $sct#71651007 "Mammography"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
-* encounter = Reference(Encounter/Encounter-radiology)
 * issued = "2025-11-17T13:28:17.239+02:00"
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-radiologist)
@@ -186,15 +199,17 @@ Instance: mammography-left-breast-finding
 InstanceOf: ScreeningObservation
 Usage: #example
 Description: "Finding (skin thickening) detected in the left breast during mammography."
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "335"
 * identifier[=].use = #usual
+* identifier[+].system = $screening-program-type-id
+* identifier[=].value = "268547008"
 * basedOn = Reference(ServiceRequest/ServiceRequest-mammography)
 * status = #final
 * code = $sct#71651007 "Mammography"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
-* encounter = Reference(Encounter/Encounter-radiology)
 * issued = "2025-11-17T13:28:17.239+02:00"
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-radiologist)
@@ -207,6 +222,7 @@ Instance: gynecological-physical-exam
 InstanceOf: ScreeningObservation
 Usage: #example
 Description: "Medical history obtained during gynecological examination. Anthropometrics (height, weight, BMI) are recorded as separate vital-signs Observations."
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "336"
 * identifier[=].use = #usual
@@ -214,7 +230,6 @@ Description: "Medical history obtained during gynecological examination. Anthrop
 * code = $sct#5880005 "Physical examination"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
-* encounter = Reference(Encounter/Encounter-general)
 * issued = "2025-11-17T13:28:17.239+02:00"
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-gynecologist)
@@ -224,6 +239,7 @@ Instance: gynecological-complaints
 InstanceOf: ScreeningObservation
 Usage: #example
 Description: "Patient-reported symptoms and complaints during gynecological consultation."
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "337"
 * identifier[=].use = #usual
@@ -231,7 +247,6 @@ Description: "Patient-reported symptoms and complaints during gynecological cons
 * code = $sct#1269489004 "Chief complaint"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
-* encounter = Reference(Encounter/Encounter-general)
 * issued = "2025-11-17T13:28:17.239+02:00"
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-gynecologist)
@@ -242,7 +257,7 @@ Instance: oncogynecological-followup
 InstanceOf: ScreeningObservation
 Usage: #example
 Description: "Data from examination in the oncology follow-up office (complaints, contraindications)."
-
+* meta.source = "https://dhp.uz/fhir/source/screening"
 * identifier[0].system = $screening-local-id
 * identifier[=].value = "338"
 * identifier[=].use = #usual
@@ -250,7 +265,6 @@ Description: "Data from examination in the oncology follow-up office (complaints
 * code = $sct#281036007 "Follow-up consultation"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
-* encounter = Reference(Encounter/Encounter-general)
 * issued = "2025-11-17T13:28:17.239+02:00"
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-nurse)
@@ -274,7 +288,6 @@ Description: "Patient body height, recorded as a vital sign during the screening
 * code = $loinc#8302-2 "Body height"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
-* encounter = Reference(Encounter/Encounter-general)
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-gynecologist)
 * valueQuantity = 160 'cm' "cm"
@@ -291,7 +304,6 @@ Description: "Patient body weight, recorded as a vital sign during the screening
 * code = $loinc#29463-7 "Body weight"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
-* encounter = Reference(Encounter/Encounter-general)
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-gynecologist)
 * valueQuantity = 52 'kg' "kg"
@@ -308,7 +320,6 @@ Description: "Patient body mass index, recorded as a vital sign during the scree
 * code = $loinc#39156-5 "Body mass index (BMI) [Ratio]"
 * subject = Reference(Patient/lola-oripova)
 * subject.display = "Lola Oripova Shakhzodovna"
-* encounter = Reference(Encounter/Encounter-general)
 * effectiveDateTime = "2025-11-17T13:28:17+02:00"
 * performer = Reference(PractitionerRole/practitioner-role-gynecologist)
 * valueQuantity = 20.3 'kg/m2' "kg/m2"

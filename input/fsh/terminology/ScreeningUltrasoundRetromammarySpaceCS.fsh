@@ -14,3 +14,9 @@ Description: "CodeSystem for Screening Ultrasound Retromammary Space"
   * ^designation[=].value = "Признаки инвазии"
   * ^designation[+].language = #en
   * ^designation[=].value = "Signs of invasion"
+
+* #scrn-0045-00003 "O‘zgarmagan"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Не изменено"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Not changed"

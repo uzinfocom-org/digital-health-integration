@@ -14,6 +14,8 @@ Most of the concepts a sick leave carries are specific to the Uzbek document (re
 
 A typical record links together: a [sick leave case](#opening-a-sick-leave-case-careplan) that is the certificate itself, the [additional attributes](#recording-additional-attributes-observation) captured against it, and - for family-care leaves - the [person being cared for](#family-care-the-person-cared-for-relatedperson). The case names the [patient](#supporting-resources) it is issued to and the practitioners who issued it.
 
+<div>{% include sick-leave-model-en.svg %}</div><br clear="all"/>
+
 ### Opening a sick leave case (CarePlan)
 
 The certificate itself. A CarePlan represents the sick leave case over its whole lifecycle; `addresses` carries both the reason for the leave and the ICD-10 diagnosis, and the lifecycle status is tracked in the workflow-status extension.

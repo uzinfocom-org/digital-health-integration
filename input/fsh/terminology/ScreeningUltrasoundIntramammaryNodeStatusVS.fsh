@@ -6,3 +6,5 @@ Description: "Defines Screening Ultrasound Intramammary Node Status"
 * ^experimental = true
 * ^language = #uz
 * include codes from system screening-ultrasound-intramammary-node-status-cs
+* include $sct#281900007
+* include $sct#263654008

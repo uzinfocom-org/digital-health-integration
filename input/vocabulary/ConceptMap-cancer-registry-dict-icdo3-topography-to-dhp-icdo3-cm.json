@@ -1,0 +1,3639 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "cancer-registry-dict-icdo3-topography-to-dhp-icdo3-cm",
+  "url": "https://terminology.dhp.uz/fhir/integrations/ConceptMap/cancer-registry-dict-icdo3-topography-to-dhp-icdo3-cm",
+  "title": "Cancer Registry Dictionary ICD-O-3 Topography to DHP ICD-O-3 Topography",
+  "description": "ConceptMap defining the mapping between Cancer Registry internal topography identifiers and the corresponding ICD-O-3 topography codes used by DHP.",
+  "group": [
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "C00.0",
+              "display": "External upper lip",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "1",
+          "display": "yuqori lab tashqi yuzasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C00.1",
+              "display": "External lower lip",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "2",
+          "display": "pastki lab tashqi yuzasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C00.2",
+              "display": "External lip, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "3",
+          "display": "lablar tashqi yuzasi qo'shimcha aniqlashtirishsiz (QA)"
+        },
+        {
+          "target": [
+            {
+              "code": "C00.3",
+              "display": "Mucosa of upper lip",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "4",
+          "display": "yuqori lab shilliq qismi"
+        },
+        {
+          "target": [
+            {
+              "code": "C00.4",
+              "display": "Mucosa of lower lip",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "5",
+          "display": "pastki lab shilliq qismi"
+        },
+        {
+          "target": [
+            {
+              "code": "C00.5",
+              "display": "Mucosa of lip, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "6",
+          "display": "lablar shilliq qismi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C00.6",
+              "display": "Commissure of lip",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "7",
+          "display": "og'iz burchagi (lab bitishmalari)"
+        },
+        {
+          "target": [
+            {
+              "code": "C00.8",
+              "display": "Overlapping lesion of lip",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "8",
+          "display": "labning bir nechta qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C00.9",
+              "display": "Lip, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "9",
+          "display": "lab QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C01.9",
+              "display": "Base of tongue, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "10",
+          "display": "til asosi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C02.0",
+              "display": "Dorsal surface of tongue, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "11",
+          "display": "tilning yuqori yuzasi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C02.1",
+              "display": "Border of tongue",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "12",
+          "display": "tilning yon yuzasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C02.2",
+              "display": "Ventral surface of tongue, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "13",
+          "display": "tilning pastki yuzasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C02.3",
+              "display": "Anterior 2/3 of tongue, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "14",
+          "display": "tilning old qismi"
+        },
+        {
+          "target": [
+            {
+              "code": "C02.4",
+              "display": "Lingual tonsil",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "15",
+          "display": "til bodomcha bezi"
+        },
+        {
+          "target": [
+            {
+              "code": "C02.8",
+              "display": "Overlapping lesion of tongue",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "16",
+          "display": "tilning chegeralangan sohasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C02.9",
+              "display": "Tongue, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "17",
+          "display": "til QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C03.0",
+              "display": "Upper gum",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "18",
+          "display": "yuqori jag' milki"
+        },
+        {
+          "target": [
+            {
+              "code": "C03.1",
+              "display": "Lower gum",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "19",
+          "display": "pastki jag' milki"
+        },
+        {
+          "target": [
+            {
+              "code": "C03.9",
+              "display": "Gum, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "20",
+          "display": "milk QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C04.0",
+              "display": "Anterior floor of mouth",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "21",
+          "display": "og'iz bo'shlig'i tubi old qismi"
+        },
+        {
+          "target": [
+            {
+              "code": "C04.1",
+              "display": "Lateral floor of mouth",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "22",
+          "display": "og'iz bo'shlig'i tubi yon qismi"
+        },
+        {
+          "target": [
+            {
+              "code": "C04.8",
+              "display": "Overlapping lesion of floor of mouth",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "23",
+          "display": "og'iz bo'shlig'i tubi kuplab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C04.9",
+              "display": "Floor of mouth, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "24",
+          "display": "og'iz bo'shlig'i tubi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C05.0",
+              "display": "Hard palate",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "25",
+          "display": "qattiq tanglay"
+        },
+        {
+          "target": [
+            {
+              "code": "C05.1",
+              "display": "Soft palate, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "26",
+          "display": "yumshoq tanglay QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C05.2",
+              "display": "Uvula",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "27",
+          "display": "tanglay tilchasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C05.8",
+              "display": "Overlapping lesion of palate",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "28",
+          "display": "tanglayning ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C05.9",
+              "display": "Palate, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "29",
+          "display": "tanglay QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C06.0",
+              "display": "Cheek mucosa",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "30",
+          "display": "yonoq shilliq qavati"
+        },
+        {
+          "target": [
+            {
+              "code": "C06.1",
+              "display": "Vestibule of mouth",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "31",
+          "display": "og'iz dahliz"
+        },
+        {
+          "target": [
+            {
+              "code": "C06.2",
+              "display": "Retromolar area",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "32",
+          "display": "og'iz bo'shlig'i retromolyar sohasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C06.8",
+              "display": "Overlapping lesion of other and unspecified parts of mouth",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "33",
+          "display": "og'iz bo'shlig'i ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C06.9",
+              "display": "Mouth, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "34",
+          "display": "og'iz bo'shlig'i QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C07.9",
+              "display": "Parotid gland",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "35",
+          "display": "quloq oldi so'lak bezi"
+        },
+        {
+          "target": [
+            {
+              "code": "C08.0",
+              "display": "Submandibular gland",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "36",
+          "display": "jag' osti so'lak bezi"
+        },
+        {
+          "target": [
+            {
+              "code": "C08.1",
+              "display": "Sublingual gland",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "37",
+          "display": "til osti so'lak bezi"
+        },
+        {
+          "target": [
+            {
+              "code": "C08.8",
+              "display": "Overlapping lesion of major salivary glands",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "38",
+          "display": "ko'plab katta so'lak bezlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C08.9",
+              "display": "Major salivary gland, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "39",
+          "display": "katta so'lak bezi"
+        },
+        {
+          "target": [
+            {
+              "code": "C09.0",
+              "display": "Tonsillar fossa",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "40",
+          "display": "bodomchasimon chuqurcha"
+        },
+        {
+          "target": [
+            {
+              "code": "C09.1",
+              "display": "Tonsillar pillar",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "41",
+          "display": "tanglay bodomcha bezi yoyi"
+        },
+        {
+          "target": [
+            {
+              "code": "C09.8",
+              "display": "Overlapping lesion of tonsil",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "42",
+          "display": "tanglay bodomcha bezining ko'plab qismlarining zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C09.9",
+              "display": "Tonsil, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "43",
+          "display": "bodomsimon bez QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C10.0",
+              "display": "Vallecula",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "44",
+          "display": "hiqildoq usti chuqurchasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C10.1",
+              "display": "Anterior surface of epiglottis",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "45",
+          "display": "hiqildoq usti old yuzasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C10.2",
+              "display": "Lateral wall of oropharynx",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "46",
+          "display": "og'iz-halqum yon devori"
+        },
+        {
+          "target": [
+            {
+              "code": "C10.3",
+              "display": "Posterior wall of oropharynx",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "47",
+          "display": "og'iz-halqum orqa devori"
+        },
+        {
+          "target": [
+            {
+              "code": "C10.4",
+              "display": "Branchial cleft",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "48",
+          "display": "jabrasmon yoriq"
+        },
+        {
+          "target": [
+            {
+              "code": "C10.8",
+              "display": "Overlapping lesion of oropharynx",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "49",
+          "display": "ohiz-halqum ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C10.9",
+              "display": "Oropharynx, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "50",
+          "display": "og'iz-halqum QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C11.0",
+              "display": "Superior wall of nasopharynx",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "51",
+          "display": "burun-halqum yuqori devori"
+        },
+        {
+          "target": [
+            {
+              "code": "C11.1",
+              "display": "Posterior wall of nasopharynx",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "52",
+          "display": "burun-halqum orqa devori"
+        },
+        {
+          "target": [
+            {
+              "code": "C11.2",
+              "display": "Lateral wall of nasopharynx",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "53",
+          "display": "burun-halqum yon devori"
+        },
+        {
+          "target": [
+            {
+              "code": "C11.3",
+              "display": "Anterior wall of nasopharynx",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "54",
+          "display": "burun-halqum old devori"
+        },
+        {
+          "target": [
+            {
+              "code": "C11.8",
+              "display": "Overlapping lesion of nasopharynx",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "55",
+          "display": "burun-halqum ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C11.9",
+              "display": "Nasopharynx, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "56",
+          "display": "burun-halqum QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C12.9",
+              "display": "Pyriform sinus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "57",
+          "display": "hiqildoq-halqumning noksimon cho'ntagi"
+        },
+        {
+          "target": [
+            {
+              "code": "C13.0",
+              "display": "Postcricoid region",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "58",
+          "display": "hiqildoq-halqumning uzuksimon ort sohasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C13.1",
+              "display": "Hypopharyngeal aspect of aryepiglottic fold",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "59",
+          "display": "hiqildoq usti cho'michsimon pastki halqum burmasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C13.2",
+              "display": "Posterior wall of hypopharynx",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "60",
+          "display": "hiqildoq-halqum orqa devori"
+        },
+        {
+          "target": [
+            {
+              "code": "C13.8",
+              "display": "Overlapping lesion of hypopharynx",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "61",
+          "display": "hiqildoq-halqum ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C13.9",
+              "display": "Hypopharynx, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "62",
+          "display": "hiqildoq-halqum QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C14.0",
+              "display": "Pharynx, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "63",
+          "display": "halqum QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C14.2",
+              "display": "Waldeyer ring",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "64",
+          "display": "Valdeyer halqum xalqasi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C14.8",
+              "display": "Overlapping lesion of lip, oral cavity and pharynx",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "65",
+          "display": "lablar, og'iz bo'shlig'i va halqumning zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C15.0",
+              "display": "Cervical esophagus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "66",
+          "display": "qizilo'ngach bo'yin qismi"
+        },
+        {
+          "target": [
+            {
+              "code": "C15.1",
+              "display": "Thoracic esophagus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "67",
+          "display": "qizilo'ngach ko'krak qismi"
+        },
+        {
+          "target": [
+            {
+              "code": "C15.2",
+              "display": "Abdominal esophagus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "68",
+          "display": "qizilo'ngach qorin qismi"
+        },
+        {
+          "target": [
+            {
+              "code": "C15.3",
+              "display": "Upper third of esophagus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "69",
+          "display": "qizilo'ngach yuqori uchligi"
+        },
+        {
+          "target": [
+            {
+              "code": "C15.4",
+              "display": "Middle third of esophagus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "70",
+          "display": "qizilo'ngach o'rta uchligi"
+        },
+        {
+          "target": [
+            {
+              "code": "C15.5",
+              "display": "Lower third of esophagus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "71",
+          "display": "qizilo'ngach pastki uchligi"
+        },
+        {
+          "target": [
+            {
+              "code": "C15.8",
+              "display": "Overlapping lesion of esophagus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "72",
+          "display": "qizilo'ngach ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C16.0",
+              "display": "Cardia, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "73",
+          "display": "oshqozon kardiyasi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C16.1",
+              "display": "Fundus of stomach",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "74",
+          "display": "oshqozon tubi"
+        },
+        {
+          "target": [
+            {
+              "code": "C16.2",
+              "display": "Body of stomach",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "75",
+          "display": "oshqozon tanasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C16.3",
+              "display": "Gastric antrum",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "76",
+          "display": "oshqozonning 12 barmoq ichakka o'tadigan qismi"
+        },
+        {
+          "target": [
+            {
+              "code": "C16.4",
+              "display": "Pylorus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "77",
+          "display": "qorin bo'yni"
+        },
+        {
+          "target": [
+            {
+              "code": "C16.5",
+              "display": "Lesser curvature of stomach, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "78",
+          "display": "oshqozon kichik egriligi"
+        },
+        {
+          "target": [
+            {
+              "code": "C16.6",
+              "display": "Greater curvature of stomach, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "79",
+          "display": "oshqozon katta egriligi"
+        },
+        {
+          "target": [
+            {
+              "code": "C16.8",
+              "display": "Overlapping lesion of stomach",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "80",
+          "display": "oshqozon ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C16.9",
+              "display": "Stomach, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "81",
+          "display": "oshqozon QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C17.0",
+              "display": "Duodenum",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "82",
+          "display": "12 barmoq ichak"
+        },
+        {
+          "target": [
+            {
+              "code": "C17.1",
+              "display": "Jejunum",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "83",
+          "display": "och ichak"
+        },
+        {
+          "target": [
+            {
+              "code": "C17.2",
+              "display": "Ileum",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "84",
+          "display": "yonbosh ichak"
+        },
+        {
+          "target": [
+            {
+              "code": "C17.3",
+              "display": "Meckel diverticulum",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "85",
+          "display": "Mekkel divertikuli"
+        },
+        {
+          "target": [
+            {
+              "code": "C17.8",
+              "display": "Overlapping lesion of small intestine",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "86",
+          "display": "ingichka ichak ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C17.9",
+              "display": "Small intestine, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "87",
+          "display": "ingichka ichak"
+        },
+        {
+          "target": [
+            {
+              "code": "C18.0",
+              "display": "Cecum",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "88",
+          "display": "ko'r ichak"
+        },
+        {
+          "target": [
+            {
+              "code": "C18.1",
+              "display": "Appendix",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "89",
+          "display": "chuvalchangsimon o'simta"
+        },
+        {
+          "target": [
+            {
+              "code": "C18.2",
+              "display": "Ascending colon",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "90",
+          "display": "ko'tariluvchi chambar ichak"
+        },
+        {
+          "target": [
+            {
+              "code": "C18.3",
+              "display": "Hepatic flexure of colon",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "91",
+          "display": "yo'g'on ichak o'ng (jigar) burilishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C18.4",
+              "display": "Transverse colon",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "92",
+          "display": "ko'ndalang chambar ichak"
+        },
+        {
+          "target": [
+            {
+              "code": "C18.5",
+              "display": "Splenic flexure of colon",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "93",
+          "display": "yo'g'on ichak chap (taloq) burilishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C18.6",
+              "display": "Descending colon",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "94",
+          "display": "tushuvchi chambar ichak"
+        },
+        {
+          "target": [
+            {
+              "code": "C18.7",
+              "display": "Sigmoid colon",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "95",
+          "display": "sigmasimon ichak"
+        },
+        {
+          "target": [
+            {
+              "code": "C18.8",
+              "display": "Overlapping lesion of colon",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "96",
+          "display": "yo'g'on ichak ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C18.9",
+              "display": "Colon, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "97",
+          "display": "yo'g'on ichak QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C19.9",
+              "display": "Rectosigmoid junction",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "98",
+          "display": "rektosigmoid birikma"
+        },
+        {
+          "target": [
+            {
+              "code": "C20.9",
+              "display": "Rectum, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "99",
+          "display": "to'g'ri ichak"
+        },
+        {
+          "target": [
+            {
+              "code": "C21.0",
+              "display": "Anus, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "100",
+          "display": "anus"
+        },
+        {
+          "target": [
+            {
+              "code": "C21.1",
+              "display": "Anal canal",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "101",
+          "display": "anal kanal"
+        },
+        {
+          "target": [
+            {
+              "code": "C21.2",
+              "display": "Cloacogenic zone",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "102",
+          "display": "kloakogen soha"
+        },
+        {
+          "target": [
+            {
+              "code": "C21.8",
+              "display": "Overlapping lesion of rectum, anus and anal canal",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "103",
+          "display": "to'g'ri ichak va anusning ko'plab qismlarining zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C22.0",
+              "display": "Liver",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "104",
+          "display": "jigar"
+        },
+        {
+          "target": [
+            {
+              "code": "C22.1",
+              "display": "Intrahepatic bile duct",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "105",
+          "display": "jigar ichi o't yo'li"
+        },
+        {
+          "target": [
+            {
+              "code": "C23.9",
+              "display": "Gallbladder",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "106",
+          "display": "o't pufagi"
+        },
+        {
+          "target": [
+            {
+              "code": "C24.0",
+              "display": "Extrahepatic bile duct",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "107",
+          "display": "jigardan tashqari o't yo'li"
+        },
+        {
+          "target": [
+            {
+              "code": "C24.1",
+              "display": "Ampulla of Vater",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "108",
+          "display": "jigar-oshqozon osti bezi Fater ampulasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C24.8",
+              "display": "Overlapping lesion of biliary tract",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "109",
+          "display": "o't yo'llari ko'plab qismlarining zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C24.9",
+              "display": "Biliary tract, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "110",
+          "display": "jigar yo'llari QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C25.0",
+              "display": "Head of pancreas",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "111",
+          "display": "oshqozon osti bezi boshchasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C25.1",
+              "display": "Body of pancreas",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "112",
+          "display": "oshqozon osti bezi boshchasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C25.2",
+              "display": "Tail of pancreas",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "113",
+          "display": "oshqozon osti bezi dumi"
+        },
+        {
+          "target": [
+            {
+              "code": "C25.3",
+              "display": "Pancreatic duct",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "114",
+          "display": "oshqozon osti bezi yo'li"
+        },
+        {
+          "target": [
+            {
+              "code": "C25.4",
+              "display": "Islets of Langerhans",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "115",
+          "display": "oshqozon osti bezi Langergans orolchalari"
+        },
+        {
+          "target": [
+            {
+              "code": "C25.7",
+              "display": "Other specified parts of pancreas",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "116",
+          "display": "oshqozon osti bezining boshqa qismlari"
+        },
+        {
+          "target": [
+            {
+              "code": "C25.8",
+              "display": "Overlapping lesion of pancreas",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "117",
+          "display": "oshqozon osti bezi ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C25.9",
+              "display": "Pancreas, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "118",
+          "display": "oshqozon osti bezi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C26.0",
+              "display": "Intestinal tract, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "119",
+          "display": "ichaklar QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C26.8",
+              "display": "Overlapping lesion of digestive system",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "120",
+          "display": "hazm qilish tizimi ko'plab qismlarining zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C26.9",
+              "display": "Gastrointestinal tract, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "121",
+          "display": "oshqozon-ichak tizimi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C30.0",
+              "display": "Nasal cavity",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "122",
+          "display": "burun bo'shlig'i"
+        },
+        {
+          "target": [
+            {
+              "code": "C30.1",
+              "display": "Middle ear",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "123",
+          "display": "o'rta quloq"
+        },
+        {
+          "target": [
+            {
+              "code": "C31.0",
+              "display": "Maxillary sinus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "124",
+          "display": "yuqori jag' bo'shlig'i"
+        },
+        {
+          "target": [
+            {
+              "code": "C31.1",
+              "display": "Ethmoid sinus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "125",
+          "display": "g'alvirsimon bo'shliq"
+        },
+        {
+          "target": [
+            {
+              "code": "C31.2",
+              "display": "Frontal sinus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "126",
+          "display": "peshona bo'shlig'i"
+        },
+        {
+          "target": [
+            {
+              "code": "C31.3",
+              "display": "Sphenoid sinus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "127",
+          "display": "ponasimon bo'shliq"
+        },
+        {
+          "target": [
+            {
+              "code": "C31.8",
+              "display": "Overlapping lesion of accessory sinuses",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "128",
+          "display": "qo'shimcha (yondosh) bo'shliqlarning qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C31.9",
+              "display": "Accessory sinus, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "129",
+          "display": "qo'shimcha (yondosh) bo'shliqlar QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C32.0",
+              "display": "Glottis",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "130",
+          "display": "ovoz yorig'i (boylam sohasi)"
+        },
+        {
+          "target": [
+            {
+              "code": "C32.1",
+              "display": "Supraglottis",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "131",
+          "display": "hiqildoqning boylam usti sohasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C32.2",
+              "display": "Subglottis",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "132",
+          "display": "hiqildoqning boylam osti sohasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C32.3",
+              "display": "Laryngeal cartilage",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "133",
+          "display": "hiqildoq tog'aylari"
+        },
+        {
+          "target": [
+            {
+              "code": "C32.8",
+              "display": "Overlapping lesion of larynx",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "134",
+          "display": "hiqildoq ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C32.9",
+              "display": "Larynx, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "135",
+          "display": "hiqildoq QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C33.9",
+              "display": "Trachea",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "136",
+          "display": "traxeya"
+        },
+        {
+          "target": [
+            {
+              "code": "C34.0",
+              "display": "Main bronchus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "137",
+          "display": "bosh bronx"
+        },
+        {
+          "target": [
+            {
+              "code": "C34.1",
+              "display": "Upper lobe, lung",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "138",
+          "display": "o'pkaning yuqori bo'lagi"
+        },
+        {
+          "target": [
+            {
+              "code": "C34.2",
+              "display": "Middle lobe, lung",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "139",
+          "display": "o'pkaning o'rta bo'lagi"
+        },
+        {
+          "target": [
+            {
+              "code": "C34.3",
+              "display": "Lower lobe, lung",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "140",
+          "display": "o'pkaning pastki bo'lagi"
+        },
+        {
+          "target": [
+            {
+              "code": "C34.8",
+              "display": "Overlapping lesion of lung",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "141",
+          "display": "o'pka va bronxning ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C34.9",
+              "display": "Lung, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "142",
+          "display": "o'pka QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C37.9",
+              "display": "Thymus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "143",
+          "display": "ayrisimon bez"
+        },
+        {
+          "target": [
+            {
+              "code": "C38.0",
+              "display": "Heart",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "144",
+          "display": "yurak"
+        },
+        {
+          "target": [
+            {
+              "code": "C38.1",
+              "display": "Anterior mediastinum",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "145",
+          "display": "ko'ks old sohasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C38.2",
+              "display": "Posterior mediastinum",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "146",
+          "display": "ko'ks orqa sohasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C38.3",
+              "display": "Mediastinum, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "147",
+          "display": "ko'ks oralig'i QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C38.4",
+              "display": "Pleura, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "148",
+          "display": "plevra QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C38.8",
+              "display": "Overlapping lesion of heart, mediastinum and pleura",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "149",
+          "display": "yurak, ko'ks oralig'i va plevraning ko'plab qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C39.0",
+              "display": "Upper respiratory tract, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "150",
+          "display": "yuqori nafas yo'llari"
+        },
+        {
+          "target": [
+            {
+              "code": "C39.8",
+              "display": "Overlapping lesion of respiratory system and intrathoracic organs",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "151",
+          "display": "nafas tizimi ko'plab qismlarining zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C39.9",
+              "display": "Ill-defined sites within respiratory system",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "152",
+          "display": "nafas tizimi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C40.0",
+              "display": "Long bones of upper limb, scapula and associated joints",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "153",
+          "display": "qo'lning uzun va kurak suyagi"
+        },
+        {
+          "target": [
+            {
+              "code": "C40.1",
+              "display": "Short bones of upper limb and associated joints",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "154",
+          "display": "qo'lning kalta suyagi"
+        },
+        {
+          "target": [
+            {
+              "code": "C40.2",
+              "display": "Long bones of lower limb and associated joints",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "155",
+          "display": "oyoqning uzun suyagi"
+        },
+        {
+          "target": [
+            {
+              "code": "C40.3",
+              "display": "Short bones of lower limb and associated joints",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "156",
+          "display": "oyoqning kalta suyagi"
+        },
+        {
+          "target": [
+            {
+              "code": "C40.8",
+              "display": "Overlapping lesion of bones, joints and articular cartilage of limbs",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "157",
+          "display": "oyoo'-qo'llarning ko'plab zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C40.9",
+              "display": "Bone of limb, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "158",
+          "display": "oyoq-qo'llar suyaklari QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C41.0",
+              "display": "Bones of skull and face and associated joints",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "159",
+          "display": "bosh va yuz suyaklari"
+        },
+        {
+          "target": [
+            {
+              "code": "C41.1",
+              "display": "Mandible",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "160",
+          "display": "pastki jag' suyagi"
+        },
+        {
+          "target": [
+            {
+              "code": "C41.2",
+              "display": "Vertebral column",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "161",
+          "display": "umurtqa"
+        },
+        {
+          "target": [
+            {
+              "code": "C41.3",
+              "display": "Rib, sternum, clavicle and associated joints",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "162",
+          "display": "qovurg'a, to'sh, o'mrov"
+        },
+        {
+          "target": [
+            {
+              "code": "C41.4",
+              "display": "Pelvic bones, sacrum, coccyx and associated joints",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "163",
+          "display": "chanoq, dumg'aza va dum suyaklari"
+        },
+        {
+          "target": [
+            {
+              "code": "C41.8",
+              "display": "Overlapping lesion of bones, joints and articular cartilage",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "164",
+          "display": "suyak, bo'g'im, bo'g'im tog'ayining ma'lum chegaradan chiqib zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C41.9",
+              "display": "Bone, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "165",
+          "display": "suyak QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C42.0",
+              "display": "Blood",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "166",
+          "display": "qon"
+        },
+        {
+          "target": [
+            {
+              "code": "C42.1",
+              "display": "Bone marrow",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "167",
+          "display": "suyak ko'migi"
+        },
+        {
+          "target": [
+            {
+              "code": "C42.2",
+              "display": "Spleen",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "168",
+          "display": "taloq"
+        },
+        {
+          "target": [
+            {
+              "code": "C42.3",
+              "display": "Reticuloendothelial system, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "169",
+          "display": "retikuloendotelial tizim QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C42.4",
+              "display": "Hematopoietic system, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "170",
+          "display": "qon ishlab chiqaruvchi tizim QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C44.0",
+              "display": "Skin of lip, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "171",
+          "display": "lab terisi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C44.1",
+              "display": "Eyelid",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "172",
+          "display": "qovoq terisi"
+        },
+        {
+          "target": [
+            {
+              "code": "C44.2",
+              "display": "External ear",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "173",
+          "display": "tashqi quloq"
+        },
+        {
+          "target": [
+            {
+              "code": "C44.3",
+              "display": "Skin of other and unspecified parts of face",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "174",
+          "display": "yuz terisi"
+        },
+        {
+          "target": [
+            {
+              "code": "C44.4",
+              "display": "Skin of scalp and neck",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "175",
+          "display": "boshning sochli qismi va bo'yin terisi"
+        },
+        {
+          "target": [
+            {
+              "code": "C44.5",
+              "display": "Skin of trunk",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "176",
+          "display": "tana terisi"
+        },
+        {
+          "target": [
+            {
+              "code": "C44.6",
+              "display": "Skin of upper limb and shoulder",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "177",
+          "display": "qo'l va elka terisi"
+        },
+        {
+          "target": [
+            {
+              "code": "C44.7",
+              "display": "Skin of lower limb and hip",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "178",
+          "display": "oyoq va son terisi"
+        },
+        {
+          "target": [
+            {
+              "code": "C44.8",
+              "display": "Overlapping lesion of skin",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "179",
+          "display": "terining ko'plab zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C44.9",
+              "display": "Skin, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "180",
+          "display": "teri QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C47.0",
+              "display": "Peripheral nerves and autonomic nervous system of head, face, and neck",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "181",
+          "display": "bosh, yuz va bo'yinning periferik nervlari va vegetativ AT"
+        },
+        {
+          "target": [
+            {
+              "code": "C47.1",
+              "display": "Peripheral nerves and autonomic nervous system of upper limb and shoulder",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "182",
+          "display": "qo'l va elka kamarining periferik nervlari va vegetativ AT"
+        },
+        {
+          "target": [
+            {
+              "code": "C47.2",
+              "display": "Peripheral nerves and autonomic nervous system of lower limb and hip",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "183",
+          "display": "oyoq va sonningperiferik nervlari va vegetativ AT"
+        },
+        {
+          "target": [
+            {
+              "code": "C47.3",
+              "display": "Peripheral nerves and autonomic nervous system of thorax",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "184",
+          "display": "ko'krak qafasining periferik nervlari va vegetativ AT"
+        },
+        {
+          "target": [
+            {
+              "code": "C47.4",
+              "display": "Peripheral nerves and autonomic nervous system of abdomen",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "185",
+          "display": "qorinning periferik nervlari va vegetativ AT"
+        },
+        {
+          "target": [
+            {
+              "code": "C47.5",
+              "display": "Peripheral nerves and autonomic nervous system of pelvis",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "186",
+          "display": "chanoqning periferik nervlari va vegetativ AT"
+        },
+        {
+          "target": [
+            {
+              "code": "C47.6",
+              "display": "Peripheral nerves and autonomic nervous system of trunk, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "187",
+          "display": "orqa (tana orqa qismi) ning periferik nervlari va vegetativ AT"
+        },
+        {
+          "target": [
+            {
+              "code": "C47.8",
+              "display": "Overlapping lesion of peripheral nerves and autonomic nervous system",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "188",
+          "display": "periferik nervlar va vegetativ ATning ko'plab zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C47.9",
+              "display": "Autonomic nervous system, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "189",
+          "display": "periferik nervlar va vegetativ ATQA"
+        },
+        {
+          "target": [
+            {
+              "code": "C48.0",
+              "display": "Retroperitoneum",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "190",
+          "display": "qorin orti bo'shlig'i"
+        },
+        {
+          "target": [
+            {
+              "code": "C48.1",
+              "display": "Specified parts of peritoneum",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "191",
+          "display": "qorin parda, aniq sohasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C48.2",
+              "display": "Peritoneum, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "192",
+          "display": "qorin parda, noaniq sohasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C48.8",
+              "display": "Overlapping lesion of retroperitoneum and peritoneum",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "193",
+          "display": "qorin orti bo'shlig'i va qorin pardaning ko'plab qismlarining zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C49.0",
+              "display": "Connective, Subcutaneous and other soft tissues of head, face, and neck",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "194",
+          "display": "bosh, yuz, bo'yinning yumshoq to'qimasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C49.1",
+              "display": "Connective, Subcutaneous and other soft tissues of upper limb and shoulder",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "195",
+          "display": "qo'l, elkaning biriktiruvchi va yumshoq to'qimasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C49.2",
+              "display": "Connective, Subcutaneous and other soft tissues of lower limb and hip",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "196",
+          "display": "oyoq va sonning biriktiruvchi va yumshoq to'qimasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C49.3",
+              "display": "Connective, Subcutaneous and other soft tissues of thorax",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "197",
+          "display": "ko'krak devori yumshoq to'qimasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C49.4",
+              "display": "Connective, Subcutaneous and other soft tissues of abdomen",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "198",
+          "display": "qorin devori yumshoq to'qimasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C49.5",
+              "display": "Connective, Subcutaneous and other soft tissues of pelvis",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "199",
+          "display": "chanoqning biriktiruvchi va yumshoq to'qimasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C49.6",
+              "display": "Connective, Subcutaneous and other soft tissues of trunk, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "200",
+          "display": "orqa (tana orqa qismi) ning yumshoq to'qimasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C49.8",
+              "display": "Overlapping lesion of connective, subcutaneous and other soft tissues",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "201",
+          "display": "tananing ko'plab qismlari yumshoq to'qimasining zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C49.9",
+              "display": "Connective, Subcutaneous and other soft tissues, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "202",
+          "display": "biriktiruvchi va yumshoq to'qima QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C50.0",
+              "display": "Nipple",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "203",
+          "display": "sut bezi, so'rg'ich va so'rg'ich atrofi (areola)"
+        },
+        {
+          "target": [
+            {
+              "code": "C50.1",
+              "display": "Central portion of breast",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "204",
+          "display": "sut bezi markaziy qismi"
+        },
+        {
+          "target": [
+            {
+              "code": "C50.2",
+              "display": "Upper-inner quadrant of breast",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "205",
+          "display": "sut bezi yuqori-ichki kvadranti"
+        },
+        {
+          "target": [
+            {
+              "code": "C50.3",
+              "display": "Lower-inner quadrant of breast",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "206",
+          "display": "sut bezi pastki-ichki kvadranti"
+        },
+        {
+          "target": [
+            {
+              "code": "C50.4",
+              "display": "Upper-outer quadrant of breast",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "207",
+          "display": "sut bezi yuqori-tashqi kvadranti"
+        },
+        {
+          "target": [
+            {
+              "code": "C50.5",
+              "display": "Lower-outer quadrant of breast",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "208",
+          "display": "sut bezi pastki-tashqi kvadranti"
+        },
+        {
+          "target": [
+            {
+              "code": "C50.6",
+              "display": "Axillary tail of breast",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "209",
+          "display": "sut bezi qo'ltiq osti o'simtasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C50.8",
+              "display": "Overlapping lesion of breast",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "210",
+          "display": "sut bezining ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C50.9",
+              "display": "Breast, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "211",
+          "display": "sut bezi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C51.0",
+              "display": "Labium majus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "212",
+          "display": "katta uyatli lab"
+        },
+        {
+          "target": [
+            {
+              "code": "C51.1",
+              "display": "Labium minus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "213",
+          "display": "kichik uyatli lab"
+        },
+        {
+          "target": [
+            {
+              "code": "C51.2",
+              "display": "Clitoris",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "214",
+          "display": "klitor"
+        },
+        {
+          "target": [
+            {
+              "code": "C51.8",
+              "display": "Overlapping lesion of vulva",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "215",
+          "display": "qin dahlizining ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C51.9",
+              "display": "Vulva, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "216",
+          "display": "qin dahlizi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C52.9",
+              "display": "Vagina, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "217",
+          "display": "qin QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C53.0",
+              "display": "Endocervix",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "218",
+          "display": "bachadon bo'ynining ichki qismi"
+        },
+        {
+          "target": [
+            {
+              "code": "C53.1",
+              "display": "Exocervix",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "219",
+          "display": "bachadon bo'ynining tashqi qismi"
+        },
+        {
+          "target": [
+            {
+              "code": "C53.8",
+              "display": "Overlapping lesion of cervix uteri",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "220",
+          "display": "bachadon bo'yniningko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C53.9",
+              "display": "Cervix uteri",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "221",
+          "display": "bachadon bo'yni"
+        },
+        {
+          "target": [
+            {
+              "code": "C54.0",
+              "display": "Isthmus uteri",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "222",
+          "display": "bachadon bo'yinchasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C54.1",
+              "display": "Endometrium",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "223",
+          "display": "endometriy"
+        },
+        {
+          "target": [
+            {
+              "code": "C54.2",
+              "display": "Myometrium",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "224",
+          "display": "miometriy"
+        },
+        {
+          "target": [
+            {
+              "code": "C54.3",
+              "display": "Fundus uteri",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "225",
+          "display": "bachadon tubi"
+        },
+        {
+          "target": [
+            {
+              "code": "C54.8",
+              "display": "Overlapping lesion of corpus uteri",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "226",
+          "display": "bachadon tanasining ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C54.9",
+              "display": "Corpus uteri",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "227",
+          "display": "bachadon tanasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C55.9",
+              "display": "Uterus, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "228",
+          "display": "bachadon QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C56.9",
+              "display": "Ovary",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "229",
+          "display": "tuxumdon"
+        },
+        {
+          "target": [
+            {
+              "code": "C57.0",
+              "display": "Fallopian tube",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "230",
+          "display": "fallopiev nayi"
+        },
+        {
+          "target": [
+            {
+              "code": "C57.1",
+              "display": "Broad ligament",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "231",
+          "display": "bachadon keng boylami"
+        },
+        {
+          "target": [
+            {
+              "code": "C57.2",
+              "display": "Round ligament",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "232",
+          "display": "bachadon yumaloq boylami"
+        },
+        {
+          "target": [
+            {
+              "code": "C57.3",
+              "display": "Parametrium",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "233",
+          "display": "parametriy"
+        },
+        {
+          "target": [
+            {
+              "code": "C57.4",
+              "display": "Uterine adnexa",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "234",
+          "display": "bachadon ortiqlari"
+        },
+        {
+          "target": [
+            {
+              "code": "C57.7",
+              "display": "Other specified parts of female genital organs",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "235",
+          "display": "ayollar jinsiy a'zolarining boshqa sohalari"
+        },
+        {
+          "target": [
+            {
+              "code": "C57.8",
+              "display": "Overlapping lesion of female genital organs",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "236",
+          "display": "ayollar ko'plab jinsiy a'zolarining zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C57.9",
+              "display": "Female genital tract, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "237",
+          "display": "ayollar jinsiy a'zolari QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C58.9",
+              "display": "Placenta",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "238",
+          "display": "plasenta (yo'ldosh)"
+        },
+        {
+          "target": [
+            {
+              "code": "C60.0",
+              "display": "Prepuce",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "239",
+          "display": "jinsiy olat cheka kertmagi"
+        },
+        {
+          "target": [
+            {
+              "code": "C60.1",
+              "display": "Glans penis",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "240",
+          "display": "jinsiy olat boshchasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C60.2",
+              "display": "Body of penis",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "241",
+          "display": "jinsiy olat tanasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C60.8",
+              "display": "Overlapping lesion of penis",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "242",
+          "display": "jinsiy olat ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C60.9",
+              "display": "Penis, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "243",
+          "display": "jinsiy olat QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C61.9",
+              "display": "Prostate gland",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "244",
+          "display": "prostata bezi"
+        },
+        {
+          "target": [
+            {
+              "code": "C62.0",
+              "display": "Undescended testis",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "245",
+          "display": "yorg'oqqa tushmagan moyak"
+        },
+        {
+          "target": [
+            {
+              "code": "C62.1",
+              "display": "Descended testis",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "246",
+          "display": "yorg'oqqa tushgan moyak"
+        },
+        {
+          "target": [
+            {
+              "code": "C62.9",
+              "display": "Testis, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "247",
+          "display": "moyak QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C63.0",
+              "display": "Epididymis",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "248",
+          "display": "moyakning ortiqlari"
+        },
+        {
+          "target": [
+            {
+              "code": "C63.1",
+              "display": "Spermatic cord",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "249",
+          "display": "urug' tizimchasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C63.2",
+              "display": "Scrotum, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "250",
+          "display": "yorg'oq QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C63.7",
+              "display": "Other specified parts of male genital organs",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "251",
+          "display": "erkaklar jinsiy a'zolarining boshqa sohalari"
+        },
+        {
+          "target": [
+            {
+              "code": "C63.8",
+              "display": "Overlapping lesion of male genital organs",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "252",
+          "display": "erkaklar ko'plab jinsiy a'zolarining zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C63.9",
+              "display": "Male genital organs, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "253",
+          "display": "erkaklar jinsiy a'zolari QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C64.9",
+              "display": "Kidney, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "254",
+          "display": "buyrak"
+        },
+        {
+          "target": [
+            {
+              "code": "C65.9",
+              "display": "Renal pelvis",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "255",
+          "display": "buyrak jomi"
+        },
+        {
+          "target": [
+            {
+              "code": "C66.9",
+              "display": "Ureter",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "256",
+          "display": "siydik nayi"
+        },
+        {
+          "target": [
+            {
+              "code": "C67.0",
+              "display": "Trigone of bladder",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "257",
+          "display": "siydik pufagi uchburchagi"
+        },
+        {
+          "target": [
+            {
+              "code": "C67.1",
+              "display": "Dome of bladder",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "258",
+          "display": "siydik pufagi gumbazi"
+        },
+        {
+          "target": [
+            {
+              "code": "C67.2",
+              "display": "Lateral wall of bladder",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "259",
+          "display": "siydik pufagi yon devori"
+        },
+        {
+          "target": [
+            {
+              "code": "C67.3",
+              "display": "Anterior wall of bladder",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "260",
+          "display": "siydik pufagi old devori"
+        },
+        {
+          "target": [
+            {
+              "code": "C67.4",
+              "display": "Posterior wall of bladder",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "261",
+          "display": "siydik pufagi orqa devori"
+        },
+        {
+          "target": [
+            {
+              "code": "C67.5",
+              "display": "Bladder neck",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "262",
+          "display": "siydik pufagi bo'yinchasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C67.6",
+              "display": "Ureteric orifice",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "263",
+          "display": "siydik nayi teshigi"
+        },
+        {
+          "target": [
+            {
+              "code": "C67.7",
+              "display": "Urachus",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "264",
+          "display": "uraxus (birlamchi siydik yo'li)"
+        },
+        {
+          "target": [
+            {
+              "code": "C67.8",
+              "display": "Overlapping lesion of bladder",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "265",
+          "display": "siydik pufagining ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C67.9",
+              "display": "Bladder, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "266",
+          "display": "siydik pufagi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C68.0",
+              "display": "Urethra",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "267",
+          "display": "siydik kanali"
+        },
+        {
+          "target": [
+            {
+              "code": "C68.1",
+              "display": "Paraurethral gland",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "268",
+          "display": "parauretral bez"
+        },
+        {
+          "target": [
+            {
+              "code": "C68.8",
+              "display": "Overlapping lesion of urinary organs",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "269",
+          "display": "ko'plab ayirish a'zolarining zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C68.9",
+              "display": "Urinary system, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "270",
+          "display": "ayirish a'zolari QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C69.0",
+              "display": "Conjunctiva",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "271",
+          "display": "kon'yunktiva"
+        },
+        {
+          "target": [
+            {
+              "code": "C69.1",
+              "display": "Cornea, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "272",
+          "display": "shox parda QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C69.2",
+              "display": "Retina",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "273",
+          "display": "to'r parda QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C69.3",
+              "display": "Choroid",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "274",
+          "display": "ko'z tomirli pardasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C69.4",
+              "display": "Ciliary body",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "275",
+          "display": "ko'z kipriksimon tanasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C69.5",
+              "display": "Lacrimal gland",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "276",
+          "display": "yosh bezi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C69.6",
+              "display": "Orbit, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "277",
+          "display": "ko'z kosasi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C69.8",
+              "display": "Overlapping lesion of eye and adnexa",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "278",
+          "display": "ko'zning ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C69.9",
+              "display": "Eye, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "279",
+          "display": "ko'z QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C70.0",
+              "display": "Cerebral meninges",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "280",
+          "display": "bosh miya pardasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C70.1",
+              "display": "Spinal meninges",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "281",
+          "display": "orqa miya pardasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C70.9",
+              "display": "Meninges, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "282",
+          "display": "miya pardasi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C71.0",
+              "display": "Cerebrum",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "283",
+          "display": "katta miya (bo'lma va qorinchalardan tashqari)"
+        },
+        {
+          "target": [
+            {
+              "code": "C71.1",
+              "display": "Frontal lobe",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "284",
+          "display": "miyaning peshona bo'lmasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C71.2",
+              "display": "Temporal lobe",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "285",
+          "display": "miyaning chakka bo'lmasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C71.3",
+              "display": "Parietal lobe",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "286",
+          "display": "miyaning tepa bo'lmasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C71.4",
+              "display": "Occipital lobe",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "287",
+          "display": "miyaning ensa bo'lmasi"
+        },
+        {
+          "target": [
+            {
+              "code": "C71.5",
+              "display": "Ventricle, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "288",
+          "display": "miya qorinchalari QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C71.6",
+              "display": "Cerebellum, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "289",
+          "display": "miyacha"
+        },
+        {
+          "target": [
+            {
+              "code": "C71.7",
+              "display": "Brain stem",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "290",
+          "display": "bosh miya ustuni"
+        },
+        {
+          "target": [
+            {
+              "code": "C71.8",
+              "display": "Overlapping lesion of brain",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "291",
+          "display": "bosh miyaning ko'plab qismlarining qo'shma zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C71.9",
+              "display": "Brain, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "292",
+          "display": "bosh miya QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C72.0",
+              "display": "Spinal cord",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "293",
+          "display": "orqa miya"
+        },
+        {
+          "target": [
+            {
+              "code": "C72.1",
+              "display": "Cauda equina",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "294",
+          "display": "ot dumi"
+        },
+        {
+          "target": [
+            {
+              "code": "C72.2",
+              "display": "Olfactory nerve",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "295",
+          "display": "hid sezish nervi"
+        },
+        {
+          "target": [
+            {
+              "code": "C72.3",
+              "display": "Optic nerve",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "296",
+          "display": "ko'ruv nervi"
+        },
+        {
+          "target": [
+            {
+              "code": "C72.4",
+              "display": "Acoustic nerve",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "297",
+          "display": "eshitish nervi"
+        },
+        {
+          "target": [
+            {
+              "code": "C72.5",
+              "display": "Cranial nerve, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "298",
+          "display": "bosh miya nervi"
+        },
+        {
+          "target": [
+            {
+              "code": "C72.8",
+              "display": "Overlapping lesion of brain and central nervous system",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "299",
+          "display": "miya va MATning ko'plab qismlarining zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C72.9",
+              "display": "Nervous system, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "300",
+          "display": "MAT QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C73.9",
+              "display": "Thyroid gland",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "301",
+          "display": "qalqonsimon bez"
+        },
+        {
+          "target": [
+            {
+              "code": "C74.0",
+              "display": "Cortex of adrenal gland",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "302",
+          "display": "buyrak usti bezi po'stlog'i"
+        },
+        {
+          "target": [
+            {
+              "code": "C74.1",
+              "display": "Medulla of adrenal gland",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "303",
+          "display": "buyrak usti bezi miya (mag'iz) qavati"
+        },
+        {
+          "target": [
+            {
+              "code": "C74.9",
+              "display": "Adrenal gland, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "304",
+          "display": "burak usti bezi QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C75.0",
+              "display": "Parathyroid gland",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "305",
+          "display": "qalqon oldi bezi"
+        },
+        {
+          "target": [
+            {
+              "code": "C75.1",
+              "display": "Pituitary gland",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "306",
+          "display": "gipofiz"
+        },
+        {
+          "target": [
+            {
+              "code": "C75.2",
+              "display": "Craniopharyngeal duct",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "307",
+          "display": "kriniofaringeal yo'l"
+        },
+        {
+          "target": [
+            {
+              "code": "C75.3",
+              "display": "Pineal gland",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "308",
+          "display": "g'uddasimon bez"
+        },
+        {
+          "target": [
+            {
+              "code": "C75.4",
+              "display": "Carotid body",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "309",
+          "display": "karotid glomus"
+        },
+        {
+          "target": [
+            {
+              "code": "C75.5",
+              "display": "Aortic body and other paraganglia",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "310",
+          "display": "aortal glomus va boshqa paragangliylar"
+        },
+        {
+          "target": [
+            {
+              "code": "C75.8",
+              "display": "Overlapping lesion of endocrine glands and related structures",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "311",
+          "display": "endokrin bezlarining ko'plab zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C75.9",
+              "display": "Endocrine gland, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "312",
+          "display": "endokrin bez QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C76.0",
+              "display": "Head, face or neck, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "313",
+          "display": "bosh, yuz, bo'yin QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C76.1",
+              "display": "Thorax, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "314",
+          "display": "ko'krak bo'shlig'i QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C76.2",
+              "display": "Abdomen, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "315",
+          "display": "qorin QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C76.3",
+              "display": "Pelvis, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "316",
+          "display": "chanoq QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C76.4",
+              "display": "Upper limb, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "317",
+          "display": "qo'llar QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C76.5",
+              "display": "Lower limb, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "318",
+          "display": "oyoqlar QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C76.7",
+              "display": "Other ill-defined sites",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "319",
+          "display": "noaniq lokalizatsiyali boshqa o'smalar"
+        },
+        {
+          "target": [
+            {
+              "code": "C76.8",
+              "display": "Overlapping lesion of ill-defined sites",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "320",
+          "display": "aniqlanmagan a'zolarning ko'plab zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C77.0",
+              "display": "Lymph nodes of head, face and neck",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "321",
+          "display": "bosh va bo'yin l.t"
+        },
+        {
+          "target": [
+            {
+              "code": "C77.1",
+              "display": "Intrathoracic lymph nodes",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "322",
+          "display": "ko'krak ichi l.t"
+        },
+        {
+          "target": [
+            {
+              "code": "C77.2",
+              "display": "Intra-abdominal lymph nodes",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "323",
+          "display": "qorin ichi l.t"
+        },
+        {
+          "target": [
+            {
+              "code": "C77.3",
+              "display": "Lymph nodes of axilla or arm",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "324",
+          "display": "ko'ltiq osti va qo'llar l.t"
+        },
+        {
+          "target": [
+            {
+              "code": "C77.4",
+              "display": "Lymph nodes of inguinal region or leg",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "325",
+          "display": "chov va oyoqlar l.t"
+        },
+        {
+          "target": [
+            {
+              "code": "C77.5",
+              "display": "Pelvic lymph nodes",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "326",
+          "display": "chanoq ichi l.t"
+        },
+        {
+          "target": [
+            {
+              "code": "C77.8",
+              "display": "Lymph nodes of multiple regions",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "327",
+          "display": "limfa tugunlarning ko'plab zararlanishi"
+        },
+        {
+          "target": [
+            {
+              "code": "C77.9",
+              "display": "Lymph node, NOS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "328",
+          "display": "limfa tugun QA"
+        },
+        {
+          "target": [
+            {
+              "code": "C80.9",
+              "display": "Unknown primary site",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "329",
+          "display": "noaniq lokalizatsiyali"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-icd-o-3-topography-cs",
+      "target": "http://terminology.hl7.org/CodeSystem/icd-o-3"
+    }
+  ],
+  "name": "CancerRegistryDictionaryICDO3TopographyToDHPICDO3TopographyCM",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Uzinfocom",
+  "sourceScopeCanonical": "https://terminology.dhp.uz/fhir/integrations/ValueSet/cancer-registry-dictionary-icd-o-3-topography-vs"
+}

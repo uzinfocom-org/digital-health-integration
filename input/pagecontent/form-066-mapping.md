@@ -25,7 +25,7 @@ For a complete reference instance, see the [Form 066 hospital discharge example]
 
 ### Field Mapping
 
-# UZ-066 Hospital Discharge Statistical Card - FHIR Mapping
+### UZ-066 Hospital Discharge Statistical Card - FHIR Mapping
 
 ---
 
@@ -126,12 +126,14 @@ Causes of death are tagged the same way (`Condition.category`, [Diagnosis Role](
 
 ### Surgical Procedures
 
+The operation code is an ICHI stem code (Target.Action.Means) carried on `Procedure.code` with system `http://id.who.int/icd/release/11/ichi`. Pick it from [ICHI Codes Accepted by DMED](https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs), which is what DMED accepts. Some of those codes are inactive in ICHI and are only there so records DMED already holds stay valid - code a new operation with an active one. A procedure recorded outside form 066 is coded from [ICHI Codes](https://terminology.dhp.uz/fhir/core/ValueSet/ichi-vs).
+
 | UZ | RU | FHIR Path | Code | Example |
 |----|----|------------|------|---------|
 | Sana va vaqti | Дата и время операции | [Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html).occurrenceDateTime | - | 2026-01-08T11:30:00+05:00 |
-| Kod (ICHI) | Код операции | Procedure.code | SNOMED CT / ICHI | 123.AB.45 |
+| Kod (ICHI) | Код операции | Procedure.code | [ICHI Codes Accepted by DMED](https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs) | JBB.AE.AD |
 | Asosiy | Основная операция | Procedure.category | Local | Main |
-| Nomi | Наименование операции | Procedure.code.text | - | Surgical procedure |
+| Nomi | Наименование операции | Procedure.code.text | - | Bronchoscopy |
 | Shifokor | Врач | Procedure.performer.actor | [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html) | Rasulov B.B. |
 
 ---

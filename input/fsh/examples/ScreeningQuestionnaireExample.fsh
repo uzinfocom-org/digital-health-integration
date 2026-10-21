@@ -10,10 +10,12 @@ Description: "Complaint questionnaire template for gynecologists"
 * identifier[0].value = "33333"
 * identifier[0].use = #usual
 
-* version = "1.1"
+* version = "1.1.0"
 * name = "Complaints"
 * title = "Complaints"
 * status = #active
+* useContext[0].code = $usage-context-type#program
+* useContext[0].valueCodeableConcept = $integration-area#screening
 * date = "2017-01-01"
 * publisher = "Kuchkaraka Bykov"
 

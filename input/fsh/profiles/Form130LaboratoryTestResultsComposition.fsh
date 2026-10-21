@@ -49,7 +49,7 @@ Description: "Composition profile for Form 130 laboratory test results."
 * section[laboratoryOrderInformation].code = $loinc#11502-2 "Laboratory report"
 * section[laboratoryOrderInformation].entry 1..*
 * section[laboratoryOrderInformation].entry only
-    Reference(UZCoreServiceRequestLaboratory or UZCoreOrganization or UZCorePractitionerRole)
+    Reference(UZCoreServiceRequest or UZCoreOrganization or UZCorePractitionerRole)
 
 // ---------------------------------------------------------------------
 // Specimen Information

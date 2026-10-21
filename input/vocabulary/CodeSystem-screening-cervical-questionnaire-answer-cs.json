@@ -1,0 +1,438 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ScreeningCervicalQuestionnaireAnswerCS",
+  "id": "screening-cervical-questionnaire-answer-cs",
+  "title": "Cervical questionnaire answers",
+  "description": "Answer codes used by the cervical questionnaire Questionnaire.",
+  "url": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/screening-cervical-questionnaire-answer-cs",
+  "concept": [
+    {
+      "code": "scrn-0071-00001",
+      "display": "Hech qanday amal bajarilmagan",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Не было операций"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00002",
+      "display": "Tuxumdonlarda",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "На яичниках"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00003",
+      "display": "Bachadon bo‘yni biopsiyasi",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Биопсия шейки матки"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00004",
+      "display": "Servikal kanal poliplarini olib tashlash",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Удаление полипов цервикального канала"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00005",
+      "display": "Bachadonni bachadon bo‘ynisiz olib tashlash",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Удаление матки без шейки матки"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00006",
+      "display": "Bachadon bo‘ynini olib tashlash",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Удаление шейки матки"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00007",
+      "display": "Diatermokoagulyatsiya",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Диатермокоагуляция"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00008",
+      "display": "Manfiy",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Отрицательный"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00009",
+      "display": "Musbat",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Положительный"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00010",
+      "display": "Turmushda",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "В браке"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00011",
+      "display": "Turmush qurmagan",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Не замужем"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00012",
+      "display": "Sherigim bilan yashayman",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Проживаю с партнером"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00013",
+      "display": "Ajrashgan/beva",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "В разводе/вдова"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00014",
+      "display": "18 yoshgacha",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "До 18 лет"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00015",
+      "display": "18 yoshdan keyin",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "После 18 лет"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00016",
+      "display": "1-3",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1-3"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00017",
+      "display": "3 dan ortiq",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Больше 3"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00018",
+      "display": "Yo‘q",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Нет"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00019",
+      "display": "Ha, bola tashlash va abortsiz",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Да без выкидышей и абортов"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00020",
+      "display": "Abort yoki homila tushishi bo‘lgan bo‘lsin",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Да были аборты или выкидыши"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00021",
+      "display": "0",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00022",
+      "display": "1",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00023",
+      "display": "2",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00024",
+      "display": "3",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00025",
+      "display": "4 va undan ortiq",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "4 и более"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00026",
+      "display": "Yo'q",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Нет"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00027",
+      "display": "Ha, 5 yildan ortiq",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Да более 5 лет"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00028",
+      "display": "Ha, 5 yildan kam",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Да менее 5 лет"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00029",
+      "display": "Gormonal kontratseptivlar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Гормональные контрацептивы"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00030",
+      "display": "Bachadon ichi spirali",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Внутриматочная спираль"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00031",
+      "display": "Prezervativlar",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Презервативы"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00032",
+      "display": "Boshqa",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Другое"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00033",
+      "display": "Foydalanmayman",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Не пользуюсь"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00034",
+      "display": "Yo'q",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Нет"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00035",
+      "display": "Ha",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Да"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00036",
+      "display": "Bilmayman / eslay olmayman",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Не знаю / не помню"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00037",
+      "display": "Yo'q",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Нет"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00038",
+      "display": "Ha",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Да"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00039",
+      "display": "Bilmayman / eslay olmayman",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Не знаю / не помню"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00040",
+      "display": "Yo'q",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Нет"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00041",
+      "display": "Ha",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Да"
+        }
+      ]
+    },
+    {
+      "code": "scrn-0071-00042",
+      "display": "Bilmayman",
+      "designation": [
+        {
+          "language": "ru",
+          "value": "Не знаю"
+        }
+      ]
+    }
+  ],
+  "caseSensitive": true,
+  "hierarchyMeaning": "is-a",
+  "language": "uz",
+  "experimental": false,
+  "version": "1.0.0",
+  "count": 42
+}

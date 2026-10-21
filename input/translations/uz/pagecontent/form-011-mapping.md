@@ -24,7 +24,7 @@ To'liq namunaviy nusxa uchun [011-shakl gemodializ misoli](Bundle-example-form-0
 
 ### Maydonlarni moslashtirish
 
-# UZ-011 Gemodializ seansi shakli - FHIR bilan moslashtirish
+### UZ-011 Gemodializ seansi shakli - FHIR bilan moslashtirish
 
 | UZ-011 | RU-011 | FHIR yo'li | Kod | Misol qiymati |
 |--------|--------|-----------|------|---------------|

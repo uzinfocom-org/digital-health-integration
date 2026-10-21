@@ -1,0 +1,37 @@
+@startuml tuberculosis-model-uz
+hide circle
+hide empty members
+title Sil yozuvi qanday tuzilgan
+
+class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{UZ Core Patient profilini ochish}]]
+class Encounter [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-encounter.html{UZ Core Encounter profilini ochish}]]
+class DHISEpisodeOfCare [[StructureDefinition-dhis-episode-of-care.html{DHISEpisodeOfCare profilini ochish}]] #E8F0FE
+class DHISCondition [[StructureDefinition-dhis-condition.html{DHISCondition profilini ochish}]] #E8F0FE
+class DHISSpecimen [[StructureDefinition-dhis-specimen.html{DHISSpecimen profilini ochish}]] #E8F0FE
+class DHISObservation [[StructureDefinition-dhis-observation.html{DHISObservation profilini ochish}]] #E8F0FE
+class DHISObservationMicroscopy [[StructureDefinition-dhis-observation-microscopy.html{DHISObservationMicroscopy profilini ochish}]] #E8F0FE
+class DHISObservationXray [[StructureDefinition-dhis-observation-xray.html{DHISObservationXray profilini ochish}]] #E8F0FE
+class DHISObservationHIV [[StructureDefinition-dhis-observation-hiv.html{DHISObservationHIV profilini ochish}]] #E8F0FE
+
+Patient "1" <-- "0..*" DHISEpisodeOfCare : « patient »
+Patient "1" <-- "0..*" DHISCondition : « subject »
+Patient "0..1" <-- "0..*" Encounter : « subject »
+Patient "0..1" <-- "0..*" DHISSpecimen : « subject »
+DHISCondition "0..*" <-- "0..*" DHISEpisodeOfCare : « diagnosis.condition »
+DHISCondition "0..*" <-- "0..*" Encounter : « diagnosis.condition »
+DHISSpecimen "0..*" <-- "0..*" DHISSpecimen : « parent »
+DHISSpecimen "0..1" <-- "0..*" DHISObservation : « specimen »
+DHISSpecimen "0..1" <-- "0..*" DHISObservationMicroscopy : « specimen »
+
+note "Har bir kuzatuv (Observation) « subject »\norqali bemorga ham havola qiladi" as N1
+N1 .. DHISObservationXray
+N1 .. DHISObservationHIV
+
+' keep the diagram inside the page column: the four results sit on
+' a lower rank, with the two patient-only results under the note
+DHISObservation -[hidden]down- DHISObservationXray
+DHISObservationMicroscopy -[hidden]down- DHISObservationHIV
+
+caption Klinik graf: diagramma o'qilishi oson bo'lishi uchun tashkilotlar, tibbiyot xodimlari va boshqa ishtirokchilarga havolalar ko'rsatilmagan.
+
+@enduml

@@ -1,0 +1,2324 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "cancer-registry-dictionary-to-dhp-status-cm",
+  "url": "https://terminology.dhp.uz/fhir/integrations/ConceptMap/cancer-registry-dictionary-to-dhp-status-cm",
+  "title": "Cancer Registry Dictionary to DHP Status",
+  "description": "ConceptMap defining the mapping between cancer status codes used by the Cancer Registry and the corresponding status codes used by DHP.",
+  "group": [
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "cancer-0001-0001",
+              "display": "Жив",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "29",
+          "display": "Жив"
+        },
+        {
+          "target": [
+            {
+              "code": "mserv-0004-00002",
+              "display": "Умер",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "30",
+          "display": "Умер"
+        },
+        {
+          "target": [
+            {
+              "code": "mserv-0004-00003",
+              "display": "Сам ушел из больницы",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "31",
+          "display": "Выехал"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0001-0002",
+              "display": "Диагноз не подтвердился",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "32",
+          "display": "Диагноз не подтвердился"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0001-0003",
+              "display": "Снят с учета в связи с истечением сроков наблюдения",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "33",
+          "display": "Снят с учета в связи с истечением сроков наблюдения"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-discharge-disposition-home-cs"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "cancer-0002-0001",
+              "display": "Специфические опухолевые маркёры",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "357",
+          "display": "Специфические опухолевые маркёры"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0002-0002",
+              "display": "Цитологически (Иммунофенотипировние)",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "358",
+          "display": "Цитологически (Иммунофенотипировние)"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0002-0003",
+              "display": "Гистология",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "359",
+          "display": "Гистология"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0002-0004",
+              "display": "Цитогенетика и/или молекулярная диагностика",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "360",
+          "display": "Цитогенетика и/или молекулярная диагностика"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0002-0005",
+              "display": "Только свидетельство о смерти (DCO)",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "354",
+          "display": "Только свидетельство о смерти (DCO)"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0002-0006",
+              "display": "Только клинически (без инстурументального исследования)",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "355",
+          "display": "Только клинически (без инстурументального исследования)"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0002-0007",
+              "display": "Инструментальные методы",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "356",
+          "display": "Инструментальные методы"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-confirmation-method-cs"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "cancer-0003-0001",
+              "display": "История болезни (амб. Карта) филиала РСНПМЦОиР",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "505",
+          "display": "История болезни или выписка из истории болезни (амб. Карта) филиала РСНПМЦОиР"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0003-0002",
+              "display": "Выписка из истории болезни (амб.карты) другого медицинского учреждения",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "506",
+          "display": "Выписка из истории болезни (амб.карты) другого государственного медицинского учреждения"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0003-0003",
+              "display": "Извещение филиала РСНПМЦОиР",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "507",
+          "display": "Извещение филиала РСНПМЦОиР"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0003-0004",
+              "display": "Извещение из другого медицинского учреждения",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "509",
+          "display": "Извещение из другого медицинского учреждения"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0003-0005",
+              "display": "Извещение РМО/ГМО",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "508",
+          "display": "Извещение РМО/ГМО"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0003-0006",
+              "display": "История болезни или выписка из истории болезни (амб.карта) РНПМЦ детской онкологии, гематологии и иммунологии",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "898",
+          "display": "История болезни или выписка из истории болезни (амб.карта) РНПМЦ детской онкологии, гематологии и иммунологии"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0003-0007",
+              "display": "РСНПМЦ гематологии",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "985",
+          "display": "РСНПМЦ гематологии"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0003-0008",
+              "display": "Свидетельство о смерти",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "510",
+          "display": "Свидетельство о смерти"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0003-0009",
+              "display": "ЗАГС",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "511",
+          "display": "ЗАГС"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0003-0010",
+              "display": "Выписка из истории болезни (амб.карты) частного медицинского учреждения",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "513",
+          "display": "Выписка из истории болезни (амб.карты) частного медицинского учреждения"
+        },
+        {
+          "target": [
+            {
+              "code": "gencl-0001-00011",
+              "display": "Патологоанатомический диагноз",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "512",
+          "display": "Паталого-анатомическое бюро"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "https://terminology.dhp.uz/fhir/core/CodeSystem/diagnosis-type-cs"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "7771000",
+              "display": "Left",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "336",
+          "display": "Слева"
+        },
+        {
+          "target": [
+            {
+              "code": "24028007",
+              "display": "Right",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "337",
+          "display": "Справа"
+        },
+        {
+          "target": [
+            {
+              "code": "51440002",
+              "display": "Right and left",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "338",
+          "display": "Оба органа"
+        },
+        {
+          "target": [
+            {
+              "code": "261665006",
+              "display": "Unknown",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "339",
+          "display": "Неизвестно"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "http://snomed.info/sct"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "cancer-0005-0001",
+              "display": "Обратился самостоятельно",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "346",
+          "display": "Обратился самостоятельно"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0005-0002",
+              "display": "Выявлен в кабинете Онконазорат",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "347",
+          "display": "Выявлен в кабинете Онконазорат"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0005-0003",
+              "display": "При других видах профосмотра",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "348",
+          "display": "При других видах профосмотра"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0005-0004",
+              "display": "При параллельном профосмотре",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "349",
+          "display": "При параллельном профосмотре"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0005-0005",
+              "display": "При скрининге",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "350",
+          "display": "При скрининге"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0005-0006",
+              "display": "Учтен посмертно с диагнозом, установленом при жизни",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "351",
+          "display": "Учтен посмертно с диагнозом, установленом при жизни"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0005-0007",
+              "display": "Учтен посмертно без вскрытия",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "352",
+          "display": "Учтен посмертно без вскрытия"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0005-0008",
+              "display": "Учтен посмертно после вскрытия",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "353",
+          "display": "Учтен посмертно после вскрытия"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-detection-condition-cs"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "1352975000",
+              "display": "X",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "412",
+          "display": "X"
+        },
+        {
+          "target": [
+            {
+              "code": "1352984000",
+              "display": "is",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "413",
+          "display": "in situ"
+        },
+        {
+          "target": [
+            {
+              "code": "1352986003",
+              "display": "0",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "414",
+          "display": "0"
+        },
+        {
+          "target": [
+            {
+              "code": "1352996007",
+              "display": "1",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "415",
+          "display": "1"
+        },
+        {
+          "target": [
+            {
+              "code": "1352983006",
+              "display": "1a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "416",
+          "display": "1a"
+        },
+        {
+          "target": [
+            {
+              "code": "1352968001",
+              "display": "1b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "417",
+          "display": "1b"
+        },
+        {
+          "target": [
+            {
+              "code": "1352973007",
+              "display": "1c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "418",
+          "display": "1c"
+        },
+        {
+          "target": [
+            {
+              "code": "1352978003",
+              "display": "1d",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "419",
+          "display": "1d"
+        },
+        {
+          "target": [
+            {
+              "code": "1352993004",
+              "display": "2",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "420",
+          "display": "2"
+        },
+        {
+          "target": [
+            {
+              "code": "1352962000",
+              "display": "2a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "421",
+          "display": "2a"
+        },
+        {
+          "target": [
+            {
+              "code": "1352972002",
+              "display": "2b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "422",
+          "display": "2b"
+        },
+        {
+          "target": [
+            {
+              "code": "1352969009",
+              "display": "2c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "423",
+          "display": "2c"
+        },
+        {
+          "target": [
+            {
+              "code": "1352971009",
+              "display": "2d",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "424",
+          "display": "2d"
+        },
+        {
+          "target": [
+            {
+              "code": "1352966002",
+              "display": "3",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "425",
+          "display": "3"
+        },
+        {
+          "target": [
+            {
+              "code": "1352989005",
+              "display": "3a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "426",
+          "display": "3a"
+        },
+        {
+          "target": [
+            {
+              "code": "1352991002",
+              "display": "3b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "427",
+          "display": "3b"
+        },
+        {
+          "target": [
+            {
+              "code": "1352976004",
+              "display": "3c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "428",
+          "display": "3c"
+        },
+        {
+          "target": [
+            {
+              "code": "1352994005",
+              "display": "3d",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "429",
+          "display": "3d"
+        },
+        {
+          "target": [
+            {
+              "code": "1352974001",
+              "display": "3e",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "430",
+          "display": "3e"
+        },
+        {
+          "target": [
+            {
+              "code": "1352997003",
+              "display": "4",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "431",
+          "display": "4"
+        },
+        {
+          "target": [
+            {
+              "code": "1352982001",
+              "display": "4a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "432",
+          "display": "4a"
+        },
+        {
+          "target": [
+            {
+              "code": "1352960008",
+              "display": "4b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "433",
+          "display": "4b"
+        },
+        {
+          "target": [
+            {
+              "code": "1352980009",
+              "display": "4c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "434",
+          "display": "4c"
+        },
+        {
+          "target": [
+            {
+              "code": "1352963005",
+              "display": "4d",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "435",
+          "display": "4d"
+        },
+        {
+          "target": [
+            {
+              "code": "1352981008",
+              "display": "4e",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "436",
+          "display": "4e"
+        },
+        {
+          "target": [
+            {
+              "code": "1352961007",
+              "display": "a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "872",
+          "display": "a"
+        },
+        {
+          "target": [
+            {
+              "code": "1352959003",
+              "display": "1a1",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "873",
+          "display": "1a1"
+        },
+        {
+          "target": [
+            {
+              "code": "1352988002",
+              "display": "1a2",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "874",
+          "display": "1a2"
+        },
+        {
+          "target": [
+            {
+              "code": "1352990001",
+              "display": "2a1",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "875",
+          "display": "2a1"
+        },
+        {
+          "target": [
+            {
+              "code": "1352967006",
+              "display": "2a2",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "876",
+          "display": "2a2"
+        },
+        {
+          "target": [
+            {
+              "code": "1352985004",
+              "display": "1b1",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "877",
+          "display": "1b1"
+        },
+        {
+          "target": [
+            {
+              "code": "1352992009",
+              "display": "1b2",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "878",
+          "display": "1b2"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "http://snomed.info/sct"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "cancer-0006-0001",
+              "display": "m",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "437",
+          "display": "m"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-cc-ct-category-cs"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "1353041009",
+              "display": "0",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "871",
+          "display": "0"
+        },
+        {
+          "target": [
+            {
+              "code": "1353039008",
+              "display": "X",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "438",
+          "display": "X"
+        },
+        {
+          "target": [
+            {
+              "code": "1353043007",
+              "display": "1",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "439",
+          "display": "1"
+        },
+        {
+          "target": [
+            {
+              "code": "1353046004",
+              "display": "1a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "440",
+          "display": "1a"
+        },
+        {
+          "target": [
+            {
+              "code": "1353048003",
+              "display": "1b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "441",
+          "display": "1b"
+        },
+        {
+          "target": [
+            {
+              "code": "1353044001",
+              "display": "1c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "442",
+          "display": "1c"
+        },
+        {
+          "target": [
+            {
+              "code": "1353047008",
+              "display": "2",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "443",
+          "display": "2"
+        },
+        {
+          "target": [
+            {
+              "code": "1353050006",
+              "display": "2a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "444",
+          "display": "2a"
+        },
+        {
+          "target": [
+            {
+              "code": "1353055001",
+              "display": "2b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "445",
+          "display": "2b"
+        },
+        {
+          "target": [
+            {
+              "code": "1353049006",
+              "display": "2c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "446",
+          "display": "2c"
+        },
+        {
+          "target": [
+            {
+              "code": "1353053008",
+              "display": "3",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "447",
+          "display": "3"
+        },
+        {
+          "target": [
+            {
+              "code": "1353057009",
+              "display": "3a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "448",
+          "display": "3a"
+        },
+        {
+          "target": [
+            {
+              "code": "1353054002",
+              "display": "3b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "449",
+          "display": "3b"
+        },
+        {
+          "target": [
+            {
+              "code": "1353051005",
+              "display": "3c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "450",
+          "display": "3c"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "http://snomed.info/sct"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "cancer-0008-0001",
+              "display": "X",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "451",
+          "display": "X"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-cc-c-m-category-cs"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "1352512001",
+              "display": "0",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "452",
+          "display": "0"
+        },
+        {
+          "target": [
+            {
+              "code": "1352513006",
+              "display": "1",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "453",
+          "display": "1"
+        },
+        {
+          "target": [
+            {
+              "code": "1352517007",
+              "display": "1a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "454",
+          "display": "1a"
+        },
+        {
+          "target": [
+            {
+              "code": "1352514000",
+              "display": "1b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "455",
+          "display": "1b"
+        },
+        {
+          "target": [
+            {
+              "code": "1352516003",
+              "display": "1c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "456",
+          "display": "1c"
+        },
+        {
+          "target": [
+            {
+              "code": "1352510009",
+              "display": "1d",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "457",
+          "display": "1d"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "http://snomed.info/sct"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "1352532000",
+              "display": "X",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "461",
+          "display": "x"
+        },
+        {
+          "target": [
+            {
+              "code": "1352558000",
+              "display": "is",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "462",
+          "display": "in situ"
+        },
+        {
+          "target": [
+            {
+              "code": "1352552004",
+              "display": "0",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "463",
+          "display": "0"
+        },
+        {
+          "target": [
+            {
+              "code": "1352559008",
+              "display": "1",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "464",
+          "display": "1"
+        },
+        {
+          "target": [
+            {
+              "code": "1352560003",
+              "display": "1a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "465",
+          "display": "1a"
+        },
+        {
+          "target": [
+            {
+              "code": "1352543008",
+              "display": "1b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "466",
+          "display": "1b"
+        },
+        {
+          "target": [
+            {
+              "code": "1352537006",
+              "display": "1c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "467",
+          "display": "1c"
+        },
+        {
+          "target": [
+            {
+              "code": "1352545001",
+              "display": "2",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "468",
+          "display": "2"
+        },
+        {
+          "target": [
+            {
+              "code": "1352564007",
+              "display": "2a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "469",
+          "display": "2a"
+        },
+        {
+          "target": [
+            {
+              "code": "1352547009",
+              "display": "2b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "470",
+          "display": "2b"
+        },
+        {
+          "target": [
+            {
+              "code": "1352569002",
+              "display": "2c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "471",
+          "display": "2c"
+        },
+        {
+          "target": [
+            {
+              "code": "1352548004",
+              "display": "2d",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "472",
+          "display": "2d"
+        },
+        {
+          "target": [
+            {
+              "code": "1352533005",
+              "display": "3",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "473",
+          "display": "3"
+        },
+        {
+          "target": [
+            {
+              "code": "1352551006",
+              "display": "3a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "474",
+          "display": "3a"
+        },
+        {
+          "target": [
+            {
+              "code": "1352534004",
+              "display": "3b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "475",
+          "display": "3b"
+        },
+        {
+          "target": [
+            {
+              "code": "1352556001",
+              "display": "3c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "476",
+          "display": "3c"
+        },
+        {
+          "target": [
+            {
+              "code": "1352531007",
+              "display": "3d",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "477",
+          "display": "3d"
+        },
+        {
+          "target": [
+            {
+              "code": "1352553009",
+              "display": "4",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "478",
+          "display": "4"
+        },
+        {
+          "target": [
+            {
+              "code": "1352538001",
+              "display": "4a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "479",
+          "display": "4a"
+        },
+        {
+          "target": [
+            {
+              "code": "1352561004",
+              "display": "4b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "480",
+          "display": "4b"
+        },
+        {
+          "target": [
+            {
+              "code": "1352540006",
+              "display": "4c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "481",
+          "display": "4c"
+        },
+        {
+          "target": [
+            {
+              "code": "1352557005",
+              "display": "4d",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "482",
+          "display": "4d"
+        },
+        {
+          "target": [
+            {
+              "code": "1352539009",
+              "display": "a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "879",
+          "display": "a"
+        },
+        {
+          "target": [
+            {
+              "code": "1352550007",
+              "display": "1a1",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "880",
+          "display": "1a1"
+        },
+        {
+          "target": [
+            {
+              "code": "1352566009",
+              "display": "1a2",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "881",
+          "display": "1a2"
+        },
+        {
+          "target": [
+            {
+              "code": "1352546000",
+              "display": "2a1",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "882",
+          "display": "2a1"
+        },
+        {
+          "target": [
+            {
+              "code": "1352567000",
+              "display": "2a2",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "883",
+          "display": "2a2"
+        },
+        {
+          "target": [
+            {
+              "code": "1352536002",
+              "display": "1b1",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "884",
+          "display": "1b1"
+        },
+        {
+          "target": [
+            {
+              "code": "1352554003",
+              "display": "1b2",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "885",
+          "display": "1b2"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "http://snomed.info/sct"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "1352605004",
+              "display": "X",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "484",
+          "display": "X"
+        },
+        {
+          "target": [
+            {
+              "code": "1352621009",
+              "display": "0",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "485",
+          "display": "0"
+        },
+        {
+          "target": [
+            {
+              "code": "1352614009",
+              "display": "1",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "486",
+          "display": "1"
+        },
+        {
+          "target": [
+            {
+              "code": "1352619004",
+              "display": "1a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "487",
+          "display": "1a"
+        },
+        {
+          "target": [
+            {
+              "code": "1352616006",
+              "display": "1b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "488",
+          "display": "1b"
+        },
+        {
+          "target": [
+            {
+              "code": "1352617002",
+              "display": "1c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "489",
+          "display": "1c"
+        },
+        {
+          "target": [
+            {
+              "code": "1352610000",
+              "display": "2",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "490",
+          "display": "2"
+        },
+        {
+          "target": [
+            {
+              "code": "1352608002",
+              "display": "2a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "491",
+          "display": "2a"
+        },
+        {
+          "target": [
+            {
+              "code": "1352612008",
+              "display": "2b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "492",
+          "display": "2b"
+        },
+        {
+          "target": [
+            {
+              "code": "1352613003",
+              "display": "2c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "493",
+          "display": "2c"
+        },
+        {
+          "target": [
+            {
+              "code": "1352622002",
+              "display": "3",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "494",
+          "display": "3"
+        },
+        {
+          "target": [
+            {
+              "code": "1352618007",
+              "display": "3a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "495",
+          "display": "3a"
+        },
+        {
+          "target": [
+            {
+              "code": "1352623007",
+              "display": "3b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "496",
+          "display": "3b"
+        },
+        {
+          "target": [
+            {
+              "code": "1352606003",
+              "display": "3c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "497",
+          "display": "3c"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "http://snomed.info/sct"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "1352583000",
+              "display": "1",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "500",
+          "display": "1"
+        },
+        {
+          "target": [
+            {
+              "code": "1352573004",
+              "display": "1a",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "501",
+          "display": "1a"
+        },
+        {
+          "target": [
+            {
+              "code": "1352578008",
+              "display": "1b",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "502",
+          "display": "1b"
+        },
+        {
+          "target": [
+            {
+              "code": "1229923005",
+              "display": "1c",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "503",
+          "display": "1c"
+        },
+        {
+          "target": [
+            {
+              "code": "1352580002",
+              "display": "1d",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "504",
+          "display": "1d"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "http://snomed.info/sct"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "cancer-0011-0001",
+              "display": "X",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "498",
+          "display": "X"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0011-0002",
+              "display": "0",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "499",
+          "display": "0"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-cc-p-m-category-cs"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "59441001",
+              "display": "Structure of lymph node",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "857",
+          "display": "Лимфоузлы"
+        },
+        {
+          "target": [
+            {
+              "code": "272673000",
+              "display": "Bone structure",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "858",
+          "display": "Кости"
+        },
+        {
+          "target": [
+            {
+              "code": "10200004",
+              "display": "Liver structure",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "859",
+          "display": "Печень"
+        },
+        {
+          "target": [
+            {
+              "code": "110549009",
+              "display": "Lung and pleura, CS",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "860",
+          "display": "Легкое (плевра)"
+        },
+        {
+          "target": [
+            {
+              "code": "12738006",
+              "display": "Brain structure",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "861",
+          "display": "Головной мозг"
+        },
+        {
+          "target": [
+            {
+              "code": "15497006",
+              "display": "Ovarian structure",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "862",
+          "display": "Яичник"
+        },
+        {
+          "target": [
+            {
+              "code": "87784001",
+              "display": "Soft tissue",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "863",
+          "display": "Мягкие ткани"
+        },
+        {
+          "target": [
+            {
+              "code": "23451007",
+              "display": "Adrenal structure",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "864",
+          "display": "Надпочечник"
+        },
+        {
+          "target": [
+            {
+              "code": "74964007",
+              "display": "Other",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "865",
+          "display": "Другие органы"
+        },
+        {
+          "target": [
+            {
+              "code": "15425007",
+              "display": "Structure of serous membrane of peritoneum",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "866",
+          "display": "Брюшина"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "http://snomed.info/sct"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "cancer-0015-0001",
+              "display": "Рецидив",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "850",
+          "display": "Рецидив"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0015-0002",
+              "display": "Регионарные метастазы",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "851",
+          "display": "Регионарные метастазы"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0015-0003",
+              "display": "Отдаленные метастазы",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "852",
+          "display": "Отдаленные метастазы"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0015-0004",
+              "display": "Биохимический рецидив",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "853",
+          "display": "Биохимический рецидив"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0015-0005",
+              "display": "Прогрессирование процесса",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "854",
+          "display": "Прогрессирование процесса"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0015-0006",
+              "display": "Местнорапространенный процесс",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "855",
+          "display": "Местнорапространенный процесс"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0015-0007",
+              "display": "Трансформация",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "856",
+          "display": "Трансформация"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-emerging-process-cs"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "AMB",
+              "display": "ambulatory",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "649",
+          "display": "лечился амбулаторно"
+        },
+        {
+          "target": [
+            {
+              "code": "IMP",
+              "display": "inpatient encounter",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "650",
+          "display": "лечился стационарно"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "262008008",
+              "display": "Not performed",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "651",
+          "display": "Не проводилось"
+        },
+        {
+          "target": [
+            {
+              "code": "373808002",
+              "display": "Curative - procedure intent",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "652",
+          "display": "Радикальное"
+        },
+        {
+          "target": [
+            {
+              "code": "363676003",
+              "display": "Palliative intent",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "653",
+          "display": "Паллиативное"
+        },
+        {
+          "target": [
+            {
+              "code": "264931009",
+              "display": "Symptomatic",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "654",
+          "display": "Симптоматическое"
+        },
+        {
+          "target": [
+            {
+              "code": "399707004",
+              "display": "Supportive - procedure intent",
+              "relationship": "related-to"
+            }
+          ],
+          "code": "655",
+          "display": "Реабилитационное"
+        },
+        {
+          "target": [
+            {
+              "code": "129428001",
+              "display": "Preventive intent",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "657",
+          "display": "Профилактическое"
+        },
+        {
+          "target": [
+            {
+              "code": "261004008",
+              "display": "Diagnostic intent",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "658",
+          "display": "Обследование"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "http://snomed.info/sct"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "cancer-0017-0001",
+              "display": "Tugallanmagan radikal",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "656",
+          "display": "Радикальное незавершенное"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0017-0002",
+              "display": "Boshqa kasalliklar bo‘yicha",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "659",
+          "display": "По поводу других заболеваний"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0017-0003",
+              "display": "Asoratlar bo‘yicha",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "660",
+          "display": "По поводу осложнений"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-treatment-intent-cs"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0001",
+              "display": "Не проводилось",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "661",
+          "display": "Не проводилось"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0002",
+              "display": "Хирургическое",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "662",
+          "display": "Хирургическое"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0003",
+              "display": "Дистанционная лучевая терапия",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "663",
+          "display": "Дистанционная лучевая терапия"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0004",
+              "display": "Короткофокусная рентгенотерапия",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "664",
+          "display": "Короткофокусная рентгенотерапия"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0005",
+              "display": "Сочетанное лучевое: конт.+дистанц.",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "665",
+          "display": "Сочетанное лучевое: конт.+дистанц."
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0006",
+              "display": "Сочетанное лучевое: конт.+рентген.",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "666",
+          "display": "Сочетанное лучевое: конт.+рентген."
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0007",
+              "display": "Химиотерапевтическое (гормональное)",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "667",
+          "display": "Химиотерапевтическое (гормональное)"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0008",
+              "display": "Хирургическое+дистанц.лучевая терапия",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "668",
+          "display": "Хирургическое+дистанц.лучевая терапия"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0009",
+              "display": "Хирургическое+короткофок.рентгенотерапия",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "669",
+          "display": "Хирургическое+короткофок.рентгенотерапия"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0010",
+              "display": "Хирургическое+сочетанная лучевая терапия",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "670",
+          "display": "Хирургическое+сочетанная лучевая терапия"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0011",
+              "display": "Хирургическое+контактная лучевая терапия",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "671",
+          "display": "Хирургическое+контактная лучевая терапия"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0012",
+              "display": "Хирургическое+химиотерапия (гормонотерапия)",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "672",
+          "display": "Хирургическое+химиотерапия (гормонотерапия)"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0013",
+              "display": "Комплексная химиолучевая терапия",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "673",
+          "display": "Комплексная химиолучевая терапия"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0014",
+              "display": "Хирургичекое+ лучевое+химиотерапия (гормонотерапия)",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "674",
+          "display": "Хирургичекое+ лучевое+химиотерапия (гормонотерапия)"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0015",
+              "display": "Радиофармпрепараты",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "675",
+          "display": "Радиофармпрепараты"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0016",
+              "display": "Контактная лучевая терапия",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "676",
+          "display": "Контактная лучевая терапия"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0017",
+              "display": "Другие виды воздействия",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "677",
+          "display": "Другие виды воздействия"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0018",
+              "display": "Хирургическое+радиофармпрепараты",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "678",
+          "display": "Хирургическое+радиофармпрепараты"
+        },
+        {
+          "target": [
+            {
+              "code": "cancer-0018-0019",
+              "display": "Сочетанное лучевое:дистанционная лучевая терапия+рентгентерапия",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "679",
+          "display": "Сочетанное лучевое:дистанционная лучевая терапия+рентгентерапия"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-special-treatment-cs"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "1155701009",
+              "display": "G1: Well differentiated",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "363",
+          "display": "G1 (Высоко дифференцированная)"
+        },
+        {
+          "target": [
+            {
+              "code": "1155703007",
+              "display": "G2: Moderately differentiated",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "364",
+          "display": "G2 (Средне дифференцированная)"
+        },
+        {
+          "target": [
+            {
+              "code": "1155704001",
+              "display": "G3: Poorly differentiated",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "365",
+          "display": "G3 (Низко дифференцированная)"
+        },
+        {
+          "target": [
+            {
+              "code": "1155702002",
+              "display": "G4: Undifferentiated",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "366",
+          "display": "G4 (Недифференцированная)"
+        },
+        {
+          "target": [
+            {
+              "code": "1155708003",
+              "display": "Low histologic grade",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "371",
+          "display": "Низкая степень / Low grade"
+        },
+        {
+          "target": [
+            {
+              "code": "1155707008",
+              "display": "High histologic grade",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "372",
+          "display": "Высокая степень / High grade"
+        },
+        {
+          "target": [
+            {
+              "code": "1155705000",
+              "display": "GX: Histologic grade cannot be assessed",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "373",
+          "display": "GX (Не может быть установлена)"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "http://snomed.info/sct"
+    },
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "LP14634-7",
+              "display": "T-cell",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "367",
+          "display": "T-клеточная"
+        },
+        {
+          "target": [
+            {
+              "code": "LP36861-0",
+              "display": "B-cell",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "368",
+          "display": "B-клеточная"
+        },
+        {
+          "target": [
+            {
+              "code": "LA4748-5",
+              "display": "Null cell",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "369",
+          "display": "Нулевая клетка"
+        },
+        {
+          "target": [
+            {
+              "code": "LA4573-7",
+              "display": "NK (natural killer) cell",
+              "relationship": "equivalent"
+            }
+          ],
+          "code": "370",
+          "display": "NK-клетка"
+        }
+      ],
+      "source": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-cs",
+      "target": "http://loinc.org"
+    }
+  ],
+  "name": "CancerRegistryDictionaryToDHPStatusCM",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Uzinfocom",
+  "sourceScopeCanonical": "https://terminology.dhp.uz/fhir/integrations/ValueSet/cancer-registry-dictionary-vs"
+}

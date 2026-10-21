@@ -25,7 +25,7 @@ For a complete reference instance, see the **Form 130 laboratory test results ex
 
 ### Field Mapping
 
-# UZ-130 Laboratory Test Results - FHIR Mapping
+### UZ-130 Laboratory Test Results - FHIR Mapping
 
 ---
 

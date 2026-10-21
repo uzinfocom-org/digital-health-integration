@@ -96,10 +96,27 @@ Usage: #definition
 * date = "2026-06-03"
 * publisher = "Uzinfocom"
 * responsible = "Uzinfocom"
-* usage = "Business-identifier system for clinical and administrative records within the Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System (e.g. Observation, Encounter, DiagnosticReport, ServiceRequest, Condition, QuestionnaireResponse, PractitionerRole). Person identities use the pid/pro systems instead."
+* usage = "Business-identifier system for clinical and administrative records within the Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System (e.g. Observation, DiagnosticReport, ServiceRequest, Condition, QuestionnaireResponse, PractitionerRole). Person identities use the pid/pro systems instead."
 * jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
 * uniqueId[0].type = #uri
-* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/uz/screening"
+* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/doc/uz/screening"
+* uniqueId[0].preferred = true
+
+Instance: screening-program-type-identifier-system
+InstanceOf: NamingSystem
+Description: "Identifier system distinguishing which screening program a resource belongs to"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/screening-program-type-identifier-system"
+* name = "ScreeningProgramTypeIdentifierSystem"
+* status = #active
+* kind = #identifier
+* date = "2026-09-04"
+* publisher = "Uzinfocom"
+* responsible = "Uzinfocom"
+* usage = "Written on PlanDefinition, ActivityDefinition and clinical and workflow resources belonging to a screening program, in addition to the stable record identifier: Observation, DiagnosticReport, ServiceRequest, Condition, Consent, Specimen, and Questionnaire/QuestionnaireResponse when applicable; historical Composition records may retain it. Not used on shared Patient, Practitioner or PractitionerRole resources. Similar breast and cervical screenings in DMED and the HPV screening system are different programs. DMED uses mserv-0007-00007 for its breast questionnaire program and mserv-0007-00009 for its cervical questionnaire program; the HPV screening system retains 268547008 for breast and 171149006 for cervical screening. These values are not aliases and must not be used to select or complete each other's invitations. Other program values remain 300007000 cardiovascular screening, 171183004 diabetes screening, 171223006 ischemic heart disease screening, 171147008 intestinal helminthiasis screening, 762445000 hematological screening, 408961002 fertility assessment, and mserv-0007-00003 cerebrovascular screening. An HPV resource that cannot be attributed to either breast or cervical screening uses exactly one breast-cervical-unspecified identifier, as defined on the cervical and breast cancer screening page. The program identifies the applicable workflow and its implementing system under the integration contract; meta.source separately identifies the resource's actual origin. Plans omit meta.source; a Ministry invitation is recognized by instantiatesCanonical, while an independent MIS plan has none. This does not change source metadata on clinical evidence. Neither program identifiers nor meta.source replace the stable record identifier or identify an individual screening performance. The old sid/uz/screening-program-type namespace is deprecated for new writes; historical records require an explicit migration policy."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* uniqueId[0].type = #uri
+* uniqueId[0].value = "https://dhp.uz/fhir/core/sid/prg/uz/program"
 * uniqueId[0].preferred = true
 
 Instance: screening-patient-identifier-system
@@ -172,4 +189,59 @@ Usage: #definition
 
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/reg/uz/narco"
+* uniqueId[=].preferred = true
+
+Instance: psychiatry-identifier
+InstanceOf: NamingSystem
+Description: "Identifier system for Psychiatry registration numbers in Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/psychiatry-identifier"
+* name = "UzbekistanPsychiatryIdentifier"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* date = "2026-02-03"
+* description = "Identifier namespace used for Psychiatry registration identifiers in Uzbekistan"
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in EpisodeOfCare.identifier when referencing Psychiatry registration identifiers"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/reg/uz/psychiatry"
+* uniqueId[=].preferred = true
+
+Instance: cancer-identifier-system
+InstanceOf: NamingSystem
+Description: "Identifier system for cancer registry identifiers in Uzbekistan"
+Usage: #definition
+
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/cancer-identifier-system"
+* name = "UzbekistanCancerIdentifier"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* date = "2026-08-14"
+* description = "Identifier system for identifying cancer-related records and patients within the Uzbekistan cancer registry."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used for identifiers related to cancer registry records in the Uzbekistan healthcare information system."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/reg/uz/cancer"
+* uniqueId[=].preferred = true
+
+Instance: hepatitis-identifier
+InstanceOf: NamingSystem
+Description: "Official identifier system for hepatitis-related records in Uzbekistan"
+Usage: #definition
+
+* name = "UzbekistanHepatitisIdentifier"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* date = "2026-08-27"
+* description = "Identifier system used for hepatitis-related records in the Digital Health Platform of Uzbekistan"
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used to identify hepatitis-related records and questionnaires in Uzbekistan"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/reg/uz/hepatitis"
 * uniqueId[=].preferred = true

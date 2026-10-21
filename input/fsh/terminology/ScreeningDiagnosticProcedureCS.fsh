@@ -57,4 +57,32 @@ Description: "SNOMED CT supplement containing Uzbek and Russian designations for
   * ^designation[+].language = #uz
   * ^designation[=].value = "Gistologik tekshirish"
 
-    
+* #117617002 "Immunohistochemistry procedure"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Иммуногистохимическое исследование"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Immunogistokimyoviy tekshiruv"
+
+* #394597005 "Histopathology"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Гистопатология"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Gistopatologiya"
+
+* #5880005 "Physical examination"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Физикальный осмотр"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Jismoniy ko'rik"
+
+* #306140002 "Referral to clinical oncology service"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Направление в онкологическую службу"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Onkologiya xizmatiga yo'llanma"
+
+* #703155005 "Referral to maternity service"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Направление в службу охраны материнства"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Onalik xizmatiga yo'llanma"

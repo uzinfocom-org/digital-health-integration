@@ -24,7 +24,6 @@ Description: "Performed breast biopsy with a constrained biopsy subtype."
 * code 1..1 MS
 * code from ScreeningBreastBiopsySubtypeVS (required)
 * subject MS
-* encounter MS
 * occurrence[x] MS
 * performer MS
 

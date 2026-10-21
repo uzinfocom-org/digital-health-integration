@@ -22,15 +22,17 @@ Profile: ScreeningPathologyServiceRequest
 Parent: ScreeningServiceRequest
 Id: screening-pathology-service-request
 Title: "Screening Pathology Service Request"
-Description: "FHIR R5 request for breast or cervical pathology with conditionally required material parameters."
+Description: "FHIR R5 request for breast or cervical pathology with conditionally required material parameters. Special treatment history (type, period, other) is recorded separately as ScreeningSpecialTreatmentObservation and linked to the resulting DiagnosticReport via supportingInfo, not to this request."
 * ^status = #active
 * ^experimental = true
 * ^publisher = "DHP Integration"
 * obeys spr-1 and spr-2 and spr-3 and spr-4
 
+* basedOn 1..* MS
 * code.concept 1..1 MS
 * code.concept = $sct#714797009 "Histologic test"
 * orderDetail 1..1 MS
+* orderDetail.parameter.code from ScreeningHistologyOrderParameterVS (required)
 * orderDetail.parameter ^slicing.discriminator.type = #value
 * orderDetail.parameter ^slicing.discriminator.path = "code"
 * orderDetail.parameter ^slicing.rules = #open

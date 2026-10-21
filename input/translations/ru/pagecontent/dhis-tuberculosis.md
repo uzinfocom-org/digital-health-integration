@@ -16,6 +16,8 @@
 
 Типичная запись связывает воедино: [пациента](#registering-a-patient-patient), один или несколько [диагнозов ТБ](#recording-a-tb-diagnosis-condition), [эпизод оказания помощи](#grouping-the-treatment-course-episodeofcare), группирующий курс лечения, собранные [образцы](#collecting-a-specimen-specimen) и [результаты диагностических тестов](#recording-diagnostic-test-results-observation), полученные на их основе.
 
+<div>{% include tuberculosis-model-ru.svg %}</div><br clear="all"/>
+
 ### Регистрация пациента (Patient) {#registering-a-patient-patient}
 
 Субъект каждой записи о ТБ. Специфичного для DHIS профиля Patient нет; используйте UZ Core напрямую.

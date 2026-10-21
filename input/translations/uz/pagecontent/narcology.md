@@ -275,4 +275,6 @@ Narkologiya registrining odatiy yozuvi resurslarni quyidagicha bog‘lashi mumki
 - [NarcologyObservation](StructureDefinition-narcology-observation.html) tibbiy-konsultativ komissiya qarorini qayd etadi va tegishli `Encounter` ga reference qilishi mumkin.
 - [NarcologyPsychiatryFlag](StructureDefinition-narcology-psychiatry-flag.html) ijtimoiy xavflilik yoki majburiy davolanish kabi muhim Narkologiya registri ma'lumotlarini qayd etadi.
 
+<div>{% include narcology-model-uz.svg %}</div><br clear="all"/>
+
 Ushbu resurslar bemor, episode, tibbiy tashrif, tashkilot va tibbiyot xodimi roli orqali bog‘lanib, bemorning Narkologiya registridagi ro‘yxati, klinik tashxislari, ijtimoiy holati, tibbiy tashriflari, komissiya qarorlari va muhim registr flaglarini to‘liq ifodalash imkonini beradi.

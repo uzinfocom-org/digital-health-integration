@@ -666,12 +666,13 @@ Usage: #inline
 
 
 Instance: procedure-surgery-066
-InstanceOf: Procedure
+InstanceOf: Form066SurgicalProcedure
 Usage: #inline
 * language = #en
 * status = #completed
 * category = $sct#387713003 "Surgical procedure (procedure)"
-* code = $sct#387713003 "Surgical procedure (procedure)"
+* code = $ichi#JBB.AE.AD "Bronchoscopy"
+* code.text = "Diagnostic bronchoscopy"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
 * occurrenceDateTime = "2026-01-08T11:30:00+05:00"
@@ -743,7 +744,7 @@ Usage: #inline
 * status = #active
 * kind = #insurance
 * beneficiary = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
-* type = $coverage-type#dtsj-treated-case "State Health Insurance treated case (Resolution No. PQ-311)"
+* type = $coverage-type#covtp-0001-00001 "State Health Insurance treated case (Resolution No. PQ-311)"
 
 
 

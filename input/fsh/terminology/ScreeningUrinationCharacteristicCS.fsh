@@ -1,23 +1,11 @@
 CodeSystem: ScreeningUrinationCharacteristicCS
 Id: screening-urination-characteristic-cs
 Title: "Screening Urination Characteristic CodeSystem"
-Description: "CodeSystem for Screening Urination Characteristic"
+Description: "Local codes complementing the SNOMED CT-based screening-urination-characteristic-vs, for the one finding that has no clean SNOMED CT equivalent."
 * insert OriginalCodeSystemDraft(screening-urination-characteristic-cs)
 
-* #scrn-0016-00001 "Erkin"
+* #scrn-0016-00005 "Og‘riqsiz"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Свободное"
+  * ^designation[=].value = "Безболезненное"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Free"
-
-* #scrn-0016-00002 "Keskin og‘riqlar bilan"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "С резкими болями"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "With sharp pain"
-
-* #scrn-0016-00003 "Qiyinlashgan"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Затрудненное"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Difficult"
+  * ^designation[=].value = "Painless"
