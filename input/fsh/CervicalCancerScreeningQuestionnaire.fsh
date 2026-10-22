@@ -575,7 +575,7 @@ Description: "Example for Questionnaire for Cervical Cancer Screening"
   * required = true
   * repeats = false
 
-Instance: example-cervical-cancer-screening-questionnaire-response
+Instance: example-cervical-cancer-screening-response
 InstanceOf: UZCoreQuestionnaireResponse
 Usage: #example
 Title: "Bachadon bo'yni saratoni skriningi so'rovnomasiga javob namunasi"
