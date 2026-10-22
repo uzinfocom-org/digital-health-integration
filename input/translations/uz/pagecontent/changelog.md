@@ -1,3 +1,9 @@
+### Ishlab chiqish jarayonida
+
+#### O'zgartirildi
+
+[011-shakl](StructureDefinition-form-011-hemodialysis-composition.html), [066-shakl](StructureDefinition-form-066-hospital-discharge-composition.html), [066-1-shakl](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) va [130-shakl](StructureDefinition-form-130-laboratory-test-results-composition.html) Composition'lari endi `status` ni `final` ga qotirmaydi, shuning uchun hujjat [hayot sikli](document-statuses.html) bo'yicha `preliminary`, `amended` va `entered-in-error` holatlaridan o'ta oladi.
+
 ### Versiya 0.11.1
 
 #### Qo'shildi
