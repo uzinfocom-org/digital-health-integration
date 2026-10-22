@@ -61,7 +61,7 @@ Description: "Composition profile for Form 0XX ..."
 
 * section[personalInformation].title 1..1
 * section[personalInformation].code 1..1
-* section[personalInformation].code = $loinc#45970-1 "Demographic information section"
+* section[personalInformation].code = $loinc#LP36348-8 "Patient Information"
 * section[personalInformation].entry 1..*
 * section[personalInformation].entry only Reference(UZCorePatient or UZCoreObservation)
 ```
@@ -69,7 +69,7 @@ Description: "Composition profile for Form 0XX ..."
 Правила, общие для всех форм:
 - `status` не фиксируется: он меняется по жизненному циклу документа (`preliminary` -> `final` -> `amended` / `entered-in-error`, страница `document-statuses.md`). `type` - код типа документа из LOINC, `category` - код формы из `document-category-cs` (страница `document-categories.md`).
 - Каждый раздел имеет `title 1..1`, `code 1..1` и `entry`, ограниченный конкретными профилями через `only Reference(...)`.
-- Код раздела - термин LOINC (не часть `LP...`); если его нет - SNOMED CT; локальный код - только когда нет ни того, ни другого.
+- Код раздела - из LOINC; если подходящего нет - из SNOMED CT; локальный код - только когда нет ни того, ни другого.
 - Необязательные разделы - `0..1`.
 - `encounter` делайте `0..1`, если форма не всегда привязана к конкретному случаю обслуживания (так в 130).
 - На элементы можно вешать `^short` с номерами полей исходной формы (см. 066-1, там это сделано на узбекском/английском) - это помогает читать профиль рядом с бумажной формой. Необязательно, но желательно.
@@ -126,7 +126,7 @@ Usage: #inline
 * author = Reference(urn:uuid:...)
 * title = "Form 0XX - ..."
 * section[personalInformation].title = "Personal Information"
-* section[=].code = $loinc#45970-1 "Demographic information section"
+* section[=].code = $loinc#LP36348-8 "Patient Information"
 * section[=].entry[0] = Reference(urn:uuid:...0002)
 ```
 
