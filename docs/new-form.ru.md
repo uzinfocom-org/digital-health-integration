@@ -39,7 +39,6 @@ Title: "Form 0XX - ... Composition"
 Description: "Composition profile for Form 0XX ..."
 
 * identifier 1..*
-* status = #final
 * type = $loinc#18842-5 "Discharge summary"            // тип документа из LOINC
 * category 1..1
 * category = $document-category-cs#form-0XX "..."        // код добавьте в шаге 2
@@ -62,14 +61,15 @@ Description: "Composition profile for Form 0XX ..."
 
 * section[personalInformation].title 1..1
 * section[personalInformation].code 1..1
-* section[personalInformation].code = $loinc#LP36348-8 "Patient Information"
+* section[personalInformation].code = $loinc#45970-1 "Demographic information section"
 * section[personalInformation].entry 1..*
 * section[personalInformation].entry only Reference(UZCorePatient or UZCoreObservation)
 ```
 
 Правила, общие для всех форм:
-- `status` фиксируется как `#final`, `type` - код типа документа из LOINC, `category` - код формы из `document-category-cs`.
-- Каждый раздел имеет `title 1..1`, `code 1..1` (LOINC-код раздела) и `entry`, ограниченный конкретными профилями через `only Reference(...)`.
+- `status` не фиксируется: он меняется по жизненному циклу документа (`preliminary` -> `final` -> `amended` / `entered-in-error`, страница `document-statuses.md`). `type` - код типа документа из LOINC, `category` - код формы из `document-category-cs` (страница `document-categories.md`).
+- Каждый раздел имеет `title 1..1`, `code 1..1` и `entry`, ограниченный конкретными профилями через `only Reference(...)`.
+- Код раздела - термин LOINC (не часть `LP...`); если его нет - SNOMED CT; локальный код - только когда нет ни того, ни другого.
 - Необязательные разделы - `0..1`.
 - `encounter` делайте `0..1`, если форма не всегда привязана к конкретному случаю обслуживания (так в 130).
 - На элементы можно вешать `^short` с номерами полей исходной формы (см. 066-1, там это сделано на узбекском/английском) - это помогает читать профиль рядом с бумажной формой. Необязательно, но желательно.
@@ -126,7 +126,7 @@ Usage: #inline
 * author = Reference(urn:uuid:...)
 * title = "Form 0XX - ..."
 * section[personalInformation].title = "Personal Information"
-* section[=].code = $loinc#LP36348-8 "Patient Information"
+* section[=].code = $loinc#45970-1 "Demographic information section"
 * section[=].entry[0] = Reference(urn:uuid:...0002)
 ```
 
@@ -135,6 +135,8 @@ UUID у `Bundle.identifier` и `Composition.identifier` - разные и уни
 ### 4. Страница соответствия полей
 
 `input/pagecontent/form-0XX-mapping.md` - построчная таблица полей формы для разработчиков, реализующих интеграцию. Структура: блок `<style>` с ширинами колонок, заголовок, раздел Overview (со ссылками на профиль и пример), таблицы по разделам с колонками `UZ | RU | FHIR Path | Code | Example`, схема Bundle structure и ссылка на пример. Проще всего скопировать существующую (`form-066-mapping.md` или `form-130-mapping.md`) и заменить содержимое.
+
+Идентификаторы - отдельными строками: `Composition.identifier` (UUID), номер формы (`Composition.identifier` с системой `form-number`) и `Bundle.identifier` (UUID версии). Страница - только для разработчиков интеграции: история ревью, расхождения с другими источниками и внутренние договорённости пишите в `docs/` или в PR.
 
 Для каждого поля, которое ложится на `Observation`, указывайте в колонке `FHIR Path` конкретный тип значения, а не `Observation.value[x]`: `Observation.valueBoolean`, `Observation.valueQuantity` (с единицей UCUM, например `d` или `g`), `Observation.valueCodeableConcept` (с ValueSet) и т. д. В примере используйте тот же тип. Тип должен соответствовать коду в `Observation.code`: у LOINC смотрите шкалу (`SCALE_TYP`) - для `Qn` нужен `Quantity` (или `Range`), для `Ord`/`Nom` - `CodeableConcept`, а если у кода есть список ответов LOINC (`LL...`), берите ответы из него.
 
