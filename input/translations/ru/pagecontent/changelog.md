@@ -1,3 +1,9 @@
+### В разработке
+
+#### Изменено
+
+Composition для [Форма 011](StructureDefinition-form-011-hemodialysis-composition.html), [Форма 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Форма 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) и [Форма 130](StructureDefinition-form-130-laboratory-test-results-composition.html) больше не фиксируют `status` как `final`, поэтому документ может проходить [жизненный цикл](document-statuses.html) через `preliminary`, `amended` и `entered-in-error`.
+
 ### Версия 0.11.1
 
 #### Добавлено
