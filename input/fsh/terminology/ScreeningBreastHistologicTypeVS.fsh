@@ -41,3 +41,11 @@ Description: "Defines Screening Breast Histologic Type"
 * include $sct#450895005
 * include $sct#57141000
 * include $sct#128705006
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations1CS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations2CS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations3CS)

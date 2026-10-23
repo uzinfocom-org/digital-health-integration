@@ -9,3 +9,11 @@ Description: "Defines Screening Obesity Degree"
 * include $sct#443381000124105
 * include $sct#819948005
 * include codes from system screening-obesity-degree-cs
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations1CS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations2CS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations3CS)

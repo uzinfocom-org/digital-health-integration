@@ -14,3 +14,11 @@ Description: "SNOMED CT concepts used for recording breast mammography findings 
 * include $sct#89164003
 * include $sct#390787006
 * include $sct#400096001
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations1CS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations2CS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations3CS)

@@ -8,3 +8,11 @@ Description: "Defines Screening Ultrasound Intramammary Node Status"
 * include codes from system screening-ultrasound-intramammary-node-status-cs
 * include $sct#281900007
 * include $sct#263654008
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations1CS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations2CS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations3CS)

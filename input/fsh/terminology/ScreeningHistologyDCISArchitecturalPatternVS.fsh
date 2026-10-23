@@ -13,3 +13,11 @@ Description: "LOINC answer codes for the architectural growth pattern of ductal 
 * $loinc#LA27269-2 "Papillary pattern"
 * $loinc#LA27232-0 "Solid pattern"
 * $loinc#LA46-8 "Other, Specify:"
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningLaboratoryCS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningLoincTranslationsCS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = "https://terminology.dhp.uz/fhir/core/CodeSystem/group-characteristic-kind-cs"

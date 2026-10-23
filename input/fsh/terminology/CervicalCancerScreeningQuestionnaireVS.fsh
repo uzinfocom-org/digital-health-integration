@@ -12,3 +12,11 @@ Description: "Value set containing Cervical Cancer Screening Questionnaire"
 * ^compose.include[=].concept[+].code = #80182007
 * ^compose.include[=].concept[=].designation[0].language = #uz
 * ^compose.include[=].concept[=].designation[=].value = "Muntazamsiz"
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations1CS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations2CS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations3CS)

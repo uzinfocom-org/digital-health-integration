@@ -17,3 +17,11 @@ Description: "Value set of SNOMED CT codes for diagnostic referrals and reports.
 // * $sct#392003006 "Colposcopy"
 // * $sct#50796003 "Cervical biopsy"
 // * $sct#714797009 "Histologic test"
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations1CS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations2CS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslations3CS)
