@@ -1,0 +1,24 @@
+@startgantt sick-leave-timeline-ru
+title Продлённый листок: история статусов и периоды нетрудоспособности
+printscale daily zoom 3
+Project starts 2026-08-03
+saturday are open
+sunday are open
+
+-- История статусов (extension[statusHistory]) --
+[opened] as [S1] starts 2026-08-04 and ends 2026-08-06
+[S1] is colored in #DCFCE7/#16A34A
+[extended] as [S2] starts 2026-08-07 and ends 2026-08-12
+[S2] is colored in #DBEAFE/#2563EB
+[closed] happens 2026-08-12
+
+-- Периоды нетрудоспособности (extension[incapacityPeriod]) --
+[Период 1] as [P1] starts 2026-08-04 and ends 2026-08-06
+[P1] is colored in #FDE68A/#B45309
+[Период 2] as [P2] starts 2026-08-07 and ends 2026-08-12
+[P2] is colored in #FDE68A/#B45309
+
+-- Общий период (CarePlan.period) --
+[period] as [PP] starts 2026-08-04 and ends 2026-08-12
+[PP] is colored in #E9D5FF/#7C3AED
+@endgantt

@@ -27,6 +27,7 @@ Id: care-for-workflow-status
 Title: "Sick Leave Workflow Status"
 Description: "Extended lifecycle status of Sick Leave"
 
+* insert SickLeaveContact
 * ^status = #draft
 
 * ^experimental = true
@@ -46,6 +47,7 @@ Id: care-for-status-history
 Title: "Sick Leave Status History"
 Description: "History of workflow statuses with active period"
 
+* insert SickLeaveContact
 * ^status = #draft
 
 * ^experimental = true
@@ -64,30 +66,12 @@ Description: "History of workflow statuses with active period"
 
 * extension[period].value[x] only Period
 
-Extension: DiagnosisUse
-Id: care-for-diagnosis-use
-Title: "Diagnosis Use Type"
-Description: "Type of diagnosis usage for sick leave"
-
-* ^status = #draft
-
-* ^experimental = true
-
-* ^context.type = #element
-
-* ^context.expression = "CarePlan"
-
-* value[x] 0..1
-
-* value[x] only CodeableConcept
-
-* valueCodeableConcept from https://terminology.dhp.uz/fhir/core/ValueSet/diagnosis-type-vs (required)
-
 Extension: RelatedPersonLink
 Id: care-for-related-person
 Title: "Related Person for Sick Leave"
 Description: "Reference to related person when sick leave reason is family care"
 
+* insert SickLeaveContact
 * ^status = #draft
 
 * ^experimental = true
@@ -100,22 +84,45 @@ Description: "Reference to related person when sick leave reason is family care"
 
 * value[x] only Reference(RelatedPerson)
 
-Extension: RelatedPersonBirthdate
-Id: relatedperson-birthdate
-Title: "Birthdate of Related Person"
-Description: "Date of birth of the related person"
+Extension: IncapacityPeriod
+Id: care-for-incapacity-period
+Title: "Sick Leave Incapacity Period"
+Description: "One period of temporary incapacity for work covered by the sick leave. A sick leave extended several times has one period per extension."
 
+* insert SickLeaveContact
 * ^status = #draft
 
 * ^experimental = true
 
 * ^context.type = #element
 
-* ^context.expression = "RelatedPerson"
+* ^context.expression = "CarePlan"
 
-* value[x] 1..1 MS
+* value[x] 1..1
 
-* value[x] only date
+* value[x] only Period
+
+* valuePeriod.start 1..1
+
+* valuePeriod.end 1..1
+
+Extension: HeadPractitioner
+Id: care-for-head-practitioner
+Title: "Sick Leave Head Practitioner"
+Description: "Chief physician or other authorized practitioner who approves the sick leave."
+
+* insert SickLeaveContact
+* ^status = #draft
+
+* ^experimental = true
+
+* ^context.type = #element
+
+* ^context.expression = "CarePlan"
+
+* value[x] 1..1
+
+* value[x] only Reference(UZCorePractitioner)
 
 
 Extension: CancerICCC3Group

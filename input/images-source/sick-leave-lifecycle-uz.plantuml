@@ -1,0 +1,24 @@
+@startuml sick-leave-lifecycle-uz
+hide empty description
+skinparam state {
+  FontStyle bold
+  RoundCorner 20
+}
+title Mehnatga layoqatsizlik varaqasining hayotiy sikli
+
+state "opened" as opened #DCFCE7;line:16A34A;line.bold;text:166534 : CarePlan.status = active
+state "extended" as extended #DBEAFE;line:2563EB;line.bold;text:1E40AF : CarePlan.status = active
+state "closed" as closed #E5E7EB;line:4B5563;line.bold;text:1F2937 : CarePlan.status = completed
+state "cancelled" as cancelled #FEE2E2;line:DC2626;line.bold;text:991B1B : CarePlan.status = revoked
+
+[*] --> opened : berildi
+opened --> extended : uzaytirildi
+extended --> extended : yana uzaytirildi
+opened --> closed : yopildi
+extended --> closed : yopildi
+opened --> cancelled : bekor qilindi
+closed --> [*]
+cancelled --> [*]
+
+caption Holat - bu workflowStatus kengaytmasi; uning ostida CarePlan.status ko'rsatilgan.
+@enduml

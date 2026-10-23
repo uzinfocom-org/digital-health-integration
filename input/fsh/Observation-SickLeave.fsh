@@ -1,8 +1,9 @@
 Profile: SickLeaveObservation
-Parent: Observation
+Parent: UZCoreObservation
 Id: sick-leave-observation
 Title: "Sick Leave Observation"
 Description: "Observation containing additional Sick Leave attributes"
+* insert SickLeaveContact
 * ^experimental = true
 * ^status = #draft
 * ^publisher = "UZINFOCOM"
@@ -13,56 +14,28 @@ Description: "Observation containing additional Sick Leave attributes"
 * basedOn only Reference(SickLeaveCarePlan)
 
 * code 1..1 MS
-* code = http://snomed.info/sct#224459001 "On sick leave from work"
+* code = $sct#224459001
+
+* subject 1..1 MS
+* subject only Reference(UZCorePatient)
 
 * component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 
 * component contains
-    cityBelonging 0..1 MS and
-    placeOfIncident 0..1 MS and
-    fromAnotherCity 0..1 MS and
-    infectiousContact 0..1 MS and
-    kinshipDegree 0..1 MS and
-    regime 0..1 MS and
-    regimenViolation 0..1 MS and
-    tempJobTransfer 0..1 MS and
-    conclusions 0..1 MS and
-    verificationDate 0..1 MS
+    urbanResident 0..1 MS and
+    nonLocal 0..1 MS and
+    epidemiologicalHistory 0..1 MS
 
-* component[cityBelonging].code = SickLeaveComponentCS#emdoc-0009-0001
-* component[cityBelonging].value[x] only CodeableConcept
-* component[cityBelonging].valueCodeableConcept from CarePlanBelongingVS (required)
+* component[urbanResident].code = SickLeaveComponentCS#urban-resident
+* component[urbanResident].value[x] only boolean
+* component[urbanResident] ^short = "Urban (true) or rural (false) resident (patient.isUrban)"
 
-* component[placeOfIncident].code = SickLeaveComponentCS#emdoc-0009-0002
-* component[placeOfIncident].value[x] only CodeableConcept
-* component[placeOfIncident].valueCodeableConcept from PlaceOfIncidentVS (required)
+* component[nonLocal].code = SickLeaveComponentCS#non-local
+* component[nonLocal].value[x] only boolean
+* component[nonLocal] ^short = "Issued outside the patient's place of residence (isNonLocal)"
 
-* component[fromAnotherCity].code = SickLeaveComponentCS#emdoc-0009-0003
-* component[fromAnotherCity].value[x] only boolean
-
-* component[infectiousContact].code = SickLeaveComponentCS#emdoc-0009-0004
-* component[infectiousContact].value[x] only boolean
-
-* component[kinshipDegree].code = SickLeaveComponentCS#emdoc-0009-0005
-* component[kinshipDegree].value[x] only CodeableConcept
-* component[kinshipDegree].valueCodeableConcept from RelationDegreeVS (required)
-
-* component[regime].code = SickLeaveComponentCS#emdoc-0009-0006
-* component[regime].value[x] only CodeableConcept
-* component[regime].valueCodeableConcept from EncounterClassVS (required)
-
-* component[regimenViolation].code = SickLeaveComponentCS#emdoc-0009-0007
-* component[regimenViolation].value[x] only CodeableConcept
-* component[regimenViolation].valueCodeableConcept from RegimenViolationVS (required)
-
-* component[tempJobTransfer].code = SickLeaveComponentCS#emdoc-0009-0008
-* component[tempJobTransfer].value[x] only dateTime
-
-* component[conclusions].code = SickLeaveComponentCS#emdoc-0009-0009
-* component[conclusions].value[x] only CodeableConcept
-* component[conclusions].valueCodeableConcept from ConclusionsVS (required)
-
-* component[verificationDate].code = SickLeaveComponentCS#emdoc-0009-0010
-* component[verificationDate].value[x] only dateTime
+* component[epidemiologicalHistory].code = SickLeaveComponentCS#epidemiological-history
+* component[epidemiologicalHistory].value[x] only string
+* component[epidemiologicalHistory] ^short = "Contact with infectious patients and other epidemiological history (epidemiologicalHistory)"

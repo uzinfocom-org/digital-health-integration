@@ -1,0 +1,24 @@
+@startuml sick-leave-lifecycle-ru
+hide empty description
+skinparam state {
+  FontStyle bold
+  RoundCorner 20
+}
+title Жизненный цикл листка нетрудоспособности
+
+state "opened" as opened #DCFCE7;line:16A34A;line.bold;text:166534 : CarePlan.status = active
+state "extended" as extended #DBEAFE;line:2563EB;line.bold;text:1E40AF : CarePlan.status = active
+state "closed" as closed #E5E7EB;line:4B5563;line.bold;text:1F2937 : CarePlan.status = completed
+state "cancelled" as cancelled #FEE2E2;line:DC2626;line.bold;text:991B1B : CarePlan.status = revoked
+
+[*] --> opened : выдан
+opened --> extended : продлён
+extended --> extended : продлён ещё раз
+opened --> closed : закрыт
+extended --> closed : закрыт
+opened --> cancelled : отменён
+closed --> [*]
+cancelled --> [*]
+
+caption Состояние - это расширение workflowStatus; под ним указан CarePlan.status.
+@enduml

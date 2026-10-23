@@ -6,12 +6,15 @@ title Как устроена запись о нетрудоспособност
 class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{Открыть профиль UZ Core Patient}]]
 class SickLeaveCarePlan [[StructureDefinition-sick-leave-careplan.html{Открыть профиль SickLeaveCarePlan}]] #E8F0FE
 class SickLeaveObservation [[StructureDefinition-sick-leave-observation.html{Открыть профиль SickLeaveObservation}]] #E8F0FE
+class SickLeaveCondition [[StructureDefinition-sick-leave-condition.html{Открыть профиль SickLeaveCondition}]] #E8F0FE
 class SickLeaveRelatedPerson [[StructureDefinition-sick-leave-related-person.html{Открыть профиль SickLeaveRelatedPerson}]] #E8F0FE
 
 Patient "1" <-- "0..*" SickLeaveCarePlan : « subject »
-Patient "0..1" <-- "0..*" SickLeaveObservation : « subject »
+Patient "1" <-- "0..*" SickLeaveObservation : « subject »
 Patient "1" <-- "0..*" SickLeaveRelatedPerson : « patient »
+Patient "1" <-- "0..*" SickLeaveCondition : « subject »
 SickLeaveCarePlan "1" <-- "0..*" SickLeaveObservation : « basedOn »
+SickLeaveCarePlan "0..*" --> "0..2" SickLeaveCondition : « addresses[diagnosis] »
 SickLeaveCarePlan "0..*" --> "0..1" SickLeaveRelatedPerson : « extension[relatedPerson] »
 
 caption Клинический граф: ссылки на организации, медработников и других участников не показаны, чтобы схема оставалась читаемой.

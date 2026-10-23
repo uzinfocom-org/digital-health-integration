@@ -1,29 +1,36 @@
 CodeSystem: SickLeaveCategoryCS
 Id: sick-leave-category-cs
-Title: "Sick Leave Category CodeSystem"  
-Description: "Code system for Sick Leave categories in Uzbekistan"
+Title: "Sick Leave Category CodeSystem"
+Description: "Code system for Sick Leave categories in Uzbekistan, with the document type codes of the DHP sick leave API"
+* insert SickLeaveContact
 * insert OriginalCodeSystemDraft(sick-leave-category-cs)
 
-* #mserv-0005-00001 "Mehnatga layoqatsizlik varaqasi"
+* #SL "Mehnatga layoqatsizlik varaqasi"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Лист нетрудоспособности"
+  * ^designation[=].value = "Листок нетрудоспособности"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Sick Leave Certificate"
+  * ^designation[=].value = "Sick Leave"
 
-* #mserv-0005-00002 "Kasallangan bolaga qarash uchun mehnatga layoqatsizlik varaqasi"
+* #CC "Kasallangan bolaga qarash uchun mehnatga layoqatsizlik ma'lumotnomasi (138/x)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Справка о нетрудоспособности по уходу за больным ребенком"
+  * ^designation[=].value = "Справка о нетрудоспособности по уходу за больным ребёнком (138/х)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Sick Leave Certificate for Caring for a Sick Child"
+  * ^designation[=].value = "Child Care"
 
-* #mserv-0005-00003 "Ta’lim olayotgan shaxslar uchun mehnatga layoqatsizlik varaqasi"
+* #ED "Ta'lim olayotgan shaxslar uchun mehnatga layoqatsizlik ma'lumotnomasi (095/x)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Справка о нетрудоспособности для лиц, получающих образование"
+  * ^designation[=].value = "Справка о нетрудоспособности для лиц, получающих образование (095/х)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Sick Leave Certificate for Persons Receiving Education"
+  * ^designation[=].value = "Education"
 
-* #mserv-0005-00004 "Alkogol mastligi sababli mehnatga layoqatsizlik varaqasi"
+* #IT "Alkogol mastligi sababli mehnatga layoqatsizlik ma'lumotnomasi (094/x)"
   * ^designation[0].language = #ru
-  * ^designation[=].value = "Справка о нетрудоспособности по состоянию алкогольного опьянения"
+  * ^designation[=].value = "Справка о нетрудоспособности по состоянию алкогольного опьянения (094/х)"
   * ^designation[+].language = #en
-  * ^designation[=].value = "Sick Leave Certificate Due to Alcohol Intoxication"
+  * ^designation[=].value = "Intoxication"
+
+* #MSEC "TMEKga yo'llanma"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Направление в МСЭК"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Medical Social Expert Commission"
