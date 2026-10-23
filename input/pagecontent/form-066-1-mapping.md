@@ -33,18 +33,18 @@ For a complete reference instance, see the [Form 066-1 psychiatric/narcological 
 
 | UZ-066-1 | RU-066-1 | FHIR Path | Code | Example Value |
 |----------|----------|------------|------|---------------|
-| Muassasa kodi | Код учреждения | [Organization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-organization.html).identifier | Local | 200001 |
+| Muassasa kodi | Код учреждения | [Organization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-organization.html).identifier | `system` `https://dhp.uz/fhir/core/sid/uz/organization-code` | 200001 |
 | Muassasa nomi | Наименование учреждения | Organization.name | - | Toshkent shahar ruhiy kasalliklar shifoxonasi |
-| Bemor ro'yxat raqami | Регистрационный номер | Composition.identifier | - | 066-1-2026-001 |
-| Tibbiy bayonnoma № | № медицинской карты | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html).identifier[healthCardId] | MR | HC-2026-00066 |
-| JShShIR | ПИНФЛ | Patient.identifier[nationalId].value | NI | 31234567890123 |
+| Bemor ro'yxat raqami | Регистрационный номер | Encounter.identifier | `system` `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number` | MRN-066-1-2026-0001 |
+| Tibbiy bayonnoma № | № медицинской карты | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html).identifier[healthCardId] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/hc`<br>`type` `HC` | HC-2026-00066 |
+| JShShIR | ПИНФЛ | Patient.identifier[nationalId] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ni`<br>`type` `NI` | 31234567890123 |
 | Familiyasi | Фамилия | Patient.name.family | - | Tursunov |
 | Ismi | Имя | Patient.name.given | - | Alisher |
 | Otasining ismi | Отчество | Patient.name.given | - | Valiyevich |
 | Tug'ilgan sanasi | Дата рождения | Patient.birthDate | - | 1990-04-12 |
 | Jinsi | Пол | Patient.gender | AdministrativeGender | male |
 | Fuqaroligi | Гражданство | Patient.extension[nationality] | Local code | Azerbaijanis |
-| ID yoki Pasport | ID или паспорт | Patient.identifier[passportLocal] | - | AC1234567 |
+| ID yoki Pasport | ID или паспорт | Patient.identifier[passportLocal] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ppn/local`<br>`type` `PPN` | AC1234567 |
 | Ijtimoiy holati | Социальное положение | [UZCoreSocioeconomicObservation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html).valueCodeableConcept | Local code | Unemployed |
 | Imtiyoz toifasi | Льготная категория | UZCoreSocioeconomicObservation.valueCodeableConcept | Local code | Medical staff |
 | Telefon | Телефон | Patient.telecom[phone].value | - | +998901234567 |
