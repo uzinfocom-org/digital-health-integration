@@ -205,3 +205,4 @@ Alias: $ichi = http://id.who.int/icd/release/11/ichi
 Alias: $dmed-ichi-vs = https://terminology.dhp.uz/fhir/integrations/ValueSet/dmed-ichi-vs
 Alias: $ichi-vs = https://terminology.dhp.uz/fhir/core/ValueSet/ichi-vs
 Alias: $nci = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
+Alias: $position-and-profession-vs = https://terminology.dhp.uz/fhir/core/ValueSet/position-and-profession-vs
