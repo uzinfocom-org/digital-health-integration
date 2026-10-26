@@ -34,15 +34,10 @@ The ImplementationGuide uses package hl7.fhir.uv.sdc#3.0.0 released on 2022-03-0
 # Warning that can be ignored for our use since our instances use Uzbek/Russian but generated narrative in English
 Resource has a language (uz), and the XHTML has a lang (en), but they differ
 Resource has a language (ru), and the XHTML has a lang (en), but they differ
-"The narrative includes custom content for the default language (en), but does not include translated content for the ru language, so the default language has been used
-"The narrative includes custom content for the default language (en), but does not include translated content for the uz language, so the default language has been used
 
 # Organization-scoped identifiers in this example follow dynamic pattern https://dhp.uz/fhir/core/sid/pid/uz/prn/{soliq-id}/{type}
 # per identifiers.md in the main DHP IG (uz.dhp.core)
 No definition could be found for URL value 'https://dhp.uz/fhir/core/sid/pid/uz/prn/200935935/%
-
-# IG Publisher generates inline scripts for table filters then warns they're illegal - bug reported, can be ignored
-The <script> containing the javascript '//%
 
 # Screening: mimetypes value set is hosted externally and cannot be expanded by the publisher
 Binding http://hl7.org/fhir/ValueSet/mimetypes|5.0.0 could not be expanded
@@ -50,8 +45,6 @@ Binding http://hl7.org/fhir/ValueSet/mimetypes|5.0.0 could not be expanded
 # Suppressed in the main IG (uz.dhp.core) too: DHIS observations legitimately lack a performer.
 Best Practice Recommendation: In general, all observations should have a performer
 
-# Screening: body-site is too large for the publisher to verify subset membership
-Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs is a proper subset of http://hl7.org/fhir/ValueSet/body-site|5.0.0 - value set is too large to check
 # UZ Core 0.11.1 binds Observation.bodySite to its body-site-vs (all SNOMED CT body structures); version left open
 Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs is a proper subset of https://terminology.dhp.uz/fhir/core/ValueSet/body-site-vs|%
 # Screening: breast-side VS (two SNOMED codes) is trivially a subset of screening-body-site-vs (all of SNOMED), but the parent is too large for the publisher to verify
@@ -60,18 +53,11 @@ Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screeni
 # IG Publisher 2.2.10 emits an OID-assignment recommendation for every CodeSystem/ValueSet. We don't use OID-based terminology (e.g. CDA), so assigning OIDs IG-wide adds no value here.
 %should have an OID assigned to cater for possible use with OID based terminology systems%
 
-# NOTE: core 0.6.0 re-bound Observation.method to a REQUIRED lab-method-vs, so our method VS is now
-# flagged "not a subset" as a hard ERROR. That error is emitted during profile snapshot validation
-# and is NOT suppressible here (ignoreWarnings does not filter this class - verified). It is
-# tolerated instead via MAX_ALLOWED_ERRORS=1 in .github/workflows/validate-docs.yml, to be dropped
-# to 0 once uz.dhp.core ships the extensible method binding (already in dev).
-
 # dhis-body-site-vs includes the whole FHIR body-site VS, which is too large to expand.
 # Trailing % => startsWith match: the real message has an embedded newline before its final ')',
 # so an exact-match line never matches. Cut at (>1000) to stay independent of tx-server wording.
 Unable to expand included value set 'http://hl7.org/fhir/ValueSet/body-site': The value set 'http://hl7.org/fhir/ValueSet/body-site|5.0.0' expansion has too many codes to produce (>1000)%
 
-Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/cancer-body-location-vs is a proper subset of http://hl7.org/fhir/ValueSet/body-site|5.0.0 - value set is too large to check
 Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/cancer-body-location-vs is a proper subset of https://terminology.dhp.uz/fhir/core/ValueSet/body-site-vs|%
 
 The Target Code System http://snomed.info/sct is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
