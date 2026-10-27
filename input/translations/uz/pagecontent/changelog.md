@@ -1,3 +1,9 @@
+### In development
+
+#### Qo'shildi
+
+[027-shakl - Bemorning tibbiy kartasidan ko'chirma](StructureDefinition-form-027-composition.html) (Sog'liqni saqlash vazirligining 399-son buyrug'i): shikoyatlar, anamnez, ko'rik, rollar bo'yicha tashxislar, diagnostika, davolash rejasi va mas'ul shaxslar bo'limlari bilan Composition profili, `form-027` [hujjat toifasi](CodeSystem-document-category-cs.html), [maydon-bamaydon moslashtirish sahifasi](form-027-mapping.html), [hujjat Bundle misoli](Bundle-example-form-027.html), shuningdek DMED da qayd etiladigan shifoxonaga yotqazish yo'llanmasining maqsadi uchun [shifoxonaga yotqazish maqsadi](CodeSystem-hospitalization-purpose-cs.html) kod tizimi va uning [qiymatlar to'plami](ValueSet-hospitalization-purpose-vs.html).
+
 ### Versiya 0.11.1
 
 111-shaklda lokal kodlar ma’nosi saqlandi, uchta aniq token uchun tekshirilgan standart mosliklar va oldingi homiladorlik yakuni ValueSet qo‘shildi; boolean va tadbir sanalari DMED shartnomasiga moslashtirildi.

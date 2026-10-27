@@ -101,6 +101,12 @@ Description: "Categories for clinical documents and other knowledge resources in
   * ^designation[+].language = #ru
   * ^designation[=].value = "Запись сеанса гемодиализа"
 
+* #form-027 "Tibbiy muassasadagi bemorning tibbiy kartasidan ko'chirma (ambulator/statsionar)"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Extract from the patient's medical card (outpatient/inpatient)"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Выписка из медицинской карты больного (амбулаторный/стационарный)"
+
 * #form-096 "Tug'ruq tibbiy kartasi"
   * ^designation[0].language = #en
   * ^designation[=].value = "Birth medical record"

@@ -33,6 +33,7 @@ Alias: $extra-security-role-type = http://terminology.hl7.org/CodeSystem/extra-s
 Alias: $fhir-types = http://hl7.org/fhir/fhir-types
 Alias: $general-condition = https://dhp.uz/fhir/core/StructureDefinition/uz-core-condition
 Alias: $healthcard = https://gov.uz/ssv/identifier/healthcard
+Alias: $hospitalization-purpose-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/hospitalization-purpose-cs
 Alias: $http-interaction = http://hl7.org/fhir/restful-interaction
 Alias: $icd-10 = http://hl7.org/fhir/sid/icd-10
 Alias: $icd-10-vs = http://hl7.org/fhir/ValueSet/icd-10
