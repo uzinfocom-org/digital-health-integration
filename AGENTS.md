@@ -6,7 +6,7 @@ HL7 FHIR R5 Implementation Guide for third-party systems integrating with the Di
 
 Before creating or modifying any FHIR profile, extension, value set, code system, naming system, instance, or other modelling artifact, you MUST read the core IG's [`modelling-guidelines.md`](https://github.com/uzinfocom-org/digital-health-ig/blob/main/modelling-guidelines.md) in full and follow it. It defines the naming conventions, canonical URL patterns, identifier systems, cardinality rules, binding strengths, slicing patterns, terminology and versioning rules, and structural conventions every artifact must follow. It applies here too, with the canonical bases below instead of the core ones.
 
-New clinical forms follow `docs/new-form.ru.md` (English copy: `docs/new-form.en.md`; keep the two in step).
+New clinical forms follow `docs/new-form.ru.md`.
 
 ## Build Commands
 - **Full build**: `./_genonce.sh` (runs SUSHI itself - don't run SUSHI separately)
