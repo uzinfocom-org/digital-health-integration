@@ -1,5 +1,7 @@
 ### Ishlab chiqilmoqda
 
+096-shakl (Tug'ruq tibbiy kartasi) qo'shildi: [096-shakl Composition](StructureDefinition-form-096-maternity-medical-record-composition.html) (UZ Core Composition asosidagi birinchi shakl Composition), uning terminologiyasi va ingliz, rus va o'zbek tillaridagi [096-shakl maydonlar mosligi](form-096-mapping.html). Har bir fakt alohida kodlangan Observation sifatida yuboriladi, 111-shakl bilan umumiy faktlar esa 111-shakl kodlaridan foydalanadi, jumladan chanoq o'lchovlari, zaxm, gonokokk, umumiy ahvol va bolaning tirik tug'ilgani. Har bir chaqaloq JShShIR berilgunga qadar DMED tibbiy karta raqami bilan aniqlanadigan alohida Patient bo'ladi, shuning uchun 097-shakl xuddi shu identifikatsiyadan foydalana oladi.
+
 #### O'zgartirildi
 
 [066-shakl](form-066-mapping.html), [066-1-shakl](form-066-1-mapping.html) va [111-shakl](form-111-mapping.html) namunalaridagi tashkilotlar UZ Core Organization profilining `taxId` kesimida Soliq STIR bo'yicha identifikatsiya qilinadi (`https://dhp.uz/fhir/core/sid/org/uz/soliq`). Mahalliy [tashkilot kodi](NamingSystem-organization-code.html) identifikator tizimi `https://dhp.uz/fhir/core/sid/uz/organization-code` iste'moldan chiqarildi: uning kanonik URL manzili saqlanadi, lekin yangi ma'lumotlarda undan foydalanmaslik kerak.

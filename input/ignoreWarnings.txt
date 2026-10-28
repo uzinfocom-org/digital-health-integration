@@ -70,3 +70,14 @@ The XHTML  the resource contains more than one node for each of the following no
 # they keep their meanings for existing senders, new data uses chr-0027-00005/00006.
 The concept 'chr-0035-00022' is deprecated and its use should be reviewed
 The concept 'chr-0035-00023' is deprecated and its use should be reviewed
+
+# UZ Core 0.11.1 explicitly depends on extensions.r5 5.3.0 (pinned in sushi-config.yaml).
+# Keep the same version so translation extensions do not resolve against two releases.
+# Review this exact advisory when upgrading UZ Core; do not suppress other dependency warnings.
+The ImplementationGuide uses package hl7.fhir.uv.extensions.r5#5.3.0 released on 2026-05-16, but the most recent appropriate version is 5.4.0. This reference is getting old and the more recent version should be considered
+
+# The cancer-registry ICD-10 ConceptMap targets the whole ICD-10 code system, which this build
+# cannot load. Declaring targetScope = ValueSet/icd-10 does not help: the Publisher then reports
+# every target code (12,000+ lines) as "cannot be checked due to special rules". Only this
+# coverage advisory is suppressed; it does not mean the mapped codes passed validation.
+The Target Code System http://hl7.org/fhir/sid/icd-10 is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed

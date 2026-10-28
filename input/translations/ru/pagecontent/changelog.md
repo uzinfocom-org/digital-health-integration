@@ -1,5 +1,7 @@
 ### В разработке
 
+Добавлена форма 096 (Tug'ruq tibbiy kartasi, история родов): [Composition формы 096](StructureDefinition-form-096-maternity-medical-record-composition.html), первый Composition формы на основе UZ Core Composition, её терминология и [маппинг полей формы 096](form-096-mapping.html) на английском, русском и узбекском. Каждый факт передаётся отдельным кодированным Observation, а факты, общие с формой 111, используют коды формы 111, в том числе пельвиометрия, сифилис, гонококк, общее состояние и признак живорождения. Каждый новорождённый - отдельный Patient с номером медкарты DMED, пока нет ПИНФЛ, поэтому форма 097 может использовать ту же идентичность.
+
 #### Изменено
 
 Организации в примерах [формы 066](form-066-mapping.html), [формы 066-1](form-066-1-mapping.html) и [формы 111](form-111-mapping.html) идентифицируются по ИНН Soliq в срезе `taxId` профиля UZ Core Organization (`https://dhp.uz/fhir/core/sid/org/uz/soliq`). Локальная система идентификаторов [кода организации](NamingSystem-organization-code.html) `https://dhp.uz/fhir/core/sid/uz/organization-code` выведена из употребления: её канонический URL сохраняется, но в новых данных её использовать не следует.

@@ -1,5 +1,7 @@
 ### In development
 
+Added Form 096 (Tug'ruq tibbiy kartasi, maternity medical record): the [Form 096 Composition](StructureDefinition-form-096-maternity-medical-record-composition.html), the first form Composition derived from UZ Core Composition, its terminology and the [Form 096 field mapping](form-096-mapping.html) in English, Russian and Uzbek. Each fact is its own coded Observation, and the facts Form 096 shares with Form 111 use Form 111's codes, including pelvimetry, syphilis, gonococcus, general condition and whether a child was born alive. Each newborn is a separate Patient identified by the DMED medical-card number until a PINFL is available, so Form 097 can reuse the same identity.
+
 #### Changed
 
 Organizations in the [Form 066](form-066-mapping.html), [Form 066-1](form-066-1-mapping.html) and [Form 111](form-111-mapping.html) examples are identified by their Soliq tax ID, in the UZ Core Organization `taxId` slice (`https://dhp.uz/fhir/core/sid/org/uz/soliq`). The local [organization code](NamingSystem-organization-code.html) identifier system `https://dhp.uz/fhir/core/sid/uz/organization-code` is retired: its canonical stays, but new data should not use it.
