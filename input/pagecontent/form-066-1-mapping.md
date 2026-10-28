@@ -33,7 +33,7 @@ For a complete reference instance, see the [Form 066-1 psychiatric/narcological 
 
 | UZ-066-1 | RU-066-1 | FHIR Path | Code | Example Value |
 |----------|----------|------------|------|---------------|
-| Muassasa kodi | Код учреждения | [Organization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-organization.html).identifier | `system` `https://dhp.uz/fhir/core/sid/uz/organization-code` | 200001 |
+| Muassasa kodi | Код учреждения | [Organization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-organization.html).identifier[taxId] | `system` `https://dhp.uz/fhir/core/sid/org/uz/soliq`<br>`type` `TAX` | 204789014 |
 | Muassasa nomi | Наименование учреждения | Organization.name | - | Toshkent shahar ruhiy kasalliklar shifoxonasi |
 | Bemor ro'yxat raqami | Регистрационный номер | Encounter.identifier | `system` `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number` | MRN-066-1-2026-0001 |
 | Tibbiy bayonnoma № | № медицинской карты | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html).identifier[healthCardId] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/hc`<br>`type` `HC` | HC-2026-00066 |

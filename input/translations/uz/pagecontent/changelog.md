@@ -1,3 +1,9 @@
+### Ishlab chiqilmoqda
+
+#### O'zgartirildi
+
+[066-shakl](form-066-mapping.html), [066-1-shakl](form-066-1-mapping.html) va [111-shakl](form-111-mapping.html) namunalaridagi tashkilotlar UZ Core Organization profilining `taxId` kesimida Soliq STIR bo'yicha identifikatsiya qilinadi (`https://dhp.uz/fhir/core/sid/org/uz/soliq`). Mahalliy [tashkilot kodi](NamingSystem-organization-code.html) identifikator tizimi `https://dhp.uz/fhir/core/sid/uz/organization-code` iste'moldan chiqarildi: uning kanonik URL manzili saqlanadi, lekin yangi ma'lumotlarda undan foydalanmaslik kerak.
+
 ### Versiya 0.11.1
 
 111-shaklda lokal kodlar ma’nosi saqlandi, uchta aniq token uchun tekshirilgan standart mosliklar va oldingi homiladorlik yakuni ValueSet qo‘shildi; boolean va tadbir sanalari DMED shartnomasiga moslashtirildi.

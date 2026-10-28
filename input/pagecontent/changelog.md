@@ -1,3 +1,9 @@
+### In development
+
+#### Changed
+
+Organizations in the [Form 066](form-066-mapping.html), [Form 066-1](form-066-1-mapping.html) and [Form 111](form-111-mapping.html) examples are identified by their Soliq tax ID, in the UZ Core Organization `taxId` slice (`https://dhp.uz/fhir/core/sid/org/uz/soliq`). The local [organization code](NamingSystem-organization-code.html) identifier system `https://dhp.uz/fhir/core/sid/uz/organization-code` is retired: its canonical stays, but new data should not use it.
+
 ### Version 0.11.1
 
 Form 111 preserves existing local code meanings, adds verified standard targets for three explicit tokens, publishes the previous-pregnancy outcome ValueSet and aligns source booleans/activity dates with the DMED contract.
