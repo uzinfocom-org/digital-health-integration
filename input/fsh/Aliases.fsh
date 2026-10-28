@@ -3,7 +3,6 @@ Alias: $document-category-cs = https://terminology.dhp.uz/fhir/integrations/Code
 Alias: $gender = http://hl7.org/fhir/administrative-gender
 Alias: $gender-other = https://dhp.uz/fhir/core/StructureDefinition/gender-other
 Alias: $observation-status = http://hl7.org/fhir/observation-status
-Alias: $action-code = http://hl7.org/fhir/action-code
 Alias: $address-type = http://hl7.org/fhir/address-type
 Alias: $address-use = http://hl7.org/fhir/address-use
 Alias: $audit-event-action = http://hl7.org/fhir/audit-event-action
