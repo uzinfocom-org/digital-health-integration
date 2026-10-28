@@ -1,0 +1,54 @@
+# Terminology problems that predate check_terminology.py. Remove a line when you fix it.
+missing-supplement ValueSet/cancer-icd-10-vs -> CodeSystem/screening-diagnosis-translations-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-body-location-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-cc-c-n-category-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-cc-p-m-category-snomed-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-cc-p-n-category-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-cc-p-t-category-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-ccc-m-category-snomed-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-ccc-t-category-snomed-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-degree-differentiation-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-laterality-qualifier-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-treatment-intent-snomed-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/encounter-class-official-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/form111-snomed-supplement-cs
+missing-supplement ValueSet/care-plan-status-vs -> CodeSystem/care-plan-status-official-cs
+missing-supplement ValueSet/cvd-tobacco-use-vs -> CodeSystem/screening-snomed-translations-cs
+missing-supplement ValueSet/encounter-class-sickleave-vs -> CodeSystem/encounter-class-official-cs
+missing-supplement ValueSet/fertility-questionnaire-vs -> CodeSystem/form111-snomed-supplement-cs
+missing-supplement ValueSet/fertility-questionnaire-vs -> CodeSystem/screening-snomed-translations-cs
+missing-supplement ValueSet/fertility-questionnaire-vs -> CodeSystem/screening-yes-no-translations-cs
+missing-supplement ValueSet/form111-analysis-test-code-vs -> CodeSystem/form111-loinc-supplement-cs
+missing-supplement ValueSet/form111-assessment-observation-code-vs -> CodeSystem/form111-loinc-supplement-cs
+missing-supplement ValueSet/form111-birth-type-vs -> CodeSystem/form111-snomed-supplement-cs
+missing-supplement ValueSet/form111-contraception-method-vs -> CodeSystem/form111-snomed-supplement-cs
+missing-supplement ValueSet/form111-contraception-method-vs -> CodeSystem/screening-snomed-translations-cs
+missing-supplement ValueSet/form111-contraception-type-vs -> CodeSystem/form111-snomed-supplement-cs
+missing-supplement ValueSet/form111-contraception-type-vs -> CodeSystem/screening-snomed-translations-cs
+missing-supplement ValueSet/form111-extragenital-disease-factor-vs -> CodeSystem/form111-snomed-supplement-cs
+missing-supplement ValueSet/form111-general-observation-code-vs -> CodeSystem/form111-loinc-supplement-cs
+missing-supplement ValueSet/form111-general-observation-code-vs -> CodeSystem/form111-snomed-supplement-cs
+missing-supplement ValueSet/form111-gynecological-examination-observation-code-vs -> CodeSystem/form111-loinc-supplement-cs
+missing-supplement ValueSet/form111-obstetric-history-factor-vs -> CodeSystem/form111-snomed-supplement-cs
+missing-supplement ValueSet/form111-patient-bad-habit-vs -> CodeSystem/form111-snomed-supplement-cs
+missing-supplement ValueSet/form111-pregnancy-complication-factor-vs -> CodeSystem/form111-snomed-supplement-cs
+missing-supplement ValueSet/form111-pregnancy-monitoring-observation-code-vs -> CodeSystem/form111-snomed-supplement-cs
+missing-supplement ValueSet/form111-pregnancy-outcome-vs -> CodeSystem/screening-snomed-translations-cs
+missing-supplement ValueSet/form111-preparation-activity-vs -> CodeSystem/form111-snomed-supplement-cs
+missing-supplement ValueSet/form111-social-observation-code-vs -> CodeSystem/form111-loinc-supplement-cs
+missing-supplement ValueSet/maternal-laboratory-and-blood-code-vs -> CodeSystem/form111-loinc-supplement-cs
+missing-supplement ValueSet/maternal-postpartum-assessment-code-vs -> CodeSystem/form111-loinc-supplement-cs
+missing-supplement ValueSet/pregnancy-obstetric-history-code-vs -> CodeSystem/form111-loinc-supplement-cs
+missing-supplement ValueSet/screening-colposcopy-vs -> CodeSystem/screening-snomed-translations-cs
+missing-supplement ValueSet/screening-observation-codes-vs -> CodeSystem/screening-diagnostic-procedure-cs
+supplement-version CodeSystem/form111-loinc-supplement-cs
+supplement-version CodeSystem/form111-snomed-supplement-cs
+unused CodeSystem/form111-loinc-supplement-cs
+unused CodeSystem/narcology-psychiatry-episode-of-care-type-group-snomed-cs
+unused CodeSystem/narcology-psychiatry-registry-flag-snomed-cs
+unused CodeSystem/screening-action-translations-cs
+unused CodeSystem/screening-diagnosis-translations-cs
+unused CodeSystem/screening-yes-no-translations-cs
+unused CodeSystem/type-resource-snomed-cs
+unused ValueSet/diagnosis-role-integration-vs
+unused ValueSet/document-category-vs
