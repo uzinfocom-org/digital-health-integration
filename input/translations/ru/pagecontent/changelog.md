@@ -1,5 +1,7 @@
 ### В разработке
 
+Документация формы 066 приведена к структуре формы 111 без изменений в том, что должен передавать отправитель: у [Composition формы 066](StructureDefinition-form-066-hospital-discharge-composition.html) появились описания элементов на английском, русском и узбекском языках, а [сопоставление полей формы 066](form-066-mapping.html) получило пронумерованные разделы с их кодами, таблицу сведений о документе, а также ValueSet и display каждого кода из примера. Новые ValueSet [Disease/Injury Delay](ValueSet-disease-injury-delay-vs.html) и [Tuberculosis Drug Susceptibility](ValueSet-tb-drug-sensitivity-vs.html) перечисляют коды двух существующих систем кодов формы 066.
+
 Добавлена форма 096 (Tug'ruq tibbiy kartasi, история родов): [Composition формы 096](StructureDefinition-form-096-maternity-medical-record-composition.html), первый Composition формы на основе UZ Core Composition, её терминология и [маппинг полей формы 096](form-096-mapping.html) на английском, русском и узбекском. Каждый факт передаётся отдельным кодированным Observation, а факты, общие с формой 111, используют коды формы 111, в том числе пельвиометрия, сифилис, гонококк, общее состояние и признак живорождения. Каждый новорождённый - отдельный Patient с номером медкарты DMED, пока нет ПИНФЛ, поэтому форма 097 может использовать ту же идентичность.
 
 ### Версия 0.11.1

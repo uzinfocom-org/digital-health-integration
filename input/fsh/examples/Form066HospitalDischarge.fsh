@@ -157,34 +157,34 @@ Usage: #inline
 * section[finalDiagnosis].title = "Final Diagnosis"
 * section[finalDiagnosis].code = $loinc#LA32800-7 "Final diagnosis (discharge)"
 * section[finalDiagnosis].section[main].title = "Main diagnosis"
-* section[finalDiagnosis].section[main].code = $diagnosis-role#main
+* section[finalDiagnosis].section[main].code = $diagnosis-role#main "Main diagnosis"
 * section[finalDiagnosis].section[main].entry = Reference(urn:uuid:06600029-1111-2222-3333-444444444444)
 * section[finalDiagnosis].section[competing].title = "Competing diagnosis"
-* section[finalDiagnosis].section[competing].code = $diagnosis-role#competing
+* section[finalDiagnosis].section[competing].code = $diagnosis-role#competing "Competing diagnosis"
 * section[finalDiagnosis].section[competing].entry = Reference(urn:uuid:06600030-1111-2222-3333-444444444444)
 * section[finalDiagnosis].section[concomitant].title = "Concomitant diagnosis"
-* section[finalDiagnosis].section[concomitant].code = $diagnosis-role#concomitant
+* section[finalDiagnosis].section[concomitant].code = $diagnosis-role#concomitant "Concomitant diagnosis"
 * section[finalDiagnosis].section[concomitant].entry = Reference(urn:uuid:06600031-1111-2222-3333-444444444444)
 * section[finalDiagnosis].section[background].title = "Background diagnosis"
-* section[finalDiagnosis].section[background].code = $diagnosis-role#background
+* section[finalDiagnosis].section[background].code = $diagnosis-role#background "Background diagnosis"
 * section[finalDiagnosis].section[background].entry = Reference(urn:uuid:06600032-1111-2222-3333-444444444444)
 * section[finalDiagnosis].section[complication].title = "Complication"
-* section[finalDiagnosis].section[complication].code = $diagnosis-role#complication
+* section[finalDiagnosis].section[complication].code = $diagnosis-role#complication "Complication"
 * section[finalDiagnosis].section[complication].entry = Reference(urn:uuid:06600033-1111-2222-3333-444444444444)
 
 * section[pathologoanatomicDiagnosis].title = "Pathologoanatomical Diagnosis"
 * section[pathologoanatomicDiagnosis].code = $loinc#60567-5 "Comprehensive pathology report panel"
 * section[pathologoanatomicDiagnosis].section[immediateCauseOfDeath].title = "Immediate cause of death"
-* section[pathologoanatomicDiagnosis].section[immediateCauseOfDeath].code = $diagnosis-role#immediate-cause-of-death
+* section[pathologoanatomicDiagnosis].section[immediateCauseOfDeath].code = $diagnosis-role#immediate-cause-of-death "Immediate cause of death"
 * section[pathologoanatomicDiagnosis].section[immediateCauseOfDeath].entry = Reference(urn:uuid:06600034-1111-2222-3333-444444444444)
 * section[pathologoanatomicDiagnosis].section[underlyingCauseOfDeath].title = "Underlying cause of death"
-* section[pathologoanatomicDiagnosis].section[underlyingCauseOfDeath].code = $diagnosis-role#underlying-cause-of-death
+* section[pathologoanatomicDiagnosis].section[underlyingCauseOfDeath].code = $diagnosis-role#underlying-cause-of-death "Underlying cause of death"
 * section[pathologoanatomicDiagnosis].section[underlyingCauseOfDeath].entry = Reference(urn:uuid:06600035-1111-2222-3333-444444444444)
 * section[pathologoanatomicDiagnosis].section[mainDiseaseDeath].title = "Main disease (cause of death)"
-* section[pathologoanatomicDiagnosis].section[mainDiseaseDeath].code = $diagnosis-role#main-disease-death
+* section[pathologoanatomicDiagnosis].section[mainDiseaseDeath].code = $diagnosis-role#main-disease-death "Main disease (cause of death)"
 * section[pathologoanatomicDiagnosis].section[mainDiseaseDeath].entry = Reference(urn:uuid:06600036-1111-2222-3333-444444444444)
 * section[pathologoanatomicDiagnosis].section[otherSignificantDeath].title = "Other significant diseases"
-* section[pathologoanatomicDiagnosis].section[otherSignificantDeath].code = $diagnosis-role#other-significant-death
+* section[pathologoanatomicDiagnosis].section[otherSignificantDeath].code = $diagnosis-role#other-significant-death "Other significant diseases"
 * section[pathologoanatomicDiagnosis].section[otherSignificantDeath].entry = Reference(urn:uuid:06600037-1111-2222-3333-444444444444)
 
 * section[surgicalProcedures].title = "Surgical Procedures"
@@ -301,7 +301,7 @@ Usage: #inline
 * identifier[0].system = "https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number"
 * identifier[=].value = "MRN-066-2026-0001"
 * class = $v3-ActCode#IMP "inpatient encounter"
-* type = $encounter-type-cs#mserv-0001-00004 // Treatment
+* type = $encounter-type-cs#mserv-0001-00004 "Treatment services"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * subjectStatus = $encounter-local-subject-status-cs#loc-cs-001 "Recovered"
 * actualPeriod.start = "2026-01-05T10:00:00+05:00"
@@ -524,8 +524,8 @@ Instance: condition-referral-diagnosis-066
 InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
-* clinicalStatus = $condition-clinical#active
-* category = $diagnosis-role#referral
+* clinicalStatus = $condition-clinical#active "Active"
+* category = $diagnosis-role#referral "Referring institution diagnosis"
 * code.coding.system = $icd10
 * code.coding.code = #J18.9
 * code.coding.display = "Pneumonia, unspecified"
@@ -538,8 +538,8 @@ Instance: condition-admission-diagnosis-066
 InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
-* clinicalStatus = $condition-clinical#active
-* category = $diagnosis-role#admission
+* clinicalStatus = $condition-clinical#active "Active"
+* category = $diagnosis-role#admission "Admission diagnosis"
 * code.coding.system = $icd10
 * code.coding.code = #J18.9
 * code.coding.display = "Pneumonia, unspecified"
@@ -552,8 +552,8 @@ Instance: condition-main-diagnosis-066
 InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
-* clinicalStatus = $condition-clinical#active
-* category = $diagnosis-role#main
+* clinicalStatus = $condition-clinical#active "Active"
+* category = $diagnosis-role#main "Main diagnosis"
 * code.coding.system = $icd10
 * code.coding.code = #J18.9
 * code.coding.display = "Pneumonia, unspecified"
@@ -565,8 +565,8 @@ Instance: condition-competing-diagnosis-066
 InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
-* clinicalStatus = $condition-clinical#active
-* category = $diagnosis-role#competing
+* clinicalStatus = $condition-clinical#active "Active"
+* category = $diagnosis-role#competing "Competing diagnosis"
 * code.coding.system = $icd10
 * code.coding.code = #J44.9
 * code.coding.display = "Chronic obstructive pulmonary disease, unspecified"
@@ -578,8 +578,8 @@ Instance: condition-comorbid-diagnosis-066
 InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
-* clinicalStatus = $condition-clinical#active
-* category = $diagnosis-role#concomitant
+* clinicalStatus = $condition-clinical#active "Active"
+* category = $diagnosis-role#concomitant "Concomitant diagnosis"
 * code.coding.system = $icd10
 * code.coding.code = #I10
 * code.coding.display = "Essential (primary) hypertension"
@@ -591,8 +591,8 @@ Instance: condition-background-diagnosis-066
 InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
-* clinicalStatus = $condition-clinical#active
-* category = $diagnosis-role#background
+* clinicalStatus = $condition-clinical#active "Active"
+* category = $diagnosis-role#background "Background diagnosis"
 * code.coding.system = $icd10
 * code.coding.code = #E11.9
 * code.coding.display = "Type 2 diabetes mellitus : Without complications"
@@ -604,8 +604,8 @@ Instance: condition-complication-066
 InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
-* clinicalStatus = $condition-clinical#active
-* category = $diagnosis-role#complication
+* clinicalStatus = $condition-clinical#active "Active"
+* category = $diagnosis-role#complication "Complication"
 * code.coding.system = $icd10
 * code.coding.code = #J96.0
 * code.coding.display = "Acute respiratory failure"
@@ -617,8 +617,8 @@ Instance: condition-immediate-cause-of-death-066
 InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
-* clinicalStatus = $condition-clinical#inactive
-* category = $diagnosis-role#immediate-cause-of-death
+* clinicalStatus = $condition-clinical#inactive "Inactive"
+* category = $diagnosis-role#immediate-cause-of-death "Immediate cause of death"
 * code.coding.system = $icd10
 * code.coding.code = #R99
 * code.coding.display = "Other ill-defined and unspecified causes of mortality"
@@ -630,8 +630,8 @@ Instance: condition-underlying-cause-of-death-066
 InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
-* clinicalStatus = $condition-clinical#inactive
-* category = $diagnosis-role#underlying-cause-of-death
+* clinicalStatus = $condition-clinical#inactive "Inactive"
+* category = $diagnosis-role#underlying-cause-of-death "Underlying cause of death"
 * code.coding.system = $icd10
 * code.coding.code = #R99
 * code.coding.display = "Other ill-defined and unspecified causes of mortality"
@@ -643,8 +643,8 @@ Instance: condition-primary-disease-death-066
 InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
-* clinicalStatus = $condition-clinical#inactive
-* category = $diagnosis-role#main-disease-death
+* clinicalStatus = $condition-clinical#inactive "Inactive"
+* category = $diagnosis-role#main-disease-death "Main disease (cause of death)"
 * code.coding.system = $icd10
 * code.coding.code = #R99
 * code.coding.display = "Other ill-defined and unspecified causes of mortality"
@@ -656,8 +656,8 @@ Instance: condition-other-significant-death-066
 InstanceOf: UZCoreCondition
 Usage: #inline
 * language = #en
-* clinicalStatus = $condition-clinical#inactive
-* category = $diagnosis-role#other-significant-death
+* clinicalStatus = $condition-clinical#inactive "Inactive"
+* category = $diagnosis-role#other-significant-death "Other significant diseases"
 * code.coding.system = $icd10
 * code.coding.code = #R99
 * code.coding.display = "Other ill-defined and unspecified causes of mortality"
@@ -670,7 +670,7 @@ InstanceOf: Form066SurgicalProcedure
 Usage: #inline
 * language = #en
 * status = #completed
-* category = $sct#387713003 "Surgical procedure (procedure)"
+* category = $sct#387713003 "Surgical procedure"
 * code = $ichi#JBB.AE.AD "Bronchoscopy"
 * code.text = "Diagnostic bronchoscopy"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
@@ -753,7 +753,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code = $loinc#8339-4 "Birth weight measured"
+* code = $loinc#8339-4 "Birth weight Measured"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-01-06T09:00:00+05:00"
@@ -788,7 +788,7 @@ Usage: #inline
 * language = #en
 * patient = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 // * relationship[0].coding[0] = $v3-RoleCode#MTH "mother"
-* relationship[0].coding[0] = $v3-RoleClass#NOK
+* relationship[0].coding[0] = $v3-RoleClass#NOK "next of kin"
 * identifier[nationalId]
   * value = "39876543210987"
 * name[0]

@@ -1,5 +1,7 @@
 ### Ishlab chiqilmoqda
 
+066-shakl hujjatlari 111-shakl tuzilishiga moslashtirildi, yuboruvchi yuborishi kerak bo'lgan ma'lumotlar o'zgarmadi: [066-shakl Composition](StructureDefinition-form-066-hospital-discharge-composition.html) elementlariga ingliz, rus va o'zbek tillarida tavsiflar qo'shildi, [066-shakl maydonlar mosligi](form-066-mapping.html) esa bo'lim kodlari ko'rsatilgan raqamlangan bo'limlar, hujjat ma'lumotlari jadvali hamda misoldagi har bir kodning ValueSet va display qiymatini oldi. Yangi [Disease/Injury Delay](ValueSet-disease-injury-delay-vs.html) va [Tuberculosis Drug Susceptibility](ValueSet-tb-drug-sensitivity-vs.html) ValueSet'lari 066-shaklning mavjud ikki kod tizimidagi kodlarni sanab o'tadi.
+
 096-shakl (Tug'ruq tibbiy kartasi) qo'shildi: [096-shakl Composition](StructureDefinition-form-096-maternity-medical-record-composition.html) (UZ Core Composition asosidagi birinchi shakl Composition), uning terminologiyasi va ingliz, rus va o'zbek tillaridagi [096-shakl maydonlar mosligi](form-096-mapping.html). Har bir fakt alohida kodlangan Observation sifatida yuboriladi, 111-shakl bilan umumiy faktlar esa 111-shakl kodlaridan foydalanadi, jumladan chanoq o'lchovlari, zaxm, gonokokk, umumiy ahvol va bolaning tirik tug'ilgani. Har bir chaqaloq JShShIR berilgunga qadar DMED tibbiy karta raqami bilan aniqlanadigan alohida Patient bo'ladi, shuning uchun 097-shakl xuddi shu identifikatsiyadan foydalana oladi.
 
 ### Versiya 0.11.1

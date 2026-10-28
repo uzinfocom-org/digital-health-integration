@@ -2,7 +2,7 @@ Profile: UZCoreEncounter066
 Parent: UZCoreEncounter
 Id: uz-core-encounter-066
 Title: "UZ Core Encounter 066"
-Description: "Uzbekistan Core Encounter 066 profile, used to represent clinical encounters"
+Description: "UZ Core Encounter for the hospital stay reported on Form 066 and Form 066-1, adding where the patient was admitted from (admission origin)."
 
 * ^experimental = true
 * ^status = #active
@@ -13,7 +13,7 @@ Description: "Uzbekistan Core Encounter 066 profile, used to represent clinical 
 
 Instance: example-encounter-066
 InstanceOf: UZCoreEncounter066
-Description: "This example represents a patient encounter used in the cancer registry system, including admission and clinical interaction details."
+Description: "Example inpatient treatment stay, admitted from home, as reported on Form 066."
 Usage: #example
 
 * status = #completed

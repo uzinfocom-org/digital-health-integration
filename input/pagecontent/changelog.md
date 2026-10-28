@@ -1,5 +1,7 @@
 ### In development
 
+Form 066 documentation follows the Form 111 layout, with no change to what a sender has to send: the [Form 066 Composition](StructureDefinition-form-066-hospital-discharge-composition.html) has element descriptions in English, Russian and Uzbek, and the [Form 066 field mapping](form-066-mapping.html) has numbered sections with their section codes, a document information table, and the ValueSet and display of every code the example uses. New [Disease/Injury Delay](ValueSet-disease-injury-delay-vs.html) and [Tuberculosis Drug Susceptibility](ValueSet-tb-drug-sensitivity-vs.html) ValueSets list the codes of two existing Form 066 code systems.
+
 Added Form 096 (Tug'ruq tibbiy kartasi, maternity medical record): the [Form 096 Composition](StructureDefinition-form-096-maternity-medical-record-composition.html), the first form Composition derived from UZ Core Composition, its terminology and the [Form 096 field mapping](form-096-mapping.html) in English, Russian and Uzbek. Each fact is its own coded Observation, and the facts Form 096 shares with Form 111 use Form 111's codes, including pelvimetry, syphilis, gonococcus, general condition and whether a child was born alive. Each newborn is a separate Patient identified by the DMED medical-card number until a PINFL is available, so Form 097 can reuse the same identity.
 
 ### Version 0.11.1
