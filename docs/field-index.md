@@ -3,7 +3,7 @@
 This index lists the fields that recur across the form mapping pages (`input/pagecontent/form-*-mapping.md`), with one canonical FHIR mapping for each.
 Look a field up here by meaning, not by label, before mapping it in a new form or reviewing a mapping: the same concept appears under different uz/ru labels in different forms.
 A field that is similar but not identical (another subject, a narrower answer list, an extra option) reuses the canonical path and code and states the difference on its own page.
-Add a concept here when a second form maps it, and record any form that deviates as drift in the notes rather than as a second canonical answer.
+Add a concept here when a form first maps it, add the form to "Also in" when it maps an existing one, and record any form that deviates as drift in the notes rather than as a second canonical answer.
 "Reference" is the form whose page and example are the reference instance for the concept; "Also in" lists the other forms that map it.
 
 ## Composition header and document info
