@@ -3,7 +3,7 @@ Id: form111-snomed-supplement-cs
 Title: "Form 111 SNOMED CT Displays"
 Description: "Uzbek and Russian displays for the SNOMED CT codes used by Form 111"
 
-* insert SupplementCodeSystemDraft(form111-snomed-supplement-cs, $sct, 0.11.1)
+* insert SupplementCodeSystemDraft(form111-snomed-supplement-cs, $sct, 2026.1.0)
 
 * #260385009 "Negative"
   * ^designation[0].language = #ru
@@ -357,3 +357,21 @@ Description: "Uzbek and Russian displays for the SNOMED CT codes used by Form 11
   * ^designation[=].value = "Роды через естественные родовые пути"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Tabiiy tug'ruq yo'llari orqali tug'ruq"
+
+* #21243004 "Term birth of newborn"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Своевременные роды"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "O'z vaqtida tug'ruq"
+
+* #367494004 "Premature birth of newborn"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Преждевременные роды"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Muddatidan oldin tug'ruq"
+
+* #398254007 "Pre-eclampsia"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Преэклампсия"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Preeklampsiya"

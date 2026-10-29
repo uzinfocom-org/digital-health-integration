@@ -128,8 +128,18 @@
         },
         "identifier": [
           {
-            "system": "https://dhp.uz/fhir/core/sid/uz/organization-code",
-            "value": "200096"
+            "use": "official",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "TAX",
+                  "display": "Tax ID number"
+                }
+              ]
+            },
+            "system": "https://dhp.uz/fhir/core/sid/org/uz/soliq",
+            "value": "201122349"
           }
         ],
         "language": "en",

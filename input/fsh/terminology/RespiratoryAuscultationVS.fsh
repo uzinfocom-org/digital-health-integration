@@ -3,6 +3,8 @@ Id: respiratory-auscultation-vs
 Title: "Form097 Respiratory Auscultation ValueSet"
 Description: "ValueSet for respiratory auscultation, Form097 newborn development record."
 * insert IntegrationsValueSet(respiratory-auscultation-vs)
+* ^extension[0].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(Form097SnomedSupplementCS)
 * ^experimental = true
 
 * include codes from system respiratory-auscultation-cs

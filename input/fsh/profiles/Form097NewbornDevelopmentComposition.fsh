@@ -133,7 +133,7 @@ Description: "Composition profile for Form 097 (Yangi tug'ilgan chaqaloq rivojla
 * section[prophylaxisImmunization].code = $loinc#11369-6 "History of Immunization note"
 * section[prophylaxisImmunization].code ^short = "Haemorrhagic disease prophylaxis, hepatitis B vaccination, BCG vaccination"
 * section[prophylaxisImmunization].entry 1..*
-* section[prophylaxisImmunization].entry only Reference(Immunization or MedicationAdministration)
+* section[prophylaxisImmunization].entry only Reference(UZCoreImmunization or MedicationAdministration)
 * section[prophylaxisImmunization].entry ^short = "Vaccinations and vitamin K administration"
 
 // 9. Skrining

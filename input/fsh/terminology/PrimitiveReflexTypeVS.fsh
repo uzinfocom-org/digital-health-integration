@@ -3,6 +3,8 @@ Id: primitive-reflex-type-vs
 Title: "Form097 Primitive Reflex Type ValueSet"
 Description: "ValueSet for primitive reflex type, Form097 newborn development record."
 * insert IntegrationsValueSet(primitive-reflex-type-vs)
+* ^extension[0].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(Form097SnomedSupplementCS)
 * ^experimental = true
 
 * include codes from system primitive-reflex-type-cs

@@ -1,3 +1,7 @@
+### Ishlab chiqilmoqda
+
+097-shakl profilaktika va emlash bo'limi yozuvlari istalgan Immunization emas, [UZ Core Immunization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-immunization.html) bo'ladi. Foydalanilmagan Apgar komponentlari bahosi, chaqaloq terisining asosiy rangi va chaqaloqni parvarish qilish joyi kodlar tizimlari va qiymatlar to'plamlari olib tashlandi. 097 va 111-shakllar qiymatlar to'plamlari o'zlarining SNOMED CT va LOINC qo'shimchalariga havola qiladi, shuning uchun ularning kodlari rus va o'zbek tillarida ko'rsatiladi.
+
 ### Versiya 0.12.0
 
 #### Qo'shildi

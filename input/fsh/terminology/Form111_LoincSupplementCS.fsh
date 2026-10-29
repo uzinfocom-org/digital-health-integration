@@ -3,7 +3,7 @@ Id: form111-loinc-supplement-cs
 Title: "Form 111 LOINC Displays"
 Description: "Uzbek and Russian displays for the LOINC codes used by Form 111"
 
-* insert SupplementCodeSystemDraft(form111-loinc-supplement-cs, $loinc, 0.11.1)
+* insert SupplementCodeSystemDraft(form111-loinc-supplement-cs, $loinc, 2.82.0)
 
 * #22461-8 "Reagin Ab [Presence] in Serum"
   * ^designation[0].language = #ru

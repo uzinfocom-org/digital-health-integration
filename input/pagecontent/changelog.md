@@ -1,3 +1,7 @@
+### In development
+
+Form 097 prophylaxis and immunization entries are [UZ Core Immunization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-immunization.html) instead of any Immunization. The unused Apgar component score, basic newborn skin colour and newborn care location code systems and value sets are removed. The Form 097 and Form 111 value sets link their SNOMED CT and LOINC supplements, so their codes show Russian and Uzbek displays.
+
 ### Version 0.12.0
 
 #### Added
