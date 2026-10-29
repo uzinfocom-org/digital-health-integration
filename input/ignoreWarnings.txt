@@ -81,3 +81,7 @@ The ImplementationGuide uses package hl7.fhir.uv.extensions.r5#5.3.0 released on
 # every target code (12,000+ lines) as "cannot be checked due to special rules". Only this
 # coverage advisory is suppressed; it does not mean the mapped codes passed validation.
 The Target Code System http://hl7.org/fhir/sid/icd-10 is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
+
+# tx.fhir.org's R5 endpoint now lists concept-property-type only as 6.0.1, so the version-pinned
+# lookup of the R5 binding on CodeSystem.property.type fails. The code used (#code) is valid.
+%ValueSet 'http://hl7.org/fhir/ValueSet/concept-property-type|5.0.0' not found%
