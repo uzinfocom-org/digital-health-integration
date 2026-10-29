@@ -10,6 +10,8 @@
 
 Системы кодов и наборы значений оценки компонентов Апгар, базового цвета кожи новорождённого и места ухода за новорождённым (`apgar-component-score-cs`, `newborn-skin-color-basic-cs`, `newborn-care-location-cs` и их наборы значений `-vs`) удалены. Ни один профиль к ним не привязан: форма 097 кодирует оценку по Апгар кодом LOINC, а цвет кожи - из [Newborn Skin Color Detailed](ValueSet-newborn-skin-color-detailed-vs.html).
 
+Записи регистрационного раздела [формы 111](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) также могут быть [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html). В [Previous Pregnancy Outcome](ValueSet-form111-previous-pregnancy-outcome-vs.html) добавлен выкидыш (SNOMED CT `17369002`). [Сопоставление формы 111](form-111-mapping.html) описывает жизненный цикл Composition.status: `preliminary`, пока карта открыта, `final` после её закрытия, `amended` для последующих исправлений и `entered-in-error`, если карта отозвана как ошибочная. [Номер индивидуальной карты беременной](NamingSystem-antenatal-card-number-system.html) передаётся в EpisodeOfCare.identifier, а не в Encounter.identifier.
+
 ### Версия 0.12.0
 
 #### Добавлено
