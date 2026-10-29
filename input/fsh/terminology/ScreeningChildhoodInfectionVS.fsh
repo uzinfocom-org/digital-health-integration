@@ -13,3 +13,9 @@ Description: "Defines Screening Childhood Infection"
 * include $sct#90979004
 * include $sct#38907003
 * include $sct#240526004
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = "https://terminology.dhp.uz/fhir/core/CodeSystem/target-disease-cs"

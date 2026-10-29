@@ -8,3 +8,7 @@ Description: "Defines Screening Menstruation Abundance"
 * include $sct#64206003
 * include $sct#308550003
 * include $sct#386692008
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)

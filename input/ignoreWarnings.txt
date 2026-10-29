@@ -34,15 +34,10 @@ The ImplementationGuide uses package hl7.fhir.uv.sdc#3.0.0 released on 2022-03-0
 # Warning that can be ignored for our use since our instances use Uzbek/Russian but generated narrative in English
 Resource has a language (uz), and the XHTML has a lang (en), but they differ
 Resource has a language (ru), and the XHTML has a lang (en), but they differ
-"The narrative includes custom content for the default language (en), but does not include translated content for the ru language, so the default language has been used
-"The narrative includes custom content for the default language (en), but does not include translated content for the uz language, so the default language has been used
 
 # Organization-scoped identifiers in this example follow dynamic pattern https://dhp.uz/fhir/core/sid/pid/uz/prn/{soliq-id}/{type}
 # per identifiers.md in the main DHP IG (uz.dhp.core)
 No definition could be found for URL value 'https://dhp.uz/fhir/core/sid/pid/uz/prn/200935935/%
-
-# IG Publisher generates inline scripts for table filters then warns they're illegal - bug reported, can be ignored
-The <script> containing the javascript '//%
 
 # Screening: mimetypes value set is hosted externally and cannot be expanded by the publisher
 Binding http://hl7.org/fhir/ValueSet/mimetypes|5.0.0 could not be expanded
@@ -50,8 +45,6 @@ Binding http://hl7.org/fhir/ValueSet/mimetypes|5.0.0 could not be expanded
 # Suppressed in the main IG (uz.dhp.core) too: DHIS observations legitimately lack a performer.
 Best Practice Recommendation: In general, all observations should have a performer
 
-# Screening: body-site is too large for the publisher to verify subset membership
-Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs is a proper subset of http://hl7.org/fhir/ValueSet/body-site|5.0.0 - value set is too large to check
 # UZ Core 0.11.1 binds Observation.bodySite to its body-site-vs (all SNOMED CT body structures); version left open
 Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs is a proper subset of https://terminology.dhp.uz/fhir/core/ValueSet/body-site-vs|%
 # Screening: breast-side VS (two SNOMED codes) is trivially a subset of screening-body-site-vs (all of SNOMED), but the parent is too large for the publisher to verify
@@ -60,18 +53,11 @@ Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screeni
 # IG Publisher 2.2.10 emits an OID-assignment recommendation for every CodeSystem/ValueSet. We don't use OID-based terminology (e.g. CDA), so assigning OIDs IG-wide adds no value here.
 %should have an OID assigned to cater for possible use with OID based terminology systems%
 
-# NOTE: core 0.6.0 re-bound Observation.method to a REQUIRED lab-method-vs, so our method VS is now
-# flagged "not a subset" as a hard ERROR. That error is emitted during profile snapshot validation
-# and is NOT suppressible here (ignoreWarnings does not filter this class - verified). It is
-# tolerated instead via MAX_ALLOWED_ERRORS=1 in .github/workflows/validate-docs.yml, to be dropped
-# to 0 once uz.dhp.core ships the extensible method binding (already in dev).
-
 # dhis-body-site-vs includes the whole FHIR body-site VS, which is too large to expand.
 # Trailing % => startsWith match: the real message has an embedded newline before its final ')',
 # so an exact-match line never matches. Cut at (>1000) to stay independent of tx-server wording.
 Unable to expand included value set 'http://hl7.org/fhir/ValueSet/body-site': The value set 'http://hl7.org/fhir/ValueSet/body-site|5.0.0' expansion has too many codes to produce (>1000)%
 
-Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/cancer-body-location-vs is a proper subset of http://hl7.org/fhir/ValueSet/body-site|5.0.0 - value set is too large to check
 Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/cancer-body-location-vs is a proper subset of https://terminology.dhp.uz/fhir/core/ValueSet/body-site-vs|%
 
 The Target Code System http://snomed.info/sct is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
@@ -79,3 +65,28 @@ The Target Code System http://snomed.info/sct is not fully defined and populated
 # IG Publisher 3.0.0 generates the narrative of a canonical resource example once per IG language
 # (en, ru, uz) and gives each copy the same "metadata" anchor, then flags its own output.
 The XHTML  the resource contains more than one node for each of the following node ids and anchor names: metadata (3x)
+
+# form111-general-observation-code-vs excludes the deprecated perinatal risk duplicates on purpose:
+# they keep their meanings for existing senders, new data uses chr-0027-00005/00006.
+The concept 'chr-0035-00022' is deprecated and its use should be reviewed
+The concept 'chr-0035-00023' is deprecated and its use should be reviewed
+
+# UZ Core 0.11.1 explicitly depends on extensions.r5 5.3.0 (pinned in sushi-config.yaml).
+# Keep the same version so translation extensions do not resolve against two releases.
+# Review this exact advisory when upgrading UZ Core; do not suppress other dependency warnings.
+The ImplementationGuide uses package hl7.fhir.uv.extensions.r5#5.3.0 released on 2026-05-16, but the most recent appropriate version is 5.4.0. This reference is getting old and the more recent version should be considered
+
+# The cancer-registry ICD-10 ConceptMap targets the whole ICD-10 code system, which this build
+# cannot load. Declaring targetScope = ValueSet/icd-10 does not help: the Publisher then reports
+# every target code (12,000+ lines) as "cannot be checked due to special rules". Only this
+# coverage advisory is suppressed; it does not mean the mapped codes passed validation.
+The Target Code System http://hl7.org/fhir/sid/icd-10 is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
+
+# tx.fhir.org's R5 endpoint now lists concept-property-type only as 6.0.1, so the version-pinned
+# lookup of the R5 binding on CodeSystem.property.type fails. The code used (#code) is valid.
+%ValueSet 'http://hl7.org/fhir/ValueSet/concept-property-type|5.0.0' not found%
+
+# Form 111 registration entries allow UZ Core Observation or UZ Core Socioeconomic Observation.
+# A socioeconomic Observation conforms to both sibling profiles, so the validator cannot pick one
+# reference target; the entry is valid either way.
+%among choices: https://dhp.uz/fhir/core/StructureDefinition/uz-core-observation|0.12.0, https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation|0.12.0

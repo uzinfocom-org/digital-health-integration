@@ -4,6 +4,62 @@
 
 [011-shakl](StructureDefinition-form-011-hemodialysis-composition.html), [066-shakl](StructureDefinition-form-066-hospital-discharge-composition.html), [066-1-shakl](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) va [130-shakl](StructureDefinition-form-130-laboratory-test-results-composition.html) Composition'lari endi `status` ni `final` ga qotirmaydi, shuning uchun hujjat [hayot sikli](document-statuses.html) bo'yicha `preliminary`, `amended` va `entered-in-error` holatlaridan o'ta oladi.
 
+### Versiya 0.12.1
+
+#### O'zgartirildi
+
+[097-shakl](form-097-mapping.html) va [111-shakl](form-111-mapping.html) qiymatlar to'plamlari o'zlarining SNOMED CT va LOINC qo'shimchalariga havola qiladi, shuning uchun ularning kodlari rus va o'zbek tillarida ko'rsatiladi.
+
+[097-shakl](form-097-mapping.html) namunalaridagi tashkilotlar 0.12.0 versiyasidan beri boshqa shakllar namunalaridagi kabi Soliq STIR bo'yicha identifikatsiya qilinadi. K vitamini Medication resursi XPN kodi bilan UZ Core Medication bo'ladi, hujjat esa chiqarilish sanasi bilan belgilanadi.
+
+[097-shakl](StructureDefinition-form-097-newborn-development-composition.html) profilaktika va emlash bo'limi yozuvlari istalgan Immunization emas, [UZ Core Immunization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-immunization.html) ga havola qiladi, shuning uchun 097-shaklda yuboriladigan emlashlar UZ Core ga mos keladi.
+
+Apgar komponentlari bahosi, chaqaloq terisining asosiy rangi va chaqaloqni parvarish qilish joyi kodlar tizimlari va qiymatlar to'plamlari (`apgar-component-score-cs`, `newborn-skin-color-basic-cs`, `newborn-care-location-cs` va ularning `-vs` qiymatlar to'plamlari) olib tashlandi. Ularga hech bir profil bog'lanmagan: 097-shakl Apgar bahosini LOINC bilan, teri rangini esa [Newborn Skin Color Detailed](ValueSet-newborn-skin-color-detailed-vs.html) to'plamidan kodlaydi.
+
+[111-shakl](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) ro'yxatga olish bo'limi yozuvlari [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html) ham bo'lishi mumkin. [Previous Pregnancy Outcome](ValueSet-form111-previous-pregnancy-outcome-vs.html) to'plamiga homila tushishi (SNOMED CT `17369002`) qo'shildi. [111-shakl xaritalashi](form-111-mapping.html) Composition.status hayot siklini tavsiflaydi: karta ochiq bo'lganda `preliminary`, yopilgandan keyin `final`, keyingi tuzatishlar uchun `amended` va karta xato sifatida bekor qilinsa `entered-in-error`. [Homilador ayol individual kartasi raqami](NamingSystem-antenatal-card-number-system.html) Encounter.identifier da emas, EpisodeOfCare.identifier da uzatiladi.
+
+### Versiya 0.12.0
+
+#### Qo'shildi
+
+[111-shakl - homilador va tuqqan ayolning individual kartasi](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) FHIR hujjati sifatida profillangan bo'lib, Composition ning 16 ta bo'limi orqali ro'yxatga olish, tashxis, homiladorlik yakuni, anamnez, ko'riklar, takroriy tashriflar, tug'ishga tayyorlash, patronaj tashriflari, perinatal xavfni baholash va mutaxassislar xulosalarini qamrab oladi. Uning namunaviy hujjat-Bundle'i va [maydonma-maydon moslashtirish sahifasi](form-111-mapping.html) mavjud.
+
+[Tug'ruq tibbiy kartasi, 096-shakl](StructureDefinition-form-096-maternity-medical-record-composition.html), FHIR hujjati sifatida profillandi: qabul qilish, tibbiy va akusherlik anamnezi, joriy homiladorlik, akusherlik ko'rigi, tug'ruq kechishi, chaqaloq haqidagi yozuv, tug'ruqdan keyingi davr, dori, tekshiruv va muolaja tayinlovlari, ishlatilgan materiallar, mehnatga layoqatsizlik varaqalari va mas'ul shaxslar - Composition'ning 13 bo'limida. Hujjat namunalari, jumladan antenatal va intranatal o'lik tug'ilish bilan, va [maydonlar moslashtirish sahifasi](form-096-mapping.html) qo'shildi. 111-shakl bilan umumiy maydonlar 111-shakldagi kodlardan foydalanadi. Har bir chaqaloq alohida Patient bo'ladi va JShShIRi bo'lmaguncha DMED tibbiy karta raqami bilan aniqlanadi; 097-shakl xuddi shu Patient'dan foydalanadi va JShShIR berilganda uni qo'shadi.
+
+[Yangi tug'ilgan chaqaloq rivojlanishining tibbiy kartasi, 097-shakl](StructureDefinition-form-097-newborn-development-composition.html), FHIR hujjati sifatida profillandi: ona haqida ma'lumot va antenatal anamnez, tug'ruq, chaqaloqning birlamchi ko'rigi, oziqlantirish, kundalik kuzatuv va shifokor ko'rigi, tana vazni, profilaktika va immunizatsiya, skrining, chiqarish, o'tkazish yoki o'lim - Composition'ning 11 bo'limida. Hujjat namunalari, jumladan tirik va o'lik tug'ilish natijalari bilan, va [maydonlar moslashtirish sahifasi](form-097-mapping.html) qo'shildi.
+
+[Saraton registri](cancer.html) foydalanuvchi rollari uchun [kodlar tizimi](CodeSystem-cancer-registry-roles-cs.html) va UZ Core lavozim va kasb kodlariga [ConceptMap](ConceptMap-cancer-registry-role-to-dhp-position-cm.html) qo'shildi: tizim administratori, registrator, muassasa administratori va tadqiqotchi.
+
+Skrining terminologiyasi o'zbek va rus tillariga tarjima qilindi. Skrining qiymatlar to'plamlari 202 ta konseptni qamrab olgan yangi [SNOMED CT qo'shimchasiga](CodeSystem-screening-snomed-translations-cs.html) havola qiladi, [LOINC qo'shimchasi](CodeSystem-screening-laboratory-cs.html) esa 3 tadan 41 ta kodgacha kengaydi. Undagi suyuqlik sitologiyasi va OPV kodlari endi surtma olishni emas, tekshiruvning o'zini nomlaydi.
+
+#### O'zgartirildi
+
+Qo'llanma [UZ Core 0.12.0](https://dhp.uz/fhir/core/changelog.html) asosida yig'iladi. Undagi yagona buzuvchi o'zgarish, mutaxassis sertifikati identifikatori tizimi, bu qo'llanmaga taalluqli emas. UZ Core endi `order-service` harakat kodini o'zi tarjima qiladi, shuning uchun bu qo'llanmaning harakat kodlari qo'shimchasi olib tashlandi.
+
+[066-shakl](form-066-mapping.html), [066-1-shakl](form-066-1-mapping.html) va [111-shakl](form-111-mapping.html) namunalaridagi tashkilotlar UZ Core Organization profilining `taxId` kesimida Soliq STIR bo'yicha identifikatsiya qilinadi (`https://dhp.uz/fhir/core/sid/org/uz/soliq`). Mahalliy [tashkilot kodi](NamingSystem-organization-code.html) identifikator tizimi `https://dhp.uz/fhir/core/sid/uz/organization-code` iste'moldan chiqarildi: uning kanonik URL manzili saqlanadi, lekin yangi ma'lumotlarda undan foydalanmaslik kerak.
+
+#### Buzuvchi o'zgarishlar
+
+[Bachadon bo'yni skriningidagi](cervical-breast-cancer-screening.html) kolposkopiya xulosalari SNOMED CT da konsepti bo'lsa, SNOMED CT bilan kodlanadi. Lokal [kolposkopiya kodlar tizimida](CodeSystem-screening-colposcopy-cs.html) faqat SNOMED CT da yo'q ikkita xulosa yangi kodlar bilan qoldi, [qiymatlar to'plamiga](ValueSet-screening-colposcopy-vs.html) esa avval bo'lmagan uchta xulosa qo'shildi. Yuboruvchilar kodni, SNOMED CT qatorlari uchun esa tizimni ham almashtiradi:
+
+| Xulosa | Eski kod | Yangi kod |
+|---|---|---|
+| NILM (norma) | `scr-colpo-1` | SNOMED CT `373887005` |
+| LSIL | `scr-colpo-2` | SNOMED CT `416030007` |
+| HSIL | `scr-colpo-3` | SNOMED CT `22725004` |
+| Atipik o'zgarish | `scr-colpo-4` | `scrn-0091-00004` |
+| ASC-H | - | SNOMED CT `373878001` |
+| CIN 1 | - | SNOMED CT `285836003` |
+| CIN 2+ | - | `scrn-0091-00007` |
+
+#### Hujjatlashtirish
+
+[Shakllar sharhi](forms-overview.html) Sog'liqni saqlash vazirligining 399-son buyrug'idagi birlamchi tibbiy hujjat shakllarini 11 ta jild va jildlar bo'ylab takrorlanadigan hujjat turlari bo'yicha tartiblaydi, har bir jild uchun sahifa va diagramma bilan. U faqat ingliz tilida.
+
+[066-1-shakl](form-066-1-mapping.html) va [gepatit](hepatitis.html) moslashtirish sahifalaridagi identifikator qatorlari har bir identifikatorning tizimi va turini ko'rsatadi.
+
+Bachadon bo'yni saratoni skriningi so'rovnomasiga javob namunasi endi [example-cervical-screening-response](QuestionnaireResponse-example-cervical-screening-response.html) deb ataladi, chunki eski id paket uchun juda uzun edi.
+
 ### Versiya 0.11.1
 
 #### Qo'shildi

@@ -11,3 +11,7 @@ Description: "Defines Screening Vaginal Discharge Type"
 * include $sct#289548002 "Mucoid vaginal discharge"
 * include $sct#289550005 "Purulent vaginal discharge"
 * include codes from system screening-vaginal-discharge-type-cs
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)

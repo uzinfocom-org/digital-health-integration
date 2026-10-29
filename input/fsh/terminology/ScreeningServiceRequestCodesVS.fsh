@@ -13,3 +13,9 @@ Description: "Combined code set for screening service requests (LOINC laboratory
 * include $loinc#18500-9 "Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep"
 * include $loinc#82675-0 "HPV I/H Risk 4 DNA Cvx Ql NAA+probe"
 // * include codes from valueset ScreeningDiagnosticProcedureVS
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningLaboratoryCS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)

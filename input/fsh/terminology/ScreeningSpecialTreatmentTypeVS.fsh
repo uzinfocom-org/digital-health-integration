@@ -12,3 +12,9 @@ Description: "SNOMED CT and local special treatment types accepted in breast and
 * include $sct#103735009
 * include $sct#713148004
 * include codes from system screening-special-treatment-type-cs
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = "https://terminology.dhp.uz/fhir/core/CodeSystem/sr-sct-category-cs"

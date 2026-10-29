@@ -16,3 +16,9 @@ Description: "Other organs or anatomical sites involved according to a Screening
 * include $sct#45292006
 * include $sct#87953007
 * include $sct#2667000
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(CancerBodyLocationCS)

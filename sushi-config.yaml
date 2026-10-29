@@ -9,7 +9,7 @@ name: DHPintegrations
 title: Uzbekistan Digital Health Platform - Integrations
 description: Profiles for DHP integrations with systems in Uzbekistan
 status: draft # draft | active | retired | unknown
-version: 0.11.1
+version: 0.12.1
 fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build
@@ -25,7 +25,13 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  uz.dhp.core: 0.11.1
+  # UTG 7.5.0 replaces the R5 concept-property-type ValueSet (5.0.0) with 6.0.1.
+  # Pin the compatible published release so standard R5 bindings remain resolvable.
+  hl7.terminology.r5: 7.4.0
+  # Match uz.dhp.core 0.11.1 and tooling 1.3.0; extensions 5.4.0 pulls UTG 7.5.0 back in.
+  hl7.fhir.uv.extensions.r5: 5.3.0
+  hl7.fhir.uv.tools.r5: 1.3.0
+  uz.dhp.core: 0.12.0
   # R4-only package used cross-version for sdc-questionnaire-calculatedExpression (same as uz.dhp.core);
   # the resulting version-mismatch messages are suppressed in ignoreWarnings.txt
   hl7.fhir.uv.sdc: 3.0.0
@@ -104,8 +110,14 @@ pages:
     title: Form 066 Mapping
   form-066-1-mapping.md:
     title: Form 066 1 Mapping
+  form-096-mapping.md:
+    title: Form 096 Mapping
+  form-097-mapping.md:
+    title: Form 097 Mapping
   form-130-mapping.md:
     title: Form 130 Mapping
+  form-111-mapping.md:
+    title: Form 111 Mapping
   cervical-breast-cancer-screening.md:
     title: Cervical and Breast Cancer Screening
   sick-leave.md:
@@ -156,10 +168,14 @@ menu:
   Documents:
     Categories: document-categories.html
     Lifecycle: document-statuses.html
+    Forms overview: forms-overview.html
     Form 011 Mapping: form-011-mapping.html
     Form 066 Mapping: form-066-mapping.html
     Form 066-1 Mapping: form-066-1-mapping.html
+    Form 096 Mapping: form-096-mapping.html
+    Form 097 Mapping: form-097-mapping.html
     Form 130 Mapping: form-130-mapping.html
+    Form 111 Mapping: form-111-mapping.html
   Integrations:
     Cervical and Breast Cancer Screening: cervical-breast-cancer-screening.html
     Sick Leave: sick-leave.html
@@ -168,19 +184,6 @@ menu:
     Psychiatry: psychiatry.html
     Cancer: cancer.html
     Hepatitis: hepatitis.html
-  Forms:
-    Overview: forms-overview.html
-    1.0 Inpatient hospital: forms-volume-01-inpatient.html
-    2.0 Ambulatory-polyclinic: forms-volume-02-ambulatory.html
-    3.0 Diagnostics & laboratory: forms-volume-03-diagnostics-laboratory.html
-    4.0 Pharmacy & supply: forms-volume-04-pharmacy.html
-    5.0 Emergency & air ambulance: forms-volume-05-emergency.html
-    6.0 Genetics & screening: forms-volume-06-genetics-screening.html
-    7.0 HIV/AIDS service: forms-volume-07-hiv.html
-    8.0 Blood service: forms-volume-08-blood-service.html
-    9.0 Pathological anatomy: forms-volume-09-pathology.html
-    10.0 Forensic medicine: forms-volume-10-forensic.html
-    11.0 Sanitary-epidemiology: forms-volume-11-sanitary-epidemiology.html
   Questionnaires: forms.html
   Artifacts: artifacts.html
   Changelog: changelog.html
@@ -318,3 +321,18 @@ instanceOptions:
   # if InstanceOf references a profile:
   #
   # setId: always # always | standalone-only
+
+# Explicit catalogue descriptions for JSON examples in input/examples.
+resources:
+  Bundle/example-form-097-antepartum-stillbirth:
+    name: Form 097 - antepartum stillbirth example
+    description: Synthetic newborn document with an antepartum stillbirth outcome.
+    exampleBoolean: true
+  Bundle/example-form-097-intrapartum-stillbirth:
+    name: Form 097 - intrapartum stillbirth example
+    description: Synthetic newborn document with an intrapartum stillbirth outcome.
+    exampleBoolean: true
+  Bundle/example-form-097-minimal:
+    name: Form 097 - minimal document example
+    description: Synthetic newborn document containing required document metadata and references without clinical sections.
+    exampleBoolean: true

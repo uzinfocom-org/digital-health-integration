@@ -12,3 +12,7 @@ Description: "Value set of SNOMED CT codes for screening observation component t
 // * $sct#1348266008 "Breast Imaging and Reporting and Data System"
 // * $sct#129793001 "Mammographic breast density"
 // * $sct#246646005 "Quality of visual image"
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)

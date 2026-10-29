@@ -9,3 +9,7 @@ Description: "Value set containing Screening Diabetes Codes"
 * include $sct#416855002
 * include $sct#726054005
 * include $sct#703768009
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)

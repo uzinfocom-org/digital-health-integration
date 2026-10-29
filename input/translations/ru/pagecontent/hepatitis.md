@@ -29,9 +29,9 @@ Condition, EpisodeOfCare и оба профиля Observation требуют о�
 
 | Что фиксируется | Справочник | Пример кода или значения | Где хранится |
 | :--- | :--- | :--- | :--- |
-| Национальный идентификатор | - | `515050500505` | `identifier[nationalId].value` |
-| Внутренний паспорт | - | `AB1234567` | `identifier[passportLocal].value` |
-| Номер медицинской карты | - | `01234567890456` | `identifier[healthCardId].value` |
+| Национальный идентификатор | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ni`<br>`type` `NI` | `515050500505` | `identifier[nationalId].value` |
+| Внутренний паспорт | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ppn/local`<br>`type` `PPN` | `AB1234567` | `identifier[passportLocal].value` |
+| Номер медицинской карты | `system` `https://dhp.uz/fhir/core/sid/pid/uz/hc`<br>`type` `HC` | `01234567890456` | `identifier[healthCardId].value` |
 | ФИО | - | `Xalida Yusupova Maxmudovna` | `name` |
 | Административный пол | [AdministrativeGenderVS](https://dhp.uz/fhir/core/ValueSet-administrative-gender-vs.html) | `female` | `gender` |
 | Дата рождения | - | `1990-02-01` | `birthDate` |
@@ -47,7 +47,7 @@ EpisodeOfCare объединяет процесс оказания помощи 
 
 | Что фиксируется | Справочник | Пример кода или значения | Где хранится |
 | :--- | :--- | :--- | :--- |
-| Идентификатор реестра | - | `75dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
+| Идентификатор реестра | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `75dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
 | Статус | [EpisodeOfCareStatus](https://hl7.org/fhir/R5/valueset-episode-of-care-status.html) | `active` | `status` |
 | Вид услуги | [EpisodeOfCareTypeVS](https://dhp.uz/fhir/core/ValueSet-episode-of-care-type-vs.html) | `episode-of-care-type-cs#mserv-0001-00004` | `type[serviceType]` |
 | Диагноз | - | [example-hepatitis-condition](Condition-example-hepatitis-condition.html) | `diagnosis.condition.reference` |
@@ -92,7 +92,7 @@ Condition содержит диагноз и клинический статус
 
 | Что фиксируется | Справочник | Пример кода или значения | Где хранится |
 | :--- | :--- | :--- | :--- |
-| Идентификатор реестра | - | `69dcdd0a-5a68-4cc6-8503-5ab15a41c63b` | `identifier[hepatitisRegistry].value` |
+| Идентификатор реестра | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `69dcdd0a-5a68-4cc6-8503-5ab15a41c63b` | `identifier[hepatitisRegistry].value` |
 | Диагноз | [ConditionCodeVS](https://dhp.uz/fhir/core/ValueSet-condition-code-vs.html) | `ICD-10#B17.1` | `code` |
 | Клинический статус | [ClinicalStatusVS](https://dhp.uz/fhir/core/ValueSet-clinical-status-vs.html) | `condition-clinical#active` | `clinicalStatus` |
 | Тип диагноза | [DiagnosisTypeVS](https://dhp.uz/fhir/core/ValueSet-diagnosis-type-vs.html) | `diagnosis-type-cs#gencl-0001-00003` | `extension[diagnosisType]` |
@@ -114,7 +114,7 @@ Condition содержит диагноз и клинический статус
 
 | Что фиксируется | Справочник | Пример кода или значения | Где хранится |
 | :--- | :--- | :--- | :--- |
-| Идентификатор реестра | - | `85dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
+| Идентификатор реестра | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `85dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
 | Статус результата | [ObservationStatusVS](https://dhp.uz/fhir/core/ValueSet-observation-status-vs.html) | `final` | `status` |
 | Исследование | [ObservationCodesVS](https://dhp.uz/fhir/core/ValueSet-observation-codes-vs.html) | `LOINC#22314-9` | `code` |
 | Результат | [v3-ObservationInterpretation](https://terminology.hl7.org/CodeSystem-v3-ObservationInterpretation.html) | `v3-ObservationInterpretation#NEG` | `valueCodeableConcept` |
@@ -134,7 +134,7 @@ Condition содержит диагноз и клинический статус
 
 | Что фиксируется | Справочник | Пример кода или значения | Где хранится |
 | :--- | :--- | :--- | :--- |
-| Идентификатор реестра | - | `85dcdd0a-5a68-4cc6-8503-5ab15a42c73b` | `identifier[hepatitisRegistry].value` |
+| Идентификатор реестра | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `85dcdd0a-5a68-4cc6-8503-5ab15a42c73b` | `identifier[hepatitisRegistry].value` |
 | Статус результата | [ObservationStatusVS](https://dhp.uz/fhir/core/ValueSet-observation-status-vs.html) | `final` | `status` |
 | Находка | [HepatitisTypeOfUltraSoundVS](ValueSet-hepatitis-type-of-ultra-sound-vs.html) | `SNOMED CT#19943007` / `SNOMED CT#300332007` | `code` |
 | Наличие находки | - | `true` / `false` | `valueBoolean` |

@@ -7,3 +7,7 @@ Description: "Defines Screening Hirsutism Other"
 * ^language = #uz
 * include $sct#251823004
 * include $sct#201066002
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)

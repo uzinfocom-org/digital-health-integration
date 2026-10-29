@@ -143,6 +143,8 @@ Document Information - первая таблица: поля заголовка 
 
 Для каждого поля, которое ложится на `Observation`, указывайте в колонке `FHIR Path` конкретный тип значения, а не `Observation.value[x]`: `Observation.valueBoolean`, `Observation.valueQuantity` (с единицей UCUM, например `d` или `g`), `Observation.valueCodeableConcept` (с ValueSet) и т. д. В примере используйте тот же тип. Тип должен соответствовать коду в `Observation.code`: у LOINC смотрите шкалу (`SCALE_TYP`) - для `Qn` нужен `Quantity` (или `Range`), для `Ord`/`Nom` - `CodeableConcept`, а если у кода есть список ответов LOINC (`LL...`), берите ответы из него. Исключение - ответ строго «да/нет»: используйте `valueBoolean`, а не коды «да»/«нет» из SNOMED CT, HL7 v2 (`v2-0136`) или LOINC (`LL361-7`). Если у поля есть третий вариант (например, «неизвестно»), нужен `valueCodeableConcept`.
 
+Каждое поле сначала найдите по смыслу в [индексе полей](field-index.md) и возьмите оттуда путь FHIR и код; поле, которое встретилось уже во второй форме, добавьте в индекс.
+
 ### 5. Вступление к профилю
 
 `input/pagecontent/StructureDefinition-<id профиля>-intro.md` - одна-две строки со ссылками на страницу соответствия и на пример. Шаблон - в существующих `*-intro.md`.
