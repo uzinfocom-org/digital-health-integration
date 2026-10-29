@@ -13,7 +13,7 @@
 
 ### Форма 111 - Индивидуальная карта беременной и родильницы
 
-На этой странице описано сопоставление полей Формы 111 (Homilador va tuqqan ayolning individual kartasi) с ресурсами FHIR.
+На этой странице описано сопоставление полей [Формы 111](forms-volume-02-ambulatory.html) (Homilador va tuqqan ayolning individual kartasi) с ресурсами FHIR.
 
 ---
 

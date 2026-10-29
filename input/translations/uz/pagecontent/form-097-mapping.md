@@ -13,7 +13,7 @@
 
 ### 097-shakl - Yangi tug'ilgan chaqaloq rivojlanishining tibbiy kartasi
 
-Ushbu sahifada 097-shakl (Yangi tug'ilgan chaqaloq rivojlanishining tibbiy kartasi) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
+Ushbu sahifada [097-shakl](forms-volume-01-inpatient.html) (Yangi tug'ilgan chaqaloq rivojlanishining tibbiy kartasi) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
 
 ---
 

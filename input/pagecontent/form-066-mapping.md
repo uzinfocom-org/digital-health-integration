@@ -11,7 +11,7 @@
 
 ### Form 066 - Hospital Discharge Statistical Card
 
-This page documents the mapping between Form 066 (Hospital Discharge Statistical Card) fields and FHIR resources.
+This page documents the mapping between [Form 066](forms-volume-03-diagnostics-laboratory.html) (Hospital Discharge Statistical Card) fields and FHIR resources.
 
 ---
 

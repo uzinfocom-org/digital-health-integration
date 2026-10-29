@@ -11,7 +11,7 @@
 
 ### Form 096 - Maternity Medical Record
 
-This page documents the mapping between Form 096 (Tug'ruq tibbiy kartasi) fields and FHIR resources.
+This page documents the mapping between [Form 096](forms-volume-01-inpatient.html) (Tug'ruq tibbiy kartasi) fields and FHIR resources.
 
 ---
 

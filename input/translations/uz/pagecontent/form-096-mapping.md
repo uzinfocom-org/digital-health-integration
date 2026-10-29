@@ -11,7 +11,7 @@
 
 ### 096-shakl - Tug'ruq tibbiy kartasi
 
-Ushbu sahifada 096-shakl (Tug'ruq tibbiy kartasi) maydonlarining FHIR resurslari bilan moslashtirilishi bayon qilingan.
+Ushbu sahifada [096-shakl](forms-volume-01-inpatient.html) (Tug'ruq tibbiy kartasi) maydonlarining FHIR resurslari bilan moslashtirilishi bayon qilingan.
 
 ---
 

@@ -13,7 +13,7 @@
 
 ### 066-shakl - Statsionardan chiqqan bemorning statistik kartasi
 
-Ushbu sahifada 066-shakl (Statsionardan chiqqan bemorning statistik kartasi) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
+Ushbu sahifada [066-shakl](forms-volume-03-diagnostics-laboratory.html) (Statsionardan chiqqan bemorning statistik kartasi) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
 
 ---
 

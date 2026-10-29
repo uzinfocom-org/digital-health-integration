@@ -14,7 +14,7 @@
 
 ### 011-shakl - Gemodializ seansi bayonnomasi
 
-Ushbu sahifada 011-shakl (Gemodializ seansi bayonnomasi) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
+Ushbu sahifada [011-shakl](forms-volume-03-diagnostics-laboratory.html) (Gemodializ seansi bayonnomasi) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
 
 ### Umumiy ma'lumot
 

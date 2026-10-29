@@ -11,7 +11,7 @@
 
 ### Form 097 - Newborn Development Medical Record
 
-This page documents the mapping between Form 097 (Yangi tug'ilgan chaqaloq rivojlanishining tibbiy kartasi) fields and FHIR resources.
+This page documents the mapping between [Form 097](forms-volume-01-inpatient.html) (Yangi tug'ilgan chaqaloq rivojlanishining tibbiy kartasi) fields and FHIR resources.
 
 ---
 

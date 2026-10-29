@@ -12,7 +12,7 @@
 
 ### Form 011 - Hemodialysis session protocol
 
-This page documents the mapping between Form 011 (Hemodialysis Session Protocol) fields and FHIR resources.
+This page documents the mapping between [Form 011](forms-volume-03-diagnostics-laboratory.html) (Hemodialysis Session Protocol) fields and FHIR resources.
 
 ### Overview
 

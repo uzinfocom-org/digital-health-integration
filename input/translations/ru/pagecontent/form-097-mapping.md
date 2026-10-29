@@ -13,7 +13,7 @@
 
 ### Форма 097 - Медицинская карта развития новорождённого
 
-На этой странице описано сопоставление полей Формы 097 (Yangi tug'ilgan chaqaloq rivojlanishining tibbiy kartasi) с ресурсами FHIR.
+На этой странице описано сопоставление полей [Формы 097](forms-volume-01-inpatient.html) (Yangi tug'ilgan chaqaloq rivojlanishining tibbiy kartasi) с ресурсами FHIR.
 
 ---
 

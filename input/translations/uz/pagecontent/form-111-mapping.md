@@ -13,7 +13,7 @@
 
 ### 111-shakl - Homilador va tuqqan ayolning individual kartasi
 
-Ushbu sahifada 111-shakl (Homilador va tuqqan ayolning individual kartasi) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
+Ushbu sahifada [111-shakl](forms-volume-02-ambulatory.html) (Homilador va tuqqan ayolning individual kartasi) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
 
 ---
 
