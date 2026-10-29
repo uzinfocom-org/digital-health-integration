@@ -48,7 +48,7 @@ To'liq namunaviy nusxa uchun [097-shakl misoli](Bundle-example-form-097-newborn-
 | Tug'ruqxonada bo'lish davri | Пребывание в родильном доме | Composition.encounter | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html) | 2026-06-01 - 2026-06-07 |
 | Davolovchi shifokor | Лечащий врач | Encounter.participant.actor | [PractitionerRole](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner-role.html) | Davolovchi neonatolog |
 | Hujjat shakllantirilgan sana | Дата составления документа | Composition.date | - | 2026-06-07T12:00:00+05:00 |
-| Hujjatni saqlagan foydalanuvchi | Пользователь, сохранивший документ | Composition.author | [PractitionerRole](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner-role.html), lavozimi noma'lum bo'lsa [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html) | Hamshira |
+| Hujjatni saqlagan foydalanuvchi | Пользователь, сохранивший документ | Composition.author | PractitionerRole, lavozimi noma'lum bo'lsa [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html) | Hamshira |
 | Hujjat sarlavhasi | Заголовок документа | Composition.title | - | Form 097 - Newborn Development Medical Record |
 
 ---
@@ -59,7 +59,7 @@ Bo'lim kodi: LOINC `57073-9` "Prenatal records".
 
 | UZ | RU | FHIR yo'li | Kod | Qiymat misoli |
 |----|----|------------|------|---------------|
-| Onaning JShShIRi | ПИНФЛ матери | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html).identifier[nationalId] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ni`<br>`type` `NI` | 31234567890123 |
+| Onaning JShShIRi | ПИНФЛ матери | Patient.identifier[nationalId] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ni`<br>`type` `NI` | 31234567890123 |
 | Onaning F.I.Sh. | Ф.И.О. матери | Patient.name.text | - | Karimova Dilnoza Farkhodovna |
 | Onaning tug'ilgan sanasi | Дата рождения матери | Patient.birthDate | - | 1992-03-12 |
 | Oilaviy holati | Семейное положение | Patient.maritalStatus | `value` [UZ Core Marital Status](https://dhp.uz/fhir/core/en/ValueSet-marital-status-vs.html) | Married (`M`) |
@@ -250,7 +250,7 @@ Bo'lim kodi: lokal [Form 097 section codes](ValueSet-form-097-section-vs.html) `
 
 | UZ | RU | FHIR yo'li | Kod | Qiymat misoli |
 |----|----|------------|------|---------------|
-| Davolovchi shifokor | Лечащий врач | [PractitionerRole](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner-role.html) | `code` [Position and Profession](https://dhp.uz/fhir/core/en/ValueSet-position-and-profession-vs.html) | Vrach neonatolog (`2212.71`) |
+| Davolovchi shifokor | Лечащий врач | PractitionerRole | `code` [Position and Profession](https://dhp.uz/fhir/core/en/ValueSet-position-and-profession-vs.html) | Vrach neonatolog (`2212.71`) |
 | Hamshira | Медсестра | PractitionerRole | `code` [Position and Profession](https://dhp.uz/fhir/core/en/ValueSet-position-and-profession-vs.html) | Yetakchi hamshira (`3221.1`) |
 
 ---
