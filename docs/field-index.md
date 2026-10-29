@@ -171,6 +171,7 @@ Obstetric
 | Medication given | Dori yuborilishi / Введение лекарственного средства | MedicationAdministration.medication; occurence[x]; dosage | SNOMED CT or UZ Core Medication Classification | 096 | 097, 011 | Base resource (no UZ Core profile). |
 | Neonatal eye prophylaxis | Gonoblenoreya profilaktikasi / Профилактика гонобленнореи | Procedure.code; occurrenceDateTime | `chr-0085-0001` | 096 | 097 | |
 | Recommendations | Tavsiyalar, Maslahat / Рекомендации | CarePlan.description | - | 111 | 096, 097 | Drift: 096 uses Observation with `code.text` only, 097 uses Observation `discharge-recommendations`. |
+| Diet table | Parhez stoli, Parhez stoli raqami / Диетический стол | Observation.valueCodeableConcept | `code` LOINC `81663-7` "Diet [Type]"; value Hospital Diet Type (`chr-0042`, from #96) | 003 (#96) | 096 | Not NutritionOrder: the platform does not support it yet. Drift: 096 sends the table number as `valueInteger` with `code.text` only. |
 
 ## Sick leave and work capacity
 
