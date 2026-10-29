@@ -1,6 +1,14 @@
-### В разработке
+### Версия 0.12.1
 
-Записи раздела профилактики и иммунизации формы 097 - [UZ Core Immunization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-immunization.html) вместо любого Immunization. Неиспользуемые системы кодов и наборы значений оценки компонентов Апгар, базового цвета кожи новорождённого и места ухода за новорождённым удалены. Наборы значений форм 097 и 111 ссылаются на свои дополнения SNOMED CT и LOINC, поэтому их коды отображаются на русском и узбекском.
+#### Изменено
+
+Наборы значений [формы 097](form-097-mapping.html) и [формы 111](form-111-mapping.html) ссылаются на свои дополнения SNOMED CT и LOINC, поэтому их коды отображаются на русском и узбекском.
+
+Организации в примерах [формы 097](form-097-mapping.html) идентифицируются по ИНН Soliq, как и в примерах других форм начиная с 0.12.0. Medication витамина K - UZ Core Medication с кодом МНН, а документ датирован выпиской.
+
+Записи раздела профилактики и иммунизации [формы 097](StructureDefinition-form-097-newborn-development-composition.html) ссылаются на [UZ Core Immunization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-immunization.html) вместо любого Immunization, поэтому прививки в форме 097 соответствуют UZ Core.
+
+Системы кодов и наборы значений оценки компонентов Апгар, базового цвета кожи новорождённого и места ухода за новорождённым (`apgar-component-score-cs`, `newborn-skin-color-basic-cs`, `newborn-care-location-cs` и их наборы значений `-vs`) удалены. Ни один профиль к ним не привязан: форма 097 кодирует оценку по Апгар кодом LOINC, а цвет кожи - из [Newborn Skin Color Detailed](ValueSet-newborn-skin-color-detailed-vs.html).
 
 ### Версия 0.12.0
 

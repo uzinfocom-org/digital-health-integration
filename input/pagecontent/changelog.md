@@ -1,6 +1,14 @@
-### In development
+### Version 0.12.1
 
-Form 097 prophylaxis and immunization entries are [UZ Core Immunization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-immunization.html) instead of any Immunization. The unused Apgar component score, basic newborn skin colour and newborn care location code systems and value sets are removed. The Form 097 and Form 111 value sets link their SNOMED CT and LOINC supplements, so their codes show Russian and Uzbek displays.
+#### Changed
+
+The [Form 097](form-097-mapping.html) and [Form 111](form-111-mapping.html) value sets link their SNOMED CT and LOINC supplements, so their codes show Russian and Uzbek displays.
+
+Organizations in the [Form 097](form-097-mapping.html) examples are identified by their Soliq tax ID, as in the other form examples since 0.12.0. The vitamin K Medication is a UZ Core Medication coded with its INN, and the document is dated at discharge.
+
+[Form 097](StructureDefinition-form-097-newborn-development-composition.html) prophylaxis and immunization section entries reference [UZ Core Immunization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-immunization.html) instead of any Immunization, so vaccinations sent in Form 097 conform to UZ Core.
+
+The Apgar component score, basic newborn skin colour and newborn care location code systems and value sets (`apgar-component-score-cs`, `newborn-skin-color-basic-cs`, `newborn-care-location-cs` and their `-vs` value sets) are removed. No profile bound them: Form 097 codes the Apgar score with LOINC and skin colour from [Newborn Skin Color Detailed](ValueSet-newborn-skin-color-detailed-vs.html).
 
 ### Version 0.12.0
 
