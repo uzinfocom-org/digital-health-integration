@@ -1,10 +1,10 @@
 > **Mashina tarjimasi, inson tomonidan tekshirilishi zarur.** Ushbu sahifa ingliz tilidan sun'iy intellekt yordamida avtomatik tarjima qilingan va hali muharrir tomonidan tekshirilmagan. Har qanday nomuvofiqlikda asl inglizcha versiya ustuvor hisoblanadi.
 
-9-jild - bu patologik anatomiya: o'lim sababini aniqlash uchun vafotdan keyin jasadlarni tekshirish va jarrohlik paytida olib tashlangan to'qimalarda nima noto'g'ri ekanini bilish uchun ularni tekshirish. Jild kichik (oltita shakl) va sud tibbiyoti jildi kabi laboratoriya bosqichi bilan yakunlanadi.
+9-jild - bu patologik anatomiya: o'lim sababini aniqlash uchun vafotdan keyin jasadlarni tekshirish va jarrohlik paytida olib tashlangan to'qimalardagi patologik o'zgarishlarni aniqlash uchun ularni tekshirish. Jild kichik (oltita shakl) va sud tibbiyoti jildi kabi laboratoriya bosqichi bilan yakunlanadi.
 
 ### Patologik anatomiya nima bilan shug'ullanadi
 
-Patologik anatomiya tana va uning to'qimalarini bevosita tekshirib, "aslida nima bo'lgan?" degan savolga javob beradi. Bu ikki holatda amalga oshiriladi:
+Patologik anatomiya tana va uning to'qimalarini bevosita tekshirib, "aslida qanday kasallik bo'lgan?" degan savolga javob beradi. Bu ikki holatda amalga oshiriladi:
 
 - O'limdan keyin. Bemor kasalxonada vafot etganda, patologoanatom o'lim sababini tasdiqlash va tashxis hamda davolash to'g'riligini tekshirish uchun autopsiya o'tkazishi mumkin. Jasad ro'yxatga olinadi, autopsiya bayonnomaga yoziladi, to'qima namunalari esa mikroskop ostida batafsil tekshirish uchun olinadi.
 - Jarrohlikdan keyin. Jarroh to'qimani - o'smani, a'zoni, biopsiyani - olib tashlaganda, u tekshirish va tashxis qo'yish uchun o'sha laboratoriyaga yuboriladi. Bu ko'proq uchraydigan, kundalik ishdir.

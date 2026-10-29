@@ -1,5 +1,5 @@
 @startuml forms-vol08-flow-ru
-title Пример пути - от донора к реципиенту (том 8 в том 1)
+title Пример пути - от донора к реципиенту (из тома 8 в том 1)
 autonumber
 
 actor Донор as D

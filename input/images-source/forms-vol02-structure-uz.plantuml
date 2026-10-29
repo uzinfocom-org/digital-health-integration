@@ -2,7 +2,7 @@
 hide circle
 hide empty members
 skinparam linetype ortho
-title 2-jild - ambulator shakllar oilalari, hujjat turi bo'yicha rangda
+title 2-jild - ambulator shakllar oilalari, hujjat turi bo'yicha ranglangan
 
 skinparam class {
   BackgroundColor<<register>> #ECEFF1
@@ -28,7 +28,7 @@ class "064 Emlash\njurnali" as F064 <<register>>
 
 class "086 Tibbiy\nma'lumotnoma" as F086 <<certificate>>
 class "086-1..086-4\nma'lumotnoma variantlari" as F086x <<certificate>>
-class "043 chet elliklar /\n044 chet elga chiqish" as F043 <<certificate>>
+class "043 chet elliklar /\n044 chet elga chiqish ma'lumotnomasi" as F043 <<certificate>>
 
 class "089 Sil/JYYI\nbildirishnomasi" as F089 <<notify>>
 class "090 Saraton\nbildirishnomasi" as F090 <<notify>>

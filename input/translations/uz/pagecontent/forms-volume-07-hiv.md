@@ -10,7 +10,7 @@ OIV bo'yicha yordam oddiy tibbiy yordamdan ikki sababga ko'ra ajratilgan: tekshi
 - Laboratoriya tasdig'i. Ixtisoslashgan laboratoriya virusni bevosita aniqlaydigan (PZR) va immun tizimining holatini o'lchaydigan (CD4 soni) tekshiruvlarni bajaradi.
 - Musbat holatlarni kuzatish. Natijasi musbat chiqqan odam [2-jild](forms-volume-02-ambulatory.html)dagi surunkali bemor kabi dispanser kuzatuviga olinadi, uning davolanishi va asoratlovchi infeksiyalari vaqt davomida qayd etib boriladi.
 
-Anonimlik shunchalik muhimki, ism-sharifi oshkor bo'lishidan qo'rqish odamlarni tekshiruvdan to'xtatib qoladi, shu sababli tizim ataylab shaxsni aniqlamasdan tekshiruv o'tkazishga imkon beradi.
+Anonimlikning bunchalik muhimligi sababi shundaki, ism-sharifi oshkor bo'lishidan qo'rqish odamlarni tekshiruvdan to'xtatib qoladi, shu sababli tizim ataylab shaxsni aniqlamasdan tekshiruv o'tkazishga imkon beradi.
 
 ### Shakllar qanday bog'langan
 

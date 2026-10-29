@@ -29,6 +29,6 @@ WARD -> WARD : 007 o'rinlar harakati varaqasi yangilanadi
 alt chiqarildi
   WARD -> WARD : 027 tibbiy kartadan ko'chirma\n066 chiqarilganlar statistik kartasi
 else vafot etdi
-  WARD -> WARD : 106 o'lim guvohnomasini ro'yxatga olish
+  WARD -> WARD : 106 o'lim ma'lumotnomasini ro'yxatga olish
 end
 @enduml

@@ -14,7 +14,7 @@ LAB -> LAB : 203/217 guruh va Rh, 204 brutsellyoz,\n218 zaxm/HBsAg/OIV, 219 klin
 alt donorga ruxsat berildi
   DD -> DD : 201 butun qon / 198 aferez usulida tayyorlash
   DD -> CP : birlik qayta ishlashga yuborildi
-  CP -> CP : 207 komponentlar, 208 krioprepitsipitat,\n209 plazma, 210 yuvilgan eritrotsitlar
+  CP -> CP : 207 komponentlar, 208 kriopretsipitat,\n209 plazma, 210 yuvilgan eritrotsitlar
   CP -> CP : 205 sterillikni tekshirish
   WARD -> CP : 213 qon mahsulotlariga talabnoma
   CP -> WARD : 211 tayyor mahsulotni berish

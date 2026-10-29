@@ -28,7 +28,7 @@ Politsiya tushuntira olmaydigan holatlarda topilgan jasadni tasavvur qiling. U s
 | Shakl | Nomi |
 |-------|------|
 | 229 | Sud-tibbiy tekshiruv dalolatnomasi |
-| 230 | Ekspert xulosasi № |
+| 230 | Ekspert xulosasi |
 | 231 | Sud-tibbiy laboratoriya va mutaxassis maslahatiga yo'llanma dalolatnomasi |
 | 232 | Sud-gistologik tekshiruvga yo'llanma |
 | 233 | Tanatologiya bo'limida murdalarni ro'yxatga olish |

@@ -13,11 +13,11 @@ Qonni ishlab chiqarib bo'lmaydi; uni topshirish kerak, noto'g'ri muomala qilinsa
 - U sifat nazoratidan o'tkaziladi va saqlanadi, so'ngra kasalxonalarga ularning so'roviga ko'ra beriladi.
 - Nihoyat, u bemorga quyiladi va bu 1-jildda qayd etiladi.
 
-Takrorlanuvchi mavzu - kuzatuvchanlik: har bir birlik olingan qo'ldan to u quyiladigan bemorgacha kuzatib borilishi, xavfli bo'lgan har qanday narsa esa chiqarib tashlanishi va qayd etilishi kerak.
+Takrorlanuvchi mavzu - kuzatib borish imkoniyati: har bir birlik olingan qo'ldan to u quyiladigan bemorgacha kuzatib borilishi, xavfli bo'lgan har qanday narsa esa chiqarib tashlanishi va qayd etilishi kerak.
 
 ### Shakllar qanday bog'langan
 
-Bu jild haqiqiy ishlab chiqarish liniyasi, shuning uchun uning shakllari bir xil hujjatlar to'plamini emas, balki zanjirni tashkil etadi. Avval ro'yxatga olish keladi (195, 196, 199). Skrining (203, 204, 217-220) - nazorat nuqtasi: toza natija donorga davom etishga imkon beradi; musbat natija donorni OIV-seropozitiv donorlar jurnaliga kiritadi (216), qon birligi esa yo'q qilinadi (206). Ruxsat berilgan donordan qon olinadi (198, 201), birlik komponentlarga ajratiladi (207-210), sterillikka tekshiriladi (205) va omborda saqlanadi. Kasalxona talabnoma yuborganda (213), tegishli mahsulot beriladi (211) va bemor yotog'i yoniga yetkaziladi, u yerda 1-jilddagi qon quyishga aylanadi.
+Bu jild haqiqiy ishlab chiqarish liniyasi, shuning uchun uning shakllari bir xil hujjatlar to'plamini emas, balki zanjirni tashkil etadi. Avval ro'yxatga olish keladi (195, 196, 199). Skrining (203, 204, 217-220) - nazorat nuqtasi: manfiy natija donorga davom etishga imkon beradi; musbat natija donorni OIV-seropozitiv donorlar jurnaliga kiritadi (216), qon birligi esa yo'q qilinadi (206). Ruxsat berilgan donordan qon olinadi (198, 201), birlik komponentlarga ajratiladi (207-210), sterillikka tekshiriladi (205) va omborda saqlanadi. Kasalxona talabnoma yuborganda (213), tegishli mahsulot beriladi (211) va bemor yotog'i yoniga yetkaziladi, u yerda 1-jilddagi qon quyishga aylanadi.
 
 Diagramma ushbu ishlab chiqarish liniyasini va uni boshqaradigan skrining nazorat nuqtasini ko'rsatadi:
 

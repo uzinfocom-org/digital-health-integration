@@ -9,7 +9,7 @@ rectangle "Yuqumli kasalliklar va\navj olishlarni nazorat qilish\n258-264, 060, 
 rectangle "Parazitologiya, zoonozlar va\nxavfli patogenlar\n265-277, 299-301, 306-308, 320, 325,\n379-388, 399, 045-x" as D #FCE8E6
 rectangle "Mikrobiologiya laboratoriyalari\n321-324, 350, 365-378" as E #E6F4EA
 rectangle "Patogen biologik agentlar\nva shtammlar bilan ishlash\n281-298" as F #E6F4EA
-rectangle "Ma'muriy majburlash\n311-316, 352" as G #ECEFF1
+rectangle "Ma'muriy ta'sir choralari\n311-316, 352" as G #ECEFF1
 rectangle "Dezinfeksiya va dezinseksiya\nishlari\n309, 389-397" as H #ECEFF1
 
 C --> D : zoonoz / parazitar o'choqlar
@@ -22,7 +22,7 @@ note as N
   Binafsha = ekologik va sanitariya nazorati.
   Qizil = yuqumli kasalliklar epidemiologiyasi.
   Yashil = laboratoriya.
-  Kulrang = majburlash va dala ishlari.
+  Kulrang = majburlash va joylardagi ishlar.
   Asosan umumlashtirilgan jurnallar va tekshiruv dalolatnomalari -
   har bir bemor bo'yicha hujjatlar emas, balki hisobot hujjatlari.
 end note

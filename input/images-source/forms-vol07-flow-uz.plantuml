@@ -19,7 +19,7 @@ end
 note over OFF, DISP
   Maxfiylik asosiy o'rinda: tekshiruv anonim bo'lishi mumkin,
   kirish esa bemor roziligi bilan cheklanadi. Laboratoriyalar
-  3-jilddagi kabi tahlil hisoboti namunasiga amal qiladi;
+  3-jilddagi kabi tahlil hisoboti andozasiga amal qiladi;
   dispanser kartasi uzoq muddatli yozuvdir.
 end note
 @enduml

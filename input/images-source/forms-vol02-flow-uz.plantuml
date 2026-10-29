@@ -18,7 +18,7 @@ alt surunkali kasallik tasdiqlandi
   DR -> DR : 030 dispanser kuzatuvi kartasi\n(kasallik bo'yicha 030-1/030-2/030-4)
 end
 alt tashxis bildirishnoma talab qiladi
-  DR -> REG : 089 / 090 / 091 birinchi marta aniqlangani haqida bildirishnoma
+  DR -> REG : 089 / 090 / 091 birinchi marta aniqlangan tashxis haqida bildirishnoma
 end
 alt ma'lumotnoma so'raldi
   DR -> P : 086 / 043 / 044 tibbiy ma'lumotnoma (imzolangan)

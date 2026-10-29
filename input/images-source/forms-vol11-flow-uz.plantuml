@@ -19,7 +19,7 @@ end
 
 note over SES, LAB
   Shoshilinch bildirishnoma shakli (058) 3-jildga kiritilgan;
-  laboratoriyalar 3-jilddagi tahlil namunasiga amal qiladi.
-  Jurnallarning o'zi klinik hujjat emas, so'rovlar uchun xizmat qiladi.
+  laboratoriyalar 3-jilddagi tahlil shakllari andozasiga amal qiladi.
+  Jurnallarning o'zi klinik hujjat emas, balki ma'lumotlar bo'yicha so'rovlardir.
 end note
 @enduml

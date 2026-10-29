@@ -9,13 +9,13 @@ Kasalxona ichidagi dorixona - kichik ombor. Uning vazifasi bo'limga kerak bo'lga
 - Ehtiyojni aniqlash. Kasalxonadagi o'rinlar soni va davolanadigan kasalliklarga qarab, dorixona har bir doridan qancha sarflanishini baholaydi.
 - Buyurtma berish va qabul qilish. Dorilar xarid qilinadi, kelgan mahsulot sanaladi va qayd etiladi.
 - Bo'limlarga berish. Bo'limlar dori so'raydi, dorixona ularni beradi va buni qayd etadi.
-- Hammasini hisobga olish. Kunlik sarf, qoldiqlar va moliyaviy aylanma hisob mos kelishi uchun kuzatib boriladi.
+- Hammasini hisobga olish. Hisob-kitob mos kelishi uchun kunlik sarf, qoldiqlar va moliyaviy aylanma kuzatib boriladi.
 
 Bu shakllarning hech biri muayyan bemorni tavsiflamaydi. Ular ombor va buxgalteriya hisobi hujjatlari.
 
 ### Shakllar qanday bog'langan
 
-Shakllar ta'minot siklini tartib bilan kuzatadi: ehtiyojni baholash (131) xaridni belgilaydi, mahsulot qabul qilinib omborga kirim qilinadi (132, 137), bo'limlarga ularning talabnomalari bo'yicha beriladi (134, 136), kunlik sarf rasmiylashtiriladi (135, 139), qoldiq va moliyaviy aylanma solishtiriladi (138, 140, 141). Bu oddiy kirim-chiqim hisobi.
+Shakllar ta'minot siklini ketma-ket aks ettiradi: ehtiyojni baholash (131) xaridni belgilaydi, mahsulot qabul qilinib omborga kirim qilinadi (132, 137), bo'limlarga ularning talabnomalari bo'yicha beriladi (134, 136), kunlik sarf rasmiylashtiriladi (135, 139), qoldiq va moliyaviy aylanma solishtiriladi (138, 140, 141). Bu oddiy kirim-chiqim hisobi.
 
 ### Sikl namunasi
 
@@ -34,7 +34,7 @@ Har oy muassasaning doimiy komissiyasi o'rinlar soni va davolanadigan kasallikla
 | 135 | Dorixonaning kunlik miqdoriy chiqim xisobi |
 | 136 | Dorixonadan bo'limlarga berilgan dorilar to'g'risidagi chiqim hisoboti |
 | 137 | Hisob varaqa |
-| 138 | Moliyalashtirish manbasi bo ' yicha aylanma vedomost |
+| 138 | Moliyalashtirish manbasi bo'yicha aylanma vedomost |
 | 139 | Chiqim |
 | 140 | Moliyalashtirish manbasi bo'yicha aylanma bayonot |
 | 141 | Dori-vositalarining qoldig'i (har bir davr uchun) |
