@@ -110,7 +110,6 @@ Vitals, anthropometry, exam findings and history
 | Respiratory findings | Nafas olish tizimi / Органы дыхания | Observation.valueString | LOINC `11412-4` | 096 | - | Bound to recur. |
 | Digestive findings | Hazm qilish tizimi / Органы пищеварения | Observation.valueString | LOINC `11399-3` | 096 | - | Bound to recur. |
 | Illness duration / onset to admission | Kasallikning davomiyligi, Kasallik yoki jarohatlangandan so'ng necha soatda / Продолжительность заболевания | Observation.value[x] | LOINC `77977-7` "Illness duration" (quantity); local delay code (interval) | 066-1 | 066 | 066 sends the interval as "Local code". |
-| Disability | Nogironlik / Инвалидность | Observation.valueCodeableConcept | local code | 066-1 | - | Bound to recur. |
 
 Socioeconomic
 
@@ -121,6 +120,8 @@ Socioeconomic
 | Education | Ma'lumoti / Образование | UZCoreSocioeconomicObservation.valueCodeableConcept | SNOMED `105421008`; value [UZ Core Education](https://dhp.uz/fhir/core/en/CodeSystem-education-cs.html) | 111 | 066-1 | Drift: 066-1 says "Local code". |
 | Social status | Ijtimoiy holati / Социальное положение | UZCoreSocioeconomicObservation.valueCodeableConcept | local code | 066 | 066-1 | |
 | Benefit category | Imtiyoz toifasi / Льготная категория | UZCoreSocioeconomicObservation.valueCodeableConcept | local code | 066 | 066-1 | |
+| Disability type | Nogironlik turi / Вид инвалидности | UZCoreSocioeconomicObservation.valueCodeableConcept | [Benefits](https://dhp.uz/fhir/core/en/ValueSet-benefits-vs.html) | 003 (#96) | - | |
+| Disability group | Nogironlik guruhi, Nogironlik / Группа инвалидности, Инвалидность | UZCoreSocioeconomicObservation.valueCodeableConcept | [Disability Levels](https://dhp.uz/fhir/core/en/ValueSet-disability-vs.html) | 003 (#96) | 066-1 | Drift: 066-1 sends a plain Observation with a local code. |
 | Spouse health | Turmush o'rtog'ining sog'lig'i, Erining sog'ligi / Здоровье супруга | Observation.value[x] (`focus` = RelatedPerson) | SNOMED `720372000` "Health status of spouse" | 096 | 111 | Drift: 111 uses local `chr-0029-00001`. |
 
 Obstetric
