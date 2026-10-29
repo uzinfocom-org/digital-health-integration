@@ -35,7 +35,7 @@ Add a concept here when a second form maps it, and record any form that deviates
 | Med ID | Med ID raqami / Идентификатор медкарты | Patient.identifier[healthCardId] | `https://dhp.uz/fhir/core/sid/pid/uz/hc`, type `HC` | 111 | 096 | The patient-level health card, not the inpatient record number (see Encounter). |
 | ID card or passport | ID yoki Pasport / ID или паспорт | Patient.identifier[passportLocal] | `https://dhp.uz/fhir/core/sid/pid/uz/ppn/local`, type `PPN` | 066-1 | 066 | |
 | Birth date | Tug'ilgan sana(si) / Дата рождения | Patient.birthDate | - | 066 | 066-1, 096, 097, 111, 130 | Age on the paper form is derived, not sent. |
-| Sex | Jinsi / Пол | Patient.gender | AdministrativeGender | 066 | 066-1, 096, 130 | |
+| Sex | Jinsi, Bemorning jinsi / Пол, Пол пациента | Patient.gender; gender.extension[gender-other] | [Administrative Gender](https://dhp.uz/fhir/core/en/ValueSet-administrative-gender-vs.html); `other` requires the [Gender Other](https://dhp.uz/fhir/core/en/StructureDefinition-gender-other.html) extension | 066 | 003 (#96), 066-1, 096, 130 | Core invariant `uzcore-gender-other-2`. Only the 003 page states the extension. |
 | Address | Yashash manzili, Manzil / Адрес проживания | Patient.address | - | 066 | 066-1, 096, 097, 111 | Region `state`, district `district`, mahalla `city`, street/house/flat `line`, `postalCode`. |
 | Phone, e-mail | Telefon, E-mail / Телефон, E-mail | Patient.telecom | - | 066 | 066-1, 096, 111 | |
 | Marital status | Oilaviy holati / Семейное положение | Patient.maritalStatus | [UZ Core Marital Status](https://dhp.uz/fhir/core/en/ValueSet-marital-status-vs.html) | 096 | 097, 111 | |
