@@ -90,3 +90,7 @@ The Target Code System http://hl7.org/fhir/sid/icd-10 is not fully defined and p
 # A socioeconomic Observation conforms to both sibling profiles, so the validator cannot pick one
 # reference target; the entry is valid either way.
 %among choices: https://dhp.uz/fhir/core/StructureDefinition/uz-core-observation|0.12.0, https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation|0.12.0
+
+# Hand-written narratives such as Composition.section.text carry what the clinician wrote, in one
+# language; a real record is never translated, so the ru and uz pages correctly fall back to it.
+%The narrative includes custom content for the default language (en), but does not include translated content for the%

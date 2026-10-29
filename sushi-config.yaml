@@ -104,6 +104,8 @@ pages:
     title: Document Categories
   document-statuses.md:
     title: Document Statuses
+  form-003-mapping.md:
+    title: Form 003 Mapping
   form-011-mapping.md:
     title: Form 011 Mapping
   form-066-mapping.md:
@@ -169,6 +171,7 @@ menu:
     Categories: document-categories.html
     Lifecycle: document-statuses.html
     Forms overview: forms-overview.html
+    Form 003 Mapping: form-003-mapping.html
     Form 011 Mapping: form-011-mapping.html
     Form 066 Mapping: form-066-mapping.html
     Form 066-1 Mapping: form-066-1-mapping.html
