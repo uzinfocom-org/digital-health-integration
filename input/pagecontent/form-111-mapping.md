@@ -41,7 +41,7 @@ Episode and visits: the pregnancy is one `EpisodeOfCare` that carries the card n
 | Shakl raqami | Номер формы | Composition.identifier | `https://dhp.uz/fhir/core/sid/doc/uz/form-number` | 111 |
 | Hujjat versiyasi UUID | Идентификатор версии документа | Bundle.identifier | `urn:ietf:rfc:3986` | urn:uuid:c1f4a9d7-2b60-4e13-9a5c-8d7e6f0b1112 |
 | Individual karta raqami | Номер индивидуальной карты | EpisodeOfCare.identifier | `system` `https://dhp.uz/fhir/core/sid/doc/uz/antenatal-card-number` | 111-2025-000123 |
-| Hujjat holati | Статус документа | Composition.status | [Document statuses](document-statuses.html): `preliminary` while the card is kept, `final` after postpartum follow-up | final |
+| Hujjat holati | Статус документа | Composition.status | [Document statuses](document-statuses.html): `preliminary` while the card is open, `final` once the card is closed, `amended` for subsequent corrections, `entered-in-error` if the card is withdrawn as erroneous | final |
 | Hujjat turi | Тип документа | Composition.type | LOINC `34133-9` "Summary of episode note" | - |
 | Hujjat kategoriyasi | Категория документа | Composition.category | [Document Category](CodeSystem-document-category-cs.html) `form-111` "Individual card of a pregnant and postpartum woman" | - |
 | Bemor | Пациентка | Composition.subject | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html) | Ergasheva N.B. |

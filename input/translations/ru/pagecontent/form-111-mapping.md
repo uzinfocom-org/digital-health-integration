@@ -43,7 +43,7 @@
 | Shakl raqami | Номер формы | Composition.identifier | `https://dhp.uz/fhir/core/sid/doc/uz/form-number` | 111 |
 | Hujjat versiyasi UUID | Идентификатор версии документа | Bundle.identifier | `urn:ietf:rfc:3986` | urn:uuid:c1f4a9d7-2b60-4e13-9a5c-8d7e6f0b1112 |
 | Individual karta raqami | Номер индивидуальной карты | EpisodeOfCare.identifier | `system` `https://dhp.uz/fhir/core/sid/doc/uz/antenatal-card-number` | 111-2025-000123 |
-| Hujjat holati | Статус документа | Composition.status | [Статусы документов](document-statuses.html): `preliminary` пока карта ведётся, `final` после послеродового наблюдения | final |
+| Hujjat holati | Статус документа | Composition.status | [Статусы документов](document-statuses.html): `preliminary`, пока карта открыта; `final` после закрытия карты; `amended` для последующих исправлений; `entered-in-error`, если карта отозвана как ошибочная | final |
 | Hujjat turi | Тип документа | Composition.type | LOINC `34133-9` "Summary of episode note" | - |
 | Hujjat kategoriyasi | Категория документа | Composition.category | [Document Category](CodeSystem-document-category-cs.html) `form-111` "Индивидуальная карта беременной и родильницы" | - |
 | Bemor | Пациентка | Composition.subject | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html) | Ergasheva N.B. |

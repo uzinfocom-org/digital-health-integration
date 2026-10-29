@@ -85,3 +85,8 @@ The Target Code System http://hl7.org/fhir/sid/icd-10 is not fully defined and p
 # tx.fhir.org's R5 endpoint now lists concept-property-type only as 6.0.1, so the version-pinned
 # lookup of the R5 binding on CodeSystem.property.type fails. The code used (#code) is valid.
 %ValueSet 'http://hl7.org/fhir/ValueSet/concept-property-type|5.0.0' not found%
+
+# Form 111 registration entries allow UZ Core Observation or UZ Core Socioeconomic Observation.
+# A socioeconomic Observation conforms to both sibling profiles, so the validator cannot pick one
+# reference target; the entry is valid either way.
+%among choices: https://dhp.uz/fhir/core/StructureDefinition/uz-core-observation|0.12.0, https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation|0.12.0

@@ -166,7 +166,7 @@ Usage: #definition
 * date = "2026-08-18"
 * description = "Registration number of the individual card of a pregnant and postpartum woman (Form 111), assigned by the women's consultation (ayollar maslahatxonasi)."
 * jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
-* usage = "Used in Encounter.identifier for the antenatal episode of care corresponding to Form 111"
+* usage = "Used in EpisodeOfCare.identifier for the antenatal episode of care corresponding to Form 111"
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/antenatal-card-number"
 * uniqueId[=].preferred = true

@@ -43,7 +43,7 @@ Epizod va tashriflar: homiladorlik - karta raqamini o'z ichiga olgan va tug'ruqd
 | Shakl raqami | Номер формы | Composition.identifier | `https://dhp.uz/fhir/core/sid/doc/uz/form-number` | 111 |
 | Hujjat versiyasi UUID | Идентификатор версии документа | Bundle.identifier | `urn:ietf:rfc:3986` | urn:uuid:c1f4a9d7-2b60-4e13-9a5c-8d7e6f0b1112 |
 | Individual karta raqami | Номер индивидуальной карты | EpisodeOfCare.identifier | `system` `https://dhp.uz/fhir/core/sid/doc/uz/antenatal-card-number` | 111-2025-000123 |
-| Hujjat holati | Статус документа | Composition.status | [Hujjat holatlari](document-statuses.html): karta yuritilayotganda `preliminary`, tug'ruqdan keyingi kuzatuvdan so'ng `final` | final |
+| Hujjat holati | Статус документа | Composition.status | [Hujjat holatlari](document-statuses.html): karta ochiq bo'lganda `preliminary`; karta yopilganda `final`; keyingi tuzatishlar uchun `amended`; karta xato yozuv sifatida bekor qilinganda `entered-in-error` | final |
 | Hujjat turi | Тип документа | Composition.type | LOINC `34133-9` "Summary of episode note" | - |
 | Hujjat kategoriyasi | Категория документа | Composition.category | [Document Category](CodeSystem-document-category-cs.html) `form-111` "Homilador va tuqqan ayolning individual kartasi" | - |
 | Bemor | Пациентка | Composition.subject | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html) | Ergasheva N.B. |

@@ -73,7 +73,7 @@ Description: "Composition profile for Form 111 (Homilador va tuqqan ayolning ind
 * section[registrationAndPersonalInformation].code = $loinc#45970-1 "Demographic information section"
 * section[registrationAndPersonalInformation].code ^short = "Registration date, Med ID number, full name, date of birth, family status, address, phone, education, workplace and its phone, specialty, position, working conditions, spouse's full name, workplace and phone"
 * section[registrationAndPersonalInformation].entry 1..*
-* section[registrationAndPersonalInformation].entry only Reference(UZCorePatient or UZCoreRelatedPerson or Organization or UZCoreObservation or UZCoreEpisodeOfCare)
+* section[registrationAndPersonalInformation].entry only Reference(UZCorePatient or UZCoreRelatedPerson or Organization or UZCoreObservation or UZCoreSocioeconomicObservation or UZCoreEpisodeOfCare)
 * section[registrationAndPersonalInformation].entry ^short = "Patient, spouse, organization, workplace, follow-up episode and socioeconomic observations"
 
 // 1b. Ro'yxatga olishdagi laboratoriya tekshiruvlari (shakl sarlavhasidagi qon guruhi, Rh va serologiya)
