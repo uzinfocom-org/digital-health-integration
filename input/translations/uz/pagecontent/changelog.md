@@ -12,6 +12,10 @@ Apgar komponentlari bahosi, chaqaloq terisining asosiy rangi va chaqaloqni parva
 
 [111-shakl](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) ro'yxatga olish bo'limi yozuvlari [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html) ham bo'lishi mumkin. [Previous Pregnancy Outcome](ValueSet-form111-previous-pregnancy-outcome-vs.html) to'plamiga homila tushishi (SNOMED CT `17369002`) qo'shildi. [111-shakl xaritalashi](form-111-mapping.html) Composition.status hayot siklini tavsiflaydi: karta ochiq bo'lganda `preliminary`, yopilgandan keyin `final`, keyingi tuzatishlar uchun `amended` va karta xato sifatida bekor qilinsa `entered-in-error`. [Homilador ayol individual kartasi raqami](NamingSystem-antenatal-card-number-system.html) Encounter.identifier da emas, EpisodeOfCare.identifier da uzatiladi.
 
+#### Hujjatlashtirish
+
+[Shakllar sharhi](forms-overview.html) jildlar xaritasi bilan birga rus va o'zbek tillarida mavjud. Alohida jildlar sahifalari hozircha faqat ingliz tilida.
+
 ### Versiya 0.12.0
 
 #### Qo'shildi

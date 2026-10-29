@@ -12,6 +12,10 @@ The Apgar component score, basic newborn skin colour and newborn care location c
 
 [Form 111](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) registration section entries may also be [UZ Core Socioeconomic Observations](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html). [Previous Pregnancy Outcome](ValueSet-form111-previous-pregnancy-outcome-vs.html) adds miscarriage (SNOMED CT `17369002`). The [Form 111 mapping](form-111-mapping.html) describes the Composition.status lifecycle: `preliminary` while the card is open, `final` once it is closed, `amended` for later corrections and `entered-in-error` if it is withdrawn. The [antenatal card number](NamingSystem-antenatal-card-number-system.html) is carried in EpisodeOfCare.identifier, not Encounter.identifier.
 
+#### Documentation
+
+The [forms overview](forms-overview.html) is available in Russian and Uzbek, with its volume map. The per-volume pages are still in English only.
+
 ### Version 0.12.0
 
 #### Added
