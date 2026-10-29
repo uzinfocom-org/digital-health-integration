@@ -1,0 +1,25 @@
+@startuml forms-vol07-flow-uz
+title Namunaviy yo'l - OIVga tekshiruv va kuzatuv (7-jild)
+autonumber
+
+actor Mijoz as C
+participant "Anonim /\npoliklinika xonasi" as OFF
+participant "OIV laboratoriyasi\n(7-jild)" as LAB
+participant "Dispanser\n(7-jild)" as DISP
+
+C -> OFF : tekshiruv uchun murojaat qiladi
+OFF -> OFF : 176-178 tekshiruvni ro'yxatga olish (anonim\nyoki shaxsi aniqlangan), 179 manfiy maqom haqida ma'lumotnoma
+OFF -> LAB : namuna
+LAB -> LAB : 186 PZR usulida DNK, 187 CD4 immunologiyasi,\n188-193 namunalar jurnallari
+alt musbat
+  LAB -> DISP : dispanser kuzatuviga yo'llanma
+  DISP -> DISP : 175 dispanser nazorat kartasi\n181 ARV / infeksiyaga qarshi dori vositalarini berish
+end
+
+note over OFF, DISP
+  Maxfiylik asosiy o'rinda: tekshiruv anonim bo'lishi mumkin,
+  kirish esa bemor roziligi bilan cheklanadi. Laboratoriyalar
+  3-jilddagi kabi tahlil hisoboti namunasiga amal qiladi;
+  dispanser kartasi uzoq muddatli yozuvdir.
+end note
+@enduml

@@ -1,0 +1,25 @@
+@startuml forms-vol10-flow-uz
+title Jarayon namunasi - sud-tibbiy ekspertiza (10-jild)
+autonumber
+
+participant "Huquqni muhofaza\nqilish organlari" as LE
+participant "Sud-tibbiy ekspertiza\nbyurosi (10-jild)" as FB
+participant "Sud-tibbiy\nlaboratoriyalar" as LAB
+
+LE -> FB : ish yo'llanadi (jasad yoki tirik shaxs)
+alt vafot etgan
+  FB -> FB : 233 tanatologiya bo'limida ro'yxatga olish\n229 tekshiruv dalolatnomasi
+else tirik shaxs
+  FB -> FB : 234 ambulator ro'yxatga olish\n229 tekshiruv dalolatnomasi
+end
+FB -> LAB : 231 laboratoriyaga yo'llanma, 232 gistologiyaga yo'llanma
+LAB -> LAB : 238 gistologiya, 236/237 biologiya,\n241/242 kimyo, 245 kriminalistika
+LAB -> FB : natijalar
+FB -> LE : 230 ekspert xulosasi
+
+note over FB, LAB
+  Alohida huquqiy soha. Laboratoriya bosqichlari ashyoviy dalillarni
+  byuroning o'z bo'limlarida ro'yxatga oladi va tahlil qiladi, jild
+  esa umuman klinik integratsiya doirasiga kirmaydi.
+end note
+@enduml

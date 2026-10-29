@@ -1,0 +1,23 @@
+@startuml forms-vol09-flow-uz
+title Namunaviy yo'l - patologik anatomiya (9-jild)
+autonumber
+
+participant "Kasalxona\n(1-jild)" as H
+participant "Patologik anatomiya\nbo'limi (9-jild)" as PA
+participant "Gistologiya\nlaboratoriyasi" as HIST
+
+alt vafot etgan bemor
+  H -> PA : jasad o'limdan keyin yuborildi
+  PA -> PA : 223 autopsiya qilingan jasadlar jurnali\n224 autopsiya bayonnomasi\n228 jasadni ro'yxatga olish
+  PA -> HIST : 226 gistologiya uchun seksion material
+else jarrohlik / biopsiya namunasi
+  H -> PA : 225 yo'llanma + biopsiya / operatsion namuna
+  PA -> PA : 227 biopsiya va operatsion material jurnali
+  PA -> HIST : gistologiya uchun to'qima
+end
+HIST -> PA : gistologiya natijasi
+note over HIST
+  To'qima natijalari tahlil hisobotlaridir,
+  3-jilddagi klinik laboratoriyalar bilan bir xil namuna.
+end note
+@enduml

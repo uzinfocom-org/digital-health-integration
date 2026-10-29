@@ -14,7 +14,7 @@ Apgar komponentlari bahosi, chaqaloq terisining asosiy rangi va chaqaloqni parva
 
 #### Hujjatlashtirish
 
-[Shakllar sharhi](forms-overview.html) jildlar xaritasi bilan birga rus va o'zbek tillarida mavjud. Alohida jildlar sahifalari hozircha faqat ingliz tilida.
+[Shakllar sharhi](forms-overview.html) va uning 11 ta jild sahifasi diagrammalari bilan birga rus va o'zbek tillarida mavjud.
 
 ### Versiya 0.12.0
 

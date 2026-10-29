@@ -1,0 +1,29 @@
+@startuml forms-vol02-flow-uz
+title Jarayon namunasi - ambulator tashrif va uning mumkin bo'lgan oqibatlari
+autonumber
+
+actor Bemor as P
+participant "Poliklinika\nregistraturasi" as R
+participant "Shifokor\n(2-jild)" as DR
+participant "Diagnostika va laboratoriya\n(3-jild)" as DX
+participant "Ixtisoslashgan dispanser\nregistri (sil/onko/narko)" as REG
+
+P -> R : poliklinikaga murojaat qiladi
+R -> R : 024 ambulator tashrifni ro'yxatga olish\n(024-1..4 kundalik qabul jurnallari)
+R -> DR : 025 ambulator karta ochiladi
+DR -> DX : tahlillar / tasvirlashni buyuradi (3-jild)
+DX -> DR : natijalar qaytariladi
+
+alt surunkali kasallik tasdiqlandi
+  DR -> DR : 030 dispanser kuzatuvi kartasi\n(kasallik bo'yicha 030-1/030-2/030-4)
+end
+alt tashxis bildirishnoma talab qiladi
+  DR -> REG : 089 / 090 / 091 birinchi marta aniqlangani haqida bildirishnoma
+end
+alt ma'lumotnoma so'raldi
+  DR -> P : 086 / 043 / 044 tibbiy ma'lumotnoma (imzolangan)
+end
+alt emlash muddati keldi
+  DR -> DR : 063 emlash kartasi + 064 jurnal
+end
+@enduml

@@ -1,0 +1,25 @@
+@startuml forms-vol11-flow-uz
+title Jarayon namunasi - avj olishni tekshirish (11-jild)
+autonumber
+
+participant "Shifokor\n(2-jild)" as DR
+participant "SES markazi\n(11-jild)" as SES
+participant "Mikrobiologiya\nlaboratoriyasi (11-jild)" as LAB
+
+DR -> SES : 058 shoshilinch bildirishnoma (3-jild)\n060 yuqumli kasalliklar jurnali, 264 shoshilinch bildirishnoma
+SES -> SES : 262 epidemiologik o'choqni tekshirish kartasi
+SES -> LAB : bemorlar va atrof-muhitdan namunalar
+LAB -> SES : 350/365-378 mikrobiologik tekshiruv natijalari
+alt o'choq tasdiqlangan
+  SES -> SES : 258/259 bemorlarni tashish/evakuatsiya qilish\n261 o'choqda dezinfeksiya, 390 yakuniy dezinfeksiya buyrug'i
+end
+alt sanitariya qoidabuzarligi aniqlangan
+  SES -> SES : 311 qoidabuzarlik bayonnomasi, 312 jarima
+end
+
+note over SES, LAB
+  Shoshilinch bildirishnoma shakli (058) 3-jildga kiritilgan;
+  laboratoriyalar 3-jilddagi tahlil namunasiga amal qiladi.
+  Jurnallarning o'zi klinik hujjat emas, so'rovlar uchun xizmat qiladi.
+end note
+@enduml

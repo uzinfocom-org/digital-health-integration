@@ -1,0 +1,41 @@
+@startuml forms-vol08-structure-uz
+hide circle
+hide empty members
+skinparam linetype ortho
+title 8-jild - donatsiyadan mahsulotgacha zanjir, hujjat turi bo'yicha rangli
+
+skinparam class {
+  BackgroundColor<<card>> #E8F0FE
+  BackgroundColor<<report>> #E6F4EA
+  BackgroundColor<<product>> #F3E8FD
+  BackgroundColor<<supply>> #FEF7E0
+  BackgroundColor<<register>> #ECEFF1
+}
+
+class "195/196/199\nDonorni ro'yxatga olish" as F195 <<card>>
+class "203/204/217-220\nDonor skrining tahlillari" as F203 <<report>>
+class "216 OIV-musbat\ndonorlar jurnali" as F216 <<register>>
+class "198/201\nTayyorlash" as F201 <<product>>
+class "207/208/209/210\nKomponentlar ishlab chiqarish" as F207 <<product>>
+class "205 Sterillik /\n206 yo'q qilish" as F205 <<report>>
+class "213 Talabnoma" as F213 <<supply>>
+class "211/214 Mahsulot berish,\n212 komponentlarni qabul qilish" as F211 <<supply>>
+class "009 Qon quyish\n(1-jild)" as F009 <<report>>
+
+F195 --> F203 : skrining
+F203 --> F216 : musbat bo'lsa
+F203 --> F201 : ruxsat berilsa
+F201 --> F207
+F207 --> F205
+F207 --> F211
+F213 ..> F211 : so'raydi
+F211 ..> F009 : yotoq yoniga yetkaziladi
+
+legend right
+  Ko'k = donor kartasi
+  Yashil = laboratoriya hisoboti
+  Binafsha = qon mahsuloti
+  Sariq = ta'minot
+  Kulrang = jurnal (so'rov)
+endlegend
+@enduml

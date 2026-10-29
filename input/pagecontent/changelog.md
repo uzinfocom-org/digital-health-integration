@@ -14,7 +14,7 @@ The Apgar component score, basic newborn skin colour and newborn care location c
 
 #### Documentation
 
-The [forms overview](forms-overview.html) is available in Russian and Uzbek, with its volume map. The per-volume pages are still in English only.
+The [forms overview](forms-overview.html) and its 11 volume pages, diagrams included, are available in Russian and Uzbek.
 
 ### Version 0.12.0
 
