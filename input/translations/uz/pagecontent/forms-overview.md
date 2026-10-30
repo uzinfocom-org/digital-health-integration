@@ -48,7 +48,7 @@ Amaliy qoida: `jurnal` - so'rov orqali ma'lumot olinadigan narsa, `karta` - yuri
 
 Har bir shakl toifa kodi va, agar rasmiy raqami bo'lsa, tashqi identifikator bilan aniqlanadi - qarang: [Hujjat toifalari va identifikatorlari](document-categories.html). Toifa kodlari [DocumentCategoryCS](CodeSystem-document-category-cs.html) dan olinadi, uning kodlarining aksariyati 399-son buyruqning `form-NNN` namunasiga amal qiladi.
 
-Yuqoridagi jadvalda havola qilingan jild sahifalari har bir shaklni kontekstda ko'rsatadi. Shakllar to'liq modellashtirilgani sari ular uchun moslashtirish sahifalari paydo bo'ladi - qarang: [011-shakl](form-011-mapping.html), [066-shakl](form-066-mapping.html), [066-1-shakl](form-066-1-mapping.html) va [130-shakl](form-130-mapping.html).
+Yuqoridagi jadvalda havola qilingan jild sahifalari har bir shaklni kontekstda ko'rsatadi. Shakllar to'liq modellashtirilgani sari ular uchun moslashtirish sahifalari paydo bo'ladi - qarang: [003-shakl](form-003-mapping.html), [011-shakl](form-011-mapping.html), [027-shakl](form-027-mapping.html), [066-shakl](form-066-mapping.html), [066-1-shakl](form-066-1-mapping.html), [096-shakl](form-096-mapping.html), [097-shakl](form-097-mapping.html), [111-shakl](form-111-mapping.html) va [130-shakl](form-130-mapping.html).
 
 ### Shaklni raqami bo'yicha topish
 

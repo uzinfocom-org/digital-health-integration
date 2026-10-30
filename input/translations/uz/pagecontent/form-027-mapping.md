@@ -13,7 +13,7 @@
 
 ### 027-shakl - Tibbiy kartadan koʻchirma
 
-Ushbu sahifada [027-shakl (Tibbiy muassasadagi bemorning tibbiy kartasidan koʻchirma)](forms-volume-03-diagnostics-laboratory.html) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
+Ushbu sahifada [027-shakl](forms-volume-03-diagnostics-laboratory.html) (Tibbiy muassasadagi bemorning tibbiy kartasidan koʻchirma) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
 
 ---
 

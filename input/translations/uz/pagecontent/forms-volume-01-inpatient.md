@@ -41,7 +41,7 @@ Quyidagi ketma-ketlik o'sha davolanishni, tarmoqlari bilan birga kuzatib boradi:
 |------|-------|-----------|
 | 001 | Tibbiy muassasaga qabul qilingan yoki rad etilganlarni hisobga olish | Jurnal |
 | 002 | Chaqaloqlar bo'limi (xona) | Jurnal |
-| 003 | Bemorning tibbiy kartasi | Karta |
+| [003](form-003-mapping.html) | Bemorning tibbiy kartasi | Karta |
 | 003-1 | Homiladorlikni vaqtidan oldin tugatish tibbiy kartasi | Karta |
 | 004 | O'tkazilgan narkozlarni qayd etish | Jurnal |
 | 005 | Narkoz varaqasi | Varaqa |
@@ -54,8 +54,8 @@ Quyidagi ketma-ketlik o'sha davolanishni, tarmoqlari bilan birga kuzatib boradi:
 | 009-3 | Ortib qolgan qon va qon tarkibiy qismlarini yo'qotish | Jurnal |
 | 009-4 | Yaroqsiz qon komponentlarini yo'q qilishni qayd etish | Jurnal |
 | 010 | Tug'ruq bo'limlarida tug'ishlarni qayd etish | Jurnal |
-| 096 | Tug'ruq tibbiy kartasi | Karta |
-| 097 | Chaqaloqning rivojlanish tibbiy kartasi | Karta |
+| [096](form-096-mapping.html) | Tug'ruq tibbiy kartasi | Karta |
+| [097](form-097-mapping.html) | Chaqaloqning rivojlanish tibbiy kartasi | Karta |
 | 103 | Tug'ilganlik haqida ma'lumotnomani qayd etish | Jurnal |
 | 106 | O'lim ma'lumotnomasini qayd etish | Jurnal |
 | 106-2 | Perinatal o'lim haqidagi tibbiy guvohnomalarni ro'yxatga olish | Jurnal |

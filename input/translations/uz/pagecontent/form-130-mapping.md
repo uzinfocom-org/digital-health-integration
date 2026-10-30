@@ -17,7 +17,7 @@
 
 ### 130-shakl – Laboratoriya tekshiruvi natijalari
 
-Ushbu sahifa **[130-shakl](forms-volume-03-diagnostics-laboratory.html) (Laboratoriya tekshiruvi natijalari)** maydonlari va ularning FHIR resurslariga mosligini tavsiflaydi.
+Ushbu sahifada [130-shakl](forms-volume-03-diagnostics-laboratory.html) (Laboratoriya tekshiruvi natijalari) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
 
 ---
 

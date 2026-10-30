@@ -11,7 +11,7 @@
 
 ### Form 027 - Medical Record Extract
 
-This page documents the mapping between [Form 027 (Tibbiy muassasadagi bemorning tibbiy kartasidan ko'chirma)](forms-volume-03-diagnostics-laboratory.html) fields and FHIR resources.
+This page documents the mapping between [Form 027](forms-volume-03-diagnostics-laboratory.html) (Tibbiy muassasadagi bemorning tibbiy kartasidan ko'chirma) fields and FHIR resources.
 
 ---
 

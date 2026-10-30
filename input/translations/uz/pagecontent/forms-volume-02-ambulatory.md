@@ -65,4 +65,4 @@ Quyidagi ketma-ketlik bitta tashrifdan chiqadigan shu tarmoqlarni ko'rsatadi:
 | 089 | Hayotida birinchi bor faol sil, JAOYUK (tanosil kasalligi), trixofitiya, mikrosporiya, favus, qichima, traxoma, ruhiy kasallik, OITS tashxislari aniqlangan bemorlar haqida xabar | Bildirishnoma |
 | 090 | Hayotida birinchi bor saraton kasalligi yoki boshqa yomon sifatli o'sma tashxisi qo'yilgan bemor haqida xabar | Bildirishnoma |
 | 091 | Hayotida birinchi marta narkomaniya tashxisi aniqlangan bemor haqida xabar | Bildirishnoma |
-| 111 | Homilador va tuqqan ayolning individual kartasi | Karta |
+| [111](form-111-mapping.html) | Homilador va tuqqan ayolning individual kartasi | Karta |

@@ -45,4 +45,4 @@ Hajmi katta bo'lgani uchun jild shakllar ro'yxati bilan emas, guruhlar bo'yicha 
 | Serologiya va immunotahlil | 065 Vasserman reaksiyasi, 068 ASLO/SRO, 070 gepatitlar, 079/098/099 TORCH, 088 Vidal/Rayt, 092-094, 095/105/107-110/112/115 IXLA, 117/118 PZR |
 | Mikrobiologiya | 055 mikrobiologik tekshiruv natijasi, 057 sil, 084 sezgirlik, 119 kultura sezgirligi |
 | Parazitologik nazorat | 121-126 (gelmintlar, bezgak, leyshmanioz) |
-| Jurnallar, statistika va bildirishnomalar | 027 ko'chirma, 028 onkologiya, 034 laboratoriya jurnali, 036 (+036-1..3) mehnatga layoqatsizlik varaqalari, 058 yuqumli kasallik/zaharlanish haqida shoshilinch bildirishnoma, [066](form-066-mapping.html) / [066-1](form-066-1-mapping.html) statsionardan chiqqanlar kartalari, 114 tug'ma anomaliyalar |
+| Jurnallar, statistika va bildirishnomalar | [027](form-027-mapping.html) ko'chirma, 028 onkologiya, 034 laboratoriya jurnali, 036 (+036-1..3) mehnatga layoqatsizlik varaqalari, 058 yuqumli kasallik/zaharlanish haqida shoshilinch bildirishnoma, [066](form-066-mapping.html) / [066-1](form-066-1-mapping.html) statsionardan chiqqanlar kartalari, 114 tug'ma anomaliyalar |
