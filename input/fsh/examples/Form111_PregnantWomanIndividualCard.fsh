@@ -376,7 +376,6 @@ Usage: #inline
 * section[=].entry[+] = Reference(urn:uuid:11100024-1111-2222-3333-444444444444) //observation-111-working-conditions
 * section[=].entry[+] = Reference(urn:uuid:11100146-1111-2222-3333-444444444444) //observation-111-workplace-phone
 * section[=].entry[+] = Reference(urn:uuid:11100025-1111-2222-3333-444444444444) //observation-111-spouse-workplace
-* section[=].entry[+] = Reference(urn:uuid:11100026-1111-2222-3333-444444444444) //observation-111-spouse-health
 
 // --- 1b. Ro'yxatga olishdagi laboratoriya tekshiruvlari ---
 * section[registrationLaboratoryTests].title = "Ro'yxatga olishdagi laboratoriya tekshiruvlari"
@@ -428,6 +427,7 @@ Usage: #inline
 * section[=].entry[+] = Reference(urn:uuid:11100045-1111-2222-3333-444444444444) //observation-111-lmp-end
 * section[=].entry[+] = Reference(urn:uuid:11100046-1111-2222-3333-444444444444) //observation-111-sexual-debut-age
 * section[=].entry[+] = Reference(urn:uuid:11100047-1111-2222-3333-444444444444) //observation-111-quickening-date
+* section[=].entry[+] = Reference(urn:uuid:11100026-1111-2222-3333-444444444444) //observation-111-spouse-health
 
 // --- 5. Avvalgi homiladorliklarning yakuni ---
 * section[previousPregnanciesOutcome].title = "Avvalgi homiladorliklarning yakuni"
@@ -615,21 +615,23 @@ Usage: #inline
 * managingOrganization = Reference(urn:uuid:11100004-1111-2222-3333-444444444444)
 
 Instance: organization-111-clinic
-InstanceOf: Organization
+InstanceOf: UZCoreOrganization
 Usage: #inline
 * language = #uz
-* identifier.system = "https://dhp.uz/fhir/core/sid/uz/organization-code"
-* identifier.value = "300001"
+* identifier[taxId].type = $identifier-type#TAX "Tax ID number"
+* identifier[taxId].system = $organization-tax-id-system-dhp
+* identifier[taxId].value = "206901236"
 * name = "Chilonzor tumani ayollar maslahatxonasi"
 * contact.telecom.system = #phone
 * contact.telecom.value = "+998712345567"
 
 Instance: organization-111-workplace
-InstanceOf: Organization
+InstanceOf: UZCoreOrganization
 Usage: #inline
 * language = #uz
-* identifier.system = "https://dhp.uz/fhir/core/sid/uz/organization-code"
-* identifier.value = "300099"
+* identifier[taxId].type = $identifier-type#TAX "Tax ID number"
+* identifier[taxId].system = $organization-tax-id-system-dhp
+* identifier[taxId].value = "207012347"
 * name = "45-son umumta'lim maktabi"
 * contact.telecom.system = #phone
 * contact.telecom.value = "+998712345678"
@@ -2499,11 +2501,12 @@ Usage: #inline
 * component.valueQuantity = -3 'd' "kun"
 
 Instance: organization-111-maternity-hospital
-InstanceOf: Organization
+InstanceOf: UZCoreOrganization
 Usage: #inline
 * language = #uz
-* identifier.system = "https://dhp.uz/fhir/core/sid/uz/organization-code"
-* identifier.value = "300055"
+* identifier[taxId].type = $identifier-type#TAX "Tax ID number"
+* identifier[taxId].system = $organization-tax-id-system-dhp
+* identifier[taxId].value = "208123458"
 * name = "Toshkent shahar 2-son tug'ruqxonasi"                  // Tug'ruq bo'lib o'tgan tug'ruqxona
 
 // 14. PERINATAL XAVF OMILLARI

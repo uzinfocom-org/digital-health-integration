@@ -6,6 +6,7 @@ Description: "Outcomes explicitly supported by DMED previous_pregnancies[].pregn
 
 * $sct#386639001 "Termination of pregnancy"
 * $sct#3950001 "Birth"
+* $sct#17369002 "Miscarriage"
 
 * ^experimental = true
 * ^status = #draft

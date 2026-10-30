@@ -39,7 +39,7 @@ The sequence below traces that same stay, including the branches:
 |------|-------|-----------|
 | 001 | Registration of patients admitted or refused | Register |
 | 002 | Newborn department (room) journal | Register |
-| 003 | Inpatient medical card | Card |
+| [003](form-003-mapping.html) | Inpatient medical card | Card |
 | 003-1 | Medical card for early termination of pregnancy | Card |
 | 004 | Anaesthesia registration | Register |
 | 005 | Anaesthesia record sheet | Sheet |
@@ -52,8 +52,8 @@ The sequence below traces that same stay, including the branches:
 | 009-3 | Disposal of remaining blood and components | Register |
 | 009-4 | Disposal of unsuitable blood components | Register |
 | 010 | Birth registration in maternity departments | Register |
-| 096 | Maternity (birth) medical card | Card |
-| 097 | Newborn development medical card | Card |
+| [096](form-096-mapping.html) | Maternity (birth) medical card | Card |
+| [097](form-097-mapping.html) | Newborn development medical card | Card |
 | 103 | Birth-certificate registration | Register |
 | 106 | Death-certificate registration | Register |
 | 106-2 | Perinatal-death-certificate registration | Register |

@@ -38,15 +38,15 @@ Usage: #definition
 //mine
 Instance: organization-code
 InstanceOf: NamingSystem
-Description: "NamingSystem defining the canonical URI for organization codes used in Uzbekistan healthcare systems."
+Description: "Retired. Identify an organization by its Soliq tax ID in the UZ Core Organization taxId slice instead."
 Usage: #definition
 * name = "OrganizationCode"
-* status = #active
+* status = #retired
 * kind = #identifier
-* date = "2026-04-22"
+* date = "2026-10-28"
 * publisher = "UZINFOCOM"
 * responsible = "UZINFOCOM"
-* description = "Identifier system for organization codes."
+* description = "Retired local identifier system for organization codes. Identify an organization by its Soliq tax ID instead, in the [UZ Core Organization](https://dhp.uz/fhir/core/StructureDefinition-uz-core-organization.html) `taxId` slice (`https://dhp.uz/fhir/core/sid/org/uz/soliq`)."
 * uniqueId[0].type = #uri
 * uniqueId[0].value = "https://dhp.uz/fhir/core/sid/uz/organization-code"
 * uniqueId[0].preferred = true
@@ -166,7 +166,7 @@ Usage: #definition
 * date = "2026-08-18"
 * description = "Registration number of the individual card of a pregnant and postpartum woman (Form 111), assigned by the women's consultation (ayollar maslahatxonasi)."
 * jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
-* usage = "Used in Encounter.identifier for the antenatal episode of care corresponding to Form 111"
+* usage = "Used in EpisodeOfCare.identifier for the antenatal episode of care corresponding to Form 111"
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/antenatal-card-number"
 * uniqueId[=].preferred = true

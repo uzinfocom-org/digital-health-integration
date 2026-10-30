@@ -13,7 +13,7 @@
 
 ### Форма 111 - Индивидуальная карта беременной и родильницы
 
-На этой странице описано сопоставление полей Формы 111 (Homilador va tuqqan ayolning individual kartasi) с ресурсами FHIR.
+На этой странице описано сопоставление полей [Формы 111](forms-volume-02-ambulatory.html) (Homilador va tuqqan ayolning individual kartasi) с ресурсами FHIR.
 
 ---
 
@@ -43,7 +43,7 @@
 | Shakl raqami | Номер формы | Composition.identifier | `https://dhp.uz/fhir/core/sid/doc/uz/form-number` | 111 |
 | Hujjat versiyasi UUID | Идентификатор версии документа | Bundle.identifier | `urn:ietf:rfc:3986` | urn:uuid:c1f4a9d7-2b60-4e13-9a5c-8d7e6f0b1112 |
 | Individual karta raqami | Номер индивидуальной карты | EpisodeOfCare.identifier | `system` `https://dhp.uz/fhir/core/sid/doc/uz/antenatal-card-number` | 111-2025-000123 |
-| Hujjat holati | Статус документа | Composition.status | [Статусы документов](document-statuses.html): `preliminary` пока карта ведётся, `final` после послеродового наблюдения | final |
+| Hujjat holati | Статус документа | Composition.status | [Статусы документов](document-statuses.html): `preliminary`, пока карта открыта; `final` после закрытия карты; `amended` для последующих исправлений; `entered-in-error`, если карта отозвана как ошибочная | final |
 | Hujjat turi | Тип документа | Composition.type | LOINC `34133-9` "Summary of episode note" | - |
 | Hujjat kategoriyasi | Категория документа | Composition.category | [Document Category](CodeSystem-document-category-cs.html) `form-111` "Индивидуальная карта беременной и родильницы" | - |
 | Bemor | Пациентка | Composition.subject | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html) | Ergasheva N.B. |
@@ -81,8 +81,8 @@
 | Ma'lumoti | Образование | [UZCoreSocioeconomicObservation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html).valueCodeableConcept | `code` SNOMED `105421008` "Educational achievement"<br>`value` [UZ Core Education](https://dhp.uz/fhir/core/en/CodeSystem-education-cs.html) + [Education Level](ValueSet-form111-education-level-vs.html) | O'rta umumiy ta'lim (`regis0005.00004`, `chr-0010-00003`) |
 | Ish joyi | Место работы | Observation.valueString (ссылка на Organization только при известном коде организации) | LOINC `80427-8` "Employer name [Identifier]" | 45-son umumta'lim maktabi |
 | Ish joyi telefon raqami | Телефон места работы | Observation.valueString | [Social Observation Code](ValueSet-form111-social-observation-code-vs.html) `chr-0029-00004` "Телефон места работы" | +998712345678 |
-| Mutaxassisligi | Специальность | [UZCoreSocioeconomicObservation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html).valueCodeableConcept | `code` SNOMED `14679004` "Occupation" + [Social Observation Code](ValueSet-form111-social-observation-code-vs.html) `chr-0029-00005` "Mutaxassisligi"<br>`value` [UZ Core Position and Profession](https://dhp.uz/fhir/core/en/CodeSystem-position-and-profession-cs.html) | Boshlang'ich sinflar (kichik) o'qituvchisi (`2341.8`) |
-| Lavozimi | Должность | [UZCoreSocioeconomicObservation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html).valueCodeableConcept | `code` SNOMED `14679004` "Occupation" + [Social Observation Code](ValueSet-form111-social-observation-code-vs.html) `chr-0029-00006` "Lavozimi"<br>`value` [UZ Core Position and Profession](https://dhp.uz/fhir/core/en/CodeSystem-position-and-profession-cs.html) | O'qituvchi (`2330.9`) |
+| Mutaxassisligi | Специальность | UZCoreSocioeconomicObservation.valueCodeableConcept | `code` SNOMED `14679004` "Occupation" + [Social Observation Code](ValueSet-form111-social-observation-code-vs.html) `chr-0029-00005` "Mutaxassisligi"<br>`value` [UZ Core Position and Profession](https://dhp.uz/fhir/core/en/CodeSystem-position-and-profession-cs.html) | Boshlang'ich sinflar (kichik) o'qituvchisi (`2341.8`) |
+| Lavozimi | Должность | UZCoreSocioeconomicObservation.valueCodeableConcept | `code` SNOMED `14679004` "Occupation" + [Social Observation Code](ValueSet-form111-social-observation-code-vs.html) `chr-0029-00006` "Lavozimi"<br>`value` [UZ Core Position and Profession](https://dhp.uz/fhir/core/en/CodeSystem-position-and-profession-cs.html) | O'qituvchi (`2330.9`) |
 | Ish sharoiti | Условия труда | Observation.valueString | [Social Observation Code](ValueSet-form111-social-observation-code-vs.html) `chr-0029-00003` "Условия труда" | Yengil mehnat sharoiti |
 | Turmush o'rtog'ining F.I.Sh | Ф.И.О. супруга | [RelatedPerson](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-relatedperson.html).name | - | Ergashev Sardor Alisherovich |
 | Turmush o'rtog'ining ish joyi | Место работы супруга | Observation.valueString (`focus` = RelatedPerson) | LOINC `80427-8` "Employer name [Identifier]" | Toshkent shahar avtobazasi, haydovchi |

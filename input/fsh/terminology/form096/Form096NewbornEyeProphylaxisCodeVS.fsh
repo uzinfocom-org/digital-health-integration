@@ -1,7 +1,7 @@
 ValueSet: Form096NewbornEyeProphylaxisCodeVS
 Id: newborn-eye-prophylaxis-code-vs
-Title: "Form 096 Newborn Eye Prophylaxis Code"
-Description: "Procedure.code for the Form 096 field on prophylaxis of gonococcal ophthalmia in the newborn, one Procedure per newborn."
+Title: "Newborn Eye Prophylaxis Code"
+Description: "Procedure.code for the Form 096 and Form 097 fields on prophylaxis of gonococcal ophthalmia in the newborn, one Procedure per newborn. The drug goes in Procedure.note."
 * insert IntegrationsValueSet(newborn-eye-prophylaxis-code-vs)
 * ^status = #draft
 * ^experimental = true

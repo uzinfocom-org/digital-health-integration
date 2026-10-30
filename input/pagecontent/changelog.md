@@ -1,18 +1,80 @@
 ### In development
 
-Added Form 096 (Tug'ruq tibbiy kartasi, maternity medical record): the [Form 096 Composition](StructureDefinition-form-096-maternity-medical-record-composition.html), the first form Composition derived from UZ Core Composition, its terminology and the [Form 096 field mapping](form-096-mapping.html) in English, Russian and Uzbek. Each fact is its own coded Observation, and the facts Form 096 shares with Form 111 use Form 111's codes, including pelvimetry, syphilis, gonococcus, general condition and whether a child was born alive. Each newborn is a separate Patient identified by the DMED medical-card number until a PINFL is available, so Form 097 can reuse the same identity.
-
-### Version 0.11.1
-
-Form 111 preserves existing local code meanings, adds verified standard targets for three explicit tokens, publishes the previous-pregnancy outcome ValueSet and aligns source booleans/activity dates with the DMED contract.
-
 #### Added
 
-The [screening plans and invitations](cervical-breast-cancer-screening.html#screening-plans) section of the screening page sets out how a screening program invites a patient and tracks the patient's plan with existing UZ Core profiles, without new profiles of its own. A UZ Core ActivityDefinition is the invitation template (`kind` = `ServiceRequest`, `intent` = `plan`), a UZ Core PlanDefinition pins it by version, and the patient's plan is a UZ Core ServiceRequest with `intent` = `plan`, the screening invitation category and one program identifier. The MIS owns the plan status: DMED completes its plan once the questionnaire is saved, while HPV keeps its plan active across screening rounds. DHP does not infer completion from results.
+[Form 027 extract from a patient's medical record](StructureDefinition-form-027-medical-record-extract-composition.html) is profiled as a FHIR Document, covering registration, personal information, residence, referral and diagnosis, clinical information, treatment and recommendations, next steps and responsible persons across 8 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-027-mapping.html).
+
+[Form 003 inpatient medical record](StructureDefinition-form-003-inpatient-medical-record-composition.html) is profiled as a FHIR Document, covering administrative and personal information, admission, admission screening, the primary examination, the examination plan and results, diagnoses, operations, the medication and procedure sheets, the temperature chart, the clinical course, the treatment outcome, temporary disability, the post-mortem conclusion and responsible persons across 20 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-003-mapping.html).
+
+#### Changed
+
+The [Form 011](StructureDefinition-form-011-hemodialysis-composition.html), [Form 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Form 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) and [Form 130](StructureDefinition-form-130-laboratory-test-results-composition.html) Compositions no longer fix `status` to `final`, so a document can follow the [document lifecycle](document-statuses.html) through `preliminary`, `amended` and `entered-in-error`.
+
+### Version 0.12.1
+
+#### Changed
+
+The [Form 097](form-097-mapping.html) and [Form 111](form-111-mapping.html) value sets link their SNOMED CT and LOINC supplements, so their codes show Russian and Uzbek displays.
+
+Organizations in the [Form 097](form-097-mapping.html) examples are identified by their Soliq tax ID, as in the other form examples since 0.12.0. The vitamin K Medication is a UZ Core Medication coded with its INN, and the document is dated at discharge.
+
+[Form 097](StructureDefinition-form-097-newborn-development-composition.html) prophylaxis and immunization section entries reference [UZ Core Immunization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-immunization.html) instead of any Immunization, so vaccinations sent in Form 097 conform to UZ Core.
+
+The Apgar component score, basic newborn skin colour and newborn care location code systems and value sets (`apgar-component-score-cs`, `newborn-skin-color-basic-cs`, `newborn-care-location-cs` and their `-vs` value sets) are removed. No profile bound them: Form 097 codes the Apgar score with LOINC and skin colour from [Newborn Skin Color Detailed](ValueSet-newborn-skin-color-detailed-vs.html).
+
+[Form 111](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) registration section entries may also be [UZ Core Socioeconomic Observations](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html). [Previous Pregnancy Outcome](ValueSet-form111-previous-pregnancy-outcome-vs.html) adds miscarriage (SNOMED CT `17369002`). The [Form 111 mapping](form-111-mapping.html) describes the Composition.status lifecycle: `preliminary` while the card is open, `final` once it is closed, `amended` for later corrections and `entered-in-error` if it is withdrawn. The [antenatal card number](NamingSystem-antenatal-card-number-system.html) is carried in EpisodeOfCare.identifier, not Encounter.identifier.
+
+#### Documentation
+
+The [forms overview](forms-overview.html) and its 11 volume pages, diagrams included, are available in Russian and Uzbek.
+
+### Version 0.12.0
 
 #### Added
 
 [Form 111 individual card of a pregnant and postpartum woman](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) is profiled as a FHIR Document, covering registration, diagnosis, pregnancy outcome, anamnesis, examinations, follow-up visits, birth preparation, patronage visits, perinatal risk assessment and specialist conclusions across 16 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-111-mapping.html).
+
+[Form 096 maternity medical record](StructureDefinition-form-096-maternity-medical-record-composition.html) is profiled as a FHIR Document, covering admission, medical and obstetric history, the current pregnancy, obstetric examination, labor, the newborn delivery record, the postpartum period, medication, diagnostic and procedure orders, materials used, sick leave certificates and responsible persons across 13 Composition sections. It ships example document Bundles, including antepartum and intrapartum stillbirth, and a [field-by-field mapping page](form-096-mapping.html). Fields that also appear in Form 111 use the same codes as Form 111. Each newborn is its own Patient, identified by its DMED medical-card number until it has a PINFL; Form 097 reuses that Patient and adds the PINFL once it is issued.
+
+[Form 097 newborn development medical record](StructureDefinition-form-097-newborn-development-composition.html) is profiled as a FHIR Document, covering the mother and antenatal history, the birth, the first newborn examination, feeding, daily observation and physician review, weight, prophylaxis and immunization, screening, and discharge, transfer or death across 11 Composition sections. It ships example document Bundles, including live birth and stillbirth outcomes, and a [field-by-field mapping page](form-097-mapping.html).
+
+The [Cancer Registry](cancer.html) user roles have a [code system](CodeSystem-cancer-registry-roles-cs.html) and a [ConceptMap](ConceptMap-cancer-registry-role-to-dhp-position-cm.html) to the UZ Core position and profession codes: system administrator, registrar, institution administrator and researcher.
+
+Screening terminology carries Uzbek and Russian translations. The screening value sets reference a new [SNOMED CT supplement](CodeSystem-screening-snomed-translations-cs.html) covering 202 concepts, and the [LOINC supplement](CodeSystem-screening-laboratory-cs.html) grows from 3 to 41 codes. Its liquid-based cytology and HPV codes are now named for the test rather than for taking the smear.
+
+#### Changed
+
+The guide is built against [UZ Core 0.12.0](https://dhp.uz/fhir/core/changelog.html). Its one breaking change, the specialist certificate identifier system, does not reach this guide. UZ Core now translates the `order-service` action code itself, so this guide's own action code supplement is removed.
+
+Organizations in the [Form 066](form-066-mapping.html), [Form 066-1](form-066-1-mapping.html) and [Form 111](form-111-mapping.html) examples are identified by their Soliq tax ID, in the UZ Core Organization `taxId` slice (`https://dhp.uz/fhir/core/sid/org/uz/soliq`). The local [organization code](NamingSystem-organization-code.html) identifier system `https://dhp.uz/fhir/core/sid/uz/organization-code` is retired: its canonical stays, but new data should not use it.
+
+#### Breaking changes
+
+[Cervical screening](cervical-breast-cancer-screening.html) colposcopy conclusions are coded in SNOMED CT where it has the concept. The local [colposcopy code system](CodeSystem-screening-colposcopy-cs.html) keeps only the two conclusions SNOMED CT lacks, under new codes, and the [value set](ValueSet-screening-colposcopy-vs.html) adds three conclusions it did not offer before. Senders switch the code and, for SNOMED CT rows, the system:
+
+| Conclusion | Old code | New code |
+|---|---|---|
+| NILM (normal) | `scr-colpo-1` | SNOMED CT `373887005` |
+| LSIL | `scr-colpo-2` | SNOMED CT `416030007` |
+| HSIL | `scr-colpo-3` | SNOMED CT `22725004` |
+| Atypical change | `scr-colpo-4` | `scrn-0091-00004` |
+| ASC-H | - | SNOMED CT `373878001` |
+| CIN 1 | - | SNOMED CT `285836003` |
+| CIN 2+ | - | `scrn-0091-00007` |
+
+#### Documentation
+
+A [forms overview](forms-overview.html) maps the primary medical documentation forms of Ministry of Health Order No. 399 into its 11 volumes and the recurring document types that cut across them, with a page and diagram per volume. It is in English only.
+
+The identifier rows on the [Form 066-1](form-066-1-mapping.html) and [hepatitis](hepatitis.html) mapping pages name the identifier system and type for each identifier.
+
+The cervical cancer screening questionnaire response example is now [example-cervical-screening-response](QuestionnaireResponse-example-cervical-screening-response.html), as its old id was too long for the package.
+
+### Version 0.11.1
+
+#### Added
+
+The [screening plans and invitations](cervical-breast-cancer-screening.html#screening-plans) section of the screening page sets out how a screening program invites a patient and tracks the patient's plan with existing UZ Core profiles, without new profiles of its own. A UZ Core ActivityDefinition is the invitation template (`kind` = `ServiceRequest`, `intent` = `plan`), a UZ Core PlanDefinition pins it by version, and the patient's plan is a UZ Core ServiceRequest with `intent` = `plan`, the screening invitation category and one program identifier. The MIS owns the plan status: DMED completes its plan once the questionnaire is saved, while HPV keeps its plan active across screening rounds. DHP does not infer completion from results.
 
 #### Changed
 

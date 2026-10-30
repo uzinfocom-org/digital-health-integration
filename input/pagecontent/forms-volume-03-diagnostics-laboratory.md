@@ -43,4 +43,4 @@ Because of its size, the volume is summarised by cluster rather than listed form
 | Serology and immunoassay | 065 Wasserman, 068 ASO/CRP, 070 hepatitis, 079/098/099 TORCH, 088 Vidal/Wright, 092-094, 095/105/107-110/112/115 IXLA, 117/118 PCR |
 | Microbiology | 055 microbiology result, 057 TB, 084 sensitivity, 119 culture sensitivity |
 | Parasitology surveillance | 121-126 (helminths, malaria, leishmaniasis) |
-| Registers, statistics and notifications | 027 extract, 028 cancer, 034 lab register, 036 (+036-1..3) sick-leave, 058 rapid infectious-disease/poisoning notification, [066](form-066-mapping.html) / [066-1](form-066-1-mapping.html) discharge cards, 114 congenital anomaly |
+| Registers, statistics and notifications | [027](form-027-mapping.html) extract, 028 cancer, 034 lab register, 036 (+036-1..3) sick-leave, 058 rapid infectious-disease/poisoning notification, [066](form-066-mapping.html) / [066-1](form-066-1-mapping.html) discharge cards, 114 congenital anomaly |

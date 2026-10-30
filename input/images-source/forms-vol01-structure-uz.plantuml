@@ -1,0 +1,59 @@
+@startuml forms-vol01-structure-uz
+hide circle
+hide empty members
+skinparam linetype ortho
+title 1-jild - statsionar hujjatlari tuzilmasi, hujjat turi bo'yicha ranglangan
+
+skinparam class {
+  BackgroundColor<<register>> #ECEFF1
+  BackgroundColor<<card>> #E8F0FE
+  BackgroundColor<<report>> #E6F4EA
+  BackgroundColor<<certificate>> #FEF7E0
+}
+
+class "001 Qabul va rad etish\njurnali" as F001 <<register>>
+class "003 Statsionar bemorning\ntibbiy kartasi" as F003 <<card>>
+class "007 O'rinlar harakati\nvaraqasi" as F007 <<report>>
+
+class "004 Anesteziyalar\njurnali" as F004 <<register>>
+class "005 Anesteziya\nvaraqasi" as F005 <<report>>
+class "008 Jarrohlik amaliyotlari\njurnali" as F008 <<register>>
+class "006 Reanimatsiyada\ndinamik kuzatuv" as F006 <<card>>
+class "009 Qon quyish\njurnali" as F009 <<register>>
+class "009-1..009-4\nqon quyish kichik shakllari" as F009x <<report>>
+
+class "002 Chaqaloqlar bo'limi\njurnali" as F002 <<register>>
+class "010 Tug'ruqlarni\nro'yxatga olish jurnali" as F010 <<register>>
+class "096 Tug'ruq\ntarixi" as F096 <<card>>
+class "097 Chaqaloq\nrivojlanishi kartasi" as F097 <<card>>
+class "003-1 Homiladorlikni erta\nto'xtatish kartasi" as F003a <<card>>
+
+class "027 Tibbiy kartadan\nko'chirma" as F027 <<report>>
+class "066 Chiqarilganlar\nstatistik kartasi" as F066 <<card>>
+class "103 Tug'ilganlik ma'lumotnomalarini\nro'yxatga olish" as F103 <<register>>
+class "106 O'lim ma'lumotnomalarini\nro'yxatga olish" as F106 <<register>>
+class "106-2 Perinatal o'limni\nro'yxatga olish" as F106b <<register>>
+
+F001 --> F003 : yotqizish kartani ochadi
+F003 --> F004
+F003 --> F008
+F003 --> F006
+F003 --> F009
+F009 --> F009x
+F003 ..> F027 : chiqarishda
+F003 ..> F066 : chiqarishda
+F003 ..> F106 : o'limda
+
+F096 --> F010 : tug'ruq
+F096 --> F097 : chaqaloq
+F002 --> F097 : chaqaloq qayd etiladi
+F096 ..> F103 : tug'ilganlik ma'lumotnomasi
+F096 ..> F106b : perinatal o'lim
+F096 ..> F003a : erta to'xtatish
+
+legend right
+  Kulrang = jurnal/reyestr (so'rov uchun, hujjat emas)
+  Ko'k = uzoq muddatli kuzatuv kartasi
+  Yashil = bayonnoma/varaqa
+endlegend
+@enduml

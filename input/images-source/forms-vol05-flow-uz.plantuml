@@ -1,0 +1,29 @@
+@startuml forms-vol05-flow-uz
+title Jarayon namunasi - shoshilinch chaqiruv (5-jild)
+autonumber
+
+actor "Chaqiruvchi" as C
+participant "Dispetcherlik\nstansiyasi" as DISP
+participant "Tez yordam\nbrigadasi" as CREW
+participant "Kasalxona\n(1-jild)" as H
+
+C -> DISP : shoshilinch chaqiruv
+DISP -> DISP : 142 chaqiruvni ro'yxatga olish, 143 chaqiruv kartasi
+DISP -> CREW : brigada yuboriladi
+CREW -> CREW : 143 chaqiruv kartasi (joyida ko'rik va yordam)
+alt kasalxonaga olib borish
+  CREW -> H : 144 kuzatuv varaqasi -> topshirish, 001 yotqizish (1-jild)
+end
+alt sanitar aviatsiya / favqulodda vaziyat
+  DISP -> DISP : 146 favqulodda vaziyatlar, 149 sanitar aviatsiya chaqiruvlari
+  CREW -> CREW : 150 maslahatchi shifokor varaqasi
+end
+
+DISP -> DISP : 145 podstansiya kunlik ish yuki xulosasi
+
+note over DISP, CREW
+  Chaqiruv kartasi (143) - joyidagi klinik yozuv; kuzatuv
+  varaqasi (144) bemor bilan kasalxonaga boradi. Dispetcherlik
+  jurnallari - so'rov orqali ma'lumot olinadigan jurnallar.
+end note
+@enduml

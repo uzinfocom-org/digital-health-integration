@@ -12,7 +12,7 @@
 
 ### Form 011 - Hemodialysis session protocol
 
-This page documents the mapping between Form 011 (Hemodialysis Session Protocol) fields and FHIR resources.
+This page documents the mapping between [Form 011](forms-volume-03-diagnostics-laboratory.html) (Hemodialysis Session Protocol) fields and FHIR resources.
 
 ### Overview
 
@@ -47,7 +47,7 @@ For a complete reference instance, see the [Form 011 hemodialysis example](Bundl
 | Vazn seansgacha | Масса тела до сеанса | Observation.valueQuantity | LOINC `8347-7` "Body weight Measured --pre dialysis" | 72.5 kg |
 | Vazn seansdan keyin | Масса тела после сеанса | Observation.valueQuantity | LOINC `8344-4` "Body weight Measured --post dialysis" | 70.0 kg |
 | Shifokor | Врач | Encounter.participant.actor | Encounter.participant.type: SNOMED CT `309343006` "Physician" | [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html) (Каримов А.А.) |
-| Hamshira | Медсестра | Encounter.participant.actor | Encounter.participant.type: SNOMED CT `106292003` "Professional nurse" | [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html) (Рахматова М.М.) |
+| Hamshira | Медсестра | Encounter.participant.actor | Encounter.participant.type: SNOMED CT `106292003` "Professional nurse" | Practitioner (Рахматова М.М.) |
 | Fistul | Фистула | Procedure.bodySite | SNOMED CT `439786007` "Surgically constructed arteriovenous fistula" + laterality qualifier | Левая AV-фистула |
 
 ### Bundle structure

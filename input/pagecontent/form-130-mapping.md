@@ -11,7 +11,7 @@
 
 ### Form 130 - Laboratory Test Results
 
-This page documents the mapping between **Form 130 (Laboratory Test Results)** fields and FHIR resources.
+This page documents the mapping between [Form 130](forms-volume-03-diagnostics-laboratory.html) (Laboratory Test Results) fields and FHIR resources.
 
 ---
 

@@ -13,7 +13,7 @@
 
 ### 066-1-shakl - Psixiatrik/narkologik statsionardan chiqqan bemorning statistik kartasi
 
-Ushbu sahifada 066-1-shakl (Psixiatrik/narkologik statsionardan chiqqan bemorning statistik kartasi) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
+Ushbu sahifada [066-1-shakl](forms-volume-03-diagnostics-laboratory.html) (Psixiatrik/narkologik statsionardan chiqqan bemorning statistik kartasi) maydonlarining FHIR resurslari bilan moslashtirilishi tavsiflanadi.
 
 ---
 
@@ -35,7 +35,7 @@ To'liq namunaviy nusxa uchun [066-1-shakl psixiatrik/narkologik chiqarish misoli
 
 | UZ-066-1 | RU-066-1 | FHIR yo'li | Kod | Misol qiymati |
 |----------|----------|------------|------|---------------|
-| Muassasa kodi | Код учреждения | [Organization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-organization.html).identifier | `system` `https://dhp.uz/fhir/core/sid/uz/organization-code` | 200001 |
+| Muassasa kodi | Код учреждения | [Organization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-organization.html).identifier[taxId] | `system` `https://dhp.uz/fhir/core/sid/org/uz/soliq`<br>`type` `TAX` | 204789014 |
 | Muassasa nomi | Наименование учреждения | Organization.name | - | Toshkent shahar ruhiy kasalliklar shifoxonasi |
 | Bemor ro'yxat raqami | Регистрационный номер | Encounter.identifier | `system` `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number` | MRN-066-1-2026-0001 |
 | Tibbiy bayonnoma № | № медицинской карты | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html).identifier[healthCardId] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/hc`<br>`type` `HC` | HC-2026-00066 |
@@ -77,7 +77,7 @@ To'liq namunaviy nusxa uchun [066-1-shakl psixiatrik/narkologik chiqarish misoli
 | UZ | RU | FHIR yo'li | Kod | Misol |
 |----|----|------------|------|---------|
 | Psixonevrologik (narkologik) muassasa ro'yxatga olingan sana | Дата регистрации | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueDateTime | LOINC `8656-1` "Hospital admission date" | 2026-01-05T09:30:00+05:00 |
-| Avval necha marta shifoxonada davolangan | Количество предыдущих госпитализаций | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueInteger | [Local](CodeSystem-local-observation-code.html) `num-previous-hospitalizations` | 5 |
+| Avval necha marta shifoxonada davolangan | Количество предыдущих госпитализаций | Observation.valueInteger | [Local](CodeSystem-local-observation-code.html) `num-previous-hospitalizations` | 5 |
 | Tezkor yordam ko'rsatildi | Экстренная помощь оказана | Observation.valueBoolean | LOINC `57276-8` "Emergent care utilized during assessment period [CMS Assessment]" | true |
 | Yotqizish turi | Тип госпитализации | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).admission.admitSource | Local code | Dispensary |
 | Tez tibbiy yordam mashinasida keldi | Доставлен скорой помощью | Observation.valueBoolean | LOINC `LP97912-7` "Ambulance transport" | true |

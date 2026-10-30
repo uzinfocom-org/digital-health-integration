@@ -34,7 +34,7 @@
 Прежде чем создавать профиль, код, ValueSet или систему идентификаторов, поищите существующие. Один и тот же факт должен иметь один и тот же код и одно и то же представление во всех формах. Ищите в таком порядке:
 
 - **UZ Core**: профили, их ValueSet и CodeSystem на странице [Artifacts](https://dhp.uz/fhir/core/en/artifacts.html), системы идентификаторов на странице [Identifiers](https://dhp.uz/fhir/core/en/identifiers.html), тип документа вашей формы в [composition-type-cs](https://dhp.uz/fhir/core/en/CodeSystem-composition-type-cs.html).
-- **Другие формы этого IG**: их ValueSet, CodeSystem и ConceptMap (`input/fsh/terminology/`, страница [Artifacts](https://dhp.uz/fhir/integrations/en/artifacts.html)) и страницы соответствия (`input/pagecontent/form-*-mapping.md`). Если в вашей форме есть поле, которое уже есть в другой форме, берите его код, его ValueSet и его способ заполнения ресурса.
+- **Другие формы этого IG**: их ValueSet, CodeSystem и ConceptMap (`input/fsh/terminology/`, страница [Artifacts](https://dhp.uz/fhir/integrations/en/artifacts.html)) и страницы соответствия (`input/pagecontent/form-*-mapping.md`), а прежде всего - [индекс полей](field-index.md), где по смыслу собраны поля всех форм с их путём FHIR и кодом. Если в вашей форме есть поле, которое уже есть в другой форме, берите его код, его ValueSet и его способ заполнения ресурса.
 - **Стандартные терминологии**: активные концепты SNOMED CT, LOINC, МКБ-10, терминология HL7. Подходит только точное совпадение: более широкий или более узкий концепт не замена.
 - **Расширения**: элементы базового ресурса и реестр HL7, как в §5.4 руководства по моделированию.
 
@@ -110,10 +110,12 @@ Description: "Composition profile for Form 0XX (<название формы н�
 Правила для профиля:
 - `Parent: UZCoreComposition` и `^experimental = true`, как у родительского профиля.
 - `type` - код формы из `composition-type-cs` ядра (связка required). Соответствующий LOINC-код документа передаётся в примере вторым `type.coding` и упоминается в `type ^short`. Если в `composition-type-cs` нет кода формы, сначала добавьте его в UZ Core.
-- `status` не фиксируется. Документ проходит жизненный цикл со страницы [Document statuses](../input/pagecontent/document-statuses.md), а `status ^short` говорит, когда документ этой формы `preliminary` и когда `final`.
-- `category` содержит два кода: срез `dhpCategory` из `composition-category-cs` ядра и срез `formCategory` с кодом формы из `document-category-cs`.
+- `status` не фиксируется. Документ проходит жизненный цикл со страницы [Document statuses](../input/pagecontent/document-statuses.md) (`preliminary` -> `final` -> `amended` / `entered-in-error`), а `status ^short` говорит, когда документ этой формы `preliminary` и когда `final`.
+- `category` содержит два кода: срез `dhpCategory` из `composition-category-cs` ядра и срез `formCategory` с кодом формы из `document-category-cs` (страница [Document categories and identifiers](../input/pagecontent/document-categories.md)).
 - Каждую ссылку ограничивайте профилем UZ Core, где он есть (§4 руководства по моделированию); базовый ресурс - только если профиля нет.
-- У каждого раздела есть `title 1..1` с пронумерованным английским `^short`, `code 1..1` с кодом раздела из LOINC или активным кодом SNOMED CT и `^short` со списком полей бумажной формы в этом разделе, и `entry`, ограниченный конкретными профилями. Раздел делайте `1..1`, только если он есть в каждом документе; остальные - `0..1`, чтобы профиль не требовал данных, которых может не быть в системе-источнике.
+- У каждого раздела есть `title 1..1` с пронумерованным английским `^short`, `code 1..1` (код раздела - по правилу ниже) с `^short` со списком полей бумажной формы в этом разделе, и `entry`, ограниченный конкретными профилями. Раздел делайте `1..1`, только если он есть в каждом документе; остальные - `0..1`, чтобы профиль не требовал данных, которых может не быть в системе-источнике.
+- Код раздела - из LOINC; если подходящего нет - активный код SNOMED CT; локальный код - только когда нет ни того, ни другого.
+- Разделы и их порядок - как на бумажной форме, и таблицы страницы соответствия (шаг 6) - тоже. Поле остаётся в разделе формы, даже если его ресурс или профиль отличается от соседних полей.
 - `encounter` делайте `0..1`, если форма не всегда привязана к одному случаю обслуживания (так в 111 и 130).
 - Все `^short`, `^definition` и `Description` - на английском. Русский и узбекский переводы - в `.po`-файлах (шаг 9), не в FSH.
 
@@ -208,6 +210,7 @@ Usage: #inline
 Правила для примера:
 - Каждый ресурс - экземпляр профиля UZ Core, где он есть (`InstanceOf: UZCoreOrganization`, `UZCoreImmunization`, `UZCoreMedication` и т. д.), а не базового ресурса.
 - Организации идентифицируются ИНН из Soliq в срезе `taxId`, как выше. Локальную систему `https://dhp.uz/fhir/core/sid/uz/organization-code` не используйте.
+- Пример описывает одного реального пациента с клинически согласованной историей: тип визита соответствует учреждению, осложнения и сопутствующие заболевания - диагнозу, назначения и анализы - состоянию (с дозировкой у лекарств и результатами у анализов). Разработчики копируют пример, поэтому случайный набор значений станет образцом для интеграций.
 - Даты рассказывают одну связную историю: события идут в клиническом порядке, и ничего не происходит после окончания случая обслуживания или после даты документа.
 - Документ датирован моментом закрытия: у документа `final` `Composition.date`, `Bundle.timestamp` и `Provenance.signature.when` - это момент, когда он закрыт (например, выписка), а не более ранняя дата.
 - В примере используются коды из ValueSet формы, с теми же display.
@@ -215,11 +218,23 @@ Usage: #inline
 
 ### 6. Страница соответствия полей
 
-`input/pagecontent/form-0XX-mapping.md` - построчная таблица полей формы для разработчиков, реализующих интеграцию. Скопируйте `form-111-mapping.md` и замените содержимое: блок `<style>` с ширинами колонок, заголовок, раздел Overview (со ссылками на профиль и пример), таблицы по разделам с колонками `UZ | RU | FHIR Path | Code | Example Value` и ссылка на пример.
+`input/pagecontent/form-0XX-mapping.md` - построчная таблица полей формы для разработчиков, реализующих интеграцию. Скопируйте `form-111-mapping.md` и замените содержимое. Структура: блок `<style>` с ширинами колонок, заголовок, раздел Overview (со ссылками на профиль и пример), таблица Document Information, таблицы по разделам формы с колонками `UZ | RU | FHIR Path | Code | Example Value`, таблица Required fields, схема Bundle structure и ссылка на пример. Первое упоминание формы в Overview - ссылка на её том в обзоре форм (`forms-volume-NN-*.html`).
+
+Document Information - первая таблица: поля заголовка документа (`Composition.identifier`, `status`, `type`, `category`, `subject`, `date`, `event.period`, `author`, `custodian`, `title`, подпись в `Provenance`), а над ней - короткое пояснение, если форма ведётся как эпизод с визитами или пересылается новыми версиями. Идентификаторы - отдельными строками: `Composition.identifier` (UUID), номер формы (`Composition.identifier` с системой `form-number`) и `Bundle.identifier` (UUID версии). Системы и формат значений - по соглашению на странице [Document categories and identifiers](https://dhp.uz/fhir/integrations/en/document-categories.html).
+
+Путь FHIR и код поля, которое уже есть в [индексе полей](field-index.md), берите оттуда (шаг 1). Когда форма готова, обновите индекс: поля, которых в нём ещё нет, добавьте новыми строками (форма - в колонке Reference), а у найденных допишите номер формы в Also in.
+
+Обязательные элементы, у которых нет поля на бумажной форме, перечислите в таблице Required fields перед Bundle structure: `status` и `intent` у CarePlan, MedicationRequest и ServiceRequest, `status` у Encounter, Observation, DiagnosticReport и EpisodeOfCare, `clinicalStatus` у Condition. Для каждого - value set и какой код ставить и когда (например, CarePlan с рекомендациями после выписки - `active` и `plan`), иначе разработчик будет угадывать между `plan` и `order` или `completed` и `active`. `subject` не указывайте - это всегда пациент.
+
+Страница - только для разработчиков интеграции: история ревью, расхождения с другими источниками и внутренние договорённости пишите в `docs/` или в PR.
 
 Правила для таблиц:
 - В каждой строке с кодом есть ссылка на ValueSet (или CodeSystem, или ConceptMap), из которого этот код, и сам код с display, например ``[Social Observation Code](ValueSet-form111-social-observation-code-vs.html) `chr-0029-00004` "Workplace phone number"``. Одного кода без display недостаточно.
 - В Observation наблюдаемый концепт (вопрос или находка) идёт в `code`, а ответ - в `value`: код из его ValueSet, да/нет, число или текст. В колонке `Code` подписывайте обе части: `` `code` ...<br>`value` ...``.
+- Код, который зависит от пациента, в колонке `Code` не пишется: там ValueSet, а сам код - в колонке `Example Value`.
+- Профиль UZ Core в таблицах - ссылка только при первом упоминании, дальше - просто имя ресурса.
+- Поле, которое пишется в тот же ресурс, что и строка выше, - `*(same Observation).bodySite*` (как в 111 и 096).
+- Для каждого поля на `Observation` в колонке `FHIR Path` указывайте конкретный тип значения, а не `Observation.value[x]`: `Observation.valueBoolean`, `Observation.valueQuantity` (с единицей UCUM, например `d` или `g`), `Observation.valueCodeableConcept` (с ValueSet) и т. д. В примере используйте тот же тип. Тип должен соответствовать коду в `Observation.code`: у LOINC смотрите шкалу (`SCALE_TYP`) - для `Qn` нужен `Quantity` (или `Range`), для `Ord`/`Nom` - `CodeableConcept`, а если у кода есть список ответов LOINC (`LL...`), берите ответы из него. Исключение - ответ строго «да/нет»: используйте `valueBoolean`, а не коды «да»/«нет» из SNOMED CT, HL7 v2 (`v2-0136`) или LOINC (`LL361-7`). Если у поля есть третий вариант (например, «неизвестно»), нужен `valueCodeableConcept`.
 - Если формат значения в системе-источнике (DMED) неизвестен, передавайте его свободным текстом (`valueString`), а не придумывайте для него ValueSet.
 - Каждый идентификатор указывается вместе с его `system`.
 - Пишите только указания, специфичные для этой формы. Общим советам по FHIR или интеграции ("копируйте, не вычисляйте", "пропускайте отсутствующие значения" и т. п.) на странице соответствия не место.
@@ -270,8 +285,9 @@ menu:
 - [ ] Код `#form-0XX` в `DocumentCategoryCS.fsh` (uz + en/ru designation)
 - [ ] Каждый ValueSet описывает своё поле и используется; неиспользуемые удалены
 - [ ] Supplement с версией релиза базовой системы, покрывает все коды SNOMED CT и LOINC, подключён в каждом ValueSet
-- [ ] Пример-`Bundle` (`#document`) с профилями UZ Core, ИНН организации из Soliq, связными датами и `Provenance`
-- [ ] Страница `form-0XX-mapping.md`: каждый код со своим ValueSet и display, без общих советов
+- [ ] Пример-`Bundle` (`#document`) с профилями UZ Core, ИНН организации из Soliq, клинически согласованной историей, связными датами и `Provenance`
+- [ ] Страница `form-0XX-mapping.md`: каждый код со своим ValueSet и display, у каждого поля на `Observation` тип `value[x]`, совместимый с кодом, обязательные коды без поля формы - в таблице Required fields, без общих советов
+- [ ] [Индекс полей](field-index.md): новые поля формы добавлены, у повторных форма дописана в Also in
 - [ ] Файл вступления `StructureDefinition-<id>-intro.md`
 - [ ] Запись в `pages:` и пункт меню в `sushi-config.yaml`
 - [ ] Переводы страниц и профиля в `input/translations/{ru,uz}/`
