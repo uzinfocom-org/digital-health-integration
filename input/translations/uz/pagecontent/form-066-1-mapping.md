@@ -77,7 +77,7 @@ To'liq namunaviy nusxa uchun [066-1-shakl psixiatrik/narkologik chiqarish misoli
 | UZ | RU | FHIR yo'li | Kod | Misol |
 |----|----|------------|------|---------|
 | Psixonevrologik (narkologik) muassasa ro'yxatga olingan sana | Дата регистрации | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueDateTime | LOINC `8656-1` "Hospital admission date" | 2026-01-05T09:30:00+05:00 |
-| Avval necha marta shifoxonada davolangan | Количество предыдущих госпитализаций | [Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html).valueInteger | [Local](CodeSystem-local-observation-code.html) `num-previous-hospitalizations` | 5 |
+| Avval necha marta shifoxonada davolangan | Количество предыдущих госпитализаций | Observation.valueInteger | [Local](CodeSystem-local-observation-code.html) `num-previous-hospitalizations` | 5 |
 | Tezkor yordam ko'rsatildi | Экстренная помощь оказана | Observation.valueBoolean | LOINC `57276-8` "Emergent care utilized during assessment period [CMS Assessment]" | true |
 | Yotqizish turi | Тип госпитализации | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).admission.admitSource | Local code | Dispensary |
 | Tez tibbiy yordam mashinasida keldi | Доставлен скорой помощью | Observation.valueBoolean | LOINC `LP97912-7` "Ambulance transport" | true |

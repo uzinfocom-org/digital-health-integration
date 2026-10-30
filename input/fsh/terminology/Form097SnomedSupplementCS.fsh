@@ -3,7 +3,7 @@ Id: form-097-snomed-supplement-cs
 Title: "Form 097 SNOMED CT Displays"
 Description: "Uzbek and Russian displays for the SNOMED CT codes used in Form 097"
 
-* insert SupplementCodeSystemDraft(form-097-snomed-supplement-cs, $sct, 0.11.1)
+* insert SupplementCodeSystemDraft(form-097-snomed-supplement-cs, $sct, 2026.1.0)
 
 * #1145307003 "Exclusively breastfed"
   * ^designation[0].language = #ru
@@ -149,18 +149,6 @@ Description: "Uzbek and Russian displays for the SNOMED CT codes used in Form 09
   * ^designation[+].language = #uz
   * ^designation[=].value = "Turish va avtomatik yurish refleksi"
 
-* #21243004 "Term birth of newborn"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Своевременные роды"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "O'z vaqtida tug'ruq"
-
-* #367494004 "Premature birth of newborn"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Преждевременные роды"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Muddatidan oldin tug'ruq"
-
 * #106076001 "Skin finding"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Кожа"
@@ -202,3 +190,22 @@ Description: "Uzbek and Russian displays for the SNOMED CT codes used in Form 09
   * ^designation[=].value = "Особенности течения второго периода родов"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Tug'ruq II davri kechishining o'ziga xosligi"
+
+* #248366000 "Chest circumference"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Окружность груди"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Ko'krak aylanasi"
+
+* #62315008 "Diarrhea"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Диарея"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Ich ketishi"
+
+* #300471006 "Finding of frequency of urination"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Частота мочеиспускания"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Siydik chiqarish chastotasi"
+

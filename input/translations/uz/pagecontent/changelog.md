@@ -1,3 +1,33 @@
+### Ishlab chiqilmoqda
+
+#### Qo'shildi
+
+[027-shakl, bemorning tibbiy kartasidan ko'chirma](StructureDefinition-form-027-medical-record-extract-composition.html) FHIR hujjati sifatida profillandi: ro'yxatga olish va shaxsiy ma'lumotlar, manzil, yo'llanma va tashxis, klinik ma'lumotlar, davolash va tavsiyalar, keyingi tadbirlar va mas'ul shaxslar Composition'ning 8 ta bo'limida. Unga hujjat namunasi (Bundle) va [maydonlarni moslashtirish sahifasi](form-027-mapping.html) ilova qilingan.
+
+[003-shakl - statsionar bemorning tibbiy kartasi](StructureDefinition-form-003-inpatient-medical-record-composition.html) FHIR hujjati sifatida profillangan bo'lib, Composition ning 20 ta bo'limi orqali ma'muriy va shaxsiy ma'lumotlar, qabul qilish, qabulda tekshiruv, birlamchi ko'rik, tekshiruv rejasi va natijalari, tashxislar, operatsiyalar, dori va muolaja varaqalari, harorat varaqasi, kasallik kechishi, davolash natijasi, vaqtincha mehnatga layoqatsizlik, patologoanatomik xulosa va mas'ul shaxslarni qamrab oladi. Uning namunaviy hujjat-Bundle'i va [maydonma-maydon moslashtirish sahifasi](form-003-mapping.html) mavjud.
+
+#### O'zgartirildi
+
+[011-shakl](StructureDefinition-form-011-hemodialysis-composition.html), [066-shakl](StructureDefinition-form-066-hospital-discharge-composition.html), [066-1-shakl](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) va [130-shakl](StructureDefinition-form-130-laboratory-test-results-composition.html) Composition'lari endi `status` ni `final` ga qotirmaydi, shuning uchun hujjat [hayot sikli](document-statuses.html) bo'yicha `preliminary`, `amended` va `entered-in-error` holatlaridan o'ta oladi.
+
+### Versiya 0.12.1
+
+#### O'zgartirildi
+
+[097-shakl](form-097-mapping.html) va [111-shakl](form-111-mapping.html) qiymatlar to'plamlari o'zlarining SNOMED CT va LOINC qo'shimchalariga havola qiladi, shuning uchun ularning kodlari rus va o'zbek tillarida ko'rsatiladi.
+
+[097-shakl](form-097-mapping.html) namunalaridagi tashkilotlar 0.12.0 versiyasidan beri boshqa shakllar namunalaridagi kabi Soliq STIR bo'yicha identifikatsiya qilinadi. K vitamini Medication resursi XPN kodi bilan UZ Core Medication bo'ladi, hujjat esa chiqarilish sanasi bilan belgilanadi.
+
+[097-shakl](StructureDefinition-form-097-newborn-development-composition.html) profilaktika va emlash bo'limi yozuvlari istalgan Immunization emas, [UZ Core Immunization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-immunization.html) ga havola qiladi, shuning uchun 097-shaklda yuboriladigan emlashlar UZ Core ga mos keladi.
+
+Apgar komponentlari bahosi, chaqaloq terisining asosiy rangi va chaqaloqni parvarish qilish joyi kodlar tizimlari va qiymatlar to'plamlari (`apgar-component-score-cs`, `newborn-skin-color-basic-cs`, `newborn-care-location-cs` va ularning `-vs` qiymatlar to'plamlari) olib tashlandi. Ularga hech bir profil bog'lanmagan: 097-shakl Apgar bahosini LOINC bilan, teri rangini esa [Newborn Skin Color Detailed](ValueSet-newborn-skin-color-detailed-vs.html) to'plamidan kodlaydi.
+
+[111-shakl](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) ro'yxatga olish bo'limi yozuvlari [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html) ham bo'lishi mumkin. [Previous Pregnancy Outcome](ValueSet-form111-previous-pregnancy-outcome-vs.html) to'plamiga homila tushishi (SNOMED CT `17369002`) qo'shildi. [111-shakl xaritalashi](form-111-mapping.html) Composition.status hayot siklini tavsiflaydi: karta ochiq bo'lganda `preliminary`, yopilgandan keyin `final`, keyingi tuzatishlar uchun `amended` va karta xato sifatida bekor qilinsa `entered-in-error`. [Homilador ayol individual kartasi raqami](NamingSystem-antenatal-card-number-system.html) Encounter.identifier da emas, EpisodeOfCare.identifier da uzatiladi.
+
+#### Hujjatlashtirish
+
+[Shakllar sharhi](forms-overview.html) va uning 11 ta jild sahifasi diagrammalari bilan birga rus va o'zbek tillarida mavjud.
+
 ### Versiya 0.12.0
 
 #### Qo'shildi

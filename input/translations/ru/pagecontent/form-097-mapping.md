@@ -46,9 +46,10 @@
 | Hujjat kategoriyasi | Категория документа | Composition.category | [Composition Category](https://terminology.dhp.uz/fhir/core/ValueSet/composition-category-vs) `Comp-001-0001` "Medical record" и [Document Category](ValueSet-document-category-vs.html) `form-097` "Newborn development medical record" | - |
 | Yangi tug'ilgan chaqaloq | Новорождённый | Composition.subject | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html) | Karimov Aziz Shavkatovich |
 | Tug'ruqxonada bo'lish davri | Пребывание в родильном доме | Composition.encounter | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html) | 2026-06-01 - 2026-06-07 |
+| Tibbiy karta raqami | Номер медицинской карты | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).identifier | `system` `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number` | MRN-097-2026-0001 |
 | Davolovchi shifokor | Лечащий врач | Encounter.participant.actor | [PractitionerRole](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner-role.html) | Лечащий неонатолог |
-| Hujjat shakllantirilgan sana | Дата составления документа | Composition.date | - | 2026-06-01T09:00:00+05:00 |
-| Hujjatni saqlagan foydalanuvchi | Пользователь, сохранивший документ | Composition.author | [PractitionerRole](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner-role.html), или [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html), если должность неизвестна | Медсестра |
+| Hujjat shakllantirilgan sana | Дата составления документа | Composition.date | - | 2026-06-07T12:00:00+05:00 |
+| Hujjatni saqlagan foydalanuvchi | Пользователь, сохранивший документ | Composition.author | PractitionerRole, или [Practitioner](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner.html), если должность неизвестна | Медсестра |
 | Hujjat sarlavhasi | Заголовок документа | Composition.title | - | Form 097 - Newborn Development Medical Record |
 
 ---
@@ -59,7 +60,7 @@
 
 | UZ | RU | Путь FHIR | Код | Пример значения |
 |----|----|------------|------|---------------|
-| Onaning JShShIRi | ПИНФЛ матери | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html).identifier[nationalId] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ni`<br>`type` `NI` | 31234567890123 |
+| Onaning JShShIRi | ПИНФЛ матери | Patient.identifier[nationalId] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ni`<br>`type` `NI` | 31234567890123 |
 | Onaning F.I.Sh. | Ф.И.О. матери | Patient.name.text | - | Karimova Dilnoza Farkhodovna |
 | Onaning tug'ilgan sanasi | Дата рождения матери | Patient.birthDate | - | 1992-03-12 |
 | Oilaviy holati | Семейное положение | Patient.maritalStatus | `value` [UZ Core Marital Status](https://dhp.uz/fhir/core/en/ValueSet-marital-status-vs.html) | Married (`M`) |
@@ -76,7 +77,7 @@
 | Tug'ruqning birinchi davri | Первый период родов | Observation.valueString | `code` SNOMED CT `364329005` "Characteristic of first stage of labor" | First stage 6 h 20 min, regular contractions, no complications |
 | Tug'ruqning ikkinchi davri | Второй период родов | Observation.valueString | `code` SNOMED CT `364337002` "Characteristic of second stage of labor" | Second stage 25 min, spontaneous vaginal delivery |
 | Homiladorlik asorati | Осложнение беременности | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code | ICD-10 | `O24.4` "Diabetes mellitus arising in pregnancy" |
-| Amniotik suyuqlik ko'rinishi | Вид околоплодных вод | Observation.valueCodeableConcept | `code` LOINC `1887-9` "Appearance of amniotic fluid"<br>`value` [Amniotic Fluid Characteristic](ValueSet-amniotic-fluid-characteristic-vs.html) | Amniotic fluid clear (`168090003`) |
+| Amniotik suyuqlik ko'rinishi | Вид околоплодных вод | Observation.valueCodeableConcept | `code` LOINC `1887-9` "Appearance of amniotic fluid"<br>`value` [Amniotic Fluid Characteristic](ValueSet-amniotic-fluid-characteristic-vs.html) | Amniotic fluid - clear (`168090003`) |
 | Naslli anamnez (ona) | Наследственный анамнез (мать) | FamilyMemberHistory.condition.code | `relationship` v3-RoleCode `MTH` "mother"<br>`code` ICD-10 | `E14.9` "Unspecified diabetes mellitus : Without complications" |
 | Naslli anamnez (ota) | Наследственный анамнез (отец) | FamilyMemberHistory.condition.code | `relationship` v3-RoleCode `FTH` "father"<br>`code` ICD-10 | `J45.9` "Asthma, unspecified" |
 
@@ -95,7 +96,7 @@
 | Chaqaloq qon guruhi | Группа крови новорождённого | Observation.valueCodeableConcept | `code` LOINC `883-9` "ABO group [Type] in Blood"<br>`value` [Blood Group](https://terminology.dhp.uz/fhir/core/ValueSet/blood-group-vs) | Blood group A (`112144000`) |
 | Chaqaloq rezus-omili | Резус-фактор новорождённого | Observation.valueCodeableConcept | `code` LOINC `14908-8` "Rh [Type] in Blood from Newborn"<br>`value` [Blood Rh](https://terminology.dhp.uz/fhir/core/ValueSet/blood-rh-vs) | RhD positive (`165747007`) |
 | Bosh aylanasi | Окружность головы | Observation.valueQuantity | `code` LOINC `9843-4` "Head Occipital-frontal circumference" | 34 cm |
-| Ko'krak aylanasi | Окружность груди | Observation.valueQuantity | `code` SNOMED CT `248366000` "Chest circumference" | 33 cm |
+| Ko'krak aylanasi | Окружность груди | Observation.valueQuantity | `code` [Newborn Birth And Anthropometry](ValueSet-newborn-birth-and-anthropometry-code-vs.html): SNOMED CT `248366000` "Chest circumference" | 33 cm |
 | Nafas olish belgisi | Признак дыхания | Observation.valueBoolean | `code` [Newborn Signs of Life](ValueSet-newborn-signs-of-life-vs.html) `chr-0127-0001` "Presence of respiration" | true |
 | Yurak urishi belgisi | Признак сердцебиения | Observation.valueBoolean | `code` [Newborn Signs of Life](ValueSet-newborn-signs-of-life-vs.html) `chr-0127-0002` "Presence of heartbeat" | true |
 | Kindik tomirlari pulsatsiyasi | Пульсация пуповины | Observation.valueBoolean | `code` [Newborn Signs of Life](ValueSet-newborn-signs-of-life-vs.html) `chr-0127-0003` "Presence of umbilical cord pulsation" | true |
@@ -202,7 +203,7 @@
 | UZ | RU | Путь FHIR | Код | Пример значения |
 |----|----|------------|------|---------------|
 | Tug'ilishdagi vazn | Вес при рождении | Observation.valueQuantity | `code` LOINC `8339-4` "Birth weight Measured" | 3200 g |
-| Kunlik vazn (1-10 kun) | Ежедневный вес (день 1-10) | Observation.valueQuantity | `code` LOINC `3141-9` "Body weight Measured" + `29463-7` "Body weight" | 3100-3320 g |
+| Kunlik vazn (1-10 kun) | Ежедневный вес (день 1-10) | Observation.valueQuantity | `code` LOINC `3141-9` "Body weight Measured" + `29463-7` "Body weight" | 3050-3200 g |
 
 ---
 
@@ -212,9 +213,9 @@
 
 | UZ | RU | Путь FHIR | Код | Пример значения |
 |----|----|------------|------|---------------|
-| Gemorragik sindrom profilaktikasi | Профилактика геморрагического синдрома | MedicationAdministration.medication → Medication.code | SNOMED CT `74226000` "Vitamin K and/or vitamin K derivative-containing product" | 1 mg |
-| Gepatit B emlash | Вакцинация против гепатита B | Immunization.vaccineCode | CVX `08` "Hep B, adolescent or pediatric" | 0.5 mL |
-| Sil (BCG) emlash | Вакцинация БЦЖ | Immunization.vaccineCode | CVX `19` "BCG" | 0.05 mL |
+| Gemorragik sindrom profilaktikasi | Профилактика геморрагического синдрома | MedicationAdministration.medication → Medication.code | [UZ Core Medication Classification](https://dhp.uz/fhir/core/en/ValueSet-medication-classification-vs.html): INN `008052` "phytomenadione" | 1 mg |
+| Gepatit B emlash | Вакцинация против гепатита B | Immunization.vaccineCode | [UZ Core Vaccine Code](https://dhp.uz/fhir/core/en/ValueSet-vaccine-code-vs.html): CVX `08` "Hep B, adolescent or pediatric" | 0.5 mL |
+| Sil (BCG) emlash | Вакцинация БЦЖ | Immunization.vaccineCode | [UZ Core Vaccine Code](https://dhp.uz/fhir/core/en/ValueSet-vaccine-code-vs.html): CVX `19` "BCG" | 0.05 mL |
 
 ---
 
@@ -250,7 +251,7 @@
 
 | UZ | RU | Путь FHIR | Код | Пример значения |
 |----|----|------------|------|---------------|
-| Davolovchi shifokor | Лечащий врач | [PractitionerRole](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner-role.html) | `code` [Position and Profession](https://dhp.uz/fhir/core/en/ValueSet-position-and-profession-vs.html) | Vrach neonatolog (`2212.71`) |
+| Davolovchi shifokor | Лечащий врач | PractitionerRole | `code` [Position and Profession](https://dhp.uz/fhir/core/en/ValueSet-position-and-profession-vs.html) | Vrach neonatolog (`2212.71`) |
 | Hamshira | Медсестра | PractitionerRole | `code` [Position and Profession](https://dhp.uz/fhir/core/en/ValueSet-position-and-profession-vs.html) | Yetakchi hamshira (`3221.1`) |
 
 ---

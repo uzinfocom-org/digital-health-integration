@@ -1,3 +1,33 @@
+### В разработке
+
+#### Добавлено
+
+[Форма 027, выписка из медицинской карты пациента](StructureDefinition-form-027-medical-record-extract-composition.html), профилирована как FHIR-документ: регистрационные и личные данные, адрес, направление и диагноз, клинические данные, лечение и рекомендации, последующие мероприятия и ответственные лица в 8 разделах Composition. К ней прилагаются пример документа (Bundle) и [страница пополевого сопоставления](form-027-mapping.html).
+
+[Форма 003 - медицинская карта стационарного больного](StructureDefinition-form-003-inpatient-medical-record-composition.html) профилирована как FHIR-документ, охватывающий административные и личные сведения, поступление, осмотр при поступлении, первичный осмотр, план и результаты обследования, диагнозы, операции, листы назначений и процедур, температурный лист, течение болезни, исход лечения, временную нетрудоспособность, патологоанатомическое заключение и ответственных лиц в 20 разделах Composition. Для неё есть пример документа-Bundle и [страница пополевого сопоставления](form-003-mapping.html).
+
+#### Изменено
+
+Composition для [Форма 011](StructureDefinition-form-011-hemodialysis-composition.html), [Форма 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Форма 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) и [Форма 130](StructureDefinition-form-130-laboratory-test-results-composition.html) больше не фиксируют `status` как `final`, поэтому документ может проходить [жизненный цикл](document-statuses.html) через `preliminary`, `amended` и `entered-in-error`.
+
+### Версия 0.12.1
+
+#### Изменено
+
+Наборы значений [формы 097](form-097-mapping.html) и [формы 111](form-111-mapping.html) ссылаются на свои дополнения SNOMED CT и LOINC, поэтому их коды отображаются на русском и узбекском.
+
+Организации в примерах [формы 097](form-097-mapping.html) идентифицируются по ИНН Soliq, как и в примерах других форм начиная с 0.12.0. Medication витамина K - UZ Core Medication с кодом МНН, а документ датирован выпиской.
+
+Записи раздела профилактики и иммунизации [формы 097](StructureDefinition-form-097-newborn-development-composition.html) ссылаются на [UZ Core Immunization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-immunization.html) вместо любого Immunization, поэтому прививки в форме 097 соответствуют UZ Core.
+
+Системы кодов и наборы значений оценки компонентов Апгар, базового цвета кожи новорождённого и места ухода за новорождённым (`apgar-component-score-cs`, `newborn-skin-color-basic-cs`, `newborn-care-location-cs` и их наборы значений `-vs`) удалены. Ни один профиль к ним не привязан: форма 097 кодирует оценку по Апгар кодом LOINC, а цвет кожи - из [Newborn Skin Color Detailed](ValueSet-newborn-skin-color-detailed-vs.html).
+
+Записи регистрационного раздела [формы 111](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) также могут быть [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html). В [Previous Pregnancy Outcome](ValueSet-form111-previous-pregnancy-outcome-vs.html) добавлен выкидыш (SNOMED CT `17369002`). [Сопоставление формы 111](form-111-mapping.html) описывает жизненный цикл Composition.status: `preliminary`, пока карта открыта, `final` после её закрытия, `amended` для последующих исправлений и `entered-in-error`, если карта отозвана как ошибочная. [Номер индивидуальной карты беременной](NamingSystem-antenatal-card-number-system.html) передаётся в EpisodeOfCare.identifier, а не в Encounter.identifier.
+
+#### Документация
+
+[Обзор форм](forms-overview.html) и страницы его 11 томов вместе с диаграммами доступны на русском и узбекском языках.
+
 ### Версия 0.12.0
 
 #### Добавлено

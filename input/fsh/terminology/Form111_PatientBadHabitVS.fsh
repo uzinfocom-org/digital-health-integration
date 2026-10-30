@@ -3,6 +3,8 @@ Id: form111-patient-bad-habit-vs
 Title: "Form 111 Patient Bad Habits ValueSet"
 Description: "Form 111 Patient Bad Habits ValueSet"
 * insert IntegrationsValueSet(form111-patient-bad-habit-vs)
+* ^extension[0].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(Form111SnomedSupplementCS)
 
 * include codes from system form111-patient-bad-habit-cs
 

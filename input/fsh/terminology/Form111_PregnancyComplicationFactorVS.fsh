@@ -3,6 +3,8 @@ Id: form111-pregnancy-complication-factor-vs
 Title: "Pregnancy Complication Factor ValueSet"
 Description: "Form 111 Pregnancy Complication Factor ValueSet"
 * insert IntegrationsValueSet(form111-pregnancy-complication-factor-vs)
+* ^extension[0].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(Form111SnomedSupplementCS)
 
 * include codes from system form111-pregnancy-complication-factor-cs
 

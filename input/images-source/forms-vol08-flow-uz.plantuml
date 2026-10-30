@@ -1,0 +1,25 @@
+@startuml forms-vol08-flow-uz
+title Namunaviy yo'l - donordan retsipiyentgacha (8-jilddan 1-jildga)
+autonumber
+
+actor Donor as D
+participant "Donorlar bo'limi\n(8-jild)" as DD
+participant "Laboratoriya\n(8-jild)" as LAB
+participant "Komponentlar\nishlab chiqarish (8-jild)" as CP
+participant "Kasalxona bo'limi\n(1-jild)" as WARD
+
+D -> DD : 195 ariza, 196/199 donor kartasi
+DD -> LAB : skrining uchun namuna
+LAB -> LAB : 203/217 guruh va Rh, 204 brutsellyoz,\n218 zaxm/HBsAg/OIV, 219 klinik/biokimyoviy
+alt donorga ruxsat berildi
+  DD -> DD : 201 butun qon / 198 aferez usulida tayyorlash
+  DD -> CP : birlik qayta ishlashga yuborildi
+  CP -> CP : 207 komponentlar, 208 kriopretsipitat,\n209 plazma, 210 yuvilgan eritrotsitlar
+  CP -> CP : 205 sterillikni tekshirish
+  WARD -> CP : 213 qon mahsulotlariga talabnoma
+  CP -> WARD : 211 tayyor mahsulotni berish
+  WARD -> WARD : 009 yotoq yonida qon quyish (1-jild)
+else skrining musbat
+  LAB -> DD : 216 OIV-seropozitiv donorlar jurnali\n206 yaroqsiz komponentlarni yo'q qilish
+end
+@enduml

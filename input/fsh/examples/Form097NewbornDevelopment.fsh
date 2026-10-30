@@ -222,14 +222,6 @@ Description: "Example of Form 097 newborn development medical record"
 * entry[=].resource = observation-weight-day5-097
 * entry[+].fullUrl = "urn:uuid:09700086-1111-2222-3333-444444444444"
 * entry[=].resource = observation-weight-day6-097
-* entry[+].fullUrl = "urn:uuid:09700087-1111-2222-3333-444444444444"
-* entry[=].resource = observation-weight-day7-097
-* entry[+].fullUrl = "urn:uuid:09700088-1111-2222-3333-444444444444"
-* entry[=].resource = observation-weight-day8-097
-* entry[+].fullUrl = "urn:uuid:09700089-1111-2222-3333-444444444444"
-* entry[=].resource = observation-weight-day9-097
-* entry[+].fullUrl = "urn:uuid:0970008a-1111-2222-3333-444444444444"
-* entry[=].resource = observation-weight-day10-097
 
 // prophylaxis / immunization
 * entry[+].fullUrl = "urn:uuid:09700090-1111-2222-3333-444444444444"
@@ -330,7 +322,7 @@ Usage: #inline
 * category[formCategory] = $document-category-cs#form-097 "Newborn development medical record"
 * subject = Reference(urn:uuid:09700002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
-* date = "2026-06-01T09:00:00+05:00"
+* date = "2026-06-07T12:00:00+05:00"
 // Synthetic example: the nurse (PractitionerRole) saved the current revision.
 * author[0] = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
 * title = "Form 097 - Newborn Development Medical Record"
@@ -467,10 +459,6 @@ Usage: #inline
 * section[weightDynamics].entry[+] = Reference(urn:uuid:09700084-1111-2222-3333-444444444444)
 * section[weightDynamics].entry[+] = Reference(urn:uuid:09700085-1111-2222-3333-444444444444)
 * section[weightDynamics].entry[+] = Reference(urn:uuid:09700086-1111-2222-3333-444444444444)
-* section[weightDynamics].entry[+] = Reference(urn:uuid:09700087-1111-2222-3333-444444444444)
-* section[weightDynamics].entry[+] = Reference(urn:uuid:09700088-1111-2222-3333-444444444444)
-* section[weightDynamics].entry[+] = Reference(urn:uuid:09700089-1111-2222-3333-444444444444)
-* section[weightDynamics].entry[+] = Reference(urn:uuid:0970008a-1111-2222-3333-444444444444)
 
 * section[prophylaxisImmunization].title = "8. Prophylaxis and immunization"
 * section[prophylaxisImmunization].code = $loinc#11369-6 "History of Immunization note"
@@ -606,11 +594,10 @@ Usage: #inline
 * birthDate = "1992-03-12"
 
 Instance: organization-097-001
-InstanceOf: Organization
+InstanceOf: UZCoreOrganization
 Usage: #inline
 * language = #en
-* identifier.system = "https://dhp.uz/fhir/core/sid/uz/organization-code"
-* identifier.value = "200001"
+* identifier[taxId].value = "201122349"
 * name = "Toshkent shahar perinatal markazi"
 
 Instance: location-ward-097
@@ -1386,7 +1373,7 @@ Usage: #inline
 * code.coding.display = "Birth injury, unspecified"
 * subject = Reference(urn:uuid:09700002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
-* onsetDateTime = "2026-06-01T14:32:00+05:00"
+* onsetDateTime = "2026-06-01T09:00:00+05:00"
 
 Instance: observation-exam-asymmetry-097
 InstanceOf: UZCoreObservation
@@ -1900,68 +1887,12 @@ Usage: #inline
 * effectiveDateTime = "2026-06-07T09:00:00+05:00"
 * valueQuantity = 3200 'g' "g"
 
-Instance: observation-weight-day7-097
-InstanceOf: UZCoreObservation
-Usage: #inline
-* language = #en
-* status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
-* code = $loinc#3141-9 "Body weight Measured"
-* code.coding[+] = $loinc#29463-7 "Body weight"
-* subject = Reference(urn:uuid:09700002-1111-2222-3333-444444444444)
-* encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
-* performer = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
-* effectiveDateTime = "2026-06-08T09:00:00+05:00"
-* valueQuantity = 3230 'g' "g"
-
-Instance: observation-weight-day8-097
-InstanceOf: UZCoreObservation
-Usage: #inline
-* language = #en
-* status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
-* code = $loinc#3141-9 "Body weight Measured"
-* code.coding[+] = $loinc#29463-7 "Body weight"
-* subject = Reference(urn:uuid:09700002-1111-2222-3333-444444444444)
-* encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
-* performer = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
-* effectiveDateTime = "2026-06-09T09:00:00+05:00"
-* valueQuantity = 3260 'g' "g"
-
-Instance: observation-weight-day9-097
-InstanceOf: UZCoreObservation
-Usage: #inline
-* language = #en
-* status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
-* code = $loinc#3141-9 "Body weight Measured"
-* code.coding[+] = $loinc#29463-7 "Body weight"
-* subject = Reference(urn:uuid:09700002-1111-2222-3333-444444444444)
-* encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
-* performer = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
-* effectiveDateTime = "2026-06-10T09:00:00+05:00"
-* valueQuantity = 3290 'g' "g"
-
-Instance: observation-weight-day10-097
-InstanceOf: UZCoreObservation
-Usage: #inline
-* language = #en
-* status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
-* code = $loinc#3141-9 "Body weight Measured"
-* code.coding[+] = $loinc#29463-7 "Body weight"
-* subject = Reference(urn:uuid:09700002-1111-2222-3333-444444444444)
-* encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
-* performer = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
-* effectiveDateTime = "2026-06-11T09:00:00+05:00"
-* valueQuantity = 3320 'g' "g"
-
-
 Instance: medication-vitamin-k-097
-InstanceOf: Medication
+InstanceOf: UZCoreMedication
 Usage: #inline
 * language = #en
-* code = $sct#74226000 "Vitamin K and/or vitamin K derivative-containing product"
+* identifier[registrationCertificateID].value = "UZ/MED/2025/00418"
+* code = https://terminology.dhp.uz/fhir/core/CodeSystem/inn-medication-name-cs#008052 "phytomenadione"
 * batch.lotNumber = "VK-2026-0417"
 * batch.expirationDate = "2027-06-01"
 
@@ -1979,12 +1910,13 @@ Usage: #inline
 * performer[+].actor = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
 
 Instance: immunization-hepb-097
-InstanceOf: Immunization
+InstanceOf: UZCoreImmunization
 Usage: #inline
 * language = #en
 * status = #completed
 * vaccineCode = http://hl7.org/fhir/sid/cvx#08 "Hep B, adolescent or pediatric"
 * patient = Reference(urn:uuid:09700002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
 * occurrenceDateTime = "2026-06-01T10:00:00+05:00"
 * note.text = "Day 0 of life"
 * doseQuantity = 0.5 'mL' "mL"
@@ -1993,12 +1925,13 @@ Usage: #inline
 * performer.actor = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
 
 Instance: immunization-tb-097
-InstanceOf: Immunization
+InstanceOf: UZCoreImmunization
 Usage: #inline
 * language = #en
 * status = #completed
 * vaccineCode = http://hl7.org/fhir/sid/cvx#19 "BCG"
 * patient = Reference(urn:uuid:09700002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
 * occurrenceDateTime = "2026-06-03T10:00:00+05:00"
 * note.text = "Day 2 of life"
 * doseQuantity = 0.05 'mL' "mL"

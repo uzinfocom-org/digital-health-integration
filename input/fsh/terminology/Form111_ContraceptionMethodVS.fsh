@@ -3,6 +3,8 @@ Id: form111-contraception-method-vs
 Title: "Form 111 Contraception Method ValueSet"
 Description: "Contraception methods DMED sends in contraception_details. The paper form records only the contraception type; DMED adds the method."
 * insert IntegrationsValueSet(form111-contraception-method-vs)
+* ^extension[0].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(Form111SnomedSupplementCS)
 
 * $sct#275572005 "History of female sterilization"
 * $sct#830148006 "Partner had vasectomy"

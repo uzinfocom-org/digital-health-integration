@@ -1,0 +1,63 @@
+@startuml forms-vol02-structure-ru
+hide circle
+hide empty members
+skinparam linetype ortho
+title Том 2 - семейства амбулаторных форм, цвет по типу документа
+
+skinparam class {
+  BackgroundColor<<register>> #ECEFF1
+  BackgroundColor<<card>> #E8F0FE
+  BackgroundColor<<certificate>> #FEF7E0
+  BackgroundColor<<notify>> #FCE8E6
+  BackgroundColor<<order>> #E6F4EA
+  BackgroundColor<<sheet>> #FFF3E0
+}
+
+class "024 Регистрация\nамбулаторных посещений" as F024 <<register>>
+class "024-1..024-4\nежедневные журналы приёма" as F024x <<register>>
+class "025 Медицинская карта\nамбулаторного больного" as F025 <<card>>
+
+class "030 Карта диспансерного\nнаблюдения" as F030 <<card>>
+class "030-1 психиатрия" as F030a <<card>>
+class "030-2 онкология" as F030b <<card>>
+class "030-3 талон снятия с учёта\nпсихоневрологического диспансера" as F030c <<sheet>>
+class "030-4 туберкулёз" as F030d <<card>>
+
+class "063 Карта\nпрививок" as F063 <<card>>
+class "064 Журнал\nпрививок" as F064 <<register>>
+
+class "086 Медицинская\nсправка" as F086 <<certificate>>
+class "086-1..086-4\nварианты справки" as F086x <<certificate>>
+class "043 иностранцам /\n044 справка для выезда" as F043 <<certificate>>
+
+class "089 Извещение\nо ТБ/ИППП" as F089 <<notify>>
+class "090 Извещение\nо раке" as F090 <<notify>>
+class "091 Наркологическое\nизвещение" as F091 <<notify>>
+
+class "037-1 Пренатальное\nнаправление" as F037 <<order>>
+class "111 Индивидуальная\nкарта беременной" as F111 <<card>>
+
+F024 --> F024x
+F024 --> F025 : открывает карту
+F025 ..> F030 : хроническое заболевание -> диспансер
+F030 --> F030a
+F030 --> F030b
+F030 --> F030c
+F030 --> F030d
+F025 ..> F086 : выдаёт справку
+F086 --> F086x
+F025 ..> F089 : впервые выявленный диагноз
+F025 ..> F090
+F025 ..> F091
+F025 ..> F111 : беременность
+F111 ..> F037 : направление на скрининг
+
+legend right
+  Серый = журнал (для выборок, не документ)
+  Синий = карта длительного наблюдения
+  Жёлтый = справка
+  Оранжевый = разовый статистический талон
+  Красный = извещение (в регистры специализированных диспансеров)
+  Зелёный = направление (связь с томом 6)
+endlegend
+@enduml

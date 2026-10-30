@@ -376,7 +376,6 @@ Usage: #inline
 * section[=].entry[+] = Reference(urn:uuid:11100024-1111-2222-3333-444444444444) //observation-111-working-conditions
 * section[=].entry[+] = Reference(urn:uuid:11100146-1111-2222-3333-444444444444) //observation-111-workplace-phone
 * section[=].entry[+] = Reference(urn:uuid:11100025-1111-2222-3333-444444444444) //observation-111-spouse-workplace
-* section[=].entry[+] = Reference(urn:uuid:11100026-1111-2222-3333-444444444444) //observation-111-spouse-health
 
 // --- 1b. Ro'yxatga olishdagi laboratoriya tekshiruvlari ---
 * section[registrationLaboratoryTests].title = "Ro'yxatga olishdagi laboratoriya tekshiruvlari"
@@ -428,6 +427,7 @@ Usage: #inline
 * section[=].entry[+] = Reference(urn:uuid:11100045-1111-2222-3333-444444444444) //observation-111-lmp-end
 * section[=].entry[+] = Reference(urn:uuid:11100046-1111-2222-3333-444444444444) //observation-111-sexual-debut-age
 * section[=].entry[+] = Reference(urn:uuid:11100047-1111-2222-3333-444444444444) //observation-111-quickening-date
+* section[=].entry[+] = Reference(urn:uuid:11100026-1111-2222-3333-444444444444) //observation-111-spouse-health
 
 // --- 5. Avvalgi homiladorliklarning yakuni ---
 * section[previousPregnanciesOutcome].title = "Avvalgi homiladorliklarning yakuni"
