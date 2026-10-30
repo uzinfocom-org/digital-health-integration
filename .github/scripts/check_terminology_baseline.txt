@@ -1,0 +1,51 @@
+# Terminology problems that predate check_terminology.py. Remove a line when you fix it.
+missing-supplement ValueSet/cancer-icd-10-vs -> CodeSystem/screening-diagnosis-translations-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-body-location-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-cc-c-n-category-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-cc-p-m-category-snomed-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-cc-p-n-category-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-cc-p-t-category-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-ccc-m-category-snomed-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-ccc-t-category-snomed-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-degree-differentiation-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-laterality-qualifier-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/cancer-treatment-intent-snomed-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/encounter-class-official-cs
+missing-supplement ValueSet/cancer-registry-dhp-status-target-vs -> CodeSystem/form111-snomed-supplement-cs
+missing-supplement ValueSet/care-plan-status-vs -> CodeSystem/care-plan-status-official-cs
+missing-supplement ValueSet/cvd-tobacco-use-vs -> CodeSystem/screening-snomed-translations-cs
+missing-supplement ValueSet/encounter-class-sickleave-vs -> CodeSystem/encounter-class-official-cs
+missing-supplement ValueSet/fertility-questionnaire-vs -> CodeSystem/form111-snomed-supplement-cs
+missing-supplement ValueSet/fertility-questionnaire-vs -> CodeSystem/screening-snomed-translations-cs
+missing-supplement ValueSet/fertility-questionnaire-vs -> CodeSystem/screening-yes-no-translations-cs
+missing-supplement ValueSet/form111-pregnancy-outcome-vs -> CodeSystem/screening-snomed-translations-cs
+missing-supplement ValueSet/form111-previous-pregnancy-outcome-vs -> CodeSystem/screening-snomed-translations-cs
+missing-supplement ValueSet/maternal-laboratory-and-blood-code-vs -> CodeSystem/form111-loinc-supplement-cs
+missing-supplement ValueSet/maternal-postpartum-assessment-code-vs -> CodeSystem/form111-loinc-supplement-cs
+missing-supplement ValueSet/newborn-daily-observation-component-vs -> CodeSystem/form096-loinc-supplement-cs
+missing-supplement ValueSet/pregnancy-obstetric-history-code-vs -> CodeSystem/form111-loinc-supplement-cs
+missing-supplement ValueSet/screening-colposcopy-vs -> CodeSystem/screening-snomed-translations-cs
+missing-supplement ValueSet/screening-observation-codes-vs -> CodeSystem/screening-diagnostic-procedure-cs
+unused CodeSystem/narcology-psychiatry-episode-of-care-type-group-snomed-cs
+unused CodeSystem/narcology-psychiatry-registry-flag-snomed-cs
+unused CodeSystem/respiratory-auscultation-cs
+unused CodeSystem/screening-diagnosis-translations-cs
+unused CodeSystem/screening-yes-no-translations-cs
+unused CodeSystem/type-resource-snomed-cs
+unused ValueSet/ballard-arm-recoil-vs
+unused ValueSet/ballard-breast-maturity-vs
+unused ValueSet/ballard-eye-ear-maturity-vs
+unused ValueSet/ballard-female-genital-maturity-vs
+unused ValueSet/ballard-male-genital-maturity-vs
+unused ValueSet/ballard-plantar-surface-vs
+unused ValueSet/ballard-popliteal-angle-vs
+unused ValueSet/ballard-square-window-vs
+unused ValueSet/cyanosis-distribution-vs
+unused ValueSet/diagnosis-role-integration-vs
+unused ValueSet/ear-morphology-vs
+unused ValueSet/form-003-observation-code-vs
+unused ValueSet/form-003-section-vs
+unused ValueSet/patient-transport-mobility-vs
+unused ValueSet/respiratory-auscultation-vs
+unused ValueSet/urination-ease-vs
+unused ValueSet/work-capacity-status-vs
