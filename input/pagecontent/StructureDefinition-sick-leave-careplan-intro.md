@@ -15,7 +15,8 @@ The elements below must always be present (mandatory) or must be supported when 
 #### Each Sick Leave CarePlan Must Support
 
 - the version and last change in `meta.versionId` and `meta.lastUpdated`;
-- the reason in `addresses[reason]` and up to two diagnoses in `addresses[diagnosis]`;
+- the reason in `addresses[reason]` and up to two diagnoses of the patient in `addresses[diagnosis]`;
+- for care of a sick family member (`FMC`), the family member's diagnosis as an ICD-10 code in `addresses[familyDiagnosis]`, not as a Condition;
 - the status history in `extension[statusHistory]`, the periods of incapacity in `extension[incapacityPeriod]` and their overall span in `period`;
 - the creation time in `created`;
 - the issuing doctor in `contributor`, the chief physician in `extension[headPractitioner]` and the issuing organization in `custodian`;

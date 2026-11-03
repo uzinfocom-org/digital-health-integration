@@ -17,7 +17,8 @@ Sick Leave CarePlan - это сам листок нетрудоспособно�
 #### Каждый Sick Leave CarePlan должен поддерживать (Must Support)
 
 - версию и время последнего изменения в `meta.versionId` и `meta.lastUpdated`;
-- причину в `addresses[reason]` и до двух диагнозов в `addresses[diagnosis]`;
+- причину в `addresses[reason]` и до двух диагнозов пациента в `addresses[diagnosis]`;
+- при уходе за больным членом семьи (`FMC`) - диагноз члена семьи как код ICD-10 в `addresses[familyDiagnosis]`, а не Condition;
 - историю статусов в `extension[statusHistory]`, периоды нетрудоспособности в `extension[incapacityPeriod]` и их общий интервал в `period`;
 - время создания в `created`;
 - выдавшего врача в `contributor`, главного врача в `extension[headPractitioner]` и выдавшую организацию в `custodian`;

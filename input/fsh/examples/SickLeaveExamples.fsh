@@ -96,7 +96,8 @@ Usage: #example
 * contributor = Reference(sick-leave-practitioner)
 * custodian = Reference(sick-leave-organization)
 * addresses[reason].concept = CarePlanReasonCS#FMC "Family Member Care"
-* addresses[diagnosis].reference = Reference(sick-leave-family-care-diagnosis)
+* addresses[familyDiagnosis].concept = $icd-10#I63.9
+* addresses[familyDiagnosis].concept.text = "Cerebral infarction, unspecified"
 * extension[workflowStatus].valueCode = #opened
 * extension[statusHistory].extension[status].valueCode = #opened
 * extension[statusHistory].extension[period].valuePeriod.start = "2026-09-01"
@@ -121,18 +122,6 @@ Usage: #example
 * component[nonLocal].valueBoolean = true
 * component[epidemiologicalHistory].code = SickLeaveComponentCS#epidemiological-history "Epidemiological history"
 * component[epidemiologicalHistory].valueString = "No contact with infectious patients in the last 21 days"
-
-Instance: sick-leave-family-care-diagnosis
-InstanceOf: SickLeaveCondition
-Title: "Example Sick Leave Diagnosis - Family Care"
-Description: "Preliminary diagnosis of the family care sick leave"
-Usage: #example
-* language = #en
-* clinicalStatus = $condition-clinical#active
-* verificationStatus = $condition-ver-status#provisional
-* code = $icd-10#I63.9
-* code.text = "Cerebral infarction, unspecified"
-* subject = Reference(sick-leave-patient)
 
 Instance: sick-leave-related-person-mother
 InstanceOf: SickLeaveRelatedPerson

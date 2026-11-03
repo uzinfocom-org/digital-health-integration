@@ -73,6 +73,7 @@ Example: [sick-leave-extended](CarePlan-sick-leave-extended.html)
 | Document type | `type` | [SickLeaveCategoryVS](ValueSet-sick-leave-category-vs.html) | `sick-leave-category-cs#SL` (Sick Leave) | `category` |
 | Reason | `reason` | [CarePlanReasonVS](ValueSet-care-plan-reason-vs.html) | `care-plan-reason-cs#DIS` (Disease) | `addresses[reason]` |
 | Preliminary and final diagnosis | `diagnosis` | - | reference to [SickLeaveCondition](#recording-the-diagnoses-condition) | `addresses[diagnosis]` |
+| Diagnosis of the family member cared for | `diagnosis` | [ICD10VS](ValueSet-icd-10-vs.html) | `ICD-10#I63.9` | `addresses[familyDiagnosis]`, when the reason is `FMC` - see [below](#family-member-diagnosis) |
 | Lifecycle status | `status` | [CarePlanStatusVS](ValueSet-care-plan-status-vs.html) | `care-plan-status-local-cs#closed` | `extension[workflowStatus]` + base `status` (both always set) |
 | Status history | `statuses[]` | [CarePlanStatusVS](ValueSet-care-plan-status-vs.html) | one entry per status, with its period | `extension[statusHistory]` |
 | Periods of incapacity | `dates[]` | - | `2026-08-04` to `2026-08-06` | `extension[incapacityPeriod]`, one per period |
@@ -153,6 +154,10 @@ Examples: [preliminary](Condition-sick-leave-extended-diagnosis-preliminary.html
 `clinicalStatus` is required by FHIR: `active` while the sick leave is open, `resolved` once it is closed.
 
 A closed sick leave does not always have both diagnoses: a sick leave [closed automatically](#auto-close) may have only the preliminary or only the final one, so `addresses[diagnosis]` can hold either of them alone.
+
+#### Diagnosis of a family member {#family-member-diagnosis}
+
+When the reason is `FMC` (care for a sick family member), the diagnosis belongs to the family member, not to the patient. It is not recorded as a Condition: `Condition.subject` can only be a Patient or a Group, and a Condition with the patient as its subject would put the family member's disease into the patient's record. The ICD-10 code goes directly into `addresses[familyDiagnosis].concept` of the CarePlan, with the name of the diagnosis in `concept.text`; the family member is the [related person](#family-care-the-person-cared-for-relatedperson). Example: [sick-leave-family-care](CarePlan-sick-leave-family-care.html).
 
 ### Recording additional attributes (Observation)
 
@@ -817,7 +822,8 @@ Before sending sick leaves to the DHP, check that:
 - `category` is the API `type` from [SickLeaveCategoryVS](ValueSet-sick-leave-category-vs.html), and `addresses[reason]` the API `reason` from [CarePlanReasonVS](ValueSet-care-plan-reason-vs.html);
 - `extension[workflowStatus]` and `status` [agree with each other](#recording-the-lifecycle-status): `opened` and `extended` are `active`, `closed` is `completed`, `cancelled` is `revoked`;
 - every element of `statuses` is an `extension[statusHistory]` entry and every element of `dates` an `extension[incapacityPeriod]`, and `period` spans all periods;
-- each diagnosis is a [SickLeaveCondition](#recording-the-diagnoses-condition): `provisional` for the preliminary, `confirmed` for the final, `resolved` once the sick leave is closed;
+- each diagnosis of the patient is a [SickLeaveCondition](#recording-the-diagnoses-condition): `provisional` for the preliminary, `confirmed` for the final, `resolved` once the sick leave is closed;
+- for `FMC` the family member's diagnosis is an ICD-10 code in [`addresses[familyDiagnosis]`](#family-member-diagnosis), not a Condition;
 - the [Observation](#recording-additional-attributes-observation) is `basedOn` the CarePlan and has only the components with a value;
 - a [RelatedPerson](#family-care-the-person-cared-for-relatedperson) is written before the CarePlan that references it, and only when the document has one;
 - every change is a [new version](#one-sick-leave-three-versions) of the whole CarePlan with `meta.versionId` and `meta.lastUpdated` taken from the API;

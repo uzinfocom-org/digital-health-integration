@@ -3,7 +3,6 @@ Parent: CarePlan
 Id: sick-leave-careplan
 Title: "Sick Leave CarePlan"
 Description: "FHIR R5 CarePlan profile representing a Sick Leave case (LN lifecycle)"
-* insert SickLeaveContact
 * ^experimental = true
 * ^status = #draft
 * ^publisher = "UZINFOCOM"
@@ -49,20 +48,32 @@ Description: "FHIR R5 CarePlan profile representing a Sick Leave case (LN lifecy
 * custodian only Reference(UZCoreOrganization)
 * custodian ^short = "Organization that issued the sick leave (organization)"
 
-* addresses ^slicing.discriminator.type = #exists
-* addresses ^slicing.discriminator.path = "concept"
+* addresses ^slicing.discriminator[0].type = #exists
+* addresses ^slicing.discriminator[=].path = "reference"
+* addresses ^slicing.discriminator[+].type = #value
+* addresses ^slicing.discriminator[=].path = "concept.coding.system"
 * addresses ^slicing.rules = #open
 * addresses contains
     reason 0..1 MS and
-    diagnosis 0..2 MS
+    diagnosis 0..2 MS and
+    familyDiagnosis 0..2 MS
 * addresses[reason].concept 1..1
+* addresses[reason].concept.coding 1..1
+* addresses[reason].concept.coding.system = "https://terminology.dhp.uz/fhir/integrations/CodeSystem/care-plan-reason-cs"
 * addresses[reason].reference 0..0
 * addresses[reason] from CarePlanReasonVS (required)
 * addresses[reason] ^short = "Reason for the incapacity (reason)"
 * addresses[diagnosis] only CodeableReference(SickLeaveCondition)
 * addresses[diagnosis].concept 0..0
 * addresses[diagnosis].reference 1..1
-* addresses[diagnosis] ^short = "Preliminary and final diagnosis (diagnosis)"
+* addresses[diagnosis] ^short = "Preliminary and final diagnosis of the patient (diagnosis)"
+* addresses[familyDiagnosis].concept 1..1
+* addresses[familyDiagnosis].concept.coding 1..1
+* addresses[familyDiagnosis].concept.coding.system = "http://hl7.org/fhir/sid/icd-10"
+* addresses[familyDiagnosis].reference 0..0
+* addresses[familyDiagnosis] from ICD10VS (required)
+* addresses[familyDiagnosis] ^short = "Diagnosis of the family member cared for, ICD-10 code (diagnosis)"
+* addresses[familyDiagnosis] ^comment = "Used when the reason is FMC (care for a sick family member): the diagnosis belongs to the family member, not to the patient, so it is not a Condition of the patient. The name of the diagnosis goes in concept.text."
 
 * extension contains
     WorkflowStatus named workflowStatus 1..1 MS and

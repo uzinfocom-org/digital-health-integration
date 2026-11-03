@@ -1,6 +1,6 @@
 > **Машинный перевод, требуется проверка человеком.** Эта страница автоматически переведена с английского языка с помощью искусственного интеллекта и пока не проверена редактором. При любых расхождениях приоритет имеет оригинальная англоязычная версия.
 
-Sick Leave Condition - это диагноз листка нетрудоспособности: предварительный или итоговый диагноз, который сервис больничных листов DHP (API v3) передаёт в `diagnosis`. Каждый из них - отдельный Condition, на который [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) ссылается из `addresses[diagnosis]`; их различает статус верификации. Сопоставление полей см. на странице [листка нетрудоспособности](sick-leave.html#recording-the-diagnoses-condition).
+Sick Leave Condition - это диагноз листка нетрудоспособности: предварительный или итоговый диагноз, который сервис больничных листов DHP (API v3) передаёт в `diagnosis`. Это всегда диагноз самого пациента: диагноз члена семьи при уходе за ним - не Condition, а код ICD-10 в `addresses[familyDiagnosis]` CarePlan ([почему](sick-leave.html#family-member-diagnosis)). Каждый из них - отдельный Condition, на который [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) ссылается из `addresses[diagnosis]`; их различает статус верификации. Сопоставление полей см. на странице [листка нетрудоспособности](sick-leave.html#recording-the-diagnoses-condition).
 
 ### Обязательные и поддерживаемые (Must Support) элементы данных
 
@@ -108,4 +108,4 @@ Sick Leave Condition - это диагноз листка нетрудоспос
 }
 ```
 
-Эталонные экземпляры: [предварительный](Condition-sick-leave-extended-diagnosis-preliminary.html) и [итоговый](Condition-sick-leave-extended-diagnosis-final.html) диагноз продлённого листка, [диагноз при уходе за членом семьи](Condition-sick-leave-family-care-diagnosis.html).
+Эталонные экземпляры: [предварительный](Condition-sick-leave-extended-diagnosis-preliminary.html) и [итоговый](Condition-sick-leave-extended-diagnosis-final.html) диагноз продлённого листка.

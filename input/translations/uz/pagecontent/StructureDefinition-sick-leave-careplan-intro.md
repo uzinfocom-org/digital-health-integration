@@ -17,7 +17,8 @@ Quyidagi elementlar doimo mavjud bo'lishi (majburiy) yoki ma'lumot mavjud bo'lga
 #### Har bir Sick Leave CarePlan qo'llab-quvvatlashi kerak (Must Support)
 
 - `meta.versionId` va `meta.lastUpdated` dagi versiya va oxirgi o'zgarish vaqti;
-- `addresses[reason]` dagi sabab va `addresses[diagnosis]` dagi ikkitagacha tashxis;
+- `addresses[reason]` dagi sabab va `addresses[diagnosis]` dagi bemorning ikkitagacha tashxisi;
+- kasal oila a'zosini parvarish qilishda (`FMC`) oila a'zosining tashxisi Condition sifatida emas, `addresses[familyDiagnosis]` dagi ICD-10 kodi sifatida;
 - `extension[statusHistory]` dagi holatlar tarixi, `extension[incapacityPeriod]` dagi mehnatga layoqatsizlik davrlari va `period` dagi ularning umumiy oralig'i;
 - `created` dagi yaratilgan vaqt;
 - `contributor` dagi varaqani bergan shifokor, `extension[headPractitioner]` dagi bosh shifokor va `custodian` dagi varaqani bergan tashkilot;

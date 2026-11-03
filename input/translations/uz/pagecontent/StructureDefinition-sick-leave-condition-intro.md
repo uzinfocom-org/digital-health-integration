@@ -1,6 +1,6 @@
 > **Mashina tarjimasi, inson tomonidan tekshirilishi zarur.** Ushbu sahifa ingliz tilidan sun'iy intellekt yordamida avtomatik tarjima qilingan va hali muharrir tomonidan tekshirilmagan. Har qanday nomuvofiqlikda asl inglizcha versiya ustuvor hisoblanadi.
 
-Sick Leave Condition - bu mehnatga layoqatsizlik varaqasining tashxisi: DHP mehnatga layoqatsizlik varaqalari xizmati (API v3) `diagnosis` da yuboradigan dastlabki yoki yakuniy tashxis. Ularning har biri [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) `addresses[diagnosis]` dan havola qiladigan alohida Condition dir; ularni verifikatsiya holati farqlaydi. Moslikni [mehnatga layoqatsizlik varaqasi](sick-leave.html#recording-the-diagnoses-condition) sahifasida ko'ring.
+Sick Leave Condition - bu mehnatga layoqatsizlik varaqasining tashxisi: DHP mehnatga layoqatsizlik varaqalari xizmati (API v3) `diagnosis` da yuboradigan dastlabki yoki yakuniy tashxis. Bu har doim bemorning o'z tashxisi: oila a'zosini parvarish qilishda uning tashxisi Condition emas, CarePlan ning `addresses[familyDiagnosis]` idagi ICD-10 kodi ([nima uchun](sick-leave.html#family-member-diagnosis)). Ularning har biri [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) `addresses[diagnosis]` dan havola qiladigan alohida Condition dir; ularni verifikatsiya holati farqlaydi. Moslikni [mehnatga layoqatsizlik varaqasi](sick-leave.html#recording-the-diagnoses-condition) sahifasida ko'ring.
 
 ### Majburiy va qo'llab-quvvatlanadigan (Must Support) ma'lumot elementlari
 
@@ -108,4 +108,4 @@ Tashxis aniqlashtirilganda yakuniy tashxisni ikkinchi Condition sifatida yuborin
 }
 ```
 
-Namunaviy nusxalar: uzaytirilgan varaqaning [dastlabki](Condition-sick-leave-extended-diagnosis-preliminary.html) va [yakuniy](Condition-sick-leave-extended-diagnosis-final.html) tashxisi, [oila a'zosini parvarish qilishdagi tashxis](Condition-sick-leave-family-care-diagnosis.html).
+Namunaviy nusxalar: uzaytirilgan varaqaning [dastlabki](Condition-sick-leave-extended-diagnosis-preliminary.html) va [yakuniy](Condition-sick-leave-extended-diagnosis-final.html) tashxisi.

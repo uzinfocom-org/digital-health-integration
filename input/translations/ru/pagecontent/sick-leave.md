@@ -75,6 +75,7 @@
 | Тип документа | `type` | [SickLeaveCategoryVS](ValueSet-sick-leave-category-vs.html) | `sick-leave-category-cs#SL` (Листок нетрудоспособности) | `category` |
 | Причина | `reason` | [CarePlanReasonVS](ValueSet-care-plan-reason-vs.html) | `care-plan-reason-cs#DIS` (Заболевание) | `addresses[reason]` |
 | Предварительный и итоговый диагноз | `diagnosis` | - | ссылка на [SickLeaveCondition](#recording-the-diagnoses-condition) | `addresses[diagnosis]` |
+| Диагноз члена семьи, за которым осуществляется уход | `diagnosis` | [ICD10VS](ValueSet-icd-10-vs.html) | `ICD-10#I63.9` | `addresses[familyDiagnosis]`, если причина `FMC` - см. [ниже](#family-member-diagnosis) |
 | Статус жизненного цикла | `status` | [CarePlanStatusVS](ValueSet-care-plan-status-vs.html) | `care-plan-status-local-cs#closed` | `extension[workflowStatus]` + базовый `status` (оба заполняются всегда) |
 | История статусов | `statuses[]` | [CarePlanStatusVS](ValueSet-care-plan-status-vs.html) | по одной записи на статус, с его периодом | `extension[statusHistory]` |
 | Периоды нетрудоспособности | `dates[]` | - | с `2026-08-04` по `2026-08-06` | `extension[incapacityPeriod]`, по одному на период |
@@ -155,6 +156,10 @@
 `clinicalStatus` обязателен в FHIR: `active`, пока листок открыт, `resolved` после его закрытия.
 
 У закрытого листка не всегда есть оба диагноза: у листка, [закрытого автоматически](#auto-close), может быть только предварительный или только итоговый, поэтому `addresses[diagnosis]` может содержать любой из них по отдельности.
+
+#### Диагноз члена семьи {#family-member-diagnosis}
+
+Если причина `FMC` (уход за больным членом семьи), диагноз относится к члену семьи, а не к пациенту. Он не записывается как Condition: `Condition.subject` может быть только Patient или Group, а Condition с пациентом в `subject` внесёт заболевание члена семьи в запись пациента. Код ICD-10 указывается прямо в `addresses[familyDiagnosis].concept` CarePlan, название диагноза - в `concept.text`; сам член семьи - это [связанное лицо](#family-care-the-person-cared-for-relatedperson). Пример: [sick-leave-family-care](CarePlan-sick-leave-family-care.html).
 
 ### Запись дополнительных атрибутов (Observation) {#recording-additional-attributes-observation}
 
@@ -819,7 +824,8 @@
 - `category` - это `type` из API по [SickLeaveCategoryVS](ValueSet-sick-leave-category-vs.html), а `addresses[reason]` - `reason` из API по [CarePlanReasonVS](ValueSet-care-plan-reason-vs.html);
 - `extension[workflowStatus]` и `status` [согласованы](#recording-the-lifecycle-status): `opened` и `extended` - это `active`, `closed` - `completed`, `cancelled` - `revoked`;
 - каждый элемент `statuses` - запись `extension[statusHistory]`, каждый элемент `dates` - `extension[incapacityPeriod]`, а `period` охватывает все периоды;
-- каждый диагноз - [SickLeaveCondition](#recording-the-diagnoses-condition): `provisional` для предварительного, `confirmed` для итогового, `resolved` после закрытия листка;
+- каждый диагноз пациента - [SickLeaveCondition](#recording-the-diagnoses-condition): `provisional` для предварительного, `confirmed` для итогового, `resolved` после закрытия листка;
+- при `FMC` диагноз члена семьи - код ICD-10 в [`addresses[familyDiagnosis]`](#family-member-diagnosis), а не Condition;
 - [Observation](#recording-additional-attributes-observation) ссылается на CarePlan через `basedOn` и содержит только компоненты со значением;
 - [RelatedPerson](#family-care-the-person-cared-for-relatedperson) записывается до ссылающегося на него CarePlan и только если он есть в документе;
 - каждое изменение - [новая версия](#one-sick-leave-three-versions) всего CarePlan с `meta.versionId` и `meta.lastUpdated` из API;

@@ -75,6 +75,7 @@ Misol: [sick-leave-extended](CarePlan-sick-leave-extended.html)
 | Hujjat turi | `type` | [SickLeaveCategoryVS](ValueSet-sick-leave-category-vs.html) | `sick-leave-category-cs#SL` (Mehnatga layoqatsizlik varaqasi) | `category` |
 | Sabab | `reason` | [CarePlanReasonVS](ValueSet-care-plan-reason-vs.html) | `care-plan-reason-cs#DIS` (Kasallik) | `addresses[reason]` |
 | Dastlabki va yakuniy tashxis | `diagnosis` | - | [SickLeaveCondition](#recording-the-diagnoses-condition) ga havola | `addresses[diagnosis]` |
+| Parvarish qilinayotgan oila a'zosining tashxisi | `diagnosis` | [ICD10VS](ValueSet-icd-10-vs.html) | `ICD-10#I63.9` | `addresses[familyDiagnosis]`, sabab `FMC` bo'lganda - [quyida](#family-member-diagnosis) qarang |
 | Hayotiy sikl holati | `status` | [CarePlanStatusVS](ValueSet-care-plan-status-vs.html) | `care-plan-status-local-cs#closed` | `extension[workflowStatus]` + asosiy `status` (ikkalasi ham doim to'ldiriladi) |
 | Holatlar tarixi | `statuses[]` | [CarePlanStatusVS](ValueSet-care-plan-status-vs.html) | har bir holat uchun o'z davri bilan bitta yozuv | `extension[statusHistory]` |
 | Mehnatga layoqatsizlik davrlari | `dates[]` | - | `2026-08-04` dan `2026-08-06` gacha | `extension[incapacityPeriod]`, har bir davr uchun bittadan |
@@ -155,6 +156,10 @@ Misollar: [uzaytirilgan varaqaning](CarePlan-sick-leave-extended.html) [dastlabk
 `clinicalStatus` FHIR da majburiy: varaqa ochiq bo'lganda `active`, yopilgandan keyin `resolved`.
 
 Yopilgan varaqada har doim ham ikkala tashxis bo'lavermaydi: [avtomatik yopilgan](#auto-close) varaqada faqat dastlabki yoki faqat yakuniy tashxis bo'lishi mumkin, shuning uchun `addresses[diagnosis]` ulardan istalgan birini alohida saqlashi mumkin.
+
+#### Oila a'zosining tashxisi {#family-member-diagnosis}
+
+Sabab `FMC` (kasal oila a'zosini parvarish qilish) bo'lganda tashxis bemorga emas, oila a'zosiga tegishli. U Condition sifatida qayd etilmaydi: `Condition.subject` faqat Patient yoki Group bo'lishi mumkin, `subject` da bemor ko'rsatilgan Condition esa oila a'zosining kasalligini bemorning yozuviga kiritib qo'yadi. ICD-10 kodi to'g'ridan-to'g'ri CarePlan ning `addresses[familyDiagnosis].concept` iga, tashxis nomi esa `concept.text` ga yoziladi; oila a'zosining o'zi - [bog'liq shaxs](#family-care-the-person-cared-for-relatedperson). Misol: [sick-leave-family-care](CarePlan-sick-leave-family-care.html).
 
 ### Qo'shimcha atributlarni qayd etish (Observation) {#recording-additional-attributes-observation}
 
@@ -819,7 +824,8 @@ Varaqalarni DHP ga yuborishdan oldin quyidagilarni tekshiring:
 - `category` - [SickLeaveCategoryVS](ValueSet-sick-leave-category-vs.html) bo'yicha API dagi `type`, `addresses[reason]` esa [CarePlanReasonVS](ValueSet-care-plan-reason-vs.html) bo'yicha API dagi `reason`;
 - `extension[workflowStatus]` va `status` [bir-biriga mos](#recording-the-lifecycle-status): `opened` va `extended` - `active`, `closed` - `completed`, `cancelled` - `revoked`;
 - `statuses` ning har bir elementi - `extension[statusHistory]` yozuvi, `dates` ning har bir elementi - `extension[incapacityPeriod]`, `period` esa barcha davrlarni qamrab oladi;
-- har bir tashxis - [SickLeaveCondition](#recording-the-diagnoses-condition): dastlabkisi uchun `provisional`, yakuniysi uchun `confirmed`, varaqa yopilgandan keyin `resolved`;
+- bemorning har bir tashxisi - [SickLeaveCondition](#recording-the-diagnoses-condition): dastlabkisi uchun `provisional`, yakuniysi uchun `confirmed`, varaqa yopilgandan keyin `resolved`;
+- `FMC` da oila a'zosining tashxisi Condition emas, [`addresses[familyDiagnosis]`](#family-member-diagnosis) dagi ICD-10 kodi;
 - [Observation](#recording-additional-attributes-observation) CarePlan ga `basedOn` orqali havola qiladi va faqat qiymatli komponentlarni o'z ichiga oladi;
 - [RelatedPerson](#family-care-the-person-cared-for-relatedperson) unga havola qiladigan CarePlan dan oldin va faqat hujjatda bo'lsa yoziladi;
 - har bir o'zgarish - API dagi `meta.versionId` va `meta.lastUpdated` bilan butun CarePlan ning [yangi versiyasi](#one-sick-leave-three-versions);

@@ -1,4 +1,4 @@
-Sick Leave Condition is a diagnosis of a sick leave: the preliminary or the final diagnosis the DHP sick leave service (API v3) sends in `diagnosis`. Each is a separate Condition that the [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) references from `addresses[diagnosis]`; the verification status tells them apart. See [Sick leave](sick-leave.html#recording-the-diagnoses-condition) for the mapping.
+Sick Leave Condition is a diagnosis of a sick leave: the preliminary or the final diagnosis the DHP sick leave service (API v3) sends in `diagnosis`. It is always a diagnosis of the patient: the diagnosis of a family member under a family care sick leave is not a Condition but an ICD-10 code in the CarePlan's `addresses[familyDiagnosis]` ([why](sick-leave.html#family-member-diagnosis)). Each is a separate Condition that the [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) references from `addresses[diagnosis]`; the verification status tells them apart. See [Sick leave](sick-leave.html#recording-the-diagnoses-condition) for the mapping.
 
 ### Mandatory and Must Support data elements
 
@@ -106,4 +106,4 @@ When the diagnosis is refined, send the final diagnosis as a second Condition an
 }
 ```
 
-Reference instances: [preliminary](Condition-sick-leave-extended-diagnosis-preliminary.html) and [final](Condition-sick-leave-extended-diagnosis-final.html) diagnosis of an extended sick leave, [family care diagnosis](Condition-sick-leave-family-care-diagnosis.html).
+Reference instances: [preliminary](Condition-sick-leave-extended-diagnosis-preliminary.html) and [final](Condition-sick-leave-extended-diagnosis-final.html) diagnosis of an extended sick leave.
