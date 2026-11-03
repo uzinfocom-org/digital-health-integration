@@ -15,6 +15,7 @@ Description: "FHIR R5 CarePlan profile representing a Sick Leave case (LN lifecy
 
 * status MS
 * status ^short = "active for opened and extended, completed for closed, revoked for cancelled"
+* obeys slcp-1
 
 * intent = #plan
 
