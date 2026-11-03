@@ -306,6 +306,12 @@ Description: "Example of Form 097 newborn development medical record"
 
 * entry[+].fullUrl = "urn:uuid:09700100-1111-2222-3333-444444444444"
 * entry[=].resource = encounter-mother-097
+* entry[+].fullUrl = "urn:uuid:09700101-1111-2222-3333-444444444444"
+* entry[=].resource = organization-097-prenatal-clinic
+* entry[+].fullUrl = "urn:uuid:09700102-1111-2222-3333-444444444444"
+* entry[=].resource = observation-prenatal-care-097
+* entry[+].fullUrl = "urn:uuid:09700103-1111-2222-3333-444444444444"
+* entry[=].resource = observation-membranes-rupture-interval-097
 
 Instance: composition-097-001
 InstanceOf: Form097NewbornDevelopmentComposition
@@ -347,6 +353,9 @@ Usage: #inline
 * section[motherInformation].entry[+] = Reference(urn:uuid:097000f4-1111-2222-3333-444444444444)
 * section[motherInformation].entry[+] = Reference(urn:uuid:097000f5-1111-2222-3333-444444444444)
 * section[motherInformation].entry[+] = Reference(urn:uuid:097000f7-1111-2222-3333-444444444444)
+* section[motherInformation].entry[+] = Reference(urn:uuid:09700101-1111-2222-3333-444444444444)
+* section[motherInformation].entry[+] = Reference(urn:uuid:09700102-1111-2222-3333-444444444444)
+* section[motherInformation].entry[+] = Reference(urn:uuid:09700103-1111-2222-3333-444444444444)
 
 * section[birthEvent].title = "2. Birth event"
 * section[birthEvent].code = $loinc#57075-4 "Newborn delivery information"
@@ -554,7 +563,13 @@ Instance: new-born-baby-097
 InstanceOf: UZCorePatient
 Usage: #inline
 * language = #en
-* identifier[healthCardId].value = "HC-2026-00097"
+// No PINFL yet: DMED sends its internal newborn id (newborn_children.id) as a temporary
+// medical record number scoped to the maternity hospital's tax ID, and the newborn is inactive.
+* active = false
+* identifier[+].use = #temp
+* identifier[=].type = $identifier-type#MRT "Temporary Medical Record Number"
+* identifier[=].system = "https://dhp.uz/fhir/core/sid/pid/uz/prn/201122349/mrt"
+* identifier[=].value = "3f6c2a9e-8b1d-4c7a-9e2f-5a1b7d0c4e88"
 * name.use = #official
 * name.text = "Karimov Aziz Shavkatovich"
 * name.family = "Karimov"
@@ -2540,3 +2555,39 @@ Usage: #inline
 * type[0].coding[0] = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-type-cs#mserv-0001-00004 "Treatment services"
 * subject = Reference(urn:uuid:0970003b-1111-2222-3333-444444444444)
 * serviceProvider = Reference(urn:uuid:09700004-1111-2222-3333-444444444444)
+
+Instance: organization-097-prenatal-clinic
+InstanceOf: UZCoreOrganization
+Usage: #inline
+* language = #en
+* identifier[taxId].value = "201122350"
+* name = "Chilonzor tumani 5-son oilaviy poliklinika"
+
+// The mother had prenatal care; performer names the facility where she was followed.
+Instance: observation-prenatal-care-097
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $loinc#75204-8 "Prenatal care indicator [CDC.CS]"
+* subject = Reference(urn:uuid:0970003b-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09700100-1111-2222-3333-444444444444)
+* performer = Reference(urn:uuid:09700101-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-06-01T09:00:00+05:00"
+* valueCodeableConcept = $v2-0532#Y "Yes"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:1d77f024-29f4-5311-9833-8ceac022a0bb"
+
+Instance: observation-membranes-rupture-interval-097
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $loinc#106790-9 "Hours before delivery when membranes ruptured [Time]"
+* subject = Reference(urn:uuid:0970003b-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09700100-1111-2222-3333-444444444444)
+* performer = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-06-01T09:00:00+05:00"
+* valueQuantity = 6.5 'h' "h"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:1c719588-2a32-51dd-bb1b-abf2e6858862"

@@ -43,6 +43,9 @@ For a complete reference instance, see the [Form 097 newborn development example
 | Hujjat turi | Тип документа | Composition.type | [Composition Type](https://terminology.dhp.uz/fhir/core/ValueSet/composition-type-vs) `emdoc-0010-0017` "Newborn development medical record", plus LOINC `18842-5` "Discharge summary" | - |
 | Hujjat kategoriyasi | Категория документа | Composition.category | [Composition Category](https://terminology.dhp.uz/fhir/core/ValueSet/composition-category-vs) `Comp-001-0001` "Medical record" and [Document Category](ValueSet-document-category-vs.html) `form-097` "Newborn development medical record" | - |
 | Yangi tug'ilgan chaqaloq | Новорождённый | Composition.subject | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html) | Karimov Aziz Shavkatovich |
+| Chaqaloqning vaqtinchalik identifikatori | Временный идентификатор новорождённого | Patient.identifier | `use` `temp`, `type` `MRT` "Temporary Medical Record Number"<br>`system` `https://dhp.uz/fhir/core/sid/pid/uz/prn/{soliq-id}/mrt` with the maternity hospital's tax ID<br>`value` = the DMED newborn id (`newborn_children.id`); no tax ID, no Form 097 | 3f6c2a9e-8b1d-4c7a-9e2f-5a1b7d0c4e88 |
+| Chaqaloqning JShShIRi | ПИНФЛ новорождённого | Patient.identifier[nationalId] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ni`<br>`type` `NI`; once issued, sent in the next revision together with the temporary identifier | - |
+| Yozuv holati | Активность записи | Patient.active | always `false` for a newborn | false |
 | Tug'ruqxonada bo'lish davri | Пребывание в родильном доме | Composition.encounter | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html) | 2026-06-01 - 2026-06-07 |
 | Tibbiy karta raqami | Номер медицинской карты | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).identifier | `system` `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number` | MRN-097-2026-0001 |
 | Davolovchi shifokor | Лечащий врач | Encounter.participant.actor | [PractitionerRole](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-practitioner-role.html) | Attending neonatologist |
@@ -72,10 +75,16 @@ Section code: LOINC `57073-9` "Prenatal records".
 | Homiladorlik soni | Число беременностей | Observation.valueInteger | `code` LOINC `11996-6` "[#] Pregnancies" | 4 |
 | Tug'ruq soni | Число родов | Observation.valueInteger | `code` LOINC `11977-6` "[#] Parity" | 2 |
 | Homiladorlik muddati | Срок беременности | Observation.valueQuantity | `code` LOINC `18185-9` "Gestational age" | 40 wk |
+| Tug'ruqning alohida xususiyatlari | Особенности родов | Observation.valueString | `code` [Labor, Delivery and Newborn Codes](ValueSet-labor-delivery-and-newborn-code-vs.html) `chr-0035-00012` "Special features of delivery", as in Form 111 | Spontaneous vaginal delivery, no complications |
 | Tug'ruqning birinchi davri | Первый период родов | Observation.valueString | `code` SNOMED CT `364329005` "Characteristic of first stage of labor" | First stage 6 h 20 min, regular contractions, no complications |
 | Tug'ruqning ikkinchi davri | Второй период родов | Observation.valueString | `code` SNOMED CT `364337002` "Characteristic of second stage of labor" | Second stage 25 min, spontaneous vaginal delivery |
+| I davr davomiyligi | Длительность I периода | Observation.valueQuantity (UCUM `min`) | `code` [Labor, Delivery and Newborn Codes](ValueSet-labor-delivery-and-newborn-code-vs.html) SNOMED CT `169821004` "Duration of first stage of labor", in minutes, same code as Form 096 | 380 min |
+| II davr davomiyligi | Длительность II периода | Observation.valueQuantity (UCUM `min`) | `code` [Labor, Delivery and Newborn Codes](ValueSet-labor-delivery-and-newborn-code-vs.html) SNOMED CT `169822006` "Duration of second stage of labor", in minutes, same code as Form 096 | 25 min |
+| III davr davomiyligi | Длительность III периода | Observation.valueQuantity (UCUM `min`) | `code` [Labor, Delivery and Newborn Codes](ValueSet-labor-delivery-and-newborn-code-vs.html) SNOMED CT `169823001` "Duration of third stage of labor", in minutes, same code as Form 096 | 10 min |
 | Homiladorlik asorati | Осложнение беременности | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code | ICD-10 | `O24.4` "Diabetes mellitus arising in pregnancy" |
-| Amniotik suyuqlik ko'rinishi | Вид околоплодных вод | Observation.valueCodeableConcept | `code` LOINC `1887-9` "Appearance of amniotic fluid"<br>`value` [Amniotic Fluid Characteristic](ValueSet-amniotic-fluid-characteristic-vs.html) | Amniotic fluid - clear (`168090003`) |
+| Amniotik suyuqlik ko'rinishi | Вид околоплодных вод | Observation.valueCodeableConcept | `code` LOINC `1887-9` "Appearance of amniotic fluid"<br>`value` [Amniotic Fluid Characteristic](ValueSet-amniotic-fluid-characteristic-vs.html), or `valueString` when the description is free text | Amniotic fluid - clear (`168090003`) |
+| Onaning kuzatuvdagi muassasasi | Учреждение, где мать наблюдалась | Observation.valueCodeableConcept; performer → [Organization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-organization.html) | `code` [Medical and Obstetric History Codes](ValueSet-pregnancy-obstetric-history-code-vs.html) LOINC `75204-8` "Prenatal care indicator [CDC.CS]", same code as Form 096<br>`value` HL7 [v2-0532](https://terminology.hl7.org/CodeSystem-v2-0532.html) `Y` "Yes"<br>`performer` = the facility, sent in this section | Yes (`Y`), Chilonzor tumani 5-son oilaviy poliklinika |
+| Suvsiz davr | Безводный период | Observation.valueQuantity (UCUM `h`), or valueString when DMED keeps text | `code` [Labor, Delivery and Newborn Codes](ValueSet-labor-delivery-and-newborn-code-vs.html) LOINC `106790-9` "Hours before delivery when membranes ruptured [Time]" | 6.5 h |
 | Naslli anamnez (ona) | Наследственный анамнез (мать) | FamilyMemberHistory.condition.code | `relationship` v3-RoleCode `MTH` "mother"<br>`code` ICD-10 | `E14.9` "Unspecified diabetes mellitus : Without complications" |
 | Naslli anamnez (ota) | Наследственный анамнез (отец) | FamilyMemberHistory.condition.code | `relationship` v3-RoleCode `FTH` "father"<br>`code` ICD-10 | `J45.9` "Asthma, unspecified" |
 
@@ -237,6 +246,10 @@ Section code: LOINC `8650-4` "Hospital discharge disposition note".
 | Chiqarishdagi umumiy holati | Общее состояние при выписке | Observation.valueCodeableConcept | `code` [Newborn Daily Monitoring](ValueSet-newborn-daily-monitoring-code-vs.html) `chr-0125-0009` "General condition of newborn"<br>`value` SNOMED CT `162669003` "Patient's condition satisfactory" or `162667001` "Patient's condition poor", per the Form 111 [general condition ConceptMap](ConceptMap-dmed-form-111-general-condition-cm.html) | Patient's condition satisfactory (`162669003`) |
 | Chiqarish tashxisi | Диагноз при выписке | Condition.code | ICD-10 | `Z38.0` "Singleton, born in hospital" |
 | Tavsiyalar | Рекомендации | Observation.valueString | `code` [Form 097 Observation Codes](ValueSet-form-097-observation-code-vs.html) `discharge-recommendations` "Recommendations at discharge" | Routine follow-up with district pediatrician within 3 days of discharge |
+| Chiqarilgan yoki o'tkazilgan sana | Дата выписки или перевода | Encounter.actualPeriod.end | - | 2026-06-07T10:00:00+05:00 |
+| Chiqarish natijasi | Исход (выписка, перевод, смерть) | Encounter.admission.dischargeDisposition | [Form 096 Hospitalization Outcome](ValueSet-form-096-hospitalization-outcome-vs.html), as in Form 096 | Discharged (`mserv-0004-00004`) |
+| O'tkazilgan muassasa | Учреждение перевода | Encounter.admission.destination → Organization | Organization | - |
+| Vafot etdi | Умер | Observation.valueDateTime | `code` [Labor, Delivery and Newborn Codes](ValueSet-labor-delivery-and-newborn-code-vs.html) SNOMED `276506001` "Neonatal death", as in Form 096<br>`value` = `newborn_cards.died_at`, or `newborn_children.death_time` when empty. Death is recorded only in the document: the Patient is not updated and carries no `deceased[x]`. A stillbirth is the birth outcome `chr-0035-00013` (section 2) | 2026-06-03T04:20:00+05:00 |
 | Hamshiradan onaga topshirish | Передача от медсестры матери | [Provenance](https://hl7.org/fhir/R5/provenance.html).agent | `performer` nurse, `custodian` mother | - |
 | Shifokor imzosi | Подпись врача | Provenance.signature | - | - |
 | Muassasalar orasida o'tkazish | Перевод между учреждениями | Provenance.agent | `informant` nurse, `custodian` receiving organization | - |
@@ -264,7 +277,7 @@ Bundle (document)
 ├── Patient (newborn)
 ├── Patient[] (mother, father)
 ├── RelatedPerson[] (mother, father - as legal relations to newborn)
-├── Organization (maternity hospital)
+├── Organization[] (maternity hospital, facility where the mother had prenatal care)
 ├── Location (ward)
 ├── Encounter (newborn's stay, birth to discharge; mother's delivery encounter)
 ├── Practitioner[] / PractitionerRole[] (physician, nurse)

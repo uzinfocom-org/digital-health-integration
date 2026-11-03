@@ -21,7 +21,7 @@
 
 Каждый из 13 разделов Composition несёт собственный `section.code` и перечисляет ресурсы, относящиеся к этой части формы. Все разделы необязательны: раздел передаётся, только если в форме есть данные для него.
 
-Каждое поле передаётся отдельным Observation со своим `code`. Поле, общее с Формой 111, использует код Формы 111, поэтому один и тот же факт кодируется в обеих формах одинаково. Сведения о плоде передаются для каждого плода отдельно, а `Observation.focus` ссылается на новорождённого, которым родился этот плод. Сведения о самом новорождённом имеют его в `subject`; сведения о родах в целом - мать.
+Каждое поле передаётся отдельным Observation со своим `code`. Поле, общее с Формой 111, использует код Формы 111, поэтому один и тот же факт кодируется в обеих формах одинаково. Сведения о плоде передаются для каждого плода отдельно, и `Observation.focus` ссылается на панель новорождённого, которым родился этот плод; если источник хранит один осмотр на всех плодов, передаётся одна Observation, в `focus` которой перечислены панели всех детей этих родов (раздел 4). Форма 096 не передаёт Patient новорождённого: у всех Observation в `subject` мать, а сведения о каждом ребёнке входят в его панель (раздел 6).
 
 Полный пример экземпляра см. в разделе [Пример истории родов по Форме 096](Bundle-example-form-096-maternity-medical-record.html): самопроизвольные роды двойней.
 
@@ -41,7 +41,7 @@
 | Hujjat UUID | Идентификатор документа | Composition.identifier | `urn:ietf:rfc:3986` | urn:uuid:5f0a9c3e-8b1d-4c6e-9a27-0960a1b2c3d4 |
 | Shakl raqami | Номер формы | Composition.identifier | `https://dhp.uz/fhir/core/sid/doc/uz/form-number` | 096 |
 | Hujjat holati | Статус документа | Composition.status | `preliminary` во время пребывания, `final` после закрытия истории | final |
-| Hujjat turi | Тип документа | Composition.type | [Composition Type](https://terminology.dhp.uz/fhir/core/ValueSet/composition-type-vs) `emdoc-0010-0016` "Maternity (delivery) medical record", а также LOINC `57057-2` "Labor and Delivery Summary Note" | - |
+| Hujjat turi | Тип документа | Composition.type | [Composition Type](https://terminology.dhp.uz/fhir/core/ValueSet/composition-type-vs) `emdoc-0010-0016` "Maternity (delivery) medical record" | - |
 | Hujjat kategoriyasi | Категория документа | Composition.category | [Composition Category](https://terminology.dhp.uz/fhir/core/ValueSet/composition-category-vs) `Comp-001-0001` "Medical record" и [Document Category](CodeSystem-document-category-cs.html) `form-096` "Birth medical record" | - |
 | Bemor | Пациентка | Composition.subject | [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html) | Karimova Dilnoza Akmalovna |
 | Kasallik tarixi | История болезни | Composition.encounter | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html) | MRN-096-2026-000123 |
@@ -72,26 +72,41 @@
 | Chiqarilgan sana va vaqt | Дата и время выписки | Encounter.actualPeriod.end | - | 2026-08-18T15:00:00+05:00 |
 | O'tkazilgan kunlar | Проведено койко-дней | Encounter.length | UCUM `d` | 2.28 d |
 | Palata | Палата | Encounter.location.location → [Location](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-location.html).identifier[unit] | [UZ Core Location Kinds](https://dhp.uz/fhir/core/en/CodeSystem-location-kinds-cs.html) `Ward` | 12 |
+| Bo'lim | Отделение | Encounter.location.location → [Location](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-location.html) | [UZ Core Location Kinds](https://dhp.uz/fhir/core/en/CodeSystem-location-kinds-cs.html) `Branch` | Физиологическое родильное отделение |
 | Yo'llagan muassasa | Направившая организация | Encounter.admission.origin → Organization | Organization | Chilonzor District Polyclinic No. 5 |
 | Gospitalizatsiya natijasi | Исход госпитализации | Encounter.admission.dischargeDisposition | [Form 096 Hospitalization Outcome](ValueSet-form-096-hospitalization-outcome-vs.html) | Discharged (`mserv-0004-00004`) |
+| Chiqarish yoki o'tkazishdagi ahvoli | Состояние при выписке или переводе | Observation.valueCodeableConcept; effectiveDateTime | `code` [Form111 Clinical Assessment Observation Code](ValueSet-form111-assessment-observation-code-vs.html) `chr-0005-00003` "General condition"<br>`value` [Satisfactory Status](ValueSet-satisfactory-status-vs.html); `effectiveDateTime` = время выписки или перевода | Satisfactory (`162669003`), 2026-08-18T15:00:00+05:00 |
+| Chiqarishdagi tashxis | Диагноз при неудовлетворительном состоянии | Condition.code; Condition.category | `code` ICD-10<br>`category` [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `discharge`, только при неудовлетворительном состоянии при выписке или переводе | - |
 | O'tkazilgan muassasa | Учреждение перевода | Encounter.admission.destination → Organization | Organization | - |
-| Onaning o'limi | Смерть матери | Patient.deceasedDateTime, или Patient.deceasedBoolean, если дата неизвестна | - | - |
+| Onaning o'limi | Смерть матери | Encounter.admission.dischargeDisposition; Condition.onsetDateTime | `dischargeDisposition` `exp` "Expired"; время смерти - в `onsetDateTime` Condition периода смерти (строка ниже). Смерть фиксируется только в документе: Patient не обновляется и не содержит `deceased[x]` | 2026-08-17T03:10:00+05:00 |
 | Ona o'limining davri | Период смерти матери | Condition.code | [Maternal Death Timing](ValueSet-maternal-death-timing-vs.html) | - |
 | Qon guruhi | Группа крови | Observation.valueCodeableConcept | `code` LOINC `883-9` "ABO group [Type] in Blood"<br>`value` [Blood Group](https://terminology.dhp.uz/fhir/core/ValueSet/blood-group-vs) | A (II) (`112144000`) |
 | Rezus omil | Резус-фактор | Observation.valueCodeableConcept | `code` LOINC `10331-7` "Rh [Type] in Blood"<br>`value` [Blood Rh](https://terminology.dhp.uz/fhir/core/ValueSet/blood-rh-vs) | Rh positive (`165747007`) |
 | Gemoglobin | Гемоглобин | Observation.valueQuantity | [Admission Laboratory Test Codes](ValueSet-maternal-laboratory-and-blood-code-vs.html) LOINC `718-7` "Hemoglobin [Mass/volume] in Blood" | 112 g/L |
-| Antitelolar | Антитела | Observation.valueCodeableConcept | `code` [Admission Laboratory Test Codes](ValueSet-maternal-laboratory-and-blood-code-vs.html) LOINC `890-4` "Blood group antibody screen [Presence] in Serum or Plasma"<br>`value` [Positive / Negative Result](ValueSet-positive-negative-result-vs.html) | Negative (`260385009`) |
-| RW | RW | Observation.valueCodeableConcept | `code` LOINC `22461-8` "Reagin Ab [Presence] in Serum", как в Форме 111<br>`value` [Positive / Negative Result](ValueSet-positive-negative-result-vs.html) | Negative (`260385009`) |
-| Gonokokk | Гонококк | Observation.valueCodeableConcept | `code` [Analysis Test Code](ValueSet-form111-analysis-test-code-vs.html) `chr-0001-00001` "Gonococcus test", как в Форме 111<br>`value` [Positive / Negative Result](ValueSet-positive-negative-result-vs.html) | Negative (`260385009`) |
+| Antitelolar | Антитела | Observation.valueCodeableConcept | `code` [Admission Laboratory Test Codes](ValueSet-maternal-laboratory-and-blood-code-vs.html) LOINC `890-4` "Blood group antibody screen [Presence] in Serum or Plasma"<br>`value` [Positive / Negative Result](ValueSet-positive-negative-result-vs.html), или `valueString`, если результат - свободный текст, не сводящийся к набору значений (например, `manfiy`, число) | Negative (`260385009`) |
+| RW | RW | Observation.valueCodeableConcept | `code` LOINC `22461-8` "Reagin Ab [Presence] in Serum", как в Форме 111<br>`value` [Positive / Negative Result](ValueSet-positive-negative-result-vs.html), или `valueString`, если результат - свободный текст, не сводящийся к набору значений (например, `manfiy`, число) | Negative (`260385009`) |
+| Gonokokk | Гонококк | Observation.valueCodeableConcept | `code` [Analysis Test Code](ValueSet-form111-analysis-test-code-vs.html) `chr-0001-00001` "Gonococcus test", как в Форме 111<br>`value` [Positive / Negative Result](ValueSet-positive-negative-result-vs.html), или `valueString`, если результат - свободный текст, не сводящийся к набору значений (например, `manfiy`, число) | Negative (`260385009`) |
+| Umumiy qon tahlili | Общий анализ крови | Observation.valueString, или Observation.hasMember, если показатели переданы по отдельности | `code` [Admission Laboratory Test Codes](ValueSet-maternal-laboratory-and-blood-code-vs.html) LOINC `58410-2` "CBC panel - Blood by Automated count" | Hb 112 g/L |
+| HBsAg I, II | HBsAg I, II | Observation.valueCodeableConcept | `code` LOINC `5195-3` "Hepatitis B virus surface Ag [Presence] in Serum", как в Форме 111<br>`value` [Positive / Negative Result](ValueSet-positive-negative-result-vs.html), или `valueString`, если результат - свободный текст, не сводящийся к набору значений (например, `manfiy`, число) | Negative (`260385009`) |
+| Toksoplazmoz | Токсоплазмоз | Observation.valueCodeableConcept | `code` LOINC `22577-1` "Toxoplasma gondii Ab [Presence] in Serum", как в Форме 111<br>`value` [Positive / Negative Result](ValueSet-positive-negative-result-vs.html), или `valueString`, если результат - свободный текст, не сводящийся к набору значений (например, `manfiy`, число) | Negative (`260385009`) |
+| Siydik tahlili | Анализ мочи | Observation.valueString | `code` LOINC `24356-8` "Urinalysis complete panel - Urine", как в Форме 111 | Siydik tahlili: me'yor |
+| Surtma | Мазок | Observation.valueString | `code` LOINC `14361-0` "Microscopic observation [Identifier] in Vaginal fluid by Gram stain", как в Форме 111 | Flora: rods, leukocytes 4-6 |
+| Najas tahlili | Анализ кала | Observation.valueCodeableConcept | `code` LOINC `10704-5` "Ova and parasites identified in Stool by Light microscopy", как в Форме 111<br>`value` [Positive / Negative Result](ValueSet-positive-negative-result-vs.html), или `valueString`, если результат - свободный текст, не сводящийся к набору значений (например, `manfiy`, число) | Negative (`260385009`) |
+| OIV | ОИВ (ВИЧ 1+2) | Observation.valueCodeableConcept | `code` LOINC `7918-6` "HIV 1+2 Ab [Presence] in Serum", как в Форме 111<br>`value` [Positive / Negative Result](ValueSet-positive-negative-result-vs.html), или `valueString`, если результат - свободный текст, не сводящийся к набору значений (например, `manfiy`, число) | Negative (`260385009`) |
+| OIV-1 | ВИЧ-1 | Observation.valueCodeableConcept | `code` LOINC `7917-8` "HIV 1 Ab [Presence] in Serum"<br>`value` [Positive / Negative Result](ValueSet-positive-negative-result-vs.html), или `valueString`, если результат - свободный текст, не сводящийся к набору значений (например, `manfiy`, число) | Negative (`260385009`) |
+| OIV-2 | ВИЧ-2 | Observation.valueCodeableConcept | `code` LOINC `30361-0` "HIV 2 Ab [Presence] in Serum or Plasma by Immunoassay"<br>`value` [Positive / Negative Result](ValueSet-positive-negative-result-vs.html), или `valueString`, если результат - свободный текст, не сводящийся к набору значений (например, `manfiy`, число) | Negative (`260385009`) |
+| OIV ekspress-test | ВИЧ экспресс-тест | Observation.valueCodeableConcept | `code` LOINC `80387-4` "HIV 1+2 Ab [Presence] in Serum, Plasma or Blood by Rapid immunoassay"<br>`value` [Positive / Negative Result](ValueSet-positive-negative-result-vs.html), или `valueString`, если результат - свободный текст, не сводящийся к набору значений (например, `manfiy`, число) | Negative (`260385009`) |
+| Boshqa tahlil | Другой анализ | Observation.valueString | Любой другой анализ: `chr-0001-00006` "Other analysis", результат в `valueString` | Siydik tahlili: me'yor |
 | Homiladorlikdagi ko'riklar soni | Количество осмотров во время беременности | Observation.valueInteger | [Medical and Obstetric History Codes](ValueSet-pregnancy-obstetric-history-code-vs.html) LOINC `68493-6` "Prenatal visits for this pregnancy #" | 6 |
-| Homiladorlik davrida kuzatilgan | Наблюдалась во время беременности | Observation.valueBoolean | только `code.text`, кода пока нет | true |
+| Homiladorlik davrida kuzatilgan | Наблюдалась во время беременности | Observation.valueCodeableConcept | `code` [Medical and Obstetric History Codes](ValueSet-pregnancy-obstetric-history-code-vs.html) LOINC `75204-8` "Prenatal care indicator [CDC.CS]"<br>`value` HL7 [v2-0532](https://terminology.hl7.org/CodeSystem-v2-0532.html) `Y` "Yes" / `N` "No" | Да (`Y`) |
 | Qabul tashxisi | Диагноз при поступлении | Condition.code; Condition.category | `code` ICD-10<br>`category` [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `admission` | Twin pregnancy (`O30.0`) |
 | Klinik tashxis | Клинический диагноз | Condition.code | ICD-10 | Twin pregnancy (`O30.0`) |
+| Yondosh tashxis | Сопутствующий диагноз | Condition.code; Condition.category | `code` ICD-10<br>`category` [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `concomitant` | Анемия при беременности (`O99.0`) |
 | Yakuniy tashxis | Заключительный диагноз | Condition.code; Condition.category | `code` ICD-10<br>`category` [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `main` | Multiple delivery, all spontaneous (`O84.0`) |
 | Tug'ruqdagi asoratlar | Осложнения родов | Condition.code; Condition.category | `code` ICD-10<br>`category` [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `complication` | First degree perineal laceration during delivery (`O70.0`) |
 | Tug'ruqdan keyingi asoratlar | Послеродовые осложнения | Condition.code; Condition.category | `code` ICD-10<br>`category` [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `complication` | Disruption of perineal obstetric wound (`O90.1`) |
-| Operatsiya | Операция | [Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html).code; occurrenceDateTime; performer.actor | SNOMED CT | Episiotomy (`85548006`), 2026-08-16T12:15:00+05:00 |
-| Allergiya | Аллергия | [AllergyIntolerance](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-allergy-intolerance.html).code | SNOMED CT; `716186003` "No known allergy" только если это указано в форме | No known allergy (`716186003`) |
+| Operatsiya | Операция | [Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html).code; occurrenceDateTime; performer.actor | ICHI из [ICHI Codes Accepted by DMED](ValueSet-dmed-ichi-vs.html), как в [Форме 066](form-066-mapping.html); `procedure-code-vs` допускает и SNOMED CT | Эпизиотомия, 2026-08-16T12:15:00+05:00 |
+| Allergiya | Аллергия | [AllergyIntolerance](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-allergy-intolerance.html).code | SNOMED CT, если есть код; иначе `code.text` с названием препарата или МНН; `716186003` "No known allergy" только если это указано в форме | No known allergy (`716186003`) |
 
 ---
 
@@ -111,12 +126,14 @@
 | Jinsiy hayoti necha yoshdan boshlangan | Возраст начала половой жизни | Observation.valueQuantity | SNOMED `228456002` "Age became sexually active", как в Форме 111 | 20 a |
 | Avvalgi homiladorliklar soni | Количество предыдущих беременностей | Observation.valueInteger | SNOMED `246211005` "Number of previous pregnancies" | 2 |
 | Abortlar soni | Количество абортов | Observation.valueInteger | LOINC `11612-9` "[#] Abortions" | 0 |
+| Homiladorlik muddati | Срок беременности | Observation.valueQuantity | [Medical and Obstetric History Codes](ValueSet-pregnancy-obstetric-history-code-vs.html) LOINC `18185-9` "Gestational age", как в Форме 111 | 39 wk |
 | Avvalgi homiladorlik natijasi | Исход предыдущей беременности | Observation.valueCodeableConcept | `code` LOINC `63893-2` "Outcome of pregnancy"<br>`value` [Previous Pregnancy Outcome](ValueSet-form111-previous-pregnancy-outcome-vs.html), как в Форме 111 | Birth (`3950001`) |
 | Tug'ruq turi (muddati bo'yicha) | Вид родов (по сроку) | Observation.valueCodeableConcept | `code` [Form111 General Observation Code](ValueSet-form111-general-observation-code-vs.html) `chr-0035-00015` "Type of delivery (by term)"<br>`value` [Previous Delivery Term](ValueSet-form111-previous-delivery-term-vs.html), как в Форме 111 | Term birth of newborn (`21243004`) |
 | Avvalgi chaqaloqlar vazni | Вес предыдущих новорождённых | Observation.valueQuantity | LOINC `8339-4` "Birth weight Measured", как в Форме 111 | 3200 g, 3400 g |
 | Boshdan o'tkazgan kasalliklari | Перенесённые заболевания | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code | ICD-10 | Iron deficiency anaemia, unspecified (`D50.9`) |
 | Ginekologik kasalliklari | Гинекологические заболевания | Condition.code; note | ICD-10 | Acute vaginitis (`N76.0`), treated in 2023 |
-| Akusherlik va epidemiologik anamnez | Акушерский и эпидемиологический анамнез | [QuestionnaireResponse](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-questionnaire-response.html).item.answer | [form-096-history](Questionnaire-form-096-history.html) `previous-pregnancies`, `epidemiological-history` | No recent infectious exposure or travel risk reported. |
+| Avvalgi homiladorliklarning o'ziga xosligi | Особенности предыдущих беременностей | Observation.valueString | [Medical and Obstetric History Codes](ValueSet-pregnancy-obstetric-history-code-vs.html) `chr-0035-00016` "Characteristics of previous pregnancies", как в Форме 111 | Two previous term births; no prior operative delivery. |
+| Epidemiologik anamnez | Эпидемиологический анамнез | Observation.valueString | [Medical and Obstetric History Codes](ValueSet-pregnancy-obstetric-history-code-vs.html) `chr-0035-00031` "Epidemiological history" | No recent infectious exposure or travel risk reported. |
 
 ---
 
@@ -128,7 +145,8 @@
 
 | UZ | RU | Путь FHIR | Код | Пример значения |
 |----|----|------------|------|---------------|
-| Homiladorlikning kechishi va asoratlari | Течение и осложнения беременности | QuestionnaireResponse.item.answer | [form-096-current-pregnancy](Questionnaire-form-096-current-pregnancy.html) `current-pregnancy-course`, `condition-on-arrival` | Dichorionic diamniotic twin pregnancy; mild iron-deficiency anaemia. |
+| Homiladorlikning kechishi va asoratlari | Течение и осложнения беременности | Observation.valueString | [Maternal and Fetal Examination Codes](ValueSet-maternal-examination-observation-code-vs.html) `chr-0005-00008` "Course of pregnancy and patronage follow-up data", как в Форме 111 | Dichorionic diamniotic twin pregnancy; mild iron-deficiency anaemia. |
+| Qabul qilingandagi ahvoli | Состояние при поступлении | Observation.valueString | LOINC `10210-3` "Physical findings of General status Narrative" | Stable, regular contractions, membranes intact. |
 | Umumiy ahvoli | Общее состояние | Observation.valueCodeableConcept | `code` [Maternal and Fetal Examination Codes](ValueSet-maternal-examination-observation-code-vs.html) `chr-0005-00003` "General condition", как в Форме 111<br>`value` [Satisfactory Status](ValueSet-satisfactory-status-vs.html) | Satisfactory (`162669003`) |
 | Yurak | Сердце | Observation.valueString | LOINC `8702-3` "Physical findings of Heart" | Regular rhythm, no murmur. |
 | Puls | Пульс | Observation.valueQuantity | LOINC `8867-4` "Heart rate" | 82 /min |
@@ -145,7 +163,7 @@
 
 Код раздела: SNOMED `163497009` "Obstetric examination".
 
-Пельвиометрия - один Observation с отдельным компонентом для каждого размера, с кодами Формы 111. Строки о плоде повторяются для каждого плода, `focus` ссылается на новорождённого; в примере два плода.
+Пельвиометрия - один Observation с отдельным компонентом для каждого размера, с кодами Формы 111. Строки о плоде передаются на каждый плод с `focus` на панель этого новорождённого (раздел 6), если источник ведёт плоды раздельно, как в примере с двумя плодами. Если в источнике один осмотр на всю беременность, как в DMED, каждая строка - одна Observation, в `focus` которой перечислены панели всех новорождённых этих родов; пока новорождённые не записаны, `focus` не передаётся. Значения предлежания DMED сопоставляются с [Fetal Presentation](ValueSet-fetal-presentation-vs.html) так: `cephalic` и `anterior_cephalic` `1209182005`, `occipital` `70028003`, `facial` `21882006`, `frontal` `8014007`, `breech` `6096002`, `mixed` и `complete` `49168004`, `incomplete` `38049006`, `knee` `249098007`, `full_leg` `249097002`, `not_defined` `871479001`; `transverse` передаётся как положение плода `73161006` из [Fetal Lie](ValueSet-fetal-lie-vs.html).
 
 | UZ | RU | Путь FHIR | Код | Пример значения |
 |----|----|------------|------|---------------|
@@ -167,14 +185,14 @@
 | Qorin aylanasi | Окружность живота | Observation.valueQuantity | SNOMED `396552003` "Abdominal circumference", как в Форме 111 | 104 cm |
 | Bachadon tubi balandligi | Высота стояния дна матки | Observation.valueQuantity | LOINC `11881-0` "Uterus Fundal height Tape measure" | 38 cm |
 | Qindan ajralma | Выделения из влагалища | Observation.valueCodeableConcept | `code` SNOMED `271939006` "Vaginal discharge"<br>`value` [Vaginal Discharge Color](ValueSet-vaginal-discharge-color-vs.html) | Bloodstained (`289547007`) |
-| Homilaning joylashuvi | Положение плода | Observation.valueCodeableConcept (`focus` = новорождённый) | `code` [Maternal and Fetal Examination Codes](ValueSet-maternal-examination-observation-code-vs.html) SNOMED `249062004` "Lie of fetus"<br>`value` [Fetal Lie](ValueSet-fetal-lie-vs.html) | Longitudinal lie (`249063009`), оба плода |
-| Homilaning pozitsiyasi va turi | Позиция и вид плода | Observation.valueCodeableConcept.text (`focus` = новорождённый) | SNOMED `364607000` "Position of fetus" | First position, anterior variety; second position, posterior variety |
-| Homilaning oldinda keluvchi qismi | Предлежание плода | Observation.valueCodeableConcept (`focus` = новорождённый) | `code` SNOMED `271692001` "Presentation of fetus"<br>`value` [Fetal Presentation](ValueSet-fetal-presentation-vs.html) | Cephalic (`1209182005`); breech (`6096002`) |
-| Yurak urishi eshitiladigan joy | Место выслушивания сердцебиения | Observation.valueString (`focus` = новорождённый) | SNOMED `373720003` "Site of loudest fetal heart sounds" | Left of the midline, below the umbilicus |
-| Homila yurak urishi | Сердцебиение плода | Observation.valueQuantity (`focus` = новорождённый) | LOINC `55283-6` "Fetal Heart rate" | 142 /min; 136 /min |
-| Homilaning taxminiy vazni | Предполагаемая масса плода | Observation.valueQuantity (`focus` = новорождённый) | LOINC `11727-5` "Fetal Body weight estimated by US" | 2900 g; 2750 g |
-| Oldinda keluvchi qismning joylashuvi | Расположение предлежащей части | Observation.valueString (`focus` = новорождённый) | только `code.text`, кода пока нет | Engaged at the pelvic inlet |
-| Tug'ruq faoliyati | Родовая деятельность | Observation.valueString | только `code.text`, кода пока нет | Regular contractions, three per ten minutes |
+| Homilaning joylashuvi | Положение плода | Observation.valueCodeableConcept (`focus` = панель или панели новорождённых) | `code` [Maternal and Fetal Examination Codes](ValueSet-maternal-examination-observation-code-vs.html) SNOMED `249062004` "Lie of fetus"<br>`value` [Fetal Lie](ValueSet-fetal-lie-vs.html) | Longitudinal lie (`249063009`), оба плода |
+| Homilaning pozitsiyasi va turi | Позиция и вид плода | Observation.valueCodeableConcept.text (`focus` = панель или панели новорождённых) | SNOMED `364607000` "Position of fetus" | First position, anterior variety; second position, posterior variety |
+| Homilaning oldinda keluvchi qismi | Предлежание плода | Observation.valueCodeableConcept (`focus` = панель или панели новорождённых) | `code` SNOMED `271692001` "Presentation of fetus"<br>`value` [Fetal Presentation](ValueSet-fetal-presentation-vs.html) | Cephalic (`1209182005`); breech (`6096002`) |
+| Yurak urishi eshitiladigan joy | Место выслушивания сердцебиения | Observation.valueString (`focus` = панель или панели новорождённых) | SNOMED `373720003` "Site of loudest fetal heart sounds" | Left of the midline, below the umbilicus |
+| Homila yurak urishi | Сердцебиение плода | Observation.valueQuantity (`focus` = панель или панели новорождённых) | LOINC `55283-6` "Fetal Heart rate" | 142 /min; 136 /min |
+| Homilaning taxminiy vazni | Предполагаемая масса плода | Observation.valueQuantity (`focus` = панель или панели новорождённых) | LOINC `11727-5` "Fetal Body weight estimated by US" | 2900 g; 2750 g |
+| Oldinda keluvchi qismning joylashuvi | Расположение предлежащей части | Observation.valueString (`focus` = панель или панели новорождённых) | [Maternal and Fetal Examination Codes](ValueSet-maternal-examination-observation-code-vs.html) SNOMED `364610007` "Engagement of presenting part" | Engaged at the pelvic inlet |
+| Tug'ruq faoliyati | Родовая деятельность | Observation.valueDateTime (дата, или дата и время) | LOINC `56866-7` "Onset of painful contractions" | 2026-08-16 |
 
 ---
 
@@ -187,12 +205,13 @@
 | UZ | RU | Путь FHIR | Код | Пример значения |
 |----|----|------------|------|---------------|
 | Tug'ruqning boshlanishi va tugashi, umumiy davomiyligi | Начало и окончание родов, общая продолжительность | Observation.effectivePeriod; valueQuantity | [Labor, Delivery and Newborn Codes](ValueSet-labor-delivery-and-newborn-code-vs.html) SNOMED `271562002` "Total duration of labor" | 06:10 - 12:37, 387 min |
+| Tug'ruqning alohida xususiyatlari | Особенности родов | Observation.valueString | [Labor, Delivery and Newborn Codes](ValueSet-labor-delivery-and-newborn-code-vs.html) `chr-0035-00012` "Special features of delivery", как в Форме 111 | Twin delivery, second twin delivered 9 minutes after the first |
 | I davr | I период | Observation.valueQuantity | SNOMED `169821004` "Duration of first stage of labor" | 355 min |
 | II davr | II период | Observation.valueQuantity | SNOMED `169822006` "Duration of second stage of labor" | 22 min |
 | III davr; tug'ilishdan yo'ldosh tushguncha | III период; от рождения до выделения последа | Observation.valueQuantity | SNOMED `169823001` "Duration of third stage of labor" | 10 min |
 | Qog'onoq suvi ketgan vaqt | Время излития вод | Observation.valueDateTime | SNOMED `289251005` "Time rupture of membranes detected" | 2026-08-16T10:05:00+05:00 |
 | Qog'onoq suvi hajmi | Объём околоплодных вод | Observation.valueQuantity | [Amniotic Fluid Volume Code](ValueSet-amniotic-fluid-volume-measurement-code-vs.html) `chr-0087-0001` "Amniotic fluid volume" | 650 mL |
-| Qog'onoq suvi | Характер околоплодных вод | Observation.valueCodeableConcept | `code` [Amniotic Fluid Appearance Code](ValueSet-amniotic-fluid-observation-code-vs.html) LOINC `1887-9` "Appearance of Amniotic fluid"<br>`value` [Amniotic Fluid Characteristic](ValueSet-amniotic-fluid-characteristic-vs.html) | Clear (`168090003`) |
+| Qog'onoq suvi | Характер околоплодных вод | Observation.valueCodeableConcept | `code` [Amniotic Fluid Appearance Code](ValueSet-amniotic-fluid-observation-code-vs.html) LOINC `1887-9` "Appearance of Amniotic fluid"<br>`value` [Amniotic Fluid Characteristic](ValueSet-amniotic-fluid-characteristic-vs.html), или `valueString`, если описание - свободный текст | Clear (`168090003`) |
 | Bachadon bo'yni to'liq ochilgan vaqt | Время полного раскрытия | Observation.valueQuantity; effectiveDateTime | [Cervical Dilation Code](ValueSet-cervical-dilation-measurement-code-vs.html) SNOMED `289825001` "Diameter of cervical dilatation" | 10 cm в 2026-08-16T12:05:00+05:00 |
 | Kuchanish boshlangan vaqt | Начало потуг | Observation.valueDateTime | только `code.text`, кода пока нет | 2026-08-16T12:10:00+05:00 |
 | Tug'ruqni qabul qildi | Роды принимала | Procedure.performer.function; performer.actor | `code` SNOMED `236973005` "Delivery procedure"<br>`function` [Birth Attendant](CodeSystem-birth-attendant-cs.html) `chr-0091-0001` "Birth attendant" | Tursunova N.S. |
@@ -206,29 +225,30 @@
 
 Код раздела: LOINC `57075-4` "Newborn delivery information".
 
-Каждый новорождённый - отдельный [Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html). Пока у новорождённого нет ПИНФЛ, он идентифицируется номером медкарты DMED; Форма 097 использует тот же Patient и добавляет ПИНФЛ, когда он выдан. Строки от «Ребёнок родился живым / мёртвым» до пуповины повторяются для каждого новорождённого, с ним в `subject`.
+Форма 096 не передаёт Patient новорождённого. Каждый новорождённый - одна панель Observation на матери: `code` `chr-0035-00013` "Live/stillbirth status", `subject` = мать, а `hasMember` перечисляет Observation этого ребёнка, у которых `subject` тоже мать. Observation о плоде из раздела 4 ссылаются на панель через `focus`. Форма 097 ведёт ребёнка как отдельного Patient. Строки от панели до смерти после рождения повторяются для каждого новорождённого; числа рождённых, послед, оболочки и кровопотеря - один раз на роды.
 
 | UZ | RU | Путь FHIR | Код | Пример значения |
 |----|----|------------|------|---------------|
-| Chaqaloq tibbiy kartasi | Медкарта ребёнка | Patient.identifier[healthCardId] | `system` `https://dhp.uz/fhir/core/sid/pid/uz/hc`<br>`type` `HC` | NB-096-2026-000123-1 |
-| Jinsi | Пол | Patient.gender | - | male; female |
-| Tug'ilgan sana | Дата рождения | Patient.birthDate | - | 2026-08-16 |
-| Egizaklar tartibi | Порядок рождения двойни | Patient.multipleBirthInteger | - | 1; 2 |
-| Bola tirik / o'lik tug'ilgani | Ребёнок родился живым / мёртвым | Observation.valueCodeableConcept | `code` [Form111 General Observation Code](ValueSet-form111-general-observation-code-vs.html) `chr-0035-00013` "Live/stillbirth status", как в Форме 111<br>`value` [Newborn Birth Condition](ValueSet-form111-newborn-birth-condition-vs.html) | Livebirth (`281050002`); см. примеры [антенатальной](Bundle-example-form-096-antepartum-stillbirth.html) и [интранатальной](Bundle-example-form-096-intrapartum-stillbirth.html) гибели плода |
-| Oldinda kelgan qismi | Предлежание | Observation.valueCodeableConcept | `code` SNOMED `271692001` "Presentation of fetus"<br>`value` [Fetal Presentation](ValueSet-fetal-presentation-vs.html) | Cephalic (`1209182005`); breech (`6096002`) |
-| Vazni | Масса | Observation.valueQuantity | [Labor, Delivery and Newborn Codes](ValueSet-labor-delivery-and-newborn-code-vs.html) LOINC `8339-4` "Birth weight Measured" | 2850 g; 2700 g |
-| Bo'yi | Рост | Observation.valueQuantity | LOINC `89269-5` "Body height Measured --at birth" | 49 cm; 48 cm |
-| Bosh aylanasi | Окружность головы | Observation.valueQuantity | LOINC `9843-4` "Head Occipital-frontal circumference" | 34 cm; 33 cm |
-| Ko'krak aylanasi | Окружность груди | Observation.valueQuantity | SNOMED `248366000` "Chest circumference" | 32 cm; 31 cm |
-| Umumiy ahvoli | Общее состояние | Observation.valueCodeableConcept | `code` `chr-0005-00003` "General condition"<br>`value` [Satisfactory Status](ValueSet-satisfactory-status-vs.html) | Satisfactory (`162669003`) |
-| Apgar bahosi | Оценка по Апгар | Observation.valueInteger | LOINC `9272-6` "1 minute Apgar Score" | 8 |
-| Kindik uzunligi | Длина пуповины | Observation.valueQuantity | SNOMED `249194006` "Length of umbilical cord" | 55 cm; 52 cm |
-| Kindik o'ralishi | Обвитие пуповины | Observation.valueBoolean | только `code.text`, кода пока нет | false |
-| Kindik xususiyatlari | Особенности пуповины | Observation.valueString | только `code.text`, кода пока нет | Three vessels, no true knot |
-| Gonoblenoreya profilaktikasi | Профилактика гонобленнореи | Procedure.code; occurrenceDateTime | [Newborn Eye Prophylaxis Code](ValueSet-newborn-eye-prophylaxis-code-vs.html) `chr-0085-0001` "Neonatal ocular prophylaxis against gonococcal ophthalmia" | 2026-08-16T12:28:00+05:00 |
+| Bola tirik / o'lik tug'ilgani | Ребёнок родился живым / мёртвым | Observation.valueCodeableConcept; effectiveDateTime; hasMember | `code` [Form111 General Observation Code](ValueSet-form111-general-observation-code-vs.html) `chr-0035-00013` "Live/stillbirth status", как в Форме 111<br>`value` [Newborn Birth Condition](ValueSet-form111-newborn-birth-condition-vs.html)<br>`effectiveDateTime` = время рождения | Livebirth (`281050002`); см. примеры [антенатальной](Bundle-example-form-096-antepartum-stillbirth.html) и [интранатальной](Bundle-example-form-096-intrapartum-stillbirth.html) гибели плода |
+| Tug'ilish tartibi | Порядок рождения | Observation.valueInteger (элемент панели новорождённого) | [Labor, Delivery and Newborn Codes](ValueSet-labor-delivery-and-newborn-code-vs.html) LOINC `73771-8` "Birth order" | 1; 2 |
+| Jinsi | Пол | Observation.valueCodeableConcept (элемент панели новорождённого) | `code` LOINC `76689-9` "Sex assigned at birth"<br>`value` [AdministrativeGender](https://hl7.org/fhir/R5/valueset-administrative-gender.html) | male; female |
+| Tug'ruq turi | Вид родов | Observation.valueCodeableConcept (элемент панели новорождённого) | `code` LOINC `57071-3` "Obstetric delivery method"<br>`value` [Birth Type](ValueSet-form111-birth-type-vs.html), как в Форме 111 | Vaginal delivery (`289259007`) |
+| Oldinda kelgan qismi | Предлежание | Observation.valueCodeableConcept (элемент панели новорождённого) | `code` SNOMED `271692001` "Presentation of fetus"<br>`value` [Fetal Presentation](ValueSet-fetal-presentation-vs.html); передаётся, только если источник ведёт предлежание на каждого новорождённого | Cephalic (`1209182005`); breech (`6096002`) |
+| Vazni | Масса | Observation.valueQuantity (элемент панели новорождённого) | [Labor, Delivery and Newborn Codes](ValueSet-labor-delivery-and-newborn-code-vs.html) LOINC `8339-4` "Birth weight Measured" | 2850 g; 2700 g |
+| Bo'yi | Рост | Observation.valueQuantity (элемент панели новорождённого) | LOINC `89269-5` "Body height Measured --at birth" | 49 cm; 48 cm |
+| Bosh aylanasi | Окружность головы | Observation.valueQuantity (элемент панели новорождённого) | LOINC `9843-4` "Head Occipital-frontal circumference" | 34 cm; 33 cm |
+| Ko'krak aylanasi | Окружность груди | Observation.valueQuantity (элемент панели новорождённого) | SNOMED `248366000` "Chest circumference" | 32 cm; 31 cm |
+| Umumiy ahvoli | Общее состояние | Observation.valueCodeableConcept (элемент панели новорождённого) | `code` `chr-0005-00003` "General condition"<br>`value` [Satisfactory Status](ValueSet-satisfactory-status-vs.html) | Satisfactory (`162669003`) |
+| Apgar bahosi | Оценка по Апгар | Observation.valueInteger (элемент панели новорождённого) | LOINC `9272-6` "1 minute Apgar Score" | 8 |
+| Kindik uzunligi | Длина пуповины | Observation.valueQuantity (элемент панели новорождённого) | SNOMED `249194006` "Length of umbilical cord" | 55 cm; 52 cm |
+| Kindik o'ralishi | Обвитие пуповины | Observation.valueBoolean (элемент панели новорождённого) | только `code.text`, кода пока нет | false |
+| Kindik xususiyatlari | Особенности пуповины | Observation.valueString (элемент панели новорождённого) | только `code.text`, кода пока нет | Three vessels, no true knot |
+| Gonoblenoreya profilaktikasi | Профилактика гонобленнореи | Observation.valueCodeableConcept; note (элемент панели новорождённого) | `code` [Newborn Eye Prophylaxis Code](ValueSet-newborn-eye-prophylaxis-code-vs.html) `chr-0085-0001` "Neonatal ocular prophylaxis against gonococcal ophthalmia"<br>`value` HL7 [v2-0532](https://terminology.hl7.org/CodeSystem-v2-0532.html) `Y` "Yes" / `N` "No"; препарат в `note` | Да (`Y`) |
+| Homila asoratlari | Осложнения у плода | Observation.valueCodeableConcept; note (элемент панели новорождённого) | `code` [Labor, Delivery and Newborn Codes](ValueSet-labor-delivery-and-newborn-code-vs.html) `chr-0035-00029` "Fetal complications"<br>`value` HL7 [v2-0532](https://terminology.hl7.org/CodeSystem-v2-0532.html) `Y` "Yes" / `N` "No"; примечание в `note` | Нет (`N`) |
+| Tug'ilgandan keyin vafot etdi | Умер после рождения | Observation.valueDateTime (элемент панели новорождённого) | SNOMED `276506001` "Neonatal death"; `value` = время смерти | - |
 | Tirik tug'ilganlar soni | Живорождённых | Observation.valueInteger (`subject` = мать) | LOINC `73773-4` "Number of infants in this delivery delivered alive" | 2 |
 | O'lik tug'ilganlar soni | Мертворождённых | Observation.valueInteger (`subject` = мать) | SNOMED `252112002` "Number of stillbirths" | 0 |
-| Tug'ilgandan keyin vafot etganlar soni | Умерших после рождения | Observation.valueInteger (`subject` = мать) | только `code.text`, кода пока нет | 0 |
+| Tug'ilgandan keyin vafot etganlar soni | Умерших после рождения | Observation.valueInteger (`subject` = мать) | [Labor, Delivery and Newborn Codes](ValueSet-labor-delivery-and-newborn-code-vs.html) `chr-0035-00030` "Number of infants died after birth" | 0 |
 | Yo'ldosh ajralishi | Отделение последа | Procedure.code; occurrenceDateTime | [Placenta Delivery Method](ValueSet-placenta-delivery-method-vs.html) | O'z-o'zidan ajraldi (`chr-0086-0002`) |
 | Yo'ldosh butunligi | Целостность плаценты | Observation.valueCodeableConcept | `code` SNOMED `364343000` "Completeness of placenta"<br>`value` [Placenta and Membranes Completeness](ValueSet-tissue-integrity-status-vs.html) | Complete (`249170006`) |
 | Pardalar butunligi | Целостность оболочек | Observation.valueCodeableConcept | `code` SNOMED `364351002` "Completeness of membranes"<br>`value` [Placenta and Membranes Completeness](ValueSet-tissue-integrity-status-vs.html) | Complete (`249181009`) |
@@ -250,6 +270,7 @@
 | Loxiyalar | Лохии | Observation.valueCodeableConcept | `code` SNOMED `364239002` "Lochia feature"<br>`value` находка SNOMED о лохиях | Lochia rubra, moderate (`278072004`) |
 | Siydik pufagi | Мочевой пузырь | Observation.valueString | SNOMED `249585009` "Urinary bladder finding" | Spontaneous urination |
 | Ich kelishi | Стул | Observation.valueString | SNOMED `39211005` "Bowel action" | Normal |
+| Ona patronajga muhtojmi | Нуждается ли мать в патронаже | Observation.valueCodeableConcept | `code` [Labor, Delivery and Newborn Codes](ValueSet-labor-delivery-and-newborn-code-vs.html) `chr-0035-00028` "Mother needs patronage"<br>`value` HL7 [v2-0532](https://terminology.hl7.org/CodeSystem-v2-0532.html) `Y` "Yes" / `N` "No" | Нет (`N`) |
 | Davolash bo'yicha tavsiyalar | Рекомендации по лечению | Observation.valueString | только `code.text`, кода пока нет | Breastfeeding support, hydration and routine postpartum monitoring |
 | Parhez stoli | Диетический стол | Observation.valueInteger | только `code.text`, кода пока нет | 15 |
 
