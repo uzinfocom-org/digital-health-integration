@@ -198,7 +198,6 @@ Usage: #definition
 * status = #active
 * kind = #identifier
 * publisher = "Uzinfocom"
-* insert SickLeaveContactInstance
 * responsible = "Ministry of Health of the Republic of Uzbekistan"
 * date = "2026-07-20"
 * description = "Certificate series and number of a sick leave document (Номер ЛН), assigned when the листок нетрудоспособности is issued."

@@ -3,7 +3,6 @@ Parent: UZCoreObservation
 Id: sick-leave-observation
 Title: "Sick Leave Observation"
 Description: "Observation containing additional Sick Leave attributes"
-* insert SickLeaveContact
 * ^experimental = true
 * ^status = #draft
 * ^publisher = "UZINFOCOM"

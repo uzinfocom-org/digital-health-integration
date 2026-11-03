@@ -3,7 +3,6 @@ Id: care-plan-reason-cs
 Title: "Care plan reason translation in Russian and English"
 Description: "Reasons for temporary incapacity of the DHP sick leave API"
 
-* insert SickLeaveContact
 * insert OriginalCodeSystemDraft(care-plan-reason-cs)
 
 * #DIS "Kasallik"

@@ -3,7 +3,6 @@ Parent: UZCoreCondition
 Id: sick-leave-condition
 Title: "Sick Leave Condition"
 Description: "Preliminary or final diagnosis of a sick leave, coded in ICD-10. The verification status tells them apart: provisional for the preliminary diagnosis, confirmed for the final one."
-* insert SickLeaveContact
 * ^status = #draft
 * ^experimental = true
 * ^publisher = "UZINFOCOM"

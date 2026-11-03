@@ -2,7 +2,6 @@ CodeSystem: SickLeaveComponentCS
 Id: sick-leave-component-cs
 Title: "Sick Leave Component CodeSystem"
 Description: "Attributes of a sick leave recorded as Observation components, one per field of the DHP sick leave API"
-* insert SickLeaveContact
 * insert OriginalCodeSystemDraft(sick-leave-component-cs)
 
 * #urban-resident "Shahar aholisi"

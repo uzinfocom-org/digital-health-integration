@@ -2,7 +2,6 @@ CodeSystem: CarePlanStatusLocalCS
 Id: care-plan-status-local-cs
 Title: "Care Plan Status Local CodeSystem"
 Description: "Sick leave statuses of the DHP sick leave API"
-* insert SickLeaveContact
 * insert OriginalCodeSystemDraft(care-plan-status-local-cs)
 
 * #opened "Ochiq"

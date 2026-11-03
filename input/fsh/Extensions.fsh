@@ -27,7 +27,6 @@ Id: care-for-workflow-status
 Title: "Sick Leave Workflow Status"
 Description: "Extended lifecycle status of Sick Leave"
 
-* insert SickLeaveContact
 * ^status = #draft
 
 * ^experimental = true
@@ -47,7 +46,6 @@ Id: care-for-status-history
 Title: "Sick Leave Status History"
 Description: "History of workflow statuses with active period"
 
-* insert SickLeaveContact
 * ^status = #draft
 
 * ^experimental = true
@@ -71,7 +69,6 @@ Id: care-for-related-person
 Title: "Related Person for Sick Leave"
 Description: "Reference to related person when sick leave reason is family care"
 
-* insert SickLeaveContact
 * ^status = #draft
 
 * ^experimental = true
@@ -89,7 +86,6 @@ Id: care-for-incapacity-period
 Title: "Sick Leave Incapacity Period"
 Description: "One period of temporary incapacity for work covered by the sick leave. A sick leave extended several times has one period per extension."
 
-* insert SickLeaveContact
 * ^status = #draft
 
 * ^experimental = true
@@ -111,7 +107,6 @@ Id: care-for-head-practitioner
 Title: "Sick Leave Head Practitioner"
 Description: "Chief physician or other authorized practitioner who approves the sick leave."
 
-* insert SickLeaveContact
 * ^status = #draft
 
 * ^experimental = true

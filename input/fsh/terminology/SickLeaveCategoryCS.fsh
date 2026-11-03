@@ -2,7 +2,6 @@ CodeSystem: SickLeaveCategoryCS
 Id: sick-leave-category-cs
 Title: "Sick Leave Category CodeSystem"
 Description: "Code system for Sick Leave categories in Uzbekistan, with the document type codes of the DHP sick leave API"
-* insert SickLeaveContact
 * insert OriginalCodeSystemDraft(sick-leave-category-cs)
 
 * #SL "Mehnatga layoqatsizlik varaqasi"
