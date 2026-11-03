@@ -6,12 +6,15 @@ title How a sick leave record fits together
 class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{Open the UZ Core Patient profile}]]
 class SickLeaveCarePlan [[StructureDefinition-sick-leave-careplan.html{Open the SickLeaveCarePlan profile}]] #E8F0FE
 class SickLeaveObservation [[StructureDefinition-sick-leave-observation.html{Open the SickLeaveObservation profile}]] #E8F0FE
+class SickLeaveCondition [[StructureDefinition-sick-leave-condition.html{Open the SickLeaveCondition profile}]] #E8F0FE
 class SickLeaveRelatedPerson [[StructureDefinition-sick-leave-related-person.html{Open the SickLeaveRelatedPerson profile}]] #E8F0FE
 
 Patient "1" <-- "0..*" SickLeaveCarePlan : « subject »
-Patient "0..1" <-- "0..*" SickLeaveObservation : « subject »
+Patient "1" <-- "0..*" SickLeaveObservation : « subject »
 Patient "1" <-- "0..*" SickLeaveRelatedPerson : « patient »
+Patient "1" <-- "0..*" SickLeaveCondition : « subject »
 SickLeaveCarePlan "1" <-- "0..*" SickLeaveObservation : « basedOn »
+SickLeaveCarePlan "0..*" --> "0..2" SickLeaveCondition : « addresses[diagnosis] »
 SickLeaveCarePlan "0..*" --> "0..1" SickLeaveRelatedPerson : « extension[relatedPerson] »
 
 caption Clinical graph: references to organizations, practitioners and other actors are left out to keep the diagram readable.

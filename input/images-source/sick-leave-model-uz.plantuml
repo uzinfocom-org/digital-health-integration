@@ -6,12 +6,15 @@ title Mehnatga layoqatsizlik yozuvi qanday tuzilgan
 class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{UZ Core Patient profilini ochish}]]
 class SickLeaveCarePlan [[StructureDefinition-sick-leave-careplan.html{SickLeaveCarePlan profilini ochish}]] #E8F0FE
 class SickLeaveObservation [[StructureDefinition-sick-leave-observation.html{SickLeaveObservation profilini ochish}]] #E8F0FE
+class SickLeaveCondition [[StructureDefinition-sick-leave-condition.html{SickLeaveCondition profilini ochish}]] #E8F0FE
 class SickLeaveRelatedPerson [[StructureDefinition-sick-leave-related-person.html{SickLeaveRelatedPerson profilini ochish}]] #E8F0FE
 
 Patient "1" <-- "0..*" SickLeaveCarePlan : « subject »
-Patient "0..1" <-- "0..*" SickLeaveObservation : « subject »
+Patient "1" <-- "0..*" SickLeaveObservation : « subject »
 Patient "1" <-- "0..*" SickLeaveRelatedPerson : « patient »
+Patient "1" <-- "0..*" SickLeaveCondition : « subject »
 SickLeaveCarePlan "1" <-- "0..*" SickLeaveObservation : « basedOn »
+SickLeaveCarePlan "0..*" --> "0..2" SickLeaveCondition : « addresses[diagnosis] »
 SickLeaveCarePlan "0..*" --> "0..1" SickLeaveRelatedPerson : « extension[relatedPerson] »
 
 caption Klinik graf: diagramma o'qilishi oson bo'lishi uchun tashkilotlar, tibbiyot xodimlari va boshqa ishtirokchilarga havolalar ko'rsatilmagan.

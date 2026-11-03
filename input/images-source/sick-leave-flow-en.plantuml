@@ -1,0 +1,32 @@
+@startuml sick-leave-flow-en
+skinparam sequenceMessageAlign left
+skinparam responseMessageBelowArrow true
+title Order of writes: opening, extending and closing a sick leave
+
+participant "Sick leave service" as SVC #E8F0FE
+participant "DHP FHIR server" as DHP #DCFCE7
+participant "Consumer" as C #FEF3C7
+
+note over SVC, DHP : Patient, Practitioner and Organization already exist in the DHP
+
+== Opening ==
+SVC -> DHP : POST Condition (preliminary, provisional)
+SVC -> DHP : POST RelatedPerson, if the document has one
+SVC -> DHP : POST CarePlan (opened, active)\nreferences the Condition and the RelatedPerson
+SVC -> DHP : POST Observation (basedOn the CarePlan)
+
+== Extending ==
+SVC -> DHP : PUT CarePlan (extended, active)\nnew incapacityPeriod and statusHistory entry
+
+== Closing ==
+SVC -> DHP : POST Condition (final, confirmed)
+SVC -> DHP : PUT Condition (preliminary): clinicalStatus resolved
+SVC -> DHP : PUT CarePlan (closed, completed)\nreferences both diagnoses
+
+== Reading ==
+C -> DHP : GET CarePlan/{id}
+DHP --> C : current version
+C -> DHP : read the referenced Condition, Observation...
+
+caption A resource is written after the resources it references
+@enduml
