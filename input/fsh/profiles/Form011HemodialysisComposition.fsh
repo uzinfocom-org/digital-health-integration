@@ -5,7 +5,6 @@ Title: "Form 011 - Hemodialysis Session Composition"
 Description: "Composition profile for Form 011 (Hemodialysis Session Record) documents."
 
 * identifier 1..*
-* status = #final
 * type = $loinc#29749-9 "Dialysis records"
 * category 1..1
 * category = $document-category-cs#form-011 "Hemodialysis session record"

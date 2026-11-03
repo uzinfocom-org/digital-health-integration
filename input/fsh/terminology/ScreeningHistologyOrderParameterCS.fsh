@@ -7,6 +7,7 @@ Description: "Types of parameters specified in histology, cytology and biopsy Se
 * ^experimental = true
 * ^content = #complete
 * ^caseSensitive = true
+* ^language = #uz
 
 * #scrn-0069-00001 "Olingan material turi"
   * ^designation[0].language = #ru

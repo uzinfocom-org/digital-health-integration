@@ -1,0 +1,41 @@
+@startuml forms-vol08-structure-ru
+hide circle
+hide empty members
+skinparam linetype ortho
+title Том 8 - цепочка от донации к продукту, цвет по типу документа
+
+skinparam class {
+  BackgroundColor<<card>> #E8F0FE
+  BackgroundColor<<report>> #E6F4EA
+  BackgroundColor<<product>> #F3E8FD
+  BackgroundColor<<supply>> #FEF7E0
+  BackgroundColor<<register>> #ECEFF1
+}
+
+class "195/196/199\nРегистрация донора" as F195 <<card>>
+class "203/204/217-220\nСкрининговые анализы донора" as F203 <<report>>
+class "216 Журнал\nВИЧ-положительных доноров" as F216 <<register>>
+class "198/201\nЗаготовка" as F201 <<product>>
+class "207/208/209/210\nПроизводство компонентов" as F207 <<product>>
+class "205 Стерильность /\n206 утилизация" as F205 <<report>>
+class "213 Требование" as F213 <<supply>>
+class "211/214 Выдача продукции,\n212 приём компонентов" as F211 <<supply>>
+class "009 Переливание\n(том 1)" as F009 <<report>>
+
+F195 --> F203 : скрининг
+F203 --> F216 : если положительный
+F203 --> F201 : если допущен
+F201 --> F207
+F207 --> F205
+F207 --> F211
+F213 ..> F211 : запрашивает
+F211 ..> F009 : доставка к постели больного
+
+legend right
+  Синий = карта донора
+  Зелёный = лабораторный отчёт
+  Фиолетовый = продукт крови
+  Жёлтый = снабжение
+  Серый = журнал (выборка)
+endlegend
+@enduml

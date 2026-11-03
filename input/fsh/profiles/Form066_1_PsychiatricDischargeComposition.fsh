@@ -7,8 +7,7 @@ Description: "Composition profile for Form 066-1."
 * identifier 1..*
 * identifier ^short = "Hujjat instansiyasi UUID va shakl raqami; 0.2 bemorning ro'yxatdan o'tish raqami"
 
-* status = #final
-* status ^short = "Hujjat holati (chiqarilgan yakuniy hujjat)"
+* status ^short = "Hujjat holati"
 
 * type = $loinc#18842-5 "Discharge summary"
 * type ^short = "066-1 shakl hujjat turi"

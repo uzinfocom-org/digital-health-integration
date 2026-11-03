@@ -10,6 +10,7 @@ Description: "ConceptMap defining the mapping between cancer status codes used b
 * publisher = "Uzinfocom"
 
 * sourceScopeCanonical = Canonical(CancerRegistryDictionaryVS)
+* targetScopeCanonical = Canonical(CancerRegistryDHPStatusTargetVS)
 
 // Group 1: CancerRegistryDictionaryCS to CancerEncounterSubjectStatusCS
 * group[+].source = Canonical(CancerRegistryDictionaryCS)

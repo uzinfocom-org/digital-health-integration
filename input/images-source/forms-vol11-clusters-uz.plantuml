@@ -1,0 +1,29 @@
+@startuml forms-vol11-clusters-uz
+hide empty members
+skinparam linetype ortho
+title 11-jild - sanitariya-epidemiologiya nazoratining sakkiz kichik sohasi
+
+rectangle "Obyektlar va qurilish ustidan\nsanitariya nazorati\n246-253, 304-305, 344, 361" as A #F3E8FD
+rectangle "Atrof-muhitdan namuna olish va tekshirish\nsuv 254/317/327-331, havo 332-336, tuproq 318/337-339,\noziq-ovqat 255-257/345-349/351, fizik omillar 310/340-343,\nradiatsiya 278-280/302-303/353-360,\npolimerlar va toksikologiya 362-364, umumiy 319/326" as B #F3E8FD
+rectangle "Yuqumli kasalliklar va\navj olishlarni nazorat qilish\n258-264, 060, 398" as C #FCE8E6
+rectangle "Parazitologiya, zoonozlar va\nxavfli patogenlar\n265-277, 299-301, 306-308, 320, 325,\n379-388, 399, 045-x" as D #FCE8E6
+rectangle "Mikrobiologiya laboratoriyalari\n321-324, 350, 365-378" as E #E6F4EA
+rectangle "Patogen biologik agentlar\nva shtammlar bilan ishlash\n281-298" as F #E6F4EA
+rectangle "Ma'muriy ta'sir choralari\n311-316, 352" as G #ECEFF1
+rectangle "Dezinfeksiya va dezinseksiya\nishlari\n309, 389-397" as H #ECEFF1
+
+C --> D : zoonoz / parazitar o'choqlar
+C --> H : o'choqni dezinfeksiya qilish
+B --> E : namunalar laboratoriyaga
+D --> F : shtammlar kolleksiyaga
+C --> G : qoidabuzarliklar / jarimalar
+
+note as N
+  Binafsha = ekologik va sanitariya nazorati.
+  Qizil = yuqumli kasalliklar epidemiologiyasi.
+  Yashil = laboratoriya.
+  Kulrang = majburlash va joylardagi ishlar.
+  Asosan umumlashtirilgan jurnallar va tekshiruv dalolatnomalari -
+  har bir bemor bo'yicha hujjatlar emas, balki hisobot hujjatlari.
+end note
+@enduml

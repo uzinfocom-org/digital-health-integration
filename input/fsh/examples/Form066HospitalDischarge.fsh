@@ -254,31 +254,34 @@ Usage: #inline
 
 
 Instance: organization-066-001
-InstanceOf: Organization
+InstanceOf: UZCoreOrganization
 Usage: #inline
 * language = #en
-* identifier.system = "https://dhp.uz/fhir/core/sid/uz/organization-code"
-* identifier.value = "200001"
+* identifier[taxId].type = $identifier-type#TAX "Tax ID number"
+* identifier[taxId].system = $organization-tax-id-system-dhp
+* identifier[taxId].value = "201456781"
 * name = "Toshkent shahar klinik shifoxonasi"
 
 
 
 Instance: organization-attached-066
-InstanceOf: Organization
+InstanceOf: UZCoreOrganization
 Usage: #inline
 * language = #en
-* identifier.system = "https://dhp.uz/fhir/core/sid/uz/organization-code"
-* identifier.value = "200935"
+* identifier[taxId].type = $identifier-type#TAX "Tax ID number"
+* identifier[taxId].system = $organization-tax-id-system-dhp
+* identifier[taxId].value = "202567892"
 * name = "Yunusobod tuman oilaviy poliklinikasi"
 
 
 
 Instance: organization-referring-066
-InstanceOf: Organization
+InstanceOf: UZCoreOrganization
 Usage: #inline
 * language = #en
-* identifier.system = "https://dhp.uz/fhir/core/sid/uz/organization-code"
-* identifier.value = "200002"
+* identifier[taxId].type = $identifier-type#TAX "Tax ID number"
+* identifier[taxId].system = $organization-tax-id-system-dhp
+* identifier[taxId].value = "203678903"
 * name = "Yunusobod tuman tibbiyot birlashmasi"
 
 

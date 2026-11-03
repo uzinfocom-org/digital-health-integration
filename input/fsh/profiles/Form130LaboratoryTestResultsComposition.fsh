@@ -5,7 +5,6 @@ Title: "Form 130 - Laboratory Test Results Composition"
 Description: "Composition profile for Form 130 laboratory test results."
 
 * identifier 1..*
-* status = #final
 * type = $loinc#11502-2 "Laboratory report"
 * category 1..1
 * category = $document-category-cs#form-130 "Laboratory Test Results"

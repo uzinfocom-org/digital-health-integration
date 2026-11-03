@@ -13,3 +13,7 @@ Description: "Defines Screening Gynecological Disease History"
 * include $sct#95315005
 * include $sct#88157006
 * include $sct#79883001
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)

@@ -1,0 +1,59 @@
+@startuml forms-vol01-structure
+hide circle
+hide empty members
+skinparam linetype ortho
+title Volume 1 - inpatient record structure, coloured by document type
+
+skinparam class {
+  BackgroundColor<<register>> #ECEFF1
+  BackgroundColor<<card>> #E8F0FE
+  BackgroundColor<<report>> #E6F4EA
+  BackgroundColor<<certificate>> #FEF7E0
+}
+
+class "001 Admission/refusal\njournal" as F001 <<register>>
+class "003 Inpatient\nmedical card" as F003 <<card>>
+class "007 Bed-movement\nsheet" as F007 <<report>>
+
+class "004 Anaesthesia\nregister" as F004 <<register>>
+class "005 Anaesthesia\nsheet" as F005 <<report>>
+class "008 Surgical\nprocedure record" as F008 <<register>>
+class "006 ICU dynamic\nobservation" as F006 <<card>>
+class "009 Transfusion\nrecord" as F009 <<register>>
+class "009-1..009-4\ntransfusion sub-forms" as F009x <<report>>
+
+class "002 Newborn dept\njournal" as F002 <<register>>
+class "010 Birth\nregister" as F010 <<register>>
+class "096 Maternity\ncard" as F096 <<card>>
+class "097 Newborn\ndevelopment card" as F097 <<card>>
+class "003-1 Early\ntermination card" as F003a <<card>>
+
+class "027 Medical-record\nextract" as F027 <<report>>
+class "066 Discharge\nstatistical card" as F066 <<card>>
+class "103 Birth-certificate\nregistration" as F103 <<register>>
+class "106 Death-certificate\nregistration" as F106 <<register>>
+class "106-2 Perinatal-death\nregistration" as F106b <<register>>
+
+F001 --> F003 : admission opens card
+F003 --> F004
+F003 --> F008
+F003 --> F006
+F003 --> F009
+F009 --> F009x
+F003 ..> F027 : on discharge
+F003 ..> F066 : on discharge
+F003 ..> F106 : on death
+
+F096 --> F010 : delivery
+F096 --> F097 : newborn
+F002 --> F097 : newborn logged
+F096 ..> F103 : birth certificate
+F096 ..> F106b : perinatal death
+F096 ..> F003a : early termination
+
+legend right
+  Grey = register/ledger (query, not a document)
+  Blue = longitudinal card
+  Green = report/sheet
+endlegend
+@enduml

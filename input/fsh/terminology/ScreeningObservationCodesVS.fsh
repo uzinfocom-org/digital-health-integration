@@ -21,3 +21,9 @@ Description: "Combined value set of codes for the Observation.code field (Labora
 * include codes from valueset ScreeningDiagnosticProcedureVS
 * include codes from valueset ScreeningObservationTypeVS
 * include codes from valueset ScreeningBreastFindingVS
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningLaboratoryCS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)

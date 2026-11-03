@@ -8,3 +8,7 @@ Description: "Histologic grade values confirmed for cervical histology results i
 * include $sct#258351006
 * include $sct#258352004
 * include $sct#258353009
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)

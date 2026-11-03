@@ -29,9 +29,9 @@ Misol: [hepatitis-patient-example](Patient-hepatitis-patient-example.html)
 
 | Qayd etiladigan ma’lumot | Ma’lumotnoma | Misol kodi yoki qiymati | Qayerda saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Milliy identifikator | - | `515050500505` | `identifier[nationalId].value` |
-| Mahalliy pasport | - | `AB1234567` | `identifier[passportLocal].value` |
-| Tibbiy karta raqami | - | `01234567890456` | `identifier[healthCardId].value` |
+| Milliy identifikator | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ni`<br>`type` `NI` | `515050500505` | `identifier[nationalId].value` |
+| Mahalliy pasport | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ppn/local`<br>`type` `PPN` | `AB1234567` | `identifier[passportLocal].value` |
+| Tibbiy karta raqami | `system` `https://dhp.uz/fhir/core/sid/pid/uz/hc`<br>`type` `HC` | `01234567890456` | `identifier[healthCardId].value` |
 | Ism-sharifi | - | `Xalida Yusupova Maxmudovna` | `name` |
 | Ma’muriy jins | [AdministrativeGenderVS](https://dhp.uz/fhir/core/ValueSet-administrative-gender-vs.html) | `female` | `gender` |
 | Tug‘ilgan sana | - | `1990-02-01` | `birthDate` |
@@ -47,7 +47,7 @@ Misol: [hepatitis-episode-of-care-example](EpisodeOfCare-hepatitis-episode-of-ca
 
 | Qayd etiladigan ma’lumot | Ma’lumotnoma | Misol kodi yoki qiymati | Qayerda saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Reyestr identifikatori | - | `75dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
+| Reyestr identifikatori | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `75dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
 | Holat | [EpisodeOfCareStatus](https://hl7.org/fhir/R5/valueset-episode-of-care-status.html) | `active` | `status` |
 | Xizmat turi | [EpisodeOfCareTypeVS](https://dhp.uz/fhir/core/ValueSet-episode-of-care-type-vs.html) | `episode-of-care-type-cs#mserv-0001-00004` | `type[serviceType]` |
 | Tashxis | - | [example-hepatitis-condition](Condition-example-hepatitis-condition.html) | `diagnosis.condition.reference` |
@@ -92,7 +92,7 @@ Misol: [example-hepatitis-condition](Condition-example-hepatitis-condition.html)
 
 | Qayd etiladigan ma’lumot | Ma’lumotnoma | Misol kodi yoki qiymati | Qayerda saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Reyestr identifikatori | - | `69dcdd0a-5a68-4cc6-8503-5ab15a41c63b` | `identifier[hepatitisRegistry].value` |
+| Reyestr identifikatori | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `69dcdd0a-5a68-4cc6-8503-5ab15a41c63b` | `identifier[hepatitisRegistry].value` |
 | Tashxis | [ConditionCodeVS](https://dhp.uz/fhir/core/ValueSet-condition-code-vs.html) | `ICD-10#B17.1` | `code` |
 | Klinik holat | [ClinicalStatusVS](https://dhp.uz/fhir/core/ValueSet-clinical-status-vs.html) | `condition-clinical#active` | `clinicalStatus` |
 | Tashxis turi | [DiagnosisTypeVS](https://dhp.uz/fhir/core/ValueSet-diagnosis-type-vs.html) | `diagnosis-type-cs#gencl-0001-00003` | `extension[diagnosisType]` |
@@ -114,7 +114,7 @@ Misol: [example-hepatitis-observation-analysis](Observation-example-hepatitis-ob
 
 | Qayd etiladigan ma’lumot | Ma’lumotnoma | Misol kodi yoki qiymati | Qayerda saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Reyestr identifikatori | - | `85dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
+| Reyestr identifikatori | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `85dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
 | Natija holati | [ObservationStatusVS](https://dhp.uz/fhir/core/ValueSet-observation-status-vs.html) | `final` | `status` |
 | Tekshiruv | [ObservationCodesVS](https://dhp.uz/fhir/core/ValueSet-observation-codes-vs.html) | `LOINC#22314-9` | `code` |
 | Natija | [v3-ObservationInterpretation](https://terminology.hl7.org/CodeSystem-v3-ObservationInterpretation.html) | `v3-ObservationInterpretation#NEG` | `valueCodeableConcept` |
@@ -134,7 +134,7 @@ Misol: [example-ultrasound-cirrhosis](Observation-example-ultrasound-cirrhosis.h
 
 | Qayd etiladigan ma’lumot | Ma’lumotnoma | Misol kodi yoki qiymati | Qayerda saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Reyestr identifikatori | - | `85dcdd0a-5a68-4cc6-8503-5ab15a42c73b` | `identifier[hepatitisRegistry].value` |
+| Reyestr identifikatori | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `85dcdd0a-5a68-4cc6-8503-5ab15a42c73b` | `identifier[hepatitisRegistry].value` |
 | Natija holati | [ObservationStatusVS](https://dhp.uz/fhir/core/ValueSet-observation-status-vs.html) | `final` | `status` |
 | Topilma | [HepatitisTypeOfUltraSoundVS](ValueSet-hepatitis-type-of-ultra-sound-vs.html) | `SNOMED CT#19943007` / `SNOMED CT#300332007` | `code` |
 | Topilma mavjudligi | - | `true` / `false` | `valueBoolean` |

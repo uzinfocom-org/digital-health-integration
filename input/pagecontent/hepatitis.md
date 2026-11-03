@@ -27,9 +27,9 @@ Example: [hepatitis-patient-example](Patient-hepatitis-patient-example.html)
 
 | What is recorded | Terminology | Example code or value | Where it is stored |
 | :--- | :--- | :--- | :--- |
-| National identifier | - | `515050500505` | `identifier[nationalId].value` |
-| Local passport | - | `AB1234567` | `identifier[passportLocal].value` |
-| Health card identifier | - | `01234567890456` | `identifier[healthCardId].value` |
+| National identifier | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ni`<br>`type` `NI` | `515050500505` | `identifier[nationalId].value` |
+| Local passport | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ppn/local`<br>`type` `PPN` | `AB1234567` | `identifier[passportLocal].value` |
+| Health card identifier | `system` `https://dhp.uz/fhir/core/sid/pid/uz/hc`<br>`type` `HC` | `01234567890456` | `identifier[healthCardId].value` |
 | Name | - | `Xalida Yusupova Maxmudovna` | `name` |
 | Administrative gender | [AdministrativeGenderVS](https://dhp.uz/fhir/core/ValueSet-administrative-gender-vs.html) | `female` | `gender` |
 | Date of birth | - | `1990-02-01` | `birthDate` |
@@ -45,7 +45,7 @@ Example: [hepatitis-episode-of-care-example](EpisodeOfCare-hepatitis-episode-of-
 
 | What is recorded | Terminology | Example code or value | Where it is stored |
 | :--- | :--- | :--- | :--- |
-| Registry identifier | - | `75dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
+| Registry identifier | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `75dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
 | Status | [EpisodeOfCareStatus](https://hl7.org/fhir/R5/valueset-episode-of-care-status.html) | `active` | `status` |
 | Service type | [EpisodeOfCareTypeVS](https://dhp.uz/fhir/core/ValueSet-episode-of-care-type-vs.html) | `episode-of-care-type-cs#mserv-0001-00004` | `type[serviceType]` |
 | Diagnosis | - | [example-hepatitis-condition](Condition-example-hepatitis-condition.html) | `diagnosis.condition.reference` |
@@ -90,7 +90,7 @@ Example: [example-hepatitis-condition](Condition-example-hepatitis-condition.htm
 
 | What is recorded | Terminology | Example code or value | Where it is stored |
 | :--- | :--- | :--- | :--- |
-| Registry identifier | - | `69dcdd0a-5a68-4cc6-8503-5ab15a41c63b` | `identifier[hepatitisRegistry].value` |
+| Registry identifier | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `69dcdd0a-5a68-4cc6-8503-5ab15a41c63b` | `identifier[hepatitisRegistry].value` |
 | Diagnosis | [ConditionCodeVS](https://dhp.uz/fhir/core/ValueSet-condition-code-vs.html) | `ICD-10#B17.1` | `code` |
 | Clinical status | [ClinicalStatusVS](https://dhp.uz/fhir/core/ValueSet-clinical-status-vs.html) | `condition-clinical#active` | `clinicalStatus` |
 | Diagnosis type | [DiagnosisTypeVS](https://dhp.uz/fhir/core/ValueSet-diagnosis-type-vs.html) | `diagnosis-type-cs#gencl-0001-00003` | `extension[diagnosisType]` |
@@ -112,7 +112,7 @@ Example: [example-hepatitis-observation-analysis](Observation-example-hepatitis-
 
 | What is recorded | Terminology | Example code or value | Where it is stored |
 | :--- | :--- | :--- | :--- |
-| Registry identifier | - | `85dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
+| Registry identifier | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `85dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
 | Result status | [ObservationStatusVS](https://dhp.uz/fhir/core/ValueSet-observation-status-vs.html) | `final` | `status` |
 | Test | [ObservationCodesVS](https://dhp.uz/fhir/core/ValueSet-observation-codes-vs.html) | `LOINC#22314-9` | `code` |
 | Result | [v3-ObservationInterpretation](https://terminology.hl7.org/CodeSystem-v3-ObservationInterpretation.html) | `v3-ObservationInterpretation#NEG` | `valueCodeableConcept` |
@@ -132,7 +132,7 @@ Example: [example-ultrasound-cirrhosis](Observation-example-ultrasound-cirrhosis
 
 | What is recorded | Terminology | Example code or value | Where it is stored |
 | :--- | :--- | :--- | :--- |
-| Registry identifier | - | `85dcdd0a-5a68-4cc6-8503-5ab15a42c73b` | `identifier[hepatitisRegistry].value` |
+| Registry identifier | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `85dcdd0a-5a68-4cc6-8503-5ab15a42c73b` | `identifier[hepatitisRegistry].value` |
 | Result status | [ObservationStatusVS](https://dhp.uz/fhir/core/ValueSet-observation-status-vs.html) | `final` | `status` |
 | Finding | [HepatitisTypeOfUltraSoundVS](ValueSet-hepatitis-type-of-ultra-sound-vs.html) | `SNOMED CT#19943007` / `SNOMED CT#300332007` | `code` |
 | Presence of finding | - | `true` / `false` | `valueBoolean` |

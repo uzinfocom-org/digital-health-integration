@@ -1,0 +1,21 @@
+@startuml forms-vol04-flow-uz
+title Jarayon namunasi - dorixona zaxirasi va ta'minot (4-jild)
+autonumber
+
+participant "Bo'lim" as W
+participant "Muassasa\ndorixonasi" as PH
+participant "Yetkazib beruvchi" as SUP
+
+PH -> PH : 131 davolash standartlari va o'rinlar soni bo'yicha oylik ehtiyoj\n(doimiy komissiya)
+PH -> SUP : xarid buyurtmasi
+SUP -> PH : yetkazib berish
+PH -> PH : 132 miqdoriy kirim, 137 ombor hisobi
+W -> PH : 134 talabnoma (yuk xati)
+PH -> W : 136 bo'limlarga berilgan dorilar
+PH -> PH : 135/139 kunlik sarf, 138/140 aylanma qaydnomalar,\n141 qoldiq
+
+note over PH
+  Ombor va buxgalteriya hisobi, bemor darajasidagi klinik ma'lumotlar emas;
+  asosan dastlabki klinik integratsiya doirasidan tashqarida.
+end note
+@enduml

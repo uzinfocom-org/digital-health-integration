@@ -1,0 +1,44 @@
+@startuml forms-volumes-map-uz
+hide empty members
+left to right direction
+skinparam defaultFontSize 9
+skinparam ranksep 24
+skinparam nodesep 22
+skinparam rectangle {
+  BackgroundColor<<core>> #E8F0FE
+  BackgroundColor<<ops>> #FEF7E0
+  BackgroundColor<<public>> #F3E8FD
+}
+
+rectangle "1.0 Statsionar\n(001-010, 096-097, 103, 106)" as V1 <<core>> [[forms-volume-01-inpatient.html]]
+rectangle "2.0 Ambulator-poliklinika yordami\n(023-111)" as V2 <<core>> [[forms-volume-02-ambulatory.html]]
+rectangle "3.0 Diagnostika va laboratoriya\n(011-130)" as V3 <<core>> [[forms-volume-03-diagnostics-laboratory.html]]
+rectangle "6.0 Genetika va skrining\n(152-174)" as V6 <<core>> [[forms-volume-06-genetics-screening.html]]
+rectangle "8.0 Qon xizmati\n(194-222)" as V8 <<core>> [[forms-volume-08-blood-service.html]]
+rectangle "7.0 OIV/OITS xizmati\n(175-193)" as V7 <<public>> [[forms-volume-07-hiv.html]]
+
+rectangle "4.0 Dorixona va ta'minot\n(131-141)" as V4 <<ops>> [[forms-volume-04-pharmacy.html]]
+rectangle "5.0 Tez tibbiy yordam va sanitar aviatsiya\n(059-3, 142-151)" as V5 <<ops>> [[forms-volume-05-emergency.html]]
+
+rectangle "9.0 Patologik anatomiya\n(223-228)" as V9 <<public>> [[forms-volume-09-pathology.html]]
+rectangle "10.0 Sud tibbiyoti\n(229-245)" as V10 <<public>> [[forms-volume-10-forensic.html]]
+rectangle "11.0 Sanitariya-epidemiologiya xizmati\n(246-399, +045-x, 060)" as V11 <<public>> [[forms-volume-11-sanitary-epidemiology.html]]
+
+V2 --> V3 : tekshiruvlarni buyurish
+V2 --> V6 : prenatal yo'llanma (037-1)
+V6 --> V1 : tug'ruq
+V1 --> V6 : neonatal skrining
+V8 --> V1 : quyish uchun\nqon mahsulotlari (009)
+V1 --> V3 : chiqish statistikasi (066)
+V2 --> V7 : OIV dispanseri (175)
+V1 --> V9 : o'lim -> autopsiya
+V1 --> V10 : o'lim -> sud-tibbiy ekspertiza
+V2 --> V11 : shoshilinch bildirishnoma (058, 3-jild)
+V5 --> V1 : shoshilinch yotqizish
+
+note as N
+  Ko'k = asosiy klinik yordam.
+  Sariq = ish jarayonini ta'minlash.
+  Binafsha = jamoat salomatligi va ixtisoslashgan xizmatlar.
+end note
+@enduml

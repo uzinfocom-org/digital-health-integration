@@ -10,3 +10,7 @@ Description: "LOINC answer codes for lymphovascular invasion in a cancer specime
 * $loinc#LA13328-2 "Lymph-vascular Invasion Present/Identified"
 * $loinc#LA4720-4 "Not applicable"
 * $loinc#LA13420-7 "Unknown/Indeterminate"
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningLaboratoryCS)

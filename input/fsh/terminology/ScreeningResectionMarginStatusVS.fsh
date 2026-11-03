@@ -8,3 +8,7 @@ Description: "Resection margin status values used in Screening histology conclus
 * include $sct#55182004
 * include $sct#370109009
 * include $sct#369710003
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)

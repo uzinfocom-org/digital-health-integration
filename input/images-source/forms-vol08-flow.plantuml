@@ -1,0 +1,25 @@
+@startuml forms-vol08-flow
+title Sample flow - donor to recipient (volume 8 into volume 1)
+autonumber
+
+actor Donor as D
+participant "Donor dept\n(vol 8)" as DD
+participant "Lab\n(vol 8)" as LAB
+participant "Component\nproduction (vol 8)" as CP
+participant "Hospital ward\n(vol 1)" as WARD
+
+D -> DD : 195 application, 196/199 donor card
+DD -> LAB : sample for screening
+LAB -> LAB : 203/217 group & Rh, 204 brucellosis,\n218 syphilis/HBsAg/HIV, 219 clinical/biochem
+alt donor cleared
+  DD -> DD : 201 whole-blood / 198 apheresis collection
+  DD -> CP : unit sent for processing
+  CP -> CP : 207 components, 208 cryoprecipitate,\n209 plasma, 210 washed erythrocytes
+  CP -> CP : 205 sterility check
+  WARD -> CP : 213 requisition for blood products
+  CP -> WARD : 211 issue of ready product
+  WARD -> WARD : 009 transfusion at the bedside (vol 1)
+else screening positive
+  LAB -> DD : 216 HIV-seropositive donor register\n206 unsuitable-component disposal
+end
+@enduml

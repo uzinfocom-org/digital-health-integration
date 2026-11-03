@@ -1,0 +1,16 @@
+@startuml forms-vol03-flow-uz
+title Jarayon namunasi - tekshiruv buyurish va natijani qaytarish
+autonumber
+
+actor "Buyurgan\nshifokor" as DR
+participant "Laboratoriya / nur\ndiagnostikasi (3-jild)" as LIS
+
+DR -> LIS : buyurtma beradi (yo'llanma)
+LIS -> LIS : namuna olish, tahlil o'tkazish\n(029 qon olish, 034 laboratoriya jurnali)
+LIS -> DR : buyurtmaga bog'langan natija qaytariladi\n(040-130 tahlili, yoki 015-x / 017 / 019 / 020 bayoni)
+
+note over LIS
+  Nur diagnostikasi (015 ultratovush, 017 rentgen, 019 KT/MRT)
+  bayonnoma va, PACS mavjud bo'lsa, saqlangan tasvirlarni beradi.
+end note
+@enduml

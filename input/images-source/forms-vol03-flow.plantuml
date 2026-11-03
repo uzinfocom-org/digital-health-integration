@@ -1,0 +1,16 @@
+@startuml forms-vol03-flow
+title Sample flow - ordering a test and returning the result
+autonumber
+
+actor "Ordering\nclinician" as DR
+participant "Lab / imaging\n(vol 3)" as LIS
+
+DR -> LIS : places the order (referral)
+LIS -> LIS : collect specimen, run analysis\n(029 sampling, 034 lab register)
+LIS -> DR : result returned, linked to the order\n(040-130 tahlili, or 015-x / 017 / 019 / 020 bayoni)
+
+note over LIS
+  Imaging (015 ultrasound, 017 X-ray, 019 CT/MRI)
+  produces a report and, with PACS, stored images.
+end note
+@enduml

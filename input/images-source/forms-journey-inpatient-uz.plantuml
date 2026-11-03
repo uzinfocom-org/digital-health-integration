@@ -1,0 +1,34 @@
+@startuml forms-journey-inpatient-uz
+title Yo'l namunasi - statsionardagi jarrohlik holati (1, 3, 8-jildlar)
+autonumber
+
+actor Bemor as P
+participant "Qabul bo'limi" as ADM
+participant "Bo'lim / operatsiya xonasi\n(1-jild)" as WARD
+participant "Diagnostika va laboratoriya\n(3-jild)" as DX
+participant "Qon banki\n(8-jild)" as BB
+
+P -> ADM : yotqizish uchun keladi
+ADM -> ADM : 001 qabul va rad etish jurnali
+ADM -> WARD : 003 statsionar bemorning tibbiy kartasi ochiladi
+WARD -> DX : tahlillar va tasvirlashni buyuradi
+DX -> WARD : 040-130 tahlil natijalari, 015 UTT, 017 rentgen, 020 EKG
+WARD -> WARD : 008 jarrohlik amaliyotlari jurnali\n004 anesteziyalar jurnali + 005 anesteziya varaqasi
+
+alt qon quyish kerak
+  WARD -> BB : 213 qon mahsulotlariga talabnoma
+  BB -> WARD : 211 tayyor qon mahsulotini berish
+  WARD -> WARD : 009 qon quyish jurnali (+ 009-1..009-4)
+end
+
+alt intensiv terapiya kerak
+  WARD -> WARD : 006 reanimatsiyada dinamik kuzatuv
+end
+
+WARD -> WARD : 007 o'rinlar harakati varaqasi yangilanadi
+alt chiqarildi
+  WARD -> WARD : 027 tibbiy kartadan ko'chirma\n066 chiqarilganlar statistik kartasi
+else vafot etdi
+  WARD -> WARD : 106 o'lim ma'lumotnomasini ro'yxatga olish
+end
+@enduml

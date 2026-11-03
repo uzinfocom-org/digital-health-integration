@@ -1,0 +1,3 @@
+See the [Form 097 mapping guide](form-097-mapping.html) for how to populate this Composition: a field-by-field mapping of Form 097 (newborn development medical record) to FHIR, with example values and the UZ Core profiles each bundled resource uses. This Composition is the entry point of a FHIR document Bundle; for a complete reference instance see the [Form 097 newborn development example](Bundle-example-form-097-newborn-development.html).
+
+Every clinical section is optional: send a section, and the resources in it, only when DMED has facts for it. The author is the user who saved this revision of the document; the attending physician of the newborn's stay is an Encounter participant.

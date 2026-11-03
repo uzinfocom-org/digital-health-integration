@@ -8,3 +8,7 @@ Description: "Defines Screening Ultrasound Axillary Node Status"
 * include codes from system screening-ultrasound-axillary-node-status-cs
 * include $sct#281900007
 * include $sct#263654008
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)

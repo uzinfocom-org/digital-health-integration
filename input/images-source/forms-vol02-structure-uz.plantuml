@@ -1,0 +1,63 @@
+@startuml forms-vol02-structure-uz
+hide circle
+hide empty members
+skinparam linetype ortho
+title 2-jild - ambulator shakllar oilalari, hujjat turi bo'yicha ranglangan
+
+skinparam class {
+  BackgroundColor<<register>> #ECEFF1
+  BackgroundColor<<card>> #E8F0FE
+  BackgroundColor<<certificate>> #FEF7E0
+  BackgroundColor<<notify>> #FCE8E6
+  BackgroundColor<<order>> #E6F4EA
+  BackgroundColor<<sheet>> #FFF3E0
+}
+
+class "024 Ambulator tashriflarni\nro'yxatga olish" as F024 <<register>>
+class "024-1..024-4\nkundalik qabul jurnallari" as F024x <<register>>
+class "025 Ambulator bemorning\ntibbiy kartasi" as F025 <<card>>
+
+class "030 Dispanser kuzatuvi\nkartasi" as F030 <<card>>
+class "030-1 ruhiy" as F030a <<card>>
+class "030-2 onkologik" as F030b <<card>>
+class "030-3 psixonevrologik hisobdan\nchiqarish taloni" as F030c <<sheet>>
+class "030-4 sil" as F030d <<card>>
+
+class "063 Emlash\nkartasi" as F063 <<card>>
+class "064 Emlash\njurnali" as F064 <<register>>
+
+class "086 Tibbiy\nma'lumotnoma" as F086 <<certificate>>
+class "086-1..086-4\nma'lumotnoma variantlari" as F086x <<certificate>>
+class "043 chet elliklar /\n044 chet elga chiqish ma'lumotnomasi" as F043 <<certificate>>
+
+class "089 Sil/JYYI\nbildirishnomasi" as F089 <<notify>>
+class "090 Saraton\nbildirishnomasi" as F090 <<notify>>
+class "091 Narkologik\nbildirishnoma" as F091 <<notify>>
+
+class "037-1 Prenatal\nyo'llanma" as F037 <<order>>
+class "111 Homilador ayolning\nindividual kartasi" as F111 <<card>>
+
+F024 --> F024x
+F024 --> F025 : kartani ochadi
+F025 ..> F030 : surunkali kasallik -> dispanser
+F030 --> F030a
+F030 --> F030b
+F030 --> F030c
+F030 --> F030d
+F025 ..> F086 : ma'lumotnoma beradi
+F086 --> F086x
+F025 ..> F089 : birinchi marta aniqlangan tashxis
+F025 ..> F090
+F025 ..> F091
+F025 ..> F111 : homiladorlik
+F111 ..> F037 : skriningga yo'llanma
+
+legend right
+  Kulrang = jurnal (so'rov uchun, hujjat emas)
+  Ko'k = uzoq muddatli kuzatuv kartasi
+  Sariq = ma'lumotnoma
+  To'q sariq = bir martalik statistik talon
+  Qizil = bildirishnoma (ixtisoslashgan dispanser registrlariga)
+  Yashil = yo'llanma (6-jild bilan bog'lanadi)
+endlegend
+@enduml

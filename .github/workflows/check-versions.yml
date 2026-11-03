@@ -20,3 +20,6 @@ jobs:
 
       - name: Check every artifact version is MAJOR.MINOR.PATCH
         run: python3 .github/scripts/check_artifact_versions.py
+
+      - name: Check supplement versions, supplement links and unused terminology
+        run: python3 .github/scripts/check_terminology.py

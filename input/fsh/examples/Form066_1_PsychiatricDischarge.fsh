@@ -298,11 +298,12 @@ Usage: #inline
 
 
 Instance: organization-066-1-001
-InstanceOf: Organization
+InstanceOf: UZCoreOrganization
 Usage: #inline
 * language = #en
-* identifier.system = "https://dhp.uz/fhir/core/sid/uz/organization-code"
-* identifier.value = "200001"
+* identifier[taxId].type = $identifier-type#TAX "Tax ID number"
+* identifier[taxId].system = $organization-tax-id-system-dhp
+* identifier[taxId].value = "204789014"
 * name = "Toshkent shahar ruhiy kasalliklar shifoxonasi"
 
 
@@ -527,11 +528,12 @@ Usage: #inline
 
 
 Instance: organization-referring-066-1
-InstanceOf: Organization
+InstanceOf: UZCoreOrganization
 Usage: #inline
 * language = #en
-* identifier.system = "https://dhp.uz/fhir/core/sid/uz/organization-code"
-* identifier.value = "200002"
+* identifier[taxId].type = $identifier-type#TAX "Tax ID number"
+* identifier[taxId].system = $organization-tax-id-system-dhp
+* identifier[taxId].value = "205890125"
 * name = "Yunusobod tuman psixonevrologik dispanseri"
 
 

@@ -7,3 +7,7 @@ Description: "Defines Screening Genital Slit State"
 * ^language = #uz
 * include $sct#29179001
 * include $sct#434851000124108
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)

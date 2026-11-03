@@ -11,3 +11,7 @@ Description: "LOINC answer codes permitted for HER2 immunohistochemistry results
 * $loinc#LA11842-4 "2+"
 * $loinc#LA11843-2 "3+"
 * $loinc#LA11884-6 "Indeterminate"
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningLaboratoryCS)

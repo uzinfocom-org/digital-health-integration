@@ -7,17 +7,17 @@ Description: "CodeSystem for Screening Ultrasound Breast Symmetry"
 * #scrn-0038-00001 "Simmetrik"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Симметричны"
-  * ^designation[0].language = #en
+  * ^designation[+].language = #en
   * ^designation[=].value = "Symmetrical"
 
 * #scrn-0038-00002 "Asimmetrik (D > S)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Асимметричны (D > S)"
-  * ^designation[0].language = #en
+  * ^designation[+].language = #en
   * ^designation[=].value = "Asymmetrical (D > S)"
 
 * #scrn-0038-00003 "Asimmetrik (S > D)"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Асимметричны (S > D)"
-  * ^designation[0].language = #en
+  * ^designation[+].language = #en
   * ^designation[=].value = "Asymmetrical (S > D)"

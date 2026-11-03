@@ -12,3 +12,9 @@ Description: "Breast and cervical specimen types accepted by ScreeningSpecimen."
 * include $sct#52889002
 * include $sct#8889005
 * include $sct#54535009
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningDiagnosticProcedureCS)

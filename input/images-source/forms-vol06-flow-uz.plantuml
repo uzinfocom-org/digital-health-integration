@@ -1,0 +1,31 @@
+@startuml forms-vol06-flow-uz
+title Jarayon namunasi - prenatal skrining va invaziv diagnostika bo'yicha qaror
+autonumber
+
+actor "Homilador\nayol" as W
+participant "Poliklinika\n(2-jild)" as PC
+participant "Skrining markazi\n(6-jild)" as SC
+participant "Yangi tug'ilgan\nchaqaloq (6-jild)" as NB
+
+PC -> SC : 037-1 prenatal yo'llanma
+SC -> SC : 159 prenatal tekshiruv kartasi
+SC -> SC : 162-164 trimestrlar bo'yicha ultratovush bayonnomalari\n156-157 bioximik skrining xulosalari
+
+alt skrining xavf oshganini ko'rsatadi
+  SC -> W : maslahat berish
+  alt ayol rozilik beradi
+    W -> SC : 152 / 153 xabardor qilingan rozilik
+    SC -> SC : 166 invaziv prenatal diagnostika muolajasi\n154 sitogenetik / molekulyar natija
+    SC -> SC : 165 genetik xulosa, 172 muolajadan keyingi xulosa\n173 perinatal konsilium
+  else ayol rad etadi
+    W -> SC : 155 invaziv diagnostikadan voz kechish
+  end
+end
+
+== tug'ilgandan keyin ==
+NB -> SC : tovondan qon namunasi
+SC -> SC : 167 neonatal skrining (IRT, FKU, TG)
+alt me'yordan chetga chiqish
+  SC -> SC : 168 tandem mass-spektrometriya / 170 ter sinamasi / 171 qayta skrining
+end
+@enduml

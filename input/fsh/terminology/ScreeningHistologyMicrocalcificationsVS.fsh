@@ -11,3 +11,7 @@ Description: "LOINC answer codes for microcalcifications in a breast tumor."
 * $loinc#LA27827-7 "Microcalcifications present in invasive carcinoma"
 * $loinc#LA27828-5 "Microcalcifications present in nonneoplastic tissue"
 * $loinc#LA46-8 "Other, Specify:"
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningLaboratoryCS)

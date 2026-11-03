@@ -9,3 +9,7 @@ Description: "LOINC answer codes for the type of necrosis in ductal carcinoma in
 * $loinc#LA11902-6 "Not identified"
 * $loinc#LA27234-6 "Present, focal (small or single cell necrosis)"
 * $loinc#LA27235-3 "Present, central (expansive comedo necrosis)"
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningLaboratoryCS)

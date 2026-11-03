@@ -9,3 +9,7 @@ Description: "Defines Screening Pathological N"
 * include $sct#1229951001
 * include $sct#1229957002
 * include $sct#1229962001
+
+// Supplements providing screening display languages.
+* ^extension[+].url = $valueset-supplement
+* ^extension[=].valueCanonical = Canonical(ScreeningSnomedTranslationsCS)

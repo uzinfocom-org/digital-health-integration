@@ -1,0 +1,41 @@
+@startuml forms-vol08-structure
+hide circle
+hide empty members
+skinparam linetype ortho
+title Volume 8 - the donation-to-product chain, coloured by document type
+
+skinparam class {
+  BackgroundColor<<card>> #E8F0FE
+  BackgroundColor<<report>> #E6F4EA
+  BackgroundColor<<product>> #F3E8FD
+  BackgroundColor<<supply>> #FEF7E0
+  BackgroundColor<<register>> #ECEFF1
+}
+
+class "195/196/199\nDonor registration" as F195 <<card>>
+class "203/204/217-220\nDonor screening labs" as F203 <<report>>
+class "216 HIV-positive\ndonor register" as F216 <<register>>
+class "198/201\nCollection" as F201 <<product>>
+class "207/208/209/210\nComponent production" as F207 <<product>>
+class "205 Sterility /\n206 disposal" as F205 <<report>>
+class "213 Requisition" as F213 <<supply>>
+class "211/214 Product issue,\n212 component receipt" as F211 <<supply>>
+class "009 Transfusion\n(volume 1)" as F009 <<report>>
+
+F195 --> F203 : screen
+F203 --> F216 : if positive
+F203 --> F201 : if cleared
+F201 --> F207
+F207 --> F205
+F207 --> F211
+F213 ..> F211 : pulls
+F211 ..> F009 : delivered to bedside
+
+legend right
+  Blue = donor card
+  Green = lab report
+  Purple = blood product
+  Yellow = supply
+  Grey = register (query)
+endlegend
+@enduml
