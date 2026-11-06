@@ -166,7 +166,6 @@ Alias: $signature-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/sign
 
 Alias: $signature-type = urn:iso-astm:E1762-95:2013
 Alias: $condition-category = http://terminology.hl7.org/CodeSystem/condition-category
-Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
 Alias: $form111-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form111-cs
 Alias: $form111-document-type-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form111-document-type-cs
 Alias: $position-profession-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs
@@ -192,7 +191,6 @@ Alias: $form111-general-obs-cs = https://terminology.dhp.uz/fhir/integrations/Co
 Alias: $form111-contraception-type-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form111-contraception-type-cs
 Alias: $form111-contraception-obs-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form111-contraception-observation-code-cs
 Alias: $form111-pregnancy-outcome-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form111-pregnancy-outcome-cs
-Alias: $encounter-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-type-cs
 Alias: $flag-status-cs = http://hl7.org/fhir/flag-status
 Alias: $profession-specialization-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/profession-specialization-cs
 
@@ -239,7 +237,6 @@ Alias: $breastfeeding-initiation-time-cs = https://terminology.dhp.uz/fhir/integ
 Alias: $amniotic-fluid-appearance-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/amniotic-fluid-appearance-cs
 Alias: $newborn-signs-of-life-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/newborn-signs-of-life-cs
 
-Alias: $condition-category = http://terminology.hl7.org/CodeSystem/condition-category
 Alias: $diagnosis-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/diagnosis-type-cs
 Alias: $iccc-3 = http://terminology.hl7.org/CodeSystem/iccc-3
 Alias: $iccc-3-vs = https://terminology.dhp.uz/fhir/core/ValueSet/iccc-3-vs
@@ -288,3 +285,30 @@ Alias: $form096-placenta-delivery-method-cs = https://terminology.dhp.uz/fhir/in
 Alias: $composition-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/composition-type-cs
 Alias: $composition-category-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/composition-category-cs
 Alias: $form-044-observation-code-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form-044-observation-code-cs
+
+// ===================== PRESCRIPTION =====================
+Alias: $medicationrequest-admin-location = http://terminology.hl7.org/CodeSystem/medicationrequest-admin-location
+Alias: $medicationrequest-admin-location-vs = https://terminology.dhp.uz/fhir/core/ValueSet/medicationrequest-admin-location-vs
+Alias: $medication-request-order-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/medication-request-order-type-cs
+Alias: $prescription-workflow-action-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/prescription-workflow-action-cs
+Alias: $prescription-workflow-status-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/prescription-workflow-status-cs
+Alias: $prescription-error-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/prescription-error-cs
+Alias: $dmed-prescription-status-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dmed-prescription-status-cs
+Alias: $dmed-prescription-type-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dmed-prescription-type-cs
+Alias: $dmed-prescription-route-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dmed-prescription-route-cs
+Alias: $dmed-administration-method-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dmed-administration-method-cs
+Alias: $atc = http://www.whocc.no/atc
+Alias: $dmed-prescription-id = https://dhp.uz/fhir/core/sid/doc/uz/dmed-prescription
+Alias: $dmed-prescription-uuid = https://dhp.uz/fhir/core/sid/doc/uz/dmed-prescription-uuid
+Alias: $dmed-medication-id = https://dhp.uz/fhir/core/sid/medication/uz/dmed
+Alias: $dmed-dispense-id = https://dhp.uz/fhir/core/sid/dispense/uz/dmed
+Alias: $dmed-administration-id = https://dhp.uz/fhir/core/sid/administration/uz/dmed
+Alias: $dmed-prescription-source = https://dhp.uz/fhir/source/dmed-prescription
+Alias: $inn-medication-name-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/inn-medication-name-cs
+Alias: $medication-doseform-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/medication-doseform-cs
+Alias: $dmed-route-code-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/dmed-route-code-cs
+Alias: $route-code-vs = https://terminology.dhp.uz/fhir/core/ValueSet/route-code-vs
+Alias: $route-codes-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/route-codes-cs
+Alias: $medication-total-volume-local-units-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/medication-total-volume-local-units-cs
+Alias: $medicationrequest-status = http://hl7.org/fhir/CodeSystem/medicationrequest-status
+Alias: $task-status = http://hl7.org/fhir/task-status

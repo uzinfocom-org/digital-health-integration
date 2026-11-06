@@ -138,6 +138,8 @@ pages:
     title: Cancer
   hepatitis.md:
     title: Hepatitis
+  prescription.md:
+    title: Prescription
   forms.md:
     title: Questionnaires
   forms-overview.md:
@@ -193,6 +195,7 @@ menu:
     Psychiatry: psychiatry.html
     Cancer: cancer.html
     Hepatitis: hepatitis.html
+    Prescription: prescription.html
   Questionnaires: forms.html
   Artifacts: artifacts.html
   Changelog: changelog.html

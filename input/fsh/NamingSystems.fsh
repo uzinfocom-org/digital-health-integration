@@ -280,4 +280,90 @@ Usage: #definition
 * usage = "Used to identify hepatitis-related records and questionnaires in Uzbekistan"
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/reg/uz/hepatitis"
+Instance: dmed-prescription-identifier-system
+InstanceOf: NamingSystem
+Usage: #definition
+Title: "DMED Prescription Identifier System"
+Description: "Business identifier assigned to an electronic prescription by DMED."
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/dmed-prescription-identifier-system"
+* name = "DMEDPrescriptionIdentifierSystem"
+* status = #active
+* kind = #identifier
+* date = "2026-09-17"
+* publisher = "Uzinfocom"
+* responsible = "DMED"
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in PrescriptionMedicationRequest.identifier for the number field shown by DMED. Prescription type is exchanged separately and consumers must not infer it from an undocumented number format."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $dmed-prescription-id
+* uniqueId[=].preferred = true
+
+Instance: dmed-prescription-uuid-system
+InstanceOf: NamingSystem
+Usage: #definition
+Title: "DMED Prescription UUID System"
+Description: "Technical UUID assigned to a prescription by the DMED Prescription API."
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/dmed-prescription-uuid-system"
+* name = "DMEDPrescriptionUUIDSystem"
+* status = #active
+* kind = #identifier
+* date = "2026-09-17"
+* publisher = "Uzinfocom"
+* responsible = "DMED"
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used as an additional MedicationRequest.identifier for the uuid field returned by the DMED Prescription API."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $dmed-prescription-uuid
+* uniqueId[=].preferred = true
+
+Instance: dmed-medication-identifier-system
+InstanceOf: NamingSystem
+Usage: #definition
+Title: "DMED Medication Dictionary Identifier System"
+Description: "Identifier assigned to a medication dictionary entry used by DMED Prescription."
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/dmed-medication-identifier-system"
+* name = "DMEDMedicationIdentifierSystem"
+* status = #active
+* kind = #identifier
+* date = "2026-09-17"
+* publisher = "Uzinfocom"
+* responsible = "DMED"
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in PrescriptionMedication.identifier in addition to national pharmaceutical identifiers carried by UZCoreMedication."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $dmed-medication-id
+* uniqueId[=].preferred = true
+
+Instance: dmed-dispense-identifier-system
+InstanceOf: NamingSystem
+Usage: #definition
+Title: "DMED Medication Dispense Identifier System"
+Description: "Identifier assigned to a medication dispense event received from DMED or a connected pharmacy system."
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/dmed-dispense-identifier-system"
+* name = "DMEDDispenseIdentifierSystem"
+* status = #active
+* kind = #identifier
+* date = "2026-09-17"
+* publisher = "Uzinfocom"
+* responsible = "DMED"
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $dmed-dispense-id
+* uniqueId[=].preferred = true
+
+Instance: dmed-administration-identifier-system
+InstanceOf: NamingSystem
+Usage: #definition
+Title: "DMED Medication Administration Identifier System"
+Description: "Identifier assigned to a medication administration event performed by healthcare personnel."
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/dmed-administration-identifier-system"
+* name = "DMEDAdministrationIdentifierSystem"
+* status = #active
+* kind = #identifier
+* date = "2026-09-17"
+* publisher = "Uzinfocom"
+* responsible = "DMED"
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $dmed-administration-id
 * uniqueId[=].preferred = true

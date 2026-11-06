@@ -8,6 +8,8 @@
 
 [Форма 044, медицинская справка для выезжающих за границу](StructureDefinition-form-044-travel-clearance-composition.html), описана как FHIR-документ: личные данные, перенесённые инфекционные заболевания, заключение комиссии о допуске к выезду со страной назначения и сроком командировки, место жительства и председатель и члены комиссии в 5 разделах Composition. В комплекте пример документа (Bundle) и [страница пополевого сопоставления](form-044-mapping.html).
 
+[Интеграция рецептов](prescription.html) описывает, как DMED передаёт в DHP электронные рецепты, согласования, отпуск и введение препаратов, с семью профилями Prescription. ConceptMap переводят тип и статус рецепта DMED, МНН, лекарственную форму, путь введения, режим приёма, период кратности и причину отмены в коды UZ Core и международные коды. Публикуются только бесспорные соответствия, поэтому значение DMED без соответствия отклоняется, пока его не проверят.
+
 #### Изменено
 
 Composition для [Форма 011](StructureDefinition-form-011-hemodialysis-composition.html), [Форма 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Форма 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) и [Форма 130](StructureDefinition-form-130-laboratory-test-results-composition.html) больше не фиксируют `status` как `final`, поэтому документ может проходить [жизненный цикл](document-statuses.html) через `preliminary`, `amended` и `entered-in-error`.
