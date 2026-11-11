@@ -22,7 +22,7 @@
 | [Переработка на компоненты](#processing) | BiologicallyDerivedProduct | [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Учёт запасов](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-inventoryitem.html), UZ Core InventoryReport (следующий выпуск UZ Core) |
 | [Запрос и поставка компонентов](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-delivery.html) |
-| [Трансфузия реципиенту](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html), базовый [BiologicallyDerivedProductDispense](https://hl7.org/fhir/R5/biologicallyderivedproductdispense.html), [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html) |
+| [Трансфузия реципиенту](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html), UZ Core BiologicallyDerivedProductDispense (следующий выпуск UZ Core), [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html) |
 
 <div>{% include blood-management-model-ru.svg %}</div><br clear="all"/>
 
@@ -30,7 +30,7 @@
 
 И доноры, и реципиенты - это записи [UZ Core Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html); ничто в Patient не отмечает человека как донора. Сама регистрация - это [Blood Donor Category Observation](StructureDefinition-blood-donor-category-observation.html), `code` которого указывает, как зарегистрирован человек.
 
-| Что фиксируется | Справочник | Пример кода или значения | Где хранится |
+| Информация для записи | Набор значений | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
 | Зарегистрирован как | [Blood patient type](ValueSet-blood-patient-type-vs.html) | `SNOMED CT#105470007` (донор крови) / `SNOMED CT#116154003` (пациент) | `code` |
 | Категория донора | [Donor category](ValueSet-donor-category-vs.html) | `donor-category-cs#bdcat-0001-00001` (кадровый донор) | `category[donorCategory]` |
@@ -55,7 +55,7 @@
 
 Забор - это [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html) донора. В результате появляется [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) для единицы цельной крови либо для плазмы или тромбоцитов, полученных аферезом.
 
-| Что фиксируется | Пример кода или значения | Где хранится |
+| Информация для записи | Пример кода | Хранится в |
 | :--- | :--- | :--- |
 | Номер единицы | система `https://dhp.uz/fhir/core/sid/prd/uz/blood/unit`, значение `BB-DON-2026-00123` | `identifier` |
 | Номер донации | система `https://dhp.uz/fhir/core/sid/prd/uz/blood/donation`, значение `DON-2025-0088231` | `biologicalSourceEvent` |
@@ -90,7 +90,7 @@
 | Шаг | Ресурс | Ключевые элементы |
 | :--- | :--- | :--- |
 | Назначение трансфузии | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html) | `subject` - реципиент |
-| Выдача единицы реципиенту | [BiologicallyDerivedProductDispense](https://hl7.org/fhir/R5/biologicallyderivedproductdispense.html) (профиля UZ Core пока нет) | `product` - единица, `patient` - реципиент, `basedOn` - назначение |
+| Выдача единицы реципиенту | UZ Core BiologicallyDerivedProductDispense (следующий выпуск UZ Core) | `product` - единица, `patient` - реципиент, `basedOn` - назначение |
 | Выполненная трансфузия | [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html) | `basedOn` - назначение, `used` - единица |
 | Реакция на трансфузию | [UZ Core AdverseEvent](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html) | `suspectEntity.instanceReference` - единица |
 

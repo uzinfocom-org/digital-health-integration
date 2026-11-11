@@ -6,7 +6,7 @@ title Как связаны записи службы крови
 class "Донор\n<size:10>UZCorePatient</size>" as Donor [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html{Открыть UZCorePatient}]]
 class "Реципиент\n<size:10>UZCorePatient</size>" as Recipient [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html{Открыть UZCorePatient}]]
 class "Регистрация\n<size:10>BloodDonorCategoryObservation</size>" as Reg [[StructureDefinition-blood-donor-category-observation.html{Открыть BloodDonorCategoryObservation}]] #E8F0FE
-class "Допуск или отвод\n<size:10>Flag</size>" as Flag
+class "Допуск или отвод\n<size:10>UZCoreFlag</size>" as Flag
 class "Результат анализа\n<size:10>UZCoreObservation</size>" as Test [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html{Открыть UZCoreObservation}]]
 class "Отчёт об анализах\n<size:10>UZCoreDiagnosticReport</size>" as Report [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-diagnostic-report.html{Открыть UZCoreDiagnosticReport}]]
 class "Забор\n<size:10>UZCoreProcedure</size>" as Coll [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html{Открыть UZCoreProcedure}]]
@@ -15,7 +15,7 @@ class "Компонент\n<size:10>UZCoreBiologicallyDerivedProduct</size>" as 
 class "Назначение трансфузии\n<size:10>UZCoreServiceRequest</size>" as Order [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html{Открыть UZCoreServiceRequest}]]
 class "Запрос на поставку\n<size:10>UZCoreSupplyRequest</size>" as SReq [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-request.html{Открыть UZCoreSupplyRequest}]]
 class "Поставка\n<size:10>UZCoreSupplyDelivery</size>" as SDel [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-delivery.html{Открыть UZCoreSupplyDelivery}]]
-class "Выдача реципиенту\n<size:10>BiologicallyDerivedProductDispense</size>" as Disp [[https://hl7.org/fhir/R5/biologicallyderivedproductdispense.html{Открыть BiologicallyDerivedProductDispense}]]
+class "Выдача реципиенту\n<size:10>UZCoreBiologicallyDerivedProductDispense</size>" as Disp
 class "Трансфузия\n<size:10>UZCoreProcedure</size>" as Tx [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html{Открыть UZCoreProcedure}]]
 class "Реакция на трансфузию\n<size:10>UZCoreAdverseEvent</size>" as AE [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html{Открыть UZCoreAdverseEvent}]]
 
@@ -37,6 +37,6 @@ Tx "0..*" --> "0..*" Comp : « used »
 Tx "0..*" --> "1" Recipient : « subject »
 AE "0..*" --> "0..*" Comp : « suspectEntity »
 
-caption Клинический граф: ссылки на организации, медицинских работников и других участников опущены для наглядности. Flag войдёт в следующий выпуск UZ Core; для BiologicallyDerivedProductDispense профиля UZ Core пока нет.
+caption Клинический граф: ссылки на организации, медицинских работников и других участников опущены для наглядности. UZ Core Flag и BiologicallyDerivedProductDispense войдут в следующий выпуск UZ Core.
 
 @enduml

@@ -22,7 +22,7 @@ Deyarli har bir bosqichda [UZ Core](https://dhp.uz/fhir/core/uz/artifacts.html) 
 | [Komponentlarga ajratish](#processing) | BiologicallyDerivedProduct | [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Zaxiralarni hisobga olish](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-inventoryitem.html), UZ Core InventoryReport (UZ Core ning keyingi relizi) |
 | [Komponentlarni so'rash va yetkazib berish](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-delivery.html) |
-| [Retsipiyentga transfuziya](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-servicerequest.html), bazaviy [BiologicallyDerivedProductDispense](https://hl7.org/fhir/R5/biologicallyderivedproductdispense.html), [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-adverse-event.html) |
+| [Retsipiyentga transfuziya](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-servicerequest.html), UZ Core BiologicallyDerivedProductDispense (UZ Core ning keyingi relizi), [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-adverse-event.html) |
 
 <div>{% include blood-management-model-uz.svg %}</div><br clear="all"/>
 
@@ -30,7 +30,7 @@ Deyarli har bir bosqichda [UZ Core](https://dhp.uz/fhir/core/uz/artifacts.html) 
 
 Donorlar ham, retsipiyentlar ham [UZ Core Patient](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html) yozuvlaridir; Patient da shaxsni donor sifatida belgilaydigan hech narsa yo'q. Ro'yxatga olishning o'zi - bu [Blood Donor Category Observation](StructureDefinition-blood-donor-category-observation.html), uning `code` elementi shaxs qanday ro'yxatga olinganini ko'rsatadi.
 
-| Qayd etiladigan ma'lumot | Ma'lumotnoma | Misol kodi yoki qiymati | Qayerda saqlanadi |
+| Qayd etiladigan ma'lumot | Qiymatlar to'plami | Kod misoli | Saqlanadi |
 | :--- | :--- | :--- | :--- |
 | Kim sifatida ro'yxatga olingan | [Blood patient type](ValueSet-blood-patient-type-vs.html) | `SNOMED CT#105470007` (qon donori) / `SNOMED CT#116154003` (bemor) | `code` |
 | Donor toifasi | [Donor category](ValueSet-donor-category-vs.html) | `donor-category-cs#bdcat-0001-00001` (kadr donor) | `category[donorCategory]` |
@@ -55,7 +55,7 @@ Donatsiyadan oldingi har bir tekshiruv natijasi (qon guruhi, rezus-omil, gemoglo
 
 Qon olish - bu donorning [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html) yozuvi. Natijada butun qon birligi yoki aferez yo'li bilan olingan plazma yoki trombotsitlar uchun [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologically-derived-product.html) paydo bo'ladi.
 
-| Qayd etiladigan ma'lumot | Misol kodi yoki qiymati | Qayerda saqlanadi |
+| Qayd etiladigan ma'lumot | Kod misoli | Saqlanadi |
 | :--- | :--- | :--- |
 | Birlik raqami | tizim `https://dhp.uz/fhir/core/sid/prd/uz/blood/unit`, qiymat `BB-DON-2026-00123` | `identifier` |
 | Donatsiya raqami | tizim `https://dhp.uz/fhir/core/sid/prd/uz/blood/donation`, qiymat `DON-2025-0088231` | `biologicalSourceEvent` |
@@ -90,7 +90,7 @@ Misollar: [yetkazib berish so'rovi](https://dhp.uz/fhir/core/uz/SupplyRequest-ex
 | Bosqich | Resurs | Asosiy elementlar |
 | :--- | :--- | :--- |
 | Transfuziya tayinlovi | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-servicerequest.html) | `subject` - retsipiyent |
-| Birlikni retsipiyentga berish | [BiologicallyDerivedProductDispense](https://hl7.org/fhir/R5/biologicallyderivedproductdispense.html) (UZ Core profili hali yo'q) | `product` - birlik, `patient` - retsipiyent, `basedOn` - tayinlov |
+| Birlikni retsipiyentga berish | UZ Core BiologicallyDerivedProductDispense (UZ Core ning keyingi relizi) | `product` - birlik, `patient` - retsipiyent, `basedOn` - tayinlov |
 | Bajarilgan transfuziya | [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html) | `basedOn` - tayinlov, `used` - birlik |
 | Transfuziyaga reaksiya | [UZ Core AdverseEvent](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-adverse-event.html) | `suspectEntity.instanceReference` - birlik |
 

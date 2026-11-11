@@ -20,7 +20,7 @@ Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html)
 | [Process it into components](#processing) | BiologicallyDerivedProduct | [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Keep stock](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-inventoryitem.html), UZ Core InventoryReport (next UZ Core release) |
 | [Request and deliver components](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-delivery.html) |
-| [Transfuse the recipient](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html), base [BiologicallyDerivedProductDispense](https://hl7.org/fhir/R5/biologicallyderivedproductdispense.html), [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-adverse-event.html) |
+| [Transfuse the recipient](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html), UZ Core BiologicallyDerivedProductDispense (next UZ Core release), [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-adverse-event.html) |
 
 <div>{% include blood-management-model-en.svg %}</div><br clear="all"/>
 
@@ -28,7 +28,7 @@ Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html)
 
 Donors and recipients are both [UZ Core Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html) records; nothing in Patient marks a person as a donor. The registration itself is a [Blood Donor Category Observation](StructureDefinition-blood-donor-category-observation.html) whose `code` says how the person is registered.
 
-| What is recorded | Terminology | Example code or value | Where it is stored |
+| Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
 | Registered as | [Blood patient type](ValueSet-blood-patient-type-vs.html) | `SNOMED CT#105470007` (Blood donor) / `SNOMED CT#116154003` (Patient) | `code` |
 | Donor category | [Donor category](ValueSet-donor-category-vs.html) | `donor-category-cs#bdcat-0001-00001` (staff donor) | `category[donorCategory]` |
@@ -53,7 +53,7 @@ Each test result before donation (blood group, Rh factor, haemoglobin, HIV, hepa
 
 The collection is a [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html) on the donor. It produces a [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) for the whole-blood unit, or for the plasma or platelets taken by apheresis.
 
-| What is recorded | Example code or value | Where it is stored |
+| Information to record | Example code | Stored in |
 | :--- | :--- | :--- |
 | Unit number | system `https://dhp.uz/fhir/core/sid/prd/uz/blood/unit`, value `BB-DON-2026-00123` | `identifier` |
 | Donation number | system `https://dhp.uz/fhir/core/sid/prd/uz/blood/donation`, value `DON-2025-0088231` | `biologicalSourceEvent` |
@@ -88,7 +88,7 @@ Examples: [supply request](https://dhp.uz/fhir/core/en/SupplyRequest-example-sup
 | Step | Resource | Key elements |
 | :--- | :--- | :--- |
 | Transfusion order | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html) | `subject` is the recipient |
-| Unit issued to the recipient | [BiologicallyDerivedProductDispense](https://hl7.org/fhir/R5/biologicallyderivedproductdispense.html) (no UZ Core profile yet) | `product` is the unit, `patient` is the recipient, `basedOn` is the order |
+| Unit issued to the recipient | UZ Core BiologicallyDerivedProductDispense (next UZ Core release) | `product` is the unit, `patient` is the recipient, `basedOn` is the order |
 | Transfusion performed | [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html) | `basedOn` is the order, `used` is the unit |
 | Reaction to the transfusion | [UZ Core AdverseEvent](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-adverse-event.html) | `suspectEntity.instanceReference` is the unit |
 

@@ -6,7 +6,7 @@ title How blood service records fit together
 class "Donor\n<size:10>UZCorePatient</size>" as Donor [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html{Open UZCorePatient}]]
 class "Recipient\n<size:10>UZCorePatient</size>" as Recipient [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html{Open UZCorePatient}]]
 class "Registration\n<size:10>BloodDonorCategoryObservation</size>" as Reg [[StructureDefinition-blood-donor-category-observation.html{Open BloodDonorCategoryObservation}]] #E8F0FE
-class "Eligibility or deferral\n<size:10>Flag</size>" as Flag
+class "Eligibility or deferral\n<size:10>UZCoreFlag</size>" as Flag
 class "Test result\n<size:10>UZCoreObservation</size>" as Test [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html{Open UZCoreObservation}]]
 class "Test report\n<size:10>UZCoreDiagnosticReport</size>" as Report [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html{Open UZCoreDiagnosticReport}]]
 class "Collection\n<size:10>UZCoreProcedure</size>" as Coll [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html{Open UZCoreProcedure}]]
@@ -15,7 +15,7 @@ class "Component\n<size:10>UZCoreBiologicallyDerivedProduct</size>" as Comp [[ht
 class "Transfusion order\n<size:10>UZCoreServiceRequest</size>" as Order [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html{Open UZCoreServiceRequest}]]
 class "Supply request\n<size:10>UZCoreSupplyRequest</size>" as SReq [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-request.html{Open UZCoreSupplyRequest}]]
 class "Supply delivery\n<size:10>UZCoreSupplyDelivery</size>" as SDel [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-delivery.html{Open UZCoreSupplyDelivery}]]
-class "Issue to recipient\n<size:10>BiologicallyDerivedProductDispense</size>" as Disp [[https://hl7.org/fhir/R5/biologicallyderivedproductdispense.html{Open BiologicallyDerivedProductDispense}]]
+class "Issue to recipient\n<size:10>UZCoreBiologicallyDerivedProductDispense</size>" as Disp
 class "Transfusion\n<size:10>UZCoreProcedure</size>" as Tx [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html{Open UZCoreProcedure}]]
 class "Transfusion reaction\n<size:10>UZCoreAdverseEvent</size>" as AE [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-adverse-event.html{Open UZCoreAdverseEvent}]]
 
@@ -37,6 +37,6 @@ Tx "0..*" --> "0..*" Comp : « used »
 Tx "0..*" --> "1" Recipient : « subject »
 AE "0..*" --> "0..*" Comp : « suspectEntity »
 
-caption Clinical graph: references to organizations, practitioners and other actors are left out to keep the diagram readable. Flag is in the next UZ Core release; BiologicallyDerivedProductDispense has no UZ Core profile yet.
+caption Clinical graph: references to organizations, practitioners and other actors are left out to keep the diagram readable. UZ Core Flag and BiologicallyDerivedProductDispense are in the next UZ Core release.
 
 @enduml
