@@ -49,6 +49,6 @@ If-Match: W/"3"   # the ETag from your last read; 412 if it changed since
 
 ### Связанные материалы
 
-- [Формы службы крови](forms-volume-08-blood-service.html)
+- [Blood Management](blood-management.html) &middot; [Формы службы крови](forms-volume-08-blood-service.html)
 - [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html)
 - [Must Support](https://dhp.uz/fhir/core/ru/must-support.html) &middot; [Общие рекомендации](https://dhp.uz/fhir/core/ru/general-guidance.html)
