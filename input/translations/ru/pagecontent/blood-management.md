@@ -7,22 +7,22 @@
 
 > **Машинный перевод, требуется проверка человеком.** Эта страница автоматически переведена с английского языка с помощью искусственного интеллекта и пока не проверена редактором. При любых расхождениях приоритет имеет оригинальная англоязычная версия.
 
-На этой странице описано, как служба крови фиксирует путь донорской крови ресурсами FHIR: от регистрации донора до трансфузии реципиенту. Описание следует Техническому проекту Blood Management (V1.2).
+На этой странице описано, как служба крови фиксирует путь донорской крови ресурсами FHIR: от регистрации донора до трансфузии реципиенту.
 
 ### Обзор {#overview}
 
 Почти на каждом шаге профиль [UZ Core](https://dhp.uz/fhir/core/ru/artifacts.html) используется без изменений. Это руководство добавляет один профиль, [Blood Donor Category Observation](StructureDefinition-blood-donor-category-observation.html), для регистрационных данных, которых нет в UZ Core Patient: зарегистрирован ли человек как донор или как реципиент, категория донора, оплата и вид донации, группа крови, резус-фактор и диагноз реципиента. Бумажные формы, стоящие за этими шагами, описаны в разделе [8.0 Служба крови](forms-volume-08-blood-service.html).
 
-| Шаг | Сценарий Технического проекта | Ресурс | Профиль |
-| :--- | :--- | :--- | :--- |
-| [Регистрация донора или реципиента](#registering) | U6.1, U5.1 | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html), [Blood Donor Category Observation](StructureDefinition-blood-donor-category-observation.html) |
-| [Допуск или отвод](#eligibility) | U6.2 | Flag | UZ Core Flag (следующий выпуск UZ Core) |
-| [Обследование крови донора](#testing) | U7 | Observation, DiagnosticReport, Specimen | [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-specimen.html) |
-| [Забор донации](#collecting) | U4.2, U8.2 | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
-| [Переработка на компоненты](#processing) | U8.3 | BiologicallyDerivedProduct | [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
-| [Учёт запасов](#stock) | U9 | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-inventoryitem.html), UZ Core InventoryReport (следующий выпуск UZ Core) |
-| [Запрос и поставка компонентов](#supplying) | U3 | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-delivery.html) |
-| [Трансфузия реципиенту](#transfusing) | U5.3, U5.4 | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html), базовый [BiologicallyDerivedProductDispense](https://hl7.org/fhir/R5/biologicallyderivedproductdispense.html), [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html) |
+| Шаг | Ресурс | Профиль |
+| :--- | :--- | :--- |
+| [Регистрация донора или реципиента](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html), [Blood Donor Category Observation](StructureDefinition-blood-donor-category-observation.html) |
+| [Допуск или отвод](#eligibility) | Flag | UZ Core Flag (следующий выпуск UZ Core) |
+| [Обследование крови донора](#testing) | Observation, DiagnosticReport, Specimen | [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-specimen.html) |
+| [Забор донации](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
+| [Переработка на компоненты](#processing) | BiologicallyDerivedProduct | [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
+| [Учёт запасов](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-inventoryitem.html), UZ Core InventoryReport (следующий выпуск UZ Core) |
+| [Запрос и поставка компонентов](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-delivery.html) |
+| [Трансфузия реципиенту](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html), базовый [BiologicallyDerivedProductDispense](https://hl7.org/fhir/R5/biologicallyderivedproductdispense.html), [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html) |
 
 <div>{% include blood-management-model-ru.svg %}</div><br clear="all"/>
 

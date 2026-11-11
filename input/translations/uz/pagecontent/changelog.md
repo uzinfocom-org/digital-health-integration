@@ -8,7 +8,7 @@
 
 [044-shakl, xorijga ketayotganlar uchun tibbiy ma'lumotnoma](StructureDefinition-form-044-travel-clearance-composition.html) FHIR hujjati sifatida profillandi: shaxsiy ma'lumotlar, kechirgan yuqumli kasalliklar, komissiyaning borish mamlakati va xizmat safari muddati bilan chet elga chiqishga ruxsati, yashash joyi, komissiya raisi va a'zolari - 5 ta Composition bo'limida. Hujjat namunasi (Bundle) va [maydonma-maydon moslashtirish sahifasi](form-044-mapping.html) bilan birga.
 
-[Blood Management](blood-management.html) sahifasi qon xizmatini - donorni ro'yxatga olish va tekshirishdan qon olish, komponentlar, zaxiralar, yetkazib berish va transfuziyagacha - Blood Management Texnik loyihasi asosida UZ Core profillari va Blood Donor Category Observation orqali tavsiflaydi.
+[Blood Management](blood-management.html) sahifasi qon xizmatini - donorni ro'yxatga olish va tekshirishdan qon olish, komponentlar, zaxiralar, yetkazib berish va transfuziyagacha - UZ Core profillari va Blood Donor Category Observation orqali tavsiflaydi.
 
 UZ Core Observation asosidagi [donor toifasi kuzatuvi](StructureDefinition-blood-donor-category-observation.html) donorlar va retsipiyentlarni ro'yxatga olishni qo'llab-quvvatlaydi. Profil ro'yxatga olish identifikatori, bemor, sana va vaqt, tashrif va ijrochini, shuningdek, ixtiyoriy donor toifasi va donatsiya to'lovini qayd etadi. Component slayslari donatsiya turi, qon guruhi, rezus-omil va XKT-10 tashxisini saqlaydi, har biri o'z qiymatlar to'plamiga bog'langan. Kadr donor, zaxira donor va retsipiyent namunalari, retsipiyent uchun esa ro'yxatga olish tashrifi Encounter va registrator Practitioner qo'shildi.
 

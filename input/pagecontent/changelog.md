@@ -6,7 +6,7 @@
 
 The profile includes four local code systems with Uzbek displays and Russian and English designations, each paired with a value set: [donor category](CodeSystem-donor-category-cs.html) ([ValueSet](ValueSet-donor-category-vs.html)), [blood donor observation type](CodeSystem-blood-donor-observation-type-cs.html) ([ValueSet](ValueSet-blood-donor-observation-type-vs.html)), [donation compensation](CodeSystem-donation-compensation-cs.html) ([ValueSet](ValueSet-donation-compensation-vs.html)) and [donation type](CodeSystem-donation-type-cs.html) ([ValueSet](ValueSet-donation-type-vs.html)). [Blood patient type](ValueSet-blood-patient-type-vs.html) selects SNOMED CT donor or patient codes. Blood group and Rh factor reuse the UZ Core value sets; the observation-type value set also includes the LOINC diagnosis code.
 
-[Blood Management](blood-management.html) maps the blood service, from donor registration and testing to collection, components, stock, supply and transfusion, onto UZ Core profiles and Blood Donor Category Observation, following the Blood Management Technical Project.
+[Blood Management](blood-management.html) maps the blood service, from donor registration and testing to collection, components, stock, supply and transfusion, onto UZ Core profiles and Blood Donor Category Observation.
 
 [Form 027 extract from a patient's medical record](StructureDefinition-form-027-medical-record-extract-composition.html) is profiled as a FHIR Document, covering registration, personal information, residence, referral and diagnosis, clinical information, treatment and recommendations, next steps and responsible persons across 8 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-027-mapping.html).
 
