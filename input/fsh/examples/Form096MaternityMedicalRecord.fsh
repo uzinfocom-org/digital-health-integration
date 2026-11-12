@@ -28,9 +28,9 @@ Description: "Example of Form 096 (Tug'ruq tibbiy kartasi) represented as a FHIR
 * entry[+].fullUrl = "urn:uuid:09600008-1111-2222-3333-444444444444"
 * entry[=].resource = practitionerrole-096-midwife
 * entry[+].fullUrl = "urn:uuid:09600009-1111-2222-3333-444444444444"
-* entry[=].resource = patient-096-newborn-one
+* entry[=].resource = observation-096-newborn-one-sex
 * entry[+].fullUrl = "urn:uuid:09600010-1111-2222-3333-444444444444"
-* entry[=].resource = patient-096-newborn-two
+* entry[=].resource = observation-096-newborn-two-sex
 * entry[+].fullUrl = "urn:uuid:09600011-1111-2222-3333-444444444444"
 * entry[=].resource = organization-096-referring
 * entry[+].fullUrl = "urn:uuid:09600012-1111-2222-3333-444444444444"
@@ -98,9 +98,9 @@ Description: "Example of Form 096 (Tug'ruq tibbiy kartasi) represented as a FHIR
 * entry[+].fullUrl = "urn:uuid:09600043-1111-2222-3333-444444444444"
 * entry[=].resource = condition-096-gynecological
 * entry[+].fullUrl = "urn:uuid:09600044-1111-2222-3333-444444444444"
-* entry[=].resource = questionnaire-response-096-history
+* entry[=].resource = observation-096-previous-pregnancies-narrative
 * entry[+].fullUrl = "urn:uuid:09600045-1111-2222-3333-444444444444"
-* entry[=].resource = questionnaire-response-096-current-pregnancy
+* entry[=].resource = observation-096-pregnancy-course
 * entry[+].fullUrl = "urn:uuid:09600046-1111-2222-3333-444444444444"
 * entry[=].resource = observation-096-general-condition
 * entry[+].fullUrl = "urn:uuid:09600047-1111-2222-3333-444444444444"
@@ -218,7 +218,7 @@ Description: "Example of Form 096 (Tug'ruq tibbiy kartasi) represented as a FHIR
 * entry[+].fullUrl = "urn:uuid:09600103-1111-2222-3333-444444444444"
 * entry[=].resource = observation-096-newborn-one-cord-characteristics
 * entry[+].fullUrl = "urn:uuid:09600104-1111-2222-3333-444444444444"
-* entry[=].resource = procedure-096-newborn-one-eye-prophylaxis
+* entry[=].resource = observation-096-newborn-one-eye-prophylaxis
 * entry[+].fullUrl = "urn:uuid:09600105-1111-2222-3333-444444444444"
 * entry[=].resource = observation-096-newborn-two-birth-status
 * entry[+].fullUrl = "urn:uuid:09600106-1111-2222-3333-444444444444"
@@ -242,7 +242,7 @@ Description: "Example of Form 096 (Tug'ruq tibbiy kartasi) represented as a FHIR
 * entry[+].fullUrl = "urn:uuid:09600115-1111-2222-3333-444444444444"
 * entry[=].resource = observation-096-newborn-two-cord-characteristics
 * entry[+].fullUrl = "urn:uuid:09600116-1111-2222-3333-444444444444"
-* entry[=].resource = procedure-096-newborn-two-eye-prophylaxis
+* entry[=].resource = observation-096-newborn-two-eye-prophylaxis
 * entry[+].fullUrl = "urn:uuid:09600117-1111-2222-3333-444444444444"
 * entry[=].resource = observation-096-live-births
 * entry[+].fullUrl = "urn:uuid:09600118-1111-2222-3333-444444444444"
@@ -289,6 +289,28 @@ Description: "Example of Form 096 (Tug'ruq tibbiy kartasi) represented as a FHIR
 * entry[=].resource = supply-delivery-096
 * entry[+].fullUrl = "urn:uuid:09600139-1111-2222-3333-444444444444"
 * entry[=].resource = provenance-signature-096
+* entry[+].fullUrl = "urn:uuid:09600140-1111-2222-3333-444444444444"
+* entry[=].resource = observation-096-newborn-one-birth-order
+* entry[+].fullUrl = "urn:uuid:09600141-1111-2222-3333-444444444444"
+* entry[=].resource = observation-096-newborn-one-delivery-method
+* entry[+].fullUrl = "urn:uuid:09600142-1111-2222-3333-444444444444"
+* entry[=].resource = observation-096-newborn-one-fetal-complications
+* entry[+].fullUrl = "urn:uuid:09600143-1111-2222-3333-444444444444"
+* entry[=].resource = observation-096-newborn-two-birth-order
+* entry[+].fullUrl = "urn:uuid:09600144-1111-2222-3333-444444444444"
+* entry[=].resource = observation-096-newborn-two-delivery-method
+* entry[+].fullUrl = "urn:uuid:09600145-1111-2222-3333-444444444444"
+* entry[=].resource = observation-096-newborn-two-fetal-complications
+* entry[+].fullUrl = "urn:uuid:09600146-1111-2222-3333-444444444444"
+* entry[=].resource = observation-096-need-patronage
+* entry[+].fullUrl = "urn:uuid:09600147-1111-2222-3333-444444444444"
+* entry[=].resource = observation-096-epidemiological-history
+* entry[+].fullUrl = "urn:uuid:09600148-1111-2222-3333-444444444444"
+* entry[=].resource = observation-096-condition-on-arrival
+* entry[+].fullUrl = "urn:uuid:09600149-1111-2222-3333-444444444444"
+* entry[=].resource = observation-096-gestational-age
+* entry[+].fullUrl = "urn:uuid:09600150-1111-2222-3333-444444444444"
+* entry[=].resource = observation-096-delivery-features
 
 
 
@@ -303,7 +325,6 @@ Usage: #inline
 * identifier[=].value = "096"
 * status = #final
 * type.coding[0] = $composition-type-cs#emdoc-0010-0016 "Maternity (delivery) medical record"
-* type.coding[+] = $loinc#57057-2 "Labor and Delivery Summary Note"
 * category[dhpCategory] = $composition-category-cs#Comp-001-0001 "Medical record"
 * category[formCategory] = $document-category-cs#form-096
 * subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
@@ -355,10 +376,13 @@ Usage: #inline
 * section[medicalAndObstetricHistory].entry[+] = Reference(urn:uuid:09600042-1111-2222-3333-444444444444)
 * section[medicalAndObstetricHistory].entry[+] = Reference(urn:uuid:09600043-1111-2222-3333-444444444444)
 * section[medicalAndObstetricHistory].entry[+] = Reference(urn:uuid:09600044-1111-2222-3333-444444444444)
+* section[medicalAndObstetricHistory].entry[+] = Reference(urn:uuid:09600149-1111-2222-3333-444444444444)
+* section[medicalAndObstetricHistory].entry[+] = Reference(urn:uuid:09600147-1111-2222-3333-444444444444)
 
 * section[currentPregnancy].title = "Course of this pregnancy and general examination"
 * section[currentPregnancy].code = $loinc#65869-0 "Pregnancy complication"
 * section[currentPregnancy].entry[0] = Reference(urn:uuid:09600045-1111-2222-3333-444444444444)
+* section[currentPregnancy].entry[+] = Reference(urn:uuid:09600148-1111-2222-3333-444444444444)
 * section[currentPregnancy].entry[+] = Reference(urn:uuid:09600046-1111-2222-3333-444444444444)
 * section[currentPregnancy].entry[+] = Reference(urn:uuid:09600047-1111-2222-3333-444444444444)
 * section[currentPregnancy].entry[+] = Reference(urn:uuid:09600048-1111-2222-3333-444444444444)
@@ -400,6 +424,7 @@ Usage: #inline
 * section[laborCourse].title = "Course of labor"
 * section[laborCourse].code = $loinc#57074-7 "Labor and delivery process Narrative"
 * section[laborCourse].entry[0] = Reference(urn:uuid:09600080-1111-2222-3333-444444444444)
+* section[laborCourse].entry[+] = Reference(urn:uuid:09600150-1111-2222-3333-444444444444)
 * section[laborCourse].entry[+] = Reference(urn:uuid:09600081-1111-2222-3333-444444444444)
 * section[laborCourse].entry[+] = Reference(urn:uuid:09600082-1111-2222-3333-444444444444)
 * section[laborCourse].entry[+] = Reference(urn:uuid:09600083-1111-2222-3333-444444444444)
@@ -448,6 +473,12 @@ Usage: #inline
 * section[newbornDeliveryRecord].entry[+] = Reference(urn:uuid:09600121-1111-2222-3333-444444444444)
 * section[newbornDeliveryRecord].entry[+] = Reference(urn:uuid:09600122-1111-2222-3333-444444444444)
 * section[newbornDeliveryRecord].entry[+] = Reference(urn:uuid:09600123-1111-2222-3333-444444444444)
+* section[newbornDeliveryRecord].entry[+] = Reference(urn:uuid:09600140-1111-2222-3333-444444444444)
+* section[newbornDeliveryRecord].entry[+] = Reference(urn:uuid:09600141-1111-2222-3333-444444444444)
+* section[newbornDeliveryRecord].entry[+] = Reference(urn:uuid:09600142-1111-2222-3333-444444444444)
+* section[newbornDeliveryRecord].entry[+] = Reference(urn:uuid:09600143-1111-2222-3333-444444444444)
+* section[newbornDeliveryRecord].entry[+] = Reference(urn:uuid:09600144-1111-2222-3333-444444444444)
+* section[newbornDeliveryRecord].entry[+] = Reference(urn:uuid:09600145-1111-2222-3333-444444444444)
 
 * section[postpartumPeriod].title = "Postpartum period"
 * section[postpartumPeriod].code = $sct#133906008 "Postpartum care"
@@ -459,6 +490,7 @@ Usage: #inline
 * section[postpartumPeriod].entry[+] = Reference(urn:uuid:09600129-1111-2222-3333-444444444444)
 * section[postpartumPeriod].entry[+] = Reference(urn:uuid:09600130-1111-2222-3333-444444444444)
 * section[postpartumPeriod].entry[+] = Reference(urn:uuid:09600131-1111-2222-3333-444444444444)
+* section[postpartumPeriod].entry[+] = Reference(urn:uuid:09600146-1111-2222-3333-444444444444)
 
 * section[medicationOrders].title = "Medication orders and administrations"
 * section[medicationOrders].code = $loinc#29549-3 "Medication administered Narrative"
@@ -538,7 +570,6 @@ Usage: #inline
 * address[uzAddress].city = "16090011"
 * address[uzAddress].line[0] = "Chilonzor-12"
 * address[uzAddress].line[+] = "15-uy, 24-xonadon"
-* deceasedBoolean = false
 * managingOrganization = Reference(urn:uuid:09600004-1111-2222-3333-444444444444)
 
 
@@ -633,85 +664,30 @@ Usage: #inline
 * code = $occupation-cs#3222.1
 
 
-Instance: patient-096-newborn-one
-InstanceOf: UZCorePatient
+Instance: observation-096-newborn-one-sex
+InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
-// Synthetic DMED medical-card number; PINFL is not yet available.
-// Reuse this identity in Form 097 and add nationalId when PINFL becomes available.
-* identifier[healthCardId].system = "https://dhp.uz/fhir/core/sid/pid/uz/hc"
-* identifier[healthCardId].type = $identifier-type#HC
-* identifier[healthCardId].use = #official
-* identifier[healthCardId].value = "NB-096-2026-000123-1"
-* name.text = "Karimov Baby One"
-* name.family = "Karimov"
-* name.given = "Baby One"
-* gender = #male
-* birthDate = "2026-08-16"
-* managingOrganization = Reference(urn:uuid:09600004-1111-2222-3333-444444444444)
+* status = #final
+* code = $loinc#76689-9 "Sex assigned at birth"
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16T12:20:00+05:00"
+* performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
+* valueCodeableConcept = $gender#male "Male"
 
 
-* multipleBirthInteger = 1
-
-Instance: patient-096-newborn-two
-InstanceOf: UZCorePatient
+Instance: observation-096-newborn-two-sex
+InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
-// The second newborn has a distinct medical-card number and no PINFL yet.
-* identifier[healthCardId].system = "https://dhp.uz/fhir/core/sid/pid/uz/hc"
-* identifier[healthCardId].type = $identifier-type#HC
-* identifier[healthCardId].use = #official
-* identifier[healthCardId].value = "NB-096-2026-000123-2"
-* name.text = "Karimova Baby Two"
-* name.family = "Karimova"
-* name.given = "Baby Two"
-* gender = #female
-* birthDate = "2026-08-16"
-* managingOrganization = Reference(urn:uuid:09600004-1111-2222-3333-444444444444)
-
-
-* multipleBirthInteger = 2
-
-Instance: form-096-history
-InstanceOf: UZCoreQuestionnaire
-Description: "Questionnaire for recording the patient's previous pregnancy and epidemiological history."
-Usage: #example
-
-* id = "form-096-history"
-* url = "https://dhp.uz/fhir/integrations/Questionnaire/form-096-history"
-* version = "0.1.0"
-* status = #active
-* title = "Form 096 - Pregnancy History"
-* language = #en
-
-* item[0].linkId = "previous-pregnancies"
-* item[=].text = "Previous pregnancies"
-* item[=].type = #string
-
-* item[+].linkId = "epidemiological-history"
-* item[=].text = "Epidemiological history"
-* item[=].type = #string
-
-
-Instance: form-096-current-pregnancy
-InstanceOf: UZCoreQuestionnaire
-Description: "Questionnaire for recording the course of the current pregnancy and the patient's condition on arrival."
-Usage: #example
-
-* id = "form-096-current-pregnancy"
-* url = "https://dhp.uz/fhir/integrations/Questionnaire/form-096-current-pregnancy"
-* version = "0.1.0"
-* status = #active
-* title = "Form 096 - Current Pregnancy"
-* language = #en
-
-* item[0].linkId = "current-pregnancy-course"
-* item[=].text = "Course and complications of this pregnancy"
-* item[=].type = #string
-
-* item[+].linkId = "condition-on-arrival"
-* item[=].text = "Condition on arrival"
-* item[=].type = #string
+* status = #final
+* code = $loinc#76689-9 "Sex assigned at birth"
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16T12:20:00+05:00"
+* performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
+* valueCodeableConcept = $gender#female "Female"
 
 
 Instance: observation-096-blood-group
@@ -806,18 +782,17 @@ Usage: #inline
 * valueInteger = 6
 
 
-// No standard or Form 111 code exists for this field yet.
 Instance: observation-096-prenatal-care
 InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code.text = "Prenatal care received during this pregnancy"
+* code = $loinc#75204-8 "Prenatal care indicator [CDC.CS]"
 * subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T08:45:00+05:00"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* valueBoolean = true
+* valueCodeableConcept = $v2-0532#Y "Yes"
 
 
 Instance: condition-096-admission
@@ -1106,42 +1081,56 @@ Usage: #inline
 * note.text = "Treated in 2023"
 
 
-Instance: questionnaire-response-096-history
-InstanceOf: UZCoreQuestionnaireResponse
-Description: "QuestionnaireResponse for recording the patient's previous pregnancy and epidemiological history."
+Instance: observation-096-previous-pregnancies-narrative
+InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
-* questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/form-096-history"
-* status = #completed
+* status = #final
+* code = $form111-general-obs-cs#chr-0035-00016 "Characteristics of previous pregnancies"
 * subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
-* authored = "2026-08-16T08:40:00+05:00"
-* author = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* item[0].linkId = "previous-pregnancies"
-* item[=].text = "Previous pregnancies"
-* item[=].answer.valueString = "Two previous term births; no prior operative delivery."
-* item[+].linkId = "epidemiological-history"
-* item[=].text = "Epidemiological history"
-* item[=].answer.valueString = "No recent infectious exposure or travel risk reported."
+* effectiveDateTime = "2026-08-16T08:40:00+05:00"
+* performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
+* valueString = "Two previous term births; no prior operative delivery."
 
 
-Instance: questionnaire-response-096-current-pregnancy
-InstanceOf: UZCoreQuestionnaireResponse
-Description: "QuestionnaireResponse for recording the course of the current pregnancy and the patient's condition on arrival."
+Instance: observation-096-epidemiological-history
+InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
-* questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/form-096-current-pregnancy"
-* status = #completed
+* status = #final
+* code = $form111-general-obs-cs#chr-0035-00031 "Epidemiological history"
 * subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
-* authored = "2026-08-16T08:50:00+05:00"
-* author = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* item[0].linkId = "current-pregnancy-course"
-* item[=].text = "Course and complications of this pregnancy"
-* item[=].answer.valueString = "Dichorionic diamniotic twin pregnancy; mild iron-deficiency anaemia."
-* item[+].linkId = "condition-on-arrival"
-* item[=].text = "Condition on arrival"
-* item[=].answer.valueString = "Stable, regular contractions, membranes intact."
+* effectiveDateTime = "2026-08-16T08:40:00+05:00"
+* performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
+* valueString = "No recent infectious exposure or travel risk reported."
+
+
+Instance: observation-096-pregnancy-course
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $form111-assessment-obs-cs#chr-0005-00008 "Course of pregnancy and patronage follow-up data"
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16T08:50:00+05:00"
+* performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
+* valueString = "Dichorionic diamniotic twin pregnancy; mild iron-deficiency anaemia."
+
+
+Instance: observation-096-condition-on-arrival
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $loinc#10210-3 "Physical findings of General status Narrative"
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16T08:50:00+05:00"
+* performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
+* valueString = "Stable, regular contractions, membranes intact."
 
 
 Instance: observation-096-general-condition
@@ -1434,7 +1423,7 @@ Usage: #inline
 * valueCodeableConcept = $sct#289547007 "Bloodstained vaginal discharge"
 
 
-// Fetus one: focus is the child this fetus was born as.
+// Fetus one: focus is the newborn panel this fetus was born as.
 Instance: observation-096-fetal-lie-one
 InstanceOf: UZCoreObservation
 Usage: #inline
@@ -1445,7 +1434,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T09:15:00+05:00"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* focus = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* focus = Reference(urn:uuid:09600093-1111-2222-3333-444444444444)
 * valueCodeableConcept = $sct#249063009 "Longitudinal lie"
 
 
@@ -1459,7 +1448,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T09:15:00+05:00"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* focus = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* focus = Reference(urn:uuid:09600093-1111-2222-3333-444444444444)
 * valueCodeableConcept.text = "First position, anterior variety"
 
 
@@ -1473,7 +1462,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T09:15:00+05:00"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* focus = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* focus = Reference(urn:uuid:09600093-1111-2222-3333-444444444444)
 * valueCodeableConcept = $sct#1209182005 "Cephalic fetal presentation"
 
 
@@ -1487,7 +1476,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T09:15:00+05:00"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* focus = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* focus = Reference(urn:uuid:09600093-1111-2222-3333-444444444444)
 * valueString = "Left of the midline, below the umbilicus"
 
 
@@ -1501,7 +1490,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T09:15:00+05:00"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* focus = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* focus = Reference(urn:uuid:09600093-1111-2222-3333-444444444444)
 * valueQuantity = 142 '/min' "beats/min"
 
 
@@ -1515,7 +1504,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T09:15:00+05:00"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* focus = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* focus = Reference(urn:uuid:09600093-1111-2222-3333-444444444444)
 * valueQuantity = 2900 'g' "g"
 
 
@@ -1529,7 +1518,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T09:15:00+05:00"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* focus = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* focus = Reference(urn:uuid:09600105-1111-2222-3333-444444444444)
 * valueCodeableConcept = $sct#249063009 "Longitudinal lie"
 
 
@@ -1543,7 +1532,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T09:15:00+05:00"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* focus = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* focus = Reference(urn:uuid:09600105-1111-2222-3333-444444444444)
 * valueCodeableConcept.text = "Second position, posterior variety"
 
 
@@ -1557,7 +1546,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T09:15:00+05:00"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* focus = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* focus = Reference(urn:uuid:09600105-1111-2222-3333-444444444444)
 * valueCodeableConcept = $sct#6096002 "Breech presentation"
 
 
@@ -1571,7 +1560,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T09:15:00+05:00"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* focus = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* focus = Reference(urn:uuid:09600105-1111-2222-3333-444444444444)
 * valueString = "Right of the midline, above the umbilicus"
 
 
@@ -1585,7 +1574,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T09:15:00+05:00"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* focus = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* focus = Reference(urn:uuid:09600105-1111-2222-3333-444444444444)
 * valueQuantity = 136 '/min' "beats/min"
 
 
@@ -1599,22 +1588,21 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T09:15:00+05:00"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* focus = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* focus = Reference(urn:uuid:09600105-1111-2222-3333-444444444444)
 * valueQuantity = 2750 'g' "g"
 
 
-// No standard or Form 111 code exists for station or labor activity yet.
 Instance: observation-096-presenting-part-station
 InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code.text = "Station of the presenting part"
+* code = $sct#364610007 "Engagement of presenting part"
 * subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T09:15:00+05:00"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* focus = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* focus = Reference(urn:uuid:09600093-1111-2222-3333-444444444444)
 * valueString = "Engaged at the pelvic inlet"
 
 
@@ -1623,12 +1611,38 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code.text = "Labor activity"
+* code = $loinc#56866-7 "Onset of painful contractions"
 * subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T09:15:00+05:00"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
-* valueString = "Regular contractions, three per ten minutes"
+* valueDateTime = "2026-08-16"
+
+
+Instance: observation-096-gestational-age
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $loinc#18185-9 "Gestational age"
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16T08:40:00+05:00"
+* performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
+* valueQuantity = 39 'wk' "weeks"
+
+
+Instance: observation-096-delivery-features
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $form111-general-obs-cs#chr-0035-00012 "Special features of delivery"
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16T12:37:00+05:00"
+* performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
+* valueString = "Twin delivery; second twin born 12 minutes after the first."
 
 
 Instance: observation-096-labor-duration
@@ -1806,18 +1820,34 @@ Usage: #inline
 * valueCodeableConcept = $sct#385669000 "Successful"
 
 
-// Newborn one: individual facts have the child as subject.
+// Newborn one: a panel on the mother (code chr-0035-00013) whose hasMember lists this child's facts.
+// Every member has the mother as subject; Form 096 sends no Patient for the child.
 Instance: observation-096-newborn-one-birth-status
 InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
 * code = $form111-general-obs-cs#chr-0035-00013 "Live/stillbirth status"
-* subject = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:20:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
 * valueCodeableConcept = $sct#281050002 "Livebirth"
+* hasMember[0] = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600094-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600095-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600096-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600097-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600098-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600099-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600100-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600101-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600102-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600103-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600104-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600140-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600141-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600142-1111-2222-3333-444444444444)
 
 
 Instance: observation-096-newborn-one-presentation
@@ -1826,7 +1856,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $sct#271692001 "Presentation of fetus"
-* subject = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:20:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -1839,7 +1869,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $loinc#8339-4 "Birth weight Measured"
-* subject = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:20:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -1852,7 +1882,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $loinc#89269-5 "Body height Measured --at birth"
-* subject = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:20:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -1865,7 +1895,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $loinc#9843-4 "Head Occipital-frontal circumference"
-* subject = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:20:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -1879,7 +1909,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $sct#248366000 "Chest circumference"
-* subject = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:20:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -1892,7 +1922,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $form111-assessment-obs-cs#chr-0005-00003 "General condition"
-* subject = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:20:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -1906,7 +1936,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $loinc#9272-6 "1 minute Apgar Score"
-* subject = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:20:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -1919,7 +1949,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $sct#249194006 "Length of umbilical cord"
-* subject = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:20:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -1933,7 +1963,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code.text = "Umbilical cord entanglement"
-* subject = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:20:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -1946,23 +1976,24 @@ Usage: #inline
 * language = #en
 * status = #final
 * code.text = "Umbilical cord characteristics"
-* subject = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:20:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
 * valueString = "Three vessels, no true knot"
 
 
-Instance: procedure-096-newborn-one-eye-prophylaxis
-InstanceOf: UZCoreProcedure
+Instance: observation-096-newborn-one-eye-prophylaxis
+InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
-* status = #completed
+* status = #final
 * code = $form096-newborn-eye-prophylaxis-cs#chr-0085-0001 "Neonatal ocular prophylaxis against gonococcal ophthalmia"
-* subject = Reference(urn:uuid:09600009-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
-* occurrenceDateTime = "2026-08-16T12:28:00+05:00"
-* performer.actor = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16T12:28:00+05:00"
+* performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
+* valueCodeableConcept = $v2-0532#Y "Yes"
 * note.text = "Erythromycin ophthalmic ointment applied."
 
 
@@ -1972,11 +2003,26 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $form111-general-obs-cs#chr-0035-00013 "Live/stillbirth status"
-* subject = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:27:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
 * valueCodeableConcept = $sct#281050002 "Livebirth"
+* hasMember[0] = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600106-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600107-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600108-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600109-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600110-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600111-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600112-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600113-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600114-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600115-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600116-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600143-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600144-1111-2222-3333-444444444444)
+* hasMember[+] = Reference(urn:uuid:09600145-1111-2222-3333-444444444444)
 
 
 Instance: observation-096-newborn-two-presentation
@@ -1985,7 +2031,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $sct#271692001 "Presentation of fetus"
-* subject = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:27:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -1998,7 +2044,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $loinc#8339-4 "Birth weight Measured"
-* subject = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:27:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -2011,7 +2057,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $loinc#89269-5 "Body height Measured --at birth"
-* subject = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:27:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -2024,7 +2070,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $loinc#9843-4 "Head Occipital-frontal circumference"
-* subject = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:27:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -2038,7 +2084,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $sct#248366000 "Chest circumference"
-* subject = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:27:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -2051,7 +2097,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $form111-assessment-obs-cs#chr-0005-00003 "General condition"
-* subject = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:27:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -2065,7 +2111,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $loinc#9272-6 "1 minute Apgar Score"
-* subject = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:27:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -2078,7 +2124,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $sct#249194006 "Length of umbilical cord"
-* subject = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:27:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -2091,7 +2137,7 @@ Usage: #inline
 * language = #en
 * status = #final
 * code.text = "Umbilical cord entanglement"
-* subject = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:27:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
@@ -2104,27 +2150,27 @@ Usage: #inline
 * language = #en
 * status = #final
 * code.text = "Umbilical cord characteristics"
-* subject = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T12:27:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
 * valueString = "Three vessels, no true knot"
 
 
-Instance: procedure-096-newborn-two-eye-prophylaxis
-InstanceOf: UZCoreProcedure
+Instance: observation-096-newborn-two-eye-prophylaxis
+InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
-* status = #completed
+* status = #final
 * code = $form096-newborn-eye-prophylaxis-cs#chr-0085-0001 "Neonatal ocular prophylaxis against gonococcal ophthalmia"
-* subject = Reference(urn:uuid:09600010-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
-* occurrenceDateTime = "2026-08-16T12:34:00+05:00"
-* performer.actor = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16T12:28:00+05:00"
+* performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
+* valueCodeableConcept = $v2-0532#Y "Yes"
 * note.text = "Erythromycin ophthalmic ointment applied."
 
 
-// Delivery-wide counts have the mother as subject.
 Instance: observation-096-live-births
 InstanceOf: UZCoreObservation
 Usage: #inline
@@ -2156,7 +2202,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code.text = "Number of postnatal deaths from this delivery"
+* code = $form111-general-obs-cs#chr-0035-00030 "Number of infants died after birth"
 * subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-18T15:00:00+05:00"
@@ -2432,3 +2478,93 @@ Usage: #inline
 * signature.who = Reference(urn:uuid:09600007-1111-2222-3333-444444444444) "Rasulova M.B."
 * signature.sigFormat = #application/pdf
 * signature.data = "JVBERi0xLjQKJUZvcm0wOTYtRXhhbXBsZS1TaWduYXR1cmUK"
+
+Instance: observation-096-newborn-one-birth-order
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $loinc#73771-8 "Birth order"
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16T12:20:00+05:00"
+* performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
+* valueInteger = 1
+
+
+Instance: observation-096-newborn-one-delivery-method
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $loinc#57071-3 "Obstetric delivery method"
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16T12:20:00+05:00"
+* performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
+* valueCodeableConcept = $sct#289259007 "Vaginal delivery"
+
+
+Instance: observation-096-newborn-one-fetal-complications
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $form111-general-obs-cs#chr-0035-00029 "Fetal complications"
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16T12:20:00+05:00"
+* performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
+* valueCodeableConcept = $v2-0532#N "No"
+
+
+Instance: observation-096-newborn-two-birth-order
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $loinc#73771-8 "Birth order"
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16T12:20:00+05:00"
+* performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
+* valueInteger = 2
+
+
+Instance: observation-096-newborn-two-delivery-method
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $loinc#57071-3 "Obstetric delivery method"
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16T12:20:00+05:00"
+* performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
+* valueCodeableConcept = $sct#289259007 "Vaginal delivery"
+
+
+Instance: observation-096-newborn-two-fetal-complications
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $form111-general-obs-cs#chr-0035-00029 "Fetal complications"
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16T12:20:00+05:00"
+* performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
+* valueCodeableConcept = $v2-0532#N "No"
+
+
+Instance: observation-096-need-patronage
+InstanceOf: UZCoreObservation
+Usage: #inline
+* language = #en
+* status = #final
+* code = $form111-general-obs-cs#chr-0035-00028 "Mother needs patronage"
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-18T15:00:00+05:00"
+* performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
+* valueCodeableConcept = $v2-0532#N "No"

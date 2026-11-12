@@ -69,3 +69,9 @@ Description: "Roles a diagnosis can play within a clinical document (e.g. main, 
   * ^designation[=].value = "Другие значимые заболевания"
   * ^designation[+].language = #en
   * ^designation[=].value = "Other significant diseases"
+
+* #discharge "Chiqarishdagi tashxis"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Диагноз при выписке"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Discharge diagnosis"

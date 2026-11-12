@@ -268,3 +268,51 @@ Description: "Uzbek and Russian displays for the SNOMED CT codes used by Form 09
   * ^designation[=].value = "Околоплодные воды светлые"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Homila suvi tiniq"
+
+* #70028003 "Vertex presentation"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Затылочное предлежание"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Ensa bilan kelish"
+
+* #21882006 "Face presentation of fetus"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Лицевое предлежание"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Yuz bilan kelish"
+
+* #8014007 "Brow presentation"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Лобное предлежание"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Peshona bilan kelish"
+
+* #49168004 "Complete breech presentation"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Смешанное ягодичное предлежание"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Aralash chanoq bilan kelish"
+
+* #38049006 "Incomplete breech presentation"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Неполное ягодичное предлежание"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "To'liqmas chanoq bilan kelish"
+
+* #249098007 "Knee presentation"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Коленное предлежание"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Tizza bilan kelish"
+
+* #364610007 "Engagement of presenting part"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Расположение предлежащей части"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Oldinda keluvchi qismning joylashuvi"
+
+* #276506001 "Neonatal death"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Смерть новорождённого"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Yangi tug'ilgan chaqaloq o'limi"

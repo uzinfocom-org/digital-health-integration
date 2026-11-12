@@ -11,7 +11,7 @@ Description: "Composition profile for Form 096 (Tug'ruq tibbiy kartasi): the rec
 * status ^short = "Document status: preliminary while the woman is in the maternity hospital, final once the record is closed at discharge"
 
 * type = $composition-type-cs#emdoc-0010-0016 "Maternity (delivery) medical record"
-* type ^short = "Form 096 document type (maternity medical record); LOINC 57057-2 \"Labor and Delivery Summary Note\" may be sent as an additional coding"
+* type ^short = "Form 096 document type (maternity medical record)"
 
 * category 1..*
 * category ^short = "Document category: medical record, and the Form 096 category"
@@ -75,8 +75,8 @@ Description: "Composition profile for Form 096 (Tug'ruq tibbiy kartasi): the rec
 * section[medicalAndObstetricHistory].code 1..1
 * section[medicalAndObstetricHistory].code = $loinc#11329-0 "History general Narrative - Reported"
 * section[medicalAndObstetricHistory].code ^short = "Occupation, general diseases, spouse's health, menstrual, sexual and gynecological history, previous pregnancies, deliveries and abortions, epidemiological history"
-* section[medicalAndObstetricHistory].entry only Reference(UZCoreRelatedPerson or UZCoreObservation or UZCoreCondition or UZCoreProcedure or UZCoreQuestionnaireResponse)
-* section[medicalAndObstetricHistory].entry ^short = "Spouse, history observations, occupation, past diseases and operations, history questionnaire"
+* section[medicalAndObstetricHistory].entry only Reference(UZCoreRelatedPerson or UZCoreObservation or UZCoreCondition or UZCoreProcedure)
+* section[medicalAndObstetricHistory].entry ^short = "Spouse, history observations, occupation, past diseases and operations, previous pregnancies and epidemiological history"
 
 // 3. Ushbu homiladorlikning kechishi
 * section[currentPregnancy].title 1..1
@@ -84,8 +84,8 @@ Description: "Composition profile for Form 096 (Tug'ruq tibbiy kartasi): the rec
 * section[currentPregnancy].code 1..1
 * section[currentPregnancy].code = $loinc#65869-0 "Pregnancy complication"
 * section[currentPregnancy].code ^short = "Prenatal visits, complications of this pregnancy, general condition, height, weight, blood pressure, pulse, temperature, organ systems"
-* section[currentPregnancy].entry only Reference(UZCoreObservation or UZCoreCondition or UZCoreQuestionnaireResponse)
-* section[currentPregnancy].entry ^short = "Pregnancy course and general examination findings"
+* section[currentPregnancy].entry only Reference(UZCoreObservation or UZCoreCondition)
+* section[currentPregnancy].entry ^short = "Pregnancy course, condition on arrival and general examination findings"
 
 // 4. Akusherlik tekshiruvi
 * section[obstetricExamination].title 1..1
@@ -94,7 +94,7 @@ Description: "Composition profile for Form 096 (Tug'ruq tibbiy kartasi): the rec
 * section[obstetricExamination].code = $sct#163497009 "Obstetric examination"
 * section[obstetricExamination].code ^short = "Fundal height, abdominal circumference, pelvimetry, gravidity and parity, and for each fetus: lie, position, presentation, heart sounds, heart rate, estimated weight"
 * section[obstetricExamination].entry only Reference(UZCoreObservation)
-* section[obstetricExamination].entry ^short = "Maternal measurements and one set of fetal observations per fetus"
+* section[obstetricExamination].entry ^short = "Maternal measurements and fetal observations, per fetus or one set for all fetuses"
 
 // 5. Tug'ruqning kechishi
 * section[laborCourse].title 1..1
@@ -110,10 +110,10 @@ Description: "Composition profile for Form 096 (Tug'ruq tibbiy kartasi): the rec
 * section[newbornDeliveryRecord].title ^short = "6. Newborn delivery record"
 * section[newbornDeliveryRecord].code 1..1
 * section[newbornDeliveryRecord].code = $loinc#57075-4 "Newborn delivery information"
-* section[newbornDeliveryRecord].code ^short = "For each newborn: time of birth, sex, born alive or dead, weight, length, head and chest circumference, condition, Apgar scores, eye prophylaxis; placenta, membranes and cord"
-* section[newbornDeliveryRecord].entry only Reference(UZCorePatient or UZCoreObservation or UZCoreCondition or UZCoreProcedure or UZCoreImmunization)
-* section[newbornDeliveryRecord].entry ^short = "Each newborn and their birth observations and procedures"
-* section[newbornDeliveryRecord].entry ^definition = "Include a separate UZCorePatient for each newborn. When PINFL is absent, use the newborn's DMED medical-card number in Patient.identifier[healthCardId], using the UZ Core HC identifier system. Individual measurements and Apgar assessments reference that newborn as Observation.subject; delivery-wide counts reference the mother. Reuse the same patient identity in Form 097 and add PINFL to that identity when available."
+* section[newbornDeliveryRecord].code ^short = "For each newborn: born alive or dead, birth order, sex, delivery method, presentation, weight, length, head and chest circumference, condition, Apgar score, cord, eye prophylaxis, fetal complications, death after birth; live births, stillbirths, deaths after birth, placenta, membranes and blood loss"
+* section[newbornDeliveryRecord].entry only Reference(UZCoreObservation or UZCoreCondition or UZCoreProcedure or UZCoreImmunization)
+* section[newbornDeliveryRecord].entry ^short = "One newborn panel per child with its member observations, and the delivery-wide observations and procedures"
+* section[newbornDeliveryRecord].entry ^definition = "Form 096 sends no Patient for a newborn. Each newborn is one panel Observation with code chr-0035-00013 (born alive or dead) and the mother as subject; its hasMember lists that child's own observations, which also have the mother as subject. Fetal observations in section 4 reference the panel in Observation.focus. Delivery-wide counts, placenta, membranes and blood loss are separate Observations on the mother. Form 097 records the child as its own Patient."
 
 // 7. Tug'ruqdan keyingi davr
 * section[postpartumPeriod].title 1..1

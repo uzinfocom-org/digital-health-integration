@@ -1,7 +1,7 @@
 ValueSet: Form096PregnancyObstetricHistoryCodeVS
 Id: pregnancy-obstetric-history-code-vs
 Title: "Form 096 Medical and Obstetric History Codes"
-Description: "Observation.code for the Form 096 history fields: spouse health, menarche, age at first sexual activity, previous pregnancies, abortions and their outcomes, weights of previous newborns, gravidity, parity, last menstrual period, quickening, number of prenatal visits, employer and occupation. Codes shared with Form 111 are the same as in Form 111. Previous pregnancy outcome values come from form111-previous-pregnancy-outcome-vs and previous delivery term values from form111-previous-delivery-term-vs."
+Description: "Observation.code for the Form 096 history fields: spouse health, menarche, age at first sexual activity, previous pregnancies, abortions and their outcomes, weights of previous newborns, gravidity, parity, last menstrual period, quickening, gestational age, characteristics of previous pregnancies, number of prenatal visits, whether the woman had prenatal care (also used by Form 097 with the facility as performer), epidemiological history, employer and occupation. Codes shared with Form 111 are the same as in Form 111. Previous pregnancy outcome values come from form111-previous-pregnancy-outcome-vs and previous delivery term values from form111-previous-delivery-term-vs."
 * insert IntegrationsValueSet(pregnancy-obstetric-history-code-vs)
 * ^status = #draft
 * ^experimental = true
@@ -13,12 +13,16 @@ Description: "Observation.code for the Form 096 history fields: spouse health, m
 * $loinc#11612-9 "[#] Abortions"
 * $loinc#63893-2 "Outcome of pregnancy"
 * $form111-general-obs-cs#chr-0035-00015 "Tug'ruq turi (muddati bo'yicha)"
+* $form111-general-obs-cs#chr-0035-00016 "Avvalgi homiladorliklarning o'ziga xosligi"
 * $loinc#8339-4 "Birth weight Measured"
 * $loinc#11996-6 "[#] Pregnancies"
 * $loinc#11977-6 "[#] Parity"
 * $loinc#8665-2 "Last menstrual period start date"
 * $loinc#57065-5 "Quickening date"
+* $loinc#18185-9 "Gestational age"
 * $loinc#68493-6 "Prenatal visits for this pregnancy #"
+* $loinc#75204-8 "Prenatal care indicator [CDC.CS]"
+* $form111-general-obs-cs#chr-0035-00031 "Epidemiologik anamnez"
 * $loinc#80427-8 "Employer name [Identifier]"
 * $sct#14679004 "Occupation"
 

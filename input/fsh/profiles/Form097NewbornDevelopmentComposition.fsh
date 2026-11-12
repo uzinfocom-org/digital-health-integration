@@ -63,8 +63,8 @@ Description: "Composition profile for Form 097 (Yangi tug'ilgan chaqaloq rivojla
 * section[motherInformation].code = $loinc#57073-9 "Prenatal records"
 * section[motherInformation].code ^short = "Mother's PINFL, full name, date of birth, marital status, address, nationality, occupation, blood group and Rh of mother and father, gravidity, parity, gestational age, pregnancy complications, amniotic fluid, family history"
 * section[motherInformation].entry 1..*
-* section[motherInformation].entry only Reference(UZCorePatient or UZCoreRelatedPerson or UZCoreLocation or UZCoreObservation or UZCoreCondition or UZCoreProcedure or FamilyMemberHistory)
-* section[motherInformation].entry ^short = "Mother, father, maternal observations, pregnancy complications and family history"
+* section[motherInformation].entry only Reference(UZCorePatient or UZCoreRelatedPerson or UZCoreLocation or UZCoreOrganization or UZCoreObservation or UZCoreCondition or UZCoreProcedure or FamilyMemberHistory)
+* section[motherInformation].entry ^short = "Mother, father, facility where the mother had prenatal care, maternal observations, pregnancy complications and family history"
 
 // 2. Tug'ruq haqida ma'lumot
 * section[birthEvent].title 1..1

@@ -1,7 +1,7 @@
 ValueSet: Form096MaternalExaminationObservationCodeVS
 Id: maternal-examination-observation-code-vs
 Title: "Form 096 Maternal and Fetal Examination Codes"
-Description: "Observation.code for the Form 096 general, obstetric and fetal examination fields on admission: general condition, heart, pulse, blood pressure, respiratory and digestive systems, height, weight, temperature, pelvimetry, abdominal circumference, fundal height, and per fetus the lie, position, presentation, site of heart sounds, heart rate and estimated weight. Pelvimetry is one Observation with the Form 111 codes chr-0035-00002 to chr-0035-00008 and chr-0023-00002. General condition values come from satisfactory-status-vs, lie from fetal-lie-vs and presentation from fetal-presentation-vs."
+Description: "Observation.code for the Form 096 general, obstetric and fetal examination fields on admission: general condition, heart, pulse, blood pressure, respiratory and digestive systems, height, weight, temperature, pelvimetry, abdominal circumference, fundal height, per fetus the lie, position, presentation, engagement of the presenting part, site of heart sounds, heart rate and estimated weight, the onset of labor, the course of pregnancy and the condition on arrival. Pelvimetry is one Observation with the Form 111 codes chr-0035-00002 to chr-0035-00008 and chr-0023-00002. General condition values come from satisfactory-status-vs, lie from fetal-lie-vs and presentation from fetal-presentation-vs."
 * insert IntegrationsValueSet(maternal-examination-observation-code-vs)
 * ^status = #draft
 * ^experimental = true
@@ -31,6 +31,10 @@ Description: "Observation.code for the Form 096 general, obstetric and fetal exa
 * $sct#373720003 "Site of loudest fetal heart sounds"
 * $loinc#55283-6 "Fetal Heart rate"
 * $loinc#11727-5 "Fetal Body weight estimated by US"
+* $sct#364610007 "Engagement of presenting part"
+* $loinc#56866-7 "Onset of painful contractions"
+* $loinc#10210-3 "Physical findings of General status Narrative"
+* $form111-assessment-obs-cs#chr-0005-00008 "Homiladorlikning kechishi va patronaj kuzatuv ma'lumotlari"
 
 // Supplements providing Russian and Uzbek displays.
 * ^extension[+].url = $valueset-supplement

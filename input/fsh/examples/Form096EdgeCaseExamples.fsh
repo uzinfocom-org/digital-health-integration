@@ -108,7 +108,7 @@ Instance: example-form-096-antepartum-stillbirth
 InstanceOf: Bundle
 Usage: #example
 Title: "Form 096 - Antepartum stillbirth"
-Description: "Form 096 document recording an antepartum stillbirth: the stillborn child is a deceased Patient, and the live/stillbirth status Observation carries SNOMED CT 713202001 \"Antepartum stillbirth\", as in Form 111."
+Description: "Form 096 document recording an antepartum stillbirth: the stillborn child is a newborn panel on the mother whose live/stillbirth status carries SNOMED CT 713202001 \"Antepartum stillbirth\", as in Form 111."
 * language = #en
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:09600220-1111-2222-3333-444444444444"
@@ -119,7 +119,7 @@ Description: "Form 096 document recording an antepartum stillbirth: the stillbor
 * entry[+].fullUrl = "urn:uuid:09600002-1111-2222-3333-444444444444"
 * entry[=].resource = patient-096-mother
 * entry[+].fullUrl = "urn:uuid:09600223-1111-2222-3333-444444444444"
-* entry[=].resource = patient-096-antepartum-stillborn
+* entry[=].resource = observation-096-antepartum-stillborn-sex
 * entry[+].fullUrl = "urn:uuid:09600222-1111-2222-3333-444444444444"
 * entry[=].resource = encounter-096-antepartum-stillbirth
 * entry[+].fullUrl = "urn:uuid:09600004-1111-2222-3333-444444444444"
@@ -164,19 +164,17 @@ Usage: #inline
 * subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * serviceProvider = Reference(urn:uuid:09600004-1111-2222-3333-444444444444)
 
-Instance: patient-096-antepartum-stillborn
-InstanceOf: UZCorePatient
+Instance: observation-096-antepartum-stillborn-sex
+InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
-* identifier[healthCardId].system = "https://dhp.uz/fhir/core/sid/pid/uz/hc"
-* identifier[healthCardId].type = $identifier-type#HC
-* identifier[healthCardId].use = #official
-* identifier[healthCardId].value = "NB-096-2026-000220-1"
-* name.text = "Synthetic stillborn child"
-* gender = #male
-* birthDate = "2026-08-16"
-* deceasedBoolean = true
-* managingOrganization = Reference(urn:uuid:09600004-1111-2222-3333-444444444444)
+* status = #final
+* code = $loinc#76689-9 "Sex assigned at birth"
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09600222-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16"
+* performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
+* valueCodeableConcept = $gender#male "Male"
 
 Instance: observation-096-antepartum-stillbirth-status
 InstanceOf: UZCoreObservation
@@ -184,17 +182,18 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $form111-general-obs-cs#chr-0035-00013 "Live/stillbirth status"
-* subject = Reference(urn:uuid:09600223-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600222-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
 * valueCodeableConcept = $sct#713202001 "Antepartum stillbirth"
+* hasMember = Reference(urn:uuid:09600223-1111-2222-3333-444444444444)
 
 Instance: example-form-096-intrapartum-stillbirth
 InstanceOf: Bundle
 Usage: #example
 Title: "Form 096 - Intrapartum stillbirth"
-Description: "Form 096 document recording an intrapartum stillbirth: the stillborn child is a deceased Patient, and the live/stillbirth status Observation carries SNOMED CT 237362003 \"Fetal intrapartum death\", as in Form 111."
+Description: "Form 096 document recording an intrapartum stillbirth: the stillborn child is a newborn panel on the mother whose live/stillbirth status carries SNOMED CT 237362003 \"Fetal intrapartum death\", as in Form 111."
 * language = #en
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:09600230-1111-2222-3333-444444444444"
@@ -205,7 +204,7 @@ Description: "Form 096 document recording an intrapartum stillbirth: the stillbo
 * entry[+].fullUrl = "urn:uuid:09600002-1111-2222-3333-444444444444"
 * entry[=].resource = patient-096-mother
 * entry[+].fullUrl = "urn:uuid:09600233-1111-2222-3333-444444444444"
-* entry[=].resource = patient-096-intrapartum-stillborn
+* entry[=].resource = observation-096-intrapartum-stillborn-sex
 * entry[+].fullUrl = "urn:uuid:09600232-1111-2222-3333-444444444444"
 * entry[=].resource = encounter-096-intrapartum-stillbirth
 * entry[+].fullUrl = "urn:uuid:09600004-1111-2222-3333-444444444444"
@@ -250,19 +249,17 @@ Usage: #inline
 * subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * serviceProvider = Reference(urn:uuid:09600004-1111-2222-3333-444444444444)
 
-Instance: patient-096-intrapartum-stillborn
-InstanceOf: UZCorePatient
+Instance: observation-096-intrapartum-stillborn-sex
+InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
-* identifier[healthCardId].system = "https://dhp.uz/fhir/core/sid/pid/uz/hc"
-* identifier[healthCardId].type = $identifier-type#HC
-* identifier[healthCardId].use = #official
-* identifier[healthCardId].value = "NB-096-2026-000230-1"
-* name.text = "Synthetic stillborn child"
-* gender = #male
-* birthDate = "2026-08-16"
-* deceasedBoolean = true
-* managingOrganization = Reference(urn:uuid:09600004-1111-2222-3333-444444444444)
+* status = #final
+* code = $loinc#76689-9 "Sex assigned at birth"
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:09600232-1111-2222-3333-444444444444)
+* effectiveDateTime = "2026-08-16"
+* performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
+* valueCodeableConcept = $gender#male "Male"
 
 Instance: observation-096-intrapartum-stillbirth-status
 InstanceOf: UZCoreObservation
@@ -270,8 +267,9 @@ Usage: #inline
 * language = #en
 * status = #final
 * code = $form111-general-obs-cs#chr-0035-00013 "Live/stillbirth status"
-* subject = Reference(urn:uuid:09600233-1111-2222-3333-444444444444)
+* subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600232-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16"
 * performer = Reference(urn:uuid:09600007-1111-2222-3333-444444444444)
 * valueCodeableConcept = $sct#237362003 "Fetal intrapartum death"
+* hasMember = Reference(urn:uuid:09600233-1111-2222-3333-444444444444)

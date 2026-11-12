@@ -145,3 +145,27 @@ Description: "Form 111 General Observation Code for clinical documents and other
   * ^designation[=].value = "Previous pregnancy year"
   * ^designation[+].language = #ru
   * ^designation[=].value = "Год предыдущей беременности"
+
+* #chr-0035-00028 "Ona patronajga muhtojmi"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Mother needs patronage"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Нуждается ли мать в патронаже"
+
+* #chr-0035-00029 "Homila asoratlari"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Fetal complications"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Осложнения у плода"
+
+* #chr-0035-00030 "Tug'ilgandan keyin vafot etganlar soni"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Number of infants died after birth"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Число умерших после рождения"
+
+* #chr-0035-00031 "Epidemiologik anamnez"
+  * ^designation[0].language = #en
+  * ^designation[=].value = "Epidemiological history"
+  * ^designation[+].language = #ru
+  * ^designation[=].value = "Эпидемиологический анамнез"
