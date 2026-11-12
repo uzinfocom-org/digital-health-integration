@@ -2,6 +2,8 @@
 
 #### Qo'shildi
 
+[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) donor laboratoriya buyurtmalari va qon komponentlarini ikkilamchi qayta ishlashni qamrab oladi; laboratoriya va mahalliy operatsiya kodlari, ikkita misol va tavsiflar qo'shildi.
+
 [027-shakl, bemorning tibbiy kartasidan ko'chirma](StructureDefinition-form-027-medical-record-extract-composition.html) FHIR hujjati sifatida profillandi: ro'yxatga olish va shaxsiy ma'lumotlar, manzil, yo'llanma va tashxis, klinik ma'lumotlar, davolash va tavsiyalar, keyingi tadbirlar va mas'ul shaxslar Composition'ning 8 ta bo'limida. Unga hujjat namunasi (Bundle) va [maydonlarni moslashtirish sahifasi](form-027-mapping.html) ilova qilingan.
 
 [003-shakl - statsionar bemorning tibbiy kartasi](StructureDefinition-form-003-inpatient-medical-record-composition.html) FHIR hujjati sifatida profillangan bo'lib, Composition ning 20 ta bo'limi orqali ma'muriy va shaxsiy ma'lumotlar, qabul qilish, qabulda tekshiruv, birlamchi ko'rik, tekshiruv rejasi va natijalari, tashxislar, operatsiyalar, dori va muolaja varaqalari, harorat varaqasi, kasallik kechishi, davolash natijasi, vaqtincha mehnatga layoqatsizlik, patologoanatomik xulosa va mas'ul shaxslarni qamrab oladi. Uning namunaviy hujjat-Bundle'i va [maydonma-maydon moslashtirish sahifasi](form-003-mapping.html) mavjud.

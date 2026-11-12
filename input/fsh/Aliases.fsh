@@ -125,6 +125,7 @@ Alias: $local-observation-code = https://terminology.dhp.uz/fhir/integrations/Co
 Alias: $education-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/education-cs
 Alias: $occupation-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs
 Alias: $benefit-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/benefits-cs
+Alias: $lab-categories-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/lab-categories-cs
 Alias: $citizenship = https://terminology.dhp.uz/fhir/core/CodeSystem/iso3166-two-letter-cs
 Alias: $practioner-role = http://terminology.hl7.org/CodeSystem/practitioner-role
 Alias: $social-status = https://terminology.dhp.uz/fhir/core/CodeSystem/social-status-cs
