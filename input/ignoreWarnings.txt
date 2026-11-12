@@ -94,3 +94,8 @@ The Target Code System http://hl7.org/fhir/sid/icd-10 is not fully defined and p
 # Hand-written narratives such as Composition.section.text carry what the clinician wrote, in one
 # language; a real record is never translated, so the ru and uz pages correctly fall back to it.
 %The narrative includes custom content for the default language (en), but does not include translated content for the%
+
+# PlantUML 1.2026.8 (fhir2.base.template since 2026-11-10) numbers element ids from ent0001 in
+# every diagram, so the two inline diagrams on the screening page share ids. Remove once the
+# template makes diagram ids unique per diagram (https://github.com/HL7/ig-template-base2/pull/55).
+%cervical-breast-cancer-screening.html: The html source has duplicate element ids: ent0001%
