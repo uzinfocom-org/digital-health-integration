@@ -1,0 +1,3 @@
+ValueSet name,Binding path,Binding strength,Includes CodeSystem,Included concepts
+DonorDeferralTypeVS,Observation.code,required,DonorDeferralTypeCS,TEMPORARY_DONOR_DEFERRAL; LIFELONG_DONOR_DEFERRAL
+DonorDeferralReasonVS,Observation.component.code,required,DonorDeferralReasonCS,All 28 donor deferral reason codes

@@ -1,0 +1,29 @@
+CODE,UZ,RU,EN,DESCRIPTION
+donrsn-0001-00001,"Tatuirovka, piercing yoki akupunktura","Татуировка, пирсинг или иглоукалывание","Tattoo, piercing or acupuncture","Отвод после татуировки, пирсинга или иглоукалывания."
+donrsn-0001-00002,"Endoskopiya, biopsiya yoki tish sug‘urish","Эндоскопия, биопсия или удаление зуба","Endoscopy, biopsy or tooth extraction","Отвод после эндоскопии, биопсии или удаления зуба."
+donrsn-0001-00003,Qon yoki uning komponentlarini quyish,Переливание крови или её компонентов,Blood or blood component transfusion,Отвод после получения крови или её компонентов.
+donrsn-0001-00004,"Gripp, O‘RVI yoki angina","Грипп, ОРВИ или ангина","Flu, ARVI or tonsillitis",Временный отвод при остром инфекционном заболевании.
+donrsn-0001-00005,Dori qabul qilish yoki doimiy davolanish,Приём лекарств или постоянное лечение,Medication use or ongoing treatment,Оценка принимаемых лекарств и лечения; решение зависит от препарата и заболевания.
+donrsn-0001-00006,Oxirgi qon topshirish sanasi,Дата последней сдачи крови,Date of most recent blood donation,"Временный отвод, если с предыдущей донации не прошёл установленный интервал."
+donrsn-0001-00007,Homiladorlik,Беременность,Pregnancy,Отвод на период беременности согласно правилам службы крови.
+donrsn-0001-00008,Emizish davri,Грудное вскармливание,Breastfeeding,Отвод на период грудного вскармливания согласно правилам службы крови.
+donrsn-0001-00009,Surunkali kasallik,Хроническое заболевание,Chronic disease,Оценка конкретного хронического заболевания; не все хронические заболевания означают пожизненный отвод.
+donrsn-0001-00010,Stomatologik muolaja,Стоматологическая процедура,Dental procedure,Временный отвод после стоматологической процедуры.
+donrsn-0001-00011,Bezgak xavfi bo‘lgan hududga tashrif yoki bezgak bilan bog‘liq holat,Посещение региона риска малярии или связанное с малярией состояние,Travel to a malaria-risk area or malaria-related condition,"Временный/условный отвод при риске малярии; оценивается с учётом поездки, симптомов и правил."
+donrsn-0001-00012,Jarrohlik yoki tibbiy aralashuv,Хирургическое или медицинское вмешательство,Surgery or medical intervention,Временный отвод после хирургического или медицинского вмешательства.
+donrsn-0001-00013,OIV testi ijobiy natijasi,Положительный результат теста на ВИЧ,Positive HIV test result,Отвод при подтверждённом положительном результате исследования на ВИЧ согласно нормативным требованиям.
+donrsn-0001-00014,Gepatit B testi ijobiy natijasi,Положительный результат теста на гепатит B,Positive hepatitis B test result,Отвод при подтверждённом положительном результате исследования на гепатит B согласно нормативным требованиям.
+donrsn-0001-00015,Gepatit C testi ijobiy natijasi,Положительный результат теста на гепатит C,Positive hepatitis C test result,Отвод при подтверждённом положительном результате исследования на гепатит C согласно нормативным требованиям.
+donrsn-0001-00016,Sifilis testi ijobiy natijasi,Положительный результат теста на сифилис,Positive syphilis test result,Отвод при подтверждённом положительном результате исследования на сифилис согласно нормативным требованиям.
+donrsn-0001-00017,Tug‘ruq yoki homila tushishidan keyingi davr,Период после родов или выкидыша,Postpartum period or period after miscarriage,Временный отвод после родов или выкидыша.
+donrsn-0001-00018,Avval gepatit yoki brutsellyoz bilan kasallanganlik,Перенесённый гепатит или бруцеллёз,History of hepatitis or brucellosis,История перенесённого гепатита или бруцеллёза; решение зависит от вида заболевания и правил службы крови.
+donrsn-0001-00019,Emlash,Вакцинация,Vaccination,Временный отвод после вакцинации; срок может зависеть от типа вакцины.
+donrsn-0001-00020,"So‘nggi 3 oyda tungi terlash, vazn yo‘qotish, titroq, diareya yoki limfa tugunlari kattalashishi","Ночная потливость, потеря веса, озноб, диарея или увеличение лимфоузлов за последние 3 месяца","Night sweats, weight loss, chills, diarrhea or enlarged lymph nodes in the last 3 months",Симптомы требуют медицинской оценки; сами по себе не определяют пожизненный отвод.
+donrsn-0001-00021,OIV yoki gepatit bilan kasallangan shaxs bilan aloqa,"Контакт с человеком, инфицированным ВИЧ или гепатитом",Contact with a person infected with HIV or hepatitis,Оценка возможного контакта/экспозиции; решение зависит от характера и даты контакта.
+donrsn-0001-00022,Himoyalanmagan tasodifiy jinsiy aloqa,Случайный незащищённый половой контакт,Casual unprotected sexual contact,Временный/условный отвод с учётом даты и характера риска и нормативных интервалов.
+donrsn-0001-00023,Jinsiy yo‘l bilan yuqadigan infeksiyalarni davolash,"Лечение инфекций, передающихся половым путём",Treatment for sexually transmitted infections,Отвод на период заболевания/лечения и до выполнения критериев допуска.
+donrsn-0001-00024,Umumiy igna yoki shpritslardan foydalanish,Использование общих игл или шприцев,Sharing needles or syringes,Оценка риска контакта с кровью; решение зависит от обстоятельств и нормативного периода.
+donrsn-0001-00025,Ozodlikdan mahrum etish joylarida bo‘lish,Пребывание в местах лишения свободы,Incarceration,Временная/условная оценка эпидемиологического риска после пребывания в местах лишения свободы.
+donrsn-0001-00026,Bugun o‘zini yomon his qilish,Плохое самочувствие в день визита,Feeling unwell on the day of visit,Отвод/перенос донации на текущий день до оценки состояния.
+donrsn-0001-00027,Qonni tekshirishga rozilik bermaslik,Отказ от согласия на тестирование крови,Refusal to consent to blood testing,Административное основание не проводить донацию без требуемого согласия.
+donrsn-0001-00028,Deklaratsiyani tasdiqlamaslik,Декларация не подтверждена,Declaration not confirmed,Административное основание не продолжать процедуру до подтверждения декларации.
