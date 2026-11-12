@@ -1,0 +1,42 @@
+@startuml blood-management-model-ru
+hide circle
+hide empty members
+title Как связаны записи службы крови
+
+class "Донор\n<size:10>UZCorePatient</size>" as Donor [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html{Открыть UZCorePatient}]]
+class "Реципиент\n<size:10>UZCorePatient</size>" as Recipient [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html{Открыть UZCorePatient}]]
+class "Регистрация\n<size:10>BloodDonorCategoryObservation</size>" as Reg [[StructureDefinition-blood-donor-category-observation.html{Открыть BloodDonorCategoryObservation}]] #E8F0FE
+class "Допуск или отвод\n<size:10>UZCoreFlag</size>" as Flag
+class "Результат анализа\n<size:10>UZCoreObservation</size>" as Test [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html{Открыть UZCoreObservation}]]
+class "Отчёт об анализах\n<size:10>UZCoreDiagnosticReport</size>" as Report [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-diagnostic-report.html{Открыть UZCoreDiagnosticReport}]]
+class "Забор\n<size:10>UZCoreProcedure</size>" as Coll [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html{Открыть UZCoreProcedure}]]
+class "Донорская единица\n<size:10>UZCoreBiologicallyDerivedProduct</size>" as Unit [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html{Открыть UZCoreBiologicallyDerivedProduct}]]
+class "Компонент\n<size:10>UZCoreBiologicallyDerivedProduct</size>" as Comp [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html{Открыть UZCoreBiologicallyDerivedProduct}]]
+class "Назначение трансфузии\n<size:10>UZCoreServiceRequest</size>" as Order [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html{Открыть UZCoreServiceRequest}]]
+class "Запрос на поставку\n<size:10>UZCoreSupplyRequest</size>" as SReq [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-request.html{Открыть UZCoreSupplyRequest}]]
+class "Поставка\n<size:10>UZCoreSupplyDelivery</size>" as SDel [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-delivery.html{Открыть UZCoreSupplyDelivery}]]
+class "Выдача реципиенту\n<size:10>UZCoreBiologicallyDerivedProductDispense</size>" as Disp
+class "Трансфузия\n<size:10>UZCoreProcedure</size>" as Tx [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html{Открыть UZCoreProcedure}]]
+class "Реакция на трансфузию\n<size:10>UZCoreAdverseEvent</size>" as AE [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html{Открыть UZCoreAdverseEvent}]]
+
+Reg "0..*" --> "1" Donor : « subject »
+Flag "0..*" --> "1" Donor : « subject »
+Test "0..*" --> "0..1" Donor : « subject »
+Report "0..*" --> "0..*" Test : « result »
+Coll "0..*" --> "1" Donor : « subject »
+Unit "0..*" --> "0..1" Donor : « collection.source »
+Comp "0..*" --> "0..*" Unit : « parent »
+Order "0..*" --> "1" Recipient : « subject »
+SReq "0..*" --> "0..*" Order : « basedOn »
+SDel "0..*" --> "0..*" SReq : « basedOn »
+SDel "0..*" --> "0..*" Comp : « suppliedItem.itemReference »
+Disp "0..*" --> "1" Comp : « product »
+Disp "0..*" --> "1" Recipient : « patient »
+Tx "0..*" --> "0..*" Order : « basedOn »
+Tx "0..*" --> "0..*" Comp : « used »
+Tx "0..*" --> "1" Recipient : « subject »
+AE "0..*" --> "0..*" Comp : « suspectEntity »
+
+caption Клинический граф: ссылки на организации, медицинских работников и других участников опущены для наглядности. UZ Core Flag и BiologicallyDerivedProductDispense войдут в следующий выпуск UZ Core.
+
+@enduml
