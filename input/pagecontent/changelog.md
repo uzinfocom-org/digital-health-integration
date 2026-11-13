@@ -8,6 +8,12 @@
 
 [Form 044 medical certificate for travelers abroad](StructureDefinition-form-044-travel-clearance-composition.html) is profiled as a FHIR Document, covering personal information, past infectious diseases, the commission's travel clearance with destination country and business trip period, place of residence and the commission chair and members across 5 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-044-mapping.html).
 
+The [Pharmaceutical Committee registry ATC map](ConceptMap-pharmcom-registry-atc-to-who-atc-cm.html) replaces 76 registry ATC codes that are not in the current WHO ATC.
+
+The [Pharmaceutical Committee registry dose form map](ConceptMap-pharmcom-registry-dose-form-to-medication-doseform-cm.html) maps the 619 registry dose forms to UZ Core dose forms.
+
+The [Prescription integration](prescription.html) describes how DMED sends electronic prescriptions, dispenses and administrations to DHP, with six Prescription profiles. ConceptMaps translate the DMED prescription type, status, INN, dose form, route, intake timing, frequency period and cancellation reason to UZ Core and international codes. Only mappings without doubt are published, so a DMED value without one is rejected until it is reviewed.
+
 #### Changed
 
 The [Form 011](StructureDefinition-form-011-hemodialysis-composition.html), [Form 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Form 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) and [Form 130](StructureDefinition-form-130-laboratory-test-results-composition.html) Compositions no longer fix `status` to `final`, so a document can follow the [document lifecycle](document-statuses.html) through `preliminary`, `amended` and `entered-in-error`.

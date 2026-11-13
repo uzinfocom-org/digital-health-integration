@@ -7,6 +7,12 @@
 [003-shakl - statsionar bemorning tibbiy kartasi](StructureDefinition-form-003-inpatient-medical-record-composition.html) FHIR hujjati sifatida profillangan bo'lib, Composition ning 20 ta bo'limi orqali ma'muriy va shaxsiy ma'lumotlar, qabul qilish, qabulda tekshiruv, birlamchi ko'rik, tekshiruv rejasi va natijalari, tashxislar, operatsiyalar, dori va muolaja varaqalari, harorat varaqasi, kasallik kechishi, davolash natijasi, vaqtincha mehnatga layoqatsizlik, patologoanatomik xulosa va mas'ul shaxslarni qamrab oladi. Uning namunaviy hujjat-Bundle'i va [maydonma-maydon moslashtirish sahifasi](form-003-mapping.html) mavjud.
 
 [044-shakl, xorijga ketayotganlar uchun tibbiy ma'lumotnoma](StructureDefinition-form-044-travel-clearance-composition.html) FHIR hujjati sifatida profillandi: shaxsiy ma'lumotlar, kechirgan yuqumli kasalliklar, komissiyaning borish mamlakati va xizmat safari muddati bilan chet elga chiqishga ruxsati, yashash joyi, komissiya raisi va a'zolari - 5 ta Composition bo'limida. Hujjat namunasi (Bundle) va [maydonma-maydon moslashtirish sahifasi](form-044-mapping.html) bilan birga.
+[Farmatsevtika qo'mitasi reyestri ATX kodlari xaritasi](ConceptMap-pharmcom-registry-atc-to-who-atc-cm.html) reyestrning joriy WHO ATC da yo'q 76 ta ATX kodini almashtiradi.
+
+[Farmatsevtika qo'mitasi reyestri dori shakllari xaritasi](ConceptMap-pharmcom-registry-dose-form-to-medication-doseform-cm.html) reyestrning 619 ta dori shaklini UZ Core dori shakllari bilan bog'laydi.
+
+[Retseptlar integratsiyasi](prescription.html) DMED elektron retseptlar, tasdiqlash, dori berish va dori yuborish ma'lumotlarini DHP ga qanday yuborishini yettita Prescription profili bilan tavsiflaydi. ConceptMap lar DMED retsept turi va holati, INN, dori shakli, yuborish yo'li, qabul qilish vaqti, chastota davri va bekor qilish sababini UZ Core va xalqaro kodlarga o'tkazadi. Faqat shubhasiz moslik e'lon qilinadi, shuning uchun mosligi yo'q DMED qiymati tekshirilguncha rad etiladi.
+
 #### O'zgartirildi
 
 [011-shakl](StructureDefinition-form-011-hemodialysis-composition.html), [066-shakl](StructureDefinition-form-066-hospital-discharge-composition.html), [066-1-shakl](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) va [130-shakl](StructureDefinition-form-130-laboratory-test-results-composition.html) Composition'lari endi `status` ni `final` ga qotirmaydi, shuning uchun hujjat [hayot sikli](document-statuses.html) bo'yicha `preliminary`, `amended` va `entered-in-error` holatlaridan o'ta oladi.
