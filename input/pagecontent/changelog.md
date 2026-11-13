@@ -2,6 +2,8 @@
 
 #### Added
 
+[Donor Questionnaire](StructureDefinition-donor-questionnaire.html) and [Donor QuestionnaireResponse](StructureDefinition-donor-questionnaire-response.html) provide a 33-question donor interview in Uzbek, Russian and English, typed response slices, a completed example with a supporting patient and a [source mapping](donor-questionnaire-mapping.html). Donor deferral reason and type code systems are reused from the donor deferral specification. The blood service program context groups the questionnaire on the interactive forms page.
+
 [Form 027 extract from a patient's medical record](StructureDefinition-form-027-medical-record-extract-composition.html) is profiled as a FHIR Document, covering registration, personal information, residence, referral and diagnosis, clinical information, treatment and recommendations, next steps and responsible persons across 8 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-027-mapping.html).
 
 [Form 003 inpatient medical record](StructureDefinition-form-003-inpatient-medical-record-composition.html) is profiled as a FHIR Document, covering administrative and personal information, admission, admission screening, the primary examination, the examination plan and results, diagnoses, operations, the medication and procedure sheets, the temperature chart, the clinical course, the treatment outcome, temporary disability, the post-mortem conclusion and responsible persons across 20 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-003-mapping.html).

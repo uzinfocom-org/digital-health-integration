@@ -51,3 +51,10 @@ Description: "Areas of integration covered by this guide. Each code names one in
   * ^designation[=].value = "Вирусный гепатит"
   * ^designation[+].language = #en
   * ^designation[=].value = "Viral hepatitis"
+
+* #blood-service "Qon xizmati"
+  * ^definition = "Blood donation services, including donor interviews and assessment."
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Служба крови"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Blood service"
