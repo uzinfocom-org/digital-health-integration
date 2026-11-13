@@ -1,0 +1,21 @@
+Name,Flags,cardinality,Type,Example,Description
+BloodTransfusionAssessmentObservation,https://dhp.uz/fhir/core/StructureDefinition/blood-transfusion-assessment-observation,,,,Интеграционный профиль UZCore FHIR R5 на основе UZCoreObservation для фиксации результатов предтрансфузионной оценки и контрольных проб в рамках протокола переливания крови. Профиль не создает новый FHIR-ресурс и не изменяет опубликованный основной UZCore IG. Для одного протокола используется один экземпляр Observation; при корректировке результатов обновляется тот же ресурс.
+meta.profile,Σ,0..*,canonical,https://dhp.uz/fhir/core/StructureDefinition/blood-transfusion-assessment-observation,Каноническая ссылка на интеграционный профиль. URL предложен для согласования.
+identifier,Σ,0..*,Identifier,BTA-2026-0001,"Идентификатор оценки, если он присваивается отдельно от номера протокола переливания."
+status,?! Σ,1..1,code,final,"Статус наблюдения. При первоначальном сохранении завершенной оценки используется final; при исправлении ранее сохраненных результатов — amended. Исправляется существующий Observation, новый ресурс не создается."
+category,Σ,0..*,CodeableConcept,laboratory,"Категория наблюдения, если она требуется и заполняется согласно базовому профилю UZCoreObservation."
+code,?! Σ,1..1,CodeableConcept,Blood transfusion test (procedure)(252314007) SNOMED CT,"TransfusionAssessmentVS = $sct#252314007 ""Blood transfusion test"""
+subject,Σ,1..1,Reference(UZCorePatient),Patient/recipient-123,Получатель компонентов крови. Используется существующий UZCorePatient; новый Patient для этой оценки не создается.
+encounter,Σ,0..1,Reference(UZCoreEncounter),Encounter/recipient-visit-001,"Ссылка на существующий визит получателя, в рамках которого проводится переливание."
+effective[x],Σ,0..1,dateTime | Period | Timing | instant,2026-11-11T10:30:00+05:00,"Дата/время проведения предтрансфузионной оценки или контрольной пробы. При исправлении результатов не изменяется, если фактическое время оценки осталось прежним."
+issued,Σ,0..1,instant,2026-11-11T10:35:00+05:00,"Дата и время выдачи/публикации результата Observation, если фиксируется системой."
+component,Σ,0..*,BackboneElement,See component rows below,"Компоненты оценки: совместимость по ABO, совместимость по Rh-Hr, трансфузионный анамнез, акушерский анамнез, предварительная группа ABO и дата направления крови на исследование."
+component.code,?! Σ,1..1,CodeableConcept,Совместимость по ABO,"Код, определяющий смысл компонента. Используются коды из BloodTransfusionAssessmentCS."
+component.value[x],Σ,0..1,CodeableConcept | dateTime,CodeableConcept or dateTime,"Значение компонента. Для совместимости, анамнеза и предварительной группы ABO — CodeableConcept; для даты направления крови — dateTime."
+component — ABO compatibility,Σ,—,CodeableConcept,compatible,Совместимость по системе ABO. Значение выбирается из BloodCompatibilityVS.
+component — Rh-Hr compatibility,Σ,—,CodeableConcept,compatible,"Совместимость по системе Rh-Hr. Используется тот же BloodCompatibilityVS, что и для ABO; вид проверки различается кодом component.code."
+component — transfusion history,Σ,—,CodeableConcept,no-transfusions,"Трансфузионный анамнез получателя. Значение выбирается из BloodTransfusionHistoryVS, включая вариант «Данные отсутствуют»."
+component — obstetric history,Σ,—,CodeableConcept,not-applicable,Акушерский анамнез. Значение выбирается из ObstetricHistoryVS.
+component — preliminary ABO group,Σ,—,CodeableConcept,112144000 | Blood group A,Предварительная группа крови ABO получателя. Используется существующий UZCore BloodGroupVS; отдельные CodeSystem и ValueSet не создаются.
+componet ---  Biological specimen,Σ,—,CodeableConcept,SNOMED CT 260385009 | Negative,Результат биологической пробы. Используется BiologicalTestResultVS на основе SNOMED CT. 
+note,Σ,0..*,Annotation,Дополнительные сведения,"Дополнительный комментарий к результатам оценки, если он предусмотрен базовым профилем и бизнес-процессом."

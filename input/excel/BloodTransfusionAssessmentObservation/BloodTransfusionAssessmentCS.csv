@@ -1,0 +1,7 @@
+CODE,DISPLAY (UZ),DISPLAY (RU),DISPLAY (EN),DESCRIPTION (RU)
+bldcomp-0001-00001,ABO bo‘yicha moslik,Совместимость по ABO,ABO compatibility,Результат проверки совместимости по системе ABO.
+bldcomp-0001-00002,Rh-Hr bo‘yicha moslik,Совместимость по Rh-Hr,Rh-Hr compatibility,Результат проверки совместимости по системе Rh-Hr.
+bldcomp-0001-00003,Transfuzion anamnez,Трансфузионный анамнез,Transfusion history,Сведения о предыдущих переливаниях крови и наличии реакций/осложнений.
+bldcomp-0001-00004,Akusherlik anamnezi,Акушерский анамнез,Obstetric history,Сведения о беременностях и связанных с ними осложнениях.
+bldcomp-0001-00005,Dastlabki ABO qon guruhi,Предварительная группа крови ABO,Preliminary ABO group,Предварительно определенная группа крови получателя по системе ABO.
+bldcomp-0001-00006,Biologik namuna,Биологическая проба,Biological specimen,

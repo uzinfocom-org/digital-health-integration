@@ -1,0 +1,5 @@
+CODE,DISPLAY (UZ),DISPLAY (RU),DISPLAY (EN),DESCRIPTION (RU)
+bldcomp-0003-00001,Avval qon quyilmagan,Трансфузий не было,No previous transfusions,В анамнезе пациента ранее не проводились переливания крови или ее компонентов.
+bldcomp-0003-00002,Reaksiyasiz qon quyishlar,Трансфузии без реакций,Previous transfusions without reactions,В анамнезе имеются переливания крови/компонентов без зарегистрированных реакций или осложнений.
+bldcomp-0003-00003,Reaksiya yoki asoratlar bilan qon quyishlar,Трансфузии с реакциями/осложнениями,Previous transfusions with reactions/complications,"В анамнезе имеются переливания крови/компонентов, сопровождавшиеся реакциями или осложнениями."
+bldcomp-0003-00004,Ma’lumotlar mavjud emas,Данные отсутствуют,Data absent,"Сведения о предыдущих переливаниях отсутствуют или недоступны. Это отдельный вариант локального справочника, а не dataAbsentReason."

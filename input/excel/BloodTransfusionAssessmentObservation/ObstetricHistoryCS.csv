@@ -1,0 +1,5 @@
+CODE,DISPLAY (UZ),DISPLAY (RU),DISPLAY (EN),DESCRIPTION (RU)
+bldcomp-0004-00001,Qo‘llanilmaydi,Не применимо,Not applicable,Акушерский анамнез неприменим для данного пациента.
+bldcomp-0004-00002,Homiladorlik yoki tug‘ruq bo‘lmagan,Беременностей/родов не было,No pregnancies or births,В анамнезе отсутствуют беременности и роды.
+bldcomp-0004-00003,Asoratsiz homiladorliklar,Беременности без осложнений,Pregnancies without complications,В анамнезе были беременности без известных осложнений.
+bldcomp-0004-00004,Asoratlar bilan kechgan homiladorliklar,Беременности с осложнениями,Pregnancies with complications,"В анамнезе были беременности с осложнениями, включая резус-конфликт и другие осложнения."

@@ -288,3 +288,6 @@ Alias: $form096-placenta-delivery-method-cs = https://terminology.dhp.uz/fhir/in
 Alias: $composition-type-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/composition-type-cs
 Alias: $composition-category-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/composition-category-cs
 Alias: $form-044-observation-code-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form-044-observation-code-cs
+
+//Blood management
+Alias: $blood-group-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/blood-group-cs
