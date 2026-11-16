@@ -27,7 +27,7 @@ Condition, EpisodeOfCare и оба профиля Observation требуют о�
 
 Пример: [hepatitis-patient-example](Patient-hepatitis-patient-example.html)
 
-| Что фиксируется | Справочник | Пример кода или значения | Где хранится |
+| Информация для записи | Набор значений | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
 | Национальный идентификатор | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ni`<br>`type` `NI` | `515050500505` | `identifier[nationalId].value` |
 | Внутренний паспорт | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ppn/local`<br>`type` `PPN` | `AB1234567` | `identifier[passportLocal].value` |
@@ -45,7 +45,7 @@ EpisodeOfCare объединяет процесс оказания помощи 
 
 Пример: [hepatitis-episode-of-care-example](EpisodeOfCare-hepatitis-episode-of-care-example.html)
 
-| Что фиксируется | Справочник | Пример кода или значения | Где хранится |
+| Информация для записи | Набор значений | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
 | Идентификатор реестра | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `75dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
 | Статус | [EpisodeOfCareStatus](https://hl7.org/fhir/R5/valueset-episode-of-care-status.html) | `active` | `status` |
@@ -67,7 +67,7 @@ Encounter описывает отдельное посещение. Обязат
 
 Пример: [hepatitis-encounter-example](Encounter-hepatitis-encounter-example.html)
 
-| Что фиксируется | Справочник | Пример кода или значения | Где хранится |
+| Информация для записи | Набор значений | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
 | Статус посещения | [EncounterStatusVS](https://dhp.uz/fhir/core/ValueSet-encounter-status-vs.html) | `completed` | `status` |
 | Класс посещения | [EncounterClassVS](https://dhp.uz/fhir/core/ValueSet-encounter-class-vs.html) | `v3-ActCode#AMB` | `class` |
@@ -90,7 +90,7 @@ Condition содержит диагноз и клинический статус
 
 Пример: [example-hepatitis-condition](Condition-example-hepatitis-condition.html)
 
-| Что фиксируется | Справочник | Пример кода или значения | Где хранится |
+| Информация для записи | Набор значений | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
 | Идентификатор реестра | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `69dcdd0a-5a68-4cc6-8503-5ab15a41c63b` | `identifier[hepatitisRegistry].value` |
 | Диагноз | [ConditionCodeVS](https://dhp.uz/fhir/core/ValueSet-condition-code-vs.html) | `ICD-10#B17.1` | `code` |
@@ -112,7 +112,7 @@ Condition содержит диагноз и клинический статус
 
 Пример: [example-hepatitis-observation-analysis](Observation-example-hepatitis-observation-analysis.html)
 
-| Что фиксируется | Справочник | Пример кода или значения | Где хранится |
+| Информация для записи | Набор значений | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
 | Идентификатор реестра | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `85dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
 | Статус результата | [ObservationStatusVS](https://dhp.uz/fhir/core/ValueSet-observation-status-vs.html) | `final` | `status` |
@@ -132,7 +132,7 @@ Condition содержит диагноз и клинический статус
 
 Пример: [example-ultrasound-cirrhosis](Observation-example-ultrasound-cirrhosis.html), [example-ultrasound-lesion](Observation-example-ultrasound-lesion.html)
 
-| Что фиксируется | Справочник | Пример кода или значения | Где хранится |
+| Информация для записи | Набор значений | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
 | Идентификатор реестра | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `85dcdd0a-5a68-4cc6-8503-5ab15a42c73b` | `identifier[hepatitisRegistry].value` |
 | Статус результата | [ObservationStatusVS](https://dhp.uz/fhir/core/ValueSet-observation-status-vs.html) | `final` | `status` |
@@ -152,7 +152,7 @@ Questionnaire определяет вопросы и правила их усл�
 
 Пример: [hepatitis-questionnaire](Questionnaire-hepatitis-questionnaire.html)
 
-| Что фиксируется | Справочник | Пример кода или значения | Где хранится |
+| Информация для записи | Набор значений | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
 | Идентификатор | - | `HCV-HBV-QS-2026` | `identifier.value` |
 | Статус публикации | [PublicationStatus](https://hl7.org/fhir/R5/valueset-publication-status.html) | `active` | `status` |
@@ -172,7 +172,7 @@ QuestionnaireResponse связывает заполненную анкету с 
 
 Пример: [example-hcv-response](QuestionnaireResponse-example-hcv-response.html)
 
-| Что фиксируется | Справочник | Пример кода или значения | Где хранится |
+| Информация для записи | Набор значений | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
 | Идентификатор | - | `6f9b9d8e-3b7d-4d87-8f6e-123456789abc` | `identifier.value` |
 | Статус ответов | [QuestionnaireResponseStatus](https://hl7.org/fhir/R5/valueset-questionnaire-answers-status.html) | `completed` | `status` |

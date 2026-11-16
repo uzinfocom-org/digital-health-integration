@@ -25,7 +25,7 @@ Profile: [HepatitisPatient](StructureDefinition-hepatitis-patient.html)
 
 Example: [hepatitis-patient-example](Patient-hepatitis-patient-example.html)
 
-| What is recorded | Terminology | Example code or value | Where it is stored |
+| Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
 | National identifier | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ni`<br>`type` `NI` | `515050500505` | `identifier[nationalId].value` |
 | Local passport | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ppn/local`<br>`type` `PPN` | `AB1234567` | `identifier[passportLocal].value` |
@@ -43,7 +43,7 @@ Profile: [HepatitisEpisodeOfCare](StructureDefinition-hepatitis-episode-of-care.
 
 Example: [hepatitis-episode-of-care-example](EpisodeOfCare-hepatitis-episode-of-care-example.html)
 
-| What is recorded | Terminology | Example code or value | Where it is stored |
+| Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
 | Registry identifier | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `75dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
 | Status | [EpisodeOfCareStatus](https://hl7.org/fhir/R5/valueset-episode-of-care-status.html) | `active` | `status` |
@@ -65,7 +65,7 @@ Profile: [HepatitisEncounter](StructureDefinition-hepatitis-encounter.html)
 
 Example: [hepatitis-encounter-example](Encounter-hepatitis-encounter-example.html)
 
-| What is recorded | Terminology | Example code or value | Where it is stored |
+| Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
 | Visit status | [EncounterStatusVS](https://dhp.uz/fhir/core/ValueSet-encounter-status-vs.html) | `completed` | `status` |
 | Visit class | [EncounterClassVS](https://dhp.uz/fhir/core/ValueSet-encounter-class-vs.html) | `v3-ActCode#AMB` | `class` |
@@ -88,7 +88,7 @@ Profile: [HepatitisCondition](StructureDefinition-hepatitis-condition.html)
 
 Example: [example-hepatitis-condition](Condition-example-hepatitis-condition.html)
 
-| What is recorded | Terminology | Example code or value | Where it is stored |
+| Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
 | Registry identifier | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `69dcdd0a-5a68-4cc6-8503-5ab15a41c63b` | `identifier[hepatitisRegistry].value` |
 | Diagnosis | [ConditionCodeVS](https://dhp.uz/fhir/core/ValueSet-condition-code-vs.html) | `ICD-10#B17.1` | `code` |
@@ -110,7 +110,7 @@ Profile: [HepatitisObservationAnalysis](StructureDefinition-hepatitis-observatio
 
 Example: [example-hepatitis-observation-analysis](Observation-example-hepatitis-observation-analysis.html)
 
-| What is recorded | Terminology | Example code or value | Where it is stored |
+| Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
 | Registry identifier | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `85dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
 | Result status | [ObservationStatusVS](https://dhp.uz/fhir/core/ValueSet-observation-status-vs.html) | `final` | `status` |
@@ -130,7 +130,7 @@ Profile: [HepatitisObservationUltraSound](StructureDefinition-hepatitis-observat
 
 Example: [example-ultrasound-cirrhosis](Observation-example-ultrasound-cirrhosis.html), [example-ultrasound-lesion](Observation-example-ultrasound-lesion.html)
 
-| What is recorded | Terminology | Example code or value | Where it is stored |
+| Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
 | Registry identifier | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `85dcdd0a-5a68-4cc6-8503-5ab15a42c73b` | `identifier[hepatitisRegistry].value` |
 | Result status | [ObservationStatusVS](https://dhp.uz/fhir/core/ValueSet-observation-status-vs.html) | `final` | `status` |
@@ -150,7 +150,7 @@ Profile: [HepatitisQuestionnaire](StructureDefinition-hepatitis-questionnaire.ht
 
 Example: [hepatitis-questionnaire](Questionnaire-hepatitis-questionnaire.html)
 
-| What is recorded | Terminology | Example code or value | Where it is stored |
+| Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
 | Identifier | - | `HCV-HBV-QS-2026` | `identifier.value` |
 | Publication status | [PublicationStatus](https://hl7.org/fhir/R5/valueset-publication-status.html) | `active` | `status` |
@@ -170,7 +170,7 @@ Profile: [HepatitisQuestionnaireResponse](StructureDefinition-hepatitis-question
 
 Example: [example-hcv-response](QuestionnaireResponse-example-hcv-response.html)
 
-| What is recorded | Terminology | Example code or value | Where it is stored |
+| Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
 | Identifier | - | `6f9b9d8e-3b7d-4d87-8f6e-123456789abc` | `identifier.value` |
 | Response status | [QuestionnaireResponseStatus](https://hl7.org/fhir/R5/valueset-questionnaire-answers-status.html) | `completed` | `status` |

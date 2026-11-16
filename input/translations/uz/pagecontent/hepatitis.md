@@ -27,7 +27,7 @@ Profil: [HepatitisPatient](StructureDefinition-hepatitis-patient.html)
 
 Misol: [hepatitis-patient-example](Patient-hepatitis-patient-example.html)
 
-| Qayd etiladigan ma’lumot | Ma’lumotnoma | Misol kodi yoki qiymati | Qayerda saqlanadi |
+| Qayd etiladigan ma'lumot | Qiymatlar to'plami | Kod misoli | Saqlanadi |
 | :--- | :--- | :--- | :--- |
 | Milliy identifikator | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ni`<br>`type` `NI` | `515050500505` | `identifier[nationalId].value` |
 | Mahalliy pasport | `system` `https://dhp.uz/fhir/core/sid/pid/uz/ppn/local`<br>`type` `PPN` | `AB1234567` | `identifier[passportLocal].value` |
@@ -45,7 +45,7 @@ Profil: [HepatitisEpisodeOfCare](StructureDefinition-hepatitis-episode-of-care.h
 
 Misol: [hepatitis-episode-of-care-example](EpisodeOfCare-hepatitis-episode-of-care-example.html)
 
-| Qayd etiladigan ma’lumot | Ma’lumotnoma | Misol kodi yoki qiymati | Qayerda saqlanadi |
+| Qayd etiladigan ma'lumot | Qiymatlar to'plami | Kod misoli | Saqlanadi |
 | :--- | :--- | :--- | :--- |
 | Reyestr identifikatori | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `75dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
 | Holat | [EpisodeOfCareStatus](https://hl7.org/fhir/R5/valueset-episode-of-care-status.html) | `active` | `status` |
@@ -67,7 +67,7 @@ Profil: [HepatitisEncounter](StructureDefinition-hepatitis-encounter.html)
 
 Misol: [hepatitis-encounter-example](Encounter-hepatitis-encounter-example.html)
 
-| Qayd etiladigan ma’lumot | Ma’lumotnoma | Misol kodi yoki qiymati | Qayerda saqlanadi |
+| Qayd etiladigan ma'lumot | Qiymatlar to'plami | Kod misoli | Saqlanadi |
 | :--- | :--- | :--- | :--- |
 | Tashrif holati | [EncounterStatusVS](https://dhp.uz/fhir/core/ValueSet-encounter-status-vs.html) | `completed` | `status` |
 | Tashrif sinfi | [EncounterClassVS](https://dhp.uz/fhir/core/ValueSet-encounter-class-vs.html) | `v3-ActCode#AMB` | `class` |
@@ -90,7 +90,7 @@ Profil: [HepatitisCondition](StructureDefinition-hepatitis-condition.html)
 
 Misol: [example-hepatitis-condition](Condition-example-hepatitis-condition.html)
 
-| Qayd etiladigan ma’lumot | Ma’lumotnoma | Misol kodi yoki qiymati | Qayerda saqlanadi |
+| Qayd etiladigan ma'lumot | Qiymatlar to'plami | Kod misoli | Saqlanadi |
 | :--- | :--- | :--- | :--- |
 | Reyestr identifikatori | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `69dcdd0a-5a68-4cc6-8503-5ab15a41c63b` | `identifier[hepatitisRegistry].value` |
 | Tashxis | [ConditionCodeVS](https://dhp.uz/fhir/core/ValueSet-condition-code-vs.html) | `ICD-10#B17.1` | `code` |
@@ -112,7 +112,7 @@ Profil: [HepatitisObservationAnalysis](StructureDefinition-hepatitis-observation
 
 Misol: [example-hepatitis-observation-analysis](Observation-example-hepatitis-observation-analysis.html)
 
-| Qayd etiladigan ma’lumot | Ma’lumotnoma | Misol kodi yoki qiymati | Qayerda saqlanadi |
+| Qayd etiladigan ma'lumot | Qiymatlar to'plami | Kod misoli | Saqlanadi |
 | :--- | :--- | :--- | :--- |
 | Reyestr identifikatori | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `85dcdd0a-5a68-4cc6-8503-5ab15a42c63b` | `identifier[hepatitisRegistry].value` |
 | Natija holati | [ObservationStatusVS](https://dhp.uz/fhir/core/ValueSet-observation-status-vs.html) | `final` | `status` |
@@ -132,7 +132,7 @@ Profil: [HepatitisObservationUltraSound](StructureDefinition-hepatitis-observati
 
 Misol: [example-ultrasound-cirrhosis](Observation-example-ultrasound-cirrhosis.html), [example-ultrasound-lesion](Observation-example-ultrasound-lesion.html)
 
-| Qayd etiladigan ma’lumot | Ma’lumotnoma | Misol kodi yoki qiymati | Qayerda saqlanadi |
+| Qayd etiladigan ma'lumot | Qiymatlar to'plami | Kod misoli | Saqlanadi |
 | :--- | :--- | :--- | :--- |
 | Reyestr identifikatori | `system` `https://dhp.uz/fhir/core/sid/reg/uz/hepatitis` | `85dcdd0a-5a68-4cc6-8503-5ab15a42c73b` | `identifier[hepatitisRegistry].value` |
 | Natija holati | [ObservationStatusVS](https://dhp.uz/fhir/core/ValueSet-observation-status-vs.html) | `final` | `status` |
@@ -152,7 +152,7 @@ Profil: [HepatitisQuestionnaire](StructureDefinition-hepatitis-questionnaire.htm
 
 Misol: [hepatitis-questionnaire](Questionnaire-hepatitis-questionnaire.html)
 
-| Qayd etiladigan ma’lumot | Ma’lumotnoma | Misol kodi yoki qiymati | Qayerda saqlanadi |
+| Qayd etiladigan ma'lumot | Qiymatlar to'plami | Kod misoli | Saqlanadi |
 | :--- | :--- | :--- | :--- |
 | Identifikator | - | `HCV-HBV-QS-2026` | `identifier.value` |
 | Nashr holati | [PublicationStatus](https://hl7.org/fhir/R5/valueset-publication-status.html) | `active` | `status` |
@@ -172,7 +172,7 @@ Profil: [HepatitisQuestionnaireResponse](StructureDefinition-hepatitis-questionn
 
 Misol: [example-hcv-response](QuestionnaireResponse-example-hcv-response.html)
 
-| Qayd etiladigan ma’lumot | Ma’lumotnoma | Misol kodi yoki qiymati | Qayerda saqlanadi |
+| Qayd etiladigan ma'lumot | Qiymatlar to'plami | Kod misoli | Saqlanadi |
 | :--- | :--- | :--- | :--- |
 | Identifikator | - | `6f9b9d8e-3b7d-4d87-8f6e-123456789abc` | `identifier.value` |
 | Javoblar holati | [QuestionnaireResponseStatus](https://hl7.org/fhir/R5/valueset-questionnaire-answers-status.html) | `completed` | `status` |

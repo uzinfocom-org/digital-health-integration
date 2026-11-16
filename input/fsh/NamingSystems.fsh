@@ -281,3 +281,21 @@ Usage: #definition
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/reg/uz/hepatitis"
 * uniqueId[=].preferred = true
+
+Instance: blood-registration-number-system
+InstanceOf: NamingSystem
+Description: "Identifier system for blood service registration numbers in Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/blood-registration-number-system"
+* name = "UzbekistanBloodRegistrationNumber"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* date = "2026-11-12"
+* description = "Number assigned by a blood service when it registers a person as a blood donor or a recipient."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in Observation.identifier[registrationNumber] of the Blood Service Registration Observation"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/blood-registration"
+* uniqueId[=].preferred = true

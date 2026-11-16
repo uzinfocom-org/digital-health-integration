@@ -10,12 +10,13 @@
 GET [base]/Observation/[id]
 ```
 
-**Поиск регистраций пациента в службе крови**
+**Поиск регистраций в службе крови** (по номеру, пациенту и типу, категории донора, Encounter)
 
 ```
-GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct%7C105470007
-GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct%7C116154003
-GET [base]/Observation?category=https://terminology.dhp.uz/fhir/integrations/CodeSystem/donor-category-cs%7Cbdcat-0001-00002
+GET [base]/Observation?identifier=https://dhp.uz/fhir/core/sid/doc/uz/blood-registration%7CBD-2026-004517
+GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00001
+GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00002
+GET [base]/Observation?component-value-concept=https://terminology.dhp.uz/fhir/integrations/CodeSystem/donor-category-cs%7Cbdcat-0001-00002
 GET [base]/Observation?encounter=Encounter/[id]
 ```
 
@@ -26,11 +27,16 @@ POST [base]/Observation
 {
   "resourceType": "Observation",
   "meta": {
-    "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-category-observation" ]
+    "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-service-registration-observation" ]
   },
   "status": "final",
   "code": {
-    "coding": [ { "system": "http://snomed.info/sct", "code": "105470007", "display": "Blood donor" } ]
+    "coding": [
+      {
+        "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs",
+        "code": "bsobs-0001-00001"
+      }
+    ]
   },
   "subject": { "reference": "Patient/[id]" },
   "effectiveDateTime": "2026-09-23T10:30:00+05:00",
@@ -38,7 +44,9 @@ POST [base]/Observation
 }
 ```
 
-**Обновление** (например, когда резервный донор становится кадровым) - отправьте PUT с полным ресурсом и новым `category`:
+**Изменение категории** (например, когда резервный донор становится кадровым) - отправьте POST с новым Observation, указав новый компонент категории донора и дату изменения в `effectiveDateTime`. Прежняя запись остаётся историей регистрации; текущая категория - запись с самым поздним `effectiveDateTime`.
+
+**Исправление ошибки** - отправьте PUT с полным ресурсом и исправленным значением:
 
 ```
 PUT [base]/Observation/[id]

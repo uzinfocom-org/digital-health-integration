@@ -8,12 +8,13 @@ Common API interactions for this profile. It is built on Observation, so use the
 GET [base]/Observation/[id]
 ```
 
-**Find a patient's blood service registrations**
+**Find blood service registrations** (by number, patient and type, donor category, encounter)
 
 ```
-GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct%7C105470007
-GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct%7C116154003
-GET [base]/Observation?category=https://terminology.dhp.uz/fhir/integrations/CodeSystem/donor-category-cs%7Cbdcat-0001-00002
+GET [base]/Observation?identifier=https://dhp.uz/fhir/core/sid/doc/uz/blood-registration%7CBD-2026-004517
+GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00001
+GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00002
+GET [base]/Observation?component-value-concept=https://terminology.dhp.uz/fhir/integrations/CodeSystem/donor-category-cs%7Cbdcat-0001-00002
 GET [base]/Observation?encounter=Encounter/[id]
 ```
 
@@ -24,11 +25,16 @@ POST [base]/Observation
 {
   "resourceType": "Observation",
   "meta": {
-    "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-category-observation" ]
+    "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-service-registration-observation" ]
   },
   "status": "final",
   "code": {
-    "coding": [ { "system": "http://snomed.info/sct", "code": "105470007", "display": "Blood donor" } ]
+    "coding": [
+      {
+        "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs",
+        "code": "bsobs-0001-00001"
+      }
+    ]
   },
   "subject": { "reference": "Patient/[id]" },
   "effectiveDateTime": "2026-09-23T10:30:00+05:00",
@@ -36,7 +42,9 @@ POST [base]/Observation
 }
 ```
 
-**Update** (for example, when a reserve donor becomes a staff donor) - PUT the full resource back with the new `category`:
+**Record a change** (for example, when a reserve donor becomes a staff donor) - POST a new Observation with the new donor category component and the date of the change in `effectiveDateTime`. The earlier record stays as the history of the registration; the latest `effectiveDateTime` is the current category.
+
+**Correct an error** - PUT the full resource back with the corrected value:
 
 ```
 PUT [base]/Observation/[id]

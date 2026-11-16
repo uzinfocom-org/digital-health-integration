@@ -10,12 +10,13 @@ Ushbu profil uchun keng tarqalgan API o'zaro ta'sirlari. Profil Observation asos
 GET [base]/Observation/[id]
 ```
 
-**Bemorning qon xizmatidagi ro'yxatga olinishlarini topish**
+**Qon xizmatidagi ro'yxatga olinishlarni topish** (raqam, bemor va tur, donor toifasi, Encounter bo'yicha)
 
 ```
-GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct%7C105470007
-GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct%7C116154003
-GET [base]/Observation?category=https://terminology.dhp.uz/fhir/integrations/CodeSystem/donor-category-cs%7Cbdcat-0001-00002
+GET [base]/Observation?identifier=https://dhp.uz/fhir/core/sid/doc/uz/blood-registration%7CBD-2026-004517
+GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00001
+GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00002
+GET [base]/Observation?component-value-concept=https://terminology.dhp.uz/fhir/integrations/CodeSystem/donor-category-cs%7Cbdcat-0001-00002
 GET [base]/Observation?encounter=Encounter/[id]
 ```
 
@@ -26,11 +27,16 @@ POST [base]/Observation
 {
   "resourceType": "Observation",
   "meta": {
-    "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-category-observation" ]
+    "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-service-registration-observation" ]
   },
   "status": "final",
   "code": {
-    "coding": [ { "system": "http://snomed.info/sct", "code": "105470007", "display": "Blood donor" } ]
+    "coding": [
+      {
+        "system": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs",
+        "code": "bsobs-0001-00001"
+      }
+    ]
   },
   "subject": { "reference": "Patient/[id]" },
   "effectiveDateTime": "2026-09-23T10:30:00+05:00",
@@ -38,7 +44,9 @@ POST [base]/Observation
 }
 ```
 
-**Yangilash** (masalan, zaxira donor kadr donorga aylanganda) - to'liq resursni yangi `category` bilan qaytarib PUT qiling:
+**Toifa o'zgarishi** (masalan, zaxira donor kadr donorga aylanganda) - yangi donor toifasi komponenti va o'zgarish sanasi `effectiveDateTime` da ko'rsatilgan yangi Observation ni POST qiling. Avvalgi yozuv ro'yxatga olish tarixi sifatida qoladi; joriy toifa - eng so'nggi `effectiveDateTime` ga ega yozuv.
+
+**Xatoni tuzatish** - to'liq resursni tuzatilgan qiymat bilan qaytarib PUT qiling:
 
 ```
 PUT [base]/Observation/[id]
