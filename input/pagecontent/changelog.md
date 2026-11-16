@@ -14,6 +14,8 @@ Supporting terminology: a [blood service observation type](CodeSystem-blood-serv
 
 [Form 044 medical certificate for travelers abroad](StructureDefinition-form-044-travel-clearance-composition.html) is profiled as a FHIR Document, covering personal information, past infectious diseases, the commission's travel clearance with destination country and business trip period, place of residence and the commission chair and members across 5 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-044-mapping.html).
 
+[Search](search.html), opened from a new box in the page header, finds resources by title, name, URL or description, and codes, terms and mappings in code systems, value sets and ConceptMaps, in English, Russian and Uzbek. Results can be narrowed by resource type.
+
 #### Changed
 
 The [Form 011](StructureDefinition-form-011-hemodialysis-composition.html), [Form 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Form 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) and [Form 130](StructureDefinition-form-130-laboratory-test-results-composition.html) Compositions no longer fix `status` to `final`, so a document can follow the [document lifecycle](document-statuses.html) through `preliminary`, `amended` and `entered-in-error`.

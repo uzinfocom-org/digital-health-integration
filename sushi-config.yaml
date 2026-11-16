@@ -76,6 +76,8 @@ parameters:
 
   show-inherited-invariants: false # hide invariants inherited from the base resource in profile tables
 
+  produce-jekyll-data: true # resources in _data feed search-index.json for search.html
+
   # multi-lingual support
   i18n-default-lang: en
   i18n-lang:
@@ -164,6 +166,8 @@ pages:
     title: 10.0 Forensic Medicine
   forms-volume-11-sanitary-epidemiology.md:
     title: 11.0 Sanitary-Epidemiology
+  search.md:
+    title: Search
   changelog.md:
     title: Changelog
   translationinfo.md:
