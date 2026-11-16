@@ -9,11 +9,11 @@ This page describes how the blood service records the path of donated blood as F
 
 ### Overview {#overview}
 
-Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profile as it is. This guide adds one profile, [Blood Donor Category Observation](StructureDefinition-blood-donor-category-observation.html), for the registration data that UZ Core Patient does not hold: whether a person is registered as a donor or a recipient, the donor category, the donation compensation and type, the blood group, the Rh factor and a recipient's diagnosis. The paper forms behind these steps are described in [8.0 Blood Service](forms-volume-08-blood-service.html).
+Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profile as it is. This guide adds one profile, [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html), for the registration data that UZ Core Patient does not hold: whether a person is registered as a donor or a recipient, the registration number, the donor category, the donation compensation and type, and a recipient's diagnosis. The paper forms behind these steps are described in [8.0 Blood Service](forms-volume-08-blood-service.html).
 
 | Step | Resource | Profile |
 | :--- | :--- | :--- |
-| [Register a donor or recipient](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html), [Blood Donor Category Observation](StructureDefinition-blood-donor-category-observation.html) |
+| [Register a donor or recipient](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
 | [Record eligibility or a deferral](#eligibility) | Flag | UZ Core Flag (next UZ Core release) |
 | [Test the donor's blood](#testing) | Observation, DiagnosticReport, Specimen | [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-specimen.html) |
 | [Collect the donation](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) |
@@ -26,20 +26,19 @@ Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html)
 
 ### Registering donors and recipients {#registering}
 
-Donors and recipients are both [UZ Core Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html) records; nothing in Patient marks a person as a donor. The registration itself is a [Blood Donor Category Observation](StructureDefinition-blood-donor-category-observation.html) whose `code` says how the person is registered.
+Donors and recipients are both [UZ Core Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html) records; nothing in Patient marks a person as a donor. The registration itself is a [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) whose `code` says how the person is registered. Blood group and Rh factor are not part of the registration: they are recorded as [test results](#testing).
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Registered as | [Blood patient type](ValueSet-blood-patient-type-vs.html) | `SNOMED CT#105470007` (Blood donor) / `SNOMED CT#116154003` (Patient) | `code` |
-| Donor category | [Donor category](ValueSet-donor-category-vs.html) | `donor-category-cs#bdcat-0001-00001` (staff donor) | `category[donorCategory]` |
-| Paid or unpaid donation | [Donation compensation](ValueSet-donation-compensation-vs.html) | `donation-compensation-cs#bdcomp-0001-00001` (unpaid) | `valueCodeableConcept` |
-| Donation type | [Donation type](ValueSet-donation-type-vs.html) | `donation-type-cs#bdtype-0001-00002` (plasmapheresis) | `component[donationType]` |
-| Blood group | [Blood group](https://dhp.uz/fhir/core/en/ValueSet-blood-group-vs.html) | `SNOMED CT#112144000` (group A) | `component[bloodGroup]` |
-| Rh factor | [Rh factor](https://dhp.uz/fhir/core/en/ValueSet-blood-rh-vs.html) | `SNOMED CT#165747007` (RhD positive) | `component[rhFactor]` |
+| Registered as | [Blood service registration type](ValueSet-blood-service-registration-type-vs.html) | `blood-service-observation-type-cs#bsobs-0001-00001` (blood donor registration) / `blood-service-observation-type-cs#bsobs-0001-00002` (blood recipient registration) | `code` |
+| Registration number | [NamingSystem](NamingSystem-blood-registration-number-system.html) | system `https://dhp.uz/fhir/core/sid/doc/uz/blood-registration`, value `BD-2026-004517` | `identifier[registrationNumber]` |
+| Donor category | [Donor category](ValueSet-donor-category-vs.html) | `SNOMED CT#275561000` (staff donor) / `donor-category-cs#bdcat-0001-00002` (reserve donor) | `component[donorCategory]` |
+| Paid or unpaid donation | [Donation compensation](ValueSet-donation-compensation-vs.html) | `donation-compensation-cs#bdcomp-0001-00001` (unpaid) | `component[compensation]` |
+| Donation type | [Donation type](ValueSet-donation-type-vs.html) | `SNOMED CT#20720000` (plasmapheresis) | `component[donationType]` |
 | Recipient's diagnosis | ICD-10 | `D64.9` | `component[diagnosis]` |
 | Registration date | - | `2026-09-23T10:30:00+05:00` | `effectiveDateTime` |
 
-Examples: [staff donor](Observation-example-blood-donor-category-observation.html), [reserve donor](Observation-example-blood-donor-category-observation-reserve.html), [recipient](Observation-example-blood-recipient-category-observation.html).
+Examples: [staff donor](Observation-example-blood-donor-registration-staff.html), [reserve donor](Observation-example-blood-donor-registration-reserve.html), [recipient](Observation-example-blood-recipient-registration.html).
 
 ### Eligibility and deferrals {#eligibility}
 
@@ -99,7 +98,7 @@ Together with the donation number, these references let a unit be traced from th
 Requests require a JWT access token - see [Security and authentication](https://dhp.uz/fhir/core/en/api-access.html#security). `[base]` is the [FHIR server base URL](https://dhp.uz/fhir/core/en/api-access.html#endpoints); `|` separates a system from its value and must be URL-encoded as `%7C`.
 
 ```
-GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct%7C105470007
+GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00001
 GET [base]/Flag?patient=Patient/[id]&status=active
 GET [base]/Observation?patient=Patient/[id]
 GET [base]/Procedure?patient=Patient/[id]

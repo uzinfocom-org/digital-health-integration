@@ -5,7 +5,7 @@ title Как связаны записи службы крови
 
 class "Донор\n<size:10>UZCorePatient</size>" as Donor [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html{Открыть UZCorePatient}]]
 class "Реципиент\n<size:10>UZCorePatient</size>" as Recipient [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html{Открыть UZCorePatient}]]
-class "Регистрация\n<size:10>BloodDonorCategoryObservation</size>" as Reg [[StructureDefinition-blood-donor-category-observation.html{Открыть BloodDonorCategoryObservation}]] #E8F0FE
+class "Регистрация\n<size:10>BloodServiceRegistrationObservation</size>" as Reg [[StructureDefinition-blood-service-registration-observation.html{Открыть BloodServiceRegistrationObservation}]] #E8F0FE
 class "Допуск или отвод\n<size:10>UZCoreFlag</size>" as Flag
 class "Результат анализа\n<size:10>UZCoreObservation</size>" as Test [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html{Открыть UZCoreObservation}]]
 class "Отчёт об анализах\n<size:10>UZCoreDiagnosticReport</size>" as Report [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-diagnostic-report.html{Открыть UZCoreDiagnosticReport}]]
@@ -19,7 +19,8 @@ class "Выдача реципиенту\n<size:10>UZCoreBiologicallyDerivedProd
 class "Трансфузия\n<size:10>UZCoreProcedure</size>" as Tx [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html{Открыть UZCoreProcedure}]]
 class "Реакция на трансфузию\n<size:10>UZCoreAdverseEvent</size>" as AE [[https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html{Открыть UZCoreAdverseEvent}]]
 
-Reg "0..*" --> "1" Donor : « subject »
+Reg "0..*" --> "0..1" Donor : « subject »
+Reg "0..*" --> "0..1" Recipient : « subject »
 Flag "0..*" --> "1" Donor : « subject »
 Test "0..*" --> "0..1" Donor : « subject »
 Report "0..*" --> "0..*" Test : « result »

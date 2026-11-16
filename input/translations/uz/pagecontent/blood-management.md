@@ -11,11 +11,11 @@ Ushbu sahifada qon xizmati donorlik qonining yo'lini - donorni ro'yxatga olishda
 
 ### Umumiy ko'rinish {#overview}
 
-Deyarli har bir bosqichda [UZ Core](https://dhp.uz/fhir/core/uz/artifacts.html) profili o'zgarishsiz qo'llaniladi. Ushbu qo'llanma bitta profil qo'shadi - [Blood Donor Category Observation](StructureDefinition-blood-donor-category-observation.html). U UZ Core Patient da bo'lmagan ro'yxatga olish ma'lumotlari uchun: shaxs donor yoki retsipiyent sifatida ro'yxatga olinganligi, donor toifasi, donatsiya to'lovi va turi, qon guruhi, rezus-omil va retsipiyent tashxisi. Ushbu bosqichlar ortidagi qog'oz shakllar [8.0 Qon xizmati](forms-volume-08-blood-service.html) bo'limida tavsiflangan.
+Deyarli har bir bosqichda [UZ Core](https://dhp.uz/fhir/core/uz/artifacts.html) profili o'zgarishsiz qo'llaniladi. Ushbu qo'llanma bitta profil qo'shadi - [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html). U UZ Core Patient da bo'lmagan ro'yxatga olish ma'lumotlari uchun: shaxs donor yoki retsipiyent sifatida ro'yxatga olinganligi, ro'yxatga olish raqami, donor toifasi, donatsiya to'lovi va turi hamda retsipiyent tashxisi. Ushbu bosqichlar ortidagi qog'oz shakllar [8.0 Qon xizmati](forms-volume-08-blood-service.html) bo'limida tavsiflangan.
 
 | Bosqich | Resurs | Profil |
 | :--- | :--- | :--- |
-| [Donor yoki retsipiyentni ro'yxatga olish](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html), [Blood Donor Category Observation](StructureDefinition-blood-donor-category-observation.html) |
+| [Donor yoki retsipiyentni ro'yxatga olish](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
 | [Ruxsat yoki chetlatish](#eligibility) | Flag | UZ Core Flag (UZ Core ning keyingi relizi) |
 | [Donor qonini tekshirish](#testing) | Observation, DiagnosticReport, Specimen | [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-specimen.html) |
 | [Donatsiyani olish](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologically-derived-product.html) |
@@ -28,20 +28,19 @@ Deyarli har bir bosqichda [UZ Core](https://dhp.uz/fhir/core/uz/artifacts.html) 
 
 ### Donor va retsipiyentlarni ro'yxatga olish {#registering}
 
-Donorlar ham, retsipiyentlar ham [UZ Core Patient](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html) yozuvlaridir; Patient da shaxsni donor sifatida belgilaydigan hech narsa yo'q. Ro'yxatga olishning o'zi - bu [Blood Donor Category Observation](StructureDefinition-blood-donor-category-observation.html), uning `code` elementi shaxs qanday ro'yxatga olinganini ko'rsatadi.
+Donorlar ham, retsipiyentlar ham [UZ Core Patient](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html) yozuvlaridir; Patient da shaxsni donor sifatida belgilaydigan hech narsa yo'q. Ro'yxatga olishning o'zi - bu [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html), uning `code` elementi shaxs qanday ro'yxatga olinganini ko'rsatadi. Qon guruhi va rezus-omil ro'yxatga olishga kirmaydi: ular [tekshiruv natijalari](#testing) sifatida qayd etiladi.
 
 | Qayd etiladigan ma'lumot | Qiymatlar to'plami | Kod misoli | Saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Kim sifatida ro'yxatga olingan | [Blood patient type](ValueSet-blood-patient-type-vs.html) | `SNOMED CT#105470007` (qon donori) / `SNOMED CT#116154003` (bemor) | `code` |
-| Donor toifasi | [Donor category](ValueSet-donor-category-vs.html) | `donor-category-cs#bdcat-0001-00001` (kadr donor) | `category[donorCategory]` |
-| Pullik yoki bepul donatsiya | [Donation compensation](ValueSet-donation-compensation-vs.html) | `donation-compensation-cs#bdcomp-0001-00001` (bepul) | `valueCodeableConcept` |
-| Donatsiya turi | [Donation type](ValueSet-donation-type-vs.html) | `donation-type-cs#bdtype-0001-00002` (plazmaferez) | `component[donationType]` |
-| Qon guruhi | [Blood group](https://dhp.uz/fhir/core/uz/ValueSet-blood-group-vs.html) | `SNOMED CT#112144000` (A guruh) | `component[bloodGroup]` |
-| Rezus-omil | [Rh factor](https://dhp.uz/fhir/core/uz/ValueSet-blood-rh-vs.html) | `SNOMED CT#165747007` (RhD musbat) | `component[rhFactor]` |
+| Kim sifatida ro'yxatga olingan | [Blood service registration type](ValueSet-blood-service-registration-type-vs.html) | `blood-service-observation-type-cs#bsobs-0001-00001` (donor sifatida ro'yxatga olish) / `blood-service-observation-type-cs#bsobs-0001-00002` (retsipiyent sifatida ro'yxatga olish) | `code` |
+| Ro'yxatga olish raqami | [NamingSystem](NamingSystem-blood-registration-number-system.html) | system `https://dhp.uz/fhir/core/sid/doc/uz/blood-registration`, qiymat `BD-2026-004517` | `identifier[registrationNumber]` |
+| Donor toifasi | [Donor category](ValueSet-donor-category-vs.html) | `SNOMED CT#275561000` (kadr donor) / `donor-category-cs#bdcat-0001-00002` (zaxira donor) | `component[donorCategory]` |
+| Pullik yoki bepul donatsiya | [Donation compensation](ValueSet-donation-compensation-vs.html) | `donation-compensation-cs#bdcomp-0001-00001` (bepul) | `component[compensation]` |
+| Donatsiya turi | [Donation type](ValueSet-donation-type-vs.html) | `SNOMED CT#20720000` (plazmaferez) | `component[donationType]` |
 | Retsipiyent tashxisi | XKT-10 | `D64.9` | `component[diagnosis]` |
 | Ro'yxatga olish sanasi | - | `2026-09-23T10:30:00+05:00` | `effectiveDateTime` |
 
-Misollar: [kadr donor](Observation-example-blood-donor-category-observation.html), [zaxira donor](Observation-example-blood-donor-category-observation-reserve.html), [retsipiyent](Observation-example-blood-recipient-category-observation.html).
+Misollar: [kadr donor](Observation-example-blood-donor-registration-staff.html), [zaxira donor](Observation-example-blood-donor-registration-reserve.html), [retsipiyent](Observation-example-blood-recipient-registration.html).
 
 ### Ruxsat va chetlatishlar {#eligibility}
 
@@ -101,7 +100,7 @@ Donatsiya raqami bilan birga bu havolalar birlikni qon topshirgan donordan uni o
 So'rovlar JWT kirish tokenini talab qiladi - qarang: [Xavfsizlik va autentifikatsiya](https://dhp.uz/fhir/core/uz/api-access.html#security). `[base]` bu [FHIR server bazaviy URL manzili](https://dhp.uz/fhir/core/uz/api-access.html#endpoints); `|` tizimni uning qiymatidan ajratadi va URL'da `%7C` sifatida kodlanishi shart.
 
 ```
-GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct%7C105470007
+GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00001
 GET [base]/Flag?patient=Patient/[id]&status=active
 GET [base]/Observation?patient=Patient/[id]
 GET [base]/Procedure?patient=Patient/[id]

@@ -5,7 +5,7 @@ title Qon xizmati yozuvlari qanday bog'lanadi
 
 class "Donor\n<size:10>UZCorePatient</size>" as Donor [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html{Ochish UZCorePatient}]]
 class "Retsipiyent\n<size:10>UZCorePatient</size>" as Recipient [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html{Ochish UZCorePatient}]]
-class "Ro'yxatga olish\n<size:10>BloodDonorCategoryObservation</size>" as Reg [[StructureDefinition-blood-donor-category-observation.html{Ochish BloodDonorCategoryObservation}]] #E8F0FE
+class "Ro'yxatga olish\n<size:10>BloodServiceRegistrationObservation</size>" as Reg [[StructureDefinition-blood-service-registration-observation.html{Ochish BloodServiceRegistrationObservation}]] #E8F0FE
 class "Ruxsat yoki chetlatish\n<size:10>UZCoreFlag</size>" as Flag
 class "Tahlil natijasi\n<size:10>UZCoreObservation</size>" as Test [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html{Ochish UZCoreObservation}]]
 class "Tahlillar hisoboti\n<size:10>UZCoreDiagnosticReport</size>" as Report [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-diagnostic-report.html{Ochish UZCoreDiagnosticReport}]]
@@ -19,7 +19,8 @@ class "Retsipiyentga berish\n<size:10>UZCoreBiologicallyDerivedProductDispense</
 class "Transfuziya\n<size:10>UZCoreProcedure</size>" as Tx [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html{Ochish UZCoreProcedure}]]
 class "Transfuziyaga reaksiya\n<size:10>UZCoreAdverseEvent</size>" as AE [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-adverse-event.html{Ochish UZCoreAdverseEvent}]]
 
-Reg "0..*" --> "1" Donor : « subject »
+Reg "0..*" --> "0..1" Donor : « subject »
+Reg "0..*" --> "0..1" Recipient : « subject »
 Flag "0..*" --> "1" Donor : « subject »
 Test "0..*" --> "0..1" Donor : « subject »
 Report "0..*" --> "0..*" Test : « result »

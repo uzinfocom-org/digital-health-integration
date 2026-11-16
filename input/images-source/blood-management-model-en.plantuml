@@ -5,7 +5,7 @@ title How blood service records fit together
 
 class "Donor\n<size:10>UZCorePatient</size>" as Donor [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html{Open UZCorePatient}]]
 class "Recipient\n<size:10>UZCorePatient</size>" as Recipient [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html{Open UZCorePatient}]]
-class "Registration\n<size:10>BloodDonorCategoryObservation</size>" as Reg [[StructureDefinition-blood-donor-category-observation.html{Open BloodDonorCategoryObservation}]] #E8F0FE
+class "Registration\n<size:10>BloodServiceRegistrationObservation</size>" as Reg [[StructureDefinition-blood-service-registration-observation.html{Open BloodServiceRegistrationObservation}]] #E8F0FE
 class "Eligibility or deferral\n<size:10>UZCoreFlag</size>" as Flag
 class "Test result\n<size:10>UZCoreObservation</size>" as Test [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html{Open UZCoreObservation}]]
 class "Test report\n<size:10>UZCoreDiagnosticReport</size>" as Report [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html{Open UZCoreDiagnosticReport}]]
@@ -19,7 +19,8 @@ class "Issue to recipient\n<size:10>UZCoreBiologicallyDerivedProductDispense</si
 class "Transfusion\n<size:10>UZCoreProcedure</size>" as Tx [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html{Open UZCoreProcedure}]]
 class "Transfusion reaction\n<size:10>UZCoreAdverseEvent</size>" as AE [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-adverse-event.html{Open UZCoreAdverseEvent}]]
 
-Reg "0..*" --> "1" Donor : « subject »
+Reg "0..*" --> "0..1" Donor : « subject »
+Reg "0..*" --> "0..1" Recipient : « subject »
 Flag "0..*" --> "1" Donor : « subject »
 Test "0..*" --> "0..1" Donor : « subject »
 Report "0..*" --> "0..*" Test : « result »

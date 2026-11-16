@@ -11,11 +11,11 @@
 
 ### Обзор {#overview}
 
-Почти на каждом шаге профиль [UZ Core](https://dhp.uz/fhir/core/ru/artifacts.html) используется без изменений. Это руководство добавляет один профиль, [Blood Donor Category Observation](StructureDefinition-blood-donor-category-observation.html), для регистрационных данных, которых нет в UZ Core Patient: зарегистрирован ли человек как донор или как реципиент, категория донора, оплата и вид донации, группа крови, резус-фактор и диагноз реципиента. Бумажные формы, стоящие за этими шагами, описаны в разделе [8.0 Служба крови](forms-volume-08-blood-service.html).
+Почти на каждом шаге профиль [UZ Core](https://dhp.uz/fhir/core/ru/artifacts.html) используется без изменений. Это руководство добавляет один профиль, [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html), для регистрационных данных, которых нет в UZ Core Patient: зарегистрирован ли человек как донор или как реципиент, регистрационный номер, категория донора, оплата и вид донации и диагноз реципиента. Бумажные формы, стоящие за этими шагами, описаны в разделе [8.0 Служба крови](forms-volume-08-blood-service.html).
 
 | Шаг | Ресурс | Профиль |
 | :--- | :--- | :--- |
-| [Регистрация донора или реципиента](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html), [Blood Donor Category Observation](StructureDefinition-blood-donor-category-observation.html) |
+| [Регистрация донора или реципиента](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
 | [Допуск или отвод](#eligibility) | Flag | UZ Core Flag (следующий выпуск UZ Core) |
 | [Обследование крови донора](#testing) | Observation, DiagnosticReport, Specimen | [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-specimen.html) |
 | [Забор донации](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
@@ -28,20 +28,19 @@
 
 ### Регистрация доноров и реципиентов {#registering}
 
-И доноры, и реципиенты - это записи [UZ Core Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html); ничто в Patient не отмечает человека как донора. Сама регистрация - это [Blood Donor Category Observation](StructureDefinition-blood-donor-category-observation.html), `code` которого указывает, как зарегистрирован человек.
+И доноры, и реципиенты - это записи [UZ Core Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html); ничто в Patient не отмечает человека как донора. Сама регистрация - это [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html), `code` которого указывает, как зарегистрирован человек. Группа крови и резус-фактор не входят в регистрацию: они записываются как [результаты обследования](#testing).
 
 | Информация для записи | Набор значений | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
-| Зарегистрирован как | [Blood patient type](ValueSet-blood-patient-type-vs.html) | `SNOMED CT#105470007` (донор крови) / `SNOMED CT#116154003` (пациент) | `code` |
-| Категория донора | [Donor category](ValueSet-donor-category-vs.html) | `donor-category-cs#bdcat-0001-00001` (кадровый донор) | `category[donorCategory]` |
-| Платная или безвозмездная донация | [Donation compensation](ValueSet-donation-compensation-vs.html) | `donation-compensation-cs#bdcomp-0001-00001` (безвозмездная) | `valueCodeableConcept` |
-| Вид донации | [Donation type](ValueSet-donation-type-vs.html) | `donation-type-cs#bdtype-0001-00002` (плазмаферез) | `component[donationType]` |
-| Группа крови | [Blood group](https://dhp.uz/fhir/core/ru/ValueSet-blood-group-vs.html) | `SNOMED CT#112144000` (группа A) | `component[bloodGroup]` |
-| Резус-фактор | [Rh factor](https://dhp.uz/fhir/core/ru/ValueSet-blood-rh-vs.html) | `SNOMED CT#165747007` (RhD положительный) | `component[rhFactor]` |
+| Зарегистрирован как | [Blood service registration type](ValueSet-blood-service-registration-type-vs.html) | `blood-service-observation-type-cs#bsobs-0001-00001` (регистрация донора) / `blood-service-observation-type-cs#bsobs-0001-00002` (регистрация реципиента) | `code` |
+| Регистрационный номер | [NamingSystem](NamingSystem-blood-registration-number-system.html) | system `https://dhp.uz/fhir/core/sid/doc/uz/blood-registration`, значение `BD-2026-004517` | `identifier[registrationNumber]` |
+| Категория донора | [Donor category](ValueSet-donor-category-vs.html) | `SNOMED CT#275561000` (кадровый донор) / `donor-category-cs#bdcat-0001-00002` (резервный донор) | `component[donorCategory]` |
+| Платная или безвозмездная донация | [Donation compensation](ValueSet-donation-compensation-vs.html) | `donation-compensation-cs#bdcomp-0001-00001` (безвозмездная) | `component[compensation]` |
+| Вид донации | [Donation type](ValueSet-donation-type-vs.html) | `SNOMED CT#20720000` (плазмаферез) | `component[donationType]` |
 | Диагноз реципиента | МКБ-10 | `D64.9` | `component[diagnosis]` |
 | Дата регистрации | - | `2026-09-23T10:30:00+05:00` | `effectiveDateTime` |
 
-Примеры: [кадровый донор](Observation-example-blood-donor-category-observation.html), [резервный донор](Observation-example-blood-donor-category-observation-reserve.html), [реципиент](Observation-example-blood-recipient-category-observation.html).
+Примеры: [кадровый донор](Observation-example-blood-donor-registration-staff.html), [резервный донор](Observation-example-blood-donor-registration-reserve.html), [реципиент](Observation-example-blood-recipient-registration.html).
 
 ### Допуск и отводы {#eligibility}
 
@@ -101,7 +100,7 @@
 Запросы требуют JWT-токена доступа - см. [Безопасность и аутентификация](https://dhp.uz/fhir/core/ru/api-access.html#security). `[base]` - это [базовый URL FHIR-сервера](https://dhp.uz/fhir/core/ru/api-access.html#endpoints); `|` отделяет систему от значения и должен быть URL-кодирован как `%7C`.
 
 ```
-GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct%7C105470007
+GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00001
 GET [base]/Flag?patient=Patient/[id]&status=active
 GET [base]/Observation?patient=Patient/[id]
 GET [base]/Procedure?patient=Patient/[id]
