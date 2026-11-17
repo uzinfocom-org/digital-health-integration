@@ -1,15 +1,6 @@
 {% if include.lang == 'ru' %}{% assign ph = 'Поиск кодов и ресурсов' %}{% assign btn = 'Найти' %}{% elsif include.lang == 'uz' %}{% assign ph = "Kodlar va resurslarni qidirish" %}{% assign btn = 'Qidirish' %}{% else %}{% assign ph = 'Search codes and resources' %}{% assign btn = 'Search' %}{% endif %}
 {% if include.lang == 'ru' %}{% assign tryform = 'Заполнить на странице вопросников' %}{% elsif include.lang == 'uz' %}{% assign tryform = "So'rovnomalar sahifasida to'ldirish" %}{% else %}{% assign tryform = 'Fill it in on the Questionnaires page' %}{% endif %}
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('a[href*="lhcformviewer"]').forEach(function (a) {
-    var m = /qCanonical=https:\/\/dhp\.uz\/fhir\/integrations\/Questionnaire\/([^&]+)/.exec(a.getAttribute('href'));
-    if (!m) return;
-    a.href = 'forms.html?form=' + m[1];
-    a.textContent = {{ tryform | jsonify }};
-  });
-});
-</script>
+<script src="questionnaire-links.js" data-label="{{ tryform | escape }}"></script>
 <style type="text/css">
 #dhp-search { position: absolute; top: 50%; transform: translateY(-50%); right: 15px; display: flex; z-index: 2; }
 #dhp-search input { width: 16em; font-size: 13px; padding: 4px 8px; border: 1px solid #b7a9c9; border-right: 0; border-radius: 4px 0 0 4px; }
