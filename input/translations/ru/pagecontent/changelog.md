@@ -10,7 +10,7 @@
 
 [Поиск](search.html), который открывается из нового поля в шапке страницы, находит ресурсы по заголовку, имени, URL или описанию, а также коды, термины и сопоставления в системах кодов, наборах значений и ConceptMap на английском, русском и узбекском языках. Результаты можно отфильтровать по типу ресурса.
 
-Страница [Blood Management](blood-management.html) описывает работу службы крови, от регистрации и обследования донора до забора, компонентов, запасов, поставки и трансфузии, через профили UZ Core и [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
+Страница [Blood Service](blood-service.html) описывает работу службы крови, от регистрации и обследования донора до забора, компонентов, запасов, поставки и трансфузии, через профили UZ Core и [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
 
 [Форма 027, выписка из медицинской карты пациента](StructureDefinition-form-027-medical-record-extract-composition.html), профилирована как FHIR-документ: регистрационные и личные данные, адрес, направление и диагноз, клинические данные, лечение и рекомендации, последующие мероприятия и ответственные лица в 8 разделах Composition. К ней прилагаются пример документа (Bundle) и [страница пополевого сопоставления](form-027-mapping.html).
 

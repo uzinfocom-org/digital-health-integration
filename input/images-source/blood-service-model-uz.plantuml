@@ -1,4 +1,4 @@
-@startuml blood-management-model-uz
+@startuml blood-service-model-uz
 hide circle
 hide empty members
 title Qon xizmati yozuvlari qanday bog'lanadi

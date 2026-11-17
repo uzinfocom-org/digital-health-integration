@@ -57,6 +57,6 @@ Qo'llab-quvvatlanadigan qidiruv parametrlarining to'liq ro'yxati [CapabilityStat
 
 ### Aloqador materiallar
 
-- [Blood Management](blood-management.html) &middot; [Qon xizmati shakllari](forms-volume-08-blood-service.html)
+- [Blood Service](blood-service.html) &middot; [Qon xizmati shakllari](forms-volume-08-blood-service.html)
 - [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html)
 - [Must Support](https://dhp.uz/fhir/core/uz/must-support.html) &middot; [Umumiy ko'rsatmalar](https://dhp.uz/fhir/core/uz/general-guidance.html)

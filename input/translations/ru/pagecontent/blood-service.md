@@ -24,7 +24,7 @@
 | [Запрос и поставка компонентов](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-delivery.html) |
 | [Трансфузия реципиенту](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html), UZ Core BiologicallyDerivedProductDispense (следующий выпуск UZ Core), [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html) |
 
-<div>{% include blood-management-model-ru.svg %}</div><br clear="all"/>
+<div>{% include blood-service-model-ru.svg %}</div><br clear="all"/>
 
 ### Регистрация доноров и реципиентов {#registering}
 

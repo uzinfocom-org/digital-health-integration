@@ -22,7 +22,7 @@ Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html)
 | [Request and deliver components](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-delivery.html) |
 | [Transfuse the recipient](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html), UZ Core BiologicallyDerivedProductDispense (next UZ Core release), [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-adverse-event.html) |
 
-<div>{% include blood-management-model-en.svg %}</div><br clear="all"/>
+<div>{% include blood-service-model-en.svg %}</div><br clear="all"/>
 
 ### Registering donors and recipients {#registering}
 

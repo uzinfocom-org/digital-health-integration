@@ -24,7 +24,7 @@ Deyarli har bir bosqichda [UZ Core](https://dhp.uz/fhir/core/uz/artifacts.html) 
 | [Komponentlarni so'rash va yetkazib berish](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-delivery.html) |
 | [Retsipiyentga transfuziya](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-servicerequest.html), UZ Core BiologicallyDerivedProductDispense (UZ Core ning keyingi relizi), [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-adverse-event.html) |
 
-<div>{% include blood-management-model-uz.svg %}</div><br clear="all"/>
+<div>{% include blood-service-model-uz.svg %}</div><br clear="all"/>
 
 ### Donor va retsipiyentlarni ro'yxatga olish {#registering}
 

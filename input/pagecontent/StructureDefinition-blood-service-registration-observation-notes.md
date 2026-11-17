@@ -55,6 +55,6 @@ See the [CapabilityStatement](https://dhp.uz/fhir/core/en/CapabilityStatement-DH
 
 ### Related
 
-- [Blood Management](blood-management.html) &middot; [Blood service forms](forms-volume-08-blood-service.html)
+- [Blood Service](blood-service.html) &middot; [Blood service forms](forms-volume-08-blood-service.html)
 - [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html)
 - [Must Support](https://dhp.uz/fhir/core/en/must-support.html) &middot; [General guidance](https://dhp.uz/fhir/core/en/general-guidance.html)

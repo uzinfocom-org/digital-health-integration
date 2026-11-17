@@ -8,7 +8,7 @@
 
 [044-shakl, xorijga ketayotganlar uchun tibbiy ma'lumotnoma](StructureDefinition-form-044-travel-clearance-composition.html) FHIR hujjati sifatida profillandi: shaxsiy ma'lumotlar, kechirgan yuqumli kasalliklar, komissiyaning borish mamlakati va xizmat safari muddati bilan chet elga chiqishga ruxsati, yashash joyi, komissiya raisi va a'zolari - 5 ta Composition bo'limida. Hujjat namunasi (Bundle) va [maydonma-maydon moslashtirish sahifasi](form-044-mapping.html) bilan birga.
 
-[Blood Management](blood-management.html) sahifasi qon xizmatini - donorni ro'yxatga olish va tekshirishdan qon olish, komponentlar, zaxiralar, yetkazib berish va transfuziyagacha - UZ Core profillari va [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) orqali tavsiflaydi.
+[Blood Service](blood-service.html) sahifasi qon xizmatini - donorni ro'yxatga olish va tekshirishdan qon olish, komponentlar, zaxiralar, yetkazib berish va transfuziyagacha - UZ Core profillari va [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) orqali tavsiflaydi.
 
 [Qidiruv](search.html) sahifa sarlavhasidagi yangi maydondan ochiladi. U resurslarni sarlavhasi, nomi, URL yoki tavsifi bo'yicha, shuningdek kod tizimlari, qiymatlar to'plamlari va ConceptMaplardagi kodlar, atamalar va moslashtirishlarni ingliz, rus va o'zbek tillarida topadi. Natijalarni resurs turi bo'yicha filtrlash mumkin.
 

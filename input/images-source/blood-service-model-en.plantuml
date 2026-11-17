@@ -1,4 +1,4 @@
-@startuml blood-management-model-en
+@startuml blood-service-model-en
 hide circle
 hide empty members
 title How blood service records fit together
