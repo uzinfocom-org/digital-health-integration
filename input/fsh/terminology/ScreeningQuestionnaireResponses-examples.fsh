@@ -15,7 +15,7 @@ Description: "Example completed response to the Screening breast cancer risk que
 * identifier[0].value = "136-RMJ"
 * identifier[1].system = $screening-program-type-id
 * identifier[1].value = "268547008"
-* questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/screening-breast-risk|1.1.0"
+* questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/screening-breast-risk"
 * status = #completed
 * subject.reference = "Patient/lola-oripova"
 * subject.display = "Lola Oripova Shakhzodovna"
@@ -92,7 +92,7 @@ Description: "Example completed response to the Screening cervical cancer risk q
 * identifier[0].value = "136-RSHM"
 * identifier[1].system = $screening-program-type-id
 * identifier[1].value = "171149006"
-* questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk|1.1.0"
+* questionnaire = "https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk"
 * status = #completed
 * subject.reference = "Patient/lola-oripova"
 * subject.display = "Lola Oripova Shakhzodovna"
