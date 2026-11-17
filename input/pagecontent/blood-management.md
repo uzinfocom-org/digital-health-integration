@@ -9,15 +9,15 @@ This page describes how the blood service records the path of donated blood as F
 
 ### Overview {#overview}
 
-Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profile as it is. This guide adds one profile, [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html), for the registration data that UZ Core Patient does not hold: whether a person is registered as a donor or a recipient, the registration number, the donor category, the donation compensation and type, and a recipient's diagnosis. The paper forms behind these steps are described in [8.0 Blood Service](forms-volume-08-blood-service.html).
+Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profile as it is. This guide adds two profiles. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) records the registration data that UZ Core Patient does not hold: whether a person is registered as a donor or a recipient, the registration number, the donor category, the donation compensation and type, and a recipient's diagnosis. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) orders the donor's laboratory tests and the processing of a component. The paper forms behind these steps are described in [8.0 Blood Service](forms-volume-08-blood-service.html).
 
 | Step | Resource | Profile |
 | :--- | :--- | :--- |
 | [Register a donor or recipient](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
 | [Record eligibility or a deferral](#eligibility) | Flag | UZ Core Flag (next UZ Core release) |
-| [Test the donor's blood](#testing) | Observation, DiagnosticReport, Specimen | [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-specimen.html) |
+| [Test the donor's blood](#testing) | ServiceRequest, Observation, DiagnosticReport, Specimen | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-specimen.html) |
 | [Collect the donation](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) |
-| [Process it into components](#processing) | BiologicallyDerivedProduct | [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) |
+| [Process it into components](#processing) | ServiceRequest, BiologicallyDerivedProduct | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Keep stock](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-inventoryitem.html), UZ Core InventoryReport (next UZ Core release) |
 | [Request and deliver components](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-delivery.html) |
 | [Transfuse the recipient](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html), UZ Core BiologicallyDerivedProductDispense (next UZ Core release), [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-adverse-event.html) |
@@ -48,6 +48,8 @@ Whether a donor may donate is recorded as a Flag on the donor's Patient: eligibl
 
 Each test result before donation (blood group, Rh factor, haemoglobin, HIV, hepatitis B and C, syphilis) is a [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html) on the donor, taken from a [UZ Core Specimen](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-specimen.html). A [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html) groups the results of one examination. A positive infection marker leads to a deferral flag and to disposal of any units already collected.
 
+The donor physician creates a [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) for each test or panel, with the service in `code.concept`. Requests for the same donation share its number in `requisition`; `category` identifies the receiving laboratory. Results and reports reference their requests through `basedOn`.
+
 ### Collecting the donation {#collecting}
 
 The collection is a [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html) on the donor. It produces a [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) for the whole-blood unit, or for the plasma or platelets taken by apheresis.
@@ -69,6 +71,8 @@ The donation number ([NamingSystem](https://dhp.uz/fhir/core/en/NamingSystem-uzb
 ### Processing into components {#processing}
 
 Each component separated from a donation, such as red cells, plasma or cryoprecipitate, is its own BiologicallyDerivedProduct. Its `parent` references the product it was made from, and it keeps the donation number of the original donation. Direct apheresis donations have no parent.
+
+Secondary processing of a component, such as washing, irradiation, freezing or thawing, is requested with a [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) whose `focus` is the component.
 
 Example: [leukocyte-reduced red cells](https://dhp.uz/fhir/core/en/BiologicallyDerivedProduct-example-blood-component-product.html), made from the whole blood unit above.
 
@@ -101,6 +105,7 @@ Requests require a JWT access token - see [Security and authentication](https://
 GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00001
 GET [base]/Flag?patient=Patient/[id]&status=active
 GET [base]/Observation?patient=Patient/[id]
+GET [base]/ServiceRequest?patient=Patient/[id]&code-concept=http://loinc.org%7C1975-2
 GET [base]/Procedure?patient=Patient/[id]
 GET [base]/BiologicallyDerivedProduct?biological-source-event=https://dhp.uz/fhir/core/sid/prd/uz/blood/donation%7C[donation-number]
 GET [base]/BiologicallyDerivedProductDispense?patient=Patient/[id]

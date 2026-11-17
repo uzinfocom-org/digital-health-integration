@@ -11,15 +11,15 @@ Ushbu sahifada qon xizmati donorlik qonining yo'lini - donorni ro'yxatga olishda
 
 ### Umumiy ko'rinish {#overview}
 
-Deyarli har bir bosqichda [UZ Core](https://dhp.uz/fhir/core/uz/artifacts.html) profili o'zgarishsiz qo'llaniladi. Ushbu qo'llanma bitta profil qo'shadi - [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html). U UZ Core Patient da bo'lmagan ro'yxatga olish ma'lumotlari uchun: shaxs donor yoki retsipiyent sifatida ro'yxatga olinganligi, ro'yxatga olish raqami, donor toifasi, donatsiya to'lovi va turi hamda retsipiyent tashxisi. Ushbu bosqichlar ortidagi qog'oz shakllar [8.0 Qon xizmati](forms-volume-08-blood-service.html) bo'limida tavsiflangan.
+Deyarli har bir bosqichda [UZ Core](https://dhp.uz/fhir/core/uz/artifacts.html) profili o'zgarishsiz qo'llaniladi. Ushbu qo'llanma ikkita profil qo'shadi. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) UZ Core Patient da bo'lmagan ro'yxatga olish ma'lumotlari uchun: shaxs donor yoki retsipiyent sifatida ro'yxatga olinganligi, ro'yxatga olish raqami, donor toifasi, donatsiya to'lovi va turi hamda retsipiyent tashxisi. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) donor laboratoriya buyurtmalari va komponentni qayta ishlash so'rovlari uchun. Ushbu bosqichlar ortidagi qog'oz shakllar [8.0 Qon xizmati](forms-volume-08-blood-service.html) bo'limida tavsiflangan.
 
 | Bosqich | Resurs | Profil |
 | :--- | :--- | :--- |
 | [Donor yoki retsipiyentni ro'yxatga olish](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
 | [Ruxsat yoki chetlatish](#eligibility) | Flag | UZ Core Flag (UZ Core ning keyingi relizi) |
-| [Donor qonini tekshirish](#testing) | Observation, DiagnosticReport, Specimen | [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-specimen.html) |
+| [Donor qonini tekshirish](#testing) | ServiceRequest, Observation, DiagnosticReport, Specimen | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-specimen.html) |
 | [Donatsiyani olish](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologically-derived-product.html) |
-| [Komponentlarga ajratish](#processing) | BiologicallyDerivedProduct | [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologically-derived-product.html) |
+| [Komponentlarga ajratish](#processing) | ServiceRequest, BiologicallyDerivedProduct | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Zaxiralarni hisobga olish](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-inventoryitem.html), UZ Core InventoryReport (UZ Core ning keyingi relizi) |
 | [Komponentlarni so'rash va yetkazib berish](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-delivery.html) |
 | [Retsipiyentga transfuziya](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-servicerequest.html), UZ Core BiologicallyDerivedProductDispense (UZ Core ning keyingi relizi), [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-adverse-event.html) |
@@ -50,6 +50,8 @@ Donorning qon topshirishi mumkinligi uning Patient yozuvida Flag bilan qayd etil
 
 Donatsiyadan oldingi har bir tekshiruv natijasi (qon guruhi, rezus-omil, gemoglobin, OIV, B va C gepatitlari, zaxm) - donorning [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html) yozuvi bo'lib, [UZ Core Specimen](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-specimen.html) namunasidan olinadi. [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-diagnostic-report.html) bitta tekshiruv natijalarini birlashtiradi. Ijobiy infeksiya belgisi chetlatish flagiga va allaqachon olingan birliklarni yo'q qilishga olib keladi.
 
+Donor shifokori har bir tekshiruv yoki panel uchun [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) yaratadi va xizmatni `code.concept` da ko'rsatadi. Bir donatsiya so'rovlari `requisition` da umumiy raqamdan foydalanadi; `category` qabul qiluvchi laboratoriyani bildiradi. Natijalar va hisobotlar so'rovlarga `basedOn` orqali havola qiladi.
+
 ### Donatsiyani olish {#collecting}
 
 Qon olish - bu donorning [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html) yozuvi. Natijada butun qon birligi yoki aferez yo'li bilan olingan plazma yoki trombotsitlar uchun [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologically-derived-product.html) paydo bo'ladi.
@@ -71,6 +73,8 @@ Donatsiya raqami ([NamingSystem](https://dhp.uz/fhir/core/uz/NamingSystem-uzb-bl
 ### Komponentlarga ajratish {#processing}
 
 Donatsiyadan ajratilgan har bir komponent (eritrotsitlar, plazma, krioprepitsipitat va boshqalar) alohida BiologicallyDerivedProduct hisoblanadi. Uning `parent` elementi u olingan mahsulotga havola qiladi, donatsiya raqami esa asl donatsiyadan saqlanadi. Aferez donatsiyalarida ota mahsulot yo'q.
+
+Komponentni ikkilamchi qayta ishlash (yuvish, nurlantirish, muzlatish yoki eritish) [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) orqali so'raladi, uning `focus` elementi shu komponentga havola qiladi.
 
 Misol: [leykotsitlari kamaytirilgan eritrotsitlar](https://dhp.uz/fhir/core/uz/BiologicallyDerivedProduct-example-blood-component-product.html), yuqoridagi butun qon birligidan olingan.
 
@@ -103,6 +107,7 @@ So'rovlar JWT kirish tokenini talab qiladi - qarang: [Xavfsizlik va autentifikat
 GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00001
 GET [base]/Flag?patient=Patient/[id]&status=active
 GET [base]/Observation?patient=Patient/[id]
+GET [base]/ServiceRequest?patient=Patient/[id]&code-concept=http://loinc.org%7C1975-2
 GET [base]/Procedure?patient=Patient/[id]
 GET [base]/BiologicallyDerivedProduct?biological-source-event=https://dhp.uz/fhir/core/sid/prd/uz/blood/donation%7C[donation-number]
 GET [base]/BiologicallyDerivedProductDispense?patient=Patient/[id]

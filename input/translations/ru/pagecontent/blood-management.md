@@ -11,15 +11,15 @@
 
 ### Обзор {#overview}
 
-Почти на каждом шаге профиль [UZ Core](https://dhp.uz/fhir/core/ru/artifacts.html) используется без изменений. Это руководство добавляет один профиль, [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html), для регистрационных данных, которых нет в UZ Core Patient: зарегистрирован ли человек как донор или как реципиент, регистрационный номер, категория донора, оплата и вид донации и диагноз реципиента. Бумажные формы, стоящие за этими шагами, описаны в разделе [8.0 Служба крови](forms-volume-08-blood-service.html).
+Почти на каждом шаге профиль [UZ Core](https://dhp.uz/fhir/core/ru/artifacts.html) используется без изменений. Это руководство добавляет два профиля. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) фиксирует регистрационные данные, которых нет в UZ Core Patient: зарегистрирован ли человек как донор или как реципиент, регистрационный номер, категория донора, оплата и вид донации и диагноз реципиента. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) оформляет лабораторные назначения донору и запросы на переработку компонента. Бумажные формы, стоящие за этими шагами, описаны в разделе [8.0 Служба крови](forms-volume-08-blood-service.html).
 
 | Шаг | Ресурс | Профиль |
 | :--- | :--- | :--- |
 | [Регистрация донора или реципиента](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
 | [Допуск или отвод](#eligibility) | Flag | UZ Core Flag (следующий выпуск UZ Core) |
-| [Обследование крови донора](#testing) | Observation, DiagnosticReport, Specimen | [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-specimen.html) |
+| [Обследование крови донора](#testing) | ServiceRequest, Observation, DiagnosticReport, Specimen | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-specimen.html) |
 | [Забор донации](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
-| [Переработка на компоненты](#processing) | BiologicallyDerivedProduct | [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
+| [Переработка на компоненты](#processing) | ServiceRequest, BiologicallyDerivedProduct | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Учёт запасов](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-inventoryitem.html), UZ Core InventoryReport (следующий выпуск UZ Core) |
 | [Запрос и поставка компонентов](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-delivery.html) |
 | [Трансфузия реципиенту](#transfusing) | ServiceRequest, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html), UZ Core BiologicallyDerivedProductDispense (следующий выпуск UZ Core), [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html) |
@@ -50,6 +50,8 @@
 
 Каждый результат обследования перед донацией (группа крови, резус-фактор, гемоглобин, ВИЧ, гепатиты B и C, сифилис) - это [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html) донора, выполненное по образцу [UZ Core Specimen](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-specimen.html). [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-diagnostic-report.html) объединяет результаты одного обследования. Положительный маркер инфекции ведёт к флагу отвода и утилизации уже заготовленных единиц.
 
+Врач службы крови создаёт [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) для каждого исследования или панели, указывая услугу в `code.concept`. Назначения одной донации содержат общий номер в `requisition`; `category` определяет принимающую лабораторию. Результаты и отчёты ссылаются на назначения через `basedOn`.
+
 ### Забор донации {#collecting}
 
 Забор - это [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html) донора. В результате появляется [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) для единицы цельной крови либо для плазмы или тромбоцитов, полученных аферезом.
@@ -71,6 +73,8 @@
 ### Переработка на компоненты {#processing}
 
 Каждый компонент, выделенный из донации (эритроциты, плазма, криопреципитат и др.), - отдельный BiologicallyDerivedProduct. Его `parent` ссылается на продукт, из которого он получен, а номер донации сохраняется от исходной донации. У донаций афереза родителя нет.
+
+Вторичная переработка компонента (отмывание, облучение, замораживание или размораживание) запрашивается через [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), у которого `focus` - этот компонент.
 
 Пример: [эритроциты, обеднённые лейкоцитами](https://dhp.uz/fhir/core/ru/BiologicallyDerivedProduct-example-blood-component-product.html), полученные из единицы цельной крови выше.
 
@@ -103,6 +107,7 @@
 GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00001
 GET [base]/Flag?patient=Patient/[id]&status=active
 GET [base]/Observation?patient=Patient/[id]
+GET [base]/ServiceRequest?patient=Patient/[id]&code-concept=http://loinc.org%7C1975-2
 GET [base]/Procedure?patient=Patient/[id]
 GET [base]/BiologicallyDerivedProduct?biological-source-event=https://dhp.uz/fhir/core/sid/prd/uz/blood/donation%7C[donation-number]
 GET [base]/BiologicallyDerivedProductDispense?patient=Patient/[id]

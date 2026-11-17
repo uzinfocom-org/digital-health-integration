@@ -9,6 +9,8 @@ class "Registration\n<size:10>BloodServiceRegistrationObservation</size>" as Reg
 class "Eligibility or deferral\n<size:10>UZCoreFlag</size>" as Flag
 class "Test result\n<size:10>UZCoreObservation</size>" as Test [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html{Open UZCoreObservation}]]
 class "Test report\n<size:10>UZCoreDiagnosticReport</size>" as Report [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html{Open UZCoreDiagnosticReport}]]
+class "Laboratory order\n<size:10>BloodServiceRequest</size>" as LabOrder [[StructureDefinition-blood-servicerequest.html{Open BloodServiceRequest}]] #E8F0FE
+class "Processing request\n<size:10>BloodServiceRequest</size>" as ProcReq [[StructureDefinition-blood-servicerequest.html{Open BloodServiceRequest}]] #E8F0FE
 class "Collection\n<size:10>UZCoreProcedure</size>" as Coll [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html{Open UZCoreProcedure}]]
 class "Donated unit\n<size:10>UZCoreBiologicallyDerivedProduct</size>" as Unit [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html{Open UZCoreBiologicallyDerivedProduct}]]
 class "Component\n<size:10>UZCoreBiologicallyDerivedProduct</size>" as Comp [[https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html{Open UZCoreBiologicallyDerivedProduct}]]
@@ -24,9 +26,12 @@ Reg "0..*" --> "0..1" Recipient : « subject »
 Flag "0..*" --> "1" Donor : « subject »
 Test "0..*" --> "0..1" Donor : « subject »
 Report "0..*" --> "0..*" Test : « result »
+LabOrder "0..*" --> "1" Donor : « subject »
+Report "0..*" --> "0..*" LabOrder : « basedOn »
 Coll "0..*" --> "1" Donor : « subject »
 Unit "0..*" --> "0..1" Donor : « collection.source »
 Comp "0..*" --> "0..*" Unit : « parent »
+ProcReq "0..*" --> "1" Comp : « focus »
 Order "0..*" --> "1" Recipient : « subject »
 SReq "0..*" --> "0..*" Order : « basedOn »
 SDel "0..*" --> "0..*" SReq : « basedOn »

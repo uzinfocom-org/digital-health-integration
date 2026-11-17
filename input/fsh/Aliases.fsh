@@ -125,6 +125,7 @@ Alias: $local-observation-code = https://terminology.dhp.uz/fhir/integrations/Co
 Alias: $education-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/education-cs
 Alias: $occupation-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/position-and-profession-cs
 Alias: $benefit-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/benefits-cs
+Alias: $lab-categories-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/lab-categories-cs
 Alias: $citizenship = https://terminology.dhp.uz/fhir/core/CodeSystem/iso3166-two-letter-cs
 Alias: $practioner-role = http://terminology.hl7.org/CodeSystem/practitioner-role
 Alias: $social-status = https://terminology.dhp.uz/fhir/core/CodeSystem/social-status-cs
@@ -293,3 +294,6 @@ Alias: $form-044-observation-code-cs = https://terminology.dhp.uz/fhir/integrati
 Alias: $blood-group-vs = https://terminology.dhp.uz/fhir/core/ValueSet/blood-group-vs
 Alias: $blood-registration-number = https://dhp.uz/fhir/core/sid/doc/uz/blood-registration
 Alias: $blood-rh-vs = https://terminology.dhp.uz/fhir/core/ValueSet/blood-rh-vs
+
+Alias: $blood-service-request-number = https://dhp.uz/fhir/core/sid/doc/uz/blood-service-request
+Alias: $blood-donation-number = https://dhp.uz/fhir/core/sid/prd/uz/blood/donation

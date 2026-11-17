@@ -1720,7 +1720,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T10:05:00+05:00"
 * performer = Reference(urn:uuid:09600008-1111-2222-3333-444444444444)
-* valueCodeableConcept = $sct#168090003 "Amniotic fluid - clear"
+* valueCodeableConcept = $sct#168090003 "Amniotic fluid clear"
 
 
 // Full dilation is 10 cm at the time it was reached.

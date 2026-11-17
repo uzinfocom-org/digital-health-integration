@@ -299,3 +299,21 @@ Usage: #definition
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/blood-registration"
 * uniqueId[=].preferred = true
+
+Instance: blood-service-request-number-system
+InstanceOf: NamingSystem
+Description: "Identifier system for blood service request numbers in Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/blood-service-request-number-system"
+* name = "UzbekistanBloodServiceRequestNumber"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* date = "2026-11-16"
+* description = "Number assigned by a blood service to an individual laboratory or blood component processing request."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in ServiceRequest.identifier[orderNumber]. The value must be unique within the issuing organization, identified in Identifier.assigner."
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/blood-service-request"
+* uniqueId[=].preferred = true

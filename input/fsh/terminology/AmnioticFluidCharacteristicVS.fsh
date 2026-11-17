@@ -6,7 +6,7 @@ Description: "Observation.valueCodeableConcept for an amniotic fluid appearance 
 * ^status = #draft
 * ^experimental = true
 
-* $sct#168090003 "Amniotic fluid - clear"
+* $sct#168090003 "Amniotic fluid clear"
 * include codes from system amniotic-fluid-appearance-cs
 
 // Supplements providing Russian and Uzbek displays.

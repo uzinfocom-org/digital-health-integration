@@ -851,7 +851,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09700100-1111-2222-3333-444444444444)
 * performer = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-06-01T09:00:00+05:00"
-* valueCodeableConcept = $sct#168090003 "Amniotic fluid - clear"
+* valueCodeableConcept = $sct#168090003 "Amniotic fluid clear"
 
 
 // Stable fixture identifier; production uses the stable source record/fact identity.
