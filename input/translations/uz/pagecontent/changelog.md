@@ -22,6 +22,8 @@ Yordamchi terminologiya: ro'yxatga olish turlari ([ValueSet](ValueSet-blood-serv
 
 [011-shakl](StructureDefinition-form-011-hemodialysis-composition.html), [066-shakl](StructureDefinition-form-066-hospital-discharge-composition.html), [066-1-shakl](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) va [130-shakl](StructureDefinition-form-130-laboratory-test-results-composition.html) Composition'lari endi `status` ni `final` ga qotirmaydi, shuning uchun hujjat [hayot sikli](document-statuses.html) bo'yicha `preliminary`, `amended` va `entered-in-error` holatlaridan o'ta oladi.
 
+Har bir tildagi resursning JSON nusxasi endi boshqa tillarni paketdagidek `translation` kengaytmalarida saqlaydi; avval ingliz, rus va o'zbek sahifalaridagi JSON'da ular olib tashlangan edi.
+
 ### Versiya 0.12.1
 
 #### O'zgartirildi
