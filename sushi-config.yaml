@@ -78,6 +78,8 @@ parameters:
 
   produce-jekyll-data: true # resources in _data feed search-index.json for search.html
 
+  language-translations-mode: preserve # per-language JSON copies keep the other languages as translation extensions
+
   # multi-lingual support
   i18n-default-lang: en
   i18n-lang:
