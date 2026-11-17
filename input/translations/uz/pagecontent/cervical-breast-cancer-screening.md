@@ -22,7 +22,7 @@ Kodlanadigan qiymatlar ekvivalent tushuncha mavjud bo'lgan hamma joyda SNOMED CT
 
 - Observation, DiagnosticReport, ServiceRequest, Condition, Consent va Specimen da, shuningdek so'rovnoma butunlay bitta dasturga tegishli bo'lsa, Questionnaire va QuestionnaireResponse da ko'rsatiladi.
 - Patient, Practitioner va PractitionerRole da ko'rsatilmaydi: ular barcha dasturlar uchun umumiy.
-- HPV [Ayolni tibbiy ko'rikdan o'tkazish](Questionnaire-screening-woman-exam.html) so'rovnomasi va uning javoblari ikkala HPV dasturiga tegishli, shuning uchun ikkala kodni ham saqlaydi.
+- HPV [Ayolni tibbiy ko'rikdan o'tkazish](forms.html?form=screening-woman-exam) so'rovnomasi va uning javoblari ikkala HPV dasturiga tegishli, shuning uchun ikkala kodni ham saqlaydi.
 - Hech bir dasturga biriktirib bo'lmaydigan HPV resursi `breast-cervical-unspecified` qiymatli bitta identifikatorga ega. Bu ICD-10 kodi hech bir dastur ro'yxatiga kirmaydigan yoki ikkalasiga kiradigan Condition va RSNPMCOiR yoki RSNPMCZMiR filialiga yo'llanma. `breast-cervical-unspecified` DMED dasturini bildirmaydi.
 
 **Manba tizimi.** `meta.source` resursni qaysi tizim yaratganini bildiradi: `https://dhp.uz/fhir/source/screening` (ushbu bachadon bo'yni va sut bezi saratoni skriningi axborot tizimi) yoki `https://dhp.uz/fhir/source/dmed` (DMED). Majburiy maydon, [ScreeningObservation](StructureDefinition-screening-observation.html), [ScreeningServiceRequest](StructureDefinition-screening-service-request.html), [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [ScreeningDocumentReference](StructureDefinition-screening-document-reference.html) profillarida invariant orqali tekshiriladi. Manba tizimini `https://dhp.uz/fhir/core/sid/doc/uz/screening` tizimidan olingan identifikator mavjudligiga qarab aniqlamang - bu identifikator tizimi resursni qaysi tizim yaratganini bildirmaydi.
@@ -36,9 +36,9 @@ Dasturning aniq identifikatori [Screening Program Types](https://dhp.uz/fhir/cor
 | Dastur | `identifier.value` | Dasturni amalga oshiruvchi tizim | So'rovnoma |
 | :--- | :--- | :--- | :--- |
 | DMED sut bezi so'rovnomasi dasturi | `mserv-0007-00007` | DMED | [Ko‘krak bezi so‘rovnomasi](Questionnaire-BreastCancerScreeningQuestionnaire.html) |
-| HPV sut bezi skriningi dasturi | `268547008` | HPV tizimi | [screening-breast-risk](Questionnaire-screening-breast-risk.html) va tegishli keyingi bosqichlar |
+| HPV sut bezi skriningi dasturi | `268547008` | HPV tizimi | [screening-breast-risk](forms.html?form=screening-breast-risk) va tegishli keyingi bosqichlar |
 | DMED bachadon bo'yni so'rovnomasi dasturi | `mserv-0007-00009` | DMED | [Bachadon bo‘yni so‘rovnomasi](Questionnaire-CervicalCancerScreeningQuestionnaire.html) |
-| HPV bachadon bo'yni skriningi dasturi | `171149006` | HPV tizimi | [screening-cervical-risk](Questionnaire-screening-cervical-risk.html) va tegishli keyingi bosqichlar |
+| HPV bachadon bo'yni skriningi dasturi | `171149006` | HPV tizimi | [screening-cervical-risk](forms.html?form=screening-cervical-risk) va tegishli keyingi bosqichlar |
 
 <a id="screening-plans"></a>
 ### Skrining rejalari va takliflar
@@ -362,9 +362,9 @@ Uchta so'rovnoma nashr etiladi. Javoblar QuestionnaireResponse ko'rinishida qayt
 
 | So'rovnoma | Kanonik havola | Javob misoli |
 | :--- | :--- | :--- |
-| [Sut bezi saratoni xavfi](Questionnaire-screening-breast-risk.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-breast-risk` | [ScreeningBreastRiskResponseExample](QuestionnaireResponse-screening-breast-risk-response-example.html) |
-| [Bachadon bo'yni saratoni xavfi](Questionnaire-screening-cervical-risk.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk` | [ScreeningCervicalRiskResponseExample](QuestionnaireResponse-screening-cervical-risk-response-example.html) |
-| [Ayolning tibbiy ko'rigi](Questionnaire-screening-woman-exam.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam` | [ScreeningWomanExamResponse128](QuestionnaireResponse-screening-woman-exam-response-128.html) |
+| [Sut bezi saratoni xavfi](forms.html?form=screening-breast-risk) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-breast-risk` | [ScreeningBreastRiskResponseExample](QuestionnaireResponse-screening-breast-risk-response-example.html) |
+| [Bachadon bo'yni saratoni xavfi](forms.html?form=screening-cervical-risk) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk` | [ScreeningCervicalRiskResponseExample](QuestionnaireResponse-screening-cervical-risk-response-example.html) |
+| [Ayolning tibbiy ko'rigi](forms.html?form=screening-woman-exam) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam` | [ScreeningWomanExamResponse128](QuestionnaireResponse-screening-woman-exam-response-128.html) |
 
 ### Skriningning tarixiy yakuniy hujjatlari
 

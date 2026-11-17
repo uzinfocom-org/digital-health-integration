@@ -150,7 +150,7 @@ Questionnaire определяет вопросы и правила их усл�
 
 Профиль: [HepatitisQuestionnaire](StructureDefinition-hepatitis-questionnaire.html)
 
-Пример: [hepatitis-questionnaire](Questionnaire-hepatitis-questionnaire.html)
+Пример: [hepatitis-questionnaire](forms.html?form=hepatitis-questionnaire)
 
 | Информация для записи | Набор значений | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
@@ -176,7 +176,7 @@ QuestionnaireResponse связывает заполненную анкету с 
 | :--- | :--- | :--- | :--- |
 | Идентификатор | - | `6f9b9d8e-3b7d-4d87-8f6e-123456789abc` | `identifier.value` |
 | Статус ответов | [QuestionnaireResponseStatus](https://hl7.org/fhir/R5/valueset-questionnaire-answers-status.html) | `completed` | `status` |
-| Анкета | - | [hepatitis-questionnaire](Questionnaire-hepatitis-questionnaire.html) | `questionnaire` |
+| Анкета | - | [hepatitis-questionnaire](forms.html?form=hepatitis-questionnaire) | `questionnaire` |
 | Пациент | - | [hepatitis-patient-example](Patient-hepatitis-patient-example.html) | `subject` |
 | Автор | - | [example-hepatologist-role](PractitionerRole-example-hepatologist-role.html) | `author` |
 | Время заполнения | - | `2026-09-18T10:15:00+05:00` | `authored` |

@@ -22,7 +22,7 @@ Coded values use SNOMED CT or LOINC wherever an equivalent concept exists. Local
 
 - Add it to Observation, DiagnosticReport, ServiceRequest, Condition, Consent and Specimen, and to a Questionnaire and its QuestionnaireResponse when the whole questionnaire belongs to one program.
 - Leave it off Patient, Practitioner and PractitionerRole: they are shared across programs.
-- The HPV [Woman medical exam](Questionnaire-screening-woman-exam.html) questionnaire and its responses belong to both HPV programs, so they carry both codes.
+- The HPV [Woman medical exam](forms.html?form=screening-woman-exam) questionnaire and its responses belong to both HPV programs, so they carry both codes.
 - An HPV resource that cannot be attributed to either program carries one identifier with the value `breast-cervical-unspecified`. This applies to a Condition whose ICD-10 code is on neither program's list, or on both, and to a referral to a branch of the national oncology or maternal and child health centre. `breast-cervical-unspecified` does not stand for a DMED program.
 
 **Source system.** `meta.source` identifies which system created a resource: `https://dhp.uz/fhir/source/screening` (this Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System) or `https://dhp.uz/fhir/source/dmed` (DMED). Required and enforced by invariant on [ScreeningObservation](StructureDefinition-screening-observation.html), [ScreeningServiceRequest](StructureDefinition-screening-service-request.html), [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [ScreeningDocumentReference](StructureDefinition-screening-document-reference.html) and [ScreeningComposition](StructureDefinition-screening-composition.html). Do not infer the source system from the presence of an identifier from `https://dhp.uz/fhir/core/sid/doc/uz/screening` - that identifier system does not indicate which system produced a resource.
@@ -36,9 +36,9 @@ Select the exact program identifier from [Screening Program Types](https://dhp.u
 | Program | `identifier.value` | Implementing system | Questionnaire |
 | :--- | :--- | :--- | :--- |
 | DMED breast questionnaire program | `mserv-0007-00007` | DMED | [Breast questionnaire](Questionnaire-BreastCancerScreeningQuestionnaire.html) |
-| HPV breast screening program | `268547008` | HPV screening system | [screening-breast-risk](Questionnaire-screening-breast-risk.html), followed by applicable screening activities |
+| HPV breast screening program | `268547008` | HPV screening system | [screening-breast-risk](forms.html?form=screening-breast-risk), followed by applicable screening activities |
 | DMED cervical questionnaire program | `mserv-0007-00009` | DMED | [Cervical questionnaire](Questionnaire-CervicalCancerScreeningQuestionnaire.html) |
-| HPV cervical screening program | `171149006` | HPV screening system | [screening-cervical-risk](Questionnaire-screening-cervical-risk.html), followed by applicable screening activities |
+| HPV cervical screening program | `171149006` | HPV screening system | [screening-cervical-risk](forms.html?form=screening-cervical-risk), followed by applicable screening activities |
 
 <a id="screening-plans"></a>
 ### Screening plans and invitations
@@ -362,9 +362,9 @@ Three questionnaires are published. Answers come back as a QuestionnaireResponse
 
 | Questionnaire | Canonical | Example response |
 | :--- | :--- | :--- |
-| [Breast risk](Questionnaire-screening-breast-risk.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-breast-risk` | [ScreeningBreastRiskResponseExample](QuestionnaireResponse-screening-breast-risk-response-example.html) |
-| [Cervical risk](Questionnaire-screening-cervical-risk.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk` | [ScreeningCervicalRiskResponseExample](QuestionnaireResponse-screening-cervical-risk-response-example.html) |
-| [Woman medical exam](Questionnaire-screening-woman-exam.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam` | [ScreeningWomanExamResponse128](QuestionnaireResponse-screening-woman-exam-response-128.html) |
+| [Breast risk](forms.html?form=screening-breast-risk) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-breast-risk` | [ScreeningBreastRiskResponseExample](QuestionnaireResponse-screening-breast-risk-response-example.html) |
+| [Cervical risk](forms.html?form=screening-cervical-risk) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk` | [ScreeningCervicalRiskResponseExample](QuestionnaireResponse-screening-cervical-risk-response-example.html) |
+| [Woman medical exam](forms.html?form=screening-woman-exam) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam` | [ScreeningWomanExamResponse128](QuestionnaireResponse-screening-woman-exam-response-128.html) |
 
 ### Historical screening summary documents
 

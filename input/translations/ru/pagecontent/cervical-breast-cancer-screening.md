@@ -22,7 +22,7 @@
 
 - Указывается в Observation, DiagnosticReport, ServiceRequest, Condition, Consent и Specimen, а также в Questionnaire и QuestionnaireResponse, если опросник целиком относится к одной программе.
 - Не указывается в Patient, Practitioner и PractitionerRole: они общие для всех программ.
-- Опросник ВПЧ [Осмотр женщины](Questionnaire-screening-woman-exam.html) и ответы на него относятся к обеим программам ВПЧ, поэтому содержат оба кода.
+- Опросник ВПЧ [Осмотр женщины](forms.html?form=screening-woman-exam) и ответы на него относятся к обеим программам ВПЧ, поэтому содержат оба кода.
 - Ресурс ВПЧ, который нельзя отнести ни к одной из программ, содержит один идентификатор со значением `breast-cervical-unspecified`. Это Condition, чей код МКБ-10 не входит ни в один из списков программ или входит в оба, и направление в филиал РСНПМЦОиР или РСНПМЦЗМиР. `breast-cervical-unspecified` не обозначает программу DMED.
 
 **Система-источник.** `meta.source` указывает, какая система создала ресурс: `https://dhp.uz/fhir/source/screening` (данная информационная система скрининга рака шейки матки и молочной железы) либо `https://dhp.uz/fhir/source/dmed` (ДМЕД). Обязательное поле, проверяется инвариантом в профилях [ScreeningObservation](StructureDefinition-screening-observation.html), [ScreeningServiceRequest](StructureDefinition-screening-service-request.html), [ScreeningDiagnosticReport](StructureDefinition-screening-diagnostic-report.html), [ScreeningDocumentReference](StructureDefinition-screening-document-reference.html). Не пытайтесь определить систему-источник по наличию идентификатора из системы `https://dhp.uz/fhir/core/sid/doc/uz/screening` - эта система идентификаторов не указывает, какая система создала ресурс.
@@ -36,9 +36,9 @@
 | Программа | `identifier.value` | Система, реализующая программу | Опросник |
 | :--- | :--- | :--- | :--- |
 | Программа опросника РМЖ в DMED | `mserv-0007-00007` | DMED | [Опросник РМЖ](Questionnaire-BreastCancerScreeningQuestionnaire.html) |
-| Программа скрининга РМЖ в ВПЧ | `268547008` | Система ВПЧ | [screening-breast-risk](Questionnaire-screening-breast-risk.html) и последующие применимые этапы |
+| Программа скрининга РМЖ в ВПЧ | `268547008` | Система ВПЧ | [screening-breast-risk](forms.html?form=screening-breast-risk) и последующие применимые этапы |
 | Программа опросника РШМ в DMED | `mserv-0007-00009` | DMED | [Опросник РШМ](Questionnaire-CervicalCancerScreeningQuestionnaire.html) |
-| Программа скрининга РШМ в ВПЧ | `171149006` | Система ВПЧ | [screening-cervical-risk](Questionnaire-screening-cervical-risk.html) и последующие применимые этапы |
+| Программа скрининга РШМ в ВПЧ | `171149006` | Система ВПЧ | [screening-cervical-risk](forms.html?form=screening-cervical-risk) и последующие применимые этапы |
 
 <a id="screening-plans"></a>
 ### Планы скрининга и приглашения
@@ -376,9 +376,9 @@ GET [base]/ServiceRequest?subject=Patient/{id}&intent=plan&status=draft,active&c
 
 | Опросник | Каноническая ссылка | Пример ответа |
 | :--- | :--- | :--- |
-| [Риск рака молочной железы](Questionnaire-screening-breast-risk.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-breast-risk` | [ScreeningBreastRiskResponseExample](QuestionnaireResponse-screening-breast-risk-response-example.html) |
-| [Риск рака шейки матки](Questionnaire-screening-cervical-risk.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk` | [ScreeningCervicalRiskResponseExample](QuestionnaireResponse-screening-cervical-risk-response-example.html) |
-| [Медицинский осмотр женщины](Questionnaire-screening-woman-exam.html) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam` | [ScreeningWomanExamResponse128](QuestionnaireResponse-screening-woman-exam-response-128.html) |
+| [Риск рака молочной железы](forms.html?form=screening-breast-risk) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-breast-risk` | [ScreeningBreastRiskResponseExample](QuestionnaireResponse-screening-breast-risk-response-example.html) |
+| [Риск рака шейки матки](forms.html?form=screening-cervical-risk) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-cervical-risk` | [ScreeningCervicalRiskResponseExample](QuestionnaireResponse-screening-cervical-risk-response-example.html) |
+| [Медицинский осмотр женщины](forms.html?form=screening-woman-exam) | `https://dhp.uz/fhir/integrations/Questionnaire/screening-woman-exam` | [ScreeningWomanExamResponse128](QuestionnaireResponse-screening-woman-exam-response-128.html) |
 
 ### Исторические сводные документы скрининга
 
