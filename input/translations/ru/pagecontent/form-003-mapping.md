@@ -27,6 +27,24 @@
 
 ---
 
+### Сопоставление значений DMED
+
+Значения титульного листа Формы 003 DMED передаёт своими токенами. Эти ConceptMap задают код, который нужно передать для каждого токена; группа крови и резус-фактор используют те же токены, что и в Форме 111, и переиспользуют её карты.
+
+| Поле DMED | ConceptMap | Куда |
+|----|----|----|
+| `blood_group` | [dmed-form-111-blood-group-cm](ConceptMap-dmed-form-111-blood-group-cm.html) | значение Observation группы крови (LOINC `883-9`) |
+| `rh_factor` | [dmed-form-111-rhesus-factor-cm](ConceptMap-dmed-form-111-rhesus-factor-cm.html) | значение Observation резус-фактора (LOINC `10331-7`) |
+| `transporting_method` | [dmed-form-003-transporting-method-cm](ConceptMap-dmed-form-003-transporting-method-cm.html) | значение Observation способа транспортировки пациента |
+| `readmission_same_reason` | [dmed-form-003-readmission-same-reason-cm](ConceptMap-dmed-form-003-readmission-same-reason-cm.html) | Encounter.admission.reAdmission |
+| `result_treatment` | [dmed-form-003-result-treatment-discharge-disposition-cm](ConceptMap-dmed-form-003-result-treatment-discharge-disposition-cm.html) | Encounter.admission.dischargeDisposition |
+| `result_treatment` | [dmed-form-003-result-treatment-subject-status-cm](ConceptMap-dmed-form-003-result-treatment-subject-status-cm.html) | Encounter.subjectStatus |
+| `result_treatment` | [dmed-form-003-result-treatment-death-cm](ConceptMap-dmed-form-003-result-treatment-death-cm.html) | значение Observation контекста смерти: локальный код или SNOMED CT материнской смерти до или после родов |
+| `working_capacity` | [dmed-form-003-working-capacity-cm](ConceptMap-dmed-form-003-working-capacity-cm.html) | значение Observation состояния трудоспособности |
+| `analyses[].title` | [dmed-form-003-analyses-cm](ConceptMap-dmed-form-003-analyses-cm.html) | код Observation или DiagnosticReport обследования при поступлении |
+
+---
+
 ### Сопоставление полей
 
 ### UZ-003 Медицинская карта стационарного больного - сопоставление с FHIR
@@ -281,7 +299,7 @@
 |----|----|------------|------|---------|
 | Davolash natijasi (chiqarish) | Результат лечения (выписка) | Encounter.admission.dischargeDisposition | [Encounter Discharge Disposition](https://dhp.uz/fhir/core/en/ValueSet-encounter-discharge-disposition-vs.html): discharged `mserv-0004-00004` "Discharged", transferred `other-hcf` "Other healthcare facility", died `exp` "Expired" | `mserv-0004-00004` "Discharged" |
 | Davolash natijasi (klinik holat) | Результат лечения (клинический исход) | Encounter.subjectStatus | [Patient status when receiving care inpatient](https://dhp.uz/fhir/core/en/CodeSystem-encounter-local-subject-status-cs.html) | `loc-cs-002` "Improved" |
-| Vafot etish holati | Контекст смерти | Observation.valueCodeableConcept | `code` [Form 003 Observation Code](CodeSystem-form-003-observation-code-cs.html) `death-context` "Death context"<br>`value` [Death Context](ValueSet-death-context-vs.html) | - |
+| Vafot etish holati | Контекст смерти | Observation.valueCodeableConcept | `code` [Form 003 Observation Code](CodeSystem-form-003-observation-code-cs.html) `death-context` "Death context"<br>`value` [Death Context](ValueSet-death-context-vs.html), в том числе SNOMED CT `31868001` / `5866003` для материнской смерти до или после родов. Смерть фиксируется только в документе: Patient не обновляется и не содержит `deceased[x]` | - |
 | Boshqa muassasaga o'tkazilgan | Переведён в другое учреждение | Encounter.admission.destination → Organization | - | - |
 | Ish qobiliyatining holati | Состояние трудоспособности | Observation.valueCodeableConcept | [Work Capacity Status](CodeSystem-work-capacity-status-cs.html) | `chr-0036-0001` "Work capacity fully restored" |
 | Ekspertizaga yuborish uchun xulosa | Заключение для направления на экспертизу | section[expertiseReferralConclusion].text | [Form 003 Composition Section Codes](CodeSystem-form-003-section-cs.html) `expertise-referral-conclusion` "Conclusion for referral to medical expertise" | narrative |

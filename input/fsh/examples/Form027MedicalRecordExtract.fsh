@@ -391,9 +391,13 @@ Usage: #inline
 * status = #active
 * intent = #order
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
 * authoredOn = "2026-02-10"
+* requester = Reference(urn:uuid:02700022-1111-2222-3333-444444444444)
 * code = $sct#32485007 "Hospital admission"
-* reason.reference = Reference(urn:uuid:02700008-1111-2222-3333-444444444444)
+* reason[0].concept = hospitalization-purpose-cs#treatment "Treatment"
+* reason[+].reference = Reference(urn:uuid:02700008-1111-2222-3333-444444444444)
+* note.text = "Plevral suyuqlik nazorati uchun pulmonologiya bo'limiga."
 
 
 

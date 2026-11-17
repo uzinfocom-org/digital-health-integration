@@ -25,6 +25,18 @@ For a complete reference instance, see the [Form 027 medical record extract exam
 
 ---
 
+### DMED value mappings
+
+DMED sends some Form 027 values as its own tokens. These ConceptMaps give the code to send for each token.
+
+| DMED field | ConceptMap | Target |
+|----|----|----|
+| `disease_codes` keys, `type` of a disease code (`main`, `additional`, `critical`, `background`, `competing`) | [dmed-form-027-diagnosis-type-cm](ConceptMap-dmed-form-027-diagnosis-type-cm.html) | Condition.category and the code of the matching diagnosis sub-section, from [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) |
+| `hospitalization_type` (`ambulatory`, `hospitalTreatment`) | [dmed-form-027-hospitalization-type-cm](ConceptMap-dmed-form-027-hospitalization-type-cm.html) | Encounter.class |
+| `purpose[]` of the hospitalization referral; `other_purpose` when `other_purpose_checked` is set | [dmed-form-027-hospitalization-purpose-cm](ConceptMap-dmed-form-027-hospitalization-purpose-cm.html) | ServiceRequest.reason.concept, from [Hospitalization Purpose](ValueSet-hospitalization-purpose-vs.html) |
+
+---
+
 ### Field Mapping
 
 ### Form 027 Medical Record Extract - FHIR Mapping
@@ -58,8 +70,9 @@ Section code: LOINC `LP74442-2` "Admission Information".
 |----|----|------------|------|---------------|
 | Muassasa kodi | Код учреждения | [Organization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-organization.html).identifier[taxId] | `system` `https://dhp.uz/fhir/core/sid/org/uz/soliq`<br>`type` `TAX` | 310271027 |
 | Muassasa nomi | Наименование учреждения | Organization.name | - | Chilonzor tuman poliklinikasi |
-| Bemorning ro'yxatdan o'tish raqami | Регистрационный номер пациента | Encounter.identifier | `system` `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number` | MRN-027-2026-0124 |
-| Bemor turi | Тип пациента | Encounter.class | v3-ActCode | `AMB` "ambulatory" |
+| Bemorning ro'yxatdan o'tish raqami | Регистрационный номер пациента | Patient.identifier[healthCardId], the same value as Med ID raqami | `system` `https://dhp.uz/fhir/core/sid/pid/uz/hc`<br>`type` `HC` | HC-2026-00027 |
+| Tibbiy karta raqami | Номер медицинской карты | Encounter.identifier | `system` `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number` | MRN-027-2026-0124 |
+| Bemor turi | Тип пациента | Encounter.class | v3-ActCode; DMED `hospitalization_type` per [ConceptMap](ConceptMap-dmed-form-027-hospitalization-type-cm.html) | `AMB` "ambulatory" |
 | Murojaat sanasi | Дата подачи заявления | Encounter.actualPeriod.start | - | 2026-02-08T09:00:00+05:00 |
 | Chiqarilgan sana | Дата выписки | Encounter.actualPeriod.end | - | 2026-02-10T09:00:00+05:00 |
 
@@ -97,14 +110,16 @@ Section code: LOINC `56799-0` "Address".
 
 Section code: LOINC `42349-1` "Reason for referral (narrative)".
 
-Each diagnosis is tagged with `Condition.category` from the [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) code system and placed in a matching per-role sub-section of the Composition: Asosiy tashxis - `main`, Asorati - `complication`, Yo'ldosh kasallik - `concomitant`.
+Each diagnosis is tagged with `Condition.category` from the [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) code system and placed in a matching per-role sub-section of the Composition: Asosiy tashxis - `main`, Asorati - `complication`, Yo'ldosh kasallik - `concomitant`. The paper form prints these three; DMED also records background and competing diseases, which go in the `background` and `competing` sub-sections. The DMED diagnosis type maps to the role per [this ConceptMap](ConceptMap-dmed-form-027-diagnosis-type-cm.html).
 
 | UZ | RU | FHIR Path | Code | Example Value |
 |----|----|------------|------|---------------|
 | Yo'llagan muassasa | Направившее учреждение | Encounter.admission.origin | Organization | Yakkasaroy tuman oilaviy poliklinikasi |
 | Asosiy tashxis | Основной диагноз | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code | ICD-10 | `J18.9` "Pneumonia, unspecified" |
 | Asorati | Осложнение | Condition.code; category | ICD-10; [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `complication` | `J90` "Pleural effusion, not elsewhere classified" |
-| Yo'ldosh kasallik | Сопутствующее заболевание | Condition.code | ICD-10 | `E66.9` "Obesity, unspecified" |
+| Yo'ldosh kasallik | Сопутствующее заболевание | Condition.code; category | ICD-10; [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `concomitant` | `E66.9` "Obesity, unspecified" |
+| Fon tashxis | Фоновое заболевание | Condition.code; category | ICD-10; [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `background` | - |
+| Raqobat tashxis | Конкурирующее заболевание | Condition.code; category | ICD-10; [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `competing` | - |
 
 ---
 
@@ -145,6 +160,10 @@ Section code: LOINC `74213-0` "Discharge instructions".
 | Kuzatuv | Наблюдение | CarePlan.description | - | Shifoxonadan chiqqandan keyin 1 oy davomida oilaviy poliklinikada kuzatuv |
 | Dispanserizatsiya | Диспансеризация | [EpisodeOfCare](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-episodeofcare.html).type[serviceType] | [Episode of Care Type](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-type-vs) | `mserv-0001-00001` "Preventive services" |
 | Shifoxonaga yotqazish | Госпитализация | [ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html).code | [Service Request Codes](https://terminology.dhp.uz/fhir/core/ValueSet/service-request-code-vs) | SNOMED CT `32485007` "Hospital admission" |
+| Gospitalizatsiya maqsadi | Цель госпитализации | *(same ServiceRequest)* reason.concept, one per purpose; for `other` the text in reason.concept.text | [Hospitalization Purpose](ValueSet-hospitalization-purpose-vs.html), DMED `purpose[]` per [this ConceptMap](ConceptMap-dmed-form-027-hospitalization-purpose-cm.html) | `treatment` "Treatment" |
+| Yotqazishga asos bo'lgan tashxis | Диагноз, обосновывающий госпитализацию | *(same ServiceRequest)* reason.reference | Condition (main diagnosis) | J18.9 |
+| Izoh | Примечание | *(same ServiceRequest)* note.text | - | Plevral suyuqlik nazorati uchun pulmonologiya bo'limiga. |
+| Yo'llovchi shifokor | Направивший врач | *(same ServiceRequest)* requester | PractitionerRole | Ismoilova M.T. |
 
 ---
 
@@ -191,7 +210,7 @@ Bundle (document)
 ├── Organization[] (registering and referring facility)
 ├── Practitioner[] (attending doctor, responsible person)
 ├── PractitionerRole[] (attending doctor and responsible person roles)
-├── Condition[] (main diagnosis, complication, concomitant disease)
+├── Condition[] (main diagnosis, complication, concomitant, background and competing diseases)
 ├── Observation[] (complaints, anamnesis, clinical examination, laboratory results)
 ├── DiagnosticReport (diagnostic tests)
 ├── CarePlan[] (treatment and recommendations, follow-up)

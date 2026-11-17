@@ -86,7 +86,7 @@ Description: "Composition profile for Form 027 (Tibbiy muassasadagi bemorning ti
 * section[referralAndDiagnosis].title ^short = "4. Referral and diagnosis"
 * section[referralAndDiagnosis].code 1..1
 * section[referralAndDiagnosis].code = $loinc#42349-1 "Reason for referral (narrative)"
-* section[referralAndDiagnosis].code ^short = "Referring institution, main diagnosis, complication, concomitant disease"
+* section[referralAndDiagnosis].code ^short = "Referring institution, main diagnosis, complication, concomitant, background and competing diseases"
 * section[referralAndDiagnosis].entry 1..*
 * section[referralAndDiagnosis].entry only Reference(UZCoreEncounter)
 * section[referralAndDiagnosis].entry ^short = "Visit or stay carrying the referring institution"
@@ -97,7 +97,9 @@ Description: "Composition profile for Form 027 (Tibbiy muassasadagi bemorning ti
 * section[referralAndDiagnosis].section contains
     main 1..1 and
     complication 0..1 and
-    concomitant 0..1
+    concomitant 0..1 and
+    background 0..1 and
+    competing 0..1
 
 * section[referralAndDiagnosis].section[main].title ^short = "Main diagnosis"
 * section[referralAndDiagnosis].section[main].code = $diagnosis-role#main
@@ -113,6 +115,16 @@ Description: "Composition profile for Form 027 (Tibbiy muassasadagi bemorning ti
 * section[referralAndDiagnosis].section[concomitant].code = $diagnosis-role#concomitant
 * section[referralAndDiagnosis].section[concomitant].entry 1..*
 * section[referralAndDiagnosis].section[concomitant].entry only Reference(UZCoreCondition)
+
+* section[referralAndDiagnosis].section[background].title ^short = "Background disease (not printed on the form, captured by DMED)"
+* section[referralAndDiagnosis].section[background].code = $diagnosis-role#background
+* section[referralAndDiagnosis].section[background].entry 1..*
+* section[referralAndDiagnosis].section[background].entry only Reference(UZCoreCondition)
+
+* section[referralAndDiagnosis].section[competing].title ^short = "Competing disease (not printed on the form, captured by DMED)"
+* section[referralAndDiagnosis].section[competing].code = $diagnosis-role#competing
+* section[referralAndDiagnosis].section[competing].entry 1..*
+* section[referralAndDiagnosis].section[competing].entry only Reference(UZCoreCondition)
 
 * section[clinicalInformation].title 1..1
 * section[clinicalInformation].title ^short = "5. Clinical information"
