@@ -446,6 +446,7 @@
       picker.appendChild(o);
     });
     picker.addEventListener('change', function () {
+      history.replaceState(null, '', '?form=' + encodeURIComponent(picker.value));
       render(currentLang, picker.value, false);
     });
 
@@ -472,7 +473,10 @@
   function whenReady(lang, n) {
     if (window.LForms && LForms.Util && LForms.Util.addFormToPage) {
       buildControls(lang);
-      render(lang, ids[0], false).then(function () { relabelPicker(lang); });
+      var wanted = new URLSearchParams(location.search).get('form');
+      var first = ids.indexOf(wanted) >= 0 ? wanted : ids[0];
+      el('form-picker').value = first;
+      render(lang, first, false).then(function () { relabelPicker(lang); });
       return;
     }
     if (n > 200) {
