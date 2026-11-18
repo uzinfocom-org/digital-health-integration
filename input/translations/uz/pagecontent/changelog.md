@@ -1,5 +1,9 @@
 ### Ishlab chiqilmoqda
 
+(Hozircha o'zgarishlar yo'q)
+
+### Versiya 0.13.0
+
 #### Qo'shildi
 
 [003-shakl - statsionar bemorning tibbiy kartasi](StructureDefinition-form-003-inpatient-medical-record-composition.html) FHIR hujjati sifatida profillangan bo'lib, Composition ning 20 ta bo'limi orqali ma'muriy va shaxsiy ma'lumotlar, qabul qilish, qabulda tekshiruv, birlamchi ko'rik, tekshiruv rejasi va natijalari, tashxislar, operatsiyalar, dori va muolaja varaqalari, harorat varaqasi, kasallik kechishi, davolash natijasi, vaqtincha mehnatga layoqatsizlik, patologoanatomik xulosa va mas'ul shaxslarni qamrab oladi. Uning namunaviy hujjat-Bundle'i va [maydonma-maydon moslashtirish sahifasi](form-003-mapping.html) mavjud. Yordamchi terminologiya: [anesteziya usuli](CodeSystem-anesthesia-method-cs.html), [o'lim holatlari](CodeSystem-death-context-cs.html), [shifoxona parhezi](CodeSystem-hospital-diet-type-cs.html), [bemorni tashish usuli](CodeSystem-patient-transport-mobility-cs.html) va [mehnat qobiliyati](CodeSystem-work-capacity-status-cs.html) uchun mahalliy kod tizimlari, har biri o'z qiymatlar to'plami bilan, hamda 003-shakl [kuzatuv](CodeSystem-form-003-observation-code-cs.html) va [bo'lim](CodeSystem-form-003-section-cs.html) kodlari.

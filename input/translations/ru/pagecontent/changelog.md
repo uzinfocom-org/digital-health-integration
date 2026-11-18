@@ -1,5 +1,9 @@
 ### В разработке
 
+(Пока без изменений)
+
+### Версия 0.13.0
+
 #### Добавлено
 
 [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) на основе [UZ Core Flag](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-flag.html) фиксирует, может ли донор сдавать кровь или он временно или постоянно отведён; есть примеры [допуска](Flag-example-blood-donor-eligible.html), [временного](Flag-example-blood-donor-temporary-deferral.html) и [постоянного](Flag-example-blood-donor-permanent-deferral.html) отвода. У отвода расширение `workflow-reason` содержит причину из локальной кодовой системы [причин отвода](CodeSystem-donor-deferral-reason-cs.html) ([ValueSet](ValueSet-donor-deferral-reason-vs.html)).

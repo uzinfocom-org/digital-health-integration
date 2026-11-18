@@ -1,5 +1,9 @@
 ### In development
 
+(No changes yet)
+
+### Version 0.13.0
+
 #### Added
 
 [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) based on [UZ Core Flag](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-flag.html), records whether a donor may give blood or is temporarily or permanently deferred, with [eligibility](Flag-example-blood-donor-eligible.html), [temporary deferral](Flag-example-blood-donor-temporary-deferral.html) and [permanent deferral](Flag-example-blood-donor-permanent-deferral.html) examples. A deferral's `workflow-reason` extension carries the reason from a local [deferral reason](CodeSystem-donor-deferral-reason-cs.html) code system ([ValueSet](ValueSet-donor-deferral-reason-vs.html)).
