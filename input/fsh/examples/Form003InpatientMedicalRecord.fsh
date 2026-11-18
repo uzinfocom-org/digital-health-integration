@@ -746,7 +746,7 @@ InstanceOf: Form066SurgicalProcedure
 Usage: #inline
 * status = #completed
 * category = $sct#387713003 "Surgical procedure (procedure)"
-* code = $ichi#JCB.JB.AE "Percutaneous drainage of pleural cavity"
+* code = $ichi|2026.9.17#JCB.JB.AE "Percutaneous drainage of pleural cavity"
 * code.text = "Thoracentesis"
 * subject = Reference(urn:uuid:00300002-0000-0000-0000-000000000000)
 * encounter = Reference(urn:uuid:00300003-0000-0000-0000-000000000000)
@@ -895,7 +895,7 @@ Usage: #inline
 * valueString = "Afebrile from day 5, cough and dyspnoea resolving, mobilising independently."
 
 Instance: careplan-003-recommendations
-InstanceOf: CarePlan
+InstanceOf: UZCoreCarePlan
 Usage: #inline
 * status = #active
 * intent = #plan

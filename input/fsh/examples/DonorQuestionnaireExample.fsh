@@ -131,8 +131,8 @@ Description: "Synthetic adult donor used by the donor questionnaire response exa
 * birthDate = "1992-04-12"
 
 Instance: example-donor-questionnaire-deferral
-InstanceOf: BloodDonorDeferralFlag
-Title: "Example Blood Donor Deferral Flag - Deferral After the Donor Questionnaire"
+InstanceOf: BloodDonorEligibilityFlag
+Title: "Example Blood Donor Eligibility Flag - Deferral After the Donor Questionnaire"
 Description: "Synthetic temporary deferral recorded by the clinician after reviewing the donor questionnaire, where the donor reported a recent tattoo. The workflow-reason extension carries the reason code. The 180-day period is example data, not a clinical recommendation."
 Usage: #example
 * language = #uz

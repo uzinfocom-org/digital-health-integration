@@ -63,7 +63,7 @@ Usage: #example
 * code = $icd-10#C02 "Malignant neoplasm of other and unspecified parts of tongue"
 
 * extension[diagnosisType].valueCodeableConcept = $diagnosis-type-cs#cancer-0003-0003 "Notification from a branch of the Republican Specialized Scientific and Practical Medical Center of Oncology and Radiology"
-* extension[cancer-iccc-3-group].valueCodeableConcept = $iccc-3#IIId2
+* extension[cancer-iccc-3-group].valueCodeableConcept = $iccc-3|0.13.0#IIId2
 * extension[detection-condition].valueCodeableConcept = cancer-detection-condition-cs#cancer-0005-0002 "Detected in the Onconazorat office"
 
 * bodySite = $sct#21974007 "Tongue structure"

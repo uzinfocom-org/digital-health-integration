@@ -1847,7 +1847,7 @@ Usage: #inline
 
 // 9. KO'RSATMALAR (+ birinchi ko'rik imzosi)
 Instance: careplan-111-first-visit
-InstanceOf: CarePlan
+InstanceOf: UZCoreCarePlan
 Usage: #inline
 * language = #uz
 * status = #active
@@ -2126,7 +2126,7 @@ Usage: #inline
 * valueString = "Gemoglobin miqdorining pasayishi (104 g/L)"
 
 Instance: careplan-111-visit
-InstanceOf: CarePlan
+InstanceOf: UZCoreCarePlan
 Usage: #inline
 * language = #uz
 * status = #active
@@ -2407,7 +2407,7 @@ Usage: #inline
 * component.valueCodeableConcept.text = "Chapda"
 
 Instance: careplan-111-patronage
-InstanceOf: CarePlan
+InstanceOf: UZCoreCarePlan
 Usage: #inline
 * language = #uz
 * status = #active
@@ -2653,7 +2653,7 @@ Usage: #inline
 * valueString = "Homiladorlik asoratsiz kechdi, barcha patronaj tashriflari o'z vaqtida o'tkazildi, tavsiyalarga rioya qilindi."
 
 Instance: careplan-111-specialist-conclusions
-InstanceOf: CarePlan
+InstanceOf: UZCoreCarePlan
 Usage: #inline
 * language = #uz
 * status = #completed
@@ -2704,7 +2704,7 @@ Usage: #inline
 * note.text = "Bachadon involyutsiyasi, ko'krak bezlari va tikilgan joy ko'rikdan o'tkazildi"
 
 Instance: careplan-111-postpartum-7-8
-InstanceOf: CarePlan
+InstanceOf: UZCoreCarePlan
 Usage: #inline
 * language = #uz
 * status = #active
@@ -2756,7 +2756,7 @@ Usage: #inline
 * note.text = "Bachadon me'yorga qaytgan, jarohat izlari bitgan"
 
 Instance: careplan-111-postpartum-35-40
-InstanceOf: CarePlan
+InstanceOf: UZCoreCarePlan
 Usage: #inline
 * language = #uz
 * status = #completed

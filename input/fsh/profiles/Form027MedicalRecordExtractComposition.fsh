@@ -129,7 +129,7 @@ Description: "Composition profile for Form 027 (Tibbiy muassasadagi bemorning ti
 * section[treatmentAndRecommendations].code = $loinc#18776-5 "Plan of care note"
 * section[treatmentAndRecommendations].code ^short = "Treatment, recommendations, prescription"
 * section[treatmentAndRecommendations].entry 1..*
-* section[treatmentAndRecommendations].entry only Reference(CarePlan or UZCoreMedicationRequest)
+* section[treatmentAndRecommendations].entry only Reference(UZCoreCarePlan or UZCoreMedicationRequest)
 * section[treatmentAndRecommendations].entry ^short = "Care plan and medication requests"
 
 * section[nextSteps].title 1..1
@@ -138,7 +138,7 @@ Description: "Composition profile for Form 027 (Tibbiy muassasadagi bemorning ti
 * section[nextSteps].code = $loinc#74213-0 "Discharge instructions"
 * section[nextSteps].code ^short = "Follow-up, dispensary observation, hospitalization"
 * section[nextSteps].entry 0..*
-* section[nextSteps].entry only Reference(CarePlan or UZCoreEpisodeOfCare or UZCoreServiceRequest)
+* section[nextSteps].entry only Reference(UZCoreCarePlan or UZCoreEpisodeOfCare or UZCoreServiceRequest)
 * section[nextSteps].entry ^short = "Follow-up plan, dispensary episode and hospitalization request"
 
 * section[responsiblePersons].title 1..1

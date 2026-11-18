@@ -191,7 +191,7 @@ Bemorni tekshirish, davolash yoki kuzatish jarayonida tibbiyot xodimlari bilishi
 
 | Qayd etiladigan ma’lumot | Qiymatlar to‘plami | Namuna kodi | Saqlanadigan element |
 | :--- | :--- | :--- | :--- |
-| Flag holati | [FlagStatusVS](ValueSet-flag-status-vs.html) | `active` | `status` |
+| Flag holati | [FlagStatusVS](https://dhp.uz/fhir/core/uz/ValueSet-flag-status-vs.html) | `active` | `status` |
 | Registr flag kodi | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `psycr0001-00001` | `code` |
 | Bemor | - | [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) ga reference | `subject` |
 | Amal qilish davri | - | `2026-08-15` | `period` |
@@ -240,7 +240,7 @@ Psixiatriya reestri resurslari tomonidan ishlatiladigan terminologiya quyida kel
 | [TypeResourceCS](CodeSystem-type-resource-cs.html) | `Observation.code` | Vrachlik-konsultatsiya komissiyasi qarori |
 | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `Condition.code`, `EpisodeOfCare.diagnosis.condition` | Psixiatriya tashxisi |
 | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `Flag.code` | Narkologiya va Psixiatriya reestr belgilari |
-| [FlagStatusVS](ValueSet-flag-status-vs.html) | `Flag.status` | Belgi hayot sikli |
+| [FlagStatusVS](https://dhp.uz/fhir/core/uz/ValueSet-flag-status-vs.html) | `Flag.status` | Belgi hayot sikli |
 
 ---
 

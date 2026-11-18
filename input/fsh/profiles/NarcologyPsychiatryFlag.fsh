@@ -1,6 +1,5 @@
-// Bound to local status and code value sets here because UZ Core does not yet profile Flag.
 Profile: NarcologyPsychiatryFlag
-Parent: Flag
+Parent: UZCoreFlag
 Id: narcology-psychiatry-flag
 Title: "Narcology and Psychiatry Flag"
 Description: "Registry information that healthcare providers should be aware of when assessing, treating or managing a patient held in the narcology or psychiatry registry, such as social danger or compulsory treatment."
@@ -10,7 +9,6 @@ Description: "Registry information that healthcare providers should be aware of 
 * ^publisher = "Uzinfocom"
 
 * status 1..1 MS
-* status from FlagStatusVS (required)
 
 * code 1..1 MS
 * code from NarcologyPsychiatryRegistryFlagVS (required)

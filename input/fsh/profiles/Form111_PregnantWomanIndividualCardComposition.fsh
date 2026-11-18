@@ -156,7 +156,7 @@ Description: "Composition profile for Form 111 (Homilador va tuqqan ayolning ind
 * section[recommendations].code = $loinc#18776-5  "Plan of care note"
 * section[recommendations].code ^short = "Instructions and advice"
 * section[recommendations].entry 1..*
-* section[recommendations].entry only Reference(CarePlan or UZCoreObservation or Provenance)
+* section[recommendations].entry only Reference(UZCoreCarePlan or UZCoreObservation or Provenance)
 
 // 10. Homiladorlikning kechishi (takroriy kuzatuv tashriflari)
 * section[courseOfPregnancy].title 1..1
@@ -165,7 +165,7 @@ Description: "Composition profile for Form 111 (Homilador va tuqqan ayolning ind
 * section[courseOfPregnancy].code = $loinc#57059-8 "Pregnancy visit summary note Narrative"
 * section[courseOfPregnancy].code ^short = "Date, complaints, general condition, weight, blood pressure, pulse, abdominal circumference, fundal height, presenting part, fetal lie and position, heart rate, movements, urine protein, blood Hb, diagnosis (gestational week), pathological changes, instructions and advice, hospitalized, staphylococcal toxoid given, next visit date, signature"
 * section[courseOfPregnancy].entry 1..*
-* section[courseOfPregnancy].entry only Reference(UZCoreEncounter or UZCoreObservation or UZCoreCondition or CarePlan or UZCoreImmunization or Appointment or Provenance)
+* section[courseOfPregnancy].entry only Reference(UZCoreEncounter or UZCoreObservation or UZCoreCondition or UZCoreCarePlan or UZCoreImmunization or Appointment or Provenance)
 
 // 11. Tug'ishga tayyorlash
 * section[birthPreparation].title 1..1
@@ -183,7 +183,7 @@ Description: "Composition profile for Form 111 (Homilador va tuqqan ayolning ind
 * section[patronageVisits].code = $sct#439708006 "Home visit"
 * section[patronageVisits].code ^short = "Date, gestational age, complaints, general condition (edema), blood pressure, fetal condition, fetal heart rate, recommendations, full name and signature"
 * section[patronageVisits].entry 1..*
-* section[patronageVisits].entry only Reference(UZCoreEncounter or UZCoreObservation or CarePlan or Provenance)
+* section[patronageVisits].entry only Reference(UZCoreEncounter or UZCoreObservation or UZCoreCarePlan or Provenance)
 
 // 13. Aylanma karta va boshqa hujjatlarni yopishtirish uchun varoq
 * section[attachmentsSheet].title 1..1
@@ -210,7 +210,7 @@ Description: "Composition profile for Form 111 (Homilador va tuqqan ayolning ind
 * section[specialistConclusions].code = $loinc#11488-4  "Consult note"
 * section[specialistConclusions].code ^short = "Specialist conclusion, date, course of pregnancy and patronage follow-up data, advice"
 * section[specialistConclusions].entry 1..*
-* section[specialistConclusions].entry only Reference(UZCoreObservation or CarePlan)
+* section[specialistConclusions].entry only Reference(UZCoreObservation or UZCoreCarePlan)
 
 // 16. Tug'ruqdan keyingi davrdagi kuzatuv
 * section[postpartumFollowUp].title 1..1
@@ -219,4 +219,4 @@ Description: "Composition profile for Form 111 (Homilador va tuqqan ayolning ind
 * section[postpartumFollowUp].code = $sct#133906008 "Postpartum care"
 * section[postpartumFollowUp].code ^short = "Day 7-8 and day 35-40 check-ups - date, complaints, examinations and procedures, advice and instructions, signatures of the doctor and head of department, contraception type"
 * section[postpartumFollowUp].entry 1..*
-* section[postpartumFollowUp].entry only Reference(UZCoreEncounter or UZCoreObservation or UZCoreProcedure or CarePlan or Provenance)
+* section[postpartumFollowUp].entry only Reference(UZCoreEncounter or UZCoreObservation or UZCoreProcedure or UZCoreCarePlan or Provenance)

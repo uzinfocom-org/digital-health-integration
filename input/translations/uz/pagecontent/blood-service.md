@@ -11,21 +11,19 @@ Ushbu sahifada qon xizmati donorlik qonining yo'lini - donorni ro'yxatga olishda
 
 ### Umumiy ko'rinish {#overview}
 
-Deyarli har bir bosqichda [UZ Core](https://dhp.uz/fhir/core/uz/artifacts.html) profili o'zgarishsiz qo'llaniladi. Ushbu qo'llanma uchta profil qo'shadi. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) UZ Core Patient da bo'lmagan ro'yxatga olish ma'lumotlari uchun: shaxs donor yoki retsipiyent sifatida ro'yxatga olinganligi, ro'yxatga olish raqami, donor toifasi, donatsiya to'lovi va turi hamda retsipiyent tashxisi. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) donor laboratoriya buyurtmalari va komponentni qayta ishlash so'rovlari uchun. [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) donatsiyadan vaqtincha yoki doimiy tibbiy chetlatishni qayd etadi. Ushbu bosqichlar ortidagi qog'oz shakllar [8.0 Qon xizmati](forms-volume-08-blood-service.html) bo'limida tavsiflangan.
-
-<!-- CORE-RELEASE #161 -->
+Deyarli har bir bosqichda [UZ Core](https://dhp.uz/fhir/core/uz/artifacts.html) profili o'zgarishsiz qo'llaniladi. Ushbu qo'llanma beshta profil qo'shadi. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) UZ Core Patient da bo'lmagan ro'yxatga olish ma'lumotlari uchun: shaxs donor yoki retsipiyent sifatida ro'yxatga olinganligi, ro'yxatga olish raqami, donor toifasi, donatsiya to'lovi va turi hamda retsipiyent tashxisi. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) donor laboratoriya buyurtmalari va komponentni qayta ishlash so'rovlari uchun. [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) donor qon topshirishi mumkinligini yoki chetlatilganini qayd etadi. [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) va [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) transfuziyadan oldin retsipiyent anamnezini va moslik sinamalarini qayd etadi. Ushbu bosqichlar ortidagi qog'oz shakllar [8.0 Qon xizmati](forms-volume-08-blood-service.html) bo'limida tavsiflangan.
 
 | Bosqich | Resurs | Profil |
 | :--- | :--- | :--- |
 | [Donor yoki retsipiyentni ro'yxatga olish](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
 | [Donor bilan suhbat](#interviewing) | Questionnaire, QuestionnaireResponse | [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-questionnaire-response.html) |
-| [Ruxsat yoki chetlatish](#eligibility) | Flag | UZ Core Flag (UZ Core ning keyingi relizi) ruxsat uchun, [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) chetlatish uchun |
+| [Ruxsat yoki chetlatish](#eligibility) | Flag | [UZ Core Flag](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-flag.html) asosidagi [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) |
 | [Donor qonini tekshirish](#testing) | ServiceRequest, Observation, DiagnosticReport, Specimen | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core Observation](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-specimen.html) |
 | [Donatsiyani olish](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Komponentlarga ajratish](#processing) | ServiceRequest, BiologicallyDerivedProduct | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologically-derived-product.html) |
-| [Zaxiralarni hisobga olish](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-inventoryitem.html), UZ Core InventoryReport (UZ Core ning keyingi relizi) |
+| [Zaxiralarni hisobga olish](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-inventoryitem.html), [UZ Core InventoryReport](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-inventoryreport.html) |
 | [Komponentlarni so'rash va yetkazib berish](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-delivery.html) |
-| [Retsipiyentga transfuziya](#transfusing) | ServiceRequest, Observation, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-servicerequest.html), [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html), [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html), UZ Core BiologicallyDerivedProductDispense (UZ Core ning keyingi relizi), [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-adverse-event.html) |
+| [Retsipiyentga transfuziya](#transfusing) | ServiceRequest, Observation, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-servicerequest.html), [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html), [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html), [UZ Core BiologicallyDerivedProductDispense](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologicallyderivedproductdispense.html), [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-adverse-event.html) |
 
 <div>{% include blood-service-model-uz.svg %}</div><br clear="all"/>
 
@@ -92,13 +90,11 @@ Namuna: donor yaqinda tatuirovka qilganini bildirgan [namunaviy javobni](Questio
 
 ### Ruxsat va chetlatishlar {#eligibility}
 
-<!-- CORE-RELEASE #161 -->
+Donorning qon topshirishi mumkinligi uning Patient yozuvida [UZ Core Flag](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-flag.html) asosidagi [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) bilan qayd etiladi. `code` elementida `blood-donation-eligible`, `blood-donation-deferred-temporary` yoki `blood-donation-deferred-permanent` ko'rsatiladi. Flag ning `status` elementi flagning o'zini tavsiflaydi: `active` holatdagi flag ruxsat yoki chetlatish amalda ekanini bildiradi. Chetlatish qayd etilganda donorning amaldagi ruxsat flagi shu vaqtdagi `period.end` bilan `inactive` ga o'tkaziladi.
 
-Donorning qon topshirishi mumkinligi uning Patient yozuvida Flag bilan qayd etiladi: donatsiyaga ruxsat, vaqtincha yoki doimiy tibbiy chetlatish. Buning uchun UZ Core Flag profili donorlarga ruxsat kodlari bilan birga UZ Core ning keyingi relizida bo'ladi. Flag ning `status` elementi flagning o'zini tavsiflaydi: `active` holatdagi chetlatish flagi chetlatish amalda ekanini bildiradi.
+Chetlatishda [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) kengaytmasi esa [chetlatish sababini](ValueSet-donor-deferral-reason-vs.html) o'z ichiga oladi va unga asos bo'lgan narsaga, masalan, ijobiy tahlil natijasiga havola qilishi mumkin. Ikki sabab bilan chetlatilgan donorda ikkita flag bo'ladi. `period.start` chetlatish boshlangan vaqtni bildiradi. Vaqtincha chetlatishda `period.end` bor - donor qayta qon topshirishi mumkin bo'lgan sana; doimiy chetlatishda `period.end` yo'q. Vaqtincha flag `inactive` ga o'tkazilmaguncha `active` bo'lib qoladi, shuning uchun chetlatish hali amal qilayotganini bilish uchun `period.end` ni `status` bilan birga o'qing.
 
-Chetlatish [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) bilan qayd etiladi: `code` elementida `blood-donation-deferred-temporary` yoki `blood-donation-deferred-permanent` ko'rsatiladi, [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) kengaytmasi esa [chetlatish sababini](ValueSet-donor-deferral-reason-vs.html) o'z ichiga oladi va unga asos bo'lgan narsaga, masalan, ijobiy tahlil natijasiga havola qilishi mumkin. Ikki sabab bilan chetlatilgan donorda ikkita flag bo'ladi. `period.start` chetlatish boshlangan vaqtni bildiradi. Vaqtincha chetlatishda `period.end` bor - donor qayta qon topshirishi mumkin bo'lgan sana; doimiy chetlatishda `period.end` yo'q. Vaqtincha flag `inactive` ga o'tkazilmaguncha `active` bo'lib qoladi, shuning uchun chetlatish hali amal qilayotganini bilish uchun `period.end` ni `status` bilan birga o'qing.
-
-Misollar: [vaqtincha chetlatish](Flag-example-blood-donor-temporary-deferral.html), [doimiy chetlatish](Flag-example-blood-donor-permanent-deferral.html), uning sababi [OIV bo'yicha tasdiqlangan ijobiy natijaga](Observation-example-blood-donor-hiv-result.html) havola qiladi.
+Misollar: [ruxsat](Flag-example-blood-donor-eligible.html), [vaqtincha chetlatish](Flag-example-blood-donor-temporary-deferral.html), [doimiy chetlatish](Flag-example-blood-donor-permanent-deferral.html), uning sababi [OIV bo'yicha tasdiqlangan ijobiy natijaga](Observation-example-blood-donor-hiv-result.html) havola qiladi.
 
 ### Donor qonini tekshirish {#testing}
 
@@ -119,8 +115,12 @@ Qon olish - bu donorning [UZ Core Procedure](https://dhp.uz/fhir/core/uz/Structu
 | Kim tomonidan olingan | Practitioner yoki PractitionerRole ga havola | `collection.collector` |
 | Qon guruhi | tur `SNOMED CT#63915006`, qiymat [blood group](https://dhp.uz/fhir/core/uz/ValueSet-blood-group-vs.html) dan | `property[aboGroup]` |
 | Rezus-omil | tur `SNOMED CT#115678000`, qiymat [Rh factor](https://dhp.uz/fhir/core/uz/ValueSet-blood-rh-vs.html) dan | `property[rhdType]` |
+| Hajm | tur `SNOMED CT#118565006`, qiymat ml da | `property[volume]` |
+| Gematokrit | tur `LOINC#4544-3`, qiymat % da | `property[hematocrit]` |
 
 Misol: [butun qon donatsiyasi](https://dhp.uz/fhir/core/uz/BiologicallyDerivedProduct-example-blood-donation-product.html).
+
+Donatsiya paytida yoki undan keyingi reaksiya, masalan hushdan ketish, qon olish Procedure sining `complication` elementida [protsedura asoratlari](https://dhp.uz/fhir/core/uz/ValueSet-procedure-complication-vs.html) kodi bilan ko'rsatiladi (misol: [hushdan ketish bilan donatsiya](https://dhp.uz/fhir/core/uz/Procedure-example-blood-donation-procedure.html)).
 
 Donatsiya raqami ([NamingSystem](https://dhp.uz/fhir/core/uz/NamingSystem-uzb-blood-donation-number.html)) bitta donatsiyadan olingan barcha mahsulotlarni bog'laydi. Birlik raqami ([NamingSystem](https://dhp.uz/fhir/core/uz/NamingSystem-uzb-blood-unit-number.html)) har bir qopni identifikatsiya qiladi.
 
@@ -134,13 +134,13 @@ Misol: [leykotsitlari kamaytirilgan eritrotsitlar](https://dhp.uz/fhir/core/uz/B
 
 ### Zaxiralarni hisobga olish {#stock}
 
-[UZ Core InventoryItem](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-inventoryitem.html) qon xizmati zaxirada saqlaydigan komponent turini tavsiflaydi (misol: [eritrotsitlar](https://dhp.uz/fhir/core/uz/InventoryItem-example-inventory-item-rbc.html)). Komponentlar, qon guruhlari va saqlash joylari bo'yicha qoldiqlar - bu InventoryReport; UZ Core InventoryReport profili UZ Core ning keyingi relizida bo'ladi.
+[UZ Core InventoryItem](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-inventoryitem.html) qon xizmati zaxirada saqlaydigan komponent turini tavsiflaydi (misol: [eritrotsitlar](https://dhp.uz/fhir/core/uz/InventoryItem-example-inventory-item-rbc.html)). Zaxira qoldiqlari va harakati - bu [UZ Core InventoryReport](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-inventoryreport.html): `countType` bu inventarizatsiya (`snapshot`) yoki o'zgarish (`difference`) ekanini, `operationType` va `operationTypeReason` nima bo'lganini, masalan kirim yoki hisobdan chiqarishni ko'rsatadi, har bir `inventoryListing` esa bitta `location` dagi bitta `itemStatus` li birliklarni sanaydi (misol: [omborga kirim](https://dhp.uz/fhir/core/uz/InventoryReport-example-inventory-report-medication-receipt.html)).
 
 ### Komponentlarni so'rash va yetkazib berish {#supplying}
 
-Shifoxona komponentlarni [UZ Core SupplyRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-request.html) orqali so'raydi. Muayyan bemor uchun nomli so'rov `deliverFor` ni to'ldiradi va `basedOn` orqali transfuziya tayinloviga havola qiladi. Qon xizmati birliklarni jo'natganda, [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-delivery.html) `basedOn` orqali so'rovga havola qiladi, har bir `suppliedItem.itemReference` esa yetkazilgan birlikni ko'rsatadi.
+Shifoxona komponentlarni [UZ Core SupplyRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-request.html) orqali so'raydi. Muayyan bemor uchun nomli so'rov `deliverFor` ni to'ldiradi va `basedOn` orqali transfuziya tayinloviga havola qiladi. Qon xizmati birliklarni jo'natganda, [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-delivery.html) `basedOn` orqali so'rovga havola qiladi, har bir `suppliedItem.itemReference` esa yetkazilgan birlikni ko'rsatadi. Birga berilgan so'rovlar, masalan bitta bemor uchun eritrotsitlar va plazma, umumiy [guruh identifikatoriga](https://dhp.uz/fhir/core/uz/StructureDefinition-supplyrequest-group-identifier.html) ega bo'ladi, yetkazib berishdagi [deliver from](https://dhp.uz/fhir/core/uz/StructureDefinition-supplydelivery-deliver-from.html) kengaytmasi esa birliklar qayerdan jo'natilganini ko'rsatadi.
 
-Misollar: [yetkazib berish so'rovi](https://dhp.uz/fhir/core/uz/SupplyRequest-example-supply-request.html), [qon komponentlarini yetkazib berish](https://dhp.uz/fhir/core/uz/SupplyDelivery-example-blood-product-supply-delivery.html).
+Misollar: [yetkazib berish so'rovi](https://dhp.uz/fhir/core/uz/SupplyRequest-example-supply-request.html), guruhlangan [eritrotsitlar](https://dhp.uz/fhir/core/uz/SupplyRequest-example-supply-request-group-red-cells.html) va [plazma](https://dhp.uz/fhir/core/uz/SupplyRequest-example-supply-request-group-plasma.html) so'rovlari, [qon komponentlarini yetkazib berish](https://dhp.uz/fhir/core/uz/SupplyDelivery-example-blood-product-supply-delivery.html).
 
 ### Retsipiyentga transfuziya {#transfusing}
 
@@ -149,9 +149,11 @@ Misollar: [yetkazib berish so'rovi](https://dhp.uz/fhir/core/uz/SupplyRequest-ex
 | Transfuziya tayinlovi | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-servicerequest.html) | `subject` - retsipiyent |
 | Retsipiyentning transfuzion va akusherlik anamnezi | [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) | `code` - anamnez turi, `subject` - retsipiyent |
 | Birlik bilan moslik sinovlari | [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) | `focus` - birlik, `derivedFrom` - anamnez va ABO qon guruhi |
-| Birlikni retsipiyentga berish | UZ Core BiologicallyDerivedProductDispense (UZ Core ning keyingi relizi) | `product` - birlik, `patient` - retsipiyent, `basedOn` - tayinlov |
-| Bajarilgan transfuziya | [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html) | `basedOn` - tayinlov, `used` - birlik |
+| Birlikni retsipiyentga berish | [UZ Core BiologicallyDerivedProductDispense](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologicallyderivedproductdispense.html) | `product` - birlik, `patient` - retsipiyent, `basedOn` - tayinlov, `status` - `issued` yoki `returned`, `whenHandedOver` - qon bankidan berilgan vaqt |
+| Bajarilgan transfuziya | [UZ Core Procedure](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html) | `basedOn` - tayinlov, `used` - birlik, `supportingInfo` - berish, `complication` - [transfuziya asoratlari](https://dhp.uz/fhir/core/uz/ValueSet-blood-transfusion-complication-vs.html) dan reaksiya |
 | Transfuziyaga reaksiya | [UZ Core AdverseEvent](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-adverse-event.html) | `suspectEntity.instanceReference` - birlik |
+
+Moslik sinamalari natijalari berishning `matchStatus` elementiga emas, Blood Transfusion Assessment Observation ga yoziladi. Reaksiya transfuziya protsedurasining `complication` elementida qayd etiladi; reaksiya tekshirish uchun xabar qilinganda AdverseEvent qo'shiladi. Misollar: [birlik berildi](https://dhp.uz/fhir/core/uz/BiologicallyDerivedProductDispense-example-bdp-dispense-issued.html), [birlik qaytarildi](https://dhp.uz/fhir/core/uz/BiologicallyDerivedProductDispense-example-bdp-dispense-returned.html).
 
 Donatsiya raqami bilan birga bu havolalar birlikni qon topshirgan donordan uni olgan retsipiyentgacha kuzatish imkonini beradi.
 
@@ -162,6 +164,7 @@ So'rovlar JWT kirish tokenini talab qiladi - qarang: [Xavfsizlik va autentifikat
 ```
 GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00001
 GET [base]/Flag?patient=Patient/[id]&status=active
+GET [base]/Flag?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs%7Cblood-donation-eligible
 GET [base]/Observation?patient=Patient/[id]
 GET [base]/ServiceRequest?patient=Patient/[id]&code-concept=http://loinc.org%7C1975-2
 GET [base]/Procedure?patient=Patient/[id]

@@ -129,7 +129,7 @@ Section code: LOINC `18776-5` "Plan of care note".
 
 | UZ | RU | FHIR Path | Code | Example Value |
 |----|----|------------|------|---------------|
-| Davolash | Лечение | [CarePlan](https://hl7.org/fhir/R5/careplan.html).activity.performedActivity.concept.text | - | Antipiretik terapiya, ko'p suyuqlik ichish |
+| Davolash | Лечение | [CarePlan](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-careplan.html).activity.performedActivity.concept.text | - | Antipiretik terapiya, ko'p suyuqlik ichish |
 | Tavsiyalar | Рекомендации | CarePlan.description | - | Statsionar davolash; 10-14 kundan keyin ko'krak qafasi rentgenogrammasini takrorlash |
 | Retsept | Рецепт | [MedicationRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-medicationrequest.html).medication referencing [Medication](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-medication.html).code | INN `https://terminology.dhp.uz/fhir/core/CodeSystem/inn-medication-name-cs` | `005325` "paracetamol" |
 | Dozalash | Дозировка | *(same MedicationRequest)* dosageInstruction.text; doseAndRate.doseQuantity | UCUM `mg` | 500 mg, harorat 38,5 °C dan oshganda, kuniga 3 martagacha |

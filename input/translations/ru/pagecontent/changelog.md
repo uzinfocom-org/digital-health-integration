@@ -2,7 +2,7 @@
 
 #### Добавлено
 
-[Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) фиксирует отвод донора; есть примеры [временного](Flag-example-blood-donor-temporary-deferral.html) и [постоянного](Flag-example-blood-donor-permanent-deferral.html) отвода. Расширение `workflow-reason` содержит причину из локальной кодовой системы [причин отвода](CodeSystem-donor-deferral-reason-cs.html) ([ValueSet](ValueSet-donor-deferral-reason-vs.html)).
+[Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) на основе [UZ Core Flag](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-flag.html) фиксирует, может ли донор сдавать кровь или он временно или постоянно отведён; есть примеры [допуска](Flag-example-blood-donor-eligible.html), [временного](Flag-example-blood-donor-temporary-deferral.html) и [постоянного](Flag-example-blood-donor-permanent-deferral.html) отвода. У отвода расширение `workflow-reason` содержит причину из локальной кодовой системы [причин отвода](CodeSystem-donor-deferral-reason-cs.html) ([ValueSet](ValueSet-donor-deferral-reason-vs.html)).
 
 [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) на основе UZ Core Observation фиксирует регистрацию человека в службе крови как донора или реципиента. Оно содержит регистрационный номер, пациента, дату и время, Encounter и исполнителя. Срезы компонентов передают категорию донора, оплату и вид донации для донора и диагноз по МКБ-10 для реципиента; регистрация реципиента не может содержать компоненты донора. Примеры охватывают кадрового донора, резервного донора и реципиента, с Encounter регистрации и регистратором Practitioner для реципиента.
 
@@ -29,6 +29,14 @@
 Composition для [Форма 011](StructureDefinition-form-011-hemodialysis-composition.html), [Форма 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Форма 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) и [Форма 130](StructureDefinition-form-130-laboratory-test-results-composition.html) больше не фиксируют `status` как `final`, поэтому документ может проходить [жизненный цикл](document-statuses.html) через `preliminary`, `amended` и `entered-in-error`.
 
 JSON-копия ресурса на каждом языке теперь сохраняет остальные языки в расширениях `translation`, как в пакете; раньше в JSON по ссылкам с английских, русских и узбекских страниц они удалялись.
+
+Руководство зависит от UZ Core 0.13.0. [Narcology and Psychiatry Flag](StructureDefinition-narcology-psychiatry-flag.html) основан на [UZ Core Flag](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-flag.html), а [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) - на [UZ Core CarePlan](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-careplan.html). Локальные `flag-status-cs` и `flag-status-vs` удалены: статус флага использует набор значений UZ Core [Flag status](https://dhp.uz/fhir/core/ru/ValueSet-flag-status-vs.html) с теми же кодами HL7.
+
+Записи CarePlan в Composition [Форма 003](StructureDefinition-form-003-inpatient-medical-record-composition.html), [Форма 027](StructureDefinition-form-027-medical-record-extract-composition.html) и [Форма 111](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) ссылаются на UZ Core CarePlan, а не на любой CarePlan. Устройство-исполнитель в [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) - это UZ Core Device.
+
+Кодировки ICHI в примерах Формы 003 и Формы 066 указывают версию ICHI `2026.9.17`, а кодировка ICCC-3 в примере [Cancer Condition](StructureDefinition-cancer-condition.html) - версию `0.13.0`, как требует UZ Core 0.13.0.
+
+[Blood Service](blood-service.html) ссылается на профили UZ Core InventoryReport и BiologicallyDerivedProductDispense и описывает объём и гематокрит компонента, осложнения донации и трансфузии, отчёты об остатках, групповые запросы на поставку и статус выдачи. На диаграмму добавлены пробы на совместимость и ссылки от выдачи на назначение и от трансфузии на выдачу.
 
 ### Версия 0.12.1
 
@@ -218,7 +226,7 @@ JSON-копия ресурса на каждом языке теперь сох�
 
 ##### Наркология
 
-Теперь охвачен [наркологический регистр](narcology.html). [Narcology EpisodeOfCare](StructureDefinition-narcology-episode-of-care.html) - это регистрация пациента, несущая группу динамического наблюдения, в которую он помещён, [Narcology Observation](StructureDefinition-narcology-observation.html) - решение врачебно-консультативной комиссии, а [Narcology and Psychiatry Flag](StructureDefinition-narcology-psychiatry-flag.html) - сведения регистра, которые медицинский работник должен знать до начала лечения пациента, такие как социальная опасность или принудительное лечение. Группы наблюдения кодируются [группами типов эпизода](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html), а флаги - кодами [флагов регистра](ValueSet-narcology-psychiatry-registry-flag-vs.html) и [статусов флага](ValueSet-flag-status-vs.html); каждая из этих систем сопоставлена с SNOMED CT: [группы типов](ConceptMap-narcology-psychiatry-episode-of-care-type-group-to-snomed.html), [флаги регистра](ConceptMap-narcology-psychiatry-registry-flag-to-snomed.html) и [типы ресурсов](ConceptMap-type-resource-to-snomed.html).
+Теперь охвачен [наркологический регистр](narcology.html). [Narcology EpisodeOfCare](StructureDefinition-narcology-episode-of-care.html) - это регистрация пациента, несущая группу динамического наблюдения, в которую он помещён, [Narcology Observation](StructureDefinition-narcology-observation.html) - решение врачебно-консультативной комиссии, а [Narcology and Psychiatry Flag](StructureDefinition-narcology-psychiatry-flag.html) - сведения регистра, которые медицинский работник должен знать до начала лечения пациента, такие как социальная опасность или принудительное лечение. Группы наблюдения кодируются [группами типов эпизода](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html), а флаги - кодами [флагов регистра](ValueSet-narcology-psychiatry-registry-flag-vs.html) и [статусов флага](https://dhp.uz/fhir/core/ru/ValueSet-flag-status-vs.html); каждая из этих систем сопоставлена с SNOMED CT: [группы типов](ConceptMap-narcology-psychiatry-episode-of-care-type-group-to-snomed.html), [флаги регистра](ConceptMap-narcology-psychiatry-registry-flag-to-snomed.html) и [типы ресурсов](ConceptMap-type-resource-to-snomed.html).
 
 ##### Психиатрия
 

@@ -1,5 +1,5 @@
 Profile: SickLeaveCarePlan
-Parent: CarePlan
+Parent: UZCoreCarePlan
 Id: sick-leave-careplan
 Title: "Sick Leave CarePlan"
 Description: "FHIR R5 CarePlan profile representing a Sick Leave case (LN lifecycle)"
@@ -27,10 +27,10 @@ Description: "FHIR R5 CarePlan profile representing a Sick Leave case (LN lifecy
 * period 0..1 MS
 
 * contributor 0..* MS
-* contributor only Reference(Practitioner or PractitionerRole or Organization or CareTeam)
+* contributor only Reference(UZCorePractitioner or UZCorePractitionerRole or UZCoreOrganization or CareTeam)
 
 * custodian 0..1 MS
-* custodian only Reference(Practitioner or PractitionerRole or Organization or CareTeam)
+* custodian only Reference(UZCorePractitioner or UZCorePractitionerRole or UZCoreOrganization or CareTeam)
 
 * addresses ^slicing.discriminator.type = #value
 * addresses ^slicing.discriminator.path = "concept.coding.system"

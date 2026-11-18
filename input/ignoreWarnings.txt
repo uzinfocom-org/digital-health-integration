@@ -45,7 +45,7 @@ Binding http://hl7.org/fhir/ValueSet/mimetypes|5.0.0 could not be expanded
 # Suppressed in the main IG (uz.dhp.core) too: DHIS observations legitimately lack a performer.
 Best Practice Recommendation: In general, all observations should have a performer
 
-# UZ Core 0.11.1 binds Observation.bodySite to its body-site-vs (all SNOMED CT body structures); version left open
+# UZ Core binds Observation.bodySite to its body-site-vs (all SNOMED CT body structures); version left open
 Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs is a proper subset of https://terminology.dhp.uz/fhir/core/ValueSet/body-site-vs|%
 # Screening: breast-side VS (two SNOMED codes) is trivially a subset of screening-body-site-vs (all of SNOMED), but the parent is too large for the publisher to verify
 Unable to check if https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-ultrasound-breast-side-vs is a proper subset of https://terminology.dhp.uz/fhir/integrations/ValueSet/screening-body-site-vs - value set is too large to check
@@ -71,11 +71,6 @@ The XHTML  the resource contains more than one node for each of the following no
 The concept 'chr-0035-00022' is deprecated and its use should be reviewed
 The concept 'chr-0035-00023' is deprecated and its use should be reviewed
 
-# UZ Core 0.11.1 explicitly depends on extensions.r5 5.3.0 (pinned in sushi-config.yaml).
-# Keep the same version so translation extensions do not resolve against two releases.
-# Review this exact advisory when upgrading UZ Core; do not suppress other dependency warnings.
-The ImplementationGuide uses package hl7.fhir.uv.extensions.r5#5.3.0 released on 2026-05-16, but the most recent appropriate version is 5.4.0. This reference is getting old and the more recent version should be considered
-
 # The cancer-registry ICD-10 ConceptMap targets the whole ICD-10 code system, which this build
 # cannot load. Declaring targetScope = ValueSet/icd-10 does not help: the Publisher then reports
 # every target code (12,000+ lines) as "cannot be checked due to special rules". Only this
@@ -89,7 +84,7 @@ The Target Code System http://hl7.org/fhir/sid/icd-10 is not fully defined and p
 # Form 111 registration entries allow UZ Core Observation or UZ Core Socioeconomic Observation.
 # A socioeconomic Observation conforms to both sibling profiles, so the validator cannot pick one
 # reference target; the entry is valid either way.
-%among choices: https://dhp.uz/fhir/core/StructureDefinition/uz-core-observation|0.12.0, https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation|0.12.0
+%among choices: https://dhp.uz/fhir/core/StructureDefinition/uz-core-observation|0.13.0, https://dhp.uz/fhir/core/StructureDefinition/uz-core-socioeconomic-observation|0.13.0
 
 # Hand-written narratives such as Composition.section.text carry what the clinician wrote, in one
 # language; a real record is never translated, so the ru and uz pages correctly fall back to it.
@@ -99,10 +94,3 @@ The Target Code System http://hl7.org/fhir/sid/icd-10 is not fully defined and p
 # every diagram, so the two inline diagrams on the screening page share ids. Remove once the
 # template makes diagram ids unique per diagram (https://github.com/HL7/ig-template-base2/pull/55).
 %cervical-breast-cancer-screening.html: The html source has duplicate element ids: ent0001%
-
-# CORE-RELEASE #161
-# BloodDonorEligibilityCS is published after uz.dhp.core 0.12.0; the deferral Flag examples and
-# BloodDonorDeferralVS use its deferral codes. Remove once the dependency moves to the UZ Core release that has it.
-%A definition for CodeSystem 'https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs' could not be found, so the code cannot be validated%
-%A definition for CodeSystem 'https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs' could not be found, so the value set cannot be expanded%
-%No definition could be found for URL value 'https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs'%

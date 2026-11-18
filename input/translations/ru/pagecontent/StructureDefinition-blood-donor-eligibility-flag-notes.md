@@ -14,13 +14,14 @@ GET [base]/Flag/[id]/_history
 **Поиск**
 
 ```
-GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag&status=active&date=ge2026-11-17
-GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag
+GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-eligibility-flag&status=active&date=ge2026-11-17
+GET [base]/Flag?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs|blood-donation-deferred-temporary,https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs|blood-donation-deferred-permanent
+GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-eligibility-flag
 GET [base]/Flag?encounter=Encounter/[id]
 GET [base]/Flag?author=PractitionerRole/[id]&date=ge2026-11-01
 ```
 
-Первый запрос находит отводы донора, действующие на 2026-11-17. `date` ищет по `period`, а флаг без `period.end` считается продолжающимся, поэтому запрос возвращает постоянные отводы и временные, которые не закончились до этого дня. Временный флаг остаётся `active` и после `period.end`, пока его не переведут в `inactive`, поэтому один `status=active` вернул бы и истёкшие отводы.
+Первый запрос находит допуск и отводы донора, действующие на 2026-11-17. `date` ищет по `period`, а флаг без `period.end` считается продолжающимся, поэтому запрос возвращает допуск, постоянные отводы и временные, которые не закончились до этого дня. Временный флаг остаётся `active` и после `period.end`, пока его не переведут в `inactive`, поэтому один `status=active` вернул бы и истёкшие отводы. Второй запрос использует параметр поиска UZ Core [`code`](https://dhp.uz/fhir/core/ru/SearchParameter-uz-core-flag-code.html) и возвращает только отводы донора.
 
 У Flag нет параметра поиска по причине; читайте причину из полученных флагов.
 
@@ -30,7 +31,7 @@ GET [base]/Flag?author=PractitionerRole/[id]&date=ge2026-11-01
 POST [base]/Flag
 {
   "resourceType": "Flag",
-  "meta": { "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag" ] },
+  "meta": { "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-eligibility-flag" ] },
   "extension": [ { "url": "http://hl7.org/fhir/StructureDefinition/workflow-reason", "valueCodeableReference": { ... } } ],
   "status": "active",
   "code": { "coding": [ { "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs",
@@ -49,7 +50,7 @@ If-Match: W/"2"   # the ETag from your last read; 412 if it changed since
 {
   "resourceType": "Flag",
   "id": "[id]",
-  "meta": { "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag" ] },
+  "meta": { "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-eligibility-flag" ] },
   "status": "inactive",
   ...
 }

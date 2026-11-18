@@ -25,11 +25,11 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  # Match the UTG and extensions versions that uz.dhp.core 0.12.0 depends on.
+  # Match the UTG and extensions versions that uz.dhp.core 0.13.0 depends on.
   hl7.terminology.r5: 7.5.0
   hl7.fhir.uv.extensions.r5: 5.4.0
   hl7.fhir.uv.tools.r5: 1.3.0
-  uz.dhp.core: 0.12.0
+  uz.dhp.core: 0.13.0
   # R4-only package used cross-version for sdc-questionnaire-calculatedExpression (same as uz.dhp.core);
   # the resulting version-mismatch messages are suppressed in ignoreWarnings.txt
   hl7.fhir.uv.sdc: 3.0.0

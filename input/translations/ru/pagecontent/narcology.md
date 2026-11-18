@@ -211,7 +211,7 @@ Encounter может содержать несколько диагнозов. �
 
 | Информация для записи | Value set | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
-| Статус флага | [FlagStatusVS](ValueSet-flag-status-vs.html) | `active` | `status` |
+| Статус флага | [FlagStatusVS](https://dhp.uz/fhir/core/ru/ValueSet-flag-status-vs.html) | `active` | `status` |
 | Флаг регистра | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `registri0001-00002` | `code` |
 | Пациент | - | ссылка на [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `subject` |
 | Период действия | - | `2026-03-12` | `period` |
@@ -257,7 +257,7 @@ Encounter может содержать несколько диагнозов. �
 | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `Condition.code` | Диагноз |
 | [DisabilityVS](https://terminology.dhp.uz/fhir/core/ValueSet/disability-vs) | `Condition.severity` | Степень инвалидности |
 | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `Flag.code` | Флаги Наркологического регистра |
-| [FlagStatusVS](ValueSet-flag-status-vs.html) | `Flag.status` | Жизненный цикл флага |
+| [FlagStatusVS](https://dhp.uz/fhir/core/ru/ValueSet-flag-status-vs.html) | `Flag.status` | Жизненный цикл флага |
 
 ---
 
