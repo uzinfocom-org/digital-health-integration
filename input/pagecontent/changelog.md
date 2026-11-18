@@ -14,11 +14,11 @@ Supporting terminology: a [blood service observation type](CodeSystem-blood-serv
 
 [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) records the ABO, Rh-Hr and biological compatibility tests between a recipient and one blood unit, with SNOMED CT results, and [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) records the recipient's transfusion and obstetric history it is based on.
 
-[Form 003 inpatient medical record](StructureDefinition-form-003-inpatient-medical-record-composition.html) is profiled as a FHIR Document, covering administrative and personal information, admission, admission screening, the primary examination, the examination plan and results, diagnoses, operations, the medication and procedure sheets, the temperature chart, the clinical course, the treatment outcome, temporary disability, the post-mortem conclusion and responsible persons across 20 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-003-mapping.html).
+[Form 003 inpatient medical record](StructureDefinition-form-003-inpatient-medical-record-composition.html) is profiled as a FHIR Document, covering administrative and personal information, admission, admission screening, the primary examination, the examination plan and results, diagnoses, operations, the medication and procedure sheets, the temperature chart, the clinical course, the treatment outcome, temporary disability, the post-mortem conclusion and responsible persons across 20 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-003-mapping.html). Supporting terminology: local code systems for the [anaesthesia method](CodeSystem-anesthesia-method-cs.html), [context of death](CodeSystem-death-context-cs.html), [hospital diet](CodeSystem-hospital-diet-type-cs.html), [patient transport mobility](CodeSystem-patient-transport-mobility-cs.html) and [work capacity status](CodeSystem-work-capacity-status-cs.html), each with a value set, and the Form 003 [observation](CodeSystem-form-003-observation-code-cs.html) and [section](CodeSystem-form-003-section-cs.html) codes.
 
-[Form 027 extract from a patient's medical record](StructureDefinition-form-027-medical-record-extract-composition.html) is profiled as a FHIR Document, covering registration, personal information, residence, referral and diagnosis, clinical information, treatment and recommendations, next steps and responsible persons across 8 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-027-mapping.html).
+[Form 027 extract from a patient's medical record](StructureDefinition-form-027-medical-record-extract-composition.html) is profiled as a FHIR Document, covering registration, personal information, residence, referral and diagnosis, clinical information, treatment and recommendations, next steps and responsible persons across 8 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-027-mapping.html). The [document category](CodeSystem-document-category-cs.html) code system adds `form-027`.
 
-[Form 044 medical certificate for travelers abroad](StructureDefinition-form-044-travel-clearance-composition.html) is profiled as a FHIR Document, covering personal information, past infectious diseases, the commission's travel clearance with destination country and business trip period, place of residence and the commission chair and members across 5 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-044-mapping.html).
+[Form 044 medical certificate for travelers abroad](StructureDefinition-form-044-travel-clearance-composition.html) is profiled as a FHIR Document, covering personal information, past infectious diseases, the commission's travel clearance with destination country and business trip period, place of residence and the commission chair and members across 5 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-044-mapping.html). The certificate number uses the new [medical certificate number](NamingSystem-medical-certificate-number-system.html) identifier system `https://dhp.uz/fhir/core/sid/doc/uz/medical-certificate-number`, the [document category](CodeSystem-document-category-cs.html) code system adds `form-044`, and local [Form 044 observation codes](CodeSystem-form-044-observation-code-cs.html) cover the travel clearance and the business trip period.
 
 [Search](search.html), opened from a new box in the page header, finds resources by title, name, URL or description, and codes, terms and mappings in code systems, value sets and ConceptMaps, in English, Russian and Uzbek. Results can be narrowed by resource type.
 
@@ -32,9 +32,21 @@ Each language's JSON copy of a resource now keeps the other languages as `transl
 
 ICHI codings in the Form 066 example state ICHI version `2026.9.17`, and the [Cancer Condition](StructureDefinition-cancer-condition.html) example's ICCC-3 coding states version `0.13.0`, as UZ Core 0.13.0 requires.
 
+On every Questionnaire page, the link that opened the form in the NLM form viewer now opens it on the [Questionnaires](forms.html) page instead, and the hepatitis, cervical and breast cancer screening and Form 096 pages link their questionnaires there. The screening risk questionnaire response examples reference their questionnaires without a version.
+
+The [amniotic fluid characteristic](ValueSet-amniotic-fluid-characteristic-vs.html) value set and the Form 096 SNOMED CT supplement use the current display `Amniotic fluid clear` for `168090003`.
+
 The [Form 011](StructureDefinition-form-011-hemodialysis-composition.html), [Form 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Form 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) and [Form 130](StructureDefinition-form-130-laboratory-test-results-composition.html) Compositions no longer fix `status` to `final`, so a document can follow the [document lifecycle](document-statuses.html) through `preliminary`, `amended` and `entered-in-error`.
 
-The guide depends on UZ Core 0.13.0. [Narcology and Psychiatry Flag](StructureDefinition-narcology-psychiatry-flag.html) is based on [UZ Core Flag](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-flag.html) and [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) on [UZ Core CarePlan](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-careplan.html). The local `flag-status-cs` and `flag-status-vs` are removed: Flag status uses the UZ Core [Flag status](https://dhp.uz/fhir/core/en/ValueSet-flag-status-vs.html) value set, which has the same HL7 codes.
+The guide depends on [UZ Core 0.13.0](https://dhp.uz/fhir/core/changelog.html). [Narcology and Psychiatry Flag](StructureDefinition-narcology-psychiatry-flag.html) is based on [UZ Core Flag](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-flag.html) and [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) on [UZ Core CarePlan](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-careplan.html). The local `flag-status-cs` and `flag-status-vs` are removed: Flag status uses the UZ Core [Flag status](https://dhp.uz/fhir/core/en/ValueSet-flag-status-vs.html) value set, which has the same HL7 codes.
+
+#### Documentation
+
+Each form mapping page links to its [forms overview](forms-overview.html) volume and links each profile only on its first mention. The [hepatitis](hepatitis.html) page's table headers match the other integration pages.
+
+The [Form 066](form-066-mapping.html) and [Form 097](form-097-mapping.html) mapping pages map the medical record number to Encounter.identifier with the `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number` system, as the examples do, instead of Composition.identifier.
+
+The [forms overview](forms-overview.html) and its 11 volume pages, diagrams included, are available in Russian and Uzbek.
 
 ### Version 0.12.1
 
@@ -49,10 +61,6 @@ Organizations in the [Form 097](form-097-mapping.html) examples are identified b
 The Apgar component score, basic newborn skin colour and newborn care location code systems and value sets (`apgar-component-score-cs`, `newborn-skin-color-basic-cs`, `newborn-care-location-cs` and their `-vs` value sets) are removed. No profile bound them: Form 097 codes the Apgar score with LOINC and skin colour from [Newborn Skin Color Detailed](ValueSet-newborn-skin-color-detailed-vs.html).
 
 [Form 111](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) registration section entries may also be [UZ Core Socioeconomic Observations](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html). [Previous Pregnancy Outcome](ValueSet-form111-previous-pregnancy-outcome-vs.html) adds miscarriage (SNOMED CT `17369002`). The [Form 111 mapping](form-111-mapping.html) describes the Composition.status lifecycle: `preliminary` while the card is open, `final` once it is closed, `amended` for later corrections and `entered-in-error` if it is withdrawn. The [antenatal card number](NamingSystem-antenatal-card-number-system.html) is carried in EpisodeOfCare.identifier, not Encounter.identifier.
-
-#### Documentation
-
-The [forms overview](forms-overview.html) and its 11 volume pages, diagrams included, are available in Russian and Uzbek.
 
 ### Version 0.12.0
 

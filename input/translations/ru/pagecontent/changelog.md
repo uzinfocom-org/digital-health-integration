@@ -18,11 +18,11 @@
 
 Страница [Blood Service](blood-service.html) описывает работу службы крови, от регистрации и обследования донора до забора, компонентов, запасов, поставки и трансфузии, через профили UZ Core и [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html). Она описывает объём и гематокрит компонента, осложнения донации и трансфузии, отчёты об остатках, групповые запросы на поставку и выдачу единиц реципиентам.
 
-[Форма 003 - медицинская карта стационарного больного](StructureDefinition-form-003-inpatient-medical-record-composition.html) профилирована как FHIR-документ, охватывающий административные и личные сведения, поступление, осмотр при поступлении, первичный осмотр, план и результаты обследования, диагнозы, операции, листы назначений и процедур, температурный лист, течение болезни, исход лечения, временную нетрудоспособность, патологоанатомическое заключение и ответственных лиц в 20 разделах Composition. Для неё есть пример документа-Bundle и [страница пополевого сопоставления](form-003-mapping.html).
+[Форма 003 - медицинская карта стационарного больного](StructureDefinition-form-003-inpatient-medical-record-composition.html) профилирована как FHIR-документ, охватывающий административные и личные сведения, поступление, осмотр при поступлении, первичный осмотр, план и результаты обследования, диагнозы, операции, листы назначений и процедур, температурный лист, течение болезни, исход лечения, временную нетрудоспособность, патологоанатомическое заключение и ответственных лиц в 20 разделах Composition. Для неё есть пример документа-Bundle и [страница пополевого сопоставления](form-003-mapping.html). Сопутствующая терминология: локальные кодовые системы [метода анестезии](CodeSystem-anesthesia-method-cs.html), [обстоятельств смерти](CodeSystem-death-context-cs.html), [больничной диеты](CodeSystem-hospital-diet-type-cs.html), [способа транспортировки пациента](CodeSystem-patient-transport-mobility-cs.html) и [трудоспособности](CodeSystem-work-capacity-status-cs.html), каждая со своим набором значений, а также коды [наблюдений](CodeSystem-form-003-observation-code-cs.html) и [разделов](CodeSystem-form-003-section-cs.html) Формы 003.
 
-[Форма 027, выписка из медицинской карты пациента](StructureDefinition-form-027-medical-record-extract-composition.html), профилирована как FHIR-документ: регистрационные и личные данные, адрес, направление и диагноз, клинические данные, лечение и рекомендации, последующие мероприятия и ответственные лица в 8 разделах Composition. К ней прилагаются пример документа (Bundle) и [страница пополевого сопоставления](form-027-mapping.html).
+[Форма 027, выписка из медицинской карты пациента](StructureDefinition-form-027-medical-record-extract-composition.html), профилирована как FHIR-документ: регистрационные и личные данные, адрес, направление и диагноз, клинические данные, лечение и рекомендации, последующие мероприятия и ответственные лица в 8 разделах Composition. К ней прилагаются пример документа (Bundle) и [страница пополевого сопоставления](form-027-mapping.html). В кодовую систему [категорий документов](CodeSystem-document-category-cs.html) добавлен код `form-027`.
 
-[Форма 044, медицинская справка для выезжающих за границу](StructureDefinition-form-044-travel-clearance-composition.html), описана как FHIR-документ: личные данные, перенесённые инфекционные заболевания, заключение комиссии о допуске к выезду со страной назначения и сроком командировки, место жительства и председатель и члены комиссии в 5 разделах Composition. В комплекте пример документа (Bundle) и [страница пополевого сопоставления](form-044-mapping.html).
+[Форма 044, медицинская справка для выезжающих за границу](StructureDefinition-form-044-travel-clearance-composition.html), описана как FHIR-документ: личные данные, перенесённые инфекционные заболевания, заключение комиссии о допуске к выезду со страной назначения и сроком командировки, место жительства и председатель и члены комиссии в 5 разделах Composition. В комплекте пример документа (Bundle) и [страница пополевого сопоставления](form-044-mapping.html). Номер справки использует новую систему идентификаторов [номера медицинской справки](NamingSystem-medical-certificate-number-system.html) `https://dhp.uz/fhir/core/sid/doc/uz/medical-certificate-number`, в кодовую систему [категорий документов](CodeSystem-document-category-cs.html) добавлен код `form-044`, а локальные [коды наблюдений Формы 044](CodeSystem-form-044-observation-code-cs.html) описывают заключение о допуске к выезду и срок командировки.
 
 #### Изменено
 
@@ -34,7 +34,19 @@ JSON-копия ресурса на каждом языке теперь сох�
 
 Кодировки ICHI в примере Формы 066 указывают версию ICHI `2026.9.17`, а кодировка ICCC-3 в примере [Cancer Condition](StructureDefinition-cancer-condition.html) - версию `0.13.0`, как требует UZ Core 0.13.0.
 
-Руководство зависит от UZ Core 0.13.0. [Narcology and Psychiatry Flag](StructureDefinition-narcology-psychiatry-flag.html) основан на [UZ Core Flag](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-flag.html), а [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) - на [UZ Core CarePlan](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-careplan.html). Локальные `flag-status-cs` и `flag-status-vs` удалены: статус флага использует набор значений UZ Core [Flag status](https://dhp.uz/fhir/core/ru/ValueSet-flag-status-vs.html) с теми же кодами HL7.
+На каждой странице Questionnaire ссылка, которая открывала форму в NLM form viewer, теперь открывает её на странице [вопросников](forms.html), и страницы гепатита, скрининга рака шейки матки и молочной железы и Формы 096 ссылаются на вопросники туда же. Примеры ответов на вопросники риска скрининга ссылаются на вопросники без версии.
+
+Набор значений [характеристик околоплодных вод](ValueSet-amniotic-fluid-characteristic-vs.html) и дополнение SNOMED CT Формы 096 используют актуальное отображение `Amniotic fluid clear` для `168090003`.
+
+Руководство зависит от [UZ Core 0.13.0](https://dhp.uz/fhir/core/changelog.html). [Narcology and Psychiatry Flag](StructureDefinition-narcology-psychiatry-flag.html) основан на [UZ Core Flag](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-flag.html), а [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) - на [UZ Core CarePlan](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-careplan.html). Локальные `flag-status-cs` и `flag-status-vs` удалены: статус флага использует набор значений UZ Core [Flag status](https://dhp.uz/fhir/core/ru/ValueSet-flag-status-vs.html) с теми же кодами HL7.
+
+#### Документация
+
+Каждая страница сопоставления формы ссылается на свой том [обзора форм](forms-overview.html) и даёт ссылку на профиль только при первом упоминании. Заголовки таблиц на странице [гепатита](hepatitis.html) совпадают с другими страницами интеграций.
+
+[Обзор форм](forms-overview.html) и страницы его 11 томов вместе с диаграммами доступны на русском и узбекском языках.
+
+Страницы сопоставления [Формы 066](form-066-mapping.html) и [Формы 097](form-097-mapping.html) относят номер медицинской карты к Encounter.identifier с системой `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number`, как в примерах, а не к Composition.identifier.
 
 ### Версия 0.12.1
 
@@ -49,10 +61,6 @@ JSON-копия ресурса на каждом языке теперь сох�
 Системы кодов и наборы значений оценки компонентов Апгар, базового цвета кожи новорождённого и места ухода за новорождённым (`apgar-component-score-cs`, `newborn-skin-color-basic-cs`, `newborn-care-location-cs` и их наборы значений `-vs`) удалены. Ни один профиль к ним не привязан: форма 097 кодирует оценку по Апгар кодом LOINC, а цвет кожи - из [Newborn Skin Color Detailed](ValueSet-newborn-skin-color-detailed-vs.html).
 
 Записи регистрационного раздела [формы 111](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) также могут быть [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html). В [Previous Pregnancy Outcome](ValueSet-form111-previous-pregnancy-outcome-vs.html) добавлен выкидыш (SNOMED CT `17369002`). [Сопоставление формы 111](form-111-mapping.html) описывает жизненный цикл Composition.status: `preliminary`, пока карта открыта, `final` после её закрытия, `amended` для последующих исправлений и `entered-in-error`, если карта отозвана как ошибочная. [Номер индивидуальной карты беременной](NamingSystem-antenatal-card-number-system.html) передаётся в EpisodeOfCare.identifier, а не в Encounter.identifier.
-
-#### Документация
-
-[Обзор форм](forms-overview.html) и страницы его 11 томов вместе с диаграммами доступны на русском и узбекском языках.
 
 ### Версия 0.12.0
 

@@ -2,11 +2,11 @@
 
 #### Qo'shildi
 
-[003-shakl - statsionar bemorning tibbiy kartasi](StructureDefinition-form-003-inpatient-medical-record-composition.html) FHIR hujjati sifatida profillangan bo'lib, Composition ning 20 ta bo'limi orqali ma'muriy va shaxsiy ma'lumotlar, qabul qilish, qabulda tekshiruv, birlamchi ko'rik, tekshiruv rejasi va natijalari, tashxislar, operatsiyalar, dori va muolaja varaqalari, harorat varaqasi, kasallik kechishi, davolash natijasi, vaqtincha mehnatga layoqatsizlik, patologoanatomik xulosa va mas'ul shaxslarni qamrab oladi. Uning namunaviy hujjat-Bundle'i va [maydonma-maydon moslashtirish sahifasi](form-003-mapping.html) mavjud.
+[003-shakl - statsionar bemorning tibbiy kartasi](StructureDefinition-form-003-inpatient-medical-record-composition.html) FHIR hujjati sifatida profillangan bo'lib, Composition ning 20 ta bo'limi orqali ma'muriy va shaxsiy ma'lumotlar, qabul qilish, qabulda tekshiruv, birlamchi ko'rik, tekshiruv rejasi va natijalari, tashxislar, operatsiyalar, dori va muolaja varaqalari, harorat varaqasi, kasallik kechishi, davolash natijasi, vaqtincha mehnatga layoqatsizlik, patologoanatomik xulosa va mas'ul shaxslarni qamrab oladi. Uning namunaviy hujjat-Bundle'i va [maydonma-maydon moslashtirish sahifasi](form-003-mapping.html) mavjud. Yordamchi terminologiya: [anesteziya usuli](CodeSystem-anesthesia-method-cs.html), [o'lim holatlari](CodeSystem-death-context-cs.html), [shifoxona parhezi](CodeSystem-hospital-diet-type-cs.html), [bemorni tashish usuli](CodeSystem-patient-transport-mobility-cs.html) va [mehnat qobiliyati](CodeSystem-work-capacity-status-cs.html) uchun mahalliy kod tizimlari, har biri o'z qiymatlar to'plami bilan, hamda 003-shakl [kuzatuv](CodeSystem-form-003-observation-code-cs.html) va [bo'lim](CodeSystem-form-003-section-cs.html) kodlari.
 
-[027-shakl, bemorning tibbiy kartasidan ko'chirma](StructureDefinition-form-027-medical-record-extract-composition.html) FHIR hujjati sifatida profillandi: ro'yxatga olish va shaxsiy ma'lumotlar, manzil, yo'llanma va tashxis, klinik ma'lumotlar, davolash va tavsiyalar, keyingi tadbirlar va mas'ul shaxslar Composition'ning 8 ta bo'limida. Unga hujjat namunasi (Bundle) va [maydonlarni moslashtirish sahifasi](form-027-mapping.html) ilova qilingan.
+[027-shakl, bemorning tibbiy kartasidan ko'chirma](StructureDefinition-form-027-medical-record-extract-composition.html) FHIR hujjati sifatida profillandi: ro'yxatga olish va shaxsiy ma'lumotlar, manzil, yo'llanma va tashxis, klinik ma'lumotlar, davolash va tavsiyalar, keyingi tadbirlar va mas'ul shaxslar Composition'ning 8 ta bo'limida. Unga hujjat namunasi (Bundle) va [maydonlarni moslashtirish sahifasi](form-027-mapping.html) ilova qilingan. [Hujjat toifalari](CodeSystem-document-category-cs.html) kod tizimiga `form-027` kodi qo'shildi.
 
-[044-shakl, xorijga ketayotganlar uchun tibbiy ma'lumotnoma](StructureDefinition-form-044-travel-clearance-composition.html) FHIR hujjati sifatida profillandi: shaxsiy ma'lumotlar, kechirgan yuqumli kasalliklar, komissiyaning borish mamlakati va xizmat safari muddati bilan chet elga chiqishga ruxsati, yashash joyi, komissiya raisi va a'zolari - 5 ta Composition bo'limida. Hujjat namunasi (Bundle) va [maydonma-maydon moslashtirish sahifasi](form-044-mapping.html) bilan birga.
+[044-shakl, xorijga ketayotganlar uchun tibbiy ma'lumotnoma](StructureDefinition-form-044-travel-clearance-composition.html) FHIR hujjati sifatida profillandi: shaxsiy ma'lumotlar, kechirgan yuqumli kasalliklar, komissiyaning borish mamlakati va xizmat safari muddati bilan chet elga chiqishga ruxsati, yashash joyi, komissiya raisi va a'zolari - 5 ta Composition bo'limida. Hujjat namunasi (Bundle) va [maydonma-maydon moslashtirish sahifasi](form-044-mapping.html) bilan birga. Ma'lumotnoma raqami yangi [tibbiy ma'lumotnoma raqami](NamingSystem-medical-certificate-number-system.html) identifikator tizimidan `https://dhp.uz/fhir/core/sid/doc/uz/medical-certificate-number` foydalanadi, [hujjat toifalari](CodeSystem-document-category-cs.html) kod tizimiga `form-044` kodi qo'shildi, mahalliy [044-shakl kuzatuv kodlari](CodeSystem-form-044-observation-code-cs.html) esa chet elga chiqishga ruxsat va xizmat safari muddatini qamrab oladi.
 
 [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) [UZ Core Flag](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-flag.html) asosida donor qon topshirishi mumkinligini yoki vaqtincha yoki doimiy chetlatilganini qayd etadi; [ruxsat](Flag-example-blood-donor-eligible.html), [vaqtincha](Flag-example-blood-donor-temporary-deferral.html) va [doimiy](Flag-example-blood-donor-permanent-deferral.html) chetlatish misollari bor. Chetlatishda `workflow-reason` kengaytmasi sababni mahalliy [chetlatish sabablari](CodeSystem-donor-deferral-reason-cs.html) kod tizimidan ([ValueSet](ValueSet-donor-deferral-reason-vs.html)) beradi.
 
@@ -32,9 +32,21 @@ Yordamchi terminologiya: ro'yxatga olish turlari ([ValueSet](ValueSet-blood-serv
 
 [111-shakl](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) Composition'idagi CarePlan yozuvlari istalgan CarePlan emas, UZ Core CarePlan ga havola qiladi.
 
+[Amniotik suyuqlik xususiyatlari](ValueSet-amniotic-fluid-characteristic-vs.html) qiymatlar to'plami va 096-shakl SNOMED CT qo'shimchasi `168090003` uchun amaldagi `Amniotic fluid clear` ko'rinishidan foydalanadi.
+
+Har bir Questionnaire sahifasida shaklni NLM form viewer da ochgan havola endi uni [so'rovnomalar](forms.html) sahifasida ochadi, gepatit, bachadon bo'yni va sut bezi saratoni skriningi hamda 096-shakl sahifalari ham so'rovnomalarga o'sha yerga havola qiladi. Skrining xavfi so'rovnomalariga javob misollari so'rovnomalarga versiyasiz havola qiladi.
+
 Har bir tildagi resursning JSON nusxasi endi boshqa tillarni paketdagidek `translation` kengaytmalarida saqlaydi; avval ingliz, rus va o'zbek sahifalaridagi JSON'da ular olib tashlangan edi.
 
-Qo'llanma UZ Core 0.13.0 ga bog'liq. [Narcology and Psychiatry Flag](StructureDefinition-narcology-psychiatry-flag.html) [UZ Core Flag](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-flag.html) asosida, [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) esa [UZ Core CarePlan](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-careplan.html) asosida. Mahalliy `flag-status-cs` va `flag-status-vs` olib tashlandi: flag holati xuddi shu HL7 kodlariga ega UZ Core [Flag status](https://dhp.uz/fhir/core/uz/ValueSet-flag-status-vs.html) qiymatlar to'plamidan foydalanadi.
+Qo'llanma [UZ Core 0.13.0](https://dhp.uz/fhir/core/changelog.html) ga bog'liq. [Narcology and Psychiatry Flag](StructureDefinition-narcology-psychiatry-flag.html) [UZ Core Flag](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-flag.html) asosida, [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) esa [UZ Core CarePlan](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-careplan.html) asosida. Mahalliy `flag-status-cs` va `flag-status-vs` olib tashlandi: flag holati xuddi shu HL7 kodlariga ega UZ Core [Flag status](https://dhp.uz/fhir/core/uz/ValueSet-flag-status-vs.html) qiymatlar to'plamidan foydalanadi.
+
+#### Hujjatlashtirish
+
+[066-shakl](form-066-mapping.html) va [097-shakl](form-097-mapping.html) moslashtirish sahifalari tibbiy karta raqamini misollardagidek Composition.identifier ga emas, `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number` tizimi bilan Encounter.identifier ga moslashtiradi.
+
+Har bir shakl moslashtirish sahifasi o'zining [shakllar sharhi](forms-overview.html) jildiga havola qiladi va har bir profilga faqat birinchi eslatilganda havola beradi. [Gepatit](hepatitis.html) sahifasidagi jadval sarlavhalari boshqa integratsiya sahifalariga mos keladi.
+
+[Shakllar sharhi](forms-overview.html) va uning 11 ta jild sahifasi diagrammalari bilan birga rus va o'zbek tillarida mavjud.
 
 ### Versiya 0.12.1
 
@@ -49,10 +61,6 @@ Qo'llanma UZ Core 0.13.0 ga bog'liq. [Narcology and Psychiatry Flag](StructureDe
 Apgar komponentlari bahosi, chaqaloq terisining asosiy rangi va chaqaloqni parvarish qilish joyi kodlar tizimlari va qiymatlar to'plamlari (`apgar-component-score-cs`, `newborn-skin-color-basic-cs`, `newborn-care-location-cs` va ularning `-vs` qiymatlar to'plamlari) olib tashlandi. Ularga hech bir profil bog'lanmagan: 097-shakl Apgar bahosini LOINC bilan, teri rangini esa [Newborn Skin Color Detailed](ValueSet-newborn-skin-color-detailed-vs.html) to'plamidan kodlaydi.
 
 [111-shakl](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) ro'yxatga olish bo'limi yozuvlari [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html) ham bo'lishi mumkin. [Previous Pregnancy Outcome](ValueSet-form111-previous-pregnancy-outcome-vs.html) to'plamiga homila tushishi (SNOMED CT `17369002`) qo'shildi. [111-shakl xaritalashi](form-111-mapping.html) Composition.status hayot siklini tavsiflaydi: karta ochiq bo'lganda `preliminary`, yopilgandan keyin `final`, keyingi tuzatishlar uchun `amended` va karta xato sifatida bekor qilinsa `entered-in-error`. [Homilador ayol individual kartasi raqami](NamingSystem-antenatal-card-number-system.html) Encounter.identifier da emas, EpisodeOfCare.identifier da uzatiladi.
-
-#### Hujjatlashtirish
-
-[Shakllar sharhi](forms-overview.html) va uning 11 ta jild sahifasi diagrammalari bilan birga rus va o'zbek tillarida mavjud.
 
 ### Versiya 0.12.0
 
