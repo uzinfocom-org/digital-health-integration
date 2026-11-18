@@ -58,7 +58,7 @@ jobs:
 
       - name: Check that the IG builds successfully
         env:
-          JAVA_TOOL_OPTIONS: "-Xmx6g -Dfile.encoding=UTF-8"
+          JAVA_TOOL_OPTIONS: "-Xmx10g -Dfile.encoding=UTF-8"
         run: |
           # Run the publisher directly against the working https terminology server.
           # _genonce.sh uses the same broken `curl -sSf tx.fhir.org` check and falls

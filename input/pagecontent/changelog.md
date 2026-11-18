@@ -4,7 +4,7 @@
 
 [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) based on [UZ Core Flag](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-flag.html), records whether a donor may give blood or is temporarily or permanently deferred, with [eligibility](Flag-example-blood-donor-eligible.html), [temporary deferral](Flag-example-blood-donor-temporary-deferral.html) and [permanent deferral](Flag-example-blood-donor-permanent-deferral.html) examples. A deferral's `workflow-reason` extension carries the reason from a local [deferral reason](CodeSystem-donor-deferral-reason-cs.html) code system ([ValueSet](ValueSet-donor-deferral-reason-vs.html)).
 
-[Blood Service](blood-service.html) maps the service, from donor registration and testing to collection, components, stock, supply and transfusion, onto UZ Core profiles and [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
+[Blood Service](blood-service.html) maps the service, from donor registration and testing to collection, components, stock, supply and transfusion, onto UZ Core profiles and [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html). It covers component volume and haematocrit, donation and transfusion complications, stock reports, grouped supply requests and issuing units to recipients.
 
 [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html), based on UZ Core Observation, records a person's registration with the blood service as a blood donor or a recipient. It carries the registration number, patient, effective date and time, encounter and performer. Component slices carry the donor category, donation compensation and donation type for a donor and the ICD-10 diagnosis for a recipient; a recipient registration cannot carry the donor components. Examples cover a staff donor, a reserve donor and a recipient, with a registration Encounter and registrar Practitioner for the recipient.
 
@@ -14,29 +14,27 @@ Supporting terminology: a [blood service observation type](CodeSystem-blood-serv
 
 [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) records the ABO, Rh-Hr and biological compatibility tests between a recipient and one blood unit, with SNOMED CT results, and [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) records the recipient's transfusion and obstetric history it is based on.
 
-The [donor questionnaire](forms.html?form=donor-questionnaire) is a 35-question donor interview in Uzbek, Russian and English, with a [completed response example](QuestionnaireResponse-example-donor-questionnaire-response.html), a supporting patient and a [Blood Service step](blood-service.html#interviewing) on which answers can lead to a deferral. The donor deferral reason code system is reused from the donor deferral specification. The blood service program context groups the questionnaire on the Questionnaires page.
+[Form 003 inpatient medical record](StructureDefinition-form-003-inpatient-medical-record-composition.html) is profiled as a FHIR Document, covering administrative and personal information, admission, admission screening, the primary examination, the examination plan and results, diagnoses, operations, the medication and procedure sheets, the temperature chart, the clinical course, the treatment outcome, temporary disability, the post-mortem conclusion and responsible persons across 20 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-003-mapping.html).
 
 [Form 027 extract from a patient's medical record](StructureDefinition-form-027-medical-record-extract-composition.html) is profiled as a FHIR Document, covering registration, personal information, residence, referral and diagnosis, clinical information, treatment and recommendations, next steps and responsible persons across 8 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-027-mapping.html).
-
-[Form 003 inpatient medical record](StructureDefinition-form-003-inpatient-medical-record-composition.html) is profiled as a FHIR Document, covering administrative and personal information, admission, admission screening, the primary examination, the examination plan and results, diagnoses, operations, the medication and procedure sheets, the temperature chart, the clinical course, the treatment outcome, temporary disability, the post-mortem conclusion and responsible persons across 20 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-003-mapping.html).
 
 [Form 044 medical certificate for travelers abroad](StructureDefinition-form-044-travel-clearance-composition.html) is profiled as a FHIR Document, covering personal information, past infectious diseases, the commission's travel clearance with destination country and business trip period, place of residence and the commission chair and members across 5 Composition sections. It ships an example document Bundle and a [field-by-field mapping page](form-044-mapping.html).
 
 [Search](search.html), opened from a new box in the page header, finds resources by title, name, URL or description, and codes, terms and mappings in code systems, value sets and ConceptMaps, in English, Russian and Uzbek. Results can be narrowed by resource type.
 
+The [donor questionnaire](forms.html?form=donor-questionnaire) is a 35-question donor interview in Uzbek, Russian and English, with a [completed response example](QuestionnaireResponse-example-donor-questionnaire-response.html), a supporting patient and a [Blood Service step](blood-service.html#interviewing) on which answers can lead to a deferral. The donor deferral reason code system is reused from the donor deferral specification. The blood service program context groups the questionnaire on the Questionnaires page.
+
 #### Changed
 
-The [Form 011](StructureDefinition-form-011-hemodialysis-composition.html), [Form 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Form 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) and [Form 130](StructureDefinition-form-130-laboratory-test-results-composition.html) Compositions no longer fix `status` to `final`, so a document can follow the [document lifecycle](document-statuses.html) through `preliminary`, `amended` and `entered-in-error`.
+CarePlan entries in the [Form 111](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) Composition reference UZ Core CarePlan instead of any CarePlan.
 
 Each language's JSON copy of a resource now keeps the other languages as `translation` extensions, as the package does; before, the JSON linked from the English, Russian and Uzbek pages had them removed.
 
+ICHI codings in the Form 066 example state ICHI version `2026.9.17`, and the [Cancer Condition](StructureDefinition-cancer-condition.html) example's ICCC-3 coding states version `0.13.0`, as UZ Core 0.13.0 requires.
+
+The [Form 011](StructureDefinition-form-011-hemodialysis-composition.html), [Form 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Form 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) and [Form 130](StructureDefinition-form-130-laboratory-test-results-composition.html) Compositions no longer fix `status` to `final`, so a document can follow the [document lifecycle](document-statuses.html) through `preliminary`, `amended` and `entered-in-error`.
+
 The guide depends on UZ Core 0.13.0. [Narcology and Psychiatry Flag](StructureDefinition-narcology-psychiatry-flag.html) is based on [UZ Core Flag](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-flag.html) and [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) on [UZ Core CarePlan](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-careplan.html). The local `flag-status-cs` and `flag-status-vs` are removed: Flag status uses the UZ Core [Flag status](https://dhp.uz/fhir/core/en/ValueSet-flag-status-vs.html) value set, which has the same HL7 codes.
-
-CarePlan entries in the [Form 003](StructureDefinition-form-003-inpatient-medical-record-composition.html), [Form 027](StructureDefinition-form-027-medical-record-extract-composition.html) and [Form 111](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) Compositions reference UZ Core CarePlan instead of any CarePlan. A [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) performer device is a UZ Core Device.
-
-ICHI codings in the Form 003 and Form 066 examples state ICHI version `2026.9.17`, and the [Cancer Condition](StructureDefinition-cancer-condition.html) example's ICCC-3 coding states version `0.13.0`, as UZ Core 0.13.0 requires.
-
-[Blood Service](blood-service.html) links the UZ Core InventoryReport and BiologicallyDerivedProductDispense profiles, and covers component volume and haematocrit, donation and transfusion complications, stock reports, grouped supply requests and the dispense status. The diagram adds the compatibility tests and the links from the dispense to the order and from the transfusion to the dispense.
 
 ### Version 0.12.1
 

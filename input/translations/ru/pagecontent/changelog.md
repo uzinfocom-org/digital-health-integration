@@ -10,17 +10,17 @@
 
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) оформляет отдельные исследования, панели и операции переработки; добавлены фиксированные системы номеров назначения и донации, subject Patient или Location, BloodLabCodesVS и BloodComponentProcessingCS, коды SNOMED CT для переработки и 15 примеров.
 
-[Поиск](search.html), который открывается из нового поля в шапке страницы, находит ресурсы по заголовку, имени, URL или описанию, а также коды, термины и сопоставления в системах кодов, наборах значений и ConceptMap на английском, русском и узбекском языках. Результаты можно отфильтровать по типу ресурса.
-
-Страница [Blood Service](blood-service.html) описывает работу службы крови, от регистрации и обследования донора до забора, компонентов, запасов, поставки и трансфузии, через профили UZ Core и [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
-
 [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) фиксирует пробы на совместимость по ABO, по Rh-Hr и биологическую пробу между реципиентом и одной единицей крови с результатами в SNOMED CT, а [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) - трансфузионный и акушерский анамнез реципиента, на который она опирается.
 
 [Анкета донора](forms.html?form=donor-questionnaire) содержит 35 вопросов на узбекском, русском и английском языках, [заполненный пример ответа](QuestionnaireResponse-example-donor-questionnaire-response.html) с пациентом и [шаг на странице Blood Service](blood-service.html#interviewing) о том, какие ответы могут привести к отводу. Используется кодовая система причин отвода из спецификации службы крови. Контекст программы группирует анкету на странице опросников.
 
-[Форма 027, выписка из медицинской карты пациента](StructureDefinition-form-027-medical-record-extract-composition.html), профилирована как FHIR-документ: регистрационные и личные данные, адрес, направление и диагноз, клинические данные, лечение и рекомендации, последующие мероприятия и ответственные лица в 8 разделах Composition. К ней прилагаются пример документа (Bundle) и [страница пополевого сопоставления](form-027-mapping.html).
+[Поиск](search.html), который открывается из нового поля в шапке страницы, находит ресурсы по заголовку, имени, URL или описанию, а также коды, термины и сопоставления в системах кодов, наборах значений и ConceptMap на английском, русском и узбекском языках. Результаты можно отфильтровать по типу ресурса.
+
+Страница [Blood Service](blood-service.html) описывает работу службы крови, от регистрации и обследования донора до забора, компонентов, запасов, поставки и трансфузии, через профили UZ Core и [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html). Она описывает объём и гематокрит компонента, осложнения донации и трансфузии, отчёты об остатках, групповые запросы на поставку и выдачу единиц реципиентам.
 
 [Форма 003 - медицинская карта стационарного больного](StructureDefinition-form-003-inpatient-medical-record-composition.html) профилирована как FHIR-документ, охватывающий административные и личные сведения, поступление, осмотр при поступлении, первичный осмотр, план и результаты обследования, диагнозы, операции, листы назначений и процедур, температурный лист, течение болезни, исход лечения, временную нетрудоспособность, патологоанатомическое заключение и ответственных лиц в 20 разделах Composition. Для неё есть пример документа-Bundle и [страница пополевого сопоставления](form-003-mapping.html).
+
+[Форма 027, выписка из медицинской карты пациента](StructureDefinition-form-027-medical-record-extract-composition.html), профилирована как FHIR-документ: регистрационные и личные данные, адрес, направление и диагноз, клинические данные, лечение и рекомендации, последующие мероприятия и ответственные лица в 8 разделах Composition. К ней прилагаются пример документа (Bundle) и [страница пополевого сопоставления](form-027-mapping.html).
 
 [Форма 044, медицинская справка для выезжающих за границу](StructureDefinition-form-044-travel-clearance-composition.html), описана как FHIR-документ: личные данные, перенесённые инфекционные заболевания, заключение комиссии о допуске к выезду со страной назначения и сроком командировки, место жительства и председатель и члены комиссии в 5 разделах Composition. В комплекте пример документа (Bundle) и [страница пополевого сопоставления](form-044-mapping.html).
 
@@ -30,13 +30,11 @@ Composition для [Форма 011](StructureDefinition-form-011-hemodialysis-co
 
 JSON-копия ресурса на каждом языке теперь сохраняет остальные языки в расширениях `translation`, как в пакете; раньше в JSON по ссылкам с английских, русских и узбекских страниц они удалялись.
 
+Записи CarePlan в Composition [Форма 111](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) ссылаются на UZ Core CarePlan, а не на любой CarePlan.
+
+Кодировки ICHI в примере Формы 066 указывают версию ICHI `2026.9.17`, а кодировка ICCC-3 в примере [Cancer Condition](StructureDefinition-cancer-condition.html) - версию `0.13.0`, как требует UZ Core 0.13.0.
+
 Руководство зависит от UZ Core 0.13.0. [Narcology and Psychiatry Flag](StructureDefinition-narcology-psychiatry-flag.html) основан на [UZ Core Flag](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-flag.html), а [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) - на [UZ Core CarePlan](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-careplan.html). Локальные `flag-status-cs` и `flag-status-vs` удалены: статус флага использует набор значений UZ Core [Flag status](https://dhp.uz/fhir/core/ru/ValueSet-flag-status-vs.html) с теми же кодами HL7.
-
-Записи CarePlan в Composition [Форма 003](StructureDefinition-form-003-inpatient-medical-record-composition.html), [Форма 027](StructureDefinition-form-027-medical-record-extract-composition.html) и [Форма 111](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) ссылаются на UZ Core CarePlan, а не на любой CarePlan. Устройство-исполнитель в [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) - это UZ Core Device.
-
-Кодировки ICHI в примерах Формы 003 и Формы 066 указывают версию ICHI `2026.9.17`, а кодировка ICCC-3 в примере [Cancer Condition](StructureDefinition-cancer-condition.html) - версию `0.13.0`, как требует UZ Core 0.13.0.
-
-[Blood Service](blood-service.html) ссылается на профили UZ Core InventoryReport и BiologicallyDerivedProductDispense и описывает объём и гематокрит компонента, осложнения донации и трансфузии, отчёты об остатках, групповые запросы на поставку и статус выдачи. На диаграмму добавлены пробы на совместимость и ссылки от выдачи на назначение и от трансфузии на выдачу.
 
 ### Версия 0.12.1
 

@@ -2,17 +2,21 @@
 
 #### Qo'shildi
 
-[Donor so‘rovnomasi](forms.html?form=donor-questionnaire) o‘zbek, rus va ingliz tillarida 35 savol, bemor bilan [to‘ldirilgan javob namunasi](QuestionnaireResponse-example-donor-questionnaire-response.html) va qaysi javoblar chetlatishga olib kelishi mumkinligi haqidagi [Blood Service bosqichini](blood-service.html#interviewing) taqdim etadi. Donorni chetlatish sabablari kod tizimi qayta ishlatiladi. Dastur konteksti so‘rovnomani so'rovnomalar sahifasida guruhlaydi.
+[003-shakl - statsionar bemorning tibbiy kartasi](StructureDefinition-form-003-inpatient-medical-record-composition.html) FHIR hujjati sifatida profillangan bo'lib, Composition ning 20 ta bo'limi orqali ma'muriy va shaxsiy ma'lumotlar, qabul qilish, qabulda tekshiruv, birlamchi ko'rik, tekshiruv rejasi va natijalari, tashxislar, operatsiyalar, dori va muolaja varaqalari, harorat varaqasi, kasallik kechishi, davolash natijasi, vaqtincha mehnatga layoqatsizlik, patologoanatomik xulosa va mas'ul shaxslarni qamrab oladi. Uning namunaviy hujjat-Bundle'i va [maydonma-maydon moslashtirish sahifasi](form-003-mapping.html) mavjud.
 
 [027-shakl, bemorning tibbiy kartasidan ko'chirma](StructureDefinition-form-027-medical-record-extract-composition.html) FHIR hujjati sifatida profillandi: ro'yxatga olish va shaxsiy ma'lumotlar, manzil, yo'llanma va tashxis, klinik ma'lumotlar, davolash va tavsiyalar, keyingi tadbirlar va mas'ul shaxslar Composition'ning 8 ta bo'limida. Unga hujjat namunasi (Bundle) va [maydonlarni moslashtirish sahifasi](form-027-mapping.html) ilova qilingan.
-
-[003-shakl - statsionar bemorning tibbiy kartasi](StructureDefinition-form-003-inpatient-medical-record-composition.html) FHIR hujjati sifatida profillangan bo'lib, Composition ning 20 ta bo'limi orqali ma'muriy va shaxsiy ma'lumotlar, qabul qilish, qabulda tekshiruv, birlamchi ko'rik, tekshiruv rejasi va natijalari, tashxislar, operatsiyalar, dori va muolaja varaqalari, harorat varaqasi, kasallik kechishi, davolash natijasi, vaqtincha mehnatga layoqatsizlik, patologoanatomik xulosa va mas'ul shaxslarni qamrab oladi. Uning namunaviy hujjat-Bundle'i va [maydonma-maydon moslashtirish sahifasi](form-003-mapping.html) mavjud.
 
 [044-shakl, xorijga ketayotganlar uchun tibbiy ma'lumotnoma](StructureDefinition-form-044-travel-clearance-composition.html) FHIR hujjati sifatida profillandi: shaxsiy ma'lumotlar, kechirgan yuqumli kasalliklar, komissiyaning borish mamlakati va xizmat safari muddati bilan chet elga chiqishga ruxsati, yashash joyi, komissiya raisi va a'zolari - 5 ta Composition bo'limida. Hujjat namunasi (Bundle) va [maydonma-maydon moslashtirish sahifasi](form-044-mapping.html) bilan birga.
 
 [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) [UZ Core Flag](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-flag.html) asosida donor qon topshirishi mumkinligini yoki vaqtincha yoki doimiy chetlatilganini qayd etadi; [ruxsat](Flag-example-blood-donor-eligible.html), [vaqtincha](Flag-example-blood-donor-temporary-deferral.html) va [doimiy](Flag-example-blood-donor-permanent-deferral.html) chetlatish misollari bor. Chetlatishda `workflow-reason` kengaytmasi sababni mahalliy [chetlatish sabablari](CodeSystem-donor-deferral-reason-cs.html) kod tizimidan ([ValueSet](ValueSet-donor-deferral-reason-vs.html)) beradi.
 
-[Blood Service](blood-service.html) sahifasi qon xizmatini - donorni ro'yxatga olish va tekshirishdan qon olish, komponentlar, zaxiralar, yetkazib berish va transfuziyagacha - UZ Core profillari va [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) orqali tavsiflaydi.
+[Blood Service](blood-service.html) sahifasi qon xizmatini - donorni ro'yxatga olish va tekshirishdan qon olish, komponentlar, zaxiralar, yetkazib berish va transfuziyagacha - UZ Core profillari va [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) orqali tavsiflaydi. U komponent hajmi va gematokriti, donatsiya va transfuziya asoratlari, zaxira hisobotlari, guruhlangan yetkazib berish so'rovlari va birliklarni retsipiyentlarga berishni tavsiflaydi.
+
+[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) alohida tekshiruvlar, panellar va qayta ishlash operatsiyalarini buyuradi; so'rov va donatsiya raqamlari tizimlari, Patient yoki Location subyekti, BloodLabCodesVS va BloodComponentProcessingCS, SNOMED CT operatsiya kodlari va 15 ta misol qo'shildi.
+
+[Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) retsipiyent va bitta qon birligi o'rtasidagi ABO, Rh-Hr bo'yicha moslik va biologik sinamani SNOMED CT natijalari bilan qayd etadi, [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) esa u tayanadigan retsipiyentning transfuzion va akusherlik anamnezini qayd etadi.
+
+[Donor so‘rovnomasi](forms.html?form=donor-questionnaire) o‘zbek, rus va ingliz tillarida 35 savol, bemor bilan [to‘ldirilgan javob namunasi](QuestionnaireResponse-example-donor-questionnaire-response.html) va qaysi javoblar chetlatishga olib kelishi mumkinligi haqidagi [Blood Service bosqichini](blood-service.html#interviewing) taqdim etadi. Donorni chetlatish sabablari kod tizimi qayta ishlatiladi. Dastur konteksti so‘rovnomani so'rovnomalar sahifasida guruhlaydi.
 
 [Qidiruv](search.html) sahifa sarlavhasidagi yangi maydondan ochiladi. U resurslarni sarlavhasi, nomi, URL yoki tavsifi bo'yicha, shuningdek kod tizimlari, qiymatlar to'plamlari va ConceptMaplardagi kodlar, atamalar va moslashtirishlarni ingliz, rus va o'zbek tillarida topadi. Natijalarni resurs turi bo'yicha filtrlash mumkin.
 
@@ -20,23 +24,17 @@ UZ Core Observation asosidagi [Blood Service Registration Observation](Structure
 
 Yordamchi terminologiya: ro'yxatga olish turlari ([ValueSet](ValueSet-blood-service-registration-type-vs.html)) va komponent kodlari uchun [qon xizmati kuzatuv turi](CodeSystem-blood-service-observation-type-cs.html) kod tizimi, [donor toifasi](ValueSet-donor-category-vs.html) qiymatlar to'plami (kadr donor uchun SNOMED CT `275561000`, zaxira donor uchun mahalliy [kod](CodeSystem-donor-category-cs.html)), [donatsiya to'lovi](CodeSystem-donation-compensation-cs.html) ([ValueSet](ValueSet-donation-compensation-vs.html)) uchun mahalliy kod tizimi, SNOMED CT [donatsiya turi](ValueSet-donation-type-vs.html) qiymatlar to'plami, hamda SNOMED CT kodlarining o'zbekcha va ruscha [tarjimalari](CodeSystem-blood-service-snomed-translations-cs.html). Ro'yxatga olish raqami yangi [qon xizmatida ro'yxatga olish raqami](NamingSystem-blood-registration-number-system.html) identifikator tizimidan foydalanadi: `https://dhp.uz/fhir/core/sid/doc/uz/blood-registration`.
 
-[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) alohida tekshiruvlar, panellar va qayta ishlash operatsiyalarini buyuradi; so'rov va donatsiya raqamlari tizimlari, Patient yoki Location subyekti, BloodLabCodesVS va BloodComponentProcessingCS, SNOMED CT operatsiya kodlari va 15 ta misol qo'shildi.
-
-[Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) retsipiyent va bitta qon birligi o'rtasidagi ABO, Rh-Hr bo'yicha moslik va biologik sinamani SNOMED CT natijalari bilan qayd etadi, [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) esa u tayanadigan retsipiyentning transfuzion va akusherlik anamnezini qayd etadi.
-
 #### O'zgartirildi
 
 [011-shakl](StructureDefinition-form-011-hemodialysis-composition.html), [066-shakl](StructureDefinition-form-066-hospital-discharge-composition.html), [066-1-shakl](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) va [130-shakl](StructureDefinition-form-130-laboratory-test-results-composition.html) Composition'lari endi `status` ni `final` ga qotirmaydi, shuning uchun hujjat [hayot sikli](document-statuses.html) bo'yicha `preliminary`, `amended` va `entered-in-error` holatlaridan o'ta oladi.
 
+066-shakl misolidagi ICHI kodlashlari ICHI `2026.9.17` versiyasini, [Cancer Condition](StructureDefinition-cancer-condition.html) misolidagi ICCC-3 kodlashi esa `0.13.0` versiyasini ko'rsatadi, UZ Core 0.13.0 talab qilganidek.
+
+[111-shakl](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) Composition'idagi CarePlan yozuvlari istalgan CarePlan emas, UZ Core CarePlan ga havola qiladi.
+
 Har bir tildagi resursning JSON nusxasi endi boshqa tillarni paketdagidek `translation` kengaytmalarida saqlaydi; avval ingliz, rus va o'zbek sahifalaridagi JSON'da ular olib tashlangan edi.
 
 Qo'llanma UZ Core 0.13.0 ga bog'liq. [Narcology and Psychiatry Flag](StructureDefinition-narcology-psychiatry-flag.html) [UZ Core Flag](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-flag.html) asosida, [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) esa [UZ Core CarePlan](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-careplan.html) asosida. Mahalliy `flag-status-cs` va `flag-status-vs` olib tashlandi: flag holati xuddi shu HL7 kodlariga ega UZ Core [Flag status](https://dhp.uz/fhir/core/uz/ValueSet-flag-status-vs.html) qiymatlar to'plamidan foydalanadi.
-
-[003-shakl](StructureDefinition-form-003-inpatient-medical-record-composition.html), [027-shakl](StructureDefinition-form-027-medical-record-extract-composition.html) va [111-shakl](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) Composition'laridagi CarePlan yozuvlari istalgan CarePlan emas, UZ Core CarePlan ga havola qiladi. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) ijrochisi bo'lgan qurilma UZ Core Device dir.
-
-003-shakl va 066-shakl misollaridagi ICHI kodlashlari ICHI `2026.9.17` versiyasini, [Cancer Condition](StructureDefinition-cancer-condition.html) misolidagi ICCC-3 kodlashi esa `0.13.0` versiyasini ko'rsatadi, UZ Core 0.13.0 talab qilganidek.
-
-[Blood Service](blood-service.html) UZ Core InventoryReport va BiologicallyDerivedProductDispense profillariga havola qiladi hamda komponent hajmi va gematokriti, donatsiya va transfuziya asoratlari, zaxira hisobotlari, guruhlangan yetkazib berish so'rovlari va berish holatini tavsiflaydi. Diagrammaga moslik sinamalari hamda berishdan tayinlovga va transfuziyadan berishga havolalar qo'shildi.
 
 ### Versiya 0.12.1
 
