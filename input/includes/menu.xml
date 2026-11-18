@@ -1,0 +1,91 @@
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="menu.html" class="dropdown-toggle">Documents
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="document-categories.html">Categories</a>
+      </li>
+      <li>
+        <a href="document-statuses.html">Lifecycle</a>
+      </li>
+      <li>
+        <a href="forms-overview.html">Forms overview</a>
+      </li>
+      <li>
+        <a href="form-003-mapping.html">Form 003 Mapping</a>
+      </li>
+      <li>
+        <a href="form-011-mapping.html">Form 011 Mapping</a>
+      </li>
+      <li>
+        <a href="form-027-mapping.html">Form 027 Mapping</a>
+      </li>
+      <li>
+        <a href="form-044-mapping.html">Form 044 Mapping</a>
+      </li>
+      <li>
+        <a href="form-066-mapping.html">Form 066 Mapping</a>
+      </li>
+      <li>
+        <a href="form-066-1-mapping.html">Form 066-1 Mapping</a>
+      </li>
+      <li>
+        <a href="form-096-mapping.html">Form 096 Mapping</a>
+      </li>
+      <li>
+        <a href="form-097-mapping.html">Form 097 Mapping</a>
+      </li>
+      <li>
+        <a href="form-130-mapping.html">Form 130 Mapping</a>
+      </li>
+      <li>
+        <a href="form-111-mapping.html">Form 111 Mapping</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="menu.html" class="dropdown-toggle">Integrations
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="cervical-breast-cancer-screening.html">Cervical and Breast Cancer Screening</a>
+      </li>
+      <li>
+        <a href="sick-leave.html">Sick Leave</a>
+      </li>
+      <li>
+        <a href="dhis-tuberculosis.html">Tuberculosis (DHIS)</a>
+      </li>
+      <li>
+        <a href="narcology.html">Narcology</a>
+      </li>
+      <li>
+        <a href="psychiatry.html">Psychiatry</a>
+      </li>
+      <li>
+        <a href="cancer.html">Cancer</a>
+      </li>
+      <li>
+        <a href="hepatitis.html">Hepatitis</a>
+      </li>
+      <li>
+        <a href="blood-service.html">Blood Service</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="forms.html">Questionnaires</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="changelog.html">Changelog</a>
+  </li>
+</ul>

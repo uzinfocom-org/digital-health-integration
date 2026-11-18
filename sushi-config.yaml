@@ -91,14 +91,6 @@ parameters:
 
 #   validation: [allow-any-extensions, no-broken-links]
 #
-# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
-# │ The menu property will be used to generate the input/menu.xml file. The menu is represented    │
-# │ as a simple structure where the YAML key is the menu item name and the value is the URL.       │
-# │ The IG publisher currently only supports one level deep on sub-menus. To provide a             │
-# │ custom menu.xml file, do not include this property and include a `menu.xml` file in            │
-# │ input/includes. To use a provided input/includes/menu.xml file, delete the "menu"              │
-# │ property below.                                                                                │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 pages:
   index.md:
     title: Home
@@ -174,35 +166,6 @@ pages:
     title: Changelog
   translationinfo.md:
     title: Translationinfo
-
-menu:
-  Home: index.html
-  Documents:
-    Categories: document-categories.html
-    Lifecycle: document-statuses.html
-    Forms overview: forms-overview.html
-    Form 003 Mapping: form-003-mapping.html
-    Form 011 Mapping: form-011-mapping.html
-    Form 027 Mapping: form-027-mapping.html
-    Form 044 Mapping: form-044-mapping.html
-    Form 066 Mapping: form-066-mapping.html
-    Form 066-1 Mapping: form-066-1-mapping.html
-    Form 096 Mapping: form-096-mapping.html
-    Form 097 Mapping: form-097-mapping.html
-    Form 130 Mapping: form-130-mapping.html
-    Form 111 Mapping: form-111-mapping.html
-  Integrations:
-    Cervical and Breast Cancer Screening: cervical-breast-cancer-screening.html
-    Sick Leave: sick-leave.html
-    Tuberculosis (DHIS): dhis-tuberculosis.html
-    Narcology: narcology.html
-    Psychiatry: psychiatry.html
-    Cancer: cancer.html
-    Hepatitis: hepatitis.html
-    Blood Service: blood-service.html
-  Questionnaires: forms.html
-  Artifacts: artifacts.html
-  Changelog: changelog.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
