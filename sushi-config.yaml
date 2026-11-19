@@ -132,6 +132,8 @@ pages:
     title: Cancer
   hepatitis.md:
     title: Hepatitis
+  prescription.md:
+    title: Prescription
   blood-service.md:
     title: Blood Service
   forms.md:

@@ -160,3 +160,31 @@ Description: "Laterality of the anatomical site affected by the primary cancer."
 * value[x] 0..1
 * value[x] only CodeableConcept
 * valueCodeableConcept from CancerLateralityQualifierVS (required)
+
+// Prescription
+Extension: PrescriptionDispenseBatch
+Id: prescription-dispense-batch
+Title: "Prescription Dispense Batch"
+Description: "Source-reported lot number and expiration date of one batch supplied in a dispense. Repeat the extension for each reported batch. These describe the batch, not the serial number of an individual package. Include only data available in the source; do not infer missing values."
+Context: MedicationDispense
+* ^status = #draft
+* ^experimental = true
+* ^publisher = "Uzinfocom"
+* value[x] 0..0
+* extension 1..*
+* extension ^slicing.rules = #closed
+* extension contains
+    lotNumber 0..1 MS and
+    expirationDate 0..1 MS
+* extension[lotNumber]
+  * ^short = "Source-reported batch lot number"
+  * ^definition = "The batch lot number as reported by the source. This is not the serial number of an individual package and is not a key for the dispense."
+  * extension 0..0
+  * value[x] 1..1
+  * value[x] only string
+* extension[expirationDate]
+  * ^short = "Source-reported batch expiration date"
+  * ^definition = "The expiration date of the dispensed batch, preserving the precision supplied by the source. Do not invent a day, time or timezone."
+  * extension 0..0
+  * value[x] 1..1
+  * value[x] only dateTime
