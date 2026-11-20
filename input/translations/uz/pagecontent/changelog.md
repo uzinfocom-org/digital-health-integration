@@ -1,5 +1,9 @@
 ### Ishlab chiqilmoqda
 
+(Hozircha o'zgarishlar yo'q)
+
+### Versiya 0.13.1
+
 #### Qo'shildi
 
 [Orders](orders.html): yo'llanma va kelishuv vazifalari profillari, terminologiya, davlat hisobidan davolash asoslari va SBDL mezonlari, huquqiy moliyalashtirish asoslari, gospitalizatsiya hamda chiqarish hujjati bo'limlari misollari qo'shildi. UZ Core #402 funksiyalari Integrations ga ko'chirildi; hujjatlar ingliz, rus va o'zbek tillarida mavjud.
