@@ -330,9 +330,9 @@
     var res = f.resourceLink ? '<a href="' + url(f.resourceLink) + '"' + ext(f.resourceLink) + '>' + esc(f.resource) + '</a>' : esc(f.resource);
     var rows = [
       [S.dataType, '<span style="display:inline-flex;gap:6px;align-items:center">' + dt(f.type) + esc(S.types[f.type]) + '</span>'],
-      [S.path, '<span class="fx-mono">' + esc(f.path) + '</span>'],
-      [S.resource, res + (f.targets ? ' <span class="fx-muted">→ ' + esc(f.targets.join(', ')) + '</span>' : '')]
+      [S.path, '<span class="fx-mono">' + esc(f.path) + '</span>']
     ];
+    if (f.resource) rows.push([S.resource, res + (f.targets ? ' <span class="fx-muted">→ ' + esc(f.targets.join(', ')) + '</span>' : '')]);
     if (f.card) rows.push([S.card, cardTag(f.card)]);
     if (f.code) rows.push([S.itemCode, codeHtml(f.code)]);
     if (f.binding) rows.push([S.binding, bindingHtml(f.binding)]);
