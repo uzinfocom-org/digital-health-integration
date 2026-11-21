@@ -360,7 +360,7 @@ def element(sd, eid):
         cur = REG.get(cur.get("baseDefinition"))
     for i, s in enumerate(chain):
         els = {e["id"]: e for e in sd_elements(s)}
-        e = els.get(eid) or (els.get(unslice(eid)) if i else None)
+        e = els.get(eid) or (els.get(unslice(eid)) or els.get(re.sub(r"(\.section)+", ".section", unslice(eid))) if i else None)
         if e is None:
             continue
         for k in ("min", "max", "type", "binding", "patternCodeableConcept", "fixedCode", "patternCoding", "short"):
@@ -427,6 +427,9 @@ def resolve(profile_sd, path):
                 vid = next((e["id"] for e in sd_elements(ext) if re.fullmatch(r"Extension\.extension:\w+\.value\[x\]", e["id"])
                             and e.get("max") != "0" and e.get("binding")), None)
                 v = element(ext, vid) if vid else None
+            own = element(sd, cand + vid[len("Extension"):]) if v else None
+            if own:
+                v = {**v, **{k: own[k] for k in ("type", "binding") if k in own}}
             if v and v.get("max") != "0":
                 el = {**v, **{k: found[k] for k in ("min", "max") if k in found}}
                 tcode, sd, eid = (v.get("type") or [{}])[0].get("code"), ext, vid
@@ -496,7 +499,7 @@ def item_code(text):
     if m:
         sysname = "SNOMED CT" if m.group(1).startswith("SNOMED") else m.group(1)
         return {"system": sysname, "code": m.group(2), "display": m.group(3) or ""}
-    m = re.search(r"\[([^\]]+)\]\(([^)]+)\)\s*`([^`]+)`(?:\s*\"([^\"]+)\")?", text)
+    m = re.search(r"\[([^\]]+)\]\(([^)]+)\)\s*:?\s*`([^`]+)`(?:\s*\"([^\"]+)\")?", text)
     if m and re.search(r"CodeSystem|ValueSet", m.group(2)):
         return {"system": m.group(1), "code": m.group(3), "display": m.group(4) or "", "link": m.group(2)}
     m = re.match(r"\s*([A-Z][\w ()-]+?):?\s+`([\w.-]+)`\s+\"([^\"]+)\"", text)
@@ -516,7 +519,7 @@ def list_links(text):
     return out
 
 
-PATH_START = re.compile(r"^[A-Z][A-Za-z]+(?:\[\w+\])?(?:\.[A-Za-z]\w*(?:\[[\w-]+\])?)*")
+PATH_START = re.compile(r"^[A-Z][A-Za-z0-9]+(?:\[\w+\])?(?:\.[A-Za-z]\w*(?:\[[\w-]+\])?)*")
 
 
 def pick_path(text, prev_resource):
@@ -542,7 +545,7 @@ def profile_for(resource, link):
         return REG.res(REG.by_name[resource])
     if link:
         e = REG.from_link(link)
-        if e and e["type"] == "StructureDefinition":
+        if e and e["type"] == "StructureDefinition" and REG.res(e).get("type") == resource:
             return REG.res(e)
     e = REG.by_key.get((CORE_PKG, "StructureDefinition", f"uz-core-{resource.lower()}"))
     if e:
@@ -601,11 +604,14 @@ def sd_link_names(cell):
     return re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", sub, cell)
 
 
-def build_field(fid, row, langs_rows, prev_resource, lists, subsections, form, comp_sd):
+def build_field(fid, row, langs_rows, prev_resource, lists, subsections, form, comp_sd, parent):
     cells = row + [""] * (5 - len(row))
     uz, ru, path_cell, code_cell, example = cells[:5]
     path_text = strip_md(path_cell)
     path = pick_path(strip_md(sd_link_names(path_cell)), prev_resource)
+    for s in subsections:
+        if path and parent and f"Composition.section[{s['slice']}]" in path:
+            path = path.replace(f"Composition.section[{s['slice']}]", f"Composition.section[{parent}].section[{s['slice']}]")
     plinks = links(path_cell)
     resource = path.split(".")[0].split("[")[0] if path else prev_resource
     if path and path.startswith("Composition"):
@@ -763,7 +769,7 @@ def build(form):
         nonlocal prev
         out = []
         for r, row in enumerate(rows):
-            f, prev = build_field(f"{key}-{r}", row, None, prev, lists, subsections, form, sd)
+            f, prev = build_field(f"{key}-{r}", row, None, prev, lists, subsections, form, sd, key if key != "document" else None)
             out.append(f)
         return out
 
