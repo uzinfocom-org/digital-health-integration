@@ -1,8 +1,18 @@
 ### В разработке
 
+(Пока без изменений)
+
+### Версия 0.13.1
+
 #### Добавлено
 
-[Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) фиксирует отвод донора; есть примеры [временного](Flag-example-blood-donor-temporary-deferral.html) и [постоянного](Flag-example-blood-donor-permanent-deferral.html) отвода. Расширение `workflow-reason` содержит причину из локальной кодовой системы [причин отвода](CodeSystem-donor-deferral-reason-cs.html) ([ValueSet](ValueSet-donor-deferral-reason-vs.html)).
+[Orders](orders.html): добавлены профили направлений и задач согласования, терминология, основания государственного финансирования и критерии SBDL, правовые основания оплаты, примеры госпитализации и разделов выписного документа. Функциональность PR UZ Core #402 перенесена в Integrations; документация доступна на английском, русском и узбекском.
+
+### Версия 0.13.0
+
+#### Добавлено
+
+[Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) на основе [UZ Core Flag](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-flag.html) фиксирует, может ли донор сдавать кровь или он временно или постоянно отведён; есть примеры [допуска](Flag-example-blood-donor-eligible.html), [временного](Flag-example-blood-donor-temporary-deferral.html) и [постоянного](Flag-example-blood-donor-permanent-deferral.html) отвода. У отвода расширение `workflow-reason` содержит причину из локальной кодовой системы [причин отвода](CodeSystem-donor-deferral-reason-cs.html) ([ValueSet](ValueSet-donor-deferral-reason-vs.html)).
 
 [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) на основе UZ Core Observation фиксирует регистрацию человека в службе крови как донора или реципиента. Оно содержит регистрационный номер, пациента, дату и время, Encounter и исполнителя. Срезы компонентов передают категорию донора, оплату и вид донации для донора и диагноз по МКБ-10 для реципиента; регистрация реципиента не может содержать компоненты донора. Примеры охватывают кадрового донора, резервного донора и реципиента, с Encounter регистрации и регистратором Practitioner для реципиента.
 
@@ -10,25 +20,43 @@
 
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) оформляет отдельные исследования, панели и операции переработки; добавлены фиксированные системы номеров назначения и донации, subject Patient или Location, BloodLabCodesVS и BloodComponentProcessingCS, коды SNOMED CT для переработки и 15 примеров.
 
-[Поиск](search.html), который открывается из нового поля в шапке страницы, находит ресурсы по заголовку, имени, URL или описанию, а также коды, термины и сопоставления в системах кодов, наборах значений и ConceptMap на английском, русском и узбекском языках. Результаты можно отфильтровать по типу ресурса.
-
-Страница [Blood Service](blood-service.html) описывает работу службы крови, от регистрации и обследования донора до забора, компонентов, запасов, поставки и трансфузии, через профили UZ Core и [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html).
-
 [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) фиксирует пробы на совместимость по ABO, по Rh-Hr и биологическую пробу между реципиентом и одной единицей крови с результатами в SNOMED CT, а [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) - трансфузионный и акушерский анамнез реципиента, на который она опирается.
 
-[Анкета донора](forms.html?form=donor-questionnaire) содержит 35 вопросов на узбекском, русском и английском языках, [заполненный пример ответа](QuestionnaireResponse-example-donor-questionnaire-response.html) с пациентом и [шаг на странице Blood Service](blood-service.html#interviewing) о том, какие ответы могут привести к отводу. Используется кодовая система причин отвода из спецификации службы крови. Контекст программы группирует анкету на странице опросников.
+[Анкета донора](forms.html#donor-questionnaire) содержит 35 вопросов на узбекском, русском и английском языках, [заполненный пример ответа](QuestionnaireResponse-example-donor-questionnaire-response.html) с пациентом и [шаг на странице Blood Service](blood-service.html#interviewing) о том, какие ответы могут привести к отводу. Используется кодовая система причин отвода из спецификации службы крови. Контекст программы группирует анкету на странице опросников.
 
-[Форма 027, выписка из медицинской карты пациента](StructureDefinition-form-027-medical-record-extract-composition.html), профилирована как FHIR-документ: регистрационные и личные данные, адрес, направление и диагноз, клинические данные, лечение и рекомендации, последующие мероприятия и ответственные лица в 8 разделах Composition. К ней прилагаются пример документа (Bundle) и [страница пополевого сопоставления](form-027-mapping.html).
+[Поиск](search.html), который открывается из нового поля в шапке страницы, находит ресурсы по заголовку, имени, URL или описанию, а также коды, термины и сопоставления в системах кодов, наборах значений и ConceptMap на английском, русском и узбекском языках. Результаты можно отфильтровать по типу ресурса.
 
-[Форма 003 - медицинская карта стационарного больного](StructureDefinition-form-003-inpatient-medical-record-composition.html) профилирована как FHIR-документ, охватывающий административные и личные сведения, поступление, осмотр при поступлении, первичный осмотр, план и результаты обследования, диагнозы, операции, листы назначений и процедур, температурный лист, течение болезни, исход лечения, временную нетрудоспособность, патологоанатомическое заключение и ответственных лиц в 20 разделах Composition. Для неё есть пример документа-Bundle и [страница пополевого сопоставления](form-003-mapping.html).
+Страница [Blood Service](blood-service.html) описывает работу службы крови, от регистрации и обследования донора до забора, компонентов, запасов, поставки и трансфузии, через профили UZ Core и [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html). Она описывает объём и гематокрит компонента, осложнения донации и трансфузии, отчёты об остатках, групповые запросы на поставку и выдачу единиц реципиентам.
 
-[Форма 044, медицинская справка для выезжающих за границу](StructureDefinition-form-044-travel-clearance-composition.html), описана как FHIR-документ: личные данные, перенесённые инфекционные заболевания, заключение комиссии о допуске к выезду со страной назначения и сроком командировки, место жительства и председатель и члены комиссии в 5 разделах Composition. В комплекте пример документа (Bundle) и [страница пополевого сопоставления](form-044-mapping.html).
+[Форма 003 - медицинская карта стационарного больного](StructureDefinition-form-003-inpatient-medical-record-composition.html) профилирована как FHIR-документ, охватывающий административные и личные сведения, поступление, осмотр при поступлении, первичный осмотр, план и результаты обследования, диагнозы, операции, листы назначений и процедур, температурный лист, течение болезни, исход лечения, временную нетрудоспособность, патологоанатомическое заключение и ответственных лиц в 20 разделах Composition. Для неё есть пример документа-Bundle и [страница пополевого сопоставления](form-003-mapping.html). Сопутствующая терминология: локальные кодовые системы [метода анестезии](CodeSystem-anesthesia-method-cs.html), [обстоятельств смерти](CodeSystem-death-context-cs.html), [больничной диеты](CodeSystem-hospital-diet-type-cs.html), [способа транспортировки пациента](CodeSystem-patient-transport-mobility-cs.html) и [трудоспособности](CodeSystem-work-capacity-status-cs.html), каждая со своим набором значений, а также коды [наблюдений](CodeSystem-form-003-observation-code-cs.html) и [разделов](CodeSystem-form-003-section-cs.html) Формы 003.
+
+[Форма 027, выписка из медицинской карты пациента](StructureDefinition-form-027-medical-record-extract-composition.html), профилирована как FHIR-документ: регистрационные и личные данные, адрес, направление и диагноз, клинические данные, лечение и рекомендации, последующие мероприятия и ответственные лица в 8 разделах Composition. К ней прилагаются пример документа (Bundle) и [страница пополевого сопоставления](form-027-mapping.html). В кодовую систему [категорий документов](CodeSystem-document-category-cs.html) добавлен код `form-027`.
+
+[Форма 044, медицинская справка для выезжающих за границу](StructureDefinition-form-044-travel-clearance-composition.html), описана как FHIR-документ: личные данные, перенесённые инфекционные заболевания, заключение комиссии о допуске к выезду со страной назначения и сроком командировки, место жительства и председатель и члены комиссии в 5 разделах Composition. В комплекте пример документа (Bundle) и [страница пополевого сопоставления](form-044-mapping.html). Номер справки использует новую систему идентификаторов [номера медицинской справки](NamingSystem-medical-certificate-number-system.html) `https://dhp.uz/fhir/core/sid/doc/uz/medical-certificate-number`, в кодовую систему [категорий документов](CodeSystem-document-category-cs.html) добавлен код `form-044`, а локальные [коды наблюдений Формы 044](CodeSystem-form-044-observation-code-cs.html) описывают заключение о допуске к выезду и срок командировки.
 
 #### Изменено
 
 Composition для [Форма 011](StructureDefinition-form-011-hemodialysis-composition.html), [Форма 066](StructureDefinition-form-066-hospital-discharge-composition.html), [Форма 066-1](StructureDefinition-form-066-1-psychiatric-discharge-composition.html) и [Форма 130](StructureDefinition-form-130-laboratory-test-results-composition.html) больше не фиксируют `status` как `final`, поэтому документ может проходить [жизненный цикл](document-statuses.html) через `preliminary`, `amended` и `entered-in-error`.
 
 JSON-копия ресурса на каждом языке теперь сохраняет остальные языки в расширениях `translation`, как в пакете; раньше в JSON по ссылкам с английских, русских и узбекских страниц они удалялись.
+
+Записи CarePlan в Composition [Форма 111](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) ссылаются на UZ Core CarePlan, а не на любой CarePlan.
+
+Кодировки ICHI в примере Формы 066 указывают версию ICHI `2026.9.17`, а кодировка ICCC-3 в примере [Cancer Condition](StructureDefinition-cancer-condition.html) - версию `0.13.0`, как требует UZ Core 0.13.0.
+
+На каждой странице Questionnaire ссылка, которая открывала форму в NLM form viewer, теперь открывает её на странице [вопросников](forms.html), и страницы гепатита, скрининга рака шейки матки и молочной железы и Формы 096 ссылаются на вопросники туда же. Примеры ответов на вопросники риска скрининга ссылаются на вопросники без версии.
+
+Набор значений [характеристик околоплодных вод](ValueSet-amniotic-fluid-characteristic-vs.html) и дополнение SNOMED CT Формы 096 используют актуальное отображение `Amniotic fluid clear` для `168090003`.
+
+Руководство зависит от [UZ Core 0.13.0](https://dhp.uz/fhir/core/changelog.html). [Narcology and Psychiatry Flag](StructureDefinition-narcology-psychiatry-flag.html) основан на [UZ Core Flag](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-flag.html), а [Sick Leave CarePlan](StructureDefinition-sick-leave-careplan.html) - на [UZ Core CarePlan](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-careplan.html). Локальные `flag-status-cs` и `flag-status-vs` удалены: статус флага использует набор значений UZ Core [Flag status](https://dhp.uz/fhir/core/ru/ValueSet-flag-status-vs.html) с теми же кодами HL7.
+
+#### Документация
+
+Каждая страница сопоставления формы ссылается на свой том [обзора форм](forms-overview.html) и даёт ссылку на профиль только при первом упоминании. Заголовки таблиц на странице [гепатита](hepatitis.html) совпадают с другими страницами интеграций.
+
+[Обзор форм](forms-overview.html) и страницы его 11 томов вместе с диаграммами доступны на русском и узбекском языках.
+
+Страницы сопоставления [Формы 066](form-066-mapping.html) и [Формы 097](form-097-mapping.html) относят номер медицинской карты к Encounter.identifier с системой `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number`, как в примерах, а не к Composition.identifier.
 
 ### Версия 0.12.1
 
@@ -43,10 +71,6 @@ JSON-копия ресурса на каждом языке теперь сох�
 Системы кодов и наборы значений оценки компонентов Апгар, базового цвета кожи новорождённого и места ухода за новорождённым (`apgar-component-score-cs`, `newborn-skin-color-basic-cs`, `newborn-care-location-cs` и их наборы значений `-vs`) удалены. Ни один профиль к ним не привязан: форма 097 кодирует оценку по Апгар кодом LOINC, а цвет кожи - из [Newborn Skin Color Detailed](ValueSet-newborn-skin-color-detailed-vs.html).
 
 Записи регистрационного раздела [формы 111](StructureDefinition-form-111-pregnant-woman-individual-card-composition.html) также могут быть [UZ Core Socioeconomic Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-socioeconomic-observation.html). В [Previous Pregnancy Outcome](ValueSet-form111-previous-pregnancy-outcome-vs.html) добавлен выкидыш (SNOMED CT `17369002`). [Сопоставление формы 111](form-111-mapping.html) описывает жизненный цикл Composition.status: `preliminary`, пока карта открыта, `final` после её закрытия, `amended` для последующих исправлений и `entered-in-error`, если карта отозвана как ошибочная. [Номер индивидуальной карты беременной](NamingSystem-antenatal-card-number-system.html) передаётся в EpisodeOfCare.identifier, а не в Encounter.identifier.
-
-#### Документация
-
-[Обзор форм](forms-overview.html) и страницы его 11 томов вместе с диаграммами доступны на русском и узбекском языках.
 
 ### Версия 0.12.0
 
@@ -218,7 +242,7 @@ JSON-копия ресурса на каждом языке теперь сох�
 
 ##### Наркология
 
-Теперь охвачен [наркологический регистр](narcology.html). [Narcology EpisodeOfCare](StructureDefinition-narcology-episode-of-care.html) - это регистрация пациента, несущая группу динамического наблюдения, в которую он помещён, [Narcology Observation](StructureDefinition-narcology-observation.html) - решение врачебно-консультативной комиссии, а [Narcology and Psychiatry Flag](StructureDefinition-narcology-psychiatry-flag.html) - сведения регистра, которые медицинский работник должен знать до начала лечения пациента, такие как социальная опасность или принудительное лечение. Группы наблюдения кодируются [группами типов эпизода](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html), а флаги - кодами [флагов регистра](ValueSet-narcology-psychiatry-registry-flag-vs.html) и [статусов флага](ValueSet-flag-status-vs.html); каждая из этих систем сопоставлена с SNOMED CT: [группы типов](ConceptMap-narcology-psychiatry-episode-of-care-type-group-to-snomed.html), [флаги регистра](ConceptMap-narcology-psychiatry-registry-flag-to-snomed.html) и [типы ресурсов](ConceptMap-type-resource-to-snomed.html).
+Теперь охвачен [наркологический регистр](narcology.html). [Narcology EpisodeOfCare](StructureDefinition-narcology-episode-of-care.html) - это регистрация пациента, несущая группу динамического наблюдения, в которую он помещён, [Narcology Observation](StructureDefinition-narcology-observation.html) - решение врачебно-консультативной комиссии, а [Narcology and Psychiatry Flag](StructureDefinition-narcology-psychiatry-flag.html) - сведения регистра, которые медицинский работник должен знать до начала лечения пациента, такие как социальная опасность или принудительное лечение. Группы наблюдения кодируются [группами типов эпизода](ValueSet-narcology-psychiatry-episode-of-care-type-group-vs.html), а флаги - кодами [флагов регистра](ValueSet-narcology-psychiatry-registry-flag-vs.html) и [статусов флага](https://dhp.uz/fhir/core/ru/ValueSet-flag-status-vs.html); каждая из этих систем сопоставлена с SNOMED CT: [группы типов](ConceptMap-narcology-psychiatry-episode-of-care-type-group-to-snomed.html), [флаги регистра](ConceptMap-narcology-psychiatry-registry-flag-to-snomed.html) и [типы ресурсов](ConceptMap-type-resource-to-snomed.html).
 
 ##### Психиатрия
 

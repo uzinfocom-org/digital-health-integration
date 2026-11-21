@@ -11,21 +11,19 @@
 
 ### Обзор {#overview}
 
-Почти на каждом шаге профиль [UZ Core](https://dhp.uz/fhir/core/ru/artifacts.html) используется без изменений. Это руководство добавляет три профиля. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) фиксирует регистрационные данные, которых нет в UZ Core Patient: зарегистрирован ли человек как донор или как реципиент, регистрационный номер, категория донора, оплата и вид донации и диагноз реципиента. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) оформляет лабораторные назначения донору и запросы на переработку компонента. [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) фиксирует временный или постоянный медицинский отвод от донации. Бумажные формы, стоящие за этими шагами, описаны в разделе [8.0 Служба крови](forms-volume-08-blood-service.html).
-
-<!-- CORE-RELEASE #161 -->
+Почти на каждом шаге профиль [UZ Core](https://dhp.uz/fhir/core/ru/artifacts.html) используется без изменений. Это руководство добавляет пять профилей. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) фиксирует регистрационные данные, которых нет в UZ Core Patient: зарегистрирован ли человек как донор или как реципиент, регистрационный номер, категория донора, оплата и вид донации и диагноз реципиента. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) оформляет лабораторные назначения донору и запросы на переработку компонента. [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) фиксирует, может ли донор сдавать кровь или он отведён. [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) и [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) фиксируют анамнез реципиента и пробы на совместимость перед трансфузией. Бумажные формы, стоящие за этими шагами, описаны в разделе [8.0 Служба крови](forms-volume-08-blood-service.html).
 
 | Шаг | Ресурс | Профиль |
 | :--- | :--- | :--- |
 | [Регистрация донора или реципиента](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
 | [Опрос донора](#interviewing) | Questionnaire, QuestionnaireResponse | [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-questionnaire-response.html) |
-| [Допуск или отвод](#eligibility) | Flag | UZ Core Flag (следующий выпуск UZ Core) для допуска, [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) для отвода |
+| [Допуск или отвод](#eligibility) | Flag | [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) на основе [UZ Core Flag](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-flag.html) |
 | [Обследование крови донора](#testing) | ServiceRequest, Observation, DiagnosticReport, Specimen | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core Observation](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-specimen.html) |
 | [Забор донации](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Переработка на компоненты](#processing) | ServiceRequest, BiologicallyDerivedProduct | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologically-derived-product.html) |
-| [Учёт запасов](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-inventoryitem.html), UZ Core InventoryReport (следующий выпуск UZ Core) |
+| [Учёт запасов](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-inventoryitem.html), [UZ Core InventoryReport](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-inventoryreport.html) |
 | [Запрос и поставка компонентов](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-delivery.html) |
-| [Трансфузия реципиенту](#transfusing) | ServiceRequest, Observation, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html), [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html), [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html), UZ Core BiologicallyDerivedProductDispense (следующий выпуск UZ Core), [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html) |
+| [Трансфузия реципиенту](#transfusing) | ServiceRequest, Observation, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html), [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html), [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html), [UZ Core BiologicallyDerivedProductDispense](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologicallyderivedproductdispense.html), [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html) |
 
 <div>{% include blood-service-model-ru.svg %}</div><br clear="all"/>
 
@@ -47,7 +45,7 @@
 
 ### Опрос донора {#interviewing}
 
-Перед каждой донацией донор отвечает на [анкету донора](forms.html?form=donor-questionnaire); ответы фиксируются ресурсом [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-questionnaire-response.html) на Patient донора ([пример](QuestionnaireResponse-example-donor-questionnaire-response.html)). Ни один ответ сам по себе не означает отвод: врач рассматривает ответы и фиксирует отвод ресурсом [Flag](#eligibility).
+Перед каждой донацией донор отвечает на [анкету донора](forms.html#donor-questionnaire); ответы фиксируются ресурсом [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-questionnaire-response.html) на Patient донора ([пример](QuestionnaireResponse-example-donor-questionnaire-response.html)). Ни один ответ сам по себе не означает отвод: врач рассматривает ответы и фиксирует отвод ресурсом [Flag](#eligibility).
 
 В таблице указан ответ, который может привести к отводу, и соответствующий [код причины](ValueSet-donor-deferral-reason-vs.html). `item.code` каждого вопроса обозначает, о чём он спрашивает, кодом LOINC или SNOMED CT, если подходящий код есть; кода причины в вопросе нет.
 
@@ -92,13 +90,11 @@
 
 ### Допуск и отводы {#eligibility}
 
-<!-- CORE-RELEASE #161 -->
+Может ли донор сдавать кровь, фиксируется ресурсом [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) на его Patient, основанным на [UZ Core Flag](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-flag.html). В `code` указан `blood-donation-eligible`, `blood-donation-deferred-temporary` или `blood-donation-deferred-permanent`. `status` флага описывает сам флаг: флаг в статусе `active` означает, что допуск или отвод действует. Когда фиксируется отвод, действующий флаг допуска донора переводится в `inactive` с `period.end` на этот момент.
 
-Может ли донор сдавать кровь, фиксируется ресурсом Flag на его Patient: допуск к донации, временный или постоянный медицинский отвод. Профиль UZ Core Flag для этого, вместе с кодами допуска доноров, войдёт в следующий выпуск UZ Core. `status` флага описывает сам флаг: флаг отвода в статусе `active` означает, что отвод действует.
+У отвода расширение [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) содержит [причину отвода](ValueSet-donor-deferral-reason-vs.html) и может ссылаться на её основание, например на положительный результат анализа. Донор, отведённый по двум причинам, получает два флага. `period.start` показывает начало отвода. У временного отвода есть `period.end` - дата, с которой донор снова может сдавать кровь; у постоянного отвода `period.end` нет. Временный флаг остаётся `active`, пока его не переведут в `inactive`, поэтому, чтобы понять, действует ли отвод, читайте `period.end` вместе со `status`.
 
-Отвод фиксируется ресурсом [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html): в `code` указан `blood-donation-deferred-temporary` или `blood-donation-deferred-permanent`, а расширение [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) содержит [причину отвода](ValueSet-donor-deferral-reason-vs.html) и может ссылаться на её основание, например на положительный результат анализа. Донор, отведённый по двум причинам, получает два флага. `period.start` показывает начало отвода. У временного отвода есть `period.end` - дата, с которой донор снова может сдавать кровь; у постоянного отвода `period.end` нет. Временный флаг остаётся `active`, пока его не переведут в `inactive`, поэтому, чтобы понять, действует ли отвод, читайте `period.end` вместе со `status`.
-
-Примеры: [временный отвод](Flag-example-blood-donor-temporary-deferral.html), [постоянный отвод](Flag-example-blood-donor-permanent-deferral.html) причина которого ссылается на [подтверждённый положительный результат на ВИЧ](Observation-example-blood-donor-hiv-result.html).
+Примеры: [допуск](Flag-example-blood-donor-eligible.html), [временный отвод](Flag-example-blood-donor-temporary-deferral.html), [постоянный отвод](Flag-example-blood-donor-permanent-deferral.html) причина которого ссылается на [подтверждённый положительный результат на ВИЧ](Observation-example-blood-donor-hiv-result.html).
 
 ### Обследование крови донора {#testing}
 
@@ -119,8 +115,12 @@
 | Кем заготовлено | ссылка на Practitioner или PractitionerRole | `collection.collector` |
 | Группа крови | тип `SNOMED CT#63915006`, значение из [blood group](https://dhp.uz/fhir/core/ru/ValueSet-blood-group-vs.html) | `property[aboGroup]` |
 | Резус-фактор | тип `SNOMED CT#115678000`, значение из [Rh factor](https://dhp.uz/fhir/core/ru/ValueSet-blood-rh-vs.html) | `property[rhdType]` |
+| Объём | тип `SNOMED CT#118565006`, значение в мл | `property[volume]` |
+| Гематокрит | тип `LOINC#4544-3`, значение в % | `property[hematocrit]` |
 
 Пример: [донация цельной крови](https://dhp.uz/fhir/core/ru/BiologicallyDerivedProduct-example-blood-donation-product.html).
+
+Реакция во время или после донации, например обморок, указывается в `complication` процедуры взятия крови с кодом из [осложнений процедуры](https://dhp.uz/fhir/core/ru/ValueSet-procedure-complication-vs.html) (пример: [донация с обмороком](https://dhp.uz/fhir/core/ru/Procedure-example-blood-donation-procedure.html)).
 
 Номер донации ([NamingSystem](https://dhp.uz/fhir/core/ru/NamingSystem-uzb-blood-donation-number.html)) связывает все продукты, полученные из одной донации. Номер единицы ([NamingSystem](https://dhp.uz/fhir/core/ru/NamingSystem-uzb-blood-unit-number.html)) идентифицирует каждый контейнер.
 
@@ -134,13 +134,13 @@
 
 ### Учёт запасов {#stock}
 
-[UZ Core InventoryItem](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-inventoryitem.html) описывает вид компонента, который служба крови держит в запасе (пример: [эритроциты](https://dhp.uz/fhir/core/ru/InventoryItem-example-inventory-item-rbc.html)). Остатки по компонентам, группам крови и местам хранения - это InventoryReport; профиль UZ Core InventoryReport войдёт в следующий выпуск UZ Core.
+[UZ Core InventoryItem](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-inventoryitem.html) описывает вид компонента, который служба крови держит в запасе (пример: [эритроциты](https://dhp.uz/fhir/core/ru/InventoryItem-example-inventory-item-rbc.html)). Остатки и движение запасов - это [UZ Core InventoryReport](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-inventoryreport.html): `countType` показывает, инвентаризация это (`snapshot`) или изменение (`difference`), `operationType` и `operationTypeReason` - что произошло, например поступление или списание, а каждый `inventoryListing` считает единицы в одном `location` с одним `itemStatus` (пример: [поступление на склад](https://dhp.uz/fhir/core/ru/InventoryReport-example-inventory-report-medication-receipt.html)).
 
 ### Запрос и поставка компонентов {#supplying}
 
-Больница запрашивает компоненты через [UZ Core SupplyRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-request.html). Именной запрос для конкретного пациента заполняет `deliverFor` и ссылается на назначение трансфузии через `basedOn`. Когда служба крови отправляет единицы, [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-delivery.html) ссылается на запрос через `basedOn`, а каждый `suppliedItem.itemReference` указывает на доставленную единицу.
+Больница запрашивает компоненты через [UZ Core SupplyRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-request.html). Именной запрос для конкретного пациента заполняет `deliverFor` и ссылается на назначение трансфузии через `basedOn`. Когда служба крови отправляет единицы, [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-supply-delivery.html) ссылается на запрос через `basedOn`, а каждый `suppliedItem.itemReference` указывает на доставленную единицу. Запросы, оформленные вместе, например эритроциты и плазма для одного пациента, имеют общий [групповой идентификатор](https://dhp.uz/fhir/core/ru/StructureDefinition-supplyrequest-group-identifier.html), а расширение [deliver from](https://dhp.uz/fhir/core/ru/StructureDefinition-supplydelivery-deliver-from.html) в поставке указывает, откуда отправлены единицы.
 
-Примеры: [запрос на поставку](https://dhp.uz/fhir/core/ru/SupplyRequest-example-supply-request.html), [поставка компонентов крови](https://dhp.uz/fhir/core/ru/SupplyDelivery-example-blood-product-supply-delivery.html).
+Примеры: [запрос на поставку](https://dhp.uz/fhir/core/ru/SupplyRequest-example-supply-request.html), групповые запросы [эритроцитов](https://dhp.uz/fhir/core/ru/SupplyRequest-example-supply-request-group-red-cells.html) и [плазмы](https://dhp.uz/fhir/core/ru/SupplyRequest-example-supply-request-group-plasma.html), [поставка компонентов крови](https://dhp.uz/fhir/core/ru/SupplyDelivery-example-blood-product-supply-delivery.html).
 
 ### Трансфузия реципиенту {#transfusing}
 
@@ -149,9 +149,11 @@
 | Назначение трансфузии | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-servicerequest.html) | `subject` - реципиент |
 | Трансфузионный и акушерский анамнез реципиента | [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) | `code` - вид анамнеза, `subject` - реципиент |
 | Пробы на совместимость с единицей | [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) | `focus` - единица, `derivedFrom` - анамнез и группа крови ABO |
-| Выдача единицы реципиенту | UZ Core BiologicallyDerivedProductDispense (следующий выпуск UZ Core) | `product` - единица, `patient` - реципиент, `basedOn` - назначение |
-| Выполненная трансфузия | [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html) | `basedOn` - назначение, `used` - единица |
+| Выдача единицы реципиенту | [UZ Core BiologicallyDerivedProductDispense](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-biologicallyderivedproductdispense.html) | `product` - единица, `patient` - реципиент, `basedOn` - назначение, `status` - `issued` или `returned`, `whenHandedOver` - время выдачи из банка крови |
+| Выполненная трансфузия | [UZ Core Procedure](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-procedure.html) | `basedOn` - назначение, `used` - единица, `supportingInfo` - выдача, `complication` - реакция из [осложнений трансфузии](https://dhp.uz/fhir/core/ru/ValueSet-blood-transfusion-complication-vs.html) |
 | Реакция на трансфузию | [UZ Core AdverseEvent](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-adverse-event.html) | `suspectEntity.instanceReference` - единица |
+
+Результаты проб на совместимость записываются в Blood Transfusion Assessment Observation, а не в `matchStatus` выдачи. Реакция фиксируется в `complication` процедуры трансфузии; AdverseEvent добавляется, когда о реакции сообщают для расследования. Примеры: [единица выдана](https://dhp.uz/fhir/core/ru/BiologicallyDerivedProductDispense-example-bdp-dispense-issued.html), [единица возвращена](https://dhp.uz/fhir/core/ru/BiologicallyDerivedProductDispense-example-bdp-dispense-returned.html).
 
 Вместе с номером донации эти ссылки позволяют проследить единицу от донора, сдавшего кровь, до реципиента, получившего её.
 
@@ -162,6 +164,7 @@
 ```
 GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00001
 GET [base]/Flag?patient=Patient/[id]&status=active
+GET [base]/Flag?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs%7Cblood-donation-eligible
 GET [base]/Observation?patient=Patient/[id]
 GET [base]/ServiceRequest?patient=Patient/[id]&code-concept=http://loinc.org%7C1975-2
 GET [base]/Procedure?patient=Patient/[id]

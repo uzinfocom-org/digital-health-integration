@@ -18,6 +18,8 @@
 #form-target { margin-top: 8px; }
 </style>
 
+{% include questionnaire-anchors.html %}
+
 <div id="form-controls">
   <select id="form-picker" aria-label="Форма"></select>
   <div id="form-langs" role="group" aria-label="Язык"></div>

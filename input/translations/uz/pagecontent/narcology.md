@@ -213,7 +213,7 @@ Tibbiyot xodimlari bemorni baholash va davolashda bilishi kerak bo‘lgan Narkol
 
 | Qayd etiladigan ma'lumot | Value set | Misol kodi | Saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Flag holati | [FlagStatusVS](ValueSet-flag-status-vs.html) | `active` | `status` |
+| Flag holati | [FlagStatusVS](https://dhp.uz/fhir/core/uz/ValueSet-flag-status-vs.html) | `active` | `status` |
 | Registr flag kodi | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `registri0001-00002` | `code` |
 | Bemor | - | [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) ga reference | `subject` |
 | Amal qilish davri | - | `2026-03-12` | `period` |
@@ -259,7 +259,7 @@ To‘liq mapping [Narcology and Psychiatry Registry Flags to SNOMED CT](ConceptM
 | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `Condition.code` | Narkologik tashxis |
 | [DisabilityVS](https://terminology.dhp.uz/fhir/core/ValueSet/disability-vs) | `Condition.severity` | Nogironlik darajasi |
 | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `Flag.code` | Narkologiya registri flaglari |
-| [FlagStatusVS](ValueSet-flag-status-vs.html) | `Flag.status` | Flag hayotiy sikli |
+| [FlagStatusVS](https://dhp.uz/fhir/core/uz/ValueSet-flag-status-vs.html) | `Flag.status` | Flag hayotiy sikli |
 
 ---
 

@@ -330,7 +330,7 @@ Usage: #inline
 
 
 Instance: careplan-treatment-027
-InstanceOf: CarePlan
+InstanceOf: UZCoreCarePlan
 Usage: #inline
 * language = #en
 * status = #active
@@ -365,7 +365,7 @@ Usage: #inline
 
 
 Instance: careplan-followup-027
-InstanceOf: CarePlan
+InstanceOf: UZCoreCarePlan
 Usage: #inline
 * language = #en
 * status = #active

@@ -10,7 +10,7 @@ Description: "Minimal example patient for sick leave"
 * name.given = "Akmal"
 
 Instance: Form095CarePlanExample
-InstanceOf: CarePlan
+InstanceOf: UZCoreCarePlan
 Usage: #example
 Title: "Form 095 - Sick leave"
 Description: "Example of a student disability certificate (Form 095) using document category and form number"

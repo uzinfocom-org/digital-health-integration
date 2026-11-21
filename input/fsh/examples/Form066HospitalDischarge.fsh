@@ -674,7 +674,7 @@ Usage: #inline
 * language = #en
 * status = #completed
 * category = $sct#387713003 "Surgical procedure (procedure)"
-* code = $ichi#JBB.AE.AD "Bronchoscopy"
+* code = $ichi|2026.9.17#JBB.AE.AD "Bronchoscopy"
 * code.text = "Diagnostic bronchoscopy"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)

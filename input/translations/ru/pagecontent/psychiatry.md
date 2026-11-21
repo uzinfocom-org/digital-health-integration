@@ -191,7 +191,7 @@
 
 | Информация для регистрации | Набор значений | Пример кода | Хранится в |
 | :--- | :--- | :--- | :--- |
-| Статус флага | [FlagStatusVS](ValueSet-flag-status-vs.html) | `active` | `status` |
+| Статус флага | [FlagStatusVS](https://dhp.uz/fhir/core/ru/ValueSet-flag-status-vs.html) | `active` | `status` |
 | Регистрационный флаг | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `psycr0001-00001` | `code` |
 | Пациент | - | ссылка на [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `subject` |
 | Период действия | - | `2026-08-15` | `period` |
@@ -240,7 +240,7 @@
 | [TypeResourceCS](CodeSystem-type-resource-cs.html) | `Observation.code` | Решение врачебно-консультационной комиссии |
 | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `Condition.code`, `EpisodeOfCare.diagnosis.condition` | Психиатрический диагноз |
 | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `Flag.code` | Флаги регистров Наркологии и Психиатрии |
-| [FlagStatusVS](ValueSet-flag-status-vs.html) | `Flag.status` | Жизненный цикл флага |
+| [FlagStatusVS](https://dhp.uz/fhir/core/ru/ValueSet-flag-status-vs.html) | `Flag.status` | Жизненный цикл флага |
 
 ---
 

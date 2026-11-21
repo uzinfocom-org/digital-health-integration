@@ -295,6 +295,9 @@ Alias: $blood-group-vs = https://terminology.dhp.uz/fhir/core/ValueSet/blood-gro
 Alias: $blood-registration-number = https://dhp.uz/fhir/core/sid/doc/uz/blood-registration
 Alias: $blood-rh-vs = https://terminology.dhp.uz/fhir/core/ValueSet/blood-rh-vs
 
+Alias: $orders-sbdl-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/orders-sbdl-cs
+Alias: $orders-service-request-basis-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/orders-service-request-basis-cs
+
 Alias: $blood-service-request-number = https://dhp.uz/fhir/core/sid/doc/uz/blood-service-request
 Alias: $blood-donation-number = https://dhp.uz/fhir/core/sid/prd/uz/blood/donation
 Alias: $blood-donor-eligibility-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs

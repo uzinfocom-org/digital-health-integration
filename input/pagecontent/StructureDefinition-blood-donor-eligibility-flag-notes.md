@@ -12,13 +12,14 @@ GET [base]/Flag/[id]/_history
 **Search**
 
 ```
-GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag&status=active&date=ge2026-11-17
-GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag
+GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-eligibility-flag&status=active&date=ge2026-11-17
+GET [base]/Flag?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs|blood-donation-deferred-temporary,https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs|blood-donation-deferred-permanent
+GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-eligibility-flag
 GET [base]/Flag?encounter=Encounter/[id]
 GET [base]/Flag?author=PractitionerRole/[id]&date=ge2026-11-01
 ```
 
-The first query finds the donor's deferrals in force on 2026-11-17. `date` searches `period`, and a flag without `period.end` counts as ongoing, so it returns permanent deferrals and the temporary ones that have not ended before that day. A temporary flag stays `active` after its `period.end` until someone sets it to `inactive`, so `status=active` alone would also return expired deferrals.
+The first query finds the donor's eligibility and deferrals in force on 2026-11-17. `date` searches `period`, and a flag without `period.end` counts as ongoing, so it returns an eligibility, permanent deferrals and the temporary ones that have not ended before that day. A temporary flag stays `active` after its `period.end` until someone sets it to `inactive`, so `status=active` alone would also return expired deferrals. The second query uses the UZ Core [`code`](https://dhp.uz/fhir/core/en/SearchParameter-uz-core-flag-code.html) search parameter to return only the donor's deferrals.
 
 Flag has no search parameter for the reason; read the reason from the returned flags.
 
@@ -28,7 +29,7 @@ Flag has no search parameter for the reason; read the reason from the returned f
 POST [base]/Flag
 {
   "resourceType": "Flag",
-  "meta": { "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag" ] },
+  "meta": { "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-eligibility-flag" ] },
   "extension": [ { "url": "http://hl7.org/fhir/StructureDefinition/workflow-reason", "valueCodeableReference": { ... } } ],
   "status": "active",
   "code": { "coding": [ { "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs",
@@ -47,7 +48,7 @@ If-Match: W/"2"   # the ETag from your last read; 412 if it changed since
 {
   "resourceType": "Flag",
   "id": "[id]",
-  "meta": { "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag" ] },
+  "meta": { "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-eligibility-flag" ] },
   "status": "inactive",
   ...
 }

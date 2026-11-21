@@ -14,13 +14,14 @@ GET [base]/Flag/[id]/_history
 **Qidiruv**
 
 ```
-GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag&status=active&date=ge2026-11-17
-GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag
+GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-eligibility-flag&status=active&date=ge2026-11-17
+GET [base]/Flag?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs|blood-donation-deferred-temporary,https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs|blood-donation-deferred-permanent
+GET [base]/Flag?patient=Patient/[id]&_profile=https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-eligibility-flag
 GET [base]/Flag?encounter=Encounter/[id]
 GET [base]/Flag?author=PractitionerRole/[id]&date=ge2026-11-01
 ```
 
-Birinchi so'rov donorning 2026-11-17 kuni amalda bo'lgan chetlatishlarini topadi. `date` `period` bo'yicha qidiradi, `period.end` siz flag davom etayotgan deb hisoblanadi, shuning uchun so'rov doimiy chetlatishlarni va shu kungacha tugamagan vaqtincha chetlatishlarni qaytaradi. Vaqtincha flag `period.end` dan keyin ham `inactive` ga o'tkazilmaguncha `active` bo'lib qoladi, shuning uchun faqat `status=active` muddati o'tgan chetlatishlarni ham qaytaradi.
+Birinchi so'rov donorning 2026-11-17 kuni amalda bo'lgan ruxsati va chetlatishlarini topadi. `date` `period` bo'yicha qidiradi, `period.end` siz flag davom etayotgan deb hisoblanadi, shuning uchun so'rov ruxsatni, doimiy chetlatishlarni va shu kungacha tugamagan vaqtincha chetlatishlarni qaytaradi. Vaqtincha flag `period.end` dan keyin ham `inactive` ga o'tkazilmaguncha `active` bo'lib qoladi, shuning uchun faqat `status=active` muddati o'tgan chetlatishlarni ham qaytaradi. Ikkinchi so'rov UZ Core [`code`](https://dhp.uz/fhir/core/uz/SearchParameter-uz-core-flag-code.html) qidiruv parametridan foydalanadi va faqat donorning chetlatishlarini qaytaradi.
 
 Flag da sabab bo'yicha qidiruv parametri yo'q; sababni qaytarilgan flaglardan o'qing.
 
@@ -30,7 +31,7 @@ Flag da sabab bo'yicha qidiruv parametri yo'q; sababni qaytarilgan flaglardan o'
 POST [base]/Flag
 {
   "resourceType": "Flag",
-  "meta": { "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag" ] },
+  "meta": { "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-eligibility-flag" ] },
   "extension": [ { "url": "http://hl7.org/fhir/StructureDefinition/workflow-reason", "valueCodeableReference": { ... } } ],
   "status": "active",
   "code": { "coding": [ { "system": "https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs",
@@ -49,7 +50,7 @@ If-Match: W/"2"   # the ETag from your last read; 412 if it changed since
 {
   "resourceType": "Flag",
   "id": "[id]",
-  "meta": { "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-deferral-flag" ] },
+  "meta": { "profile": [ "https://dhp.uz/fhir/integrations/StructureDefinition/blood-donor-eligibility-flag" ] },
   "status": "inactive",
   ...
 }

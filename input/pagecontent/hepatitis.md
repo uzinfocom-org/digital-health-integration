@@ -148,7 +148,7 @@ Questionnaire defines the questions and conditional display rules. The example i
 
 Profile: [HepatitisQuestionnaire](StructureDefinition-hepatitis-questionnaire.html)
 
-Example: [hepatitis-questionnaire](forms.html?form=hepatitis-questionnaire)
+Example: [hepatitis-questionnaire](forms.html#hepatitis-questionnaire)
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
@@ -174,7 +174,7 @@ Example: [example-hcv-response](QuestionnaireResponse-example-hcv-response.html)
 | :--- | :--- | :--- | :--- |
 | Identifier | - | `6f9b9d8e-3b7d-4d87-8f6e-123456789abc` | `identifier.value` |
 | Response status | [QuestionnaireResponseStatus](https://hl7.org/fhir/R5/valueset-questionnaire-answers-status.html) | `completed` | `status` |
-| Questionnaire | - | [hepatitis-questionnaire](forms.html?form=hepatitis-questionnaire) | `questionnaire` |
+| Questionnaire | - | [hepatitis-questionnaire](forms.html#hepatitis-questionnaire) | `questionnaire` |
 | Patient | - | [hepatitis-patient-example](Patient-hepatitis-patient-example.html) | `subject` |
 | Author | - | [example-hepatologist-role](PractitionerRole-example-hepatologist-role.html) | `author` |
 | Authored time | - | `2026-09-18T10:15:00+05:00` | `authored` |

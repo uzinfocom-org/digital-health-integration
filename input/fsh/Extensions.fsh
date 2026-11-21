@@ -160,3 +160,15 @@ Description: "Laterality of the anatomical site affected by the primary cancer."
 * value[x] 0..1
 * value[x] only CodeableConcept
 * valueCodeableConcept from CancerLateralityQualifierVS (required)
+
+Extension: OrdersFundingResolution
+Id: orders-funding-resolution
+Title: "Orders funding resolution"
+Description: "Legal resolution under which an Orders service is funded, additional to the UZ Core payment type."
+Context: ServiceRequest
+* ^status = #draft
+* ^experimental = true
+* extension 0..0
+* value[x] only CodeableConcept
+* value[x] 1..1
+* valueCodeableConcept from OrdersFundingResolutionVS (required)

@@ -6,7 +6,7 @@ title Qon xizmati yozuvlari qanday bog'lanadi
 class "Donor\n<size:10>UZCorePatient</size>" as Donor [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html{Ochish UZCorePatient}]]
 class "Retsipiyent\n<size:10>UZCorePatient</size>" as Recipient [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-patient.html{Ochish UZCorePatient}]]
 class "Ro'yxatga olish\n<size:10>BloodServiceRegistrationObservation</size>" as Reg [[StructureDefinition-blood-service-registration-observation.html{Ochish BloodServiceRegistrationObservation}]] #E8F0FE
-class "Ruxsat yoki chetlatish\n<size:10>UZCoreFlag</size>" as Flag
+class "Ruxsat yoki chetlatish\n<size:10>BloodDonorEligibilityFlag</size>" as Flag [[StructureDefinition-blood-donor-eligibility-flag.html{Ochish BloodDonorEligibilityFlag}]] #E8F0FE
 class "Tahlil natijasi\n<size:10>UZCoreObservation</size>" as Test [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-observation.html{Ochish UZCoreObservation}]]
 class "Tahlillar hisoboti\n<size:10>UZCoreDiagnosticReport</size>" as Report [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-diagnostic-report.html{Ochish UZCoreDiagnosticReport}]]
 class "Laboratoriya buyurtmasi\n<size:10>BloodServiceRequest</size>" as LabOrder [[StructureDefinition-blood-servicerequest.html{Ochish BloodServiceRequest}]] #E8F0FE
@@ -17,7 +17,8 @@ class "Komponent\n<size:10>UZCoreBiologicallyDerivedProduct</size>" as Comp [[ht
 class "Transfuziya tayinlovi\n<size:10>UZCoreServiceRequest</size>" as Order [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-servicerequest.html{Ochish UZCoreServiceRequest}]]
 class "Yetkazib berish so'rovi\n<size:10>UZCoreSupplyRequest</size>" as SReq [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-request.html{Ochish UZCoreSupplyRequest}]]
 class "Yetkazib berish\n<size:10>UZCoreSupplyDelivery</size>" as SDel [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-supply-delivery.html{Ochish UZCoreSupplyDelivery}]]
-class "Retsipiyentga berish\n<size:10>UZCoreBiologicallyDerivedProductDispense</size>" as Disp
+class "Retsipiyentga berish\n<size:10>UZCoreBiologicallyDerivedProductDispense</size>" as Disp [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-biologicallyderivedproductdispense.html{Ochish UZCoreBiologicallyDerivedProductDispense}]]
+class "Moslik sinamalari\n<size:10>BloodTransfusionAssessmentObservation</size>" as Assess [[StructureDefinition-blood-transfusion-assessment-observation.html{Ochish BloodTransfusionAssessmentObservation}]] #E8F0FE
 class "Transfuziya\n<size:10>UZCoreProcedure</size>" as Tx [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-procedure.html{Ochish UZCoreProcedure}]]
 class "Transfuziyaga reaksiya\n<size:10>UZCoreAdverseEvent</size>" as AE [[https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-adverse-event.html{Ochish UZCoreAdverseEvent}]]
 
@@ -38,11 +39,15 @@ SDel "0..*" --> "0..*" SReq : « basedOn »
 SDel "0..*" --> "0..*" Comp : « suppliedItem.itemReference »
 Disp "0..*" --> "1" Comp : « product »
 Disp "0..*" --> "1" Recipient : « patient »
+Disp "0..*" --> "0..*" Order : « basedOn »
+Assess "0..*" --> "1" Recipient : « subject »
+Assess "0..*" --> "0..1" Comp : « focus »
 Tx "0..*" --> "0..*" Order : « basedOn »
 Tx "0..*" --> "0..*" Comp : « used »
 Tx "0..*" --> "1" Recipient : « subject »
+Tx "0..*" --> "0..*" Disp : « supportingInfo »
 AE "0..*" --> "0..*" Comp : « suspectEntity »
 
-caption Klinik graf: tashkilotlar, tibbiyot xodimlari va boshqa ishtirokchilarga havolalar diagramma o'qilishi uchun tushirib qoldirilgan. UZ Core Flag va BiologicallyDerivedProductDispense UZ Core ning keyingi relizida bo'ladi.
+caption Klinik graf: tashkilotlar, tibbiyot xodimlari va boshqa ishtirokchilarga havolalar diagramma o'qilishi uchun tushirib qoldirilgan.
 
 @enduml

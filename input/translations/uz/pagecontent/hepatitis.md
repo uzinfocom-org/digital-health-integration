@@ -150,7 +150,7 @@ Questionnaire savollar va ularni shartli ko‘rsatish qoidalarini belgilaydi. Mi
 
 Profil: [HepatitisQuestionnaire](StructureDefinition-hepatitis-questionnaire.html)
 
-Misol: [hepatitis-questionnaire](forms.html?form=hepatitis-questionnaire)
+Misol: [hepatitis-questionnaire](forms.html#hepatitis-questionnaire)
 
 | Qayd etiladigan ma'lumot | Qiymatlar to'plami | Kod misoli | Saqlanadi |
 | :--- | :--- | :--- | :--- |
@@ -176,7 +176,7 @@ Misol: [example-hcv-response](QuestionnaireResponse-example-hcv-response.html)
 | :--- | :--- | :--- | :--- |
 | Identifikator | - | `6f9b9d8e-3b7d-4d87-8f6e-123456789abc` | `identifier.value` |
 | Javoblar holati | [QuestionnaireResponseStatus](https://hl7.org/fhir/R5/valueset-questionnaire-answers-status.html) | `completed` | `status` |
-| So‘rovnoma | - | [hepatitis-questionnaire](forms.html?form=hepatitis-questionnaire) | `questionnaire` |
+| So‘rovnoma | - | [hepatitis-questionnaire](forms.html#hepatitis-questionnaire) | `questionnaire` |
 | Bemor | - | [hepatitis-patient-example](Patient-hepatitis-patient-example.html) | `subject` |
 | Muallif | - | [example-hepatologist-role](PractitionerRole-example-hepatologist-role.html) | `author` |
 | To‘ldirilgan vaqt | - | `2026-09-18T10:15:00+05:00` | `authored` |

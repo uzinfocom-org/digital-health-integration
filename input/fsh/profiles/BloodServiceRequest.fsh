@@ -26,7 +26,7 @@ Description: "Integration ServiceRequest profile for one donor laboratory test o
 * code from BloodLabCodesVS (required)
 * code ^short = "Single requested laboratory test, panel or blood component processing operation"
 * performer MS
-* performer only Reference(UZCorePractitioner or UZCorePractitionerRole or UZCoreOrganization or CareTeam or UZCoreHealthcareService or UZCorePatient or Device or UZCoreRelatedPerson)
+* performer only Reference(UZCorePractitioner or UZCorePractitionerRole or UZCoreOrganization or CareTeam or UZCoreHealthcareService or UZCorePatient or UZCoreDevice or UZCoreRelatedPerson)
 * location MS
 * location only CodeableReference(UZCoreLocation)
 * requisition.system 1..1

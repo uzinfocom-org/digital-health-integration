@@ -18,7 +18,7 @@
 | 4 | Пример-документ (`Bundle`) | `input/fsh/examples/Form0XX....fsh` |
 | 5 | Страница соответствия полей | `input/pagecontent/form-0XX-mapping.md` |
 | 6 | Вступление к профилю | `input/pagecontent/StructureDefinition-<id профиля>-intro.md` |
-| 7 | Регистрация страницы и пункт меню | блоки `pages:` и `menu:` в `sushi-config.yaml` |
+| 7 | Регистрация страницы и пункт меню | блок `pages:` в `sushi-config.yaml`, пункт в `input/includes/menu.xml` |
 | 8 | Переводы (ru + uz): страницы и `^short` профиля | `input/translations/{ru,uz}/pagecontent/`, `input/translations/{ru,uz}/StructureDefinition-<id профиля>.po` |
 | 9 | Запись в чейнджлоге | `input/pagecontent/changelog.md` (+ переводы) |
 
@@ -245,16 +245,20 @@ Document Information - первая таблица: поля заголовка 
 
 ### 8. Регистрация страницы и меню
 
-В `sushi-config.yaml` новая страница регистрируется в двух местах: в блоке `pages:` (список страниц ведётся вручную - без записи здесь страница не попадёт в IG) и в блоке `menu:` -> `Documents:`:
+Новая страница регистрируется в двух местах. В `sushi-config.yaml`, в блоке `pages:` (список страниц ведётся вручную - без записи здесь страница не попадёт в IG):
 
 ```yaml
 pages:
   form-0XX-mapping.md:
     title: Form 0XX Mapping
+```
 
-menu:
-  Documents:
-    Form 0XX Mapping: form-0XX-mapping.html
+И в `input/includes/menu.xml`, в выпадающем списке `Documents`:
+
+```xml
+      <li>
+        <a href="form-0XX-mapping.html">Form 0XX Mapping</a>
+      </li>
 ```
 
 ### 9. Переводы

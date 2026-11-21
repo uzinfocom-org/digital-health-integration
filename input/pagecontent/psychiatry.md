@@ -201,7 +201,7 @@ The `Flag` resource is shared by the Narcology and Psychiatry Registries and is 
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Flag status | [FlagStatusVS](ValueSet-flag-status-vs.html) | `active` | `status` |
+| Flag status | [FlagStatusVS](https://dhp.uz/fhir/core/en/ValueSet-flag-status-vs.html) | `active` | `status` |
 | Registry flag | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `psycr0001-00001` | `code` |
 | Patient | - | reference to [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `subject` |
 | Validity period | - | `2026-08-15` | `period` |
@@ -251,7 +251,7 @@ The terminology used by the Psychiatry Registry resources is summarized below.
 | [TypeResourceCS](CodeSystem-type-resource-cs.html) | `Observation.code` | Medical-consultation commission decision |
 | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `Condition.code`, `EpisodeOfCare.diagnosis.condition` | Psychiatry diagnosis |
 | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `Flag.code` | Narcology and Psychiatry registry flags |
-| [FlagStatusVS](ValueSet-flag-status-vs.html) | `Flag.status` | Flag lifecycle |
+| [FlagStatusVS](https://dhp.uz/fhir/core/en/ValueSet-flag-status-vs.html) | `Flag.status` | Flag lifecycle |
 
 ---
 

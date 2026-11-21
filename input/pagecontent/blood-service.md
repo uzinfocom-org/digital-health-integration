@@ -9,21 +9,19 @@ This page describes how the blood service records the path of donated blood as F
 
 ### Overview {#overview}
 
-Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profile as it is. This guide adds three profiles. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) records the registration data that UZ Core Patient does not hold: whether a person is registered as a donor or a recipient, the registration number, the donor category, the donation compensation and type, and a recipient's diagnosis. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) orders the donor's laboratory tests and the processing of a component. [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) records a temporary or permanent medical deferral from donation. The paper forms behind these steps are described in [8.0 Blood Service](forms-volume-08-blood-service.html).
-
-<!-- CORE-RELEASE #161 -->
+Almost every step reuses a [UZ Core](https://dhp.uz/fhir/core/en/artifacts.html) profile as it is. This guide adds five profiles. [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) records the registration data that UZ Core Patient does not hold: whether a person is registered as a donor or a recipient, the registration number, the donor category, the donation compensation and type, and a recipient's diagnosis. [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) orders the donor's laboratory tests and the processing of a component. [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) records whether a donor may give blood or is deferred. [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) and [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) record the recipient's history and the compatibility tests before a transfusion. The paper forms behind these steps are described in [8.0 Blood Service](forms-volume-08-blood-service.html).
 
 | Step | Resource | Profile |
 | :--- | :--- | :--- |
 | [Register a donor or recipient](#registering) | Patient, Observation | [UZ Core Patient](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-patient.html), [Blood Service Registration Observation](StructureDefinition-blood-service-registration-observation.html) |
 | [Interview the donor](#interviewing) | Questionnaire, QuestionnaireResponse | [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-questionnaire-response.html) |
-| [Record eligibility or a deferral](#eligibility) | Flag | UZ Core Flag (next UZ Core release) for eligibility, [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html) for a deferral |
+| [Record eligibility or a deferral](#eligibility) | Flag | [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html), based on [UZ Core Flag](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-flag.html) |
 | [Test the donor's blood](#testing) | ServiceRequest, Observation, DiagnosticReport, Specimen | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core Observation](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-observation.html), [UZ Core DiagnosticReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-diagnostic-report.html), [UZ Core Specimen](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-specimen.html) |
 | [Collect the donation](#collecting) | Procedure, BiologicallyDerivedProduct | [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) |
 | [Process it into components](#processing) | ServiceRequest, BiologicallyDerivedProduct | [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html), [UZ Core BiologicallyDerivedProduct](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologically-derived-product.html) |
-| [Keep stock](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-inventoryitem.html), UZ Core InventoryReport (next UZ Core release) |
+| [Keep stock](#stock) | InventoryItem, InventoryReport | [UZ Core InventoryItem](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-inventoryitem.html), [UZ Core InventoryReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-inventoryreport.html) |
 | [Request and deliver components](#supplying) | SupplyRequest, SupplyDelivery | [UZ Core SupplyRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-request.html), [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-delivery.html) |
-| [Transfuse the recipient](#transfusing) | ServiceRequest, Observation, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html), [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html), [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html), UZ Core BiologicallyDerivedProductDispense (next UZ Core release), [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-adverse-event.html) |
+| [Transfuse the recipient](#transfusing) | ServiceRequest, Observation, BiologicallyDerivedProductDispense, Procedure, AdverseEvent | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html), [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html), [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html), [UZ Core BiologicallyDerivedProductDispense](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologicallyderivedproductdispense.html), [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html), [UZ Core AdverseEvent](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-adverse-event.html) |
 
 <div>{% include blood-service-model-en.svg %}</div><br clear="all"/>
 
@@ -45,7 +43,7 @@ Examples: [staff donor](Observation-example-blood-donor-registration-staff.html)
 
 ### Interviewing the donor {#interviewing}
 
-Before each donation the donor answers the [donor questionnaire](forms.html?form=donor-questionnaire), recorded as a [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-questionnaire-response.html) on the donor's Patient ([example](QuestionnaireResponse-example-donor-questionnaire-response.html)). No answer defers a donor by itself: a clinician reviews the answers and records any deferral as a [Flag](#eligibility).
+Before each donation the donor answers the [donor questionnaire](forms.html#donor-questionnaire), recorded as a [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-questionnaire-response.html) on the donor's Patient ([example](QuestionnaireResponse-example-donor-questionnaire-response.html)). No answer defers a donor by itself: a clinician reviews the answers and records any deferral as a [Flag](#eligibility).
 
 The table lists the answer that can lead to a deferral and the [reason code](ValueSet-donor-deferral-reason-vs.html) that goes with it. Each question's `item.code` names what it asks about, from LOINC or SNOMED CT where a matching code exists; the reason code is not on the question.
 
@@ -90,13 +88,11 @@ Example: after reviewing the [example response](QuestionnaireResponse-example-do
 
 ### Eligibility and deferrals {#eligibility}
 
-<!-- CORE-RELEASE #161 -->
+Whether a donor may donate is recorded as a [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) on the donor's Patient, based on [UZ Core Flag](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-flag.html). Its `code` is `blood-donation-eligible`, `blood-donation-deferred-temporary` or `blood-donation-deferred-permanent`. A flag's `status` describes the flag itself: an `active` flag means the eligibility or deferral is in force. When a deferral is recorded, the donor's active eligibility flag is set to `inactive` with `period.end` at that time.
 
-Whether a donor may donate is recorded as a Flag on the donor's Patient: eligible for donation, or a temporary or permanent medical deferral. The UZ Core Flag profile for this, with its blood donor eligibility codes, is in the next UZ Core release. A flag's `status` describes the flag itself: an `active` deferral flag means the deferral is in force.
+A deferral's [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) extension carries the [deferral reason](ValueSet-donor-deferral-reason-vs.html) and can point to what led to it, such as a positive test result. A donor deferred for two reasons has two flags. `period.start` is when the deferral began. A temporary deferral has a `period.end`, the date from which the donor may give blood again; a permanent deferral has no `period.end`. A temporary flag stays `active` until it is set to `inactive`, so read `period.end` together with `status` to tell whether a deferral still applies.
 
-A deferral is a [Blood Donor Deferral Flag](StructureDefinition-blood-donor-deferral-flag.html): `code` is `blood-donation-deferred-temporary` or `blood-donation-deferred-permanent`, and the [workflow-reason](https://hl7.org/fhir/extensions/StructureDefinition-workflow-reason.html) extension carries the [deferral reason](ValueSet-donor-deferral-reason-vs.html) and can point to what led to it, such as a positive test result. A donor deferred for two reasons has two flags. `period.start` is when the deferral began. A temporary deferral has a `period.end`, the date from which the donor may give blood again; a permanent deferral has no `period.end`. A temporary flag stays `active` until it is set to `inactive`, so read `period.end` together with `status` to tell whether a deferral still applies.
-
-Examples: [temporary deferral](Flag-example-blood-donor-temporary-deferral.html), [permanent deferral](Flag-example-blood-donor-permanent-deferral.html), whose reason points to the [confirmed positive HIV result](Observation-example-blood-donor-hiv-result.html).
+Examples: [eligibility](Flag-example-blood-donor-eligible.html), [temporary deferral](Flag-example-blood-donor-temporary-deferral.html), [permanent deferral](Flag-example-blood-donor-permanent-deferral.html), whose reason points to the [confirmed positive HIV result](Observation-example-blood-donor-hiv-result.html).
 
 ### Testing the donor's blood {#testing}
 
@@ -117,8 +113,12 @@ The collection is a [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDef
 | Collected by | Practitioner or PractitionerRole reference | `collection.collector` |
 | Blood group | type `SNOMED CT#63915006`, value from [blood group](https://dhp.uz/fhir/core/en/ValueSet-blood-group-vs.html) | `property[aboGroup]` |
 | Rh factor | type `SNOMED CT#115678000`, value from [Rh factor](https://dhp.uz/fhir/core/en/ValueSet-blood-rh-vs.html) | `property[rhdType]` |
+| Volume | type `SNOMED CT#118565006`, value in mL | `property[volume]` |
+| Haematocrit | type `LOINC#4544-3`, value in % | `property[hematocrit]` |
 
 Example: [whole blood donation](https://dhp.uz/fhir/core/en/BiologicallyDerivedProduct-example-blood-donation-product.html).
+
+A reaction during or after the donation, such as fainting, goes in the collection Procedure's `complication`, coded from [procedure complication](https://dhp.uz/fhir/core/en/ValueSet-procedure-complication-vs.html) (example: [donation with fainting](https://dhp.uz/fhir/core/en/Procedure-example-blood-donation-procedure.html)).
 
 The donation number ([NamingSystem](https://dhp.uz/fhir/core/en/NamingSystem-uzb-blood-donation-number.html)) ties together every product made from one donation. The unit number ([NamingSystem](https://dhp.uz/fhir/core/en/NamingSystem-uzb-blood-unit-number.html)) identifies each bag.
 
@@ -132,13 +132,13 @@ Example: [leukocyte-reduced red cells](https://dhp.uz/fhir/core/en/BiologicallyD
 
 ### Keeping stock {#stock}
 
-A [UZ Core InventoryItem](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-inventoryitem.html) describes a kind of component the blood service keeps in stock (example: [red cells](https://dhp.uz/fhir/core/en/InventoryItem-example-inventory-item-rbc.html)). Stock counts by component, blood group and site are an InventoryReport; the UZ Core InventoryReport profile is in the next UZ Core release.
+A [UZ Core InventoryItem](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-inventoryitem.html) describes a kind of component the blood service keeps in stock (example: [red cells](https://dhp.uz/fhir/core/en/InventoryItem-example-inventory-item-rbc.html)). Stock counts and movements are a [UZ Core InventoryReport](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-inventoryreport.html): `countType` says whether it is a stock count (`snapshot`) or a change (`difference`), `operationType` and `operationTypeReason` say what happened, such as a receipt or a write-off, and each `inventoryListing` counts the items at one `location` with one `itemStatus` (example: [stock receipt](https://dhp.uz/fhir/core/en/InventoryReport-example-inventory-report-medication-receipt.html)).
 
 ### Requesting and delivering components {#supplying}
 
-A hospital requests components with a [UZ Core SupplyRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-request.html). A request for a named patient sets `deliverFor` and is `basedOn` the transfusion order. When the blood service ships the units, a [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-delivery.html) is `basedOn` the request, and each `suppliedItem.itemReference` points at a delivered unit.
+A hospital requests components with a [UZ Core SupplyRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-request.html). A request for a named patient sets `deliverFor` and is `basedOn` the transfusion order. When the blood service ships the units, a [UZ Core SupplyDelivery](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-supply-delivery.html) is `basedOn` the request, and each `suppliedItem.itemReference` points at a delivered unit. Requests placed together, such as red cells and plasma for one patient, share a [group identifier](https://dhp.uz/fhir/core/en/StructureDefinition-supplyrequest-group-identifier.html), and the [deliver from](https://dhp.uz/fhir/core/en/StructureDefinition-supplydelivery-deliver-from.html) extension on a delivery names the site the units were sent from.
 
-Examples: [supply request](https://dhp.uz/fhir/core/en/SupplyRequest-example-supply-request.html), [blood product delivery](https://dhp.uz/fhir/core/en/SupplyDelivery-example-blood-product-supply-delivery.html).
+Examples: [supply request](https://dhp.uz/fhir/core/en/SupplyRequest-example-supply-request.html), grouped [red cells](https://dhp.uz/fhir/core/en/SupplyRequest-example-supply-request-group-red-cells.html) and [plasma](https://dhp.uz/fhir/core/en/SupplyRequest-example-supply-request-group-plasma.html) requests, [blood product delivery](https://dhp.uz/fhir/core/en/SupplyDelivery-example-blood-product-supply-delivery.html).
 
 ### Transfusing the recipient {#transfusing}
 
@@ -147,9 +147,11 @@ Examples: [supply request](https://dhp.uz/fhir/core/en/SupplyRequest-example-sup
 | Transfusion order | [UZ Core ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html) | `subject` is the recipient |
 | Recipient's transfusion and obstetric history | [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) | `code` says which history, `subject` is the recipient |
 | Compatibility tests with a unit | [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) | `focus` is the unit, `derivedFrom` is the history and the ABO group |
-| Unit issued to the recipient | UZ Core BiologicallyDerivedProductDispense (next UZ Core release) | `product` is the unit, `patient` is the recipient, `basedOn` is the order |
-| Transfusion performed | [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html) | `basedOn` is the order, `used` is the unit |
+| Unit issued to the recipient | [UZ Core BiologicallyDerivedProductDispense](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-biologicallyderivedproductdispense.html) | `product` is the unit, `patient` is the recipient, `basedOn` is the order, `status` is `issued` or `returned`, `whenHandedOver` is when it left the blood bank |
+| Transfusion performed | [UZ Core Procedure](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-procedure.html) | `basedOn` is the order, `used` is the unit, `supportingInfo` is the dispense, `complication` is a reaction from [transfusion complication](https://dhp.uz/fhir/core/en/ValueSet-blood-transfusion-complication-vs.html) |
 | Reaction to the transfusion | [UZ Core AdverseEvent](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-adverse-event.html) | `suspectEntity.instanceReference` is the unit |
+
+The compatibility results go in the Blood Transfusion Assessment Observation, not in the dispense's `matchStatus`. A reaction is recorded in the transfusion Procedure's `complication`; an AdverseEvent is added when the reaction is reported for investigation. Examples: [unit issued](https://dhp.uz/fhir/core/en/BiologicallyDerivedProductDispense-example-bdp-dispense-issued.html), [unit returned](https://dhp.uz/fhir/core/en/BiologicallyDerivedProductDispense-example-bdp-dispense-returned.html).
 
 Together with the donation number, these references let a unit be traced from the donor who gave it to the recipient who received it.
 
@@ -160,6 +162,7 @@ Requests require a JWT access token - see [Security and authentication](https://
 ```
 GET [base]/Observation?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/integrations/CodeSystem/blood-service-observation-type-cs%7Cbsobs-0001-00001
 GET [base]/Flag?patient=Patient/[id]&status=active
+GET [base]/Flag?patient=Patient/[id]&code=https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs%7Cblood-donation-eligible
 GET [base]/Observation?patient=Patient/[id]
 GET [base]/ServiceRequest?patient=Patient/[id]&code-concept=http://loinc.org%7C1975-2
 GET [base]/Procedure?patient=Patient/[id]

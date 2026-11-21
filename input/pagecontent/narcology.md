@@ -220,7 +220,7 @@ The `Flag` resource is used to record registry flags such as social danger and c
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Flag status | [FlagStatusVS](ValueSet-flag-status-vs.html) | `active` | `status` |
+| Flag status | [FlagStatusVS](https://dhp.uz/fhir/core/en/ValueSet-flag-status-vs.html) | `active` | `status` |
 | Registry flag | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `registri0001-00002` | `code` |
 | Patient | - | reference to [UZCorePatient](https://dhp.uz/fhir/core/StructureDefinition/uz-core-patient) | `subject` |
 | Validity period | - | `2026-03-12` | `period` |
@@ -268,7 +268,7 @@ The terminology used by the Narcology Registry resources is summarized below.
 | [ConditionCodeVS](https://terminology.dhp.uz/fhir/core/ValueSet/condition-code-vs) | `Condition.code` | Narcology diagnosis |
 | [DisabilityVS](https://terminology.dhp.uz/fhir/core/ValueSet/disability-vs) | `Condition.severity` | Disability-related severity |
 | [NarcologyPsychiatryRegistryFlagVS](ValueSet-narcology-psychiatry-registry-flag-vs.html) | `Flag.code` | Narcology registry flags |
-| [FlagStatusVS](ValueSet-flag-status-vs.html) | `Flag.status` | Flag lifecycle |
+| [FlagStatusVS](https://dhp.uz/fhir/core/en/ValueSet-flag-status-vs.html) | `Flag.status` | Flag lifecycle |
 
 ---
 

@@ -9,7 +9,7 @@ name: DHPintegrations
 title: Uzbekistan Digital Health Platform - Integrations
 description: Profiles for DHP integrations with systems in Uzbekistan
 status: draft # draft | active | retired | unknown
-version: 0.12.1
+version: 0.13.1
 fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build
@@ -25,11 +25,11 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  # Match the UTG and extensions versions that uz.dhp.core 0.12.0 depends on.
+  # Match the UTG and extensions versions that uz.dhp.core 0.13.0 depends on.
   hl7.terminology.r5: 7.5.0
   hl7.fhir.uv.extensions.r5: 5.4.0
   hl7.fhir.uv.tools.r5: 1.3.0
-  uz.dhp.core: 0.12.0
+  uz.dhp.core: 0.13.0
   # R4-only package used cross-version for sdc-questionnaire-calculatedExpression (same as uz.dhp.core);
   # the resulting version-mismatch messages are suppressed in ignoreWarnings.txt
   hl7.fhir.uv.sdc: 3.0.0
@@ -91,14 +91,6 @@ parameters:
 
 #   validation: [allow-any-extensions, no-broken-links]
 #
-# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
-# │ The menu property will be used to generate the input/menu.xml file. The menu is represented    │
-# │ as a simple structure where the YAML key is the menu item name and the value is the URL.       │
-# │ The IG publisher currently only supports one level deep on sub-menus. To provide a             │
-# │ custom menu.xml file, do not include this property and include a `menu.xml` file in            │
-# │ input/includes. To use a provided input/includes/menu.xml file, delete the "menu"              │
-# │ property below.                                                                                │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 pages:
   index.md:
     title: Home
@@ -144,6 +136,8 @@ pages:
     title: Hepatitis
   blood-service.md:
     title: Blood Service
+  orders.md:
+    title: Orders
   forms.md:
     title: Questionnaires
   forms-overview.md:
@@ -176,36 +170,6 @@ pages:
     title: Changelog
   translationinfo.md:
     title: Translationinfo
-
-menu:
-  Home: index.html
-  Documents:
-    Categories: document-categories.html
-    Lifecycle: document-statuses.html
-    Forms overview: forms-overview.html
-    Form 003 Mapping: form-003-mapping.html
-    Form 011 Mapping: form-011-mapping.html
-    Form 027 Mapping: form-027-mapping.html
-    Form 044 Mapping: form-044-mapping.html
-    Form 066 Mapping: form-066-mapping.html
-    Form 066-1 Mapping: form-066-1-mapping.html
-    Form 096 Mapping: form-096-mapping.html
-    Form 097 Mapping: form-097-mapping.html
-    Form 130 Mapping: form-130-mapping.html
-    Form 111 Mapping: form-111-mapping.html
-    Form explorer: form-explorer.html
-  Integrations:
-    Cervical and Breast Cancer Screening: cervical-breast-cancer-screening.html
-    Sick Leave: sick-leave.html
-    Tuberculosis (DHIS): dhis-tuberculosis.html
-    Narcology: narcology.html
-    Psychiatry: psychiatry.html
-    Cancer: cancer.html
-    Hepatitis: hepatitis.html
-    Blood Service: blood-service.html
-  Questionnaires: forms.html
-  Artifacts: artifacts.html
-  Changelog: changelog.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │

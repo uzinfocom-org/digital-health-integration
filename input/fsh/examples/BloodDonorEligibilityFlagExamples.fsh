@@ -1,6 +1,19 @@
+Instance: example-blood-donor-eligible
+InstanceOf: BloodDonorEligibilityFlag
+Title: "Example Blood Donor Eligibility Flag - Eligible"
+Description: "Synthetic eligibility recorded for the reserve donor after the examination and pre-donation tests: the donor may give blood. An eligibility has no reason. It is set to inactive, with period.end, if the donor is later deferred."
+Usage: #example
+* language = #uz
+* status = #active
+* category = $flag-category#admin
+* code = $blood-donor-eligibility-cs#blood-donation-eligible "Qon donorligiga ruxsat berilgan"
+* subject = Reference(Patient/ExamplePatient)
+* author = Reference(PractitionerRole/example-practitionerrole)
+* period.start = "2026-09-24T09:30:00+05:00"
+
 Instance: example-blood-donor-temporary-deferral
-InstanceOf: BloodDonorDeferralFlag
-Title: "Example Blood Donor Deferral Flag - Temporary Deferral"
+InstanceOf: BloodDonorEligibilityFlag
+Title: "Example Blood Donor Eligibility Flag - Temporary Deferral"
 Description: "Synthetic temporary deferral after a tattoo: the period ends 180 days after it starts. The duration is example data, not a clinical recommendation."
 Usage: #example
 * language = #uz
@@ -15,8 +28,8 @@ Usage: #example
 * period.end = "2027-05-09T10:00:00+05:00"
 
 Instance: example-blood-donor-permanent-deferral
-InstanceOf: BloodDonorDeferralFlag
-Title: "Example Blood Donor Deferral Flag - Permanent Deferral"
+InstanceOf: BloodDonorEligibilityFlag
+Title: "Example Blood Donor Eligibility Flag - Permanent Deferral"
 Description: "Synthetic permanent deferral after an HIV result confirmed by immunoblot: the period starts when the result is confirmed and has no end."
 Usage: #example
 * language = #uz

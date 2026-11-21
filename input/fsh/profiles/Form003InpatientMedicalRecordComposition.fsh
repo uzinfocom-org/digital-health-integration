@@ -296,7 +296,7 @@ Description: "Composition profile for Form 003 (Statsionar bemorning tibbiy kart
 * section[clinicalCourse].code = $loinc#8648-8 "Hospital course note"
 * section[clinicalCourse].text 0..1
 * section[clinicalCourse].entry 0..*
-* section[clinicalCourse].entry only Reference(UZCoreObservation or CarePlan)
+* section[clinicalCourse].entry only Reference(UZCoreObservation or UZCoreCarePlan)
 * section[clinicalCourse].section ^slicing.discriminator.type = #value
 * section[clinicalCourse].section ^slicing.discriminator.path = "code"
 * section[clinicalCourse].section ^slicing.rules = #open
