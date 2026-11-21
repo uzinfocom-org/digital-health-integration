@@ -155,7 +155,8 @@
 .fx-sub-head { padding: 7px 16px; background: color-mix(in srgb, var(--fx-sunken) 60%, transparent); border-bottom: 1px solid var(--fx-line); font-size: 12.5px; color: var(--fx-muted); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 
 /* tree view */
-.fx-tree { padding: 12px 14px 16px; display: grid; gap: 8px; }
+.fx-tree { padding: 12px 14px 16px; display: grid; grid-template-columns: minmax(0,1fr); gap: 8px; }
+.fx-tree summary .fx-mono { overflow-wrap: anywhere; }
 .fx-tree details { border: 1px solid var(--fx-line); border-radius: var(--fx-radius); background: var(--fx-surface); }
 .fx-tree details.fx-opt { border-style: dashed; }
 .fx-tree summary { list-style: none; cursor: pointer; padding: 7px 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; background: var(--fx-sunken); border-radius: var(--fx-radius); }

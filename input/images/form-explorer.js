@@ -149,9 +149,11 @@
     if (!vl || !vl.concepts.length || !f.example) return null;
     var ex = f.example.toLowerCase().replace(/^"|"$/g, '');
     var hit = null;
+    var inParens = [];
+    ex.replace(/\(([^()]*)\)/g, function (_, g) { inParens = inParens.concat(g.split(',').map(function (s) { return s.trim(); })); });
     vl.concepts.some(function (c) {
       var code = c.code.toLowerCase();
-      if (ex === code || ex.indexOf(code + ' ') === 0 || ex.indexOf('(' + code + ')') >= 0) { hit = c; return true; }
+      if (ex === code || ex.indexOf(code + ' ') === 0 || inParens.indexOf(code) >= 0) { hit = c; return true; }
       return false;
     });
     if (hit) return hit;

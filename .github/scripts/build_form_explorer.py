@@ -189,9 +189,8 @@ def page_link(entry):
 # ---------------------------------------------------------------- terminology
 
 
-def cs_concepts(cs):
-    base = (cs.get("language") or "en")[:2]
-    supp = [REG.get(u) for u in REG.supplements.get(cs["url"], [])]
+def supplement_designations(url):
+    supp = [REG.get(u) for u in REG.supplements.get(url, [])]
     extra = {}
     for s in filter(None, supp):
         slang = (s.get("language") or "en")[:2]
@@ -202,6 +201,12 @@ def cs_concepts(cs):
             for de in c.get("designation", []):
                 if de.get("language"):
                     d.setdefault(de["language"][:2], de["value"])
+    return extra
+
+
+def cs_concepts(cs):
+    base = (cs.get("language") or "en")[:2]
+    extra = supplement_designations(cs["url"])
     out = []
     for c in flatten(cs.get("concept", [])):
         d = {}
@@ -276,6 +281,7 @@ def expand(vs_url, depth=0):
         if system:
             cs = REG.get(system)
             known = {c["code"]: c for c in cs_concepts(cs)} if cs and cs.get("concept") else {}
+            extra = {} if known else supplement_designations(system)
             if inc.get("concept"):
                 for c in inc["concept"]:
                     k = known.get(c["code"], {"code": c["code"], "system": system})
@@ -285,6 +291,9 @@ def expand(vs_url, depth=0):
                     for de in c.get("designation", []):
                         if de.get("language"):
                             k.setdefault(de["language"][:2], de["value"])
+                    for lang, v in extra.get(c["code"], {}).items():
+                        if lang in LANGS:
+                            k.setdefault(lang, v)
                     part.append(k)
             elif inc.get("filter"):
                 ok = known and all(f.get("op") in ("is-a", "descendent-of") and f.get("property") == "concept" for f in inc["filter"])
@@ -410,6 +419,9 @@ def resolve(profile_sd, path):
         m = SEG.fullmatch(seg)
         if not m:
             return el, tcode
+        if tcode == "CodeableReference" and m.group(1) in ("concept", "reference"):
+            tcode = "CodeableConcept" if m.group(1) == "concept" else "Reference"
+            continue
         found, cand, choice = lookup(sd, eid, *m.groups())
         if found is None and el is not None and tcode and datatype_sd(tcode):
             sd, eid = datatype_sd(tcode), tcode
@@ -523,8 +535,8 @@ PATH_START = re.compile(r"^[A-Z][A-Za-z0-9]+(?:\[\w+\])?(?:\.[A-Za-z]\w*(?:\[[\w
 
 
 def pick_path(text, prev_resource):
-    t = re.sub(r"\(same (\w+)\)\s+(?=[a-z])", r"\1.", text)
-    t = re.sub(r"\(same (\w+)\)", r"\1", t)
+    t = re.sub(r"\(same (\w+?)(?:'s)?\)\s+(?=[a-z])", r"\1.", text)
+    t = re.sub(r"\(same (\w+?)(?:'s)?\)", r"\1", t)
     t = re.sub(r"^section\[", "Composition.section[", t)
     t = re.sub(r"(?<=[ ;/(])section\[", "Composition.section[", t)
     parts = [p.strip(" ()") for p in re.split(r";|\s/\s|\s\+\s|,\s|\sor\s|\s→\s|\(|\)", t)]
@@ -547,9 +559,10 @@ def profile_for(resource, link):
         e = REG.from_link(link)
         if e and e["type"] == "StructureDefinition" and REG.res(e).get("type") == resource:
             return REG.res(e)
-    e = REG.by_key.get((CORE_PKG, "StructureDefinition", f"uz-core-{resource.lower()}"))
-    if e:
-        return REG.res(e)
+    for rid in (f"uz-core-{resource.lower()}", "uz-core-" + re.sub(r"(?<!^)(?=[A-Z])", "-", resource).lower()):
+        e = REG.by_key.get((CORE_PKG, "StructureDefinition", rid))
+        if e:
+            return REG.res(e)
     e = REG.by_key.get(("r5", "StructureDefinition", resource))
     return REG.res(e) if e else None
 
@@ -625,13 +638,13 @@ def build_field(fid, row, langs_rows, prev_resource, lists, subsections, form, c
     if re.match(r"(derived|calculated) ", path_text, re.I):
         ftype = "derived"
     if re.match(r"not sent", path_text, re.I):
-        ftype = "none"
+        ftype, resource = "none", prev_resource
     elif path and "." not in path and not el:
         ftype = "reference"
     item_txt, value_txt, generic_txt = code_parts(code_cell)
-    icode = item_code(item_txt) or item_code(generic_txt)
+    icode = item_code(item_txt) or item_code(re.split(r"\be\.g\.", generic_txt)[0])
     f = {
-        "id": fid, "label": {"uz": uz, "ru": ru}, "path": path_text, "resource": resource or "",
+        "id": fid, "label": {"uz": uz, "ru": ru}, "path": path_text, "resource": "" if ftype == "none" else resource or "",
         "type": ftype, "note": strip_md(code_cell) if strip_md(code_cell) not in ("-", "") else "",
         "example": strip_md(example) if strip_md(example) != "-" else "",
     }
@@ -708,7 +721,7 @@ def composition_model(sd):
         secs.append({
             "slice": e["sliceName"], "card": f"{e.get('min', 0)}..{e.get('max', '*')}",
             "code": {"system": short_system(coding.get("system", "")), "code": coding.get("code", ""), "display": coding.get("display", "")},
-            "entries": sorted({sd_name(p) for t in entry.get("type", []) for p in t.get("targetProfile", [])}),
+            "entries": [] if entry.get("max") == "0" else sorted({sd_name(p) for t in entry.get("type", []) for p in t.get("targetProfile", [])}),
             "subsections": subs,
         })
     header = []
