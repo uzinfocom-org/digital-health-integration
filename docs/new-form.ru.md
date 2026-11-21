@@ -261,6 +261,8 @@ pages:
       </li>
 ```
 
+Чтобы форма появилась в [обозревателе форм](https://dhp.uz/fhir/integrations/en/form-explorer.html), добавьте её профиль и пример в словарь `FORMS` в `.github/scripts/build_form_explorer.py`, а под заголовком Field Mapping страницы соответствия - строку со ссылкой `form-explorer.html?form=0XX`, как на других страницах. После сборки запустите `python3 .github/scripts/build_form_explorer.py` и закоммитьте `input/images/form-explorer/`. Скрипт нужно перезапускать после каждой правки страниц соответствия или профилей формы: CI проверяет, что данные обозревателя актуальны.
+
 ### 9. Переводы
 
 - **Страницы.** Каждая страница IG существует на трёх языках: английский оригинал в `input/pagecontent/` и одноимённые переводы в `input/translations/ru/pagecontent/` и `input/translations/uz/pagecontent/`. Переведите страницу соответствия и вступление к профилю на русский и узбекский в том же PR.
@@ -294,6 +296,7 @@ pages:
 - [ ] [Индекс полей](field-index.md): новые поля формы добавлены, у повторных форма дописана в Also in
 - [ ] Файл вступления `StructureDefinition-<id>-intro.md`
 - [ ] Запись в `pages:` и пункт меню в `sushi-config.yaml`
+- [ ] Форма в `FORMS` скрипта `build_form_explorer.py`, данные обозревателя пересобраны
 - [ ] Переводы страниц и профиля в `input/translations/{ru,uz}/`
 - [ ] Запись в `changelog.md` (`### In development`) + переводы
 - [ ] Сборка `_genonce.sh` без новых ошибок QA

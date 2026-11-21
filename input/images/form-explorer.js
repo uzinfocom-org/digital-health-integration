@@ -155,10 +155,13 @@
       return false;
     });
     if (hit) return hit;
+    var best = 0;
     vl.concepts.some(function (c) {
       return ['en', 'ru', 'uz'].some(function (k) {
         var d = (c[k] || '').toLowerCase();
-        if (d && (ex === d || ex.indexOf(d) === 0 || d.indexOf(ex) === 0)) { hit = c; return true; }
+        if (!d) return false;
+        if (ex === d) { hit = c; best = Infinity; return true; }
+        if ((ex.indexOf(d) === 0 || d.indexOf(ex) === 0) && Math.min(d.length, ex.length) > best) { hit = c; best = Math.min(d.length, ex.length); }
         return false;
       });
     });
@@ -486,6 +489,7 @@
   function control(f, fill) {
     var id = 'fx-ctl-' + f.id, ex = fill ? f.example : '', aria = ' aria-label="' + esc(label(f)) + '"', vl = list(f);
     var iso = /^\d{4}-\d\d-\d\d/.test(ex);
+    var rest = iso && ex.length > 10 && !/^\d{4}-\d\d-\d\dT\d\d:\d\d/.test(ex) ? '<span class="fx-hint fx-pen">' + esc(ex) + '</span>' : '';
     switch (f.type) {
       case 'coded':
         if (vl && vl.concepts.length) {
@@ -498,9 +502,9 @@
       case 'boolean':
         return '<input type="checkbox" id="' + id + '"' + aria + (fill && /^(true|yes|ha|да)/i.test(ex) ? ' checked' : '') + '>';
       case 'date':
-        return iso || !fill ? '<input type="date" id="' + id + '"' + aria + ' value="' + esc(ex.slice(0, 10)) + '">' : '<input type="text" id="' + id + '"' + aria + ' value="' + esc(ex) + '">';
+        return iso || !fill ? '<input type="date" id="' + id + '"' + aria + ' value="' + esc(ex.slice(0, 10)) + '">' + rest : '<input type="text" id="' + id + '"' + aria + ' value="' + esc(ex) + '">';
       case 'datetime':
-        if (iso && ex.length < 11) return '<input type="date" id="' + id + '"' + aria + ' value="' + esc(ex) + '">';
+        if (iso && (ex.length < 11 || rest)) return '<input type="date" id="' + id + '"' + aria + ' value="' + esc(ex.slice(0, 10)) + '">' + rest;
         return iso || !fill ? '<input type="datetime-local" id="' + id + '"' + aria + ' value="' + esc(ex.slice(0, 16)) + '">' : '<input type="text" id="' + id + '"' + aria + ' value="' + esc(ex) + '">';
       case 'period':
         return '<input type="date"' + aria + '> – <input type="date"' + aria + '>' + (ex ? '<span class="fx-hint fx-pen">' + esc(ex) + '</span>' : '');
@@ -584,6 +588,7 @@
       if (!r.ok) throw new Error(r.status + ' ' + r.statusText);
       return r.json();
     }).then(function (data) {
+      if (form !== state.form) return;
       M = data;
       FIELDS = [];
       BYID = {};
@@ -600,6 +605,7 @@
       renderAll();
       setView(state.view, true);
     }).catch(function (e) {
+      if (form !== state.form) return;
       $('#fx-head').innerHTML = '<p class="fx-status fx-err">' + esc(S.failed + e.message) + '</p>';
     });
   }

@@ -51,9 +51,15 @@ LOCAL_LISTS = {
     "Imtiyoz toifasi mavjud": "https://terminology.dhp.uz/fhir/core/CodeSystem/benefits-cs",
     "Imtiyoz toifasi": "https://terminology.dhp.uz/fhir/core/CodeSystem/benefits-cs",
     "Ma'lumoti": "https://terminology.dhp.uz/fhir/core/CodeSystem/education-cs",
-    "Ish joyi, lavozimi": "https://terminology.dhp.uz/fhir/core/CodeSystem/occupation-cs",
+    "Ish joyi, lavozimi": "https://terminology.dhp.uz/fhir/core/ValueSet/position-and-profession-vs",
     "Yo'llashdan maqsad": "https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-purpose-cs",
     "Nogironlik": "https://terminology.dhp.uz/fhir/core/CodeSystem/disability-cs",
+}
+
+SLICE_TITLES = {
+    "vitalSigns": {"en": "Vital signs", "ru": "Показатели жизненно важных функций", "uz": "Hayotiy ko'rsatkichlar"},
+    "dialysisParameters": {"en": "Dialysis parameters", "ru": "Параметры диализа", "uz": "Dializ parametrlari"},
+    "medications": {"en": "Medications", "ru": "Лекарственные препараты", "uz": "Dori vositalari"},
 }
 
 # Diagnosis-role keywords in uz labels, most specific first
@@ -216,6 +222,25 @@ def flatten(cc, parents=()):
         yield from flatten(c.get("concept", []), parents + (c["code"],))
 
 
+def ancestors(cs):
+    """code -> all ancestor codes, from nesting and the parent/subsumedBy properties."""
+    direct = {}
+    for c in flatten(cs["concept"]):
+        ps = set(c["_parents"][-1:])
+        ps |= {pr.get("valueCode") for pr in c.get("property", []) if pr.get("code") in ("parent", "subsumedBy")}
+        direct[c["code"]] = ps - {None}
+    out = {}
+    for code in direct:
+        seen, todo = set(), list(direct[code])
+        while todo:
+            x = todo.pop()
+            if x not in seen:
+                seen.add(x)
+                todo += direct.get(x, ())
+        out[code] = seen
+    return out
+
+
 def expand(vs_url, depth=0):
     """Return (concepts, unexpanded systems) for a ValueSet or CodeSystem canonical."""
     r = REG.get(vs_url)
@@ -266,7 +291,7 @@ def expand(vs_url, depth=0):
                 if not ok:
                     missing.append(system)
                 else:
-                    tree = {c["code"]: c.get("_parents", ()) for c in flatten(cs["concept"])}
+                    tree = ancestors(cs)
                     for f in inc["filter"]:
                         root = f["value"]
                         part += [known[k] for k, ps in tree.items() if root in ps or (f["op"] == "is-a" and k == root)]
@@ -362,6 +387,9 @@ SEG = re.compile(r"(\w+)(?:\[(\w[\w-]*)\])?")
 
 
 def lookup(sd, eid, name, sl):
+    if sl == "x":
+        found = element(sd, f"{eid}.{name}[x]")
+        return (found, f"{eid}.{name}[x]", None) if found else (None, None, None)
     for cand in ([f"{eid}.{name}:{sl}"] if sl else []) + [f"{eid}.{name}"]:
         found = element(sd, cand)
         if found is not None:
@@ -390,12 +418,18 @@ def resolve(profile_sd, path):
             return None, None
         el, eid = found, cand
         types = found.get("type", [])
-        tcode = choice or (types[0]["code"] if types else "BackboneElement")
+        tcode = choice or (types[0]["code"] if len(types) == 1 else None if types else "BackboneElement")
         if tcode == "Extension" and types and types[0].get("profile"):
             ext = REG.get(types[0]["profile"][0])
-            v = element(ext, "Extension.value[x]") if ext else None
+            vid = "Extension.value[x]"
+            v = element(ext, vid) if ext else None
+            if ext and (not v or v.get("max") == "0"):
+                vid = next((e["id"] for e in sd_elements(ext) if re.fullmatch(r"Extension\.extension:\w+\.value\[x\]", e["id"])
+                            and e.get("max") != "0" and e.get("binding")), None)
+                v = element(ext, vid) if vid else None
             if v and v.get("max") != "0":
-                el, tcode, sd, eid = v, (v.get("type") or [{}])[0].get("code"), ext, "Extension.value[x]"
+                el = {**v, **{k: found[k] for k in ("min", "max") if k in found}}
+                tcode, sd, eid = (v.get("type") or [{}])[0].get("code"), ext, vid
     return el, tcode
 
 
@@ -454,7 +488,7 @@ def code_parts(cell):
     return " ".join(item), " ".join(value), " ".join(generic)
 
 
-CODE_RX = re.compile(r"(LOINC|SNOMED CT|SNOMED|ATC)\s+`?([\w.-]+)`?(?:\s+\"([^\"]+)\")?")
+CODE_RX = re.compile(r"(LOINC|SNOMED CT|SNOMED|ATC|INN|CVX)\s+`([\w.-]+)`(?:\s+\"([^\"]+)\")?")
 
 
 def item_code(text):
@@ -486,12 +520,16 @@ PATH_START = re.compile(r"^[A-Z][A-Za-z]+(?:\[\w+\])?(?:\.[A-Za-z]\w*(?:\[[\w-]+
 
 
 def pick_path(text, prev_resource):
-    t = re.sub(r"\(same (\w+)\)", r"\1", text)
+    t = re.sub(r"\(same (\w+)\)\s+(?=[a-z])", r"\1.", text)
+    t = re.sub(r"\(same (\w+)\)", r"\1", t)
     t = re.sub(r"^section\[", "Composition.section[", t)
     t = re.sub(r"(?<=[ ;/(])section\[", "Composition.section[", t)
-    parts = [p.strip(" ()") for p in re.split(r";|\s/\s|\s\+\s|,\s|\sor\s|\s→\s|\(", t)]
+    parts = [p.strip(" ()") for p in re.split(r";|\s/\s|\s\+\s|,\s|\sor\s|\s→\s|\(|\)", t)]
     paths = [m.group(0) for p in parts if (m := PATH_START.match(p))]
     full = [p for p in paths if "." in p]
+    bare = [p for p in paths if "." not in p]
+    if bare and full and all(re.fullmatch(r"Composition\.section\[\w+\]", p) for p in full):
+        return bare[0]
     if not full:
         # "element; other" after a resource name: "Condition.code; category" -> Condition.code
         return paths[0] if paths else None
@@ -553,17 +591,27 @@ def role_of(label, subsections):
     return None
 
 
-def build_field(fid, row, langs_rows, prev_resource, lists, subsections, form):
+def sd_link_names(cell):
+    """Replace profile links with the profile's name, so "[Form 066 Surgical Procedure](...).code" parses."""
+    def sub(m):
+        e = REG.from_link(m.group(2))
+        if e and e["type"] == "StructureDefinition" and " " in m.group(1):
+            return REG.res(e)["name"]
+        return m.group(0)
+    return re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", sub, cell)
+
+
+def build_field(fid, row, langs_rows, prev_resource, lists, subsections, form, comp_sd):
     cells = row + [""] * (5 - len(row))
     uz, ru, path_cell, code_cell, example = cells[:5]
     path_text = strip_md(path_cell)
-    path = pick_path(path_text, prev_resource)
+    path = pick_path(strip_md(sd_link_names(path_cell)), prev_resource)
     plinks = links(path_cell)
     resource = path.split(".")[0].split("[")[0] if path else prev_resource
     if path and path.startswith("Composition"):
         resource = "Composition"
     link = next((u for _, u in plinks if "StructureDefinition" in u or "hl7.org/fhir" in u), None)
-    sd = profile_for(resource, link) if resource else None
+    sd = comp_sd if resource == "Composition" else profile_for(resource, link) if resource else None
     el, tcode = (resolve(sd, path) if sd and path and "." in path else (None, None))
     ftype = field_type(tcode, path) or heuristic_type(path_text, example)
     if "→" in path_text:
@@ -589,6 +637,10 @@ def build_field(fid, row, langs_rows, prev_resource, lists, subsections, form):
         if "min" in el and "max" in el:
             f["card"] = f"{el['min']}..{el['max']}"
         b = el.get("binding")
+        if b and b.get("additional"):
+            hit = next((a for a in b["additional"] for u in a.get("usage", [])
+                        for c in (u.get("valueCodeableConcept") or {}).get("coding", []) if icode and c.get("code") == icode["code"]), None)
+            b = {"strength": hit["purpose"], "valueSet": hit["valueSet"]} if hit else (None if b.get("strength") == "example" else b)
         if b and b.get("valueSet") and ftype == "coded":
             vs = REG.get(b["valueSet"])
             e = REG.by_url.get(b["valueSet"].split("|")[0])
@@ -612,14 +664,16 @@ def build_field(fid, row, langs_rows, prev_resource, lists, subsections, form):
                     break
         inline = re.findall(r"`([\w.-]+)`\s+\"([^\"]+)\"", value_txt)
         if not vl and len(inline) >= 2:
-            sysname = (CODE_RX.search(value_txt) or [None, ""])[1] or ""
+            sysname = (re.search(r"(LOINC|SNOMED CT|SNOMED|ATC|INN|CVX)\s+`", value_txt) or [None, ""])[1] or ""
             vl = f"inline:{form}:{fid}"
             lists[vl] = {"url": vl, "title": sysname or "Answers", "total": len(inline), "incomplete": [],
                          "concepts": [{"code": c, "en": d} for c, d in inline]}
-        if not vl and f.get("binding") and f["binding"]["strength"] in ("required", "extensible", "preferred"):
-            vl = value_list(f["binding"]["url"], lists)
         if not vl and uz in LOCAL_LISTS:
             vl = value_list(LOCAL_LISTS[uz], lists)
+        if not vl and f.get("binding") and f["binding"]["strength"] in ("required", "extensible", "preferred"):
+            vl = value_list(f["binding"]["url"], lists)
+        if vl and ftype == "text" and tcode in ("string", "markdown"):
+            vl = None
         if vl:
             f["valueList"] = vl
             if ftype == "text":
@@ -709,7 +763,7 @@ def build(form):
         nonlocal prev
         out = []
         for r, row in enumerate(rows):
-            f, prev = build_field(f"{key}-{r}", row, None, prev, lists, subsections, form)
+            f, prev = build_field(f"{key}-{r}", row, None, prev, lists, subsections, form, sd)
             out.append(f)
         return out
 
@@ -723,7 +777,7 @@ def build(form):
                          "intro": intro, "fields": mkfields(doc_rows, "document", [])})
         for s in secs:
             srows = [r for r, sl in zip(rows, ROW_SLICES[form]) if sl == s["slice"]]
-            out_secs.append({**s, "title": {lang: s["code"]["display"] or s["slice"] for lang in LANGS}, "intro": {lang: "" for lang in LANGS},
+            out_secs.append({**s, "title": SLICE_TITLES.get(s["slice"]) or {lang: s["code"]["display"] or s["slice"] for lang in LANGS}, "intro": {lang: "" for lang in LANGS},
                              "fields": mkfields(srows, s["slice"], [])})
     else:
         assert len(data_idx) == len(secs), (form, [en[i][0] for i in data_idx], [s["slice"] for s in secs])
@@ -755,6 +809,9 @@ def main():
     check = "--check" in sys.argv
     OUT.mkdir(parents=True, exist_ok=True)
     stale = []
+    pages = {re.fullmatch(r"form-(.+)-mapping\.md", p.name).group(1) for p in (REPO / "input/pagecontent").glob("form-*-mapping.md")}
+    if pages - set(FORMS):
+        sys.exit(f"mapping pages without a FORMS entry: {', '.join(sorted(pages - set(FORMS)))}")
     index = []
     for form in FORMS:
         model = build(form)
