@@ -27,6 +27,8 @@ To'liq namunaviy nusxa uchun [066-shakl statsionardan chiqarish misoli](Bundle-e
 
 ### Maydonlarni moslashtirish
 
+Xuddi shu moslashtirishni [shakllar ko'rgichida](form-explorer.html?form=066) xarita, bo'limlar jadvali va shakl daraxti ko'rinishida ham ko'rish mumkin.
+
 ### UZ-066 Statsionardan chiqqan bemorning statistik kartasi - FHIR bilan moslashtirish
 
 ---

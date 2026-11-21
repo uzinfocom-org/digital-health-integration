@@ -27,6 +27,8 @@ To'liq namunaviy nusxa uchun [066-1-shakl psixiatrik/narkologik chiqarish misoli
 
 ### Maydonlarni moslashtirish
 
+Xuddi shu moslashtirishni [shakllar ko'rgichida](form-explorer.html?form=066-1) xarita, bo'limlar jadvali va shakl daraxti ko'rinishida ham ko'rish mumkin.
+
 ### UZ-066-1 Psixiatrik/narkologik statsionardan chiqqan bemorning statistik kartasi - FHIR bilan moslashtirish
 
 ---

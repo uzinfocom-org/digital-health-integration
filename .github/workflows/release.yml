@@ -77,6 +77,9 @@ jobs:
           # rejects and which turns links from dependent guides into file:// links.
           java -jar input-cache/publisher.jar -ig . -tx https://tx.fhir.org -publish https://dhp.uz/fhir/integrations
 
+      - name: Check form explorer data is current
+        run: python3 .github/scripts/build_form_explorer.py --check
+
       - name: Verify built package
         run: |
           test -f output/package.tgz || { echo "::error::output/package.tgz was not produced"; exit 1; }

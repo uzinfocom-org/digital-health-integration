@@ -29,6 +29,8 @@ To'liq namunaviy nusxa uchun [096-shakl tug'ruq tibbiy kartasi misoli](Bundle-ex
 
 ### Maydonlarni moslashtirish
 
+Xuddi shu moslashtirishni [shakllar ko'rgichida](form-explorer.html?form=096) xarita, bo'limlar jadvali va shakl daraxti ko'rinishida ham ko'rish mumkin.
+
 ### 096-shakl Tug'ruq tibbiy kartasi - FHIR bilan moslashtirish
 
 ---

@@ -29,6 +29,8 @@ To'liq namunaviy nusxa uchun [111-shakl homilador ayolning individual kartasi mi
 
 ### Maydonlarni moslashtirish
 
+Xuddi shu moslashtirishni [shakllar ko'rgichida](form-explorer.html?form=111) xarita, bo'limlar jadvali va shakl daraxti ko'rinishida ham ko'rish mumkin.
+
 ### 111-shakl Homilador va tuqqan ayolning individual kartasi - FHIR bilan moslashtirish
 
 ---

@@ -29,6 +29,8 @@ To'liq namunaviy nusxa uchun [027-shakl ko'chirma misoli](Bundle-example-form-02
 
 ### Maydonlarni moslashtirish
 
+Xuddi shu moslashtirishni [shakllar ko'rgichida](form-explorer.html?form=027) xarita, bo'limlar jadvali va shakl daraxti ko'rinishida ham ko'rish mumkin.
+
 ### 027-shakl Tibbiy kartadan koʻchirma - FHIR bilan moslashtirish
 
 ---
