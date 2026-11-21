@@ -189,8 +189,10 @@ def page_link(entry):
 # ---------------------------------------------------------------- terminology
 
 
-def supplement_designations(url):
-    supp = [REG.get(u) for u in REG.supplements.get(url, [])]
+def supplement_designations(url, declared=()):
+    """Designations from the supplements of a code system; the ones a ValueSet declares win."""
+    urls = REG.supplements.get(url, [])
+    supp = [REG.get(u) for u in sorted(urls, key=lambda u: u not in declared)]
     extra = {}
     for s in filter(None, supp):
         slang = (s.get("language") or "en")[:2]
@@ -204,9 +206,9 @@ def supplement_designations(url):
     return extra
 
 
-def cs_concepts(cs):
+def cs_concepts(cs, declared=()):
     base = (cs.get("language") or "en")[:2]
-    extra = supplement_designations(cs["url"])
+    extra = supplement_designations(cs["url"], declared)
     out = []
     for c in flatten(cs.get("concept", [])):
         d = {}
@@ -271,6 +273,8 @@ def expand(vs_url, depth=0):
             return [], [r["url"]]
         return cs_concepts(r), []
     concepts, missing = [], []
+    declared = {x["valueCanonical"].split("|")[0] for x in r.get("extension", [])
+                if x.get("url") == "http://hl7.org/fhir/StructureDefinition/valueset-supplement"}
     for inc in r.get("compose", {}).get("include", []):
         part = []
         for sub in inc.get("valueSet", []):
@@ -280,8 +284,8 @@ def expand(vs_url, depth=0):
         system = inc.get("system")
         if system:
             cs = REG.get(system)
-            known = {c["code"]: c for c in cs_concepts(cs)} if cs and cs.get("concept") else {}
-            extra = {} if known else supplement_designations(system)
+            known = {c["code"]: c for c in cs_concepts(cs, declared)} if cs and cs.get("concept") else {}
+            extra = {} if known else supplement_designations(system, declared)
             if inc.get("concept"):
                 for c in inc["concept"]:
                     k = known.get(c["code"], {"code": c["code"], "system": system})
