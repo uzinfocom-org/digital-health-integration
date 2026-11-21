@@ -27,6 +27,8 @@ For a complete reference instance, see the [Form 027 medical record extract exam
 
 ### Field Mapping
 
+The same mapping can also be browsed as a mind map, a section table and a form tree in the [form explorer](form-explorer.html?form=027).
+
 ### Form 027 Medical Record Extract - FHIR Mapping
 
 ---

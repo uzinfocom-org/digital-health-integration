@@ -118,6 +118,8 @@ pages:
     title: Form 130 Mapping
   form-111-mapping.md:
     title: Form 111 Mapping
+  form-explorer.md:
+    title: Form Explorer
   cervical-breast-cancer-screening.md:
     title: Cervical and Breast Cancer Screening
   sick-leave.md:

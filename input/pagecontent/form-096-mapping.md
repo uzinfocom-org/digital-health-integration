@@ -29,6 +29,8 @@ For a complete reference instance, see the [Form 096 maternity medical record ex
 
 ### Field Mapping
 
+The same mapping can also be browsed as a mind map, a section table and a form tree in the [form explorer](form-explorer.html?form=096).
+
 ### Form 096 Maternity Medical Record - FHIR Mapping
 
 ---
