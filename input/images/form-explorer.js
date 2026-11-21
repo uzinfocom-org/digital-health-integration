@@ -606,7 +606,12 @@
       setView(state.view, true);
     }).catch(function (e) {
       if (form !== state.form) return;
-      $('#fx-head').innerHTML = '<p class="fx-status fx-err">' + esc(S.failed + e.message) + '</p>';
+      var err = '<p class="fx-status fx-err">' + esc(S.failed + e.message) + '</p>';
+      if (!M) { $('#fx-head').innerHTML = err; return; }
+      state.form = M.form;
+      $('#fx-form').value = M.form;
+      writeUrl();
+      $('#fx-head').insertAdjacentHTML('afterbegin', err);
     });
   }
 
