@@ -206,6 +206,19 @@ def supplement_designations(url, declared=()):
     return extra
 
 
+def unusable(c):
+    for pr in c.get("property", []):
+        k, v = pr.get("code"), pr.get("valueCode") or pr.get("valueString")
+        if k in ("notSelectable", "abstract", "inactive") and pr.get("valueBoolean") or \
+                k == "status" and v in ("retired", "deprecated", "inactive") or k == "deprecated" and pr.get("valueBoolean") is not False:
+            return True
+    return False
+
+
+def complete(cs):
+    return cs.get("content") in ("complete", None)
+
+
 def cs_concepts(cs, declared=()):
     base = (cs.get("language") or "en")[:2]
     extra = supplement_designations(cs["url"], declared)
@@ -219,7 +232,8 @@ def cs_concepts(cs, declared=()):
             d[base] = c["display"]
         for k, v in extra.get(c["code"], {}).items():
             d.setdefault(k, v)
-        out.append({"code": c["code"], "system": cs["url"], **{k: v for k, v in d.items() if k in LANGS}})
+        out.append({"code": c["code"], "system": cs["url"], **{k: v for k, v in d.items() if k in LANGS},
+                    **({"_unusable": True} if unusable(c) else {})})
     return out
 
 
@@ -271,7 +285,7 @@ def expand(vs_url, depth=0):
     if r["resourceType"] == "CodeSystem":
         if r.get("content") not in ("complete", "fragment", None) or not r.get("concept"):
             return [], [r["url"]]
-        return cs_concepts(r), []
+        return [c for c in cs_concepts(r) if "_unusable" not in c], [] if complete(r) else [r["url"]]
     concepts, missing = [], []
     declared = {x["valueCanonical"].split("|")[0] for x in r.get("extension", [])
                 if x.get("url") == "http://hl7.org/fhir/StructureDefinition/valueset-supplement"}
@@ -307,9 +321,13 @@ def expand(vs_url, depth=0):
                     tree = ancestors(cs)
                     for f in inc["filter"]:
                         root = f["value"]
-                        part += [known[k] for k, ps in tree.items() if root in ps or (f["op"] == "is-a" and k == root)]
+                        part += [known[k] for k, ps in tree.items() if "_unusable" not in known[k] and (root in ps or (f["op"] == "is-a" and k == root))]
+                    if not complete(cs):
+                        missing.append(system)
             elif known:
-                part += list(known.values())
+                part += [c for c in known.values() if "_unusable" not in c]
+                if not complete(cs):
+                    missing.append(system)
             else:
                 missing.append(system)
         concepts += part
@@ -339,7 +357,7 @@ def value_list(url, lists):
     lists[url] = {
         "url": url, "title": r.get("title") or r.get("name") or entry["id"], "link": page_link(entry),
         "total": len(concepts), "incomplete": [short_system(m) for m in missing],
-        "concepts": [] if len(concepts) > MAX_CONCEPTS else [{k: v for k, v in c.items() if k != "_parents"} for c in concepts],
+        "concepts": [] if len(concepts) > MAX_CONCEPTS else [{k: v for k, v in c.items() if not k.startswith("_")} for c in concepts],
     }
     return url
 

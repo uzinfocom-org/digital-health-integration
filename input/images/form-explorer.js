@@ -304,16 +304,17 @@
 
   /* ---------------------------------------------------------------- detail panel */
 
+  function count(vl) { return vl.total + (vl.incomplete && vl.incomplete.length ? '+' : ''); }
   function valueListHtml(f, vl) {
     var hit = exampleConcept(f);
     var head = '<div class="fx-vl-head">' + (vl.link ? '<a href="' + url(vl.link) + '"' + ext(vl.link) + '>' + esc(vl.title) + '</a>' : '<span>' + esc(vl.title) + '</span>') +
-      '<span>' + vl.total + ' ' + esc(S.codes) + '</span></div>';
+      '<span>' + count(vl) + ' ' + esc(S.codes) + '</span></div>';
     var body = vl.concepts.length
       ? '<ol>' + vl.concepts.map(function (c) {
         var other = LANG !== 'en' && c.en && c.en !== concept(c) ? ' · ' + esc(c.en) : '';
         return '<li' + (c === hit ? ' class="fx-hit" data-hit="' + esc(S.exampleHit) + '"' : '') + '><span>' + esc(concept(c)) + '</span><span class="fx-mono">' + esc(c.code) + other + '</span></li>';
       }).join('') + '</ol>'
-      : '<div class="fx-vl-note">' + vl.total + esc(S.tooMany) + '</div>';
+      : '<div class="fx-vl-note">' + count(vl) + esc(S.tooMany) + '</div>';
     var inc = vl.incomplete && vl.incomplete.length ? '<div class="fx-vl-note">' + esc(S.notExpanded + vl.incomplete.join(', ')) + '</div>' : '';
     return '<div class="fx-vl">' + head + body + inc + '</div>';
   }
@@ -444,7 +445,7 @@
       return '<ul>' + shown.map(function (c) { return '<li' + (c === hit ? ' class="fx-hit"' : '') + '>' + esc(concept(c)) + '</li>'; }).join('') + '</ul>' +
         (vl.total > shown.length ? '<span class="fx-more">+' + (vl.total - shown.length) + esc(S.more) + '</span>' : '');
     }
-    if (vl) bits.push(esc(vl.title) + ' <span class="fx-muted">(' + vl.total + ' ' + esc(S.codes) + ')</span>');
+    if (vl) bits.push(esc(vl.title) + ' <span class="fx-muted">(' + count(vl) + ' ' + esc(S.codes) + ')</span>');
     else if (f.binding && f.type === 'coded') bits.push(bindingHtml(f.binding));
     if (f.type === 'quantity') { var u = f.example.split(' ').slice(1).join(' '); if (u) bits.push(esc(S.unit + u)); }
     if (f.type === 'reference' && f.targets) bits.push(esc(S.pointsTo + f.targets.join(', ')));
