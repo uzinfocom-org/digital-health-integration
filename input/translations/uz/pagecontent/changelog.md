@@ -1,6 +1,8 @@
 ### Ishlab chiqilmoqda
 
-(Hozircha o'zgarishlar yo'q)
+#### O'zgartirildi
+
+Qo'llanma sahifalari [DHP dasturchilar hujjatlari](https://docs.dhp.uz/uz/) uslubida bezatilgan: Onest va JetBrains Mono shriftlari, DHP yashil ranglari va logotipi, yangilangan sarlavha, menyu, jadvallar, eslatmalar va nusxa olish tugmasi bilan kod bloklari.
 
 ### Versiya 0.13.1
 
