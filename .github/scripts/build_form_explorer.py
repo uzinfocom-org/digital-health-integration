@@ -85,6 +85,10 @@ COMPLEX = {"HumanName", "Address", "Period", "Quantity", "Identifier", "Codeable
            "ContactPoint", "Annotation", "Age", "Duration", "Range", "Ratio", "CodeableReference", "Attachment",
            "Timing", "Dosage", "Meta", "Narrative", "Extension", "BackboneElement", "SimpleQuantity", "Money"}
 LANGS = ("en", "ru", "uz")
+# English field labels, keyed by the Russian label: the mapping pages only have UZ and RU columns
+LABELS_EN_FILE = REPO / ".github/scripts/form-explorer-labels-en.json"
+LABELS_EN = json.loads(LABELS_EN_FILE.read_text())
+USED_EN, MISSING_EN = set(), set()
 
 
 def load(p):
@@ -666,7 +670,7 @@ def build_field(fid, row, langs_rows, prev_resource, lists, subsections, form, c
     item_txt, value_txt, generic_txt = code_parts(code_cell)
     icode = item_code(item_txt) or item_code(re.split(r"\be\.g\.", generic_txt)[0])
     f = {
-        "id": fid, "label": {"uz": uz, "ru": ru}, "path": path_text, "resource": "" if ftype == "none" else resource or "",
+        "id": fid, "label": label_langs(uz, ru), "path": path_text, "resource": "" if ftype == "none" else resource or "",
         "type": ftype, "note": strip_md(code_cell) if strip_md(code_cell) not in ("-", "") else "",
         "example": strip_md(example) if strip_md(example) != "-" else "",
     }
@@ -844,6 +848,14 @@ def build(form):
     return model
 
 
+def label_langs(uz, ru):
+    if ru in LABELS_EN:
+        USED_EN.add(ru)
+        return {"en": LABELS_EN[ru], "uz": uz, "ru": ru}
+    MISSING_EN.add(ru)
+    return {"uz": uz, "ru": ru}
+
+
 def main():
     global REG
     REG = Registry()
@@ -868,6 +880,10 @@ def main():
                 stale.append(path.name)
         else:
             path.write_text(text)
+    if MISSING_EN:
+        print(f"  {len(MISSING_EN)} field labels have no English label in {LABELS_EN_FILE.name}: " + "; ".join(sorted(MISSING_EN)[:10]))
+    if set(LABELS_EN) - USED_EN:
+        print(f"  {len(set(LABELS_EN) - USED_EN)} unused English labels in {LABELS_EN_FILE.name}")
     idx = json.dumps(index, ensure_ascii=False, separators=(",", ":")) + "\n"
     if check:
         if (OUT / "index.json").read_text() != idx if (OUT / "index.json").exists() else True:

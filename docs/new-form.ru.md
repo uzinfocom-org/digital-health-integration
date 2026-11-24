@@ -261,7 +261,7 @@ pages:
       </li>
 ```
 
-Чтобы форма появилась в [обозревателе форм](https://dhp.uz/fhir/integrations/en/form-explorer.html), добавьте её профиль и пример в словарь `FORMS` в `.github/scripts/build_form_explorer.py`, а под заголовком Field Mapping страницы соответствия - строку со ссылкой `form-explorer.html?form=0XX`, как на других страницах. После сборки запустите `python3 .github/scripts/build_form_explorer.py` и закоммитьте `input/images/form-explorer/`. Скрипт нужно перезапускать после каждой правки страниц соответствия или профилей формы: CI проверяет, что данные обозревателя актуальны.
+Чтобы форма появилась в [обозревателе форм](https://dhp.uz/fhir/integrations/en/form-explorer.html), добавьте её профиль и пример в словарь `FORMS` в `.github/scripts/build_form_explorer.py`, а под заголовком Field Mapping страницы соответствия - строку со ссылкой `form-explorer.html?form=0XX`, как на других страницах. После сборки запустите `python3 .github/scripts/build_form_explorer.py` и закоммитьте `input/images/form-explorer/`. Страницы соответствия содержат только узбекские и русские названия полей, поэтому английские добавьте в `.github/scripts/form-explorer-labels-en.json` (ключ - русское название): скрипт перечисляет поля без английского названия. Скрипт нужно перезапускать после каждой правки страниц соответствия или профилей формы: CI проверяет, что данные обозревателя актуальны.
 
 ### 9. Переводы
 
@@ -296,7 +296,7 @@ pages:
 - [ ] [Индекс полей](field-index.md): новые поля формы добавлены, у повторных форма дописана в Also in
 - [ ] Файл вступления `StructureDefinition-<id>-intro.md`
 - [ ] Запись в `pages:` и пункт меню в `sushi-config.yaml`
-- [ ] Форма в `FORMS` скрипта `build_form_explorer.py`, данные обозревателя пересобраны
+- [ ] Форма в `FORMS` скрипта `build_form_explorer.py`, английские названия полей в `form-explorer-labels-en.json`, данные обозревателя пересобраны
 - [ ] Переводы страниц и профиля в `input/translations/{ru,uz}/`
 - [ ] Запись в `changelog.md` (`### In development`) + переводы
 - [ ] Сборка `_genonce.sh` без новых ошибок QA

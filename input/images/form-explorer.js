@@ -105,10 +105,10 @@
   const VIEWS = ['overview', 'data', 'mindmap', 'form'];
 
   let M = null, FIELDS = [], TREE = null;
-  const state = { form: null, labels: LANG === 'ru' ? 'ru' : 'uz', view: 'overview', paths: false, example: false };
+  const state = { form: null, labels: LANG, view: 'overview', paths: false, example: false };
   try {
     const saved = JSON.parse(localStorage.getItem('fx-explorer') || '{}');
-    if (saved.labels === 'uz' || saved.labels === 'ru') state.labels = saved.labels;
+    if (['en', 'uz', 'ru'].includes(saved.labels)) state.labels = saved.labels;
     if (typeof saved.paths === 'boolean') state.paths = saved.paths;
   } catch (e) { /* storage unavailable */ }
   function save() { try { localStorage.setItem('fx-explorer', JSON.stringify({ labels: state.labels, paths: state.paths })); } catch (e) { /* ignore */ } }
@@ -118,8 +118,8 @@
   const ext = u => /^https?:/.test(u) ? ' target="_blank" rel="noopener"' : '';
   const $ = sel => root.querySelector(sel);
   const L = o => (o && (o[LANG] || o.en || o.uz || o.ru)) || '';
-  const label = f => f.label[state.labels] || f.label.uz || f.label.ru;
-  const altLabel = f => { const o = state.labels === 'uz' ? 'ru' : 'uz'; return f.label[o] && f.label[o] !== label(f) ? f.label[o] : ''; };
+  const label = f => f.label[state.labels] || f.label[LANG] || f.label.uz || f.label.ru;
+  const altLabel = f => [...new Set(['en', 'uz', 'ru'].map(k => f.label[k]).filter(x => x && x !== label(f)))].join(' · ');
   const concept = c => c[LANG] || c.en || c.uz || c.ru || c.code;
   const icon = t => `<span class="ti ${TCOLOR[t] || t}" title="${esc(S.types[t])}" aria-label="${esc(S.types[t])}">${GLYPH[t]}</span>`;
   const rootLabel = () => LANG === 'uz' ? M.form + S.rootSuffix : S.root + M.form;
@@ -200,7 +200,7 @@
   function shell(index) {
     root.innerHTML =
       `<div class="models"><span class="lbls">${esc(S.labels)} <span class="seg" role="group" aria-label="${esc(S.labels)}">` +
-      `<button type="button" data-l="uz">O'zbek</button><button type="button" data-l="ru">Русский</button></span></span>` +
+      `<button type="button" data-l="en">English</button><button type="button" data-l="uz">O'zbek</button><button type="button" data-l="ru">Русский</button></span></span>` +
       `<label class="pick on"><span>${esc(S.pick)}</span><select id="fx-form">` +
       index.map(x => `<option value="${esc(x.form)}">${esc(L(x.title))}</option>`).join('') + '</select></label></div>' +
       '<div class="sheet"><div class="titlebar" id="fx-title"></div>' +
@@ -269,7 +269,7 @@
       <div><h3>${esc(S.profile)}</h3><div class="v"><a href="${url(M.profile.link)}">${esc(M.profile.title || M.profile.name)}</a></div></div>
       <div><h3>${esc(S.mapping)}</h3><div class="v"><a href="${url(M.profile.mapping)}">${esc(M.profile.mapping)}</a></div></div>
       <div><h3>${esc(S.example)}</h3><div class="v"><a href="${url(M.profile.example)}">${esc(M.profile.example.replace(/\.html$/, ''))}</a></div></div>
-      <div><h3>${esc(S.languages)}</h3><div class="v">O'zbek, Русский</div></div>
+      <div><h3>${esc(S.languages)}</h3><div class="v">English, O'zbek, Русский</div></div>
       <div><h3>${esc(S.dataTypes)}</h3><div class="legend">${Object.keys(GLYPH).filter(t => used[t] || t === 'group').map(t => `<div>${icon(t)} ${esc(S.types[t])}</div>`).join('')}</div></div>
     </aside></div>`;
     pane.querySelector('.secs').addEventListener('click', e => {
