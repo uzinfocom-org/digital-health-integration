@@ -1,16 +1,16 @@
 /* Form explorer: clinical views of a form's Composition model, styled like the WEST-A clinical views. Scoped under .fx so the IG template's rules don't collide. */
 .fx {
-  --ink: #1b2733;
-  --muted: #5a6a79;
-  --panel: #ffffff;
-  --bar: #f2f2f2;
-  --bar-ink: #333333;
-  --line: #dddddd;
-  --accent: var(--navbar-bg-color, #2c5d8f);
-  --accent-ink: #ffffff;
-  --accent-soft: color-mix(in srgb, var(--accent) 10%, #ffffff);
+  --ink: var(--dhp-fg, #1b2733);
+  --muted: var(--dhp-muted-fg, #5a6a79);
+  --panel: var(--dhp-bg, #ffffff);
+  --bar: var(--dhp-muted, #f2f2f2);
+  --bar-ink: var(--dhp-fg, #333333);
+  --line: var(--dhp-border, #dddddd);
+  --accent: var(--dhp-primary-dark, #2c5d8f);
+  --accent-ink: var(--dhp-on-link, #ffffff);
+  --accent-soft: color-mix(in srgb, var(--accent) 12%, var(--panel));
   --link: var(--link-color, #1a6fb5);
-  --link-soft: color-mix(in srgb, var(--link) 10%, #ffffff);
+  --link-soft: color-mix(in srgb, var(--link) 12%, var(--panel));
   --mand: #a8431c;
   --mand-soft: #f8e6dc;
   --t-text: #2c5d8f;
@@ -21,12 +21,26 @@
   --t-bool: #3f7a2a;
   --edge: #9aabbb;
   --hit: #2a46b8;
+  --err: #a32a2a;
   --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   contain: inline-size;
   color: var(--ink);
   font-size: 14px;
   line-height: 1.5;
   margin: 12px 0 24px;
+}
+:root[data-theme="dark"] .fx {
+  --mand: #ff9e7a;
+  --mand-soft: #3d2219;
+  --t-text: #7ab8f5;
+  --t-coded: #e5b567;
+  --t-qty: #5fd0c4;
+  --t-date: #d39be6;
+  --t-id: #a9b6c3;
+  --t-bool: #8fd170;
+  --edge: #4f5f70;
+  --hit: #8ea2ff;
+  --err: #ff8a80;
 }
 .fx, .fx * { box-sizing: border-box; }
 .fx a { color: var(--link); }
@@ -38,7 +52,7 @@
 .fx .mono { font-family: var(--mono); font-size: 12px; }
 .fx .muted { color: var(--muted); }
 .fx .status { color: var(--muted); padding: 24px 0; margin: 0; }
-.fx .status.err { color: #a32a2a; padding: 0; flex-basis: 100%; }
+.fx .status.err { color: var(--err); padding: 0; flex-basis: 100%; }
 
 /* form picker bar, title bar, view tabs */
 .fx .models { display: flex; gap: 8px 16px; flex-wrap: wrap; align-items: center; border-bottom: 2px solid var(--accent); padding-bottom: 6px; }
