@@ -56,6 +56,8 @@ If-Match: W/"2"   # the ETag from your last read; 412 if it changed since
 }
 ```
 
+Кто снял отвод и почему, записывается в [Provenance](https://hl7.org/fhir/R5/provenance.html): `target` - флаг, `agent.who` - врач, `activity` - `UPDATE`, обоснование - в `authorization.concept.text` ([пример](Provenance-example-blood-donor-deferral-lifted-provenance.html)). UZ Core Provenance предназначен для подписи документов, поэтому здесь используется базовый Provenance.
+
 Полный список поддерживаемых параметров поиска приведён в [CapabilityStatement](https://dhp.uz/fhir/core/ru/CapabilityStatement-DHPCapabilityStatement.html#Flag1-42).
 
 ### Связанные разделы

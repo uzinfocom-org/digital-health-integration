@@ -9,7 +9,7 @@ name: DHPintegrations
 title: Uzbekistan Digital Health Platform - Integrations
 description: Profiles for DHP integrations with systems in Uzbekistan
 status: draft # draft | active | retired | unknown
-version: 0.13.0
+version: 0.13.1
 fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build
@@ -134,6 +134,8 @@ pages:
     title: Hepatitis
   blood-service.md:
     title: Blood Service
+  orders.md:
+    title: Orders
   forms.md:
     title: Questionnaires
   forms-overview.md:

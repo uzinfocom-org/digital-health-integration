@@ -1,6 +1,24 @@
 ### В разработке
 
-(Пока без изменений)
+#### Изменено
+
+[Blood Service Operations](CodeSystem-blood-component-processing-cs.html) (ранее Blood component processing operations): добавлен код контроля качества продукта крови.
+
+[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html): добавлены примеры контроля качества продукта крови в статусах active, completed и revoked и пример роли экспедитора PractitionerRole.
+
+Страницы руководства оформлены в стиле [документации DHP для разработчиков](https://docs.dhp.uz/ru/): шрифты Onest и JetBrains Mono, зелёные цвета и логотип DHP, обновлённые шапка, меню, таблицы, примечания и блоки кода с кнопкой копирования. Меню темы в шапке переключает светлую, тёмную тему или тему как в системе.
+
+[Форма 027](StructureDefinition-form-027-medical-record-extract-composition.html) использует `emdoc-0010-0106` для выписок и из амбулаторной, и из стационарной карты, а различает их `Encounter.class` (`AMB` или `IMP`). Фиксированный `type` больше не содержит прежнее название "Extract from inpatient medical record".
+
+#### Документация
+
+[Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html): описано досрочное снятие отвода - флаг переводится в `inactive`, а Provenance записывает, кто снял отвод и почему ([пример](Provenance-example-blood-donor-deferral-lifted-provenance.html)).
+
+### Версия 0.13.1
+
+#### Добавлено
+
+[Orders](orders.html): добавлены профили направлений и задач согласования, терминология, основания государственного финансирования и критерии SBDL, правовые основания оплаты, примеры госпитализации и разделов выписного документа. Функциональность PR UZ Core #402 перенесена в Integrations; документация доступна на английском, русском и узбекском.
 
 ### Версия 0.13.0
 
@@ -16,7 +34,7 @@
 
 [Blood Transfusion Assessment Observation](StructureDefinition-blood-transfusion-assessment-observation.html) фиксирует пробы на совместимость по ABO, по Rh-Hr и биологическую пробу между реципиентом и одной единицей крови с результатами в SNOMED CT, а [Blood Recipient History Observation](StructureDefinition-blood-recipient-history-observation.html) - трансфузионный и акушерский анамнез реципиента, на который она опирается.
 
-[Анкета донора](forms.html?form=donor-questionnaire) содержит 35 вопросов на узбекском, русском и английском языках, [заполненный пример ответа](QuestionnaireResponse-example-donor-questionnaire-response.html) с пациентом и [шаг на странице Blood Service](blood-service.html#interviewing) о том, какие ответы могут привести к отводу. Используется кодовая система причин отвода из спецификации службы крови. Контекст программы группирует анкету на странице опросников.
+[Анкета донора](forms.html#donor-questionnaire) содержит 35 вопросов на узбекском, русском и английском языках, [заполненный пример ответа](QuestionnaireResponse-example-donor-questionnaire-response.html) с пациентом и [шаг на странице Blood Service](blood-service.html#interviewing) о том, какие ответы могут привести к отводу. Используется кодовая система причин отвода из спецификации службы крови. Контекст программы группирует анкету на странице опросников.
 
 [Поиск](search.html), который открывается из нового поля в шапке страницы, находит ресурсы по заголовку, имени, URL или описанию, а также коды, термины и сопоставления в системах кодов, наборах значений и ConceptMap на английском, русском и узбекском языках. Результаты можно отфильтровать по типу ресурса.
 

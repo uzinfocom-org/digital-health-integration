@@ -45,7 +45,7 @@
 
 ### Опрос донора {#interviewing}
 
-Перед каждой донацией донор отвечает на [анкету донора](forms.html?form=donor-questionnaire); ответы фиксируются ресурсом [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-questionnaire-response.html) на Patient донора ([пример](QuestionnaireResponse-example-donor-questionnaire-response.html)). Ни один ответ сам по себе не означает отвод: врач рассматривает ответы и фиксирует отвод ресурсом [Flag](#eligibility).
+Перед каждой донацией донор отвечает на [анкету донора](forms.html#donor-questionnaire); ответы фиксируются ресурсом [UZ Core QuestionnaireResponse](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-questionnaire-response.html) на Patient донора ([пример](QuestionnaireResponse-example-donor-questionnaire-response.html)). Ни один ответ сам по себе не означает отвод: врач рассматривает ответы и фиксирует отвод ресурсом [Flag](#eligibility).
 
 В таблице указан ответ, который может привести к отводу, и соответствующий [код причины](ValueSet-donor-deferral-reason-vs.html). `item.code` каждого вопроса обозначает, о чём он спрашивает, кодом LOINC или SNOMED CT, если подходящий код есть; кода причины в вопросе нет.
 

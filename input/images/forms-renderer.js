@@ -437,6 +437,15 @@
     });
   }
 
+  function requestedFormId() {
+    if (location.hash.length > 1) {
+      try { return decodeURIComponent(location.hash.substring(1)); }
+      catch (e) { return null; }
+    }
+    // Keep bookmarks made before fragment navigation was introduced working.
+    return new URLSearchParams(location.search).get('form');
+  }
+
   function buildControls(lang) {
     var picker = el('form-picker');
     ids.forEach(function (id) {
@@ -446,8 +455,15 @@
       picker.appendChild(o);
     });
     picker.addEventListener('change', function () {
-      history.replaceState(null, '', '?form=' + encodeURIComponent(picker.value));
+      history.replaceState(null, '', '#' + encodeURIComponent(picker.value));
       render(currentLang, picker.value, false);
+    });
+
+    window.addEventListener('hashchange', function () {
+      var wanted = requestedFormId();
+      if (ids.indexOf(wanted) < 0 || wanted === currentId) return;
+      picker.value = wanted;
+      render(currentLang, wanted, false);
     });
 
     var box = el('form-langs');
@@ -473,7 +489,7 @@
   function whenReady(lang, n) {
     if (window.LForms && LForms.Util && LForms.Util.addFormToPage) {
       buildControls(lang);
-      var wanted = new URLSearchParams(location.search).get('form');
+      var wanted = requestedFormId();
       var first = ids.indexOf(wanted) >= 0 ? wanted : ids[0];
       el('form-picker').value = first;
       render(lang, first, false).then(function () { relabelPicker(lang); });

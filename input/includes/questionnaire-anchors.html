@@ -1,0 +1,11 @@
+{%- comment -%}
+Real anchors let the Publisher check deep links to interactive questionnaire previews.
+Use the same resource data as the search index, so new questionnaires need no manual list.
+{%- endcomment -%}
+{%- for entry in site.data -%}
+{%- assign questionnaire = entry[1] -%}
+{%- assign expected = 'Questionnaire-' | append: questionnaire.id -%}
+{%- if questionnaire.resourceType == 'Questionnaire' and entry[0] == expected %}
+<span id="{{ questionnaire.id | escape }}" aria-hidden="true"></span>
+{%- endif -%}
+{%- endfor %}

@@ -309,6 +309,50 @@ Usage: #example
 * focus = Reference(BiologicallyDerivedProduct/example-blood-component-product)
 * note.text = "Ehtiyotkorlik bilan qayta ishlang."
 
+Instance: example-blood-product-quality-control-order
+InstanceOf: BloodServiceRequest
+Title: "Example Blood ServiceRequest - Blood Product Quality Control"
+Description: "A request for quality control of a blood product inventory item."
+Usage: #example
+* language = #uz
+* status = #active
+* intent = #order
+* code.concept = BloodComponentProcessingCS#bcproc-0001-00004 "Qon mahsulotining sifat nazorati"
+* subject = Reference(Location/example-blood-service-laboratory)
+* focus = Reference(BiologicallyDerivedProduct/example-blood-component-product)
+* requester = Reference(PractitionerRole/example-practitionerrole)
+* authoredOn = "2026-11-16T11:30:00+05:00"
+
+Instance: example-blood-product-quality-control-completed-order
+InstanceOf: BloodServiceRequest
+Title: "Example Blood ServiceRequest - Completed Blood Product Quality Control"
+Description: "A completed request for quality control of a blood product inventory item."
+Usage: #example
+* language = #uz
+* status = #completed
+* intent = #order
+* code.concept = BloodComponentProcessingCS#bcproc-0001-00004 "Qon mahsulotining sifat nazorati"
+* subject = Reference(Location/example-blood-service-laboratory)
+* focus = Reference(BiologicallyDerivedProduct/example-blood-component-product)
+* requester = Reference(PractitionerRole/example-practitionerrole)
+* performer = Reference(PractitionerRole/example-blood-service-expeditor-role)
+* authoredOn = "2026-11-17T11:30:00+05:00"
+
+Instance: example-blood-product-quality-control-revoked-order
+InstanceOf: BloodServiceRequest
+Title: "Example Blood ServiceRequest - Revoked Blood Product Quality Control"
+Description: "A revoked request for quality control of a blood product inventory item."
+Usage: #example
+* language = #uz
+* status = #revoked
+* intent = #order
+* code.concept = BloodComponentProcessingCS#bcproc-0001-00004 "Qon mahsulotining sifat nazorati"
+* subject = Reference(Location/example-blood-service-laboratory)
+* focus = Reference(BiologicallyDerivedProduct/example-blood-component-product)
+* requester = Reference(PractitionerRole/example-practitionerrole)
+* performer = Reference(PractitionerRole/example-blood-service-expeditor-role)
+* authoredOn = "2026-11-18T11:30:00+05:00"
+
 Instance: example-blood-component-irradiation-order
 InstanceOf: BloodServiceRequest
 Title: "Example Blood ServiceRequest - Irradiation"

@@ -17,5 +17,5 @@ component — Rh-Hr compatibility,Σ,—,CodeableConcept,compatible,"Совме�
 component — transfusion history,Σ,—,CodeableConcept,no-transfusions,"Трансфузионный анамнез получателя. Значение выбирается из BloodTransfusionHistoryVS, включая вариант «Данные отсутствуют»."
 component — obstetric history,Σ,—,CodeableConcept,not-applicable,Акушерский анамнез. Значение выбирается из ObstetricHistoryVS.
 component — preliminary ABO group,Σ,—,CodeableConcept,112144000 | Blood group A,Предварительная группа крови ABO получателя. Используется существующий UZCore BloodGroupVS; отдельные CodeSystem и ValueSet не создаются.
-componet ---  Biological specimen,Σ,—,CodeableConcept,SNOMED CT 260385009 | Negative,Результат биологической пробы. Используется BiologicalTestResultVS на основе SNOMED CT. 
+componet ---  Biological specimen,Σ,—,CodeableConcept,SNOMED CT 260385009 | Negative,Результат биологической пробы. Используется BiologicalTestResultVS на основе SNOMED CT.
 note,Σ,0..*,Annotation,Дополнительные сведения,"Дополнительный комментарий к результатам оценки, если он предусмотрен базовым профилем и бизнес-процессом."

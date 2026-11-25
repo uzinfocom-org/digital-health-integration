@@ -52,6 +52,13 @@ Description: "Areas of integration covered by this guide. Each code names one in
   * ^designation[+].language = #en
   * ^designation[=].value = "Viral hepatitis"
 
+* #orders "Yo'llanmalar"
+  * ^definition = "Orders and state-funded referral approval and hospitalization workflows."
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Назначения и направления"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Orders"
+
 * #blood-service "Qon xizmati"
   * ^definition = "The blood service: donor registration and interviews, testing, collection, processing into components, stock, supply and transfusion."
   * ^designation[0].language = #ru

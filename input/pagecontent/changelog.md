@@ -1,6 +1,24 @@
 ### In development
 
-(No changes yet)
+#### Changed
+
+[Blood Service Operations](CodeSystem-blood-component-processing-cs.html), formerly Blood component processing operations, adds a code for blood product quality control.
+
+[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) adds active, completed and revoked blood product quality control examples and an expeditor PractitionerRole example.
+
+[Form 027](StructureDefinition-form-027-medical-record-extract-composition.html) uses `emdoc-0010-0106` for both outpatient and inpatient extracts, and `Encounter.class` (`AMB` or `IMP`) tells them apart. The fixed `type` no longer carries the old display "Extract from inpatient medical record".
+
+The guide's pages use the look of the [DHP developer documentation](https://docs.dhp.uz/): Onest and JetBrains Mono fonts, DHP green colours and logo, and a restyled header, menu, tables, notes and code blocks, which now have a copy button. A theme menu in the header switches between light, dark and the system setting.
+
+#### Documentation
+
+[Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html) shows how to record lifting a deferral early: the flag is set to `inactive` and a Provenance records who lifted it and why ([example](Provenance-example-blood-donor-deferral-lifted-provenance.html)).
+
+### Version 0.13.1
+
+#### Added
+
+[Orders](orders.html) adds referral and approval-task integration profiles, supporting terminology, state-funded treatment and SBDL criteria, legal funding resolutions, a hospitalization workflow and discharge-section examples. The functionality moves from UZ Core PR #402 to Integrations; documentation is available in English, Russian and Uzbek.
 
 ### Version 0.13.0
 
@@ -26,7 +44,7 @@ Supporting terminology: a [blood service observation type](CodeSystem-blood-serv
 
 [Search](search.html), opened from a new box in the page header, finds resources by title, name, URL or description, and codes, terms and mappings in code systems, value sets and ConceptMaps, in English, Russian and Uzbek. Results can be narrowed by resource type.
 
-The [donor questionnaire](forms.html?form=donor-questionnaire) is a 35-question donor interview in Uzbek, Russian and English, with a [completed response example](QuestionnaireResponse-example-donor-questionnaire-response.html), a supporting patient and a [Blood Service step](blood-service.html#interviewing) on which answers can lead to a deferral. The donor deferral reason code system is reused from the donor deferral specification. The blood service program context groups the questionnaire on the Questionnaires page.
+The [donor questionnaire](forms.html#donor-questionnaire) is a 35-question donor interview in Uzbek, Russian and English, with a [completed response example](QuestionnaireResponse-example-donor-questionnaire-response.html), a supporting patient and a [Blood Service step](blood-service.html#interviewing) on which answers can lead to a deferral. The donor deferral reason code system is reused from the donor deferral specification. The blood service program context groups the questionnaire on the Questionnaires page.
 
 #### Changed
 

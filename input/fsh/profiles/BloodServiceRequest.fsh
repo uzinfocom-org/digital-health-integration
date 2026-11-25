@@ -35,5 +35,5 @@ Description: "Integration ServiceRequest profile for one donor laboratory test o
 * requisition ^short = "Donation number linking tests and component processing requests for the same donation"
 * focus MS
 * focus only Reference(UZCoreBiologicallyDerivedProduct)
-* focus ^short = "Blood component to be processed"
+* focus ^short = "Blood component to be processed or quality-checked"
 * note MS

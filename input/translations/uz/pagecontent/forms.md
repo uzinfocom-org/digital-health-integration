@@ -19,6 +19,8 @@ tekshiring.
 #form-target { margin-top: 8px; }
 </style>
 
+{% include questionnaire-anchors.html %}
+
 <div id="form-controls">
   <select id="form-picker" aria-label="Forma"></select>
   <div id="form-langs" role="group" aria-label="Til"></div>
