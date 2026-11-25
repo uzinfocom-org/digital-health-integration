@@ -102,6 +102,7 @@ Usage: #definition
 * uniqueId[0].value = "https://dhp.uz/fhir/core/sid/doc/uz/screening"
 * uniqueId[0].preferred = true
 
+// CORE-RELEASE #178: drop this NamingSystem once a UZ Core release has uzb-health-program (uzinfocom-org/digital-health-ig#344).
 Instance: screening-program-type-identifier-system
 InstanceOf: NamingSystem
 Description: "Identifier system distinguishing which screening program a resource belongs to"
