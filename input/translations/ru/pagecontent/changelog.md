@@ -6,7 +6,19 @@
 
 #### Изменено
 
+[Blood Service Operations](CodeSystem-blood-component-processing-cs.html) (ранее Blood component processing operations): добавлен код контроля качества продукта крови.
+
+[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html): добавлены примеры контроля качества продукта крови в статусах active, completed и revoked и пример роли экспедитора PractitionerRole.
+
 В меню Documents вместо страниц сопоставления каждой формы теперь есть [обзор форм](forms-overview.html) и обозреватель форм. В обзоре форм появилась таблица смоделированных форм со ссылками на обозреватель и страницы сопоставления, а страница [Questionnaires](forms.html) ссылается на оба.
+
+Страницы руководства оформлены в стиле [документации DHP для разработчиков](https://docs.dhp.uz/ru/): шрифты Onest и JetBrains Mono, зелёные цвета и логотип DHP, обновлённые шапка, меню, таблицы, примечания и блоки кода с кнопкой копирования. Меню темы в шапке переключает светлую, тёмную тему или тему как в системе.
+
+[Форма 027](StructureDefinition-form-027-medical-record-extract-composition.html) использует `emdoc-0010-0106` для выписок и из амбулаторной, и из стационарной карты, а различает их `Encounter.class` (`AMB` или `IMP`). Фиксированный `type` больше не содержит прежнее название "Extract from inpatient medical record".
+
+#### Документация
+
+[Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html): описано досрочное снятие отвода - флаг переводится в `inactive`, а Provenance записывает, кто снял отвод и почему ([пример](Provenance-example-blood-donor-deferral-lifted-provenance.html)).
 
 ### Версия 0.13.1
 

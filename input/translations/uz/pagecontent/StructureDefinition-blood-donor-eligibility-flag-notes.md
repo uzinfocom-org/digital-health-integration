@@ -56,6 +56,8 @@ If-Match: W/"2"   # the ETag from your last read; 412 if it changed since
 }
 ```
 
+Chetlatishni kim va nima sababdan olib tashlaganini [Provenance](https://hl7.org/fhir/R5/provenance.html) qayd etadi: `target` - flag, `agent.who` - shifokor, `activity` - `UPDATE`, asos esa `authorization.concept.text` da ([misol](Provenance-example-blood-donor-deferral-lifted-provenance.html)). UZ Core Provenance hujjatlarni imzolash uchun mo'ljallangan, shuning uchun bu yerda asosiy Provenance ishlatiladi.
+
 Qo'llab-quvvatlanadigan qidiruv parametrlarining to'liq ro'yxati [CapabilityStatement](https://dhp.uz/fhir/core/uz/CapabilityStatement-DHPCapabilityStatement.html#Flag1-42) da keltirilgan.
 
 ### Bog'liq bo'limlar

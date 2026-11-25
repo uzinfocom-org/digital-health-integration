@@ -72,7 +72,7 @@ Usage: #inline
 * identifier[+].system = "https://dhp.uz/fhir/core/sid/doc/uz/form-number"
 * identifier[=].value = "027"
 * status = #final
-* type.coding[0] = $composition-type-cs#emdoc-0010-0106 "Extract from inpatient medical record"
+* type.coding[0] = $composition-type-cs#emdoc-0010-0106
 * type.coding[+] = $loinc#34133-9 "Summary of episode note"
 * category[dhpCategory] = $composition-category-cs#Comp-001-0001 "Medical record"
 * category[formCategory] = $document-category-cs#form-027 "Extract from patient's medical record"

@@ -6,7 +6,19 @@
 
 #### O'zgartirildi
 
+[027-shakl](StructureDefinition-form-027-medical-record-extract-composition.html) ambulator va statsionar kartadan ko'chirmalar uchun `emdoc-0010-0106` kodini ishlatadi, ularni `Encounter.class` (`AMB` yoki `IMP`) farqlaydi. Belgilangan `type` endi eski "Extract from inpatient medical record" nomini o'z ichiga olmaydi.
+
+[Blood Service Operations](CodeSystem-blood-component-processing-cs.html) (avvalgi nomi Blood component processing operations): qon mahsulotining sifat nazorati kodi qo'shildi.
+
+[Blood ServiceRequest](StructureDefinition-blood-servicerequest.html): active, completed va revoked holatlaridagi qon mahsuloti sifat nazorati misollari va ekspeditor PractitionerRole misoli qo'shildi.
+
 Documents menyusida har bir shaklning moslashtirish sahifasi o'rniga endi [shakllar sharhi](forms-overview.html) va shakllar ko'rgichi bor. Shakllar sharhiga ko'rgich va moslashtirish sahifalariga havola qiluvchi modellashtirilgan shakllar jadvali qo'shildi, [Questionnaires](forms.html) sahifasi esa ikkalasiga ham havola qiladi.
+
+Qo'llanma sahifalari [DHP dasturchilar hujjatlari](https://docs.dhp.uz/uz/) uslubida bezatilgan: Onest va JetBrains Mono shriftlari, DHP yashil ranglari va logotipi, yangilangan sarlavha, menyu, jadvallar, eslatmalar va nusxa olish tugmasi bilan kod bloklari. Sarlavhadagi mavzu menyusi yorug', qorong'i yoki tizimdagidek mavzuni tanlaydi.
+
+#### Hujjatlashtirish
+
+[Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html): chetlatishni muddatidan oldin olib tashlash tavsiflandi - flag `inactive` ga o'tkaziladi, Provenance esa kim va nima sababdan olib tashlaganini qayd etadi ([misol](Provenance-example-blood-donor-deferral-lifted-provenance.html)).
 
 ### Versiya 0.13.1
 

@@ -74,3 +74,33 @@ Usage: #example
 * specimen = Reference(Specimen/example-blood-whole-blood-specimen)
 * valueCodeableConcept = $sct#10828004 "Positive"
 * interpretation = $observation-interpretation#POS "Ijobiy"
+
+Instance: example-blood-donor-deferral-lifted
+InstanceOf: BloodDonorEligibilityFlag
+Title: "Example Blood Donor Eligibility Flag - Deferral Lifted Early"
+Description: "Synthetic 30-day temporary deferral after a doubtful HIV result, lifted early after a negative repeat test: the flag is inactive and period.end is when it was lifted. The Provenance example records who lifted it and why."
+Usage: #example
+* language = #uz
+* status = #inactive
+* category = $flag-category#clinical
+* extension[reason].valueCodeableReference.concept = DonorDeferralReasonCS#donrsn-0001-00030 "OIVga tekshiruvning shubhali natijasi"
+* code = $blood-donor-eligibility-cs#blood-donation-deferred-temporary "Tibbiy sabablarga ko'ra qon donorligidan vaqtincha chetlatilgan"
+* subject = Reference(Patient/example-donor-questionnaire-patient)
+* author = Reference(PractitionerRole/example-practitionerrole)
+* period.start = "2026-11-16T10:00:00+05:00"
+* period.end = "2026-11-23T15:00:00+05:00"
+
+Instance: example-blood-donor-deferral-lifted-provenance
+InstanceOf: Provenance
+Title: "Example Provenance - Deferral Lifted Early"
+Description: "Records who lifted the temporary deferral early and the justification. UZ Core Provenance is for document signatures, so this is a base Provenance."
+Usage: #example
+* language = #uz
+* target = Reference(Flag/example-blood-donor-deferral-lifted)
+* occurredDateTime = "2026-11-23T15:00:00+05:00"
+* recorded = "2026-11-23T15:00:00+05:00"
+* activity = $v3-DataOperation#UPDATE "revise"
+* authorization.concept.text = "Takroriy tekshiruvda OIVga test manfiy natija berdi, chetlatish bekor qilindi."
+* patient = Reference(Patient/example-donor-questionnaire-patient)
+* agent.type = $provenance-participant-type#author "Author"
+* agent.who = Reference(PractitionerRole/example-practitionerrole)

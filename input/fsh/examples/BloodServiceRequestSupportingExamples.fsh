@@ -43,3 +43,13 @@ Usage: #example
 * name = "Qon xizmati laboratoriyasi"
 * mode = #instance
 * managingOrganization = Reference(Organization/xonobod-medical-association)
+
+Instance: example-blood-service-expeditor-role
+InstanceOf: UZCorePractitionerRole
+Title: "Example Blood Service Expeditor Role"
+Description: "An expeditor role at the blood service."
+Usage: #example
+* language = #uz
+* active = true
+* organization = Reference(Organization/xonobod-medical-association)
+* code = $position-and-profession-cs#3331.2 "Ekspeditor"

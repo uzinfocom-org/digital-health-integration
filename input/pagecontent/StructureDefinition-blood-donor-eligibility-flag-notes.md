@@ -54,6 +54,8 @@ If-Match: W/"2"   # the ETag from your last read; 412 if it changed since
 }
 ```
 
+Record who lifted the deferral and why in a [Provenance](https://hl7.org/fhir/R5/provenance.html): `target` is the flag, `agent.who` the clinician, `activity` `UPDATE`, and the justification goes in `authorization.concept.text` ([example](Provenance-example-blood-donor-deferral-lifted-provenance.html)). UZ Core Provenance is for document signatures, so this is a base Provenance.
+
 Flag is listed in the [CapabilityStatement](https://dhp.uz/fhir/core/en/CapabilityStatement-DHPCapabilityStatement.html#Flag1-42); see it for the full list of supported search parameters.
 
 ### Related

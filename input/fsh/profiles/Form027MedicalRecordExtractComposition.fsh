@@ -10,7 +10,7 @@ Description: "Composition profile for Form 027 (Tibbiy muassasadagi bemorning ti
 
 * status ^short = "Document status: final once the extract is signed, amended for later corrections"
 
-* type = $composition-type-cs#emdoc-0010-0106 "Extract from inpatient medical record"
+* type = $composition-type-cs#emdoc-0010-0106
 * type ^short = "Form 027 document type (extract from medical record); LOINC 34133-9 \"Summary of episode note\" may be sent as an additional coding"
 
 * category 1..*

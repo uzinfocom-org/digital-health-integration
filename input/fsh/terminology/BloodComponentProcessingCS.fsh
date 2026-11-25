@@ -1,7 +1,7 @@
 CodeSystem: BloodComponentProcessingCS
 Id: blood-component-processing-cs
-Title: "Blood component processing operations"
-Description: "Local blood component processing operations without an equivalent standard code; used alongside SNOMED CT operations in blood service requests."
+Title: "Blood Service Operations"
+Description: "Local codes representing blood service operations, including blood component processing and blood product quality control, where suitable standard terminology codes are unavailable."
 * insert OriginalCodeSystemDraft(blood-component-processing-cs)
 
 * #bcproc-0001-00002 "Nurlantirish"
@@ -9,3 +9,9 @@ Description: "Local blood component processing operations without an equivalent 
   * ^designation[=].value = "Облучение"
   * ^designation[+].language = #en
   * ^designation[=].value = "Irradiation"
+
+* #bcproc-0001-00004 "Qon mahsulotining sifat nazorati"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Контроль качества продукта крови"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Blood product quality control"
