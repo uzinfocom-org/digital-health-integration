@@ -147,7 +147,7 @@ Example: [example-observation-xray](Observation-example-observation-xray.html)
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Test code | [DHISObservationCodeVS](ValueSet-dhis-observation-code-vs.html) | `LOINC#30745-4` (Chest X-ray) | `Observation.code` |
+| Test code | [DHISObservationCodeVS](ValueSet-dhis-observation-code-vs.html) | `dhis-observation-code-cs#Tub002-0010` (Chest X-ray) | `Observation.code` |
 | Finding present | - | `false` | `Observation.value` (boolean) |
 
 #### HIV test

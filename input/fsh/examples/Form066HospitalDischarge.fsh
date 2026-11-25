@@ -444,7 +444,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code = $loinc#77977-7 "Illness duration"
+* code = $local-observation-code#onset-to-admission-delay "Time from onset of disease or injury to admission"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-01-05T09:50:00+05:00"
@@ -471,7 +471,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code = $loinc#57133-1 "Referral note"
+* code = $local-observation-code#referral-available "Referral available"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-01-05T10:00:00+05:00"

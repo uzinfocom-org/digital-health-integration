@@ -32,7 +32,7 @@ Description: "Example observation recording a chest X-ray finding for tuberculos
 Usage: #example
 * status = #final
 * category =  $observation-category#imaging
-* code = $loinc#30745-4
+* code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dhis-observation-code-cs#Tub002-0010 "Chest X-ray"
 * subject = Reference(example-patient-john)
 * effectiveDateTime = "2026-03-10T10:00:00Z"
 * issued = "2026-03-12T11:00:00Z"

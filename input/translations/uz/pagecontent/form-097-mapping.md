@@ -160,17 +160,17 @@ Har bir kun [Newborn Daily Observation Component](ValueSet-newborn-daily-observa
 
 | UZ | RU | FHIR yo'li | Kod | Qiymat misoli |
 |----|----|------------|------|---------------|
-| Teri | Кожа | Observation.component.valueString | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): SNOMED CT `106076001` "Skin finding" | Pink, clean, no rash |
-| Ko'zlar, shilliq qavatlar | Глаза, слизистые оболочки | Observation.component.valueString | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): SNOMED CT `118235002` "Eye / vision finding" | Eyes clean, mucous membranes pink and moist |
-| Nafas yetishmovchiligi | Дыхательная недостаточность | Observation.component.valueString | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): SNOMED CT `271825005` "Respiratory distress" | No signs of respiratory distress |
+| Teri | Кожа | Observation.component.valueString | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): LOINC `10206-1` "Physical findings of Skin Narrative" | Pink, clean, no rash |
+| Ko'zlar, shilliq qavatlar | Глаза, слизистые оболочки | Observation.component.valueString | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): LOINC `10197-2` "Physical findings of Eye Narrative" | Eyes clean, mucous membranes pink and moist |
+| Nafas yetishmovchiligi | Дыхательная недостаточность | Observation.component.valueString | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): LOINC `11412-4` "Physical findings of Respiratory system Narrative" | No signs of respiratory distress |
 | Tana vazni | Масса тела | Observation.component.valueQuantity | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): LOINC `3141-9` "Body weight Measured" | 3200 g |
 | Tana harorati | Температура тела | Observation.component.valueQuantity | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): LOINC `8310-5` "Body temperature" | 36.8 °C |
 | Emizish turi | Тип вскармливания | Observation.component.valueCodeableConcept | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): LOINC `63895-7` "Breastfeeding status"<br>`value` [Infant Feeding Type](ValueSet-infant-feeding-type-vs.html) (SNOMED CT; sun'iy oziqlantirish lokal kod bo'lib qoladi) | Exclusively breastfed (`1145307003`) |
 | Ovqatlanishni o'zlashtirish | Переносимость кормления | Observation.component.valueString | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): `chr-0125-0003` "Feeding tolerance" | Tolerating feeds well |
 | Ich ketishi | Диарея | Observation.component.valueCodeableConcept | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): SNOMED CT `62315008` "Diarrhea"<br>`value` HL7 v2-0532 `Y` "Yes" / `N` "No" | No (`N`) |
-| Siydik chiqarish chastotasi | Частота мочеиспускания | Observation.component.valueInteger | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): SNOMED CT `300471006` "Finding of frequency of urination" | 6 |
-| Kindik ajralish vaqti | Время отделения пуповины | Observation.component.valueDateTime | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): SNOMED CT `772131003` "Umbilical cord stump separated" | 2026-06-01 |
-| Kindik yarasi holati | Состояние пупочной ранки | Observation.component.valueString | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): SNOMED CT `249229001` "Finding of umbilical stump" | Clean and dry, no discharge |
+| Siydik chiqarish chastotasi | Частота мочеиспускания | Observation.component.valueInteger | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): SNOMED CT `364198000` "Frequency of urination" | 6 |
+| Kindik ajralish vaqti | Время отделения пуповины | Observation.component.valueDateTime | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): `umbilical-cord-separation-date` "Umbilical cord separation date" | 2026-06-01 |
+| Kindik yarasi holati | Состояние пупочной ранки | Observation.component.valueString | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): SNOMED CT `364594006` "Umbilical stump observable" | Clean and dry, no discharge |
 
 ---
 

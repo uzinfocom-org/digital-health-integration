@@ -367,9 +367,9 @@ Bo'lim kodi: LOINC `11488-4` "Consult note".
 
 | UZ | RU | FHIR yo'li | Kod | Misol qiymati |
 |----|----|------------|------|---------------|
-| Mutaxassis xulosasi (terapevt) | Заключение специалиста (терапевт) | Observation.valueString | LOINC `85238-4` "Internal medicine Consult note" | Patologiya aniqlanmadi |
-| Mutaxassis xulosasi (stomatolog) | Заключение специалиста (стоматолог) | Observation.valueString | LOINC `34756-7` "Dentistry Consult note" | Sanatsiya qilindi |
-| Mutaxassis xulosasi (venerolog) | Заключение специалиста (венеролог) | Observation.valueString | LOINC `34758-3` "Dermatology Consult note" | Infeksiyalar aniqlanmadi |
+| Mutaxassis xulosasi (terapevt) | Заключение специалиста (терапевт) | Observation.valueString | [Form 111 Specialist Conclusion Codes](CodeSystem-form111-specialist-conclusion-code-cs.html) `therapist-conclusion` | Patologiya aniqlanmadi |
+| Mutaxassis xulosasi (stomatolog) | Заключение специалиста (стоматолог) | Observation.valueString | [Form 111 Specialist Conclusion Codes](CodeSystem-form111-specialist-conclusion-code-cs.html) `dentist-conclusion` | Sanatsiya qilindi |
+| Mutaxassis xulosasi (venerolog) | Заключение специалиста (венеролог) | Observation.valueString | [Form 111 Specialist Conclusion Codes](CodeSystem-form111-specialist-conclusion-code-cs.html) `venereologist-conclusion` | Infeksiyalar aniqlanmadi |
 | Kun | Дата | *(tegishli Observation'ning effectiveDateTime'i)* | - | 2025-11-05 / 2025-11-06 / 2025-11-06 |
 | Homiladorlikning kechishi va patronaj kuzatuv ma'lumotlari | Течение беременности и данные патронажного наблюдения | Observation.valueString | Assessment Observation Code `chr-0005-00008` "Homiladorlikning kechishi va patronaj kuzatuv ma'lumotlari" | Homiladorlik asoratsiz kechdi |
 | Maslahat | Рекомендации | CarePlan.description | - | Temir preparatlarini davom ettirish, og'iz bo'shlig'i gigiyenasi |

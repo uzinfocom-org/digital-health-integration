@@ -546,7 +546,7 @@ Instance: obs-003-onset-to-admission-delay
 InstanceOf: UZCoreObservation
 Usage: #inline
 * status = #final
-* code = $loinc#77977-7 "Illness duration"
+* code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/local-observation-code#onset-to-admission-delay "Time from onset of disease or injury to admission"
 * subject = Reference(urn:uuid:00300002-0000-0000-0000-000000000000)
 * encounter = Reference(urn:uuid:00300003-0000-0000-0000-000000000000)
 * effectiveDateTime = "2026-02-08T10:00:00+05:00"
@@ -888,7 +888,7 @@ Instance: obs-003-clinical-course
 InstanceOf: UZCoreObservation
 Usage: #inline
 * status = #final
-* code = $loinc#8648-8 "Hospital course note"               // row 99
+* code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form-003-observation-code-cs#clinical-course "Clinical course"   // row 99
 * subject = Reference(urn:uuid:00300002-0000-0000-0000-000000000000)
 * encounter = Reference(urn:uuid:00300003-0000-0000-0000-000000000000)
 * effectiveDateTime = "2026-02-11T08:00:00+05:00"

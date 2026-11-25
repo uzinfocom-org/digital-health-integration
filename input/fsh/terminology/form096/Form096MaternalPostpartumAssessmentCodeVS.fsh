@@ -10,7 +10,7 @@ Description: "Observation.code for the Form 096 postpartum observation fields, o
 * $loinc#10193-1 "Physical findings of Breasts Narrative"
 * $loinc#11881-0 "Uterus Fundal height Tape measure"
 * $sct#364239002 "Lochia feature"
-* $sct#249585009 "Urinary bladder finding"
+* $sct#364186005 "Urinary bladder feature"
 * $sct#39211005 "Bowel action"
 
 // Supplements providing Russian and Uzbek displays.

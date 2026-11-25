@@ -203,7 +203,7 @@ Description: "Uzbek and Russian displays for the SNOMED CT codes used by Form 09
   * ^designation[+].language = #uz
   * ^designation[=].value = "Qonli loxiyalar"
 
-* #249585009 "Urinary bladder finding"
+* #364186005 "Urinary bladder feature"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Мочевой пузырь"
   * ^designation[+].language = #uz

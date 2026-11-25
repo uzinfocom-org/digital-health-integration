@@ -1251,7 +1251,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code = $sct#3415004 "Cyanosis"
+* code = $form-097-observation-code-cs#cyanosis-distribution "Cyanosis distribution"
 * subject = Reference(urn:uuid:09700002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
 * performer = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
@@ -1977,11 +1977,11 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-06-01T00:00:00+05:00"
 * performer = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
-* component[0].code = $sct#106076001 "Skin finding"
+* component[0].code = $loinc#10206-1 "Physical findings of Skin Narrative"
 * component[0].valueString = "Pink, clean, no rash"
-* component[1].code = $sct#118235002 "Eye / vision finding"
+* component[1].code = $loinc#10197-2 "Physical findings of Eye Narrative"
 * component[1].valueString = "Eyes clean, mucous membranes pink and moist"
-* component[2].code = $sct#271825005 "Respiratory distress"
+* component[2].code = $loinc#11412-4 "Physical findings of Respiratory system Narrative"
 * component[2].valueString = "No signs of respiratory distress"
 * component[3].code = $loinc#3141-9 "Body weight Measured"
 * component[3].valueQuantity = 3200 'g' "g"
@@ -1993,11 +1993,11 @@ Usage: #inline
 * component[6].valueString = "Tolerating feeds well, no vomiting or abdominal distension"
 * component[7].code = $sct#62315008 "Diarrhea"
 * component[7].valueCodeableConcept = $v2-0532#N "No"
-* component[8].code = $sct#300471006 "Finding of frequency of urination"
+* component[8].code = $sct#364198000 "Frequency of urination"
 * component[8].valueInteger = 6
-* component[9].code = $sct#772131003 "Umbilical cord stump separated"
+* component[9].code = $newborn-daily-observation-component-cs#umbilical-cord-separation-date "Umbilical cord separation date"
 * component[9].valueDateTime = "2026-06-01T00:00:00+05:00"
-* component[10].code = $sct#249229001 "Finding of umbilical stump"
+* component[10].code = $sct#364594006 "Umbilical stump observable"
 * component[10].valueString = "Clean and dry, no discharge"
 
 Instance: observation-daily-day1-097
@@ -2010,11 +2010,11 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-06-02T00:00:00+05:00"
 * performer = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
-* component[0].code = $sct#106076001 "Skin finding"
+* component[0].code = $loinc#10206-1 "Physical findings of Skin Narrative"
 * component[0].valueString = "Pink, clean, no rash"
-* component[1].code = $sct#118235002 "Eye / vision finding"
+* component[1].code = $loinc#10197-2 "Physical findings of Eye Narrative"
 * component[1].valueString = "Eyes clean, mucous membranes pink and moist"
-* component[2].code = $sct#271825005 "Respiratory distress"
+* component[2].code = $loinc#11412-4 "Physical findings of Respiratory system Narrative"
 * component[2].valueString = "No signs of respiratory distress"
 * component[3].code = $loinc#3141-9 "Body weight Measured"
 * component[3].valueQuantity = 3200 'g' "g"
@@ -2026,11 +2026,11 @@ Usage: #inline
 * component[6].valueString = "Tolerating feeds well, no vomiting or abdominal distension"
 * component[7].code = $sct#62315008 "Diarrhea"
 * component[7].valueCodeableConcept = $v2-0532#N "No"
-* component[8].code = $sct#300471006 "Finding of frequency of urination"
+* component[8].code = $sct#364198000 "Frequency of urination"
 * component[8].valueInteger = 6
-* component[9].code = $sct#772131003 "Umbilical cord stump separated"
+* component[9].code = $newborn-daily-observation-component-cs#umbilical-cord-separation-date "Umbilical cord separation date"
 * component[9].valueDateTime = "2026-06-02T00:00:00+05:00"
-* component[10].code = $sct#249229001 "Finding of umbilical stump"
+* component[10].code = $sct#364594006 "Umbilical stump observable"
 * component[10].valueString = "Clean and dry, no discharge"
 
 Instance: observation-daily-day2-097
@@ -2043,11 +2043,11 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-06-03T00:00:00+05:00"
 * performer = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
-* component[0].code = $sct#106076001 "Skin finding"
+* component[0].code = $loinc#10206-1 "Physical findings of Skin Narrative"
 * component[0].valueString = "Pink, clean, no rash"
-* component[1].code = $sct#118235002 "Eye / vision finding"
+* component[1].code = $loinc#10197-2 "Physical findings of Eye Narrative"
 * component[1].valueString = "Eyes clean, mucous membranes pink and moist"
-* component[2].code = $sct#271825005 "Respiratory distress"
+* component[2].code = $loinc#11412-4 "Physical findings of Respiratory system Narrative"
 * component[2].valueString = "No signs of respiratory distress"
 * component[3].code = $loinc#3141-9 "Body weight Measured"
 * component[3].valueQuantity = 3200 'g' "g"
@@ -2059,11 +2059,11 @@ Usage: #inline
 * component[6].valueString = "Tolerating feeds well, no vomiting or abdominal distension"
 * component[7].code = $sct#62315008 "Diarrhea"
 * component[7].valueCodeableConcept = $v2-0532#N "No"
-* component[8].code = $sct#300471006 "Finding of frequency of urination"
+* component[8].code = $sct#364198000 "Frequency of urination"
 * component[8].valueInteger = 6
-* component[9].code = $sct#772131003 "Umbilical cord stump separated"
+* component[9].code = $newborn-daily-observation-component-cs#umbilical-cord-separation-date "Umbilical cord separation date"
 * component[9].valueDateTime = "2026-06-03T00:00:00+05:00"
-* component[10].code = $sct#249229001 "Finding of umbilical stump"
+* component[10].code = $sct#364594006 "Umbilical stump observable"
 * component[10].valueString = "Clean and dry, no discharge"
 
 Instance: observation-daily-day3-097
@@ -2076,11 +2076,11 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-06-04T00:00:00+05:00"
 * performer = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
-* component[0].code = $sct#106076001 "Skin finding"
+* component[0].code = $loinc#10206-1 "Physical findings of Skin Narrative"
 * component[0].valueString = "Pink, clean, no rash"
-* component[1].code = $sct#118235002 "Eye / vision finding"
+* component[1].code = $loinc#10197-2 "Physical findings of Eye Narrative"
 * component[1].valueString = "Eyes clean, mucous membranes pink and moist"
-* component[2].code = $sct#271825005 "Respiratory distress"
+* component[2].code = $loinc#11412-4 "Physical findings of Respiratory system Narrative"
 * component[2].valueString = "No signs of respiratory distress"
 * component[3].code = $loinc#3141-9 "Body weight Measured"
 * component[3].valueQuantity = 3200 'g' "g"
@@ -2092,11 +2092,11 @@ Usage: #inline
 * component[6].valueString = "Tolerating feeds well, no vomiting or abdominal distension"
 * component[7].code = $sct#62315008 "Diarrhea"
 * component[7].valueCodeableConcept = $v2-0532#N "No"
-* component[8].code = $sct#300471006 "Finding of frequency of urination"
+* component[8].code = $sct#364198000 "Frequency of urination"
 * component[8].valueInteger = 6
-* component[9].code = $sct#772131003 "Umbilical cord stump separated"
+* component[9].code = $newborn-daily-observation-component-cs#umbilical-cord-separation-date "Umbilical cord separation date"
 * component[9].valueDateTime = "2026-06-04T00:00:00+05:00"
-* component[10].code = $sct#249229001 "Finding of umbilical stump"
+* component[10].code = $sct#364594006 "Umbilical stump observable"
 * component[10].valueString = "Clean and dry, no discharge"
 
 Instance: observation-daily-day4-097
@@ -2109,11 +2109,11 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-06-05T00:00:00+05:00"
 * performer = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
-* component[0].code = $sct#106076001 "Skin finding"
+* component[0].code = $loinc#10206-1 "Physical findings of Skin Narrative"
 * component[0].valueString = "Pink, clean, no rash"
-* component[1].code = $sct#118235002 "Eye / vision finding"
+* component[1].code = $loinc#10197-2 "Physical findings of Eye Narrative"
 * component[1].valueString = "Eyes clean, mucous membranes pink and moist"
-* component[2].code = $sct#271825005 "Respiratory distress"
+* component[2].code = $loinc#11412-4 "Physical findings of Respiratory system Narrative"
 * component[2].valueString = "No signs of respiratory distress"
 * component[3].code = $loinc#3141-9 "Body weight Measured"
 * component[3].valueQuantity = 3200 'g' "g"
@@ -2125,11 +2125,11 @@ Usage: #inline
 * component[6].valueString = "Tolerating feeds well, no vomiting or abdominal distension"
 * component[7].code = $sct#62315008 "Diarrhea"
 * component[7].valueCodeableConcept = $v2-0532#N "No"
-* component[8].code = $sct#300471006 "Finding of frequency of urination"
+* component[8].code = $sct#364198000 "Frequency of urination"
 * component[8].valueInteger = 6
-* component[9].code = $sct#772131003 "Umbilical cord stump separated"
+* component[9].code = $newborn-daily-observation-component-cs#umbilical-cord-separation-date "Umbilical cord separation date"
 * component[9].valueDateTime = "2026-06-05T00:00:00+05:00"
-* component[10].code = $sct#249229001 "Finding of umbilical stump"
+* component[10].code = $sct#364594006 "Umbilical stump observable"
 * component[10].valueString = "Clean and dry, no discharge"
 
 Instance: observation-daily-day5-097
@@ -2142,11 +2142,11 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-06-06T00:00:00+05:00"
 * performer = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
-* component[0].code = $sct#106076001 "Skin finding"
+* component[0].code = $loinc#10206-1 "Physical findings of Skin Narrative"
 * component[0].valueString = "Pink, clean, no rash"
-* component[1].code = $sct#118235002 "Eye / vision finding"
+* component[1].code = $loinc#10197-2 "Physical findings of Eye Narrative"
 * component[1].valueString = "Eyes clean, mucous membranes pink and moist"
-* component[2].code = $sct#271825005 "Respiratory distress"
+* component[2].code = $loinc#11412-4 "Physical findings of Respiratory system Narrative"
 * component[2].valueString = "No signs of respiratory distress"
 * component[3].code = $loinc#3141-9 "Body weight Measured"
 * component[3].valueQuantity = 3200 'g' "g"
@@ -2158,11 +2158,11 @@ Usage: #inline
 * component[6].valueString = "Tolerating feeds well, no vomiting or abdominal distension"
 * component[7].code = $sct#62315008 "Diarrhea"
 * component[7].valueCodeableConcept = $v2-0532#N "No"
-* component[8].code = $sct#300471006 "Finding of frequency of urination"
+* component[8].code = $sct#364198000 "Frequency of urination"
 * component[8].valueInteger = 6
-* component[9].code = $sct#772131003 "Umbilical cord stump separated"
+* component[9].code = $newborn-daily-observation-component-cs#umbilical-cord-separation-date "Umbilical cord separation date"
 * component[9].valueDateTime = "2026-06-06T00:00:00+05:00"
-* component[10].code = $sct#249229001 "Finding of umbilical stump"
+* component[10].code = $sct#364594006 "Umbilical stump observable"
 * component[10].valueString = "Clean and dry, no discharge"
 
 Instance: observation-daily-day6-097
@@ -2175,11 +2175,11 @@ Usage: #inline
 * encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-06-07T00:00:00+05:00"
 * performer = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
-* component[0].code = $sct#106076001 "Skin finding"
+* component[0].code = $loinc#10206-1 "Physical findings of Skin Narrative"
 * component[0].valueString = "Pink, clean, no rash"
-* component[1].code = $sct#118235002 "Eye / vision finding"
+* component[1].code = $loinc#10197-2 "Physical findings of Eye Narrative"
 * component[1].valueString = "Eyes clean, mucous membranes pink and moist"
-* component[2].code = $sct#271825005 "Respiratory distress"
+* component[2].code = $loinc#11412-4 "Physical findings of Respiratory system Narrative"
 * component[2].valueString = "No signs of respiratory distress"
 * component[3].code = $loinc#3141-9 "Body weight Measured"
 * component[3].valueQuantity = 3200 'g' "g"
@@ -2191,11 +2191,11 @@ Usage: #inline
 * component[6].valueString = "Tolerating feeds well, no vomiting or abdominal distension"
 * component[7].code = $sct#62315008 "Diarrhea"
 * component[7].valueCodeableConcept = $v2-0532#N "No"
-* component[8].code = $sct#300471006 "Finding of frequency of urination"
+* component[8].code = $sct#364198000 "Frequency of urination"
 * component[8].valueInteger = 6
-* component[9].code = $sct#772131003 "Umbilical cord stump separated"
+* component[9].code = $newborn-daily-observation-component-cs#umbilical-cord-separation-date "Umbilical cord separation date"
 * component[9].valueDateTime = "2026-06-07T00:00:00+05:00"
-* component[10].code = $sct#249229001 "Finding of umbilical stump"
+* component[10].code = $sct#364594006 "Umbilical stump observable"
 * component[10].valueString = "Clean and dry, no discharge"
 
 

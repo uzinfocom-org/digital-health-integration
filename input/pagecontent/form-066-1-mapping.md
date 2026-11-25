@@ -79,7 +79,7 @@ For a complete reference instance, see the [Form 066-1 psychiatric/narcological 
 | Tezkor yordam ko'rsatildi | Экстренная помощь оказана | Observation.valueBoolean | LOINC `57276-8` "Emergent care utilized during assessment period [CMS Assessment]" | true |
 | Yotqizish turi | Тип госпитализации | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).admission.admitSource | Local code | Dispensary |
 | Tez tibbiy yordam mashinasida keldi | Доставлен скорой помощью | Observation.valueBoolean | LOINC `LP97912-7` "Ambulance transport" | true |
-| Yo'llanma mavjud | Наличие направления | Observation.valueBoolean | LOINC `57133-1` "Referral note" | true |
+| Yo'llanma mavjud | Наличие направления | Observation.valueBoolean | [Local](CodeSystem-local-observation-code.html) `referral-available` | true |
 | Kim tomonidan yo'llangan | Кем направлен | ServiceRequest.requester | SNOMED CT | Referral to psychiatry service |
 | Yo'llagan muassasa | Направившее учреждение | Organization.name | - | Yunusobod tuman psixonevrologik dispanseri |
 | Yo'llagan muassasa tashxisi | Диагноз направившего учреждения | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code | ICD-10 | F10.2 |

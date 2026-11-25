@@ -149,7 +149,7 @@ Misol: [example-observation-xray](Observation-example-observation-xray.html)
 
 | Qayd etiladigan ma'lumot | Ma'lumotnoma | Misol kodi | Qayerda saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Test kodi | [DHISObservationCodeVS](ValueSet-dhis-observation-code-vs.html) | `LOINC#30745-4` (Chest X-ray) | `Observation.code` |
+| Test kodi | [DHISObservationCodeVS](ValueSet-dhis-observation-code-vs.html) | `dhis-observation-code-cs#Tub002-0010` (Chest X-ray) | `Observation.code` |
 | Topilma mavjud | - | `false` | `Observation.value` (boolean) |
 
 #### OIV testi

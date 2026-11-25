@@ -149,7 +149,7 @@
 
 | Записываемая информация | Справочник | Пример кода | Где хранится |
 | :--- | :--- | :--- | :--- |
-| Код теста | [DHISObservationCodeVS](ValueSet-dhis-observation-code-vs.html) | `LOINC#30745-4` (Chest X-ray) | `Observation.code` |
+| Код теста | [DHISObservationCodeVS](ValueSet-dhis-observation-code-vs.html) | `dhis-observation-code-cs#Tub002-0010` (Chest X-ray) | `Observation.code` |
 | Находка присутствует | - | `false` | `Observation.value` (boolean) |
 
 #### Тест на ВИЧ

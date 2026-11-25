@@ -65,24 +65,6 @@ Description: "Uzbek and Russian displays for the LOINC codes used by Form 111"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Mutaxassis xulosasi"
 
-* #85238-4 "Internal medicine Consult note"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Заключение терапевта"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Terapevt xulosasi"
-
-* #34756-7 "Dentistry Consult note"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Заключение стоматолога"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Stomatolog xulosasi"
-
-* #34758-3 "Dermatology Consult note"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Заключение дерматовенеролога"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Dermatovenerolog xulosasi"
-
 * #11421-5 "Physical findings of Cardiovascular system"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Состояние сосудистой системы"

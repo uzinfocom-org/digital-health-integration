@@ -2609,8 +2609,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #uz
 * status = #final
-* code = $loinc#85238-4 "Internal medicine Consult note"
-* code.text = "Terapevt xulosasi"
+* code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form111-specialist-conclusion-code-cs#therapist-conclusion "Terapevt xulosasi"
 * subject = Reference(urn:uuid:11100002-1111-2222-3333-444444444444)
 * performer = Reference(urn:uuid:11100167-1111-2222-3333-444444444444)
 * effectiveDateTime = "2025-11-05"
@@ -2621,8 +2620,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #uz
 * status = #final
-* code = $loinc#34756-7 "Dentistry Consult note"
-* code.text = "Stomatolog xulosasi"
+* code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form111-specialist-conclusion-code-cs#dentist-conclusion "Stomatolog xulosasi"
 * subject = Reference(urn:uuid:11100002-1111-2222-3333-444444444444)
 * performer = Reference(urn:uuid:11100168-1111-2222-3333-444444444444)
 * effectiveDateTime = "2025-11-06"
@@ -2633,8 +2631,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #uz
 * status = #final
-* code = $loinc#34758-3 "Dermatology Consult note"
-* code.text = "Venerolog xulosasi"
+* code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form111-specialist-conclusion-code-cs#venereologist-conclusion "Dermatovenerolog xulosasi"
 * subject = Reference(urn:uuid:11100002-1111-2222-3333-444444444444)
 * performer = Reference(urn:uuid:11100169-1111-2222-3333-444444444444)
 * effectiveDateTime = "2025-11-06"

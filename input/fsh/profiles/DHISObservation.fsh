@@ -39,7 +39,7 @@ Description: "Example observation recording a sputum smear microscopy result for
 Usage: #example
 * status = #final
 * category = $observation-category#laboratory
-* code = $loinc#89876-7
+* code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/dhis-observation-code-cs#Tub002-0007 "Phenotypic DST on MGIT"
 * subject = Reference(example-patient-john)
 * effectiveDateTime = "2025-09-12T10:00:00Z"
 * issued = "2025-09-12T11:00:00Z"

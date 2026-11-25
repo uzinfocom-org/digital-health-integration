@@ -1,7 +1,7 @@
 ValueSet: Form096VaginalDischargeColorVS
 Id: vaginal-discharge-color-vs
 Title: "Form 096 Vaginal Discharge Color"
-Description: "Observation.valueCodeableConcept for the Form 096 vaginal discharge colour field (Observation.code SNOMED CT 271939006 \"Vaginal discharge\"). A colour not listed here is sent as valueCodeableConcept.text."
+Description: "Observation.valueCodeableConcept for the Form 096 vaginal discharge colour field (Observation.code SNOMED CT 364234007 \"Vaginal discharge feature\"). A colour not listed here is sent as valueCodeableConcept.text."
 * insert IntegrationsValueSet(vaginal-discharge-color-vs)
 * ^status = #draft
 * ^experimental = true
