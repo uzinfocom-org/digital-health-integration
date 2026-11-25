@@ -1,6 +1,12 @@
 ### Ishlab chiqilmoqda
 
-(Hozircha o'zgarishlar yo'q)
+#### Qo'shildi
+
+[Shakllar ko'rgichi](form-explorer.html) har bir modellashtirilgan shaklni umumiy ko'rinish, ma'lumotlar jadvali, xarita va shakl ko'rinishida, maydon nomlari ingliz, o'zbek va rus tillarida ko'rsatadi. U moslashtirish sahifalari, Composition profillari va ular bog'langan terminologiya asosida yaratiladi, CI esa uning ma'lumotlari dolzarbligini tekshiradi.
+
+#### O'zgartirildi
+
+Documents menyusida har bir shaklning moslashtirish sahifasi o'rniga endi [shakllar sharhi](forms-overview.html) va shakllar ko'rgichi bor. Shakllar sharhiga ko'rgich va moslashtirish sahifalariga havola qiluvchi modellashtirilgan shakllar jadvali qo'shildi, [Questionnaires](forms.html) sahifasi esa ikkalasiga ham havola qiladi.
 
 ### Versiya 0.13.1
 

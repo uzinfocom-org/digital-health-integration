@@ -53,6 +53,7 @@
 .fx .titlebar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 14px 18px 10px; border-bottom: 1px solid var(--line); }
 .fx .titlebar h2 { font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 10px; overflow-wrap: anywhere; min-width: 0; }
 .fx .titlebar .fno { width: auto; min-width: 26px; height: 22px; padding: 0 5px; font-size: 12px; }
+.fx .titlebar .tlinks { margin-left: auto; display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; }
 .fx .titlebar .meta { color: var(--muted); font-size: 13px; overflow-wrap: anywhere; min-width: 0; }
 .fx .views { display: flex; flex-wrap: wrap; gap: 2px; padding: 8px 12px 0; background: var(--bar); border-bottom: 1px solid var(--line); }
 .fx .views button { border: 1px solid transparent; border-bottom: none; background: transparent; padding: 6px 14px; border-radius: 4px 4px 0 0; cursor: pointer; color: var(--bar-ink); white-space: nowrap; }

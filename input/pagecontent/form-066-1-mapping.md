@@ -25,7 +25,7 @@ For a complete reference instance, see the [Form 066-1 psychiatric/narcological 
 
 ### Field Mapping
 
-The same mapping can also be browsed as a mind map, a section table and a form tree in the [form explorer](form-explorer.html?form=066-1).
+The same mapping can also be browsed as an overview, a data table, a mind map and a form preview in the [form explorer](form-explorer.html?form=066-1).
 
 ### UZ-066-1 Psychiatric/Narcological Hospital Discharge Statistical Card - FHIR Mapping
 

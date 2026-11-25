@@ -1,6 +1,12 @@
 ### In development
 
-(No changes yet)
+#### Added
+
+[Form explorer](form-explorer.html) shows each modelled form as an overview, a data table, a mind map and a form preview, with field labels in English, Uzbek and Russian. It is generated from the mapping pages, the Composition profiles and the terminology they bind to, and CI checks that it stays current.
+
+#### Changed
+
+The Documents menu lists the [forms overview](forms-overview.html) and the form explorer instead of each form's mapping page. The forms overview gains a table of modelled forms that links to the explorer and the mapping pages, and the [Questionnaires](forms.html) page points to both.
 
 ### Version 0.13.1
 

@@ -25,7 +25,7 @@ For a complete reference instance, see the [Form 066 hospital discharge example]
 
 ### Field Mapping
 
-The same mapping can also be browsed as a mind map, a section table and a form tree in the [form explorer](form-explorer.html?form=066).
+The same mapping can also be browsed as an overview, a data table, a mind map and a form preview in the [form explorer](form-explorer.html?form=066).
 
 ### UZ-066 Hospital Discharge Statistical Card - FHIR Mapping
 

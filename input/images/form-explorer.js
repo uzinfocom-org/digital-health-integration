@@ -22,7 +22,7 @@
 
   const STRINGS = {
     en: {
-      loading: 'Loading the form model...', failed: 'Could not load the form model: ', pick: 'Form', labels: 'Field labels',
+      loading: 'Loading the form model...', mappingLink: 'Field mapping', allForms: 'All forms', failed: 'Could not load the form model: ', pick: 'Form', labels: 'Field labels',
       views: { overview: 'Overview', data: 'Data', mindmap: 'Mind map', form: 'Form preview' },
       composition: 'Composition', expandAll: 'Expand all', collapseAll: 'Collapse all', zoomIn: 'Zoom in', zoomOut: 'Zoom out',
       selectHint: 'Select a data element to see what it holds.',
@@ -47,7 +47,7 @@
         derived: 'Derived, not entered', none: 'Not sent', group: 'Group of elements' }
     },
     ru: {
-      loading: 'Загрузка модели формы...', failed: 'Не удалось загрузить модель формы: ', pick: 'Форма', labels: 'Названия полей',
+      loading: 'Загрузка модели формы...', mappingLink: 'Сопоставление полей', allForms: 'Все формы', failed: 'Не удалось загрузить модель формы: ', pick: 'Форма', labels: 'Названия полей',
       views: { overview: 'Обзор', data: 'Данные', mindmap: 'Карта', form: 'Просмотр формы' },
       composition: 'Composition', expandAll: 'Развернуть все', collapseAll: 'Свернуть все', zoomIn: 'Увеличить', zoomOut: 'Уменьшить',
       selectHint: 'Выберите элемент данных, чтобы увидеть, что он содержит.',
@@ -72,7 +72,7 @@
         derived: 'Вычисляется, не вводится', none: 'Не передаётся', group: 'Группа элементов' }
     },
     uz: {
-      loading: 'Shakl modeli yuklanmoqda...', failed: 'Shakl modelini yuklab bo\'lmadi: ', pick: 'Shakl', labels: 'Maydon nomlari',
+      loading: 'Shakl modeli yuklanmoqda...', mappingLink: 'Maydonlarni moslashtirish', allForms: 'Barcha shakllar', failed: 'Shakl modelini yuklab bo\'lmadi: ', pick: 'Shakl', labels: 'Maydon nomlari',
       views: { overview: 'Umumiy ko\'rinish', data: 'Ma\'lumotlar', mindmap: 'Xarita', form: 'Shakl ko\'rinishi' },
       composition: 'Composition', expandAll: 'Hammasini ochish', collapseAll: 'Hammasini yopish', zoomIn: 'Kattalashtirish', zoomOut: 'Kichraytirish',
       selectHint: 'Nimani saqlashini ko\'rish uchun ma\'lumot elementini tanlang.',
@@ -231,7 +231,8 @@
     if (!M) return;
     $('#fx-title').innerHTML =
       `<h2><span class="ti group fno">${esc(M.form)}</span>${esc(L(M.title))}</h2>` +
-      `<span class="meta">${esc(S.composition)} · <span class="mono">${esc(M.profile.name)}</span></span>`;
+      `<span class="meta">${esc(S.composition)} · <span class="mono">${esc(M.profile.name)}</span></span>` +
+      `<span class="tlinks"><a href="${url(M.profile.mapping)}">${esc(S.mappingLink)}</a><a href="forms-overview.html">${esc(S.allForms)}</a></span>`;
     VIEWS.forEach(v => {
       const b = $('#fx-v-' + v), on = v === state.view;
       b.setAttribute('aria-selected', String(on));
