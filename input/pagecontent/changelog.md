@@ -1,12 +1,36 @@
 ### In development
 
+#### Added
+
+[Form 097 LOINC Displays](CodeSystem-form-097-loinc-supplement-cs.html) gives Uzbek and Russian displays for the LOINC codes used in Form 097.
+
+[Form 111 Specialist Conclusion Codes](CodeSystem-form111-specialist-conclusion-code-cs.html) codes the Form 111 therapist, dentist and dermatovenereologist conclusions.
+
 #### Changed
 
 [Blood Service Operations](CodeSystem-blood-component-processing-cs.html), formerly Blood component processing operations, adds a code for blood product quality control.
 
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) adds active, completed and revoked blood product quality control examples and an expeditor PractitionerRole example.
 
+[Cancer Registry Dictionary ICD-10 to DHP ICD-10](ConceptMap-cancer-registry-dictionary-icd10-to-dhp-icd10-cm.html) maps registry codes 2528-2848 to their own ICD-10 codes from F20 to F99 instead of F19.x; 240 of them have no name of their own in the registry and are now unmapped. Where several registry codes share one ICD-10 code, only the one with the same meaning stays `equivalent`, and the others are narrower and have it as their parent in [Cancer Registry Dictionary ICD-10](CodeSystem-cancer-registry-dictionary-icd-10-cs.html).
+
+[DHIS Condition Code](CodeSystem-dhis-condition-code-cs.html) makes cavitary pulmonary tuberculosis the parent of fibro-cavitary pulmonary tuberculosis, and [DHIS Observation Component Code](CodeSystem-dhis-observation-component-code-cs.html) makes the plain rifampicin, levofloxacin and amikacin tests the parents of their fixed-concentration tests, as their LOINC and SNOMED CT ConceptMaps already imply.
+
+[DHIS Observation Profile](StructureDefinition-dhis-observation.html) and [DHIS Observation X-ray Profile](StructureDefinition-dhis-observation-xray.html) examples code the MGIT drug susceptibility test and the chest X-ray with their DHIS observation codes instead of LOINC codes whose scale doesn't fit the result.
+
+[DMED Form 111 education type mapping](ConceptMap-dmed-form-111-education-type-core-cm.html) maps DMED Other as narrower than national Other, since DMED codes elementary education and professional development separately.
+
+[Form 003](form-003-mapping.html), [Form 066](form-066-mapping.html) and [Form 066-1](form-066-1-mapping.html) code the time from onset to admission and, in Forms 066 and 066-1, the referral with new [Local Observation Code System](CodeSystem-local-observation-code.html) concepts, and Form 003 codes the clinical course with a new [Form 003 Observation Code](CodeSystem-form-003-observation-code-cs.html) concept, instead of LOINC duration and document codes that don't fit the recorded value.
+
+[Form 011](form-011-mapping.html) example sends the dialysis access site as text only, without the SNOMED CT code `Unknown`.
+
 [Form 027](StructureDefinition-form-027-medical-record-extract-composition.html) uses `emdoc-0010-0106` for both outpatient and inpatient extracts, and `Encounter.class` (`AMB` or `IMP`) tells them apart. The fixed `type` no longer carries the old display "Extract from inpatient medical record".
+
+[Form 096](form-096-mapping.html) codes vaginal discharge and the urinary bladder with the SNOMED CT observables 364234007 and 364186005 instead of findings.
+
+[Form 097](form-097-mapping.html) codes the daily skin, eye and respiratory notes with LOINC physical findings codes, urination frequency and the umbilical stump with SNOMED CT observables, and cyanosis distribution and the umbilical cord separation date with new local codes, instead of SNOMED CT findings.
+
+[Form 111](form-111-mapping.html) codes the specialist conclusions with [Form 111 Specialist Conclusion Codes](CodeSystem-form111-specialist-conclusion-code-cs.html) instead of LOINC consult note document codes.
 
 The guide's pages use the look of the [DHP developer documentation](https://docs.dhp.uz/): Onest and JetBrains Mono fonts, DHP green colours and logo, and a restyled header, menu, tables, notes and code blocks, which now have a copy button. A theme menu in the header switches between light, dark and the system setting.
 

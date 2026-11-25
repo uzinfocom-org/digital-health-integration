@@ -1,12 +1,36 @@
 ### Ishlab chiqilmoqda
 
+#### Qo'shildi
+
+[Form 097 LOINC Displays](CodeSystem-form-097-loinc-supplement-cs.html): 097-shaklda ishlatiladigan LOINC kodlarining o'zbekcha va ruscha nomlari.
+
+[Form 111 Specialist Conclusion Codes](CodeSystem-form111-specialist-conclusion-code-cs.html): 111-shakldagi terapevt, stomatolog va dermatovenerolog xulosalari kodlari.
+
 #### O'zgartirildi
 
+[003-shakl](form-003-mapping.html), [066-shakl](form-066-mapping.html) va [066-1-shakl](form-066-1-mapping.html) kasallik boshlanishidan yotqizilgunga qadar o'tgan vaqtni, 066 va 066-1-shakllar esa yo'llanma mavjudligini ham yangi [Local Observation Code System](CodeSystem-local-observation-code.html) tushunchalari bilan kodlaydi, 003-shakl esa dinamikadagi ahvolni yangi [Form 003 Observation Code](CodeSystem-form-003-observation-code-cs.html) tushunchasi bilan kodlaydi. Avvalgi LOINC davomiylik va hujjat kodlari yoziladigan qiymatga mos kelmasdi.
+
+[011-shakl](form-011-mapping.html) misoli tomir kirish joyini SNOMED CT `Unknown` kodisiz, faqat matn sifatida yuboradi.
+
 [027-shakl](StructureDefinition-form-027-medical-record-extract-composition.html) ambulator va statsionar kartadan ko'chirmalar uchun `emdoc-0010-0106` kodini ishlatadi, ularni `Encounter.class` (`AMB` yoki `IMP`) farqlaydi. Belgilangan `type` endi eski "Extract from inpatient medical record" nomini o'z ichiga olmaydi.
+
+[096-shakl](form-096-mapping.html) qindan ajralmalar va siydik pufagini topilmalar o'rniga SNOMED CT kuzatiladigan tushunchalari 364234007 va 364186005 bilan kodlaydi.
+
+[097-shakl](form-097-mapping.html) teri, ko'zlar va nafas haqidagi kundalik yozuvlarni LOINC fizikal ko'rik kodlari bilan, siydik chiqarish chastotasi va kindik yarasini SNOMED CT kuzatiladigan tushunchalari bilan, sianoz tarqalishi va kindik ajralish vaqtini esa SNOMED CT topilmalari o'rniga yangi mahalliy kodlar bilan kodlaydi.
+
+[111-shakl](form-111-mapping.html) mutaxassislar xulosalarini LOINC konsultatsiya hujjati kodlari o'rniga [Form 111 Specialist Conclusion Codes](CodeSystem-form111-specialist-conclusion-code-cs.html) kodlari bilan kodlaydi.
 
 [Blood Service Operations](CodeSystem-blood-component-processing-cs.html) (avvalgi nomi Blood component processing operations): qon mahsulotining sifat nazorati kodi qo'shildi.
 
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html): active, completed va revoked holatlaridagi qon mahsuloti sifat nazorati misollari va ekspeditor PractitionerRole misoli qo'shildi.
+
+[Cancer Registry Dictionary ICD-10 to DHP ICD-10](ConceptMap-cancer-registry-dictionary-icd10-to-dhp-icd10-cm.html) registrning 2528-2848 kodlarini F19.x o'rniga F20 dan F99 gacha bo'lgan o'z XKT-10 kodlariga moslaydi; ulardan 240 tasining registrda o'z nomi yo'q va endi ular moslanmagan. Bir nechta registr kodi bitta XKT-10 kodiga to'g'ri kelsa, faqat ma'nosi bir xil bo'lgan kod `equivalent` bo'lib qoladi, qolganlari torroq bo'ldi va [Cancer Registry Dictionary ICD-10](CodeSystem-cancer-registry-dictionary-icd-10-cs.html) da uni ota-kod sifatida oldi.
+
+[DHIS Condition Code](CodeSystem-dhis-condition-code-cs.html) kavernali o'pka silini fibroz-kavernoz o'pka silining ota-kodi qiladi, [DHIS Observation Component Code](CodeSystem-dhis-observation-component-code-cs.html) esa konsentratsiyasiz rifampitsin, levofloksatsin va amikatsin testlarini belgilangan konsentratsiyali testlarining ota-kodi qiladi - bu ularning LOINC va SNOMED CT ConceptMap'laridan allaqachon kelib chiqadi.
+
+[DHIS Observation Profile](StructureDefinition-dhis-observation.html) va [DHIS Observation X-ray Profile](StructureDefinition-dhis-observation-xray.html) misollari MGIT dori sezgirligi testi va ko'krak qafasi rentgenografiyasini natijaga shkalasi mos kelmaydigan LOINC kodlari o'rniga o'zlarining DHIS kuzatuv kodlari bilan kodlaydi.
+
+[DMED Form 111 education type mapping](ConceptMap-dmed-form-111-education-type-core-cm.html) DMED "Boshqa" qiymatini milliy "Boshqa" dan torroq deb moslaydi, chunki DMED boshlang'ich ta'lim va malaka oshirishni alohida kodlaydi.
 
 Qo'llanma sahifalari [DHP dasturchilar hujjatlari](https://docs.dhp.uz/uz/) uslubida bezatilgan: Onest va JetBrains Mono shriftlari, DHP yashil ranglari va logotipi, yangilangan sarlavha, menyu, jadvallar, eslatmalar va nusxa olish tugmasi bilan kod bloklari. Sarlavhadagi mavzu menyusi yorug', qorong'i yoki tizimdagidek mavzuni tanlaydi.
 
