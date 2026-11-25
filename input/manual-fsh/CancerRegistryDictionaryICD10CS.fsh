@@ -3,6 +3,9 @@ Id: cancer-registry-dictionary-icd-10-cs
 Title: "Cancer Registry Dictionary ICD-10"
 Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Cancer Registry and mapped to core ICD-10 codes through a ConceptMap."
 * insert OriginalCodeSystemDraft(cancer-registry-dictionary-icd-10-cs)
+* ^property[0].code = #parent
+* ^property[=].uri = "http://hl7.org/fhir/concept-properties#parent"
+* ^property[=].type = #code
 
 * #1 "Ayrim yuqumli va parazitar kasalliklar"
   * ^designation[0].language = #ru
@@ -6051,6 +6054,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Гортаноглотки"
   * ^designation[+].language = #en
   * ^designation[=].value = "Benign neoplasm: Hypopharynx"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1005
 
 * #1009 "Valdeyer halqum halqasining"
   * ^designation[0].language = #ru
@@ -8343,6 +8348,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Смешанная мелко- и крупноклеточная (диффузная)"
   * ^designation[+].language = #en
   * ^designation[=].value = "Non-Hodgkin's lymphoma: Mixed small and large cell (diffuse)"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1391
 
 * #1391 "Katta hujayrali (diffuz)"
   * ^designation[0].language = #ru
@@ -8355,6 +8362,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Иммунобластная (диффузная)"
   * ^designation[+].language = #en
   * ^designation[=].value = "Non-Hodgkin's lymphoma: Immunoblastic (diffuse)"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1391
 
 * #1393 "Limfoblastli (diffuz)"
   * ^designation[0].language = #ru
@@ -8367,6 +8376,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Недифференцированная (диффузная)"
   * ^designation[+].language = #en
   * ^designation[=].value = "Non-Hodgkin's lymphoma: Undifferentiated (diffuse)"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1396
 
 * #1395 "Berkit o‘smasi"
   * ^designation[0].language = #ru
@@ -8409,12 +8420,16 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Лимфома T-зоны"
   * ^designation[+].language = #en
   * ^designation[=].value = "T-zone lymphoma"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1403
 
 * #1402 "Limfoepitelioid limfoma"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Лимфоэпителиоидная лимфома"
   * ^designation[+].language = #en
   * ^designation[=].value = "Lymphoepithelioid lymphoma"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1403
 
 * #1403 "Periferik T-hujayrali limfoma"
   * ^designation[0].language = #ru
@@ -8439,6 +8454,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Лимфосаркома"
   * ^designation[+].language = #en
   * ^designation[=].value = "Lymphosarcoma"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1409
 
 * #1407 "B-hujayrali limfoma aniqlanmagan"
   * ^designation[0].language = #ru
@@ -8475,6 +8492,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Болезнь альфа-тяжелых цепей"
   * ^designation[+].language = #en
   * ^designation[=].value = "Alpha heavy chain disease"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1413
 
 * #1413 "Gamma-og‘ir zanjirlar kasalligi"
   * ^designation[0].language = #ru
@@ -8547,6 +8566,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Подострый лимфоцитарный лейкоз"
   * ^designation[+].language = #en
   * ^designation[=].value = "Subacute lymphocytic leukaemia"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1429
 
 * #1425 "Prolimfotsitar leykoz"
   * ^designation[0].language = #ru
@@ -8655,6 +8676,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Подострый моноцитарный лейкоз"
   * ^designation[+].language = #en
   * ^designation[=].value = "Subacute monocytic leukaemia"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1444
 
 * #1443 "Boshqa monotsitar leykoz"
   * ^designation[0].language = #ru
@@ -8685,6 +8708,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Хроническая эритремия"
   * ^designation[+].language = #en
   * ^designation[=].value = "Chronic erythraemia"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1452
 
 * #1448 "O‘tkir megakarioblast leykoz"
   * ^designation[0].language = #ru
@@ -8709,6 +8734,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Острый миелофиброз"
   * ^designation[+].language = #en
   * ^designation[=].value = "Acute myelofibrosis"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1450
 
 * #1452 "Boshqa aniqlangan leykoz"
   * ^designation[0].language = #ru
@@ -8739,6 +8766,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Подострый лейкоз неуточненного клеточного типа"
   * ^designation[+].language = #en
   * ^designation[=].value = "Subacute leukaemia of unspecified cell type"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1458
 
 * #1457 "Hujayra tipi aniqlanmagan boshqa leykoz"
   * ^designation[0].language = #ru
@@ -8769,6 +8798,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Злокачественный гистиоцитоз"
   * ^designation[+].language = #en
   * ^designation[=].value = "Malignant histiocytosis"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1464
 
 * #1462 "To‘liq hujayrali xavfli o‘sma"
   * ^designation[0].language = #ru
@@ -10695,6 +10726,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Рефрактерная анемия с избытком бластов с трансформацией"
   * ^designation[+].language = #en
   * ^designation[=].value = "Refractory anaemia with excess of blasts with transformation"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1781
 
 * #1783 "Aniqlanmagan refrakter anemiya"
   * ^designation[0].language = #ru
@@ -11631,6 +11664,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Эссенциальный тромбоцитоз"
   * ^designation[+].language = #en
   * ^designation[=].value = "Essential thrombocytosis"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1790
 
 * #1939 "Qon va qon yaratuvchi organlarning aniqlangan boshqa kasalliklari"
   * ^designation[0].language = #ru
@@ -11655,6 +11690,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Гистиоцитоз из клеток Лангерганса, не классифицированный в других рубриках"
   * ^designation[+].language = #en
   * ^designation[=].value = "Langerhans' cell histiocytosis, not elsewhere classified"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #1945
 
 * #1943 "Gemofagotsitar limfogistiotsitoz"
   * ^designation[0].language = #ru
@@ -19191,6 +19228,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Полисистемная дегенерация"
   * ^designation[+].language = #en
   * ^designation[=].value = "Multi-system degeneration"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #2923
 
 * #3199 "Vegetativ [avtonom] nerv sistemaning boshqa buzilishlari"
   * ^designation[0].language = #ru
@@ -28329,6 +28368,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Язвенный (хронический) илеоколит"
   * ^designation[+].language = #en
   * ^designation[=].value = "Ulcerative (chronic) ileocolitis"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #4720
 
 * #4722 "Yarali (surunkali) proktit"
   * ^designation[0].language = #ru
@@ -34725,6 +34766,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Узелковый фасциит"
   * ^designation[+].language = #en
   * ^designation[=].value = "Nodular fasciitis"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #5788
 
 * #5788 "Psevdosarkomatoz fibromatoz"
   * ^designation[0].language = #ru
@@ -34737,6 +34780,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Фасциит, не классифицированный в других рубриках"
   * ^designation[+].language = #en
   * ^designation[=].value = "Fasciitis, not elsewhere classified"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #5790
 
 * #5790 "Boshqa fibroblastik buzilishlar"
   * ^designation[0].language = #ru
@@ -36825,6 +36870,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Другие проявления хронической почечной недостаточности"
   * ^designation[+].language = #en
   * ^designation[=].value = "Other chronic renal failure"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #6135
 
 * #6138 "Aniqlanmagan surunkali buyrak yetishmovchiligi"
   * ^designation[0].language = #ru
@@ -45693,6 +45740,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Врожденный стридор гортани"
   * ^designation[+].language = #en
   * ^designation[=].value = "Congenital laryngeal stridor"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #7610
 
 * #7616 "Hiqildoqning boshqa tug‘ma nuqsonlari"
   * ^designation[0].language = #ru
@@ -45849,6 +45898,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Расщелина твердого неба двусторонняя"
   * ^designation[+].language = #en
   * ^designation[=].value = "Bilateral cleft hard palate"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #7642
 
 * #7642 "Qattiq tanglay yorig‘i bir tomonlama"
   * ^designation[0].language = #ru
@@ -45861,6 +45912,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Расщелина мягкого неба двусторонняя"
   * ^designation[+].language = #en
   * ^designation[=].value = "Bilateral cleft soft palate"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #7644
 
 * #7644 "Yumshoq tanglay yorig‘i bir tomonlama"
   * ^designation[0].language = #ru
@@ -45873,6 +45926,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Расщелина твердого и мягкого неба двусторонняя"
   * ^designation[+].language = #en
   * ^designation[=].value = "Bilateral cleft hard and soft palate"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #7646
 
 * #7646 "Qattiq va yumshoq tanglay yorig‘i bir tomonlama"
   * ^designation[0].language = #ru
@@ -45885,6 +45940,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Срединная расщелина неба"
   * ^designation[+].language = #en
   * ^designation[=].value = "Median cleft palate"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #7650
 
 * #7648 "Tilcha yorig‘i"
   * ^designation[0].language = #ru
@@ -45897,6 +45954,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Расщелина неба [волчья пасть] неуточненная двусторонняя"
   * ^designation[+].language = #en
   * ^designation[=].value = "Unspecified bilateral cleft palate"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #7650
 
 * #7650 "Aniqlanmagan tanglay yorig‘i [bo‘ri og‘iz] bir tomonlama"
   * ^designation[0].language = #ru
@@ -70005,6 +70064,8 @@ Description: "Registry-internal diagnosis identifiers used by the Uzbekistan Can
   * ^designation[=].value = "Носительство возбудителя вирусного гепатита"
   * ^designation[+].language = #en
   * ^designation[=].value = "Carrier of viral hepatitis"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #11669
 
 * #11668 "1-tip odam T - limfotrop virusini tashuvchanlik (HTLV-1)"
   * ^designation[0].language = #ru
