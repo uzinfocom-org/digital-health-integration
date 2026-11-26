@@ -1,5 +1,19 @@
 ### В разработке
 
+#### Добавлено
+
+[Интеграция рецептов](prescription.html) описывает, как DMED передаёт в DHP электронные рецепты, отпуск и введение препаратов, с шестью профилями Prescription. ConceptMap переводят тип и статус рецепта DMED, МНН, лекарственную форму, путь введения, режим приёма, период кратности и причину отмены в коды UZ Core и международные коды. Публикуются только бесспорные соответствия, поэтому значение DMED без соответствия отклоняется, пока его не проверят.
+
+[Карта действующих веществ реестра Фармкомитета](ConceptMap-pharmcom-registry-substance-to-inn-cm.html) сопоставляет 1 426 из 1 802 [действующих веществ реестра](CodeSystem-pharmcom-registry-substance-cs.html) в препаратах с кодами МНН, включая соли и гидраты, с кодами МНН UZ Core для `Medication.ingredient`.
+
+[Карта кодов АТХ реестра Фармкомитета](ConceptMap-pharmcom-registry-atc-to-who-atc-cm.html) заменяет 76 кодов АТХ реестра, которых нет в текущем WHO ATC.
+
+[Карта лекарственных форм реестра Фармкомитета](ConceptMap-pharmcom-registry-dose-form-to-medication-doseform-cm.html) сопоставляет 650 форм реестра с формами UZ Core.
+
+[Prescription MedicationDispense](StructureDefinition-prescription-medication-dispense.html) передаёт GTIN и коды Асл белгиси отдельными идентификаторами; ключ выдачи — только ID DMED. Отказ в отпуске передаётся со статусом `declined` и кодом причины.
+
+[Prescription Provenance](StructureDefinition-prescription-provenance.html) может ссылаться и на UZ Core DeviceRequest — для рецепта на внутриматочную систему.
+
 #### Изменено
 
 [Blood Service Operations](CodeSystem-blood-component-processing-cs.html) (ранее Blood component processing operations): добавлен код контроля качества продукта крови.

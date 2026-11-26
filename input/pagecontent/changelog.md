@@ -1,5 +1,19 @@
 ### In development
 
+#### Added
+
+The [Pharmaceutical Committee registry ATC map](ConceptMap-pharmcom-registry-atc-to-who-atc-cm.html) replaces 76 registry ATC codes that are not in the current WHO ATC.
+
+The [Pharmaceutical Committee registry dose form map](ConceptMap-pharmcom-registry-dose-form-to-medication-doseform-cm.html) maps the 650 registry dose forms to UZ Core dose forms.
+
+The [Pharmaceutical Committee registry substance map](ConceptMap-pharmcom-registry-substance-to-inn-cm.html) maps 1,426 of the 1,802 [registry active substances](CodeSystem-pharmcom-registry-substance-cs.html) of products that have INN codes, including salts and hydrates, to UZ Core INN codes for `Medication.ingredient`.
+
+[Prescription MedicationDispense](StructureDefinition-prescription-medication-dispense.html) carries the source-reported GTIN and Asl Belgisi package codes as separate identifiers; only the DMED dispense identifier is the event key. A refusal to dispense is sent with status `declined` and a coded reason.
+
+[Prescription Provenance](StructureDefinition-prescription-provenance.html) can also target a UZ Core DeviceRequest, for a prescription of an intrauterine system.
+
+The [Prescription integration](prescription.html) describes how DMED sends electronic prescriptions, dispenses and administrations to DHP, with six Prescription profiles. ConceptMaps translate the DMED prescription type, status, INN, dose form, route, intake timing, frequency period and cancellation reason to UZ Core and international codes. Only mappings without doubt are published, so a DMED value without one is rejected until it is reviewed.
+
 #### Changed
 
 [Blood Service Operations](CodeSystem-blood-component-processing-cs.html), formerly Blood component processing operations, adds a code for blood product quality control.

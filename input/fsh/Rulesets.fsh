@@ -51,3 +51,15 @@ RuleSet: ScreeningMetaSource
 * meta.source ^short = "https://dhp.uz/fhir/source/screening | https://dhp.uz/fhir/source/dmed"
 * meta.source ^comment = "Identifies which system created this resource: the HPV (ВПЧ) screening system or DMED. Do not infer source system from the presence of an identifier from screening-identifier-system -- that system's usage does not indicate which system produced a resource; DMED currently not writing to it is an implementation detail, not a guarantee."
 * obeys smeta-1
+
+Invariant: prescription-meta-source
+Description: "Prescription integration resources identify DMED Prescription as their source"
+Severity: #error
+Expression: "meta.source.replaceMatches('#.*$', '') = 'https://dhp.uz/fhir/source/dmed-prescription'"
+
+RuleSet: PrescriptionMetaSource
+* meta 1..1 MS
+* meta.source 1..1 MS
+* meta.source ^short = "DMED Prescription source URI"
+* meta.source ^comment = "The source URI is fixed to the DMED Prescription integration. A fragment may identify a producing subsystem."
+* obeys prescription-meta-source

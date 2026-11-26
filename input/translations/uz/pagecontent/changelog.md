@@ -1,5 +1,19 @@
 ### Ishlab chiqilmoqda
 
+#### Qo'shildi
+
+[Farmatsevtika qo'mitasi reyestri ATX kodlari xaritasi](ConceptMap-pharmcom-registry-atc-to-who-atc-cm.html) reyestrning joriy WHO ATC da yo'q 76 ta ATX kodini almashtiradi.
+
+[Prescription MedicationDispense](StructureDefinition-prescription-medication-dispense.html) GTIN va Asl Belgisi kodlarini alohida identifikatorlarda uzatadi; berish hodisasining kaliti faqat DMED identifikatoridir. Berishdan bosh tortish `declined` holati va sabab kodi bilan uzatiladi.
+
+[Prescription Provenance](StructureDefinition-prescription-provenance.html) UZ Core DeviceRequest’ga ham havola qila oladi — bachadon ichi tizimiga retsept uchun.
+
+[Farmatsevtika qo'mitasi reyestri dori shakllari xaritasi](ConceptMap-pharmcom-registry-dose-form-to-medication-doseform-cm.html) reyestrning 650 ta dori shaklini UZ Core dori shakllari bilan bog'laydi.
+
+[Farmatsevtika qo'mitasi reyestri faol moddalar xaritasi](ConceptMap-pharmcom-registry-substance-to-inn-cm.html) INN kodlari bor preparatlardagi 1 802 ta [reyestr faol moddasidan](CodeSystem-pharmcom-registry-substance-cs.html) 1 426 tasini, tuzlar va gidratlar bilan birga, `Medication.ingredient` uchun UZ Core INN kodlari bilan bog'laydi.
+
+[Retseptlar integratsiyasi](prescription.html) DMED elektron retseptlar, tasdiqlash, dori berish va dori yuborish ma'lumotlarini DHP ga qanday yuborishini oltita Prescription profili bilan tavsiflaydi. ConceptMap lar DMED retsept turi va holati, INN, dori shakli, yuborish yo'li, qabul qilish vaqti, chastota davri va bekor qilish sababini UZ Core va xalqaro kodlarga o'tkazadi. Faqat shubhasiz moslik e'lon qilinadi, shuning uchun mosligi yo'q DMED qiymati tekshirilguncha rad etiladi.
+
 #### O'zgartirildi
 
 [027-shakl](StructureDefinition-form-027-medical-record-extract-composition.html) ambulator va statsionar kartadan ko'chirmalar uchun `emdoc-0010-0106` kodini ishlatadi, ularni `Encounter.class` (`AMB` yoki `IMP`) farqlaydi. Belgilangan `type` endi eski "Extract from inpatient medical record" nomini o'z ichiga olmaydi.
