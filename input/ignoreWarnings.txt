@@ -94,3 +94,6 @@ The Target Code System http://hl7.org/fhir/sid/icd-10 is not fully defined and p
 # every diagram, so the two inline diagrams on the screening page share ids. Remove once the
 # template makes diagram ids unique per diagram (https://github.com/HL7/ig-template-base2/pull/55).
 %cervical-breast-cancer-screening.html: The html source has duplicate element ids: ent0001%
+
+# CI workflows and editors use the helper scripts in scripts/ and .github/scripts/; the IG Publisher never runs them. Root-folder scripts stay an error and aren't covered by this
+% in sub-folders: %

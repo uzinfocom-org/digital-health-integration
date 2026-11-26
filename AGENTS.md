@@ -9,9 +9,10 @@ Before creating or modifying any FHIR profile, extension, value set, code system
 New clinical forms follow `docs/new-form.ru.md`.
 
 ## Build Commands
-- **Full build**: `./_genonce.sh` (runs SUSHI itself - don't run SUSHI separately)
-- **Narrative only**: `./fast-narrative-rebuild.sh` re-renders `input/pagecontent/*.md` in all languages without the publisher
-- **Update publisher**: `./_updatePublisher.sh`
+- **Full build**: `scripts/_genonce.sh` (runs SUSHI itself - don't run SUSHI separately)
+- **Narrative only**: `scripts/fast-narrative-rebuild.sh` re-renders `input/pagecontent/*.md` in all languages without the publisher
+- **Update publisher**: `scripts/_updatePublisher.sh`
+- Scripts live in `scripts/` and run from the repository root. Do not commit scripts or programs to the root folder: IG Publisher 3.0.6+ reports them as an error
 
 ## Code Style & Conventions
 - **FSH files**: `input/fsh/` (profiles in `profiles/`, examples in `examples/`, terminology in `terminology/`); extra-large code systems in `input/manual-fsh/`, pre-rendered as JSON in `input/vocabulary/`

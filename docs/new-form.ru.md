@@ -273,8 +273,8 @@ pages:
 
 ## Сборка и проверка
 
-- Полная сборка: `_genonce.sh` (он сам запускает SUSHI, отдельно SUSHI гонять не нужно). Если публикатору не хватает памяти, дайте ему 12 ГБ через переменную окружения: `export JAVA_TOOL_OPTIONS="-Xmx12g"` (macOS/Linux) или `set JAVA_TOOL_OPTIONS=-Xmx12g` (Windows).
-- Правки только в markdown: `./fast-narrative-rebuild.sh` (~12 c) вместо полной сборки.
+- Полная сборка: `scripts/_genonce.sh` (он сам запускает SUSHI, отдельно SUSHI гонять не нужно). Если публикатору не хватает памяти, дайте ему 12 ГБ через переменную окружения: `export JAVA_TOOL_OPTIONS="-Xmx12g"` (macOS/Linux) или `set JAVA_TOOL_OPTIONS=-Xmx12g` (Windows).
+- Правки только в markdown: `scripts/fast-narrative-rebuild.sh` (~12 c) вместо полной сборки.
 - Параллельно две полные сборки не запускайте - они конфликтуют на общем локе `~/.fhir`.
 - После сборки откройте страницу QA (`output/qa.html`) и исправьте новые ошибки и предупреждения.
 - Проверка терминологии: после `sushi .` запустите `python3 .github/scripts/check_terminology.py`; CI запускает её на каждом PR. Она падает, если версия supplement равна версии IG, если у ValueSet нет расширения `valueset-supplement` для supplement, который переводит его коды, и если ValueSet или CodeSystem ничем не используется. Проблемы, существовавшие до проверки, перечислены в `.github/scripts/check_terminology_baseline.txt`: новых строк туда не добавляйте, а исправив проблему, удалите её строку.
@@ -296,5 +296,5 @@ pages:
 - [ ] Запись в `pages:` и пункт меню в `sushi-config.yaml`
 - [ ] Переводы страниц и профиля в `input/translations/{ru,uz}/`
 - [ ] Запись в `changelog.md` (`### In development`) + переводы
-- [ ] Сборка `_genonce.sh` без новых ошибок QA
+- [ ] Сборка `scripts/_genonce.sh` без новых ошибок QA
 - [ ] `check_terminology.py` проходит
