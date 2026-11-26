@@ -30,6 +30,8 @@
 
 [Form 111](form-111-mapping.html) codes the therapist, dentist and dermatovenereologist conclusions as SNOMED CT 11429006 Consultation, 34043003 Dental consultation and report and 73007006 Dermatology consultation and report instead of LOINC consult note document codes.
 
+[Screening Breast Risk Questionnaire](Questionnaire-screening-breast-risk.html) and [Screening Cervical Risk Questionnaire](Questionnaire-screening-cervical-risk.html) 1.1.1 read yes/no answers with `ofType(boolean)` when they score the risk. With `ofType(Boolean)` every yes/no answer was left out, so the score stayed empty and a correct `statusRisk` failed the `screening-risk-match` check.
+
 The guide's pages use the look of the [DHP developer documentation](https://docs.dhp.uz/): Onest and JetBrains Mono fonts, DHP green colours and logo, and a restyled header, menu, tables, notes and code blocks, which now have a copy button. A theme menu in the header switches between light, dark and the system setting.
 
 #### Documentation

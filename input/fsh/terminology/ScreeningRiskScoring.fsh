@@ -10,7 +10,7 @@ RuleSet: ScreeningBreastRiskScoring
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ118
 * extension[=].valueExpression.language = #"text/fhirpath"
-* extension[=].valueExpression.expression = "%resource.item.where(linkId='118').answer.value.ofType(Boolean).single()"
+* extension[=].valueExpression.expression = "%resource.item.where(linkId='118').answer.value.ofType(boolean).single()"
 * item[1].required = true
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ119
@@ -25,7 +25,7 @@ RuleSet: ScreeningBreastRiskScoring
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ117
 * extension[=].valueExpression.language = #"text/fhirpath"
-* extension[=].valueExpression.expression = "%resource.item.where(linkId='117').answer.value.ofType(Boolean).single()"
+* extension[=].valueExpression.expression = "%resource.item.where(linkId='117').answer.value.ofType(boolean).single()"
 * item[4].required = true
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ120
@@ -45,7 +45,7 @@ RuleSet: ScreeningBreastRiskScoring
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ123
 * extension[=].valueExpression.language = #"text/fhirpath"
-* extension[=].valueExpression.expression = "%resource.item.where(linkId='123').answer.value.ofType(Boolean).single()"
+* extension[=].valueExpression.expression = "%resource.item.where(linkId='123').answer.value.ofType(boolean).single()"
 * item[8].required = true
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ124
@@ -60,7 +60,7 @@ RuleSet: ScreeningBreastRiskScoring
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ126
 * extension[=].valueExpression.language = #"text/fhirpath"
-* extension[=].valueExpression.expression = "%resource.item.where(linkId='126').answer.value.ofType(Boolean).single()"
+* extension[=].valueExpression.expression = "%resource.item.where(linkId='126').answer.value.ofType(boolean).single()"
 * item[11].required = true
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #rawScore
@@ -110,7 +110,7 @@ RuleSet: ScreeningCervicalRiskScoring
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ104
 * extension[=].valueExpression.language = #"text/fhirpath"
-* extension[=].valueExpression.expression = "%resource.item.where(linkId='104').answer.value.ofType(Boolean).single()"
+* extension[=].valueExpression.expression = "%resource.item.where(linkId='104').answer.value.ofType(boolean).single()"
 * item[3].required = true
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ105
@@ -125,12 +125,12 @@ RuleSet: ScreeningCervicalRiskScoring
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ36
 * extension[=].valueExpression.language = #"text/fhirpath"
-* extension[=].valueExpression.expression = "%resource.item.where(linkId='36').answer.value.ofType(Boolean).single()"
+* extension[=].valueExpression.expression = "%resource.item.where(linkId='36').answer.value.ofType(boolean).single()"
 * item[6].required = true
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ37
 * extension[=].valueExpression.language = #"text/fhirpath"
-* extension[=].valueExpression.expression = "%resource.item.where(linkId='37').answer.value.ofType(Boolean).single()"
+* extension[=].valueExpression.expression = "%resource.item.where(linkId='37').answer.value.ofType(boolean).single()"
 * item[7].required = true
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ107
@@ -140,7 +140,7 @@ RuleSet: ScreeningCervicalRiskScoring
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ41
 * extension[=].valueExpression.language = #"text/fhirpath"
-* extension[=].valueExpression.expression = "%resource.item.where(linkId='41').answer.value.ofType(Boolean).single()"
+* extension[=].valueExpression.expression = "%resource.item.where(linkId='41').answer.value.ofType(boolean).single()"
 * item[9].required = true
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ108
@@ -180,12 +180,12 @@ RuleSet: ScreeningCervicalRiskScoring
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ115
 * extension[=].valueExpression.language = #"text/fhirpath"
-* extension[=].valueExpression.expression = "%resource.item.where(linkId='115').answer.value.ofType(Boolean).single()"
+* extension[=].valueExpression.expression = "%resource.item.where(linkId='115').answer.value.ofType(boolean).single()"
 * item[17].required = true
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #riskQ116
 * extension[=].valueExpression.language = #"text/fhirpath"
-* extension[=].valueExpression.expression = "%resource.item.where(linkId='116').answer.value.ofType(Boolean).single()"
+* extension[=].valueExpression.expression = "%resource.item.where(linkId='116').answer.value.ofType(boolean).single()"
 * item[18].required = true
 * extension[+].url = $variable
 * extension[=].valueExpression.name = #rawScore

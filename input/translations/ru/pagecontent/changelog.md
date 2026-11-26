@@ -16,6 +16,8 @@
 
 [DMED Form 111 education type mapping](ConceptMap-dmed-form-111-education-type-core-cm.html) сопоставляет «Другое» DMED как более узкое, чем национальное «Другое», поскольку DMED кодирует начальное образование и повышение квалификации отдельно.
 
+[Screening Breast Risk Questionnaire](Questionnaire-screening-breast-risk.html) и [Screening Cervical Risk Questionnaire](Questionnaire-screening-cervical-risk.html) 1.1.1 при расчёте риска читают ответы «да/нет» через `ofType(boolean)`. С `ofType(Boolean)` все ответы «да/нет» выпадали из расчёта, балл оставался пустым, и верный `statusRisk` не проходил проверку `screening-risk-match`.
+
 Пример [формы 011](form-011-mapping.html) передаёт место сосудистого доступа только текстом, без кода SNOMED CT `Unknown`.
 
 Примеры [DHIS Observation Profile](StructureDefinition-dhis-observation.html) и [DHIS Observation X-ray Profile](StructureDefinition-dhis-observation-xray.html) кодируют тест лекарственной чувствительности кодом SNOMED CT 85748009 BACTEC susceptibility test for slow growing Mycobacteria, а рентгенографию грудной клетки - кодом 399208008 Plain X-ray of chest вместо кодов LOINC, шкала которых не подходит к результату.

@@ -32,6 +32,8 @@
 
 Qo'llanma sahifalari [DHP dasturchilar hujjatlari](https://docs.dhp.uz/uz/) uslubida bezatilgan: Onest va JetBrains Mono shriftlari, DHP yashil ranglari va logotipi, yangilangan sarlavha, menyu, jadvallar, eslatmalar va nusxa olish tugmasi bilan kod bloklari. Sarlavhadagi mavzu menyusi yorug', qorong'i yoki tizimdagidek mavzuni tanlaydi.
 
+[Screening Breast Risk Questionnaire](Questionnaire-screening-breast-risk.html) va [Screening Cervical Risk Questionnaire](Questionnaire-screening-cervical-risk.html) 1.1.1 xavfni hisoblashda "ha/yo'q" javoblarini `ofType(boolean)` orqali o'qiydi. `ofType(Boolean)` bilan barcha "ha/yo'q" javoblari hisobdan tushib qolar, ball bo'sh qolar va to'g'ri `statusRisk` `screening-risk-match` tekshiruvidan o'tmas edi.
+
 #### Hujjatlashtirish
 
 [Blood Donor Eligibility Flag](StructureDefinition-blood-donor-eligibility-flag.html): chetlatishni muddatidan oldin olib tashlash tavsiflandi - flag `inactive` ga o'tkaziladi, Provenance esa kim va nima sababdan olib tashlaganini qayd etadi ([misol](Provenance-example-blood-donor-deferral-lifted-provenance.html)).
