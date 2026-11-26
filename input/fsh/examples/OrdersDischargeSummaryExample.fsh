@@ -14,8 +14,8 @@ Usage: #example
 * section[0].code = $loinc#10154-3 "Chief complaint Narrative - Reported"
 * section[0].title = "Shikoyatlar"
 * section[0].text.status = #additional
-* section[0].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Buyrak toshi bo'yicha davolanish yakunlandi.</div>"
+* section[0].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><div lang='uz' xml:lang='uz'>Buyrak toshi bo'yicha davolanish yakunlandi.</div><div lang='ru' xml:lang='ru'>Лечение по поводу камня в почке завершено.</div><div lang='en' xml:lang='en'>Treatment for the kidney stone has been completed.</div></div>"
 * section[+].code = OrdersDischargeSummarySectionCS#epicris-0001-00002 "Hayot anamnezi (Anamnesis vitae)"
 * section[=].title = "Hayot anamnezi"
 * section[=].text.status = #additional
-* section[=].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Hayot anamnezi qayd etildi.</div>"
+* section[=].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><div lang='uz' xml:lang='uz'>Hayot anamnezi qayd etildi.</div><div lang='ru' xml:lang='ru'>Анамнез жизни записан.</div><div lang='en' xml:lang='en'>The life history has been recorded.</div></div>"

@@ -18,6 +18,8 @@
 
 ### Идентификаторы программы и источника
 
+<!-- CORE-RELEASE #178 -->
+
 **Тип программы скрининга.** Помимо идентификатора записи, ресурс скрининга содержит второй `identifier`, который указывает, к какой программе скрининга он относится. Его система - `https://dhp.uz/fhir/core/sid/prg/uz/program`, значение - код программы из таблицы в следующем разделе.
 
 - Указывается в Observation, DiagnosticReport, ServiceRequest, Condition, Consent и Specimen, а также в Questionnaire и QuestionnaireResponse, если опросник целиком относится к одной программе.

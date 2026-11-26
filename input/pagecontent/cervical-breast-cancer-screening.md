@@ -18,6 +18,8 @@ Coded values use SNOMED CT or LOINC wherever an equivalent concept exists. Local
 
 ### Program and source identifiers
 
+<!-- CORE-RELEASE #178 -->
+
 **Screening program type.** Besides its record identifier, a screening resource carries a second `identifier` that says which screening program it belongs to. Its system is `https://dhp.uz/fhir/core/sid/prg/uz/program` and its value is the program's code from the table in the next section.
 
 - Add it to Observation, DiagnosticReport, ServiceRequest, Condition, Consent and Specimen, and to a Questionnaire and its QuestionnaireResponse when the whole questionnaire belongs to one program.

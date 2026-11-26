@@ -117,6 +117,5 @@ The Target Code System http://hl7.org/fhir/sid/icd-10 is not fully defined and p
 # No SNOMED CT observable or LOINC code exists for mammographic breast density, so the finding stays in component.code.
 %The SNOMED CT code 129793001 ('Mammographic breast density') is a finding%
 
-# example-orders-discharge-summary is an Uzbek document (language = uz) with Uzbek-only section narrative, which the
-# en and ru pages can't regenerate; content in the document's own language is not a defect.
-%and only a resource's own narrative can be regenerated, so it has been kept as it is, in another language%
+# CI workflows and editors use the helper scripts in scripts/ and .github/scripts/; the IG Publisher never runs them. Root-folder scripts stay an error and aren't covered by this
+% in sub-folders: %

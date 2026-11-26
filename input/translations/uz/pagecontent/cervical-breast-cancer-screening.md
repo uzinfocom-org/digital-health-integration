@@ -18,6 +18,8 @@ Kodlanadigan qiymatlar ekvivalent tushuncha mavjud bo'lgan hamma joyda SNOMED CT
 
 ### Dastur va manba tizimi identifikatorlari
 
+<!-- CORE-RELEASE #178 -->
+
 **Skrining dasturi turi.** Skrining resursi yozuv identifikatoridan tashqari qaysi skrining dasturiga tegishli ekanini bildiruvchi ikkinchi `identifier` ga ega. Uning tizimi - `https://dhp.uz/fhir/core/sid/prg/uz/program`, qiymati - keyingi bo'limdagi jadvaldan dastur kodi.
 
 - Observation, DiagnosticReport, ServiceRequest, Condition, Consent va Specimen da, shuningdek so'rovnoma butunlay bitta dasturga tegishli bo'lsa, Questionnaire va QuestionnaireResponse da ko'rsatiladi.

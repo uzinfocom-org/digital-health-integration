@@ -58,7 +58,7 @@ jobs:
 
       - name: Install IG publisher
         run: |
-          # Download the IG Publisher directly rather than via _updatePublisher.sh,
+          # Download the IG Publisher directly rather than via scripts/_updatePublisher.sh,
           # for the same reason as validate-docs.yml: that script gates on
           # `curl -sSf tx.fhir.org`, whose http root returns 404, aborting the build.
           mkdir -p input-cache
@@ -71,7 +71,7 @@ jobs:
           JAVA_TOOL_OPTIONS: "-Xmx8g -Dfile.encoding=UTF-8"
         run: |
           # Run the publisher directly against the working https terminology server;
-          # _genonce.sh would fall back to `-tx n/a` and skip terminology validation.
+          # scripts/_genonce.sh would fall back to `-tx n/a` and skip terminology validation.
           # -publish makes this a publication build. Without it the publisher marks
           # the package notForPublication with a file:// url, which packages2.fhir.org
           # rejects and which turns links from dependent guides into file:// links.
