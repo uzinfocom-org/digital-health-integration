@@ -4,8 +4,6 @@
 
 [Form 097 LOINC Displays](CodeSystem-form-097-loinc-supplement-cs.html): узбекские и русские названия кодов LOINC, используемых в форме 097.
 
-[Form 111 Specialist Conclusion Codes](CodeSystem-form111-specialist-conclusion-code-cs.html): коды заключений терапевта, стоматолога и дерматовенеролога в форме 111.
-
 #### Изменено
 
 [Blood Service Operations](CodeSystem-blood-component-processing-cs.html) (ранее Blood component processing operations): добавлен код контроля качества продукта крови.
@@ -20,19 +18,19 @@
 
 Пример [формы 011](form-011-mapping.html) передаёт место сосудистого доступа только текстом, без кода SNOMED CT `Unknown`.
 
-Примеры [DHIS Observation Profile](StructureDefinition-dhis-observation.html) и [DHIS Observation X-ray Profile](StructureDefinition-dhis-observation-xray.html) кодируют тест лекарственной чувствительности на MGIT и рентгенографию грудной клетки своими кодами наблюдений DHIS вместо кодов LOINC, шкала которых не подходит к результату.
+Примеры [DHIS Observation Profile](StructureDefinition-dhis-observation.html) и [DHIS Observation X-ray Profile](StructureDefinition-dhis-observation-xray.html) кодируют тест лекарственной чувствительности кодом SNOMED CT 85748009 BACTEC susceptibility test for slow growing Mycobacteria, а рентгенографию грудной клетки - кодом 399208008 Plain X-ray of chest вместо кодов LOINC, шкала которых не подходит к результату.
 
 Страницы руководства оформлены в стиле [документации DHP для разработчиков](https://docs.dhp.uz/ru/): шрифты Onest и JetBrains Mono, зелёные цвета и логотип DHP, обновлённые шапка, меню, таблицы, примечания и блоки кода с кнопкой копирования. Меню темы в шапке переключает светлую, тёмную тему или тему как в системе.
 
-[Форма 003](form-003-mapping.html), [форма 066](form-066-mapping.html) и [форма 066-1](form-066-1-mapping.html) кодируют время от начала заболевания до госпитализации, а формы 066 и 066-1 - также наличие направления новыми понятиями [Local Observation Code System](CodeSystem-local-observation-code.html); форма 003 кодирует состояние в динамике новым понятием [Form 003 Observation Code](CodeSystem-form-003-observation-code-cs.html). Прежние коды LOINC длительности и документа не подходили к записываемому значению.
+[Форма 003](form-003-mapping.html), [форма 066](form-066-mapping.html) и [форма 066-1](form-066-1-mapping.html) записывают время от начала заболевания до госпитализации кодом LOINC 77977-7 Illness duration с диапазоном в часах по категории DMED вместо кодированной категории. Формы 066 и 066-1 кодируют наличие направления кодом SNOMED CT 3457005 Patient referral, а форма 003 - состояние в динамике кодом 278844005 General clinical state вместо кодов документов LOINC.
 
 [Форма 027](StructureDefinition-form-027-medical-record-extract-composition.html) использует `emdoc-0010-0106` для выписок и из амбулаторной, и из стационарной карты, а различает их `Encounter.class` (`AMB` или `IMP`). Фиксированный `type` больше не содержит прежнее название "Extract from inpatient medical record".
 
 [Форма 096](form-096-mapping.html) кодирует выделения из влагалища и мочевой пузырь наблюдаемыми сущностями SNOMED CT 364234007 и 364186005 вместо находок.
 
-[Форма 097](form-097-mapping.html) кодирует ежедневные записи о коже, глазах и дыхании кодами LOINC физикального осмотра, частоту мочеиспускания и пупочную ранку - наблюдаемыми сущностями SNOMED CT, а распространённость цианоза и время отделения пуповины - новыми локальными кодами вместо находок SNOMED CT.
+[Форма 097](form-097-mapping.html) кодирует ежедневные записи о коже, глазах и дыхании кодами LOINC физикального осмотра, а частоту мочеиспускания и пупочную ранку - наблюдаемыми сущностями SNOMED CT вместо находок SNOMED CT. Отделение пуповины в ежедневной панели теперь кодируется SNOMED CT 772131003 со значением да/нет вместо даты, а [Form097 Cyanosis Distribution ValueSet](ValueSet-cyanosis-distribution-vs.html) использует квалификаторы SNOMED CT Generalized и Perioral вместо кодов DMED.
 
-[Форма 111](form-111-mapping.html) кодирует заключения специалистов кодами [Form 111 Specialist Conclusion Codes](CodeSystem-form111-specialist-conclusion-code-cs.html) вместо кодов LOINC для документов консультаций.
+[Форма 111](form-111-mapping.html) кодирует заключения терапевта, стоматолога и дерматовенеролога кодами SNOMED CT 11429006 Consultation, 34043003 Dental consultation and report и 73007006 Dermatology consultation and report вместо кодов LOINC для документов консультаций.
 
 #### Документация
 

@@ -18,5 +18,6 @@ Description: "ValueSet for the daily newborn observation panel and its component
 * include $loinc#63895-7 "Breastfeeding status"
 * include $sct#62315008 "Diarrhea"
 * include $sct#364198000 "Frequency of urination"
+* include $sct#772131003 "Umbilical cord stump separated"
 * include $sct#364594006 "Umbilical stump observable"
 * include $newborn-daily-monitoring-cs#chr-0125-0003 "Feeding tolerance"

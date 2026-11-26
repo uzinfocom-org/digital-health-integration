@@ -129,7 +129,7 @@
 
 | Записываемая информация | Справочник | Пример кода | Где хранится |
 | :--- | :--- | :--- | :--- |
-| Код теста | [DHISObservationCodeVS](ValueSet-dhis-observation-code-vs.html) | `dhis-observation-code-cs#Tub002-0007` (Phenotypic DST on MGIT) | `Observation.code` |
+| Код теста | SNOMED CT | `SNOMED CT#85748009` (BACTEC susceptibility test for slow growing Mycobacteria) | `Observation.code` |
 | Общий результат | [DHISObservationCodeableConceptVS](ValueSet-dhis-observation-codeable-concept-vs.html) | `SNOMED CT#113858008` (M. tuberculosis complex) | `valueCodeableConcept` |
 | Тестируемый препарат (ТЛЧ) | [DHISObservationComponentCodeVS](ValueSet-dhis-observation-component-code-vs.html) | `dhis-observation-component-code-cs#Tub004-0008` (Isoniazid 0.1 mg/mL) | `component.code` |
 | Результат чувствительности | [DHISObservationCodeableConceptVS](ValueSet-dhis-observation-codeable-concept-vs.html) | `v3-ObservationInterpretation#R` (Resistant) | `component.valueCodeableConcept` |
@@ -149,7 +149,7 @@
 
 | Записываемая информация | Справочник | Пример кода | Где хранится |
 | :--- | :--- | :--- | :--- |
-| Код теста | [DHISObservationCodeVS](ValueSet-dhis-observation-code-vs.html) | `dhis-observation-code-cs#Tub002-0010` (Chest X-ray) | `Observation.code` |
+| Код теста | SNOMED CT | `SNOMED CT#399208008` (Plain X-ray of chest) | `Observation.code` |
 | Находка присутствует | - | `false` | `Observation.value` (boolean) |
 
 #### Тест на ВИЧ

@@ -127,7 +127,7 @@ Example: [example-tb-microscopy](Observation-example-tb-microscopy.html)
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Test code | [DHISObservationCodeVS](ValueSet-dhis-observation-code-vs.html) | `observation-dhis-code-cs#Tub002-0007` (Phenotypic DST on MGIT) | `Observation.code` |
+| Test code | SNOMED CT | `SNOMED CT#85748009` (BACTEC susceptibility test for slow growing Mycobacteria) | `Observation.code` |
 | Overall result | [DHISObservationCodeableConceptVS](ValueSet-dhis-observation-codeable-concept-vs.html) | `SNOMED CT#113858008` (M. tuberculosis complex) | `valueCodeableConcept` |
 | Drug tested (DST) | [DHISObservationComponentCodeVS](ValueSet-dhis-observation-component-code-vs.html) | `observation-component-code-cs#Tub004-0008` (Isoniazid 0.1 mg/mL) | `component.code` |
 | Susceptibility outcome | [ObservationCodeableConceptVS](ValueSet-dhis-observation-codeable-concept-vs.html) | `v3-ObservationInterpretation#R` (Resistant) | `component.valueCodeableConcept` |
@@ -147,7 +147,7 @@ Example: [example-observation-xray](Observation-example-observation-xray.html)
 
 | Information to record | Value set | Example code | Stored in |
 | :--- | :--- | :--- | :--- |
-| Test code | [DHISObservationCodeVS](ValueSet-dhis-observation-code-vs.html) | `dhis-observation-code-cs#Tub002-0010` (Chest X-ray) | `Observation.code` |
+| Test code | SNOMED CT | `SNOMED CT#399208008` (Plain X-ray of chest) | `Observation.code` |
 | Finding present | - | `false` | `Observation.value` (boolean) |
 
 #### HIV test

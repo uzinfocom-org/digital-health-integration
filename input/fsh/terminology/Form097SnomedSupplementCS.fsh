@@ -184,3 +184,21 @@ Description: "Uzbek and Russian displays for the SNOMED CT codes used in Form 09
   * ^designation[=].value = "Состояние пупочной ранки"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Kindik yarasi holati"
+
+* #60132005 "Generalized"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Общий"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Umumiy"
+
+* #263953004 "Perioral"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Вокруг рта"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Og'iz atrofi"
+
+* #772131003 "Umbilical cord stump separated"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Пуповинный остаток отпал"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Kindik qoldig'i tushgan"

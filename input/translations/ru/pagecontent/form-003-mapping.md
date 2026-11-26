@@ -113,7 +113,7 @@
 | Bemor yuborilgan shifoxona nomi | Кем направлен больной | Encounter.admission.origin → Organization | - | Yunusobod tuman oilaviy poliklinikasi |
 | Kasalxonaga shoshilinch tarzda keltirilgan | Пациент доставлен экстренно | Encounter.priority | [ActPriority](https://terminology.hl7.org/ValueSet-v3-ActPriority.html) `EM` "emergency" / `R` "routine" | Emergency |
 | Tez tibbiy yordam transportida keldi | Доставлен транспортом скорой помощи | Observation.valueBoolean | LOINC `LP97912-7` "Ambulance transport" | true |
-| Kasallik/jarohatdan keyin yotqizishgacha o'tgan vaqt | Время от начала заболевания/травмы до госпитализации | Observation.valueCodeableConcept | `code` [Local](CodeSystem-local-observation-code.html) `onset-to-admission-delay`<br>`value` [Disease/Injury Delay](CodeSystem-disease-injury-delay-cs.html) | `delay0001_00003` "After 24 hours" |
+| Kasallik/jarohatdan keyin yotqizishgacha o'tgan vaqt | Время от начала заболевания/травмы до госпитализации | Observation.valueRange | `code` LOINC `77977-7` "Illness duration"<br>`value` Range in hours from the [Disease/Injury Delay](CodeSystem-disease-injury-delay-cs.html) category: `delay0001_00001` = high 6 h, `delay0001_00002` = low 7 h and high 24 h, `delay0001_00003` = low 24 h | low 24 h (`delay0001_00003` "After 24 hours") |
 | Bemorni kelish usuli | Метод прибытия пациента | Encounter.admission.admitSource | [Admit Source Local](https://dhp.uz/fhir/core/en/CodeSystem-admit-source-local-cs.html) | `mserv-0006-00004` "Emergency medical service" |
 | Bemor yo'llanmasidagi tashxis | Диагноз в направлении | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code; Condition.category | `code` ICD-10<br>`category` [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `referral` "Referring institution diagnosis" | `J18.9` "Pneumonia, unspecified" |
 | Qabulxonada qo'yilgan tashxis | Диагноз в приёмном отделении | Condition.code; Condition.category | `code` ICD-10<br>`category` [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `admission` "Admission diagnosis" | `J18.9` "Pneumonia, unspecified" |
@@ -260,7 +260,7 @@
 
 | UZ | RU | Путь FHIR | Код | Пример |
 |----|----|------------|------|---------|
-| Dinamikadagi ahvoli | Состояние в динамике | Observation.valueString | [Form 003 Observation Code](CodeSystem-form-003-observation-code-cs.html) `clinical-course` "Clinical course" | Afebrile from day 5, resolving |
+| Dinamikadagi ahvoli | Состояние в динамике | Observation.valueString | SNOMED CT `278844005` "General clinical state" | Afebrile from day 5, resolving |
 | Shifokor tavsiyalari | Рекомендации врача | [CarePlan](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-careplan.html).description | - | Oral antibiotics, GP review in 3 days |
 | Kundalik / Shifokor yozuvlari | Дневник / Записи врача | section[diary].text | LOINC `11506-3` "Progress note" | narrative |
 

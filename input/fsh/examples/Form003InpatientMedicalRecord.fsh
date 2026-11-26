@@ -546,11 +546,11 @@ Instance: obs-003-onset-to-admission-delay
 InstanceOf: UZCoreObservation
 Usage: #inline
 * status = #final
-* code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/local-observation-code#onset-to-admission-delay "Time from onset of disease or injury to admission"
+* code = $loinc#77977-7 "Illness duration"
 * subject = Reference(urn:uuid:00300002-0000-0000-0000-000000000000)
 * encounter = Reference(urn:uuid:00300003-0000-0000-0000-000000000000)
 * effectiveDateTime = "2026-02-08T10:00:00+05:00"
-* valueCodeableConcept = https://terminology.dhp.uz/fhir/integrations/CodeSystem/disease-injury-delay-cs#delay0001_00003 "After 24 hours"   // row 36a
+* valueRange.low = 24 'h' "h"   // row 36a, DMED delay0001_00003 "After 24 hours"
 
 Instance: condition-003-referral-dx
 InstanceOf: UZCoreCondition
@@ -888,7 +888,7 @@ Instance: obs-003-clinical-course
 InstanceOf: UZCoreObservation
 Usage: #inline
 * status = #final
-* code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/form-003-observation-code-cs#clinical-course "Clinical course"   // row 99
+* code = $sct#278844005 "General clinical state"   // row 99
 * subject = Reference(urn:uuid:00300002-0000-0000-0000-000000000000)
 * encounter = Reference(urn:uuid:00300003-0000-0000-0000-000000000000)
 * effectiveDateTime = "2026-02-11T08:00:00+05:00"

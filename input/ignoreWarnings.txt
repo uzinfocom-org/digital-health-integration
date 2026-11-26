@@ -111,6 +111,7 @@ The Target Code System http://hl7.org/fhir/sid/icd-10 is not fully defined and p
 %The SNOMED CT code 271809000 ('Peripheral edema') is a disorder%
 %The SNOMED CT code 300332007 ('Liver mass') is a finding%
 %The SNOMED CT code 422400008 ('Vomiting') is a disorder%
+%The SNOMED CT code 772131003 ('Umbilical cord stump separated') is a finding%
 %The SNOMED CT code 1303306008 ('Eligible for benefit') is a finding%
 
 # No SNOMED CT observable or LOINC code exists for mammographic breast density, so the finding stays in component.code.

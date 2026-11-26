@@ -129,7 +129,7 @@ Misol: [example-tb-microscopy](Observation-example-tb-microscopy.html)
 
 | Qayd etiladigan ma'lumot | Ma'lumotnoma | Misol kodi | Qayerda saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Test kodi | [DHISObservationCodeVS](ValueSet-dhis-observation-code-vs.html) | ` dhis-observation-code-cs#Tub002-0007` (Phenotypic DST on MGIT) | `Observation.code` |
+| Test kodi | SNOMED CT | `SNOMED CT#85748009` (BACTEC susceptibility test for slow growing Mycobacteria) | `Observation.code` |
 | Umumiy natija | [DHISObservationCodeableConceptVS](ValueSet-dhis-observation-codeable-concept-vs.html) | `SNOMED CT#113858008` (M. tuberculosis complex) | `valueCodeableConcept` |
 | Tekshirilgan dori (DST) | [DHISObservationComponentCodeVS](ValueSet-dhis-observation-component-code-vs.html) | `dhis-observation-component-code-cs#Tub004-0008` (Isoniazid 0.1 mg/mL) | `component.code` |
 | Sezgirlik natijasi | [DHISObservationCodeableConceptVS](ValueSet-dhis-observation-codeable-concept-vs.html) | `v3-ObservationInterpretation#R` (Resistant) | `component.valueCodeableConcept` |
@@ -149,7 +149,7 @@ Misol: [example-observation-xray](Observation-example-observation-xray.html)
 
 | Qayd etiladigan ma'lumot | Ma'lumotnoma | Misol kodi | Qayerda saqlanadi |
 | :--- | :--- | :--- | :--- |
-| Test kodi | [DHISObservationCodeVS](ValueSet-dhis-observation-code-vs.html) | `dhis-observation-code-cs#Tub002-0010` (Chest X-ray) | `Observation.code` |
+| Test kodi | SNOMED CT | `SNOMED CT#399208008` (Plain X-ray of chest) | `Observation.code` |
 | Topilma mavjud | - | `false` | `Observation.value` (boolean) |
 
 #### OIV testi

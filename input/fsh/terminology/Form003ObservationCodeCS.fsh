@@ -41,9 +41,3 @@ Description: "Local Observation.code identifiers for observations that have no s
   * ^designation[=].value = "Контекст смерти"
   * ^designation[+].language = #en
   * ^designation[=].value = "Death context"
-
-* #clinical-course "Dinamikadagi ahvoli"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Состояние в динамике"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Clinical course"

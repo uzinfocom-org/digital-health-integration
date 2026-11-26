@@ -7,5 +7,6 @@ Description: "ValueSet for cyanosis distribution, Form097 newborn development re
 * ^extension[=].valueCanonical = Canonical(Form097SnomedSupplementCS)
 * ^experimental = true
 
-* include codes from system cyanosis-distribution-cs
+* include $sct#60132005 "Generalized"
+* include $sct#263953004 "Perioral"
 * include $sct#25003006 "Acrocyanosis"

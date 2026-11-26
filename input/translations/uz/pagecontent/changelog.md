@@ -4,11 +4,9 @@
 
 [Form 097 LOINC Displays](CodeSystem-form-097-loinc-supplement-cs.html): 097-shaklda ishlatiladigan LOINC kodlarining o'zbekcha va ruscha nomlari.
 
-[Form 111 Specialist Conclusion Codes](CodeSystem-form111-specialist-conclusion-code-cs.html): 111-shakldagi terapevt, stomatolog va dermatovenerolog xulosalari kodlari.
-
 #### O'zgartirildi
 
-[003-shakl](form-003-mapping.html), [066-shakl](form-066-mapping.html) va [066-1-shakl](form-066-1-mapping.html) kasallik boshlanishidan yotqizilgunga qadar o'tgan vaqtni, 066 va 066-1-shakllar esa yo'llanma mavjudligini ham yangi [Local Observation Code System](CodeSystem-local-observation-code.html) tushunchalari bilan kodlaydi, 003-shakl esa dinamikadagi ahvolni yangi [Form 003 Observation Code](CodeSystem-form-003-observation-code-cs.html) tushunchasi bilan kodlaydi. Avvalgi LOINC davomiylik va hujjat kodlari yoziladigan qiymatga mos kelmasdi.
+[003-shakl](form-003-mapping.html), [066-shakl](form-066-mapping.html) va [066-1-shakl](form-066-1-mapping.html) kasallik boshlanishidan yotqizilgunga qadar o'tgan vaqtni kodlangan kategoriya o'rniga LOINC 77977-7 Illness duration kodi va DMED kategoriyasidan olingan soatlardagi oraliq bilan yozadi. 066 va 066-1-shakllar yo'llanma mavjudligini SNOMED CT 3457005 Patient referral kodi bilan, 003-shakl esa dinamikadagi ahvolni 278844005 General clinical state kodi bilan LOINC hujjat kodlari o'rniga kodlaydi.
 
 [011-shakl](form-011-mapping.html) misoli tomir kirish joyini SNOMED CT `Unknown` kodisiz, faqat matn sifatida yuboradi.
 
@@ -16,9 +14,9 @@
 
 [096-shakl](form-096-mapping.html) qindan ajralmalar va siydik pufagini topilmalar o'rniga SNOMED CT kuzatiladigan tushunchalari 364234007 va 364186005 bilan kodlaydi.
 
-[097-shakl](form-097-mapping.html) teri, ko'zlar va nafas haqidagi kundalik yozuvlarni LOINC fizikal ko'rik kodlari bilan, siydik chiqarish chastotasi va kindik yarasini SNOMED CT kuzatiladigan tushunchalari bilan, sianoz tarqalishi va kindik ajralish vaqtini esa SNOMED CT topilmalari o'rniga yangi mahalliy kodlar bilan kodlaydi.
+[097-shakl](form-097-mapping.html) teri, ko'zlar va nafas haqidagi kundalik yozuvlarni LOINC fizikal ko'rik kodlari bilan, siydik chiqarish chastotasi va kindik yarasini esa SNOMED CT topilmalari o'rniga SNOMED CT kuzatiladigan tushunchalari bilan kodlaydi. Kundalik paneldagi kindik ajralishi endi sana o'rniga ha/yo'q qiymati bilan SNOMED CT 772131003 kodi orqali yoziladi, [Form097 Cyanosis Distribution ValueSet](ValueSet-cyanosis-distribution-vs.html) esa DMED kodlari o'rniga SNOMED CT Generalized va Perioral kvalifikatorlaridan foydalanadi.
 
-[111-shakl](form-111-mapping.html) mutaxassislar xulosalarini LOINC konsultatsiya hujjati kodlari o'rniga [Form 111 Specialist Conclusion Codes](CodeSystem-form111-specialist-conclusion-code-cs.html) kodlari bilan kodlaydi.
+[111-shakl](form-111-mapping.html) terapevt, stomatolog va dermatovenerolog xulosalarini LOINC konsultatsiya hujjati kodlari o'rniga SNOMED CT 11429006 Consultation, 34043003 Dental consultation and report va 73007006 Dermatology consultation and report kodlari bilan kodlaydi.
 
 [Blood Service Operations](CodeSystem-blood-component-processing-cs.html) (avvalgi nomi Blood component processing operations): qon mahsulotining sifat nazorati kodi qo'shildi.
 
@@ -28,7 +26,7 @@
 
 [DHIS Condition Code](CodeSystem-dhis-condition-code-cs.html) kavernali o'pka silini fibroz-kavernoz o'pka silining ota-kodi qiladi, [DHIS Observation Component Code](CodeSystem-dhis-observation-component-code-cs.html) esa konsentratsiyasiz rifampitsin, levofloksatsin va amikatsin testlarini belgilangan konsentratsiyali testlarining ota-kodi qiladi - bu ularning LOINC va SNOMED CT ConceptMap'laridan allaqachon kelib chiqadi.
 
-[DHIS Observation Profile](StructureDefinition-dhis-observation.html) va [DHIS Observation X-ray Profile](StructureDefinition-dhis-observation-xray.html) misollari MGIT dori sezgirligi testi va ko'krak qafasi rentgenografiyasini natijaga shkalasi mos kelmaydigan LOINC kodlari o'rniga o'zlarining DHIS kuzatuv kodlari bilan kodlaydi.
+[DHIS Observation Profile](StructureDefinition-dhis-observation.html) va [DHIS Observation X-ray Profile](StructureDefinition-dhis-observation-xray.html) misollari dori sezgirligi testini SNOMED CT 85748009 BACTEC susceptibility test for slow growing Mycobacteria kodi bilan, ko'krak qafasi rentgenografiyasini esa 399208008 Plain X-ray of chest kodi bilan, natijaga shkalasi mos kelmaydigan LOINC kodlari o'rniga kodlaydi.
 
 [DMED Form 111 education type mapping](ConceptMap-dmed-form-111-education-type-core-cm.html) DMED "Boshqa" qiymatini milliy "Boshqa" dan torroq deb moslaydi, chunki DMED boshlang'ich ta'lim va malaka oshirishni alohida kodlaydi.
 

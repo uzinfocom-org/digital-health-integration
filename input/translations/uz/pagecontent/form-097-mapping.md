@@ -169,7 +169,7 @@ Har bir kun [Newborn Daily Observation Component](ValueSet-newborn-daily-observa
 | Ovqatlanishni o'zlashtirish | Переносимость кормления | Observation.component.valueString | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): `chr-0125-0003` "Feeding tolerance" | Tolerating feeds well |
 | Ich ketishi | Диарея | Observation.component.valueCodeableConcept | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): SNOMED CT `62315008` "Diarrhea"<br>`value` HL7 v2-0532 `Y` "Yes" / `N` "No" | No (`N`) |
 | Siydik chiqarish chastotasi | Частота мочеиспускания | Observation.component.valueInteger | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): SNOMED CT `364198000` "Frequency of urination" | 6 |
-| Kindik ajralish vaqti | Время отделения пуповины | Observation.component.valueDateTime | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): `umbilical-cord-separation-date` "Umbilical cord separation date" | 2026-06-01 |
+| Kindik ajralish vaqti | Время отделения пуповины | Observation.component.valueBoolean | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): SNOMED CT `772131003` "Umbilical cord stump separated"; the separation date is the `effectiveDateTime` of the first panel with `true` | false before separation, true from 2026-06-06 |
 | Kindik yarasi holati | Состояние пупочной ранки | Observation.component.valueString | `code` [Daily Observation Component](ValueSet-newborn-daily-observation-component-vs.html): SNOMED CT `364594006` "Umbilical stump observable" | Clean and dry, no discharge |
 
 ---

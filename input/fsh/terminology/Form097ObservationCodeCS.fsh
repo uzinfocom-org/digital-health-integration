@@ -40,9 +40,3 @@ Description: "Local codes for Form 097 observations that have no suitable LOINC 
   * ^designation[=].value = "Рекомендации при выписке"
   * ^designation[+].language = #en
   * ^designation[=].value = "Recommendations at discharge"
-
-* #cyanosis-distribution "Sianoz tarqalishi"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Распространённость цианоза"
-  * ^designation[+].language = #en
-  * ^designation[=].value = "Cyanosis distribution"

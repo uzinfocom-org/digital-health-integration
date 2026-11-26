@@ -375,3 +375,21 @@ Description: "Uzbek and Russian displays for the SNOMED CT codes used by Form 11
   * ^designation[=].value = "Преэклампсия"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Preeklampsiya"
+
+* #11429006 "Consultation"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Заключение терапевта"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Terapevt xulosasi"
+
+* #34043003 "Dental consultation and report"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Заключение стоматолога"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Stomatolog xulosasi"
+
+* #73007006 "Dermatology consultation and report"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Заключение дерматовенеролога"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Dermatovenerolog xulosasi"

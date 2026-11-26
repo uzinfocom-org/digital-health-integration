@@ -1251,13 +1251,13 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code = $form-097-observation-code-cs#cyanosis-distribution "Cyanosis distribution"
+* code = $sct#3415004 "Cyanosis"
 * subject = Reference(urn:uuid:09700002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09700005-1111-2222-3333-444444444444)
 * performer = Reference(urn:uuid:097000d3-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-06-01T09:00:00+05:00"
 * hasMember[0] = Reference(urn:uuid:09700052-1111-2222-3333-444444444444)
-* valueCodeableConcept = $cyanosis-distribution-cs#chr-0094-0001 "Generalized"
+* valueCodeableConcept = $sct#60132005 "Generalized"
 
 Instance: observation-exam-skin-elasticity-097
 InstanceOf: UZCoreObservation
@@ -1995,8 +1995,8 @@ Usage: #inline
 * component[7].valueCodeableConcept = $v2-0532#N "No"
 * component[8].code = $sct#364198000 "Frequency of urination"
 * component[8].valueInteger = 6
-* component[9].code = $newborn-daily-observation-component-cs#umbilical-cord-separation-date "Umbilical cord separation date"
-* component[9].valueDateTime = "2026-06-01T00:00:00+05:00"
+* component[9].code = $sct#772131003 "Umbilical cord stump separated"
+* component[9].valueBoolean = false
 * component[10].code = $sct#364594006 "Umbilical stump observable"
 * component[10].valueString = "Clean and dry, no discharge"
 
@@ -2028,8 +2028,8 @@ Usage: #inline
 * component[7].valueCodeableConcept = $v2-0532#N "No"
 * component[8].code = $sct#364198000 "Frequency of urination"
 * component[8].valueInteger = 6
-* component[9].code = $newborn-daily-observation-component-cs#umbilical-cord-separation-date "Umbilical cord separation date"
-* component[9].valueDateTime = "2026-06-02T00:00:00+05:00"
+* component[9].code = $sct#772131003 "Umbilical cord stump separated"
+* component[9].valueBoolean = false
 * component[10].code = $sct#364594006 "Umbilical stump observable"
 * component[10].valueString = "Clean and dry, no discharge"
 
@@ -2061,8 +2061,8 @@ Usage: #inline
 * component[7].valueCodeableConcept = $v2-0532#N "No"
 * component[8].code = $sct#364198000 "Frequency of urination"
 * component[8].valueInteger = 6
-* component[9].code = $newborn-daily-observation-component-cs#umbilical-cord-separation-date "Umbilical cord separation date"
-* component[9].valueDateTime = "2026-06-03T00:00:00+05:00"
+* component[9].code = $sct#772131003 "Umbilical cord stump separated"
+* component[9].valueBoolean = false
 * component[10].code = $sct#364594006 "Umbilical stump observable"
 * component[10].valueString = "Clean and dry, no discharge"
 
@@ -2094,8 +2094,8 @@ Usage: #inline
 * component[7].valueCodeableConcept = $v2-0532#N "No"
 * component[8].code = $sct#364198000 "Frequency of urination"
 * component[8].valueInteger = 6
-* component[9].code = $newborn-daily-observation-component-cs#umbilical-cord-separation-date "Umbilical cord separation date"
-* component[9].valueDateTime = "2026-06-04T00:00:00+05:00"
+* component[9].code = $sct#772131003 "Umbilical cord stump separated"
+* component[9].valueBoolean = false
 * component[10].code = $sct#364594006 "Umbilical stump observable"
 * component[10].valueString = "Clean and dry, no discharge"
 
@@ -2127,8 +2127,8 @@ Usage: #inline
 * component[7].valueCodeableConcept = $v2-0532#N "No"
 * component[8].code = $sct#364198000 "Frequency of urination"
 * component[8].valueInteger = 6
-* component[9].code = $newborn-daily-observation-component-cs#umbilical-cord-separation-date "Umbilical cord separation date"
-* component[9].valueDateTime = "2026-06-05T00:00:00+05:00"
+* component[9].code = $sct#772131003 "Umbilical cord stump separated"
+* component[9].valueBoolean = false
 * component[10].code = $sct#364594006 "Umbilical stump observable"
 * component[10].valueString = "Clean and dry, no discharge"
 
@@ -2160,8 +2160,8 @@ Usage: #inline
 * component[7].valueCodeableConcept = $v2-0532#N "No"
 * component[8].code = $sct#364198000 "Frequency of urination"
 * component[8].valueInteger = 6
-* component[9].code = $newborn-daily-observation-component-cs#umbilical-cord-separation-date "Umbilical cord separation date"
-* component[9].valueDateTime = "2026-06-06T00:00:00+05:00"
+* component[9].code = $sct#772131003 "Umbilical cord stump separated"
+* component[9].valueBoolean = true
 * component[10].code = $sct#364594006 "Umbilical stump observable"
 * component[10].valueString = "Clean and dry, no discharge"
 
@@ -2193,8 +2193,8 @@ Usage: #inline
 * component[7].valueCodeableConcept = $v2-0532#N "No"
 * component[8].code = $sct#364198000 "Frequency of urination"
 * component[8].valueInteger = 6
-* component[9].code = $newborn-daily-observation-component-cs#umbilical-cord-separation-date "Umbilical cord separation date"
-* component[9].valueDateTime = "2026-06-07T00:00:00+05:00"
+* component[9].code = $sct#772131003 "Umbilical cord stump separated"
+* component[9].valueBoolean = true
 * component[10].code = $sct#364594006 "Umbilical stump observable"
 * component[10].valueString = "Clean and dry, no discharge"
 

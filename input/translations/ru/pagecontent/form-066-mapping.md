@@ -74,9 +74,9 @@
 |----|----|------------|------|---------|
 | Tezkor yordam ko'rsatildi | Экстренная помощь оказана | Observation.valueBoolean | LOINC `57276-8` "Emergent care utilized during assessment period [CMS Assessment]" | true |
 | Yotqizish turi | Тип госпитализации | [Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html).admission.admitSource | Local code | Without referral / Self-referred |
-| Kasallik yoki jarohatlangandan so'ng necha soatda | Через сколько часов после заболевания/травмы | Observation.valueCodeableConcept | `code` [Local](CodeSystem-local-observation-code.html) `onset-to-admission-delay`<br>`value` [Disease/Injury Delay](CodeSystem-disease-injury-delay-cs.html) | `delay0001_00001` "Within first 6 hours" |
+| Kasallik yoki jarohatlangandan so'ng necha soatda | Через сколько часов после заболевания/травмы | Observation.valueRange | `code` LOINC `77977-7` "Illness duration"<br>`value` Range in hours from the [Disease/Injury Delay](CodeSystem-disease-injury-delay-cs.html) category: `delay0001_00001` = high 6 h, `delay0001_00002` = low 7 h and high 24 h, `delay0001_00003` = low 24 h | high 6 h (`delay0001_00001` "Within first 6 hours") |
 | Tez tibbiy yordam mashinasida keldi | Доставлен скорой помощью | Observation.valueBoolean | LOINC `LP97912-7` "Ambulance transport" | true |
-| Yo'llanma mavjud | Наличие направления | Observation.valueBoolean | [Local](CodeSystem-local-observation-code.html) `referral-available` | true |
+| Yo'llanma mavjud | Наличие направления | Observation.valueBoolean | SNOMED CT `3457005` "Patient referral" | true |
 | Yo'llagan muassasa | Направившее учреждение | Organization.name | Organization | Yunusobod tuman tibbiyot birlashmasi |
 | Yo'llagan muassasa tashxisi | Диагноз направившего учреждения | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code | ICD-10 | J18.9 |
 | Ayni shu kasallik bilan shifoxonaga oxirgi 30 kun ichida qayta yotqizilgan | Повторная госпитализация в течение 30 дней | Observation.valueBoolean | LOINC `LP73229-4` "Readmission to the same hospital within 30D of surgical discharge" | false |
