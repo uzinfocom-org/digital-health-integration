@@ -3,6 +3,8 @@ live form. This is meant for reviewing and trying a form before implementing it:
 the wording, the answer options, the skip logic, and - where a questionnaire calculates
 something - the calculated results.
 
+These are FHIR questionnaires. The Ministry of Health's paper forms (Order No. 399) are catalogued in the [forms overview](forms-overview.html), and those modelled as FHIR documents can be browsed in the [form explorer](form-explorer.html).
+
 <style>
 #form-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
 #form-picker { font: inherit; font-size: 0.9rem; padding: 6px 10px; border: 1px solid #c3d0d4; border-radius: 6px; background: #fff; color: #2a3d45; max-width: 100%; }

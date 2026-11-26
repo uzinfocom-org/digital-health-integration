@@ -22,6 +22,8 @@ For a complete reference instance, see the [Form 011 hemodialysis example](Bundl
 
 ### Field Mapping
 
+The same mapping can also be browsed as an overview, a data table, a mind map and a form preview in the [form explorer](form-explorer.html?form=011).
+
 ### UZ-011 Hemodialysis Session Form - FHIR Mapping
 
 | UZ-011 | RU-011 | FHIR Path | Code | Example Value |

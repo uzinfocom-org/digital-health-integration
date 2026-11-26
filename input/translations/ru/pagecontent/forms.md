@@ -3,6 +3,8 @@
 внедрения: проверить формулировки, варианты ответов, логику переходов между вопросами и -
 если опросник что-то вычисляет - результаты вычислений.
 
+Это опросники FHIR. Бумажные формы Минздрава (приказ № 399) собраны в [обзоре форм](forms-overview.html), а смоделированные как документы FHIR можно просмотреть в [обозревателе форм](form-explorer.html).
+
 <style>
 #form-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
 #form-picker { font: inherit; font-size: 0.9rem; padding: 6px 10px; border: 1px solid #c3d0d4; border-radius: 6px; background: #fff; color: #2a3d45; max-width: 100%; }

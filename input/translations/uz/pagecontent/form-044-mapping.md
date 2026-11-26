@@ -27,6 +27,8 @@ To'liq namunaviy nusxa uchun [044-shakl ma'lumotnoma misoli](Bundle-example-form
 
 ### Maydonlarni moslashtirish
 
+Xuddi shu moslashtirishni [shakllar ko'rgichida](form-explorer.html?form=044) umumiy ko'rinish, ma'lumotlar jadvali, xarita va shakl ko'rinishida ham ko'rish mumkin.
+
 ### 044-shakl Xorijga ketayotganlar uchun tibbiy ma'lumotnoma - FHIR bilan moslashtirish
 
 ---

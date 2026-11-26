@@ -25,6 +25,8 @@ For a complete reference instance, see the [Form 044 travel clearance example](B
 
 ### Field Mapping
 
+The same mapping can also be browsed as an overview, a data table, a mind map and a form preview in the [form explorer](form-explorer.html?form=044).
+
 ### Form 044 Medical Certificate for Travelers Abroad - FHIR Mapping
 
 ---

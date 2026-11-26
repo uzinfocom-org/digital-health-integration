@@ -29,6 +29,8 @@ For a complete reference instance, see the [Form 097 newborn development example
 
 ### Field Mapping
 
+The same mapping can also be browsed as an overview, a data table, a mind map and a form preview in the [form explorer](form-explorer.html?form=097).
+
 ### Form 097 Newborn Development Medical Record - FHIR Mapping
 
 ---

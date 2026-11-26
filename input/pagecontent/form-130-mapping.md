@@ -25,6 +25,8 @@ For a complete reference instance, see the **Form 130 laboratory test results ex
 
 ### Field Mapping
 
+The same mapping can also be browsed as an overview, a data table, a mind map and a form preview in the [form explorer](form-explorer.html?form=130).
+
 ### UZ-130 Laboratory Test Results - FHIR Mapping
 
 ---

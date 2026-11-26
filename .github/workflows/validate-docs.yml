@@ -55,6 +55,9 @@ jobs:
           java -jar input-cache/publisher.jar -ig . -tx https://tx.fhir.org
           echo "✅ IG built successfully"
 
+      - name: Check form explorer data is current
+        run: python3 .github/scripts/build_form_explorer.py --check
+
       - name: Check QA report
         run: |
           # Configuration

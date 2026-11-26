@@ -31,6 +31,8 @@ To'liq namunaviy nusxa uchun [097-shakl misoli](Bundle-example-form-097-newborn-
 
 ### Maydonlarni moslashtirish
 
+Xuddi shu moslashtirishni [shakllar ko'rgichida](form-explorer.html?form=097) umumiy ko'rinish, ma'lumotlar jadvali, xarita va shakl ko'rinishida ham ko'rish mumkin.
+
 ### 097-shakl - Yangi tug'ilgan chaqaloq rivojlanishining tibbiy kartasi - FHIR bilan moslashtirish
 
 ---

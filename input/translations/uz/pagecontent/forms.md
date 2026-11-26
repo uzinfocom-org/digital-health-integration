@@ -4,6 +4,8 @@ ko'rish uchun mo'ljallangan: savollarning matnini, javob variantlarini, savollar
 o'tish mantig'ini va - agar so'rovnoma biror narsani hisoblasa - hisoblash natijalarini
 tekshiring.
 
+Bular FHIR so'rovnomalari. Sog'liqni saqlash vazirligining qog'oz shakllari (399-son buyruq) [shakllar sharhida](forms-overview.html) jamlangan, FHIR hujjatlari sifatida modellashtirilganlarini esa [shakllar ko'rgichida](form-explorer.html) ko'rish mumkin.
+
 <style>
 #form-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
 #form-picker { font: inherit; font-size: 0.9rem; padding: 6px 10px; border: 1px solid #c3d0d4; border-radius: 6px; background: #fff; color: #2a3d45; max-width: 100%; }

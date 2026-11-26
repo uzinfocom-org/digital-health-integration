@@ -31,6 +31,8 @@ To'liq namunaviy hujjat uchun **130-shakl laboratoriya tekshiruvi natijalari nam
 
 #### Maydonlar xaritasi
 
+Xuddi shu moslashtirishni [shakllar ko'rgichida](form-explorer.html?form=130) umumiy ko'rinish, ma'lumotlar jadvali, xarita va shakl ko'rinishida ham ko'rish mumkin.
+
 ### UZ-130 Laboratoriya tekshiruvi natijalari – FHIR xaritasi
 
 ---

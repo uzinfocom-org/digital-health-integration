@@ -18,7 +18,7 @@
 | 4 | Пример-документ (`Bundle`) | `input/fsh/examples/Form0XX....fsh` |
 | 5 | Страница соответствия полей | `input/pagecontent/form-0XX-mapping.md` |
 | 6 | Вступление к профилю | `input/pagecontent/StructureDefinition-<id профиля>-intro.md` |
-| 7 | Регистрация страницы и пункт меню | блок `pages:` в `sushi-config.yaml`, пункт в `input/includes/menu.xml` |
+| 7 | Регистрация страницы и обозреватель форм | блок `pages:` в `sushi-config.yaml`, `FORMS` в `build_form_explorer.py`, таблица Modelled forms в `forms-overview.md` |
 | 8 | Переводы (ru + uz): страницы и `^short` профиля | `input/translations/{ru,uz}/pagecontent/`, `input/translations/{ru,uz}/StructureDefinition-<id профиля>.po` |
 | 9 | Запись в чейнджлоге | `input/pagecontent/changelog.md` (+ переводы) |
 
@@ -243,9 +243,9 @@ Document Information - первая таблица: поля заголовка 
 
 `input/pagecontent/StructureDefinition-<id профиля>-intro.md` - одна-две строки со ссылками на страницу соответствия и на пример. Шаблон - в существующих `*-intro.md`.
 
-### 8. Регистрация страницы и меню
+### 8. Регистрация страницы и обозреватель форм
 
-Новая страница регистрируется в двух местах. В `sushi-config.yaml`, в блоке `pages:` (список страниц ведётся вручную - без записи здесь страница не попадёт в IG):
+Новая страница регистрируется в `sushi-config.yaml`, в блоке `pages:` (список страниц ведётся вручную - без записи здесь страница не попадёт в IG):
 
 ```yaml
 pages:
@@ -253,13 +253,9 @@ pages:
     title: Form 0XX Mapping
 ```
 
-И в `input/includes/menu.xml`, в выпадающем списке `Documents`:
+Отдельного пункта меню у страницы сопоставления нет: в меню Documents есть только Forms overview и Form explorer, а до страницы сопоставления доходят из них. Добавьте форму в таблицу Modelled forms в начале `forms-overview.md` и выделите её номер в таблице Find a form by number ссылкой на обозреватель, как у других смоделированных форм, - в английской странице и в обоих переводах.
 
-```xml
-      <li>
-        <a href="form-0XX-mapping.html">Form 0XX Mapping</a>
-      </li>
-```
+Чтобы форма появилась в [обозревателе форм](https://dhp.uz/fhir/integrations/en/form-explorer.html), добавьте её профиль и пример в словарь `FORMS` в `.github/scripts/build_form_explorer.py`, а под заголовком Field Mapping страницы соответствия - строку со ссылкой `form-explorer.html?form=0XX`, как на других страницах. После сборки запустите `python3 .github/scripts/build_form_explorer.py` и закоммитьте `input/images/form-explorer/`. Страницы соответствия содержат только узбекские и русские названия полей, поэтому английские добавьте в `.github/scripts/form-explorer-labels-en.json` (ключ - русское название): скрипт перечисляет поля без английского названия. Скрипт нужно перезапускать после каждой правки страниц соответствия или профилей формы: CI проверяет, что данные обозревателя актуальны.
 
 ### 9. Переводы
 
@@ -293,7 +289,8 @@ pages:
 - [ ] Страница `form-0XX-mapping.md`: каждый код со своим ValueSet и display, у каждого поля на `Observation` тип `value[x]`, совместимый с кодом, обязательные коды без поля формы - в таблице Required fields, без общих советов
 - [ ] [Индекс полей](field-index.md): новые поля формы добавлены, у повторных форма дописана в Also in
 - [ ] Файл вступления `StructureDefinition-<id>-intro.md`
-- [ ] Запись в `pages:` и пункт меню в `sushi-config.yaml`
+- [ ] Запись в `pages:` в `sushi-config.yaml`, форма в таблице Modelled forms и выделенный номер в `forms-overview.md` (+ переводы)
+- [ ] Форма в `FORMS` скрипта `build_form_explorer.py`, английские названия полей в `form-explorer-labels-en.json`, данные обозревателя пересобраны
 - [ ] Переводы страниц и профиля в `input/translations/{ru,uz}/`
 - [ ] Запись в `changelog.md` (`### In development`) + переводы
 - [ ] Сборка `scripts/_genonce.sh` без новых ошибок QA

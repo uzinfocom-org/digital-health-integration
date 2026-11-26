@@ -1,5 +1,9 @@
 ### In development
 
+#### Added
+
+[Form explorer](form-explorer.html) shows each modelled form as an overview, a data table, a mind map and a form preview, with field labels in English, Uzbek and Russian. It is generated from the mapping pages, the Composition profiles and the terminology they bind to, and CI checks that it stays current.
+
 #### Changed
 
 [Blood Service Operations](CodeSystem-blood-component-processing-cs.html), formerly Blood component processing operations, adds a code for blood product quality control.
@@ -7,6 +11,8 @@
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html) adds active, completed and revoked blood product quality control examples and an expeditor PractitionerRole example.
 
 [Form 027](StructureDefinition-form-027-medical-record-extract-composition.html) uses `emdoc-0010-0106` for both outpatient and inpatient extracts, and `Encounter.class` (`AMB` or `IMP`) tells them apart. The fixed `type` no longer carries the old display "Extract from inpatient medical record".
+
+The Documents menu lists the [forms overview](forms-overview.html) and the form explorer instead of each form's mapping page. The forms overview gains a table of modelled forms that links to the explorer and the mapping pages, and the [Questionnaires](forms.html) page points to both.
 
 The guide's pages use the look of the [DHP developer documentation](https://docs.dhp.uz/): Onest and JetBrains Mono fonts, DHP green colours and logo, and a restyled header, menu, tables, notes and code blocks, which now have a copy button. A theme menu in the header switches between light, dark and the system setting.
 

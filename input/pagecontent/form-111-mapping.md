@@ -27,6 +27,8 @@ For a complete reference instance, see the [Form 111 pregnant woman individual c
 
 ### Field Mapping
 
+The same mapping can also be browsed as an overview, a data table, a mind map and a form preview in the [form explorer](form-explorer.html?form=111).
+
 ### Form 111 Individual Card of a Pregnant and Postpartum Woman - FHIR Mapping
 
 ---

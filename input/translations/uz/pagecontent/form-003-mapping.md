@@ -29,6 +29,8 @@ To'liq namunaviy nusxa uchun [003-shakl statsionar bemorning tibbiy kartasi miso
 
 ### Maydonlarni moslashtirish
 
+Xuddi shu moslashtirishni [shakllar ko'rgichida](form-explorer.html?form=003) umumiy ko'rinish, ma'lumotlar jadvali, xarita va shakl ko'rinishida ham ko'rish mumkin.
+
 ### UZ-003 Statsionar bemorning tibbiy kartasi - FHIR bilan moslashtirish
 
 ---

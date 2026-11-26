@@ -27,6 +27,8 @@ For a complete reference instance, see the [Form 003 inpatient medical record ex
 
 ### Field Mapping
 
+The same mapping can also be browsed as an overview, a data table, a mind map and a form preview in the [form explorer](form-explorer.html?form=003).
+
 ### UZ-003 Inpatient Medical Record Card - FHIR Mapping
 
 ---
