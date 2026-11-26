@@ -1149,5 +1149,5 @@ Description: "Maps DMED `education_type` to UZ Core `education-cs`, the coding t
 * group[=].element[=].display = "Бошқа"
 * group[=].element[=].target[+].code = #"regis0005.00010"
 * group[=].element[=].target[=].display = "Boshqa"
-* group[=].element[=].target[=].relationship = #equivalent
-* group[=].element[=].target[=].comment = "Use national coding for UZCoreSocioeconomicObservation."
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[=].comment = "Use national coding for UZCoreSocioeconomicObservation. DMED Other excludes elementary and professional development, which DMED codes separately and national Other covers."

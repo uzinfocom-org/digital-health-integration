@@ -39,7 +39,7 @@ Description: "Example observation recording a sputum smear microscopy result for
 Usage: #example
 * status = #final
 * category = $observation-category#laboratory
-* code = $loinc#89876-7
+* code = $sct#85748009 "BACTEC susceptibility test for slow growing Mycobacteria"
 * subject = Reference(example-patient-john)
 * effectiveDateTime = "2025-09-12T10:00:00Z"
 * issued = "2025-09-12T11:00:00Z"

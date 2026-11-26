@@ -95,5 +95,27 @@ The Target Code System http://hl7.org/fhir/sid/icd-10 is not fully defined and p
 # template makes diagram ids unique per diagram (https://github.com/HL7/ig-template-base2/pull/55).
 %cervical-breast-cancer-screening.html: The html source has duplicate element ids: ent0001%
 
+# IG Publisher 3.0.4 warns about any SNOMED CT finding in Observation.code, ignoring the value; R5 allows a finding
+# there with a yes/no value or none. Reported in https://github.com/hapifhir/org.hl7.fhir.core/issues/2870 - remove once resolved.
+# 1303306008 is fixed by UZ Core's socioeconomic Observation profile, so it cannot be changed here.
+%The SNOMED CT code 1023001 ('Apnea') is a finding%
+%The SNOMED CT code 3415004 ('Cyanosis') is a finding%
+%The SNOMED CT code 19943007 ('Cirrhosis of liver') is a disorder%
+%The SNOMED CT code 20848007 ('Pediculosis') is a disorder%
+%The SNOMED CT code 56018004 ('Wheezing') is a finding%
+%The SNOMED CT code 62315008 ('Diarrhea') is a finding%
+%The SNOMED CT code 109285009 ('Melanocytic nevus of skin of breast') is a disorder%
+%The SNOMED CT code 129797000 ('Mammographic skin thickening of breast') is a finding%
+%The SNOMED CT code 224459001 ('On sick leave from work') is a finding%
+%The SNOMED CT code 271807003 ('Eruption') is a disorder%
+%The SNOMED CT code 271809000 ('Peripheral edema') is a disorder%
+%The SNOMED CT code 300332007 ('Liver mass') is a finding%
+%The SNOMED CT code 422400008 ('Vomiting') is a disorder%
+%The SNOMED CT code 772131003 ('Umbilical cord stump separated') is a finding%
+%The SNOMED CT code 1303306008 ('Eligible for benefit') is a finding%
+
+# No SNOMED CT observable or LOINC code exists for mammographic breast density, so the finding stays in component.code.
+%The SNOMED CT code 129793001 ('Mammographic breast density') is a finding%
+
 # CI workflows and editors use the helper scripts in scripts/ and .github/scripts/; the IG Publisher never runs them. Root-folder scripts stay an error and aren't covered by this
 % in sub-folders: %

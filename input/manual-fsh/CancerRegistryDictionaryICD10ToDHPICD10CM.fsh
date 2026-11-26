@@ -6060,7 +6060,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Xiqildoq-halqumning"
 * group[=].element[=].target[+].code = #C13.9
 * group[=].element[=].target[=].display = "Hypopharynx, unspecified"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1009
 * group[=].element[=].display = "Valdeyer halqum halqasining"
@@ -8352,7 +8352,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Aralash kichik- va katta hujayrali (diffuz)"
 * group[=].element[=].target[+].code = #C83.3
 * group[=].element[=].target[=].display = "Diffuse large B-cell lymphoma"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1391
 * group[=].element[=].display = "Katta hujayrali (diffuz)"
@@ -8364,7 +8364,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Immunoblastli (diffuz)"
 * group[=].element[=].target[+].code = #C83.3
 * group[=].element[=].target[=].display = "Diffuse large B-cell lymphoma"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1393
 * group[=].element[=].display = "Limfoblastli (diffuz)"
@@ -8376,7 +8376,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Differensiatsiyalanmagan (diffuz)"
 * group[=].element[=].target[+].code = #C83.8
 * group[=].element[=].target[=].display = "Other non-follicular lymphoma"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1395
 * group[=].element[=].display = "Berkit o‘smasi"
@@ -8418,13 +8418,13 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "T-zona limfomasi"
 * group[=].element[=].target[+].code = #C84.4
 * group[=].element[=].target[=].display = "Peripheral T-cell lymphoma, not elsewhere classified"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1402
 * group[=].element[=].display = "Limfoepitelioid limfoma"
 * group[=].element[=].target[+].code = #C84.4
 * group[=].element[=].target[=].display = "Peripheral T-cell lymphoma, not elsewhere classified"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1403
 * group[=].element[=].display = "Periferik T-hujayrali limfoma"
@@ -8448,7 +8448,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Limfosarkoma"
 * group[=].element[=].target[+].code = #C85.9
 * group[=].element[=].target[=].display = "Non-Hodgkin lymphoma, unspecified"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1407
 * group[=].element[=].display = "B-hujayrali limfoma aniqlanmagan"
@@ -8484,7 +8484,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Alfa-og‘ir zanjirlar kasalligi"
 * group[=].element[=].target[+].code = #C88.2
 * group[=].element[=].target[=].display = "Other heavy chain disease"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1413
 * group[=].element[=].display = "Gamma-og‘ir zanjirlar kasalligi"
@@ -8556,7 +8556,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Nimo‘tkir limfotsitar leykoz"
 * group[=].element[=].target[+].code = #C91.9
 * group[=].element[=].target[=].display = "Lymphoid leukaemia, unspecified"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1425
 * group[=].element[=].display = "Prolimfotsitar leykoz"
@@ -8664,7 +8664,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Nimo‘tkir monotsitar leykoz"
 * group[=].element[=].target[+].code = #C93.9
 * group[=].element[=].target[=].display = "Monocytic leukaemia, unspecified"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1443
 * group[=].element[=].display = "Boshqa monotsitar leykoz"
@@ -8694,7 +8694,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Surunkali eritremiya"
 * group[=].element[=].target[+].code = #C94.7
 * group[=].element[=].target[=].display = "Other specified leukaemias"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1448
 * group[=].element[=].display = "O‘tkir megakarioblast leykoz"
@@ -8718,7 +8718,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "O‘tkir miyelofibroz"
 * group[=].element[=].target[+].code = #C94.4
 * group[=].element[=].target[=].display = "Acute panmyelosis with myelofibrosis"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1452
 * group[=].element[=].display = "Boshqa aniqlangan leykoz"
@@ -8748,7 +8748,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Hujayra tipi aniqlanmagan nimo‘tkir leykoz"
 * group[=].element[=].target[+].code = #C95.9
 * group[=].element[=].target[=].display = "Leukaemia, unspecified"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1457
 * group[=].element[=].display = "Hujayra tipi aniqlanmagan boshqa leykoz"
@@ -8778,7 +8778,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Xavfli gistiotsitoz"
 * group[=].element[=].target[+].code = #C96.7
 * group[=].element[=].target[=].display = "Other specified malignant neoplasms of lymphoid, haematopoietic and related tissue"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1462
 * group[=].element[=].display = "To‘liq hujayrali xavfli o‘sma"
@@ -10704,7 +10704,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Blastlar ortig‘i bilan transmormatsiyali refrakter anemiya"
 * group[=].element[=].target[+].code = #D46.2
 * group[=].element[=].target[=].display = "Refractory anaemia with excess of blasts [RAEB]"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1783
 * group[=].element[=].display = "Aniqlanmagan refrakter anemiya"
@@ -11640,7 +11640,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Essensial trombotsitoz"
 * group[=].element[=].target[+].code = #D47.3
 * group[=].element[=].target[=].display = "Essential (haemorrhagic) thrombocythaemia"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1939
 * group[=].element[=].display = "Qon va qon yaratuvchi organlarning aniqlangan boshqa kasalliklari"
@@ -11664,7 +11664,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Boshqa ruknlarda tasniflanmagan, Langergans hujayralaridan rivoj topgan gistiotsitoz"
 * group[=].element[=].target[+].code = #D76.3
 * group[=].element[=].target[=].display = "Other histiocytosis syndromes"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #1943
 * group[=].element[=].display = "Gemofagotsitar limfogistiotsitoz"
@@ -15178,1929 +15178,1449 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 
 * group[=].element[+].code = #2528
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2529
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2530
 * group[=].element[=].display = "Shizotipik buzilish"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F21
+* group[=].element[=].target[=].display = "Schizotypal disorder"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2531
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2532
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2533
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2534
 * group[=].element[=].display = "Aniqlanmagan surunkali alahlashli buzilish"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F22.9
+* group[=].element[=].target[=].display = "Persistent delusional disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2535
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2536
 * group[=].element[=].display = "Shizofreniya simptomlarisiz o‘tkir polimorf psixotik buzilishlar"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F23.0
+* group[=].element[=].target[=].display = "Acute polymorphic psychotic disorder without symptoms of schizophrenia"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2537
 * group[=].element[=].display = "Shizofreniya simptomlari bilan o‘tkir polimorf psixotik buzilishlar"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F23.1
+* group[=].element[=].target[=].display = "Acute polymorphic psychotic disorder with symptoms of schizophrenia"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2538
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2539
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2540
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2541
 * group[=].element[=].display = "O‘tkir va o‘tkinchi aniqlanmagan psixotik buzilish"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F23.9
+* group[=].element[=].target[=].display = "Acute and transient psychotic disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2542
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2543
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2544
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2545
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2546
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2547
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2548
 * group[=].element[=].display = "Aniqlanmagan shizoaffektiv buzilishlar"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F25.9
+* group[=].element[=].target[=].display = "Schizoaffective disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2549
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2550
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2551
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2552
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2553
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2554
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2555
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2556
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2557
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2558
 * group[=].element[=].display = "Aniqlanmagan bipolyar affektiv buzilish"
-* group[=].element[=].target[+].code = #F19.4
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F31.9
+* group[=].element[=].target[=].display = "Bipolar affective disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2559
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.4
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2560
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.4
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2561
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.4
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2562
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.4
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2563
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.4
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2564
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.4
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2565
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.4
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2566
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.4
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2567
 * group[=].element[=].display = "Aniqlanmagan rekurrent depressiv buzilish"
-* group[=].element[=].target[+].code = #F19.4
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F33.9
+* group[=].element[=].target[=].display = "Recurrent depressive disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2568
 * group[=].element[=].display = "Kayfiyatning turg‘un buzilishlari [affektiv buzilishlar]"
-* group[=].element[=].target[+].code = #F19.5
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F34
+* group[=].element[=].target[=].display = "Persistent mood [affective] disorders"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2569
 * group[=].element[=].display = "Kayfiyatning boshqa turg‘un buzilishlari [affektiv]"
-* group[=].element[=].target[+].code = #F19.5
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F34.8
+* group[=].element[=].target[=].display = "Other persistent mood [affective] disorders"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2570
 * group[=].element[=].display = "Aniqlanmagan kayfiyatning turg‘un buzilishi [affektiv]"
-* group[=].element[=].target[+].code = #F19.5
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F34.9
+* group[=].element[=].target[=].display = "Persistent mood [affective] disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2571
 * group[=].element[=].display = "Kayfiyatning boshqa buzilishlari [affektiv]"
-* group[=].element[=].target[+].code = #F19.5
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F38
+* group[=].element[=].target[=].display = "Other mood [affective] disorders"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2572
 * group[=].element[=].display = "Kayfiyatning yakka-yakka boshqa buzilishlari [affektiv]"
-* group[=].element[=].target[+].code = #F19.5
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F38.0
+* group[=].element[=].target[=].display = "Other single mood [affective] disorders"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2573
 * group[=].element[=].display = "Kayfiyatning boshqa rekkurent buzilishlari [affektiv]"
-* group[=].element[=].target[+].code = #F19.5
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F38.1
+* group[=].element[=].target[=].display = "Other recurrent mood [affective] disorders"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2574
 * group[=].element[=].display = "Kayfiyatning boshqa aniqlangan buzilishlari [affektiv]"
-* group[=].element[=].target[+].code = #F19.5
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F38.8
+* group[=].element[=].target[=].display = "Other specified mood [affective] disorders"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2575
 * group[=].element[=].display = "Aniqlanmagan kayfiyat buzilishi [affektiv] Affektiv psixoz QRA"
-* group[=].element[=].target[+].code = #F19.5
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F39
+* group[=].element[=].target[=].display = "Unspecified mood [affective] disorder"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2576
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.5
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2577
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.5
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2578
 * group[=].element[=].display = "Aniqlanmagan fobik tahlikali buzilish"
-* group[=].element[=].target[+].code = #F19.6
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F40.9
+* group[=].element[=].target[=].display = "Phobic anxiety disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2579
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.6
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2580
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.6
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2581
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.6
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2582
 * group[=].element[=].display = "Aniqlanmagan tahlikali buzilish"
-* group[=].element[=].target[+].code = #F19.6
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F41.9
+* group[=].element[=].target[=].display = "Anxiety disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2583
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.6
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2584
 * group[=].element[=].display = "Aniqlanmagan obsessiv-kompulsiv buzilish"
-* group[=].element[=].target[+].code = #F19.6
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F42.9
+* group[=].element[=].target[=].display = "Obsessive-compulsive disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2585
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.6
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2586
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.6
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2587
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.6
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2588
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.7
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2589
 * group[=].element[=].display = "Aniqlanmagan dissotsiativ [konversion] buzilish"
-* group[=].element[=].target[+].code = #F19.7
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F44.9
+* group[=].element[=].target[=].display = "Dissociative [conversion] disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2590
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.7
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2591
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.7
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2592
 * group[=].element[=].display = "Ipoxondrik buzilish"
-* group[=].element[=].target[+].code = #F19.7
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F45.2
+* group[=].element[=].target[=].display = "Hypochondriacal disorder"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2593
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.7
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2594
 * group[=].element[=].display = "Aniqlanmagan somatoform buzilish"
-* group[=].element[=].target[+].code = #F19.7
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F45.9
+* group[=].element[=].target[=].display = "Somatoform disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2595
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.7
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2596
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.7
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2597
 * group[=].element[=].display = "Aniqlanmagan nevrotik buzilish"
-* group[=].element[=].target[+].code = #F19.7
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F48.9
+* group[=].element[=].target[=].display = "Neurotic disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2598
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.8
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2599
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.8
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2600
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.8
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2601
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.8
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2602
 * group[=].element[=].display = "Aniqlanmagan ovqat qabul qilinishining buzilishi"
-* group[=].element[=].target[+].code = #F19.8
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F50.9
+* group[=].element[=].target[=].display = "Eating disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2603
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.8
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2604
 * group[=].element[=].display = "Organik etiologiyali bo‘lmagan uyqu rejimi buzilishi va bedorlik"
-* group[=].element[=].target[+].code = #F19.8
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F51.2
+* group[=].element[=].target[=].display = "Nonorganic disorder of the sleep-wake schedule"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2605
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.8
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2606
 * group[=].element[=].display = "Aniqlanmagan organik etiologiyali bo‘lmagan uyqu buzilishi"
-* group[=].element[=].target[+].code = #F19.8
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F51.9
+* group[=].element[=].target[=].display = "Nonorganic sleep disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2607
 * group[=].element[=].display = "Boshqa ruknlarda tasniflanmagan, tug‘ishdan keyingi davr bilan bog‘liq psixik buzilishlar va feʼl- atvor buzilishlari"
-* group[=].element[=].target[+].code = #F19.8
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F53
+* group[=].element[=].target[=].display = "Mental and behavioural disorders associated with the puerperium, not elsewhere classified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2608
 * group[=].element[=].display = "Boshqa ruknlarda tasniflanmagan, tug‘ishdan keyingi davr bilan bog‘liq yengil psixik buzilishlar va feʼl-atvor buzilishlari"
-* group[=].element[=].target[+].code = #F19.9
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F53.0
+* group[=].element[=].target[=].display = "Mild mental and behavioural disorders associated with the puerperium, not elsewhere classified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2609
 * group[=].element[=].display = "Boshqa ruknlarda tasniflanmagan, tug‘ishdan keyingi davr bilan bog‘liq og‘ir psixik buzilishlar va feʼl-atvor buzilishlari"
-* group[=].element[=].target[+].code = #F19.9
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F53.1
+* group[=].element[=].target[=].display = "Severe mental and behavioural disorders associated with the puerperium, not elsewhere classified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2610
 * group[=].element[=].display = "Boshqa ruknlarda tasniflanmagan, tug‘ishdan keyingi davr bilan bog‘liq boshqa psixik buzilishlar va feʼl-atvor buzilishlari"
-* group[=].element[=].target[+].code = #F19.9
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F53.8
+* group[=].element[=].target[=].display = "Other mental and behavioural disorders associated with the puerperium, not elsewhere classified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2611
 * group[=].element[=].display = "Aniqlanmagan tug‘ishdan keyingi psixik buzilishlar"
-* group[=].element[=].target[+].code = #F19.9
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F53.9
+* group[=].element[=].target[=].display = "Puerperal mental disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2612
 * group[=].element[=].display = "Shaxsiyatning spetsifik buzilishlari"
-* group[=].element[=].target[+].code = #F19.9
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F60
+* group[=].element[=].target[=].display = "Specific personality disorders"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2613
 * group[=].element[=].display = "BALOG‘AT YOSHIDA SHAXSIYAT VA FEʼL-ATVOR BUZILISHLARI"
-* group[=].element[=].target[+].code = #F19.9
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F60-F69
+* group[=].element[=].target[=].display = "Disorders of adult personality and behaviour"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2614
 * group[=].element[=].display = "Shaxsiyatning paranoid buzilishi"
-* group[=].element[=].target[+].code = #F19.9
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F60.0
+* group[=].element[=].target[=].display = "Paranoid personality disorder"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2615
 * group[=].element[=].display = "Shaxsiyatning shizoid buzilishi"
-* group[=].element[=].target[+].code = #F19.9
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F60.1
+* group[=].element[=].target[=].display = "Schizoid personality disorder"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2616
 * group[=].element[=].display = "Shaxsiyatning dissotsial buzilishi"
-* group[=].element[=].target[+].code = #F19.9
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F60.2
+* group[=].element[=].target[=].display = "Dissocial personality disorder"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2617
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.9
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2618
 * group[=].element[=].display = "Shaxsiyatning isterik buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F60.4
+* group[=].element[=].target[=].display = "Histrionic personality disorder"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2619
 * group[=].element[=].display = "Shaxsiyatning anankastik buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F60.5
+* group[=].element[=].target[=].display = "Anankastic personality disorder"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2620
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2621
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2622
 * group[=].element[=].display = "Shaxsiyatning boshqa spetsifik buzilishlari"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F60.8
+* group[=].element[=].target[=].display = "Other specific personality disorders"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2623
 * group[=].element[=].display = "Aniqlanmagan shaxs buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F60.9
+* group[=].element[=].target[=].display = "Personality disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2624
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2625
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2626
 * group[=].element[=].display = "Aniqlanmagan shaxsiyatning turg‘un o‘zgarishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F62.9
+* group[=].element[=].target[=].display = "Enduring personality change, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2627
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2628
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2629
 * group[=].element[=].display = "Aniqlanmagan odat va maylliklarning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F63.9
+* group[=].element[=].target[=].display = "Habit and impulse disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2630
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2631
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2632
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2633
 * group[=].element[=].display = "Aniqlanmagan jinsiy identifikatsiyaning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F64.9
+* group[=].element[=].target[=].display = "Gender identity disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2634
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2635
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2636
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2637
 * group[=].element[=].display = "Aniqlanmagan seksual afzallik buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F65.9
+* group[=].element[=].target[=].display = "Disorder of sexual preference, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2638
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2639
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2640
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2641
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2642
 * group[=].element[=].display = "Aniqlanmagan psixoseksual rivojlanishning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F66.9
+* group[=].element[=].target[=].display = "Psychosexual development disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2643
 * group[=].element[=].display = "Balog‘at yoshda shaxsiyat va feʼl-atvorning boshqa buzilishlari"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F68
+* group[=].element[=].target[=].display = "Other disorders of adult personality and behaviour"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2644
 * group[=].element[=].display = "Balog‘at yoshda shaxsiyat va feʼl-atvorning boshqa aniqlangan buzilishlari"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F68.8
+* group[=].element[=].target[=].display = "Other specified disorders of adult personality and behaviour"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2645
 * group[=].element[=].display = "Aniqlanmagan balog‘at yoshda shaxsiyat va feʼl- atvor buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F69
+* group[=].element[=].target[=].display = "Unspecified disorder of adult personality and behaviour"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2646
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2647
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2648
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2649
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2650
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2651
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2652
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2653
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2654
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2655
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2656
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2657
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2658
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2659
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2660
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2661
 * group[=].element[=].display = "Nutq artikulyatsiyasining spetsifik buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F80.0
+* group[=].element[=].target[=].display = "Specific speech articulation disorder"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2662
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2663
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2664
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2665
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2666
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2667
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2668
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2669
 * group[=].element[=].display = "Nutq va til rivojining aniqlanmagan buzilishlari"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F80.9
+* group[=].element[=].target[=].display = "Developmental disorder of speech and language, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2670
 * group[=].element[=].display = "O‘quv ko‘nikmalari rivojining spetsifik buzilishlari"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F81
+* group[=].element[=].target[=].display = "Specific developmental disorders of scholastic skills"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2671
 * group[=].element[=].display = "O‘qishning spetsifik buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F81.0
+* group[=].element[=].target[=].display = "Specific reading disorder"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2672
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2673
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2674
 * group[=].element[=].display = "Spellinglashning spetsifik buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F81.1
+* group[=].element[=].target[=].display = "Specific spelling disorder"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2675
 * group[=].element[=].display = "Arifmetik ko‘nikmalarning spetsifik buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F81.2
+* group[=].element[=].target[=].display = "Specific disorder of arithmetical skills"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2676
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2677
 * group[=].element[=].display = "O‘quv ko‘nikmalarining aralash buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F81.3
+* group[=].element[=].target[=].display = "Mixed disorder of scholastic skills"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2678
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2679
 * group[=].element[=].display = "Aniqlanmagan o‘quv ko‘nikmalari rivojining buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F81.9
+* group[=].element[=].target[=].display = "Developmental disorder of scholastic skills, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2680
 * group[=].element[=].display = "Motor funksiyalari rivojining spetsifik buzilishlari"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F82
+* group[=].element[=].target[=].display = "Specific developmental disorder of motor function"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2681
 * group[=].element[=].display = "Psixologik rivojlanishning aralash spetsifik buzilishlari"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F83
+* group[=].element[=].target[=].display = "Mixed specific developmental disorders"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2682
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2683
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2684
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2685
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2686
 * group[=].element[=].display = "Aniqlanmagan rivojlanishning umumiy buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F84.9
+* group[=].element[=].target[=].display = "Pervasive developmental disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2687
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2688
 * group[=].element[=].display = "Aniqlanmagan psixologik rivojlanishning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F89
+* group[=].element[=].target[=].display = "Unspecified disorder of psychological development"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2689
 * group[=].element[=].display = "Giperkinetik buzilishlar"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F90
+* group[=].element[=].target[=].display = "Hyperkinetic disorders"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2690
 * group[=].element[=].display = "ODATDA BOLALIK VA O‘SMIRLIK YOSHLARIDA BOSHLANADIGAN EMOTSIONAL VA FEʼL-ATVOR BUZILISHLARI"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F90-F98
+* group[=].element[=].target[=].display = "Behavioural and emotional disorders with onset usually occurring in childhood and adolescence"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2691
 * group[=].element[=].display = "Feʼl-atvorning giperkinetik buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F90.1
+* group[=].element[=].target[=].display = "Hyperkinetic conduct disorder"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2692
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2693
 * group[=].element[=].display = "Aniqlanmagan giperkinetik buzilish"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F90.9
+* group[=].element[=].target[=].display = "Hyperkinetic disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2694
 * group[=].element[=].display = "Feʼl-atvor buzilishlari"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F91
+* group[=].element[=].target[=].display = "Conduct disorders"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2695
 * group[=].element[=].display = "Oila doirasi bilan chegaralangan feʼl-atvor buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F91.0
+* group[=].element[=].target[=].display = "Conduct disorder confined to the family context"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2696
 * group[=].element[=].display = "Feʼl-atvorning ijtimoiylashmagan buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F91.1
+* group[=].element[=].target[=].display = "Unsocialized conduct disorder"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2697
 * group[=].element[=].display = "Ijtimoiylashgan feʼl-atvor buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F91.2
+* group[=].element[=].target[=].display = "Socialized conduct disorder"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2698
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2699
 * group[=].element[=].display = "Feʼl-atvorning boshqa buzilishlari"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F91.8
+* group[=].element[=].target[=].display = "Other conduct disorders"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2700
 * group[=].element[=].display = "Aniqlanmagan feʼl-atvor buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F91.9
+* group[=].element[=].target[=].display = "Conduct disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2701
 * group[=].element[=].display = "Feʼl-atvor va emotsiyalarning aralash buzilishlari"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F92
+* group[=].element[=].target[=].display = "Mixed disorders of conduct and emotions"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2702
 * group[=].element[=].display = "Feʼl-atvorning depressiv buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F92.0
+* group[=].element[=].target[=].display = "Depressive conduct disorder"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2703
 * group[=].element[=].display = "Feʼl-atvor va emotsiyalarning boshqa aralash buzilishlari"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F92.8
+* group[=].element[=].target[=].display = "Other mixed disorders of conduct and emotions"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2704
 * group[=].element[=].display = "Aniqlanmagan feʼl-atvor va emotsiyalar aralash buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F92.9
+* group[=].element[=].target[=].display = "Mixed disorder of conduct and emotions, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2705
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2706
 * group[=].element[=].display = "Bolalik yoshidagi fobik xavotirli buzilish"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F93.1
+* group[=].element[=].target[=].display = "Phobic anxiety disorder of childhood"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2707
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2708
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2709
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2710
 * group[=].element[=].display = "Bolalik yoshidagi aniqlanmagan emotsional buzilish"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F93.9
+* group[=].element[=].target[=].display = "Childhood emotional disorder, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2711
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2712
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2713
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2714
 * group[=].element[=].display = "Bolalik yoshidagi ijtimoiy funksiya ado etuvchanlik aniqlanmagan buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F94.9
+* group[=].element[=].target[=].display = "Childhood disorder of social functioning, unspecified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2715
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2716
 * group[=].element[=].display = "Odatda bolalik va o‘smirlik yoshlarida boshlanadigan boshqa emotsional buzilishlar va feʼl-atvor buzilishlari"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F98
+* group[=].element[=].target[=].display = "Other behavioural and emotional disorders with onset usually occurring in childhood and adolescence"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2717
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.1
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2718
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2719
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2720
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2721
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2722
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2723
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2724
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2725
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2726
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2727
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2728
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2729
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2730
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2731
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2732
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2733
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2734
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2735
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2736
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2737
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2738
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2739
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2740
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2741
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2742
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2743
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2744
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2745
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2746
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2747
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2748
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2749
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2750
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2751
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2752
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2753
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2754
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2755
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2756
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2757
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2758
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2759
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2760
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2761
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2762
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2763
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2764
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2765
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2766
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2767
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2768
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2769
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2770
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2771
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2772
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2773
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2774
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2775
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2776
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2777
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2778
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2779
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2780
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2781
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2782
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2783
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2784
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2785
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2786
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2787
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2788
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2789
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2790
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2791
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2792
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2793
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2794
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2795
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2796
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2797
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2798
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2799
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2800
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2801
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2802
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2803
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2804
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2805
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2806
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2807
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2808
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2809
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2810
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2811
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2812
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2813
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2814
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2815
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2816
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2817
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.2
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2818
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2819
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2820
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2821
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2822
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2823
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2824
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2825
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2826
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2827
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2828
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2829
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2830
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2831
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2832
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2833
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2834
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2835
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2836
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2837
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2838
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2839
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2840
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2841
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2842
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2843
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2844
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2845
 * group[=].element[=].display = "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].noMap = true
 
 * group[=].element[+].code = #2846
 * group[=].element[=].display = "Boshlanishi odatda bolalik va o‘smirlik yoshlariga to‘g‘ri keladigan, boshqa aniqlangan emotsional buzilishlar va feʼl-atvor buzilishlari"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F98.8
+* group[=].element[=].target[=].display = "Other specified behavioural and emotional disorders with onset usually occurring in childhood and adolescence"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2847
 * group[=].element[=].display = "Boshlanishi odatda bolalik va o‘smirlik yoshlariga to‘g‘ri keladigan, aniqlanmagan emotsional buzilish va feʼl-atvor buzilishi"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F98.9
+* group[=].element[=].target[=].display = "Unspecified behavioural and emotional disorders with onset usually occurring in childhood and adolescence"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2848
 * group[=].element[=].display = "Qo‘shimcha aniqliklarsiz psixik buzilishlar"
-* group[=].element[=].target[+].code = #F19.3
-* group[=].element[=].target[=].display = "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state"
-* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
+* group[=].element[=].target[+].code = #F99
+* group[=].element[=].target[=].display = "Mental disorder, not otherwise specified"
+* group[=].element[=].target[=].relationship = #equivalent
 
 * group[=].element[+].code = #2849
 * group[=].element[=].display = "Aniqlanmagan ruhiy buzilishlar"
@@ -19200,7 +18720,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Polisistem degeneratsiya"
 * group[=].element[=].target[+].code = #G23.8
 * group[=].element[=].target[=].display = "Other specified degenerative diseases of basal ganglia"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #3199
 * group[=].element[=].display = "Vegetativ [avtonom] nerv sistemaning boshqa buzilishlari"
@@ -24714,37 +24234,37 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Ichki tromblangan bavosir"
 * group[=].element[=].target[+].code = #K64.8
 * group[=].element[=].target[=].display = "Other specified haemorrhoids"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #4118
 * group[=].element[=].display = "Ichki bavosir boshqa asoratlari bilan"
 * group[=].element[=].target[+].code = #K64.8
 * group[=].element[=].target[=].display = "Other specified haemorrhoids"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #4119
 * group[=].element[=].display = "Ichki bavosir asoratlarisiz."
 * group[=].element[=].target[+].code = #K64.8
 * group[=].element[=].target[=].display = "Other specified haemorrhoids"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #4120
 * group[=].element[=].display = "Tashqi tromblangan bavosir"
 * group[=].element[=].target[+].code = #K64.5
 * group[=].element[=].target[=].display = "Perianal venous thrombosis"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #4121
 * group[=].element[=].display = "Tashqi bavosir boshqa asoratlari bilan"
 * group[=].element[=].target[+].code = #K64.8
 * group[=].element[=].target[=].display = "Other specified haemorrhoids"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #4122
 * group[=].element[=].display = "Tashqi bavosir asoratsiz"
 * group[=].element[=].target[+].code = #K64.8
 * group[=].element[=].target[=].display = "Other specified haemorrhoids"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #4123
 * group[=].element[=].display = "Bavosirning qoldiq teri belgilari"
@@ -24756,13 +24276,13 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Aniqlanmagan tromblangan bavosir"
 * group[=].element[=].target[+].code = #K64.5
 * group[=].element[=].target[=].display = "Perianal venous thrombosis"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #4125
 * group[=].element[=].display = "Aniqlanmagan bavosir boshqa asoratlari bilan"
 * group[=].element[=].target[+].code = #K64.8
 * group[=].element[=].target[=].display = "Other specified haemorrhoids"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #4126
 * group[=].element[=].display = "Aniqlanmagan bavosir asoratsiz"
@@ -28338,7 +27858,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Yarali (surunkali) ileokolit"
 * group[=].element[=].target[+].code = #K51.0
 * group[=].element[=].target[=].display = "Ulcerative (chronic) pancolitis"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #4722
 * group[=].element[=].display = "Yarali (surunkali) proktit"
@@ -34734,7 +34254,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Tugunchali fassiit"
 * group[=].element[=].target[+].code = #M72.4
 * group[=].element[=].target[=].display = "Pseudosarcomatous fibromatosis"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #5788
 * group[=].element[=].display = "Psevdosarkomatoz fibromatoz"
@@ -34746,7 +34266,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Boshqa ruknlarda tasniflanmagan, fassiit"
 * group[=].element[=].target[+].code = #M72.8
 * group[=].element[=].target[=].display = "Other fibroblastic disorders"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #5790
 * group[=].element[=].display = "Boshqa fibroblastik buzilishlar"
@@ -45858,7 +45378,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Qattiq tanglay yorig‘i ikki tomonlama"
 * group[=].element[=].target[+].code = #Q35.1
 * group[=].element[=].target[=].display = "Cleft hard palate"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #7642
 * group[=].element[=].display = "Qattiq tanglay yorig‘i bir tomonlama"
@@ -45870,7 +45390,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Yumshoq tanglay yorig‘i ikki tomonlama"
 * group[=].element[=].target[+].code = #Q35.3
 * group[=].element[=].target[=].display = "Cleft soft palate"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #7644
 * group[=].element[=].display = "Yumshoq tanglay yorig‘i bir tomonlama"
@@ -45882,7 +45402,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Qattiq va yumshoq tanglay yorig‘i ikki tomonlama"
 * group[=].element[=].target[+].code = #Q35.5
 * group[=].element[=].target[=].display = "Cleft hard palate with cleft soft palate"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #7646
 * group[=].element[=].display = "Qattiq va yumshoq tanglay yorig‘i bir tomonlama"
@@ -45894,7 +45414,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Tanglay o‘rta yorig‘i"
 * group[=].element[=].target[+].code = #Q35.9
 * group[=].element[=].target[=].display = "Cleft palate, unspecified"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #7648
 * group[=].element[=].display = "Tilcha yorig‘i"
@@ -45906,7 +45426,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Aniqlanmagan tanglay yorig‘i [bo‘ri og‘iz] ikki tomonlama"
 * group[=].element[=].target[+].code = #Q35.9
 * group[=].element[=].target[=].display = "Cleft palate, unspecified"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #7650
 * group[=].element[=].display = "Aniqlanmagan tanglay yorig‘i [bo‘ri og‘iz] bir tomonlama"
@@ -49878,13 +49398,13 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Isitma titroqli"
 * group[=].element[=].target[+].code = #R50.8
 * group[=].element[=].target[=].display = "Other specified fever"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #8312
 * group[=].element[=].display = "Turg‘un isitma"
 * group[=].element[=].target[+].code = #R50.8
 * group[=].element[=].target[=].display = "Other specified fever"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #8313
 * group[=].element[=].display = "Aniqlanmagan isitma"
@@ -70014,7 +69534,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 * group[=].element[=].display = "Virusli gepatit quzg‘atuvchisini tashuvchanlik"
 * group[=].element[=].target[+].code = #Z22.8
 * group[=].element[=].target[=].display = "Carrier of other infectious diseases"
-* group[=].element[=].target[=].relationship = #equivalent
+* group[=].element[=].target[=].relationship = #source-is-narrower-than-target
 
 * group[=].element[+].code = #11668
 * group[=].element[=].display = "1-tip odam T - limfotrop virusini tashuvchanlik (HTLV-1)"
@@ -73546,6 +73066,7 @@ Description: "ConceptMap defining the mapping between Cancer Registry internal d
 
 * group[=].element[+].code = #12256
 * group[=].element[=].display = "Hayot faoliyatini qo‘llab turuvchi aniqlanmagan mexanizm va moslamaga bog‘liqlilik"
+
 * group[=].element[=].target[+].code = #Z99.9
 * group[=].element[=].target[=].display = "Dependence on unspecified enabling machine and device"
 * group[=].element[=].target[=].relationship = #equivalent

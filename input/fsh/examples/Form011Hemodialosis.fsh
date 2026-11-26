@@ -135,7 +135,6 @@ Usage: #inline
 * occurrencePeriod.end = "2026-01-06T13:00:00+05:00"
 * performer[0].actor = Reference(urn:uuid:d4e5f6a7-b8c9-0123-defa-234567890123)
 * performer[+].actor = Reference(urn:uuid:e5f6a7b8-c9d0-1234-efab-345678901234)
-* bodySite = $sct#261665006 "Unknown"
 * bodySite.text = "Left AV fistula"
 * used[0].concept.text = "Dialyzer: FX 80"
 * used[+].concept.text = "Bloodline: Arterial/Venous"

@@ -166,7 +166,7 @@
 | Chanoq aylanasi | Окружность таза | *(тот же Observation).component* | [Pregnancy Monitoring Observation Code](ValueSet-form111-pregnancy-monitoring-observation-code-vs.html) `chr-0023-00002` "Pelvic circumference" | 96 cm |
 | Qorin aylanasi | Окружность живота | Observation.valueQuantity | SNOMED `396552003` "Abdominal circumference", как в Форме 111 | 104 cm |
 | Bachadon tubi balandligi | Высота стояния дна матки | Observation.valueQuantity | LOINC `11881-0` "Uterus Fundal height Tape measure" | 38 cm |
-| Qindan ajralma | Выделения из влагалища | Observation.valueCodeableConcept | `code` SNOMED `271939006` "Vaginal discharge"<br>`value` [Vaginal Discharge Color](ValueSet-vaginal-discharge-color-vs.html) | Bloodstained (`289547007`) |
+| Qindan ajralma | Выделения из влагалища | Observation.valueCodeableConcept | `code` SNOMED `364234007` "Vaginal discharge feature"<br>`value` [Vaginal Discharge Color](ValueSet-vaginal-discharge-color-vs.html) | Bloodstained (`289547007`) |
 | Homilaning joylashuvi | Положение плода | Observation.valueCodeableConcept (`focus` = новорождённый) | `code` [Maternal and Fetal Examination Codes](ValueSet-maternal-examination-observation-code-vs.html) SNOMED `249062004` "Lie of fetus"<br>`value` [Fetal Lie](ValueSet-fetal-lie-vs.html) | Longitudinal lie (`249063009`), оба плода |
 | Homilaning pozitsiyasi va turi | Позиция и вид плода | Observation.valueCodeableConcept.text (`focus` = новорождённый) | SNOMED `364607000` "Position of fetus" | First position, anterior variety; second position, posterior variety |
 | Homilaning oldinda keluvchi qismi | Предлежание плода | Observation.valueCodeableConcept (`focus` = новорождённый) | `code` SNOMED `271692001` "Presentation of fetus"<br>`value` [Fetal Presentation](ValueSet-fetal-presentation-vs.html) | Cephalic (`1209182005`); breech (`6096002`) |
@@ -248,7 +248,7 @@
 | Sut bezlari | Молочные железы | Observation.valueString | LOINC `10193-1` "Physical findings of Breasts Narrative", как в Форме 111 | Soft, lactation established |
 | Bachadon tubi balandligi | Высота дна матки | Observation.valueQuantity | LOINC `11881-0` "Uterus Fundal height Tape measure" | 14 cm |
 | Loxiyalar | Лохии | Observation.valueCodeableConcept | `code` SNOMED `364239002` "Lochia feature"<br>`value` находка SNOMED о лохиях | Lochia rubra, moderate (`278072004`) |
-| Siydik pufagi | Мочевой пузырь | Observation.valueString | SNOMED `249585009` "Urinary bladder finding" | Spontaneous urination |
+| Siydik pufagi | Мочевой пузырь | Observation.valueString | SNOMED `364186005` "Urinary bladder feature" | Spontaneous urination |
 | Ich kelishi | Стул | Observation.valueString | SNOMED `39211005` "Bowel action" | Normal |
 | Davolash bo'yicha tavsiyalar | Рекомендации по лечению | Observation.valueString | только `code.text`, кода пока нет | Breastfeeding support, hydration and routine postpartum monitoring |
 | Parhez stoli | Диетический стол | Observation.valueInteger | только `code.text`, кода пока нет | 15 |

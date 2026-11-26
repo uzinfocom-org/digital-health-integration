@@ -149,36 +149,6 @@ Description: "Uzbek and Russian displays for the SNOMED CT codes used in Form 09
   * ^designation[+].language = #uz
   * ^designation[=].value = "Turish va avtomatik yurish refleksi"
 
-* #106076001 "Skin finding"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Кожа"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Teri"
-
-* #118235002 "Eye / vision finding"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Глаза, слизистые оболочки"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Ko'zlar, shilliq qavatlar"
-
-* #271825005 "Respiratory distress"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Дыхательная недостаточность"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Nafas yetishmovchiligi"
-
-* #772131003 "Umbilical cord stump separated"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Время отделения пуповины"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Kindik ajralish vaqti"
-
-* #249229001 "Finding of umbilical stump"
-  * ^designation[0].language = #ru
-  * ^designation[=].value = "Состояние пупочной ранки"
-  * ^designation[+].language = #uz
-  * ^designation[=].value = "Kindik yarasi holati"
-
 * #364329005 "Characteristic of first stage of labor"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Особенности течения первого периода родов"
@@ -203,9 +173,32 @@ Description: "Uzbek and Russian displays for the SNOMED CT codes used in Form 09
   * ^designation[+].language = #uz
   * ^designation[=].value = "Ich ketishi"
 
-* #300471006 "Finding of frequency of urination"
+* #364198000 "Frequency of urination"
   * ^designation[0].language = #ru
   * ^designation[=].value = "Частота мочеиспускания"
   * ^designation[+].language = #uz
   * ^designation[=].value = "Siydik chiqarish chastotasi"
 
+* #364594006 "Umbilical stump observable"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Состояние пупочной ранки"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Kindik yarasi holati"
+
+* #60132005 "Generalized"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Общий"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Umumiy"
+
+* #263953004 "Perioral"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Вокруг рта"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Og'iz atrofi"
+
+* #772131003 "Umbilical cord stump separated"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Пуповинный остаток отпал"
+  * ^designation[+].language = #uz
+  * ^designation[=].value = "Kindik qoldig'i tushgan"

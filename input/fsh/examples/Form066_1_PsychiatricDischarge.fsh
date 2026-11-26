@@ -519,7 +519,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code = http://loinc.org#57133-1 "Referral note"
+* code = $sct#3457005 "Patient referral"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
 * performer = Reference(urn:uuid:06600005-1111-2222-3333-444444444444)

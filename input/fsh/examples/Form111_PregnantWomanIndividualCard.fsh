@@ -2609,7 +2609,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #uz
 * status = #final
-* code = $loinc#85238-4 "Internal medicine Consult note"
+* code = $sct#11429006 "Consultation"
 * code.text = "Terapevt xulosasi"
 * subject = Reference(urn:uuid:11100002-1111-2222-3333-444444444444)
 * performer = Reference(urn:uuid:11100167-1111-2222-3333-444444444444)
@@ -2621,7 +2621,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #uz
 * status = #final
-* code = $loinc#34756-7 "Dentistry Consult note"
+* code = $sct#34043003 "Dental consultation and report"
 * code.text = "Stomatolog xulosasi"
 * subject = Reference(urn:uuid:11100002-1111-2222-3333-444444444444)
 * performer = Reference(urn:uuid:11100168-1111-2222-3333-444444444444)
@@ -2633,7 +2633,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #uz
 * status = #final
-* code = $loinc#34758-3 "Dermatology Consult note"
+* code = $sct#73007006 "Dermatology consultation and report"
 * code.text = "Venerolog xulosasi"
 * subject = Reference(urn:uuid:11100002-1111-2222-3333-444444444444)
 * performer = Reference(urn:uuid:11100169-1111-2222-3333-444444444444)

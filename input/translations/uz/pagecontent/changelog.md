@@ -1,14 +1,38 @@
 ### Ishlab chiqilmoqda
 
+#### Qo'shildi
+
+[Form 097 LOINC Displays](CodeSystem-form-097-loinc-supplement-cs.html): 097-shaklda ishlatiladigan LOINC kodlarining o'zbekcha va ruscha nomlari.
+
 #### O'zgartirildi
 
+[003-shakl](form-003-mapping.html), [066-shakl](form-066-mapping.html) va [066-1-shakl](form-066-1-mapping.html) kasallik boshlanishidan yotqizilgunga qadar o'tgan vaqtni kodlangan kategoriya o'rniga LOINC 77977-7 Illness duration kodi va DMED kategoriyasidan olingan soatlardagi oraliq bilan yozadi. 066 va 066-1-shakllar yo'llanma mavjudligini SNOMED CT 3457005 Patient referral kodi bilan, 003-shakl esa dinamikadagi ahvolni 278844005 General clinical state kodi bilan LOINC hujjat kodlari o'rniga kodlaydi.
+
+[011-shakl](form-011-mapping.html) misoli tomir kirish joyini SNOMED CT `Unknown` kodisiz, faqat matn sifatida yuboradi.
+
 [027-shakl](StructureDefinition-form-027-medical-record-extract-composition.html) ambulator va statsionar kartadan ko'chirmalar uchun `emdoc-0010-0106` kodini ishlatadi, ularni `Encounter.class` (`AMB` yoki `IMP`) farqlaydi. Belgilangan `type` endi eski "Extract from inpatient medical record" nomini o'z ichiga olmaydi.
+
+[096-shakl](form-096-mapping.html) qindan ajralmalar va siydik pufagini topilmalar o'rniga SNOMED CT kuzatiladigan tushunchalari 364234007 va 364186005 bilan kodlaydi.
+
+[097-shakl](form-097-mapping.html) teri, ko'zlar va nafas haqidagi kundalik yozuvlarni LOINC fizikal ko'rik kodlari bilan, siydik chiqarish chastotasi va kindik yarasini esa SNOMED CT topilmalari o'rniga SNOMED CT kuzatiladigan tushunchalari bilan kodlaydi. Kundalik paneldagi kindik ajralishi endi sana o'rniga ha/yo'q qiymati bilan SNOMED CT 772131003 kodi orqali yoziladi, [Form097 Cyanosis Distribution ValueSet](ValueSet-cyanosis-distribution-vs.html) esa DMED kodlari o'rniga SNOMED CT Generalized va Perioral kvalifikatorlaridan foydalanadi.
+
+[111-shakl](form-111-mapping.html) terapevt, stomatolog va dermatovenerolog xulosalarini LOINC konsultatsiya hujjati kodlari o'rniga SNOMED CT 11429006 Consultation, 34043003 Dental consultation and report va 73007006 Dermatology consultation and report kodlari bilan kodlaydi.
 
 [Blood Service Operations](CodeSystem-blood-component-processing-cs.html) (avvalgi nomi Blood component processing operations): qon mahsulotining sifat nazorati kodi qo'shildi.
 
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html): active, completed va revoked holatlaridagi qon mahsuloti sifat nazorati misollari va ekspeditor PractitionerRole misoli qo'shildi.
 
+[Cancer Registry Dictionary ICD-10 to DHP ICD-10](ConceptMap-cancer-registry-dictionary-icd10-to-dhp-icd10-cm.html) registrning 2528-2848 kodlarini F19.x o'rniga F20 dan F99 gacha bo'lgan o'z XKT-10 kodlariga moslaydi; ulardan 240 tasining registrda o'z nomi yo'q va endi ular moslanmagan. Bir nechta registr kodi bitta XKT-10 kodiga to'g'ri kelsa, faqat ma'nosi bir xil bo'lgan kod `equivalent` bo'lib qoladi, qolganlari torroq bo'ldi va [Cancer Registry Dictionary ICD-10](CodeSystem-cancer-registry-dictionary-icd-10-cs.html) da uni ota-kod sifatida oldi.
+
+[DHIS Condition Code](CodeSystem-dhis-condition-code-cs.html) kavernali o'pka silini fibroz-kavernoz o'pka silining ota-kodi qiladi, [DHIS Observation Component Code](CodeSystem-dhis-observation-component-code-cs.html) esa konsentratsiyasiz rifampitsin, levofloksatsin va amikatsin testlarini belgilangan konsentratsiyali testlarining ota-kodi qiladi - bu ularning LOINC va SNOMED CT ConceptMap'laridan allaqachon kelib chiqadi.
+
+[DHIS Observation Profile](StructureDefinition-dhis-observation.html) va [DHIS Observation X-ray Profile](StructureDefinition-dhis-observation-xray.html) misollari dori sezgirligi testini SNOMED CT 85748009 BACTEC susceptibility test for slow growing Mycobacteria kodi bilan, ko'krak qafasi rentgenografiyasini esa 399208008 Plain X-ray of chest kodi bilan, natijaga shkalasi mos kelmaydigan LOINC kodlari o'rniga kodlaydi.
+
+[DMED Form 111 education type mapping](ConceptMap-dmed-form-111-education-type-core-cm.html) DMED "Boshqa" qiymatini milliy "Boshqa" dan torroq deb moslaydi, chunki DMED boshlang'ich ta'lim va malaka oshirishni alohida kodlaydi.
+
 Qo'llanma sahifalari [DHP dasturchilar hujjatlari](https://docs.dhp.uz/uz/) uslubida bezatilgan: Onest va JetBrains Mono shriftlari, DHP yashil ranglari va logotipi, yangilangan sarlavha, menyu, jadvallar, eslatmalar va nusxa olish tugmasi bilan kod bloklari. Sarlavhadagi mavzu menyusi yorug', qorong'i yoki tizimdagidek mavzuni tanlaydi.
+
+[Screening Breast Risk Questionnaire](Questionnaire-screening-breast-risk.html) va [Screening Cervical Risk Questionnaire](Questionnaire-screening-cervical-risk.html) 1.1.1 xavfni hisoblashda "ha/yo'q" javoblarini `ofType(boolean)` orqali o'qiydi. `ofType(Boolean)` bilan barcha "ha/yo'q" javoblari hisobdan tushib qolar, ball bo'sh qolar va to'g'ri `statusRisk` `screening-risk-match` tekshiruvidan o'tmas edi.
 
 #### Hujjatlashtirish
 

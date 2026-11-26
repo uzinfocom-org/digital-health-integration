@@ -449,7 +449,7 @@ Usage: #inline
 * encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-01-05T09:50:00+05:00"
 * performer = Reference(urn:uuid:06600008-1111-2222-3333-444444444444)
-* valueCodeableConcept = disease-injury-delay-cs#delay0001_00001 "Within first 6 hours"
+* valueRange.high = 6 'h' "h"   // DMED delay0001_00001 "Within first 6 hours"
 
 
 Instance: observation-arrived-by-ambulance-066
@@ -471,7 +471,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code = $loinc#57133-1 "Referral note"
+* code = $sct#3457005 "Patient referral"
 * subject = Reference(urn:uuid:06600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:06600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-01-05T10:00:00+05:00"

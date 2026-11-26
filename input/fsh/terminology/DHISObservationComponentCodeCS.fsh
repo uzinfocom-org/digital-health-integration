@@ -4,6 +4,9 @@ Title: "DHIS Observation Component Code CodeSystem"
 Description: "Local code system of tuberculosis observation component codes, including drug-susceptibility-test agents, used by the DHIS information system with Russian and English designations. The DHIS Observation Component Code to LOINC ConceptMap records the LOINC [Susceptibility] concept for the drug agents; in resources use the LOINC code directly wherever an exact match exists (see the DHIS Observation Component Code ValueSet), keeping a local code only where no exact LOINC match exists."
 
 * insert OriginalCodeSystemDraft(dhis-observation-component-code-cs)
+* ^property[0].code = #parent
+* ^property[=].uri = "http://hl7.org/fhir/concept-properties#parent"
+* ^property[=].type = #code
 
 * #tub004-0001 "INH ↑ MIK natijasi"
   * ^designation[0].language = #ru
@@ -46,6 +49,8 @@ Description: "Local code system of tuberculosis observation component codes, inc
   * ^designation[=].value = "Рифампицин (1,0 мг/мл)"
   * ^designation[+].language = #en
   * ^designation[=].value = "Rifampicin (1.0 mg/mL)"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #tub004-0022
 
 * #tub004-0008 "Izoniazid (0,1 mg/ml)"
   * ^designation[0].language = #ru
@@ -70,6 +75,8 @@ Description: "Local code system of tuberculosis observation component codes, inc
   * ^designation[=].value = "Левофлоксацин (2,0 мг/мл)"
   * ^designation[+].language = #en
   * ^designation[=].value = "Levofloxacin (2.0 mg/mL)"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #tub004-0028
 
 * #tub004-0012 "Moksifloksatsin (1,0 mg/ml)"
   * ^designation[0].language = #ru
@@ -94,6 +101,8 @@ Description: "Local code system of tuberculosis observation component codes, inc
   * ^designation[=].value = "Амикацин (1,0 мг/мл)"
   * ^designation[+].language = #en
   * ^designation[=].value = "Amikacin (1.0 mg/mL)"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #tub004-0029
 
 * #tub004-0016 "Protionamid (2,5 mg/ml)"
   * ^designation[0].language = #ru

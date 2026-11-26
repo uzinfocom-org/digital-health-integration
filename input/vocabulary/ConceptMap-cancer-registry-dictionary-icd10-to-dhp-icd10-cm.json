@@ -11089,7 +11089,7 @@
             {
               "code": "C13.9",
               "display": "Hypopharynx, unspecified",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1008",
@@ -15291,7 +15291,7 @@
             {
               "code": "C83.3",
               "display": "Diffuse large B-cell lymphoma",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1390",
@@ -15313,7 +15313,7 @@
             {
               "code": "C83.3",
               "display": "Diffuse large B-cell lymphoma",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1392",
@@ -15335,7 +15335,7 @@
             {
               "code": "C83.8",
               "display": "Other non-follicular lymphoma",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1394",
@@ -15412,7 +15412,7 @@
             {
               "code": "C84.4",
               "display": "Peripheral T-cell lymphoma, not elsewhere classified",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1401",
@@ -15423,7 +15423,7 @@
             {
               "code": "C84.4",
               "display": "Peripheral T-cell lymphoma, not elsewhere classified",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1402",
@@ -15467,7 +15467,7 @@
             {
               "code": "C85.9",
               "display": "Non-Hodgkin lymphoma, unspecified",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1406",
@@ -15533,7 +15533,7 @@
             {
               "code": "C88.2",
               "display": "Other heavy chain disease",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1412",
@@ -15665,7 +15665,7 @@
             {
               "code": "C91.9",
               "display": "Lymphoid leukaemia, unspecified",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1424",
@@ -15863,7 +15863,7 @@
             {
               "code": "C93.9",
               "display": "Monocytic leukaemia, unspecified",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1442",
@@ -15918,7 +15918,7 @@
             {
               "code": "C94.7",
               "display": "Other specified leukaemias",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1447",
@@ -15962,7 +15962,7 @@
             {
               "code": "C94.4",
               "display": "Acute panmyelosis with myelofibrosis",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1451",
@@ -16017,7 +16017,7 @@
             {
               "code": "C95.9",
               "display": "Leukaemia, unspecified",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1456",
@@ -16072,7 +16072,7 @@
             {
               "code": "C96.7",
               "display": "Other specified malignant neoplasms of lymphoid, haematopoietic and related tissue",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1461",
@@ -19603,7 +19603,7 @@
             {
               "code": "D46.2",
               "display": "Refractory anaemia with excess of blasts [RAEB]",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1782",
@@ -21319,7 +21319,7 @@
             {
               "code": "D47.3",
               "display": "Essential (haemorrhagic) thrombocythaemia",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1938",
@@ -21363,7 +21363,7 @@
             {
               "code": "D76.3",
               "display": "Other histiocytosis syndromes",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "1942",
@@ -27805,99 +27805,63 @@
           "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2528",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2529",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F21",
+              "display": "Schizotypal disorder",
+              "relationship": "equivalent"
             }
           ],
           "code": "2530",
           "display": "Shizotipik buzilish"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2531",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2532",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2533",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F22.9",
+              "display": "Persistent delusional disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2534",
           "display": "Aniqlanmagan surunkali alahlashli buzilish"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2535",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F23.0",
+              "display": "Acute polymorphic psychotic disorder without symptoms of schizophrenia",
+              "relationship": "equivalent"
             }
           ],
           "code": "2536",
@@ -27906,339 +27870,183 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F23.1",
+              "display": "Acute polymorphic psychotic disorder with symptoms of schizophrenia",
+              "relationship": "equivalent"
             }
           ],
           "code": "2537",
           "display": "Shizofreniya simptomlari bilan o‘tkir polimorf psixotik buzilishlar"
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2538",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2539",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2540",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F23.9",
+              "display": "Acute and transient psychotic disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2541",
           "display": "O‘tkir va o‘tkinchi aniqlanmagan psixotik buzilish"
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2542",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2543",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2544",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2545",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2546",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2547",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F25.9",
+              "display": "Schizoaffective disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2548",
           "display": "Aniqlanmagan shizoaffektiv buzilishlar"
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2549",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2550",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2551",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2552",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2553",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2554",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2555",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2556",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2557",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.4",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F31.9",
+              "display": "Bipolar affective disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2558",
           "display": "Aniqlanmagan bipolyar affektiv buzilish"
         },
         {
-          "target": [
-            {
-              "code": "F19.4",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2559",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.4",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2560",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.4",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2561",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.4",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2562",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.4",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2563",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.4",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2564",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.4",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2565",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.4",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2566",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.4",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state with delirium",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F33.9",
+              "display": "Recurrent depressive disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2567",
@@ -28247,9 +28055,9 @@
         {
           "target": [
             {
-              "code": "F19.5",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F34",
+              "display": "Persistent mood [affective] disorders",
+              "relationship": "equivalent"
             }
           ],
           "code": "2568",
@@ -28258,9 +28066,9 @@
         {
           "target": [
             {
-              "code": "F19.5",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F34.8",
+              "display": "Other persistent mood [affective] disorders",
+              "relationship": "equivalent"
             }
           ],
           "code": "2569",
@@ -28269,9 +28077,9 @@
         {
           "target": [
             {
-              "code": "F19.5",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F34.9",
+              "display": "Persistent mood [affective] disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2570",
@@ -28280,9 +28088,9 @@
         {
           "target": [
             {
-              "code": "F19.5",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F38",
+              "display": "Other mood [affective] disorders",
+              "relationship": "equivalent"
             }
           ],
           "code": "2571",
@@ -28291,9 +28099,9 @@
         {
           "target": [
             {
-              "code": "F19.5",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F38.0",
+              "display": "Other single mood [affective] disorders",
+              "relationship": "equivalent"
             }
           ],
           "code": "2572",
@@ -28302,9 +28110,9 @@
         {
           "target": [
             {
-              "code": "F19.5",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F38.1",
+              "display": "Other recurrent mood [affective] disorders",
+              "relationship": "equivalent"
             }
           ],
           "code": "2573",
@@ -28313,9 +28121,9 @@
         {
           "target": [
             {
-              "code": "F19.5",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F38.8",
+              "display": "Other specified mood [affective] disorders",
+              "relationship": "equivalent"
             }
           ],
           "code": "2574",
@@ -28324,350 +28132,224 @@
         {
           "target": [
             {
-              "code": "F19.5",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F39",
+              "display": "Unspecified mood [affective] disorder",
+              "relationship": "equivalent"
             }
           ],
           "code": "2575",
           "display": "Aniqlanmagan kayfiyat buzilishi [affektiv] Affektiv psixoz QRA"
         },
         {
-          "target": [
-            {
-              "code": "F19.5",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2576",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.5",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2577",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.6",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F40.9",
+              "display": "Phobic anxiety disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2578",
           "display": "Aniqlanmagan fobik tahlikali buzilish"
         },
         {
-          "target": [
-            {
-              "code": "F19.6",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2579",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.6",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2580",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.6",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2581",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.6",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F41.9",
+              "display": "Anxiety disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2582",
           "display": "Aniqlanmagan tahlikali buzilish"
         },
         {
-          "target": [
-            {
-              "code": "F19.6",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2583",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.6",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F42.9",
+              "display": "Obsessive-compulsive disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2584",
           "display": "Aniqlanmagan obsessiv-kompulsiv buzilish"
         },
         {
-          "target": [
-            {
-              "code": "F19.6",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2585",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.6",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2586",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.6",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Amnesic syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2587",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.7",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2588",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.7",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F44.9",
+              "display": "Dissociative [conversion] disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2589",
           "display": "Aniqlanmagan dissotsiativ [konversion] buzilish"
         },
         {
-          "target": [
-            {
-              "code": "F19.7",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2590",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.7",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2591",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.7",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F45.2",
+              "display": "Hypochondriacal disorder",
+              "relationship": "equivalent"
             }
           ],
           "code": "2592",
           "display": "Ipoxondrik buzilish"
         },
         {
-          "target": [
-            {
-              "code": "F19.7",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2593",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.7",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F45.9",
+              "display": "Somatoform disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2594",
           "display": "Aniqlanmagan somatoform buzilish"
         },
         {
-          "target": [
-            {
-              "code": "F19.7",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2595",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.7",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2596",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.7",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Residual and late-onset psychotic disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F48.9",
+              "display": "Neurotic disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2597",
           "display": "Aniqlanmagan nevrotik buzilish"
         },
         {
-          "target": [
-            {
-              "code": "F19.8",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2598",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.8",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2599",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.8",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2600",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.8",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2601",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.8",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F50.9",
+              "display": "Eating disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2602",
           "display": "Aniqlanmagan ovqat qabul qilinishining buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.8",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2603",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.8",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F51.2",
+              "display": "Nonorganic disorder of the sleep-wake schedule",
+              "relationship": "equivalent"
             }
           ],
           "code": "2604",
           "display": "Organik etiologiyali bo‘lmagan uyqu rejimi buzilishi va bedorlik"
         },
         {
-          "target": [
-            {
-              "code": "F19.8",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2605",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.8",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F51.9",
+              "display": "Nonorganic sleep disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2606",
@@ -28676,9 +28358,9 @@
         {
           "target": [
             {
-              "code": "F19.8",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Other mental and behavioural disorders",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F53",
+              "display": "Mental and behavioural disorders associated with the puerperium, not elsewhere classified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2607",
@@ -28687,9 +28369,9 @@
         {
           "target": [
             {
-              "code": "F19.9",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F53.0",
+              "display": "Mild mental and behavioural disorders associated with the puerperium, not elsewhere classified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2608",
@@ -28698,9 +28380,9 @@
         {
           "target": [
             {
-              "code": "F19.9",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F53.1",
+              "display": "Severe mental and behavioural disorders associated with the puerperium, not elsewhere classified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2609",
@@ -28709,9 +28391,9 @@
         {
           "target": [
             {
-              "code": "F19.9",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F53.8",
+              "display": "Other mental and behavioural disorders associated with the puerperium, not elsewhere classified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2610",
@@ -28720,9 +28402,9 @@
         {
           "target": [
             {
-              "code": "F19.9",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F53.9",
+              "display": "Puerperal mental disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2611",
@@ -28731,9 +28413,9 @@
         {
           "target": [
             {
-              "code": "F19.9",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F60",
+              "display": "Specific personality disorders",
+              "relationship": "equivalent"
             }
           ],
           "code": "2612",
@@ -28742,9 +28424,9 @@
         {
           "target": [
             {
-              "code": "F19.9",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F60-F69",
+              "display": "Disorders of adult personality and behaviour",
+              "relationship": "equivalent"
             }
           ],
           "code": "2613",
@@ -28753,9 +28435,9 @@
         {
           "target": [
             {
-              "code": "F19.9",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F60.0",
+              "display": "Paranoid personality disorder",
+              "relationship": "equivalent"
             }
           ],
           "code": "2614",
@@ -28764,9 +28446,9 @@
         {
           "target": [
             {
-              "code": "F19.9",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F60.1",
+              "display": "Schizoid personality disorder",
+              "relationship": "equivalent"
             }
           ],
           "code": "2615",
@@ -28775,31 +28457,25 @@
         {
           "target": [
             {
-              "code": "F19.9",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F60.2",
+              "display": "Dissocial personality disorder",
+              "relationship": "equivalent"
             }
           ],
           "code": "2616",
           "display": "Shaxsiyatning dissotsial buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.9",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Unspecified mental and behavioural disorder",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2617",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F60.4",
+              "display": "Histrionic personality disorder",
+              "relationship": "equivalent"
             }
           ],
           "code": "2618",
@@ -28808,42 +28484,30 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F60.5",
+              "display": "Anankastic personality disorder",
+              "relationship": "equivalent"
             }
           ],
           "code": "2619",
           "display": "Shaxsiyatning anankastik buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2620",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2621",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F60.8",
+              "display": "Other specific personality disorders",
+              "relationship": "equivalent"
             }
           ],
           "code": "2622",
@@ -28852,218 +28516,134 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F60.9",
+              "display": "Personality disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2623",
           "display": "Aniqlanmagan shaxs buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2624",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2625",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F62.9",
+              "display": "Enduring personality change, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2626",
           "display": "Aniqlanmagan shaxsiyatning turg‘un o‘zgarishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2627",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2628",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F63.9",
+              "display": "Habit and impulse disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2629",
           "display": "Aniqlanmagan odat va maylliklarning buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2630",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2631",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2632",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F64.9",
+              "display": "Gender identity disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2633",
           "display": "Aniqlanmagan jinsiy identifikatsiyaning buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2634",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2635",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2636",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F65.9",
+              "display": "Disorder of sexual preference, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2637",
           "display": "Aniqlanmagan seksual afzallik buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2638",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2639",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2640",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2641",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F66.9",
+              "display": "Psychosexual development disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2642",
@@ -29072,9 +28652,9 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F68",
+              "display": "Other disorders of adult personality and behaviour",
+              "relationship": "equivalent"
             }
           ],
           "code": "2643",
@@ -29083,9 +28663,9 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F68.8",
+              "display": "Other specified disorders of adult personality and behaviour",
+              "relationship": "equivalent"
             }
           ],
           "code": "2644",
@@ -29094,273 +28674,141 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F69",
+              "display": "Unspecified disorder of adult personality and behaviour",
+              "relationship": "equivalent"
             }
           ],
           "code": "2645",
           "display": "Aniqlanmagan balog‘at yoshda shaxsiyat va feʼl- atvor buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2646",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2647",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2648",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2649",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2650",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2651",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2652",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2653",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2654",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2655",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2656",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2657",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2658",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2659",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2660",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F80.0",
+              "display": "Specific speech articulation disorder",
+              "relationship": "equivalent"
             }
           ],
           "code": "2661",
           "display": "Nutq artikulyatsiyasining spetsifik buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2662",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2663",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2664",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2665",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2666",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2667",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2668",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F80.9",
+              "display": "Developmental disorder of speech and language, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2669",
@@ -29369,9 +28817,9 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F81",
+              "display": "Specific developmental disorders of scholastic skills",
+              "relationship": "equivalent"
             }
           ],
           "code": "2670",
@@ -29380,42 +28828,30 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F81.0",
+              "display": "Specific reading disorder",
+              "relationship": "equivalent"
             }
           ],
           "code": "2671",
           "display": "O‘qishning spetsifik buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2672",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2673",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F81.1",
+              "display": "Specific spelling disorder",
+              "relationship": "equivalent"
             }
           ],
           "code": "2674",
@@ -29424,53 +28860,41 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F81.2",
+              "display": "Specific disorder of arithmetical skills",
+              "relationship": "equivalent"
             }
           ],
           "code": "2675",
           "display": "Arifmetik ko‘nikmalarning spetsifik buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2676",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F81.3",
+              "display": "Mixed disorder of scholastic skills",
+              "relationship": "equivalent"
             }
           ],
           "code": "2677",
           "display": "O‘quv ko‘nikmalarining aralash buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2678",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F81.9",
+              "display": "Developmental disorder of scholastic skills, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2679",
@@ -29479,9 +28903,9 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F82",
+              "display": "Specific developmental disorder of motor function",
+              "relationship": "equivalent"
             }
           ],
           "code": "2680",
@@ -29490,86 +28914,56 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F83",
+              "display": "Mixed specific developmental disorders",
+              "relationship": "equivalent"
             }
           ],
           "code": "2681",
           "display": "Psixologik rivojlanishning aralash spetsifik buzilishlari"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2682",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2683",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2684",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2685",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F84.9",
+              "display": "Pervasive developmental disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2686",
           "display": "Aniqlanmagan rivojlanishning umumiy buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2687",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F89",
+              "display": "Unspecified disorder of psychological development",
+              "relationship": "equivalent"
             }
           ],
           "code": "2688",
@@ -29578,9 +28972,9 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F90",
+              "display": "Hyperkinetic disorders",
+              "relationship": "equivalent"
             }
           ],
           "code": "2689",
@@ -29589,9 +28983,9 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F90-F98",
+              "display": "Behavioural and emotional disorders with onset usually occurring in childhood and adolescence",
+              "relationship": "equivalent"
             }
           ],
           "code": "2690",
@@ -29600,31 +28994,25 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F90.1",
+              "display": "Hyperkinetic conduct disorder",
+              "relationship": "equivalent"
             }
           ],
           "code": "2691",
           "display": "Feʼl-atvorning giperkinetik buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2692",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F90.9",
+              "display": "Hyperkinetic disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2693",
@@ -29633,9 +29021,9 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F91",
+              "display": "Conduct disorders",
+              "relationship": "equivalent"
             }
           ],
           "code": "2694",
@@ -29644,9 +29032,9 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F91.0",
+              "display": "Conduct disorder confined to the family context",
+              "relationship": "equivalent"
             }
           ],
           "code": "2695",
@@ -29655,9 +29043,9 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F91.1",
+              "display": "Unsocialized conduct disorder",
+              "relationship": "equivalent"
             }
           ],
           "code": "2696",
@@ -29666,31 +29054,25 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F91.2",
+              "display": "Socialized conduct disorder",
+              "relationship": "equivalent"
             }
           ],
           "code": "2697",
           "display": "Ijtimoiylashgan feʼl-atvor buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2698",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F91.8",
+              "display": "Other conduct disorders",
+              "relationship": "equivalent"
             }
           ],
           "code": "2699",
@@ -29699,9 +29081,9 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F91.9",
+              "display": "Conduct disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2700",
@@ -29710,9 +29092,9 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F92",
+              "display": "Mixed disorders of conduct and emotions",
+              "relationship": "equivalent"
             }
           ],
           "code": "2701",
@@ -29721,9 +29103,9 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F92.0",
+              "display": "Depressive conduct disorder",
+              "relationship": "equivalent"
             }
           ],
           "code": "2702",
@@ -29732,9 +29114,9 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F92.8",
+              "display": "Other mixed disorders of conduct and emotions",
+              "relationship": "equivalent"
             }
           ],
           "code": "2703",
@@ -29743,1571 +29125,749 @@
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F92.9",
+              "display": "Mixed disorder of conduct and emotions, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2704",
           "display": "Aniqlanmagan feʼl-atvor va emotsiyalar aralash buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2705",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F93.1",
+              "display": "Phobic anxiety disorder of childhood",
+              "relationship": "equivalent"
             }
           ],
           "code": "2706",
           "display": "Bolalik yoshidagi fobik xavotirli buzilish"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2707",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2708",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2709",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F93.9",
+              "display": "Childhood emotional disorder, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2710",
           "display": "Bolalik yoshidagi aniqlanmagan emotsional buzilish"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2711",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2712",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2713",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F94.9",
+              "display": "Childhood disorder of social functioning, unspecified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2714",
           "display": "Bolalik yoshidagi ijtimoiy funksiya ado etuvchanlik aniqlanmagan buzilishi"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2715",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F98",
+              "display": "Other behavioural and emotional disorders with onset usually occurring in childhood and adolescence",
+              "relationship": "equivalent"
             }
           ],
           "code": "2716",
           "display": "Odatda bolalik va o‘smirlik yoshlarida boshlanadigan boshqa emotsional buzilishlar va feʼl-atvor buzilishlari"
         },
         {
-          "target": [
-            {
-              "code": "F19.1",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Harmful use",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2717",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2718",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2719",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2720",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2721",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2722",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2723",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2724",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2725",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2726",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2727",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2728",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2729",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2730",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2731",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2732",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2733",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2734",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2735",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2736",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2737",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2738",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2739",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2740",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2741",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2742",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2743",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2744",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2745",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2746",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2747",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2748",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2749",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2750",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2751",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2752",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2753",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2754",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2755",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2756",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2757",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2758",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2759",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2760",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2761",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2762",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2763",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2764",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2765",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2766",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2767",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2768",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2769",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2770",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2771",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2772",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2773",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2774",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2775",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2776",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2777",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2778",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2779",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2780",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2781",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2782",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2783",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2784",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2785",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2786",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2787",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2788",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2789",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2790",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2791",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2792",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2793",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2794",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2795",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2796",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2797",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2798",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2799",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2800",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2801",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2802",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2803",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2804",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2805",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2806",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2807",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2808",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2809",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2810",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2811",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2812",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2813",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2814",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2815",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2816",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.2",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Dependence syndrome",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2817",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2818",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2819",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2820",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2821",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2822",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2823",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2824",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2825",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2826",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2827",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2828",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2829",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2830",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2831",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2832",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2833",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2834",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2835",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2836",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2837",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2838",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2839",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2840",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2841",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2842",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2843",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2844",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
-          "target": [
-            {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
-            }
-          ],
           "code": "2845",
-          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi"
+          "display": "Aniqlanmagan ruhiyat va hulq-atvorning buzilishi",
+          "noMap": true
         },
         {
           "target": [
             {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F98.8",
+              "display": "Other specified behavioural and emotional disorders with onset usually occurring in childhood and adolescence",
+              "relationship": "equivalent"
             }
           ],
           "code": "2846",
@@ -31316,9 +29876,9 @@
         {
           "target": [
             {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F98.9",
+              "display": "Unspecified behavioural and emotional disorders with onset usually occurring in childhood and adolescence",
+              "relationship": "equivalent"
             }
           ],
           "code": "2847",
@@ -31327,9 +29887,9 @@
         {
           "target": [
             {
-              "code": "F19.3",
-              "display": "Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances : Withdrawal state",
-              "relationship": "source-is-narrower-than-target"
+              "code": "F99",
+              "display": "Mental disorder, not otherwise specified",
+              "relationship": "equivalent"
             }
           ],
           "code": "2848",
@@ -35179,7 +33739,7 @@
             {
               "code": "G23.8",
               "display": "Other specified degenerative diseases of basal ganglia",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "3198",
@@ -45288,7 +43848,7 @@
             {
               "code": "K64.8",
               "display": "Other specified haemorrhoids",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "4117",
@@ -45299,7 +43859,7 @@
             {
               "code": "K64.8",
               "display": "Other specified haemorrhoids",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "4118",
@@ -45310,7 +43870,7 @@
             {
               "code": "K64.8",
               "display": "Other specified haemorrhoids",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "4119",
@@ -45321,7 +43881,7 @@
             {
               "code": "K64.5",
               "display": "Perianal venous thrombosis",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "4120",
@@ -45332,7 +43892,7 @@
             {
               "code": "K64.8",
               "display": "Other specified haemorrhoids",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "4121",
@@ -45343,7 +43903,7 @@
             {
               "code": "K64.8",
               "display": "Other specified haemorrhoids",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "4122",
@@ -45365,7 +43925,7 @@
             {
               "code": "K64.5",
               "display": "Perianal venous thrombosis",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "4124",
@@ -45376,7 +43936,7 @@
             {
               "code": "K64.8",
               "display": "Other specified haemorrhoids",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "4125",
@@ -51932,7 +50492,7 @@
             {
               "code": "K51.0",
               "display": "Ulcerative (chronic) pancolitis",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "4721",
@@ -63658,7 +62218,7 @@
             {
               "code": "M72.4",
               "display": "Pseudosarcomatous fibromatosis",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "5787",
@@ -63680,7 +62240,7 @@
             {
               "code": "M72.8",
               "display": "Other fibroblastic disorders",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "5789",
@@ -84052,7 +82612,7 @@
             {
               "code": "Q35.1",
               "display": "Cleft hard palate",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "7641",
@@ -84074,7 +82634,7 @@
             {
               "code": "Q35.3",
               "display": "Cleft soft palate",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "7643",
@@ -84096,7 +82656,7 @@
             {
               "code": "Q35.5",
               "display": "Cleft hard palate with cleft soft palate",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "7645",
@@ -84118,7 +82678,7 @@
             {
               "code": "Q35.9",
               "display": "Cleft palate, unspecified",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "7647",
@@ -84140,7 +82700,7 @@
             {
               "code": "Q35.9",
               "display": "Cleft palate, unspecified",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "7649",
@@ -91422,7 +89982,7 @@
             {
               "code": "R50.8",
               "display": "Other specified fever",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "8311",
@@ -91433,7 +89993,7 @@
             {
               "code": "R50.8",
               "display": "Other specified fever",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "8312",
@@ -128338,7 +126898,7 @@
             {
               "code": "Z22.8",
               "display": "Carrier of other infectious diseases",
-              "relationship": "equivalent"
+              "relationship": "source-is-narrower-than-target"
             }
           ],
           "code": "11667",

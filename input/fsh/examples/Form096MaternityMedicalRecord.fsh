@@ -1426,7 +1426,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code = $sct#271939006 "Vaginal discharge"
+* code = $sct#364234007 "Vaginal discharge feature"
 * subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-16T09:10:00+05:00"
@@ -2275,7 +2275,7 @@ InstanceOf: UZCoreObservation
 Usage: #inline
 * language = #en
 * status = #final
-* code = $sct#249585009 "Urinary bladder finding"
+* code = $sct#364186005 "Urinary bladder feature"
 * subject = Reference(urn:uuid:09600002-1111-2222-3333-444444444444)
 * encounter = Reference(urn:uuid:09600003-1111-2222-3333-444444444444)
 * effectiveDateTime = "2026-08-17T08:00:00+05:00"

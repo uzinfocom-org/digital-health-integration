@@ -1,14 +1,38 @@
 ### В разработке
 
+#### Добавлено
+
+[Form 097 LOINC Displays](CodeSystem-form-097-loinc-supplement-cs.html): узбекские и русские названия кодов LOINC, используемых в форме 097.
+
 #### Изменено
 
 [Blood Service Operations](CodeSystem-blood-component-processing-cs.html) (ранее Blood component processing operations): добавлен код контроля качества продукта крови.
 
 [Blood ServiceRequest](StructureDefinition-blood-servicerequest.html): добавлены примеры контроля качества продукта крови в статусах active, completed и revoked и пример роли экспедитора PractitionerRole.
 
+[Cancer Registry Dictionary ICD-10 to DHP ICD-10](ConceptMap-cancer-registry-dictionary-icd10-to-dhp-icd10-cm.html) сопоставляет коды регистра 2528-2848 с их собственными кодами МКБ-10 от F20 до F99 вместо F19.x; у 240 из них в регистре нет своего названия, и они теперь не сопоставлены. Если несколько кодов регистра соответствуют одному коду МКБ-10, `equivalent` остаётся только код с тем же значением, а остальные стали более узкими и получили его как родителя в [Cancer Registry Dictionary ICD-10](CodeSystem-cancer-registry-dictionary-icd-10-cs.html).
+
+[DHIS Condition Code](CodeSystem-dhis-condition-code-cs.html) делает кавернозный туберкулёз лёгких родителем фиброзно-кавернозного, а [DHIS Observation Component Code](CodeSystem-dhis-observation-component-code-cs.html) делает тесты на рифампицин, левофлоксацин и амикацин без концентрации родителями тестов с фиксированной концентрацией, как уже следует из их ConceptMap на LOINC и SNOMED CT.
+
+[DMED Form 111 education type mapping](ConceptMap-dmed-form-111-education-type-core-cm.html) сопоставляет «Другое» DMED как более узкое, чем национальное «Другое», поскольку DMED кодирует начальное образование и повышение квалификации отдельно.
+
+[Screening Breast Risk Questionnaire](Questionnaire-screening-breast-risk.html) и [Screening Cervical Risk Questionnaire](Questionnaire-screening-cervical-risk.html) 1.1.1 при расчёте риска читают ответы «да/нет» через `ofType(boolean)`. С `ofType(Boolean)` все ответы «да/нет» выпадали из расчёта, балл оставался пустым, и верный `statusRisk` не проходил проверку `screening-risk-match`.
+
+Пример [формы 011](form-011-mapping.html) передаёт место сосудистого доступа только текстом, без кода SNOMED CT `Unknown`.
+
+Примеры [DHIS Observation Profile](StructureDefinition-dhis-observation.html) и [DHIS Observation X-ray Profile](StructureDefinition-dhis-observation-xray.html) кодируют тест лекарственной чувствительности кодом SNOMED CT 85748009 BACTEC susceptibility test for slow growing Mycobacteria, а рентгенографию грудной клетки - кодом 399208008 Plain X-ray of chest вместо кодов LOINC, шкала которых не подходит к результату.
+
 Страницы руководства оформлены в стиле [документации DHP для разработчиков](https://docs.dhp.uz/ru/): шрифты Onest и JetBrains Mono, зелёные цвета и логотип DHP, обновлённые шапка, меню, таблицы, примечания и блоки кода с кнопкой копирования. Меню темы в шапке переключает светлую, тёмную тему или тему как в системе.
 
+[Форма 003](form-003-mapping.html), [форма 066](form-066-mapping.html) и [форма 066-1](form-066-1-mapping.html) записывают время от начала заболевания до госпитализации кодом LOINC 77977-7 Illness duration с диапазоном в часах по категории DMED вместо кодированной категории. Формы 066 и 066-1 кодируют наличие направления кодом SNOMED CT 3457005 Patient referral, а форма 003 - состояние в динамике кодом 278844005 General clinical state вместо кодов документов LOINC.
+
 [Форма 027](StructureDefinition-form-027-medical-record-extract-composition.html) использует `emdoc-0010-0106` для выписок и из амбулаторной, и из стационарной карты, а различает их `Encounter.class` (`AMB` или `IMP`). Фиксированный `type` больше не содержит прежнее название "Extract from inpatient medical record".
+
+[Форма 096](form-096-mapping.html) кодирует выделения из влагалища и мочевой пузырь наблюдаемыми сущностями SNOMED CT 364234007 и 364186005 вместо находок.
+
+[Форма 097](form-097-mapping.html) кодирует ежедневные записи о коже, глазах и дыхании кодами LOINC физикального осмотра, а частоту мочеиспускания и пупочную ранку - наблюдаемыми сущностями SNOMED CT вместо находок SNOMED CT. Отделение пуповины в ежедневной панели теперь кодируется SNOMED CT 772131003 со значением да/нет вместо даты, а [Form097 Cyanosis Distribution ValueSet](ValueSet-cyanosis-distribution-vs.html) использует квалификаторы SNOMED CT Generalized и Perioral вместо кодов DMED.
+
+[Форма 111](form-111-mapping.html) кодирует заключения терапевта, стоматолога и дерматовенеролога кодами SNOMED CT 11429006 Consultation, 34043003 Dental consultation and report и 73007006 Dermatology consultation and report вместо кодов LOINC для документов консультаций.
 
 #### Документация
 

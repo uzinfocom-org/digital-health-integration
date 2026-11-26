@@ -7,6 +7,13 @@
   "title": "Cancer Registry Dictionary ICD-10",
   "description": "Registry-internal diagnosis identifiers used by the Uzbekistan Cancer Registry and mapped to core ICD-10 codes through a ConceptMap.",
   "url": "https://terminology.dhp.uz/fhir/integrations/CodeSystem/cancer-registry-dictionary-icd-10-cs",
+  "property": [
+    {
+      "code": "parent",
+      "uri": "http://hl7.org/fhir/concept-properties#parent",
+      "type": "code"
+    }
+  ],
   "concept": [
     {
       "code": "1",
@@ -14118,6 +14125,12 @@
           "language": "en",
           "value": "Benign neoplasm: Hypopharynx"
         }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1005"
+        }
       ]
     },
     {
@@ -19466,6 +19479,12 @@
           "language": "en",
           "value": "Non-Hodgkin's lymphoma: Mixed small and large cell (diffuse)"
         }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1391"
+        }
       ]
     },
     {
@@ -19494,6 +19513,12 @@
           "language": "en",
           "value": "Non-Hodgkin's lymphoma: Immunoblastic (diffuse)"
         }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1391"
+        }
       ]
     },
     {
@@ -19521,6 +19546,12 @@
         {
           "language": "en",
           "value": "Non-Hodgkin's lymphoma: Undifferentiated (diffuse)"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1396"
         }
       ]
     },
@@ -19620,6 +19651,12 @@
           "language": "en",
           "value": "T-zone lymphoma"
         }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1403"
+        }
       ]
     },
     {
@@ -19633,6 +19670,12 @@
         {
           "language": "en",
           "value": "Lymphoepithelioid lymphoma"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1403"
         }
       ]
     },
@@ -19689,6 +19732,12 @@
         {
           "language": "en",
           "value": "Lymphosarcoma"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1409"
         }
       ]
     },
@@ -19773,6 +19822,12 @@
         {
           "language": "en",
           "value": "Alpha heavy chain disease"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1413"
         }
       ]
     },
@@ -19941,6 +19996,12 @@
         {
           "language": "en",
           "value": "Subacute lymphocytic leukaemia"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1429"
         }
       ]
     },
@@ -20194,6 +20255,12 @@
           "language": "en",
           "value": "Subacute monocytic leukaemia"
         }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1444"
+        }
       ]
     },
     {
@@ -20264,6 +20331,12 @@
           "language": "en",
           "value": "Chronic erythraemia"
         }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1452"
+        }
       ]
     },
     {
@@ -20319,6 +20392,12 @@
         {
           "language": "en",
           "value": "Acute myelofibrosis"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1450"
         }
       ]
     },
@@ -20390,6 +20469,12 @@
           "language": "en",
           "value": "Subacute leukaemia of unspecified cell type"
         }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1458"
+        }
       ]
     },
     {
@@ -20459,6 +20544,12 @@
         {
           "language": "en",
           "value": "Malignant histiocytosis"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1464"
         }
       ]
     },
@@ -24954,6 +25045,12 @@
           "language": "en",
           "value": "Refractory anaemia with excess of blasts with transformation"
         }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1781"
+        }
       ]
     },
     {
@@ -27138,6 +27235,12 @@
           "language": "en",
           "value": "Essential thrombocytosis"
         }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1790"
+        }
       ]
     },
     {
@@ -27193,6 +27296,12 @@
         {
           "language": "en",
           "value": "Langerhans' cell histiocytosis, not elsewhere classified"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "1945"
         }
       ]
     },
@@ -44777,6 +44886,12 @@
         {
           "language": "en",
           "value": "Multi-system degeneration"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "2923"
         }
       ]
     },
@@ -66100,6 +66215,12 @@
           "language": "en",
           "value": "Ulcerative (chronic) ileocolitis"
         }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "4720"
+        }
       ]
     },
     {
@@ -81024,6 +81145,12 @@
           "language": "en",
           "value": "Nodular fasciitis"
         }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "5788"
+        }
       ]
     },
     {
@@ -81051,6 +81178,12 @@
         {
           "language": "en",
           "value": "Fasciitis, not elsewhere classified"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "5790"
         }
       ]
     },
@@ -85923,6 +86056,12 @@
         {
           "language": "en",
           "value": "Other chronic renal failure"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "6135"
         }
       ]
     },
@@ -106616,6 +106755,12 @@
           "language": "en",
           "value": "Congenital laryngeal stridor"
         }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "7610"
+        }
       ]
     },
     {
@@ -106980,6 +107125,12 @@
           "language": "en",
           "value": "Bilateral cleft hard palate"
         }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "7642"
+        }
       ]
     },
     {
@@ -107007,6 +107158,12 @@
         {
           "language": "en",
           "value": "Bilateral cleft soft palate"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "7644"
         }
       ]
     },
@@ -107036,6 +107193,12 @@
           "language": "en",
           "value": "Bilateral cleft hard and soft palate"
         }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "7646"
+        }
       ]
     },
     {
@@ -107064,6 +107227,12 @@
           "language": "en",
           "value": "Median cleft palate"
         }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "7650"
+        }
       ]
     },
     {
@@ -107091,6 +107260,12 @@
         {
           "language": "en",
           "value": "Unspecified bilateral cleft palate"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "7650"
         }
       ]
     },
@@ -163343,6 +163518,12 @@
         {
           "language": "en",
           "value": "Carrier of viral hepatitis"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "11669"
         }
       ]
     },

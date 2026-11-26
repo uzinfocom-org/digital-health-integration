@@ -4,6 +4,9 @@ Title: "DHIS Condition Code CodeSystem"
 Description: "Local code system of tuberculosis diagnoses and comorbidities used by the DHIS information system, with Russian and English designations. The DHIS Condition Code to SNOMED CT ConceptMap records the SNOMED CT concept for every code; in resources use the SNOMED CT code directly wherever an exact match exists (see the DHIS Condition Code ValueSet), keeping a local code only where no exact SNOMED CT match exists."
 
 * insert OriginalCodeSystemDraft(dhis-condition-code-cs)
+* ^property[0].code = #parent
+* ^property[=].uri = "http://hl7.org/fhir/concept-properties#parent"
+* ^property[=].type = #code
 
 * #tub001-0001 "Birlamchi sil kompleksi"
   * ^designation[0].language = #ru
@@ -58,6 +61,8 @@ Description: "Local code system of tuberculosis diagnoses and comorbidities used
   * ^designation[=].value = "Фиброзно-кавернозный туберкулёз"
   * ^designation[+].language = #en
   * ^designation[=].value = "Fibro-cavitary pulmonary tuberculosis"
+  * ^property[0].code = #parent
+  * ^property[=].valueCode = #tub001-0008
 
 * #tub001-0010 "Tsirrotik o‘pka sili"
   * ^designation[0].language = #ru
