@@ -18,7 +18,9 @@ Description: "Example of Form 027 extract from patient's medical record"
 * entry[+].fullUrl = "urn:uuid:02700004-1111-2222-3333-444444444444"
 * entry[=].resource = organization-027-001
 * entry[+].fullUrl = "urn:uuid:02700005-1111-2222-3333-444444444444"
-* entry[=].resource = organization-referring-027
+* entry[=].resource = organization-hospital-027
+* entry[+].fullUrl = "urn:uuid:02700027-1111-2222-3333-444444444444"
+* entry[=].resource = organization-department-027
 * entry[+].fullUrl = "urn:uuid:02700006-1111-2222-3333-444444444444"
 * entry[=].resource = practitioner-doctor-027
 * entry[+].fullUrl = "urn:uuid:02700007-1111-2222-3333-444444444444"
@@ -175,15 +177,17 @@ InstanceOf: UZCoreEncounter
 Usage: #inline
 * language = #en
 * status = #completed
-* identifier[0].system = "https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number"
-* identifier[=].value = "MRN-027-2026-0124"
+// DMED medical_case_id of the outpatient visit. Not the medical record number system:
+// that one carries DMED hospitalization ids (Forms 066, 003, 096 and the ServiceRequest below).
+* identifier[0].system = "https://dhp.uz/fhir/core/sid/doc/uz/medical-case-number"
+* identifier[=].value = "2181164"
+// Class of the DMED medical case the extract is written in (is_inpatient_patient = false), not the referral type.
 * class = $v3-ActCode#AMB "ambulatory"
 * type[nationalType] = encounter-type-cs#mserv-0001-00004 "Treatment services"
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
 * actualPeriod.start = "2026-02-08T09:00:00+05:00"
 * actualPeriod.end = "2026-02-10T09:00:00+05:00"
 * serviceProvider = Reference(urn:uuid:02700004-1111-2222-3333-444444444444)
-* admission.origin = Reference(urn:uuid:02700005-1111-2222-3333-444444444444)
 
 
 Instance: organization-027-001
@@ -196,14 +200,26 @@ Usage: #inline
 * name = "Chilonzor tuman poliklinikasi"
 
 
-Instance: organization-referring-027
+// Hospital the patient is referred to (DMED `clinic`, printed as items 16-17 "Yo'llagan muassasa").
+Instance: organization-hospital-027
 InstanceOf: UZCoreOrganization
 Usage: #inline
 * language = #en
 * identifier[taxId].type = $identifier-type#TAX "Tax ID number"
 * identifier[taxId].system = $organization-tax-id-system-dhp
 * identifier[taxId].value = "310272027"
-* name = "Yakkasaroy tuman oilaviy poliklinikasi"
+* name = "Toshkent shahar 1-son klinik shifoxonasi"
+
+
+// Department the patient is referred to (DMED `planned_department`).
+Instance: organization-department-027
+InstanceOf: Organization
+Usage: #inline
+* language = #en
+* identifier.system = "https://dhp.uz/fhir/core/sid/uz/department-code"
+* identifier.value = "118"
+* name = "Pulmonologiya bo'limi"
+* partOf = Reference(urn:uuid:02700005-1111-2222-3333-444444444444)
 
 
 Instance: practitioner-doctor-027
@@ -388,12 +404,25 @@ Instance: servicerequest-027
 InstanceOf: UZCoreServiceRequest
 Usage: #inline
 * language = #en
+// DMED hospitalization id of the referral: the same value the receiving hospital's
+// Forms 066, 003 and 096 send in Encounter.identifier for the stay.
+* identifier.system = "https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number"
+* identifier.value = "20705"
 * status = #active
 * intent = #order
 * subject = Reference(urn:uuid:02700002-1111-2222-3333-444444444444)
+* encounter = Reference(urn:uuid:02700003-1111-2222-3333-444444444444)
 * authoredOn = "2026-02-10"
+* requester = Reference(urn:uuid:02700022-1111-2222-3333-444444444444)
+* performer[0] = Reference(urn:uuid:02700005-1111-2222-3333-444444444444)
+* performer[+] = Reference(urn:uuid:02700027-1111-2222-3333-444444444444)
 * code = $sct#32485007 "Hospital admission"
-* reason.reference = Reference(urn:uuid:02700008-1111-2222-3333-444444444444)
+// DMED hospitalization_type = hospitalTreatment (Bemor turi: statsionar)
+* orderDetail.parameter.code = hospitalization-referral-order-parameter-cs#treatment-setting "Treatment setting"
+* orderDetail.parameter.valueCodeableConcept = $v3-ActCode#IMP "inpatient encounter"
+* reason[0].concept = hospitalization-purpose-cs#treatment "Treatment"
+* reason[+].reference = Reference(urn:uuid:02700008-1111-2222-3333-444444444444)
+* note.text = "Plevral suyuqlik nazorati uchun pulmonologiya bo'limiga."
 
 
 

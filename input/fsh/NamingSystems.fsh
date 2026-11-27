@@ -85,6 +85,24 @@ Usage: #definition
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number"
 * uniqueId[=].preferred = true
+
+Instance: medical-case-number-system
+InstanceOf: NamingSystem
+Description: "Identifier system for medical case (outpatient episode) numbers in Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/medical-case-number-system"
+* name = "UzbekistanMedicalCaseNumberSystem"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Uzinfocom"
+* date = "2026-11-23"
+* description = "Number of a medical case: the episode of outpatient visits a medical information system (DMED `medical_case_id`) opens for a patient. Medical case numbers and inpatient record numbers come from different number sequences, so a medical case is never identified in the medical record number system."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in Encounter.identifier of the outpatient visit a Form 027 extract is written from"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/medical-case-number"
+* uniqueId[=].preferred = true
 Instance: screening-identifier-system
 InstanceOf: NamingSystem
 Description: "Identifier system for the Cervical Cancer Screening Quality Assessment and Monitoring and Early Breast Cancer Detection Information System"

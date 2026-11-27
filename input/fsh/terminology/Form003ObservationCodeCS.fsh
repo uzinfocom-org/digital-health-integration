@@ -1,6 +1,6 @@
 CodeSystem: Form003ObservationCodeCS
 Id: form-003-observation-code-cs
-Title: "Form 003 Observation Code"
+Title: "Form 003 observation code"
 Description: "Local Observation.code identifiers for observations that have no suitable LOINC or SNOMED CT code, Form 003 inpatient medical record."
 
 * insert OriginalCodeSystemDraft(form-003-observation-code-cs)
@@ -41,3 +41,15 @@ Description: "Local Observation.code identifiers for observations that have no s
   * ^designation[=].value = "Контекст смерти"
   * ^designation[+].language = #en
   * ^designation[=].value = "Death context"
+
+* #hospitalization-reason "Kasalxonaga yotqizish sababi"
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Причина госпитализации"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Hospitalization reason"
+* #same-condition-hospitalizations-this-year "Mazkur yilda shu kasallik bo'yicha jami gospitalizatsiyalar, joriy gospitalizatsiya bilan"
+  * ^definition = "Number of hospitalizations for the same condition in the current calendar year, including the current hospitalization."
+  * ^designation[0].language = #ru
+  * ^designation[=].value = "Количество госпитализаций по тому же заболеванию в текущем году, включая текущую"
+  * ^designation[+].language = #en
+  * ^designation[=].value = "Same-condition hospitalizations this year, including current"

@@ -58,6 +58,8 @@ Title: "Form 003 - Inpatient medical record card"
 * entry[=].resource = obs-003-arrived-by-ambulance
 * entry[+].fullUrl  = "urn:uuid:00300025-0000-0000-0000-000000000000"
 * entry[=].resource = obs-003-onset-to-admission-delay
+* entry[+].fullUrl = "urn:uuid:00300064-0000-0000-0000-000000000000"
+* entry[=].resource = obs-003-hospitalization-reason
 * entry[+].fullUrl  = "urn:uuid:00300026-0000-0000-0000-000000000000"
 * entry[=].resource = condition-003-referral-dx
 * entry[+].fullUrl  = "urn:uuid:00300027-0000-0000-0000-000000000000"
@@ -94,8 +96,6 @@ Title: "Form 003 - Inpatient medical record card"
 * entry[=].resource = servicerequest-003-ecg
 * entry[+].fullUrl  = "urn:uuid:00300041-0000-0000-0000-000000000000"
 * entry[=].resource = procedure-003-surgery
-* entry[+].fullUrl  = "urn:uuid:00300042-0000-0000-0000-000000000000"
-* entry[=].resource = procedure-003-anesthesia
 * entry[+].fullUrl  = "urn:uuid:00300043-0000-0000-0000-000000000000"
 * entry[=].resource = medicationrequest-003-001
 * entry[+].fullUrl  = "urn:uuid:00300044-0000-0000-0000-000000000000"
@@ -116,14 +116,12 @@ Title: "Form 003 - Inpatient medical record card"
 * entry[=].resource = obs-003-morning-rr
 * entry[+].fullUrl  = "urn:uuid:00300052-0000-0000-0000-000000000000"
 * entry[=].resource = obs-003-daily-urine
-* entry[+].fullUrl  = "urn:uuid:00300053-0000-0000-0000-000000000000"
-* entry[=].resource = obs-003-clinical-course
 * entry[+].fullUrl  = "urn:uuid:00300054-0000-0000-0000-000000000000"
 * entry[=].resource = careplan-003-recommendations
 * entry[+].fullUrl  = "urn:uuid:00300055-0000-0000-0000-000000000000"
 * entry[=].resource = careplan-003-sick-leave
 * entry[+].fullUrl  = "urn:uuid:00300056-0000-0000-0000-000000000000"
-* entry[=].resource = obs-003-prev-hospitalizations
+* entry[=].resource = obs-003-same-condition-hospitalizations
 * entry[+].fullUrl  = "urn:uuid:00300057-0000-0000-0000-000000000000"
 * entry[=].resource = obs-003-work-capacity
 * entry[+].fullUrl  = "urn:uuid:00300060-0000-0000-0000-000000000000"
@@ -153,6 +151,8 @@ Usage: #inline
 * title = "Form 003 - Inpatient Medical Record Card"
 
 * section[administrativeInformation].title = "Administrative Information"
+* section[administrativeInformation].text.status = #generated
+* section[administrativeInformation].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Inpatient medical card number: 38-2026.</p></div>"
 * section[=].code = form-003-section-cs#administrative-information
 * section[=].entry[0] = Reference(urn:uuid:00300004-0000-0000-0000-000000000000)
 * section[=].entry[+] = Reference(urn:uuid:00300003-0000-0000-0000-000000000000)
@@ -180,6 +180,7 @@ Usage: #inline
 * section[=].entry[0] = Reference(urn:uuid:00300005-0000-0000-0000-000000000000)
 * section[=].entry[+] = Reference(urn:uuid:00300024-0000-0000-0000-000000000000)
 * section[=].entry[+] = Reference(urn:uuid:00300025-0000-0000-0000-000000000000)
+* section[=].entry[+] = Reference(urn:uuid:00300064-0000-0000-0000-000000000000)
 * section[=].entry[+] = Reference(urn:uuid:00300026-0000-0000-0000-000000000000)
 * section[=].entry[+] = Reference(urn:uuid:00300027-0000-0000-0000-000000000000)
 
@@ -190,6 +191,8 @@ Usage: #inline
 * section[=].entry[+] = Reference(urn:uuid:00300039-0000-0000-0000-000000000000)
 
 * section[primaryExamination].title = "Primary Examination Sheet"
+* section[primaryExamination].text.status = #generated
+* section[primaryExamination].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Examination date and time: 2026-02-08T10:15:00+05:00.</p></div>"
 * section[=].code = $loinc#34117-2 "History and physical note"
 * section[=].entry[0] = Reference(urn:uuid:00300060-0000-0000-0000-000000000000)
 * section[=].entry[+] = Reference(urn:uuid:00300028-0000-0000-0000-000000000000)
@@ -235,7 +238,6 @@ Usage: #inline
 * section[surgicalProcedures].title = "Surgical Procedures"
 * section[=].code = $loinc#29554-3 "Procedure Narrative"
 * section[=].entry[0] = Reference(urn:uuid:00300041-0000-0000-0000-000000000000)
-* section[=].entry[+] = Reference(urn:uuid:00300042-0000-0000-0000-000000000000)
 
 * section[medicationSheet].title = "Medication Sheet"
 * section[=].code = $loinc#29549-3 "Medication administered Narrative"
@@ -260,8 +262,9 @@ Usage: #inline
 
 * section[clinicalCourse].title = "Clinical Course"
 * section[=].code = $loinc#8648-8 "Hospital course note"
-* section[=].entry[0] = Reference(urn:uuid:00300053-0000-0000-0000-000000000000)
-* section[=].entry[+] = Reference(urn:uuid:00300054-0000-0000-0000-000000000000)
+* section[=].text.status = #generated
+* section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Afebrile from day 5, cough and dyspnoea resolving, mobilising independently.</p></div>"
+* section[=].entry[0] = Reference(urn:uuid:00300054-0000-0000-0000-000000000000)
 * section[clinicalCourse].section[diary].title = "Diary"
 * section[clinicalCourse].section[diary].code = $loinc#11506-3 "Progress note"
 * section[clinicalCourse].section[diary].text.status = #generated
@@ -357,14 +360,14 @@ InstanceOf: UZCoreEncounter
 Usage: #inline
 * status = #completed
 * identifier.system = "https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number"
-* identifier.value = "MRN-003-2026-0042"
+* identifier.value = "20760" // DMED hospitalization.id
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP "inpatient encounter"
 * type[nationalType] = https://terminology.dhp.uz/fhir/core/CodeSystem/encounter-type-cs#mserv-0001-00004 "Treatment services"
 * subject = Reference(urn:uuid:00300002-0000-0000-0000-000000000000)
 * actualPeriod.start = "2026-02-08T10:00:00+05:00"   // rows 4-5 merged
 * actualPeriod.end   = "2026-02-18T09:00:00+05:00"   // rows 6-7 merged
+* length = 10 'd' "days" // DMED ceil(239 hours / 24); actualPeriod retains the exact timestamps
 * serviceProvider = Reference(urn:uuid:00300004-0000-0000-0000-000000000000)
-* length = 10 'd' "days"                              // row 11
 * priority = http://terminology.hl7.org/CodeSystem/v3-ActPriority#EM "Emergency"   // rows 34, 36
 * admission.origin = Reference(urn:uuid:00300005-0000-0000-0000-000000000000)       // row 33
 * admission.admitSource = https://terminology.dhp.uz/fhir/core/CodeSystem/admit-source-local-cs#mserv-0006-00004 "Emergency medical service"  // row 71
@@ -550,7 +553,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:00300002-0000-0000-0000-000000000000)
 * encounter = Reference(urn:uuid:00300003-0000-0000-0000-000000000000)
 * effectiveDateTime = "2026-02-08T10:00:00+05:00"
-* valueCodeableConcept = https://terminology.dhp.uz/fhir/integrations/CodeSystem/disease-injury-delay-cs#delay0001_00003 "After 24 hours"   // row 36a
+* valueQuantity.value = 5760
 
 Instance: condition-003-referral-dx
 InstanceOf: UZCoreCondition
@@ -581,7 +584,7 @@ Usage: #inline
 * code.coding = $icd10#J18.9 "Pneumonia, unspecified"
 * subject = Reference(urn:uuid:00300002-0000-0000-0000-000000000000)
 * encounter = Reference(urn:uuid:00300003-0000-0000-0000-000000000000)
-* recordedDate = "2026-02-08T10:15:00+05:00"                // primary examination date and time
+* recordedDate = "2026-02-08T10:15:00+05:00"                // Condition record creation time; examination time is separate
 
 Instance: obs-003-complaints
 InstanceOf: UZCoreObservation
@@ -702,7 +705,7 @@ Instance: obs-003-pediculosis
 InstanceOf: UZCoreObservation
 Usage: #inline
 * status = #final
-* code = $sct#20848007 "Pediculosis"                         // row 60
+* code = DMEDForm003AnalysesCS#pediculosis                    // row 60: screening item, not a disorder
 * subject = Reference(urn:uuid:00300002-0000-0000-0000-000000000000)
 * encounter = Reference(urn:uuid:00300003-0000-0000-0000-000000000000)
 * effectiveDateTime = "2026-02-08T10:20:00+05:00"
@@ -747,22 +750,12 @@ Usage: #inline
 * status = #completed
 * category = $sct#387713003 "Surgical procedure (procedure)"
 * code = $ichi|2026.9.17#JCB.JB.AE "Percutaneous drainage of pleural cavity"
+* note.text = "Local anesthesia"                            // row 48: DMED free-text method
 * code.text = "Thoracentesis"
 * subject = Reference(urn:uuid:00300002-0000-0000-0000-000000000000)
 * encounter = Reference(urn:uuid:00300003-0000-0000-0000-000000000000)
 * occurrenceDateTime = "2026-02-10T11:30:00+05:00"           // rows 46-47 merged
 * performer.actor = Reference(urn:uuid:00300011-0000-0000-0000-000000000000)   // row 50
-
-Instance: procedure-003-anesthesia
-InstanceOf: UZCoreProcedure
-Usage: #inline
-* status = #completed
-* code = $sct#386761002 "Local anesthesia"                   // row 48 - anesthesia-method-vs
-* subject = Reference(urn:uuid:00300002-0000-0000-0000-000000000000)
-* encounter = Reference(urn:uuid:00300003-0000-0000-0000-000000000000)
-* occurrencePeriod.start = "2026-02-10T11:15:00+05:00"
-* occurrencePeriod.end = "2026-02-10T11:35:00+05:00"
-* performer.actor = Reference(urn:uuid:00300011-0000-0000-0000-000000000000)
 
 Instance: medicationrequest-003-001
 InstanceOf: UZCoreMedicationRequest
@@ -881,18 +874,8 @@ Usage: #inline
 * effectivePeriod.end = "2026-02-10T00:00:00+05:00"
 * valueQuantity = 1650 'mL/(24.h)' "mL/24h"
 
-// part-of-day fluid intake (rows 146-147) - one per morning/evening:
-// code = LOINC 9107-4 "Fluid intake total 12 hour", valueQuantity in mL, effectivePeriod = the half-day
-
-Instance: obs-003-clinical-course
-InstanceOf: UZCoreObservation
-Usage: #inline
-* status = #final
-* code = $loinc#8648-8 "Hospital course note"               // row 99
-* subject = Reference(urn:uuid:00300002-0000-0000-0000-000000000000)
-* encounter = Reference(urn:uuid:00300003-0000-0000-0000-000000000000)
-* effectiveDateTime = "2026-02-11T08:00:00+05:00"
-* valueString = "Afebrile from day 5, cough and dyspnoea resolving, mobilising independently."
+// The paper fluid-intake row does not establish a 12-hour interval.
+// Preserve the source amount and any explicitly recorded interval in the temperature-chart narrative.
 
 Instance: careplan-003-recommendations
 InstanceOf: UZCoreCarePlan
@@ -920,15 +903,16 @@ Usage: #inline
 * addresses[reason].concept = CarePlanReasonCS#emdoc-0001-0001 "disease"
 * extension[workflowStatus].valueCode = #completed
 
-Instance: obs-003-prev-hospitalizations
+Instance: obs-003-same-condition-hospitalizations
 InstanceOf: UZCoreObservation
 Usage: #inline
 * status = #final
-* code = https://terminology.dhp.uz/fhir/integrations/CodeSystem/local-observation-code#num-previous-hospitalizations "Number of previous hospitalizations"   // row 44
+* code = form-003-observation-code-cs#same-condition-hospitalizations-this-year "Same-condition hospitalizations this year, including current"   // row 44
 * subject = Reference(urn:uuid:00300002-0000-0000-0000-000000000000)
 * effectivePeriod.start = "2026-01-01"
-* effectivePeriod.end = "2026-12-31"
-* valueInteger = 0
+* effectivePeriod.end = "2026-02-18"
+* encounter = Reference(urn:uuid:00300003-0000-0000-0000-000000000000)
+* valueInteger = 1
 
 Instance: obs-003-work-capacity
 InstanceOf: UZCoreObservation
@@ -952,3 +936,13 @@ Usage: #inline
 * signature.who = Reference(urn:uuid:00300011-0000-0000-0000-000000000000) "Rasulov B.B."
 * signature.sigFormat = #application/pdf
 * signature.data = "JVBERi0xLjQK"
+
+Instance: obs-003-hospitalization-reason
+InstanceOf: UZCoreObservation
+Usage: #inline
+* status = #final
+* code = form-003-observation-code-cs#hospitalization-reason "Hospitalization reason"
+* subject = Reference(urn:uuid:00300002-0000-0000-0000-000000000000)
+* encounter = Reference(urn:uuid:00300003-0000-0000-0000-000000000000)
+* effectiveDateTime = "2026-02-08T10:00:00+05:00"
+* valueCodeableConcept = dmed-form-003-hospitalization-reason-cs#disease "Disease"

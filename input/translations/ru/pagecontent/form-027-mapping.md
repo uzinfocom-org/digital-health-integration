@@ -27,6 +27,36 @@
 
 ---
 
+### Два варианта в DMED
+
+DMED печатает Форму 027 в двух местах. От варианта зависит, что такое Encounter и передаётся ли направление на госпитализацию.
+
+| | A. Направление из поликлиники | B. Приёмный покой без направления |
+|---|---|---|
+| Где в DMED | Госпитализация → Новое направление | Приемный покой → Оформить пациента без направления |
+| Encounter | Амбулаторный приём: `class` `AMB`, `identifier` = `medical_case_id` DMED в `https://dhp.uz/fhir/core/sid/doc/uz/medical-case-number` (нет, если выписка заполнена вручную) | Сама госпитализация, тот же Encounter, что в Формах 066, 003 и 096: `class` `IMP`, `identifier` = идентификатор госпитализации DMED в `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number` |
+| ServiceRequest на госпитализацию | Передаётся, `identifier` = идентификатор госпитализации DMED | Не передаётся: пациент уже поступил |
+| Composition.type | `emdoc-0010-0106` для обоих вариантов; условия оказания помощи различаются по Encounter.class AMB / IMP | `emdoc-0010-0106` |
+| Пример | [вариант A](Bundle-example-form-027-medical-record-extract.html) | [вариант B](Bundle-example-form-027-emergency-admission.html) |
+
+
+---
+
+Форма 027 отправляется при её сохранении в DMED. Документ передаёт статус направления, имеющийся на момент этого сохранения. Последующее изменение только статуса направления не запускает повторную отправку 027 или отдельное фоновое обновление ServiceRequest в согласованном объёме.
+
+### Сопоставление значений DMED
+
+Часть значений формы 027 DMED передаёт своими токенами. Эти ConceptMap задают код, который нужно отправить для каждого токена.
+
+| Поле DMED | ConceptMap | Куда |
+|----|----|----|
+| ключи `disease_codes`, `type` кода диагноза (`main`, `additional`, `critical`, `background`, `competing`) | [dmed-form-027-diagnosis-type-cm](ConceptMap-dmed-form-027-diagnosis-type-cm.html) | Condition.category и код соответствующего подраздела диагнозов из [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) |
+| `hospitalization_type` (`ambulatory`, `hospitalTreatment`) | [dmed-form-027-hospitalization-type-cm](ConceptMap-dmed-form-027-hospitalization-type-cm.html) | ServiceRequest.orderDetail.parameter.value параметра `treatment-setting` |
+| `purpose[]` направления на госпитализацию; `other_purpose` при `other_purpose_checked` | [dmed-form-027-hospitalization-purpose-cm](ConceptMap-dmed-form-027-hospitalization-purpose-cm.html) | ServiceRequest.reason.concept из [Hospitalization Purpose](ValueSet-hospitalization-purpose-vs.html) |
+| `status` записи госпитализации DMED, которую создаёт направление | [dmed-form-027-hospitalization-status-cm](ConceptMap-dmed-form-027-hospitalization-status-cm.html) | ServiceRequest.status |
+
+---
+
 ### Сопоставление полей
 
 ### Форма 027 - Выписка из медицинской карты - сопоставление с FHIR
@@ -60,8 +90,9 @@
 |----|----|------------|------|---------------|
 | Muassasa kodi | Код учреждения | [Organization](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-organization.html).identifier[taxId] | `system` `https://dhp.uz/fhir/core/sid/org/uz/soliq`<br>`type` `TAX` | 310271027 |
 | Muassasa nomi | Наименование учреждения | Organization.name | - | Chilonzor tuman poliklinikasi |
-| Bemorning ro'yxatdan o'tish raqami | Регистрационный номер пациента | Encounter.identifier | `system` `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number` | MRN-027-2026-0124 |
-| Bemor turi | Тип пациента | Encounter.class | v3-ActCode | `AMB` "ambulatory" |
+| Bemorning ro'yxatdan o'tish raqami | Регистрационный номер пациента | Patient.identifier[healthCardId], то же значение, что Med ID raqami | `system` `https://dhp.uz/fhir/core/sid/pid/uz/hc`<br>`type` `HC` | HC-2026-00027 |
+| Tibbiy holat raqami | Номер случая (эпизода) DMED | Encounter.identifier: `medical_case_id` амбулаторного приёма в DMED. Не система номера медицинской карты: в ней передаются идентификаторы госпитализаций DMED. Не передаётся, если направление заполнено вручную (`filled_by_hand`): тогда случая DMED нет, и повторные отправки сопоставляются по ServiceRequest.identifier | `system` `https://dhp.uz/fhir/core/sid/doc/uz/medical-case-number` | 2181164 |
+| Bemor turi | Тип пациента | Печатается из `hospitalization_type` DMED, вида лечения по направлению: передаётся в ServiceRequest.orderDetail в "7. Последующие мероприятия". Encounter.class приёма `AMB`, или `IMP`, если случай DMED стационарный (`is_inpatient_patient`) | v3-ActCode | `AMB` "ambulatory" |
 | Murojaat sanasi | Дата подачи заявления | Encounter.actualPeriod.start | - | 2026-02-08T09:00:00+05:00 |
 | Chiqarilgan sana | Дата выписки | Encounter.actualPeriod.end | - | 2026-02-10T09:00:00+05:00 |
 
@@ -99,14 +130,16 @@
 
 Код раздела: LOINC `42349-1` "Reason for referral (narrative)".
 
-Каждый диагноз помечается элементом `Condition.category` из системы кодов [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) и размещается в соответствующем подразделе Composition: Asosiy tashxis - `main`, Asorati - `complication`, Yo'ldosh kasallik - `concomitant`.
+Каждый диагноз помечается элементом `Condition.category` из системы кодов [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) и размещается в соответствующем подразделе Composition: Asosiy tashxis - `main`, Asorati - `complication`, Yo'ldosh kasallik - `concomitant`. На бумажной форме печатаются эти три роли; DMED также фиксирует фоновое и конкурирующее заболевания, они идут в подразделы `background` и `competing`. Тип диагноза DMED сопоставляется с ролью по [этому ConceptMap](ConceptMap-dmed-form-027-diagnosis-type-cm.html). Учреждение из пунктов 16-17 (Yo'llagan muassasa) - больница, куда направлен пациент; оно передаётся в ServiceRequest.performer раздела последующих мероприятий.
 
 | UZ | RU | Путь FHIR | Код | Пример значения |
 |----|----|------------|------|---------------|
-| Yo'llagan muassasa | Направившее учреждение | Encounter.admission.origin | Organization | Yakkasaroy tuman oilaviy poliklinikasi |
+| Yo'llagan muassasa | Учреждение, куда направлен пациент | ServiceRequest.performer в "7. Последующие мероприятия". Под этой подписью DMED печатает больницу, куда направлен пациент (`clinic`) | Organization | Toshkent shahar 1-son klinik shifoxonasi |
 | Asosiy tashxis | Основной диагноз | [Condition](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-condition.html).code | ICD-10 | `J18.9` "Pneumonia, unspecified" |
 | Asorati | Осложнение | Condition.code; category | ICD-10; [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `complication` | `J90` "Pleural effusion, not elsewhere classified" |
-| Yo'ldosh kasallik | Сопутствующее заболевание | Condition.code | ICD-10 | `E66.9` "Obesity, unspecified" |
+| Yo'ldosh kasallik | Сопутствующее заболевание | Condition.code; category | ICD-10; [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `concomitant` | `E66.9` "Obesity, unspecified" |
+| Fon tashxis | Фоновое заболевание | Condition.code; category | ICD-10; [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `background` | - |
+| Raqobat tashxis | Конкурирующее заболевание | Condition.code; category | ICD-10; [Diagnosis Role](CodeSystem-diagnosis-role-integration.html) `competing` | - |
 
 ---
 
@@ -147,6 +180,15 @@
 | Kuzatuv | Наблюдение | CarePlan.description | - | Shifoxonadan chiqqandan keyin 1 oy davomida oilaviy poliklinikada kuzatuv |
 | Dispanserizatsiya | Диспансеризация | [EpisodeOfCare](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-episodeofcare.html).type[serviceType] | [Episode of Care Type](https://terminology.dhp.uz/fhir/core/ValueSet/episode-of-care-type-vs) | `mserv-0001-00001` "Preventive services" |
 | Shifoxonaga yotqazish | Госпитализация | [ServiceRequest](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-servicerequest.html).code | [Service Request Codes](https://terminology.dhp.uz/fhir/core/ValueSet/service-request-code-vs) | SNOMED CT `32485007` "Hospital admission" |
+| Gospitalizatsiya identifikatori | Идентификатор госпитализации | *(тот же ServiceRequest)* identifier: идентификатор госпитализации DMED, которую создаёт направление; то же значение принимающая больница передаёт в Encounter.identifier в Формах 066, 003 и 096 | `system` `https://dhp.uz/fhir/core/sid/doc/uz/medical-record-number` | 20705 |
+| Yo'llangan muassasa | Учреждение, куда направлен пациент | *(тот же ServiceRequest)* performer → Organization, DMED `clinic` | `taxId` `https://dhp.uz/fhir/core/sid/org/uz/soliq` | Toshkent shahar 1-son klinik shifoxonasi |
+| Bo'lim | Отделение | *(тот же ServiceRequest)* performer → Organization (отделение, `partOf` больницы), DMED `planned_department` | `system` `https://dhp.uz/fhir/core/sid/uz/department-code` | 118, Pulmonologiya bo'limi |
+| Davolash turi | Вид лечения | *(тот же ServiceRequest)* orderDetail.parameter: code `treatment-setting` из [Hospitalization Referral Order Parameter](CodeSystem-hospitalization-referral-order-parameter-cs.html), valueCodeableConcept v3-ActCode `AMB` или `IMP`; DMED `hospitalization_type` по [этому ConceptMap](ConceptMap-dmed-form-027-hospitalization-type-cm.html) | v3-ActCode | `IMP` "inpatient encounter" |
+| Yo'llanma holati | Статус направления | *(тот же ServiceRequest)* status | `status` DMED по [этому ConceptMap](ConceptMap-dmed-form-027-hospitalization-status-cm.html); `reject_reason` отклонённого направления в note.text | `active` |
+| Gospitalizatsiya maqsadi | Цель госпитализации | *(тот же ServiceRequest)* reason.concept, по одному на каждую цель; для `other` текст в reason.concept.text | [Hospitalization Purpose](ValueSet-hospitalization-purpose-vs.html), DMED `purpose[]` по [этому ConceptMap](ConceptMap-dmed-form-027-hospitalization-purpose-cm.html) | `treatment` "Davolash" |
+| Yotqazishga asos bo'lgan tashxis | Диагноз, обосновывающий госпитализацию | *(тот же ServiceRequest)* reason.reference | Condition (основной диагноз) | J18.9 |
+| Izoh | Примечание | *(тот же ServiceRequest)* note.text | - | Plevral suyuqlik nazorati uchun pulmonologiya bo'limiga. |
+| Yo'llovchi shifokor | Направивший врач | *(тот же ServiceRequest)* requester | PractitionerRole | Ismoilova M.T. |
 
 ---
 
@@ -177,7 +219,7 @@ FHIR требует эти элементы, но на бумажной форм
 | MedicationRequest | status; intent | [MedicationRequest Status](https://dhp.uz/fhir/core/en/ValueSet-medicationrequest-status-vs.html); [MedicationRequest Intent](https://dhp.uz/fhir/core/en/ValueSet-medicationrequest-intent-vs.html) | `active`; `order` (рецепт, выданный вместе с выпиской) |
 | CarePlan (наблюдение) | status; intent | [RequestStatus](https://hl7.org/fhir/R5/valueset-request-status.html); [CarePlanIntent](https://hl7.org/fhir/R5/valueset-care-plan-intent.html) | `active`; `plan` |
 | EpisodeOfCare | status | [EpisodeOfCare Status](https://dhp.uz/fhir/core/en/ValueSet-episode-of-care-status-vs.html) | `active`, когда пациент взят на диспансерный учёт, до этого `planned` |
-| ServiceRequest | status; intent | [ServiceRequest Status](https://dhp.uz/fhir/core/en/ValueSet-service-request-status-vs.html); [Request Intent](https://dhp.uz/fhir/core/en/ValueSet-request-intent-vs.html) | `active`; `order` |
+| ServiceRequest | status; intent | [ServiceRequest Status](https://dhp.uz/fhir/core/en/ValueSet-service-request-status-vs.html); [Request Intent](https://dhp.uz/fhir/core/en/ValueSet-request-intent-vs.html) | `active`, `completed` или `revoked` по статусу DMED и [этому ConceptMap](ConceptMap-dmed-form-027-hospitalization-status-cm.html); `order` |
 
 ---
 
@@ -193,7 +235,7 @@ Bundle (документ)
 ├── Organization[] (регистрирующее и направившее учреждение)
 ├── Practitioner[] (лечащий врач, ответственное лицо)
 ├── PractitionerRole[] (должности лечащего врача и ответственного лица)
-├── Condition[] (основной диагноз, осложнение, сопутствующее заболевание)
+├── Condition[] (основной диагноз, осложнение, сопутствующее, фоновое и конкурирующее заболевания)
 ├── Observation[] (жалобы, анамнез, клинический осмотр, результаты анализов)
 ├── DiagnosticReport (диагностические исследования)
 ├── CarePlan[] (лечение и рекомендации, наблюдение)
