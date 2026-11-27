@@ -20,6 +20,8 @@ Qo'llanma sahifalari [DHP dasturchilar hujjatlari](https://docs.dhp.uz/uz/) uslu
 
 [Orders](orders.html): yo'llanma va kelishuv vazifalari profillari, terminologiya, davlat hisobidan davolash asoslari va SBDL mezonlari, huquqiy moliyalashtirish asoslari, gospitalizatsiya hamda chiqarish hujjati bo'limlari misollari qo'shildi. UZ Core #402 funksiyalari Integrations ga ko'chirildi; hujjatlar ingliz, rus va o'zbek tillarida mavjud.
 
+[UZ Core Device](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-device.html) asosidagi [JihozMed Device](StructureDefinition-jihozmed-device.html) tibbiy uskunalar kartalarini JihozMed tizimidan Supplies komponentiga uzatadi, [videokolonoskop namunasi](Device-example-jihozmed-device-colonoscope.html) bilan. Uskuna `Device.type` da uch darajali 673 ta koddan iborat lokal [tibbiy uskunalar tasnifi](CodeSystem-device-classification-cs.html) kod tizimi bo'yicha tasniflanadi ([ValueSet](ValueSet-device-classification-vs.html)). JihozMed va UzASBO inventar raqamlari yangi [JihozMed](NamingSystem-jihozmed-inventory-number-system.html) va [UzASBO](NamingSystem-uzasbo-inventory-number-system.html) identifikator tizimlaridan foydalanadi: `https://dhp.uz/fhir/core/sid/prd/uz/device/jihozmed` va `https://dhp.uz/fhir/core/sid/prd/uz/device/uzasbo`. Device kengaytmalari fotosurat, ishlab chiqarilgan mamlakat, ishlab chiqaruvchi mamlakati, o'rnatilgan va kafolat tugash sanalari, shartnoma, hisob-faktura, UZS'dagi narx va karta yaratilgan sanani uzatadi; [moliyalashtirish manbasi](StructureDefinition-funding-source.html) kengaytmasi kodlarni lokal [moliyalashtirish manbalari](CodeSystem-funding-source-cs.html) kod tizimidan oladi ([ValueSet](ValueSet-funding-source-vs.html)).
+
 ### Versiya 0.13.0
 
 #### Qo'shildi

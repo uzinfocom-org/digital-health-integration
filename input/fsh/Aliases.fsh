@@ -304,3 +304,10 @@ Alias: $blood-donation-number = https://dhp.uz/fhir/core/sid/prd/uz/blood/donati
 Alias: $blood-donor-eligibility-cs = https://terminology.dhp.uz/fhir/core/CodeSystem/blood-donor-eligibility-cs
 Alias: $flag-category = http://terminology.hl7.org/CodeSystem/flag-category
 Alias: $workflow-reason = http://hl7.org/fhir/StructureDefinition/workflow-reason
+
+// JihozMed
+Alias: $device-availability-status = http://hl7.org/fhir/device-availability-status
+Alias: $device-classification-cs = https://terminology.dhp.uz/fhir/integrations/CodeSystem/device-classification-cs
+Alias: $iso-3166-2-vs = https://terminology.dhp.uz/fhir/core/ValueSet/iso-3166-2-vs
+Alias: $jihozmed-inventory-number = https://dhp.uz/fhir/core/sid/prd/uz/device/jihozmed
+Alias: $uzasbo-inventory-number = https://dhp.uz/fhir/core/sid/prd/uz/device/uzasbo

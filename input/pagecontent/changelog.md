@@ -18,6 +18,8 @@ The guide's pages use the look of the [DHP developer documentation](https://docs
 
 #### Added
 
+[JihozMed Device](StructureDefinition-jihozmed-device.html), based on [UZ Core Device](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-device.html), carries medical equipment cards from the JihozMed system to the Supplies component, with a [video colonoscope example](Device-example-jihozmed-device-colonoscope.html). The device is classified in `Device.type` by a local [medical equipment classification](CodeSystem-device-classification-cs.html) code system of 673 codes in three levels ([ValueSet](ValueSet-device-classification-vs.html)). The JihozMed and UzASBO inventory numbers use the new [JihozMed](NamingSystem-jihozmed-inventory-number-system.html) and [UzASBO](NamingSystem-uzasbo-inventory-number-system.html) identifier systems `https://dhp.uz/fhir/core/sid/prd/uz/device/jihozmed` and `https://dhp.uz/fhir/core/sid/prd/uz/device/uzasbo`. Device extensions carry the photo, country of origin, manufacturer country, installation and warranty dates, contract, invoice, price in UZS and the card creation date; the [funding source](StructureDefinition-funding-source.html) extension takes codes from a local [funding source](CodeSystem-funding-source-cs.html) code system ([ValueSet](ValueSet-funding-source-vs.html)).
+
 [Orders](orders.html) adds referral and approval-task integration profiles, supporting terminology, state-funded treatment and SBDL criteria, legal funding resolutions, a hospitalization workflow and discharge-section examples. The functionality moves from UZ Core PR #402 to Integrations; documentation is available in English, Russian and Uzbek.
 
 ### Version 0.13.0

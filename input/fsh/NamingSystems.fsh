@@ -318,3 +318,39 @@ Usage: #definition
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/blood-service-request"
 * uniqueId[=].preferred = true
+
+Instance: jihozmed-inventory-number-system
+InstanceOf: NamingSystem
+Description: "Identifier system for device inventory numbers assigned by the JihozMed system"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/jihozmed-inventory-number-system"
+* name = "UzbekistanJihozMedInventoryNumber"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* date = "2026-11-20"
+* description = "Inventory number that the JihozMed medical equipment accounting system assigns to each device card."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in Device.identifier[jihozmed] of the JihozMed Device profile"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $jihozmed-inventory-number
+* uniqueId[=].preferred = true
+
+Instance: uzasbo-inventory-number-system
+InstanceOf: NamingSystem
+Description: "Identifier system for device inventory numbers registered in the UzASBO accounting system"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/uzasbo-inventory-number-system"
+* name = "UzbekistanUzASBOInventoryNumber"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* date = "2026-11-20"
+* description = "Inventory number under which a device is registered in the UzASBO accounting system."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in Device.identifier[uzasbo] of the JihozMed Device profile"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = $uzasbo-inventory-number
+* uniqueId[=].preferred = true

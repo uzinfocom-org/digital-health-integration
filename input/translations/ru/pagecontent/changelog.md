@@ -18,6 +18,8 @@
 
 #### Добавлено
 
+[JihozMed Device](StructureDefinition-jihozmed-device.html) на основе [UZ Core Device](https://dhp.uz/fhir/core/ru/StructureDefinition-uz-core-device.html) передаёт карточки медицинского оборудования из системы JihozMed в компонент Supplies, с [примером видеоколоноскопа](Device-example-jihozmed-device-colonoscope.html). Оборудование классифицируется в `Device.type` по локальной кодовой системе [классификации медицинского оборудования](CodeSystem-device-classification-cs.html) из 673 кодов на трёх уровнях ([ValueSet](ValueSet-device-classification-vs.html)). Инвентарные номера JihozMed и UzASBO используют новые системы идентификаторов [JihozMed](NamingSystem-jihozmed-inventory-number-system.html) и [UzASBO](NamingSystem-uzasbo-inventory-number-system.html) `https://dhp.uz/fhir/core/sid/prd/uz/device/jihozmed` и `https://dhp.uz/fhir/core/sid/prd/uz/device/uzasbo`. Расширения Device передают фото, страну производства, страну производителя, даты установки и окончания гарантии, договор, счёт-фактуру, цену в UZS и дату создания карточки; расширение [источника финансирования](StructureDefinition-funding-source.html) берёт коды из локальной кодовой системы [источников финансирования](CodeSystem-funding-source-cs.html) ([ValueSet](ValueSet-funding-source-vs.html)).
+
 [Orders](orders.html): добавлены профили направлений и задач согласования, терминология, основания государственного финансирования и критерии SBDL, правовые основания оплаты, примеры госпитализации и разделов выписного документа. Функциональность PR UZ Core #402 перенесена в Integrations; документация доступна на английском, русском и узбекском.
 
 ### Версия 0.13.0
