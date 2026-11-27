@@ -1,5 +1,9 @@
 ### В разработке
 
+#### Добавлено
+
+Диспансерный учёт: добавлены [расширение характера заболевания](StructureDefinition-disease-nature.html), пять значений DMED `disease_nature` и соответствующие коды DHP (`chr-0128-0001`–`chr-0128-0005`), ValueSet и ConceptMap. [Пример Condition](Condition-example-dispensary-condition.html) передаёт значение расширения; [пример EpisodeOfCare](EpisodeOfCare-example-dispensary-episode-of-care.html) использует профилактические услуги (`mserv-0001-00001`) и согласованную роль диагноза `final`.
+
 #### Изменено
 
 [Blood Service Operations](CodeSystem-blood-component-processing-cs.html) (ранее Blood component processing operations): добавлен код контроля качества продукта крови.

@@ -1,5 +1,9 @@
 ### In development
 
+#### Added
+
+Dispensary registration adds the [Disease nature extension](StructureDefinition-disease-nature.html), the five DMED `disease_nature` values and their DHP codes (`chr-0128-0001`–`chr-0128-0005`), value sets and ConceptMaps. The [Condition example](Condition-example-dispensary-condition.html) carries the mapped value; the [EpisodeOfCare example](EpisodeOfCare-example-dispensary-episode-of-care.html) uses preventive services (`mserv-0001-00001`) and the agreed diagnosis role `final`.
+
 #### Changed
 
 [Blood Service Operations](CodeSystem-blood-component-processing-cs.html), formerly Blood component processing operations, adds a code for blood product quality control.
