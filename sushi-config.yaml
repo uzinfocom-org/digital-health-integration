@@ -136,6 +136,8 @@ pages:
     title: Blood Service
   orders.md:
     title: Orders
+  ambulance.md:
+    title: Ambulance
   forms.md:
     title: Questionnaires
   forms-overview.md:

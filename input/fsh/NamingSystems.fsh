@@ -318,3 +318,21 @@ Usage: #definition
 * uniqueId[0].type = #uri
 * uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/blood-service-request"
 * uniqueId[=].preferred = true
+
+Instance: ambulance-call-card-number-system
+InstanceOf: NamingSystem
+Description: "Identifier system for ambulance call card numbers in Uzbekistan"
+Usage: #definition
+* url = "https://terminology.dhp.uz/fhir/integrations/NamingSystem/ambulance-call-card-number-system"
+* name = "UzbekistanAmbulanceCallCardNumber"
+* status = #active
+* kind = #identifier
+* publisher = "Uzinfocom"
+* responsible = "Ministry of Health of the Republic of Uzbekistan"
+* date = "2026-11-25"
+* description = "Call card number assigned to an emergency medical service (ambulance) call in the ambulance MIS."
+* jurisdiction = urn:iso:std:iso:3166#UZ "Uzbekistan"
+* usage = "Used in Encounter.identifier of the Ambulance Encounter"
+* uniqueId[0].type = #uri
+* uniqueId[=].value = "https://dhp.uz/fhir/core/sid/doc/uz/ambulance-call-card"
+* uniqueId[=].preferred = true

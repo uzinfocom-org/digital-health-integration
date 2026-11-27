@@ -1,5 +1,9 @@
 ### Ishlab chiqilmoqda
 
+#### Qo'shildi
+
+[Ambulance Encounter](StructureDefinition-ambulance-encounter.html) [UZ Core Encounter](https://dhp.uz/fhir/core/uz/StructureDefinition-uz-core-encounter.html) asosida tez tibbiy yordam chaqiruvini qayd etadi: chaqiruv kartasi raqami, bemor, mas'ul TTY tashkiloti, ishtirokchilar, chaqiruv sababi, haqiqiy davr, tashxislar, natija va bemor yo'naltirilgan joy, shuningdek chaqiruv joyi, [misol](Encounter-example-ambulance-call-encounter.html) bilan. [Ambulance](ambulance.html) sahifasi chaqiruv kartasi maydonlarini unga moslashtiradi. Chaqiruv kartasi raqami yangi [TTY chaqiruv kartasi raqamlari](NamingSystem-ambulance-call-card-number-system.html) identifikator tizimidan foydalanadi: `https://dhp.uz/fhir/core/sid/doc/uz/ambulance-call-card`.
+
 #### O'zgartirildi
 
 [027-shakl](StructureDefinition-form-027-medical-record-extract-composition.html) ambulator va statsionar kartadan ko'chirmalar uchun `emdoc-0010-0106` kodini ishlatadi, ularni `Encounter.class` (`AMB` yoki `IMP`) farqlaydi. Belgilangan `type` endi eski "Extract from inpatient medical record" nomini o'z ichiga olmaydi.

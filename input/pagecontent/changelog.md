@@ -1,5 +1,9 @@
 ### In development
 
+#### Added
+
+[Ambulance Encounter](StructureDefinition-ambulance-encounter.html), based on [UZ Core Encounter](https://dhp.uz/fhir/core/en/StructureDefinition-uz-core-encounter.html), records an emergency medical service (ambulance) call: the call card number, patient, responsible ambulance organization, participants, reason for the call, actual period, diagnoses, discharge disposition and destination, and the call location, with an [example](Encounter-example-ambulance-call-encounter.html). The [Ambulance](ambulance.html) page maps the call card fields onto it. The call card number uses the new [ambulance call card number](NamingSystem-ambulance-call-card-number-system.html) identifier system `https://dhp.uz/fhir/core/sid/doc/uz/ambulance-call-card`.
+
 #### Changed
 
 [Blood Service Operations](CodeSystem-blood-component-processing-cs.html), formerly Blood component processing operations, adds a code for blood product quality control.

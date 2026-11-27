@@ -1,0 +1,20 @@
+@startuml ambulance-model-ru
+hide circle
+hide empty members
+title Как устроена запись о вызове СМП
+
+class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{Открыть профиль UZ Core Patient}]]
+class AmbulanceEncounter [[StructureDefinition-ambulance-encounter.html{Открыть профиль AmbulanceEncounter}]] #E8F0FE
+class Location [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-location.html{Открыть профиль UZ Core Location}]]
+class Condition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-condition.html{Открыть профиль UZ Core Condition}]]
+class ServiceRequest [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-servicerequest.html{Открыть профиль UZ Core ServiceRequest}]]
+
+Patient "1" <-- "0..*" AmbulanceEncounter : « subject »
+AmbulanceEncounter "0..*" --> "1" Location : « location.location »
+AmbulanceEncounter "0..*" --> "0..1" Location : « admission.destination »
+AmbulanceEncounter "0..*" --> "0..*" Condition : « reason.value, diagnosis.condition »
+AmbulanceEncounter "0..*" --> "0..*" ServiceRequest : « basedOn »
+
+caption Клинический граф: ссылки на организации, медработников и других участников не показаны, чтобы схема оставалась читаемой.
+
+@enduml

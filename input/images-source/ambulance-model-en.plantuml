@@ -1,0 +1,20 @@
+@startuml ambulance-model-en
+hide circle
+hide empty members
+title How an ambulance call record fits together
+
+class Patient [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-patient.html{Open the UZ Core Patient profile}]]
+class AmbulanceEncounter [[StructureDefinition-ambulance-encounter.html{Open the AmbulanceEncounter profile}]] #E8F0FE
+class Location [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-location.html{Open the UZ Core Location profile}]]
+class Condition [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-condition.html{Open the UZ Core Condition profile}]]
+class ServiceRequest [[https://dhp.uz/fhir/core/StructureDefinition-uz-core-servicerequest.html{Open the UZ Core ServiceRequest profile}]]
+
+Patient "1" <-- "0..*" AmbulanceEncounter : « subject »
+AmbulanceEncounter "0..*" --> "1" Location : « location.location »
+AmbulanceEncounter "0..*" --> "0..1" Location : « admission.destination »
+AmbulanceEncounter "0..*" --> "0..*" Condition : « reason.value, diagnosis.condition »
+AmbulanceEncounter "0..*" --> "0..*" ServiceRequest : « basedOn »
+
+caption Clinical graph: references to organizations, practitioners and other actors are left out to keep the diagram readable.
+
+@enduml
